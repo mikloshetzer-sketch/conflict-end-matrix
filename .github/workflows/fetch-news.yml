@@ -30,10 +30,13 @@ jobs:
       - name: Run scoring script
         run: python src/score_news.py
 
+      - name: Generate markdown report
+        run: python src/generate_markdown_report.py
+
       - name: Commit generated files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/raw/latest_news.json data/processed/latest_scored.json
-          git diff --cached --quiet || git commit -m "Update news and scored conflict data"
+          git add data/raw/latest_news.json data/processed/latest_scored.json reports/latest_report.md
+          git diff --cached --quiet || git commit -m "Update news, scores, and markdown report"
           git push
