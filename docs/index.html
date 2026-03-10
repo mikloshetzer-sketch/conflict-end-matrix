@@ -3,14 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Conflict Monitoring Dashboard</title>
-
 <style>
 body{
 font-family:Arial,Helvetica,sans-serif;
 margin:40px;
 background:#f5f5f5;
 }
-
 .container{
 max-width:900px;
 margin:auto;
@@ -19,28 +17,31 @@ padding:30px;
 border-radius:8px;
 box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
-
 h1{
 margin-top:0;
 }
-
+.summary{
+margin-top:20px;
+padding:20px;
+background:#fafafa;
+border:1px solid #e0e0e0;
+border-radius:8px;
+}
+.summary p{
+margin:8px 0;
+}
 .chart{
 margin-top:30px;
 }
-
 .footer{
 margin-top:40px;
 font-size:12px;
 color:#666;
 }
 </style>
-
 </head>
-
 <body>
-
 <div class="container">
-
 <h1>Conflict Escalation Monitor</h1>
 
 <p>
@@ -48,32 +49,47 @@ Automated monitoring of conflict escalation and de-escalation signals
 based on daily news analysis.
 </p>
 
-<h2>Latest Report</h2>
+<div class="summary">
+<h2>Latest Summary</h2>
+<p><strong>Report date:</strong> <span id="report_date">Loading...</span></p>
+<p><strong>Assessment:</strong> <span id="assessment">Loading...</span></p>
+<p><strong>Total score:</strong> <span id="total_score">Loading...</span></p>
+<p><strong>Articles analyzed:</strong> <span id="article_count">Loading...</span></p>
+</div>
 
+<h2>Latest Report</h2>
 <p>
-<a href="../reports/latest_report.md">
-Open latest conflict report
-</a>
+<a href="../reports/latest_report.md">Open latest conflict report</a>
 </p>
 
 <div class="chart">
-
 <h2>Conflict Trend</h2>
-
-<img src="conflict_trend.png" width="100%">
-
+<img src="conflict_trend.png" width="100%" alt="Conflict trend chart">
 </div>
 
 <div class="footer">
-
 <p>
 Data source: automated news monitoring pipeline.<br>
 Repository updated daily via GitHub Actions.
 </p>
-
+</div>
 </div>
 
-</div>
-
+<script>
+fetch('latest_summary.json')
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('report_date').textContent = data.report_date || 'n/a';
+    document.getElementById('assessment').textContent = data.assessment || 'n/a';
+    document.getElementById('total_score').textContent = data.total_score ?? 'n/a';
+    document.getElementById('article_count').textContent = data.article_count ?? 'n/a';
+  })
+  .catch(() => {
+    document.getElementById('report_date').textContent = 'error';
+    document.getElementById('assessment').textContent = 'error';
+    document.getElementById('total_score').textContent = 'error';
+    document.getElementById('article_count').textContent = 'error';
+  });
+</script>
 </body>
 </html>
