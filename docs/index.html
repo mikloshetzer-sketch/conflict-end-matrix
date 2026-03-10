@@ -1,95 +1,110 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Conflict Monitoring Dashboard</title>
-<style>
-body{
-font-family:Arial,Helvetica,sans-serif;
-margin:40px;
-background:#f5f5f5;
-}
-.container{
-max-width:900px;
-margin:auto;
-background:white;
-padding:30px;
-border-radius:8px;
-box-shadow:0 2px 6px rgba(0,0,0,0.1);
-}
-h1{
-margin-top:0;
-}
-.summary{
-margin-top:20px;
-padding:20px;
-background:#fafafa;
-border:1px solid #e0e0e0;
-border-radius:8px;
-}
-.summary p{
-margin:8px 0;
-}
-.chart{
-margin-top:30px;
-}
-.footer{
-margin-top:40px;
-font-size:12px;
-color:#666;
-}
-</style>
-</head>
-<body>
-<div class="container">
-<h1>Conflict Escalation Monitor</h1>
+import json
+from pathlib import Path
 
-<p>
-Automated monitoring of conflict escalation and de-escalation signals
-based on daily news analysis.
-</p>
 
-<div class="summary">
-<h2>Latest Summary</h2>
-<p><strong>Report date:</strong> <span id="report_date">Loading...</span></p>
-<p><strong>Assessment:</strong> <span id="assessment">Loading...</span></p>
-<p><strong>Total score:</strong> <span id="total_score">Loading...</span></p>
-<p><strong>Articles analyzed:</strong> <span id="article_count">Loading...</span></p>
-</div>
+def classify_index(index: float) -> str:
+    if index <= -2:
+        return "strong escalation"
+    if index <= -1:
+        return "moderate escalation"
+    if index < 0:
+        return "mild escalation"
+    if index < 1:
+        return "neutral"
+    return "de-escalation"
 
-<h2>Latest Report</h2>
-<p>
-<a href="../reports/latest_report.md">Open latest conflict report</a>
-</p>
 
-<div class="chart">
-<h2>Conflict Trend</h2>
-<img src="conflict_trend.png" width="100%" alt="Conflict trend chart">
-</div>
+def generate_commentary(index: float, article_count: int, total_score: int) -> str:
 
-<div class="footer">
-<p>
-Data source: automated news monitoring pipeline.<br>
-Repository updated daily via GitHub Actions.
-</p>
-</div>
-</div>
+    direction = classify_index(index)
 
-<script>
-fetch('latest_summary.json')
-  .then(response => response.json())
-  .then(data => {
-    document.getElementById('report_date').textContent = data.report_date || 'n/a';
-    document.getElementById('assessment').textContent = data.assessment || 'n/a';
-    document.getElementById('total_score').textContent = data.total_score ?? 'n/a';
-    document.getElementById('article_count').textContent = data.article_count ?? 'n/a';
-  })
-  .catch(() => {
-    document.getElementById('report_date').textContent = 'error';
-    document.getElementById('assessment').textContent = 'error';
-    document.getElementById('total_score').textContent = 'error';
-    document.getElementById('article_count').textContent = 'error';
-  });
-</script>
-</body>
-</html>
+    text = []
+
+    text.append("Daily conflict signal assessment:")
+
+    if direction == "strong escalation":
+        text.append(
+            "The current news flow indicates strong escalation dynamics. "
+            "Media reporting is dominated by military actions such as strikes, "
+            "missile activity or retaliatory operations."
+        )
+
+    elif direction == "moderate escalation":
+        text.append(
+            "The information environment suggests moderate escalation. "
+            "Military developments appear frequently in headlines, "
+            "but the situation does not yet indicate a large-scale expansion."
+        )
+
+    elif direction == "mild escalation":
+        text.append(
+            "The news environment shows mild escalation signals. "
+            "Some conflict-related developments appear, but they are not dominant."
+        )
+
+    elif direction == "neutral":
+        text.append(
+            "The information flow appears relatively balanced. "
+            "Escalatory and diplomatic signals are roughly balanced."
+        )
+
+    else:
+        text.append(
+            "News signals suggest possible de-escalation dynamics. "
+            "Diplomatic engagement or negotiation signals appear in reporting."
+        )
+
+    text.append(
+        f"The system analysed {article_count} news headlines "
+        f"with a combined escalation score of {total_score}."
+    )
+
+    text.append(
+        "The normalized conflict index allows comparison between days "
+        "independently of the number of analysed articles."
+    )
+
+    return " ".join(text)
+
+
+def main():
+
+    base_dir = Path(__file__).resolve().parent.parent
+
+    input_file = base_dir / "data" / "processed" / "latest_scored.json"
+    output_dir = base_dir / "docs"
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    output_file = output_dir / "latest_summary.json"
+
+    with open(input_file, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    article_count = data.get("article_count", 0)
+    total_score = data.get("total_score", 0)
+
+    if article_count == 0:
+        conflict_index = 0
+    else:
+        conflict_index = round(total_score / article_count, 2)
+
+    commentary = generate_commentary(conflict_index, article_count, total_score)
+
+    summary = {
+        "report_date": data.get("created_at", "")[:10],
+        "created_at": data.get("created_at", ""),
+        "article_count": article_count,
+        "total_score": total_score,
+        "conflict_index": conflict_index,
+        "assessment": classify_index(conflict_index),
+        "commentary": commentary
+    }
+
+    with open(output_file, "w", encoding="utf-8") as f:
+        json.dump(summary, f, indent=2, ensure_ascii=False)
+
+    print("Dashboard summary updated.")
+
+
+if __name__ == "__main__":
+    main()
