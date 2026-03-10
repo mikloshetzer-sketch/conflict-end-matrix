@@ -96,6 +96,15 @@
       font-size: 13px;
       color: #555;
     }
+
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #ececec;
+      font-size: 13px;
+      margin-left: 6px;
+    }
   </style>
 </head>
 <body>
@@ -113,6 +122,8 @@
       <p><strong>Total score:</strong> <span id="total_score" class="loading">Loading...</span></p>
       <p><strong>Conflict index:</strong> <span id="conflict_index" class="loading">Loading...</span></p>
       <p><strong>Articles analyzed:</strong> <span id="article_count" class="loading">Loading...</span></p>
+      <p><strong>Trajectory:</strong> <span id="trajectory" class="loading">Loading...</span></p>
+      <p><strong>Short-term outlook:</strong> <span id="outlook" class="loading">Loading...</span></p>
 
       <h3>Automated analysis</h3>
       <p id="commentary" class="loading">Loading commentary...</p>
@@ -122,7 +133,7 @@
       <h2>What this means</h2>
       <p class="highlight" id="forecast_text">Loading forecast...</p>
       <p class="small-note">
-        The forecast is an automated estimate based on headline intensity and conflict-related keywords. It is not a prediction of a precise end date, but a directional signal about escalation pressure.
+        The forecast is an automated estimate based on headline intensity, normalized conflict index and short-term trend direction. It is not a prediction of a precise end date, but a directional signal about escalation pressure.
       </p>
     </div>
 
@@ -136,6 +147,9 @@
       </p>
       <p>
         The <strong>total score</strong> reflects the cumulative daily signal, while the <strong>conflict index</strong> normalizes that score by the number of analysed articles, making day-to-day comparisons more reliable.
+      </p>
+      <p>
+        The <strong>trajectory</strong> is derived from the last three daily conflict index values and indicates whether the information environment is becoming more escalatory, more stable, or remains uncertain.
       </p>
     </div>
 
@@ -188,6 +202,9 @@
 
     <div class="chart">
       <h2>Conflict Trend</h2>
+      <p class="small-note">
+        The chart shows both the daily conflict index and the 3-day moving average.
+      </p>
       <img src="./conflict_trend.png" alt="Conflict trend chart">
     </div>
 
@@ -200,20 +217,26 @@
   </div>
 
   <script>
-    function buildForecastText(conflictIndex, assessment) {
-      if (conflictIndex <= -2) {
-        return "The current signal suggests strong escalation pressure. In the short term, further military action or retaliatory dynamics are more likely than stabilization.";
+    function buildForecastText(conflictIndex, trajectory) {
+      if (trajectory === "escalating") {
+        if (conflictIndex <= -1) {
+          return "The short-term signal points toward intensifying escalation pressure. The recent trend and current index both suggest a worsening conflict information environment.";
+        }
+        return "The short-term signal points toward rising tension, although the current level is not yet extreme.";
       }
-      if (conflictIndex <= -1) {
-        return "The current signal suggests moderate escalation. The conflict environment remains tense, and a rapid de-escalation is not yet strongly visible.";
+
+      if (trajectory === "stabilizing") {
+        if (conflictIndex < 0) {
+          return "The conflict environment is still tense, but the short-term trend suggests that escalation pressure may be easing.";
+        }
+        return "The short-term trend suggests gradual stabilization in the information environment.";
       }
-      if (conflictIndex < 0) {
-        return "The current signal suggests mild escalation. Tensions remain present, but the information environment is less intense than during peak escalation.";
+
+      if (trajectory === "uncertain") {
+        return "The short-term pattern is mixed. The current information environment does not yet support a strong directional conclusion.";
       }
-      if (conflictIndex < 1) {
-        return "The current signal is mixed. No clear dominant trajectory is visible, and the situation may move toward either renewed escalation or gradual stabilization.";
-      }
-      return "The current signal suggests potential de-escalation. Diplomatic or stabilizing signals are becoming more visible in the reporting environment.";
+
+      return "There is not enough trend data yet to estimate short-term trajectory reliably.";
     }
 
     fetch('./latest_summary.json?ts=' + Date.now())
@@ -229,11 +252,13 @@
         document.getElementById('total_score').textContent = data.total_score ?? 'n/a';
         document.getElementById('conflict_index').textContent = data.conflict_index ?? 'n/a';
         document.getElementById('article_count').textContent = data.article_count ?? 'n/a';
+        document.getElementById('trajectory').textContent = data.trajectory ?? 'n/a';
+        document.getElementById('outlook').textContent = data.outlook ?? 'n/a';
         document.getElementById('commentary').textContent = data.commentary ?? 'No commentary available.';
 
         const idx = Number(data.conflict_index ?? 0);
-        const assessment = data.assessment ?? '';
-        document.getElementById('forecast_text').textContent = buildForecastText(idx, assessment);
+        const trajectory = data.trajectory ?? '';
+        document.getElementById('forecast_text').textContent = buildForecastText(idx, trajectory);
       })
       .catch(error => {
         document.getElementById('report_date').textContent = 'error';
@@ -241,6 +266,8 @@
         document.getElementById('total_score').textContent = 'error';
         document.getElementById('conflict_index').textContent = 'error';
         document.getElementById('article_count').textContent = 'error';
+        document.getElementById('trajectory').textContent = 'error';
+        document.getElementById('outlook').textContent = 'error';
         document.getElementById('commentary').textContent = 'Failed to load automated commentary.';
         document.getElementById('forecast_text').textContent = 'Failed to load forecast.';
         document.getElementById('commentary').className = 'error';
