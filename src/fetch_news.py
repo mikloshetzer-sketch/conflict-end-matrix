@@ -3,10 +3,9 @@ import json
 from pathlib import Path
 from datetime import datetime
 
-
 RSS_SOURCES = [
-    "https://news.google.com/rss/search?q=iran+israel+usa+war&hl=en-US&gl=US&ceid=US:en",
-    "https://news.google.com/rss/search?q=middle+east+conflict&hl=en-US&gl=US&ceid=US:en"
+    "https://news.google.com/rss/search?q=iran+israel+usa+war+when:7d&hl=en-US&gl=US&ceid=US:en",
+    "https://news.google.com/rss/search?q=middle+east+conflict+when:7d&hl=en-US&gl=US&ceid=US:en"
 ]
 
 
@@ -16,10 +15,10 @@ def fetch_rss():
     for url in RSS_SOURCES:
         feed = feedparser.parse(url)
 
-        for entry in feed.entries[:10]:
+        for entry in feed.entries[:25]:
             articles.append({
-                "title": entry.title,
-                "link": entry.link,
+                "title": entry.get("title", ""),
+                "link": entry.get("link", ""),
                 "published": entry.get("published", ""),
                 "source": feed.feed.get("title", "unknown")
             })
@@ -45,7 +44,7 @@ def main():
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
 
-    print(f"Saved {len(articles)} articles")
+    print(f"Saved {len(articles)} articles to {output_file}")
 
 
 if __name__ == "__main__":
