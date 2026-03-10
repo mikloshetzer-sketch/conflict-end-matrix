@@ -27,10 +27,13 @@ jobs:
       - name: Run fetch script
         run: python src/fetch_news.py
 
+      - name: Run scoring script
+        run: python src/score_news.py
+
       - name: Commit generated files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/raw/latest_news.json
-          git diff --cached --quiet || git commit -m "Update latest news data"
+          git add data/raw/latest_news.json data/processed/latest_scored.json
+          git diff --cached --quiet || git commit -m "Update news and scored conflict data"
           git push
