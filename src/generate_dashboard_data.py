@@ -14,57 +14,65 @@ def classify_index(index: float) -> str:
     return "de-escalation"
 
 
-def generate_commentary(index: float, article_count: int, total_score: int) -> str:
+def generate_commentary(index: float, article_count: int, total_score: int):
 
-    direction = classify_index(index)
+    assessment = classify_index(index)
 
-    text = []
+    intro = (
+        "This automated assessment analyses international news headlines "
+        "related to the monitored conflict environment."
+    )
 
-    text.append("Daily conflict signal assessment:")
+    situation = ""
 
-    if direction == "strong escalation":
-        text.append(
-            "The current news flow indicates strong escalation dynamics. "
-            "Media reporting is dominated by military actions such as strikes, "
-            "missile activity or retaliatory operations."
+    if assessment == "strong escalation":
+        situation = (
+            "The current information environment indicates strong escalation dynamics. "
+            "A high concentration of headlines refers to military activity such as strikes, "
+            "missile launches, retaliatory actions or combat developments."
         )
 
-    elif direction == "moderate escalation":
-        text.append(
-            "The information environment suggests moderate escalation. "
-            "Military developments appear frequently in headlines, "
-            "but the situation does not yet indicate a large-scale expansion."
+    elif assessment == "moderate escalation":
+        situation = (
+            "The news environment suggests moderate escalation pressure. "
+            "Military developments appear regularly in reporting, "
+            "though the information pattern does not yet indicate a full-scale conflict surge."
         )
 
-    elif direction == "mild escalation":
-        text.append(
-            "The news environment shows mild escalation signals. "
-            "Some conflict-related developments appear, but they are not dominant."
+    elif assessment == "mild escalation":
+        situation = (
+            "The conflict environment shows mild escalation signals. "
+            "Some military-related reporting appears, but it does not dominate the information flow."
         )
 
-    elif direction == "neutral":
-        text.append(
-            "The information flow appears relatively balanced. "
-            "Escalatory and diplomatic signals are roughly balanced."
+    elif assessment == "neutral":
+        situation = (
+            "The news flow currently appears relatively balanced. "
+            "Escalatory signals and diplomatic reporting appear in similar proportions."
         )
 
     else:
-        text.append(
-            "News signals suggest possible de-escalation dynamics. "
-            "Diplomatic engagement or negotiation signals appear in reporting."
+        situation = (
+            "The current reporting environment suggests possible de-escalation dynamics. "
+            "Diplomatic engagement, negotiations or stabilization signals are increasingly visible."
         )
 
-    text.append(
-        f"The system analysed {article_count} news headlines "
-        f"with a combined escalation score of {total_score}."
+    methodology = (
+        f"The system analysed {article_count} headlines with a cumulative "
+        f"escalation score of {total_score}. "
+        "To make comparisons between days more reliable, a normalized conflict index "
+        "is calculated by dividing the total escalation score by the number of analysed articles."
     )
 
-    text.append(
-        "The normalized conflict index allows comparison between days "
-        "independently of the number of analysed articles."
+    interpretation = (
+        "This index reflects the overall tone of the information environment rather than "
+        "the exact number of real-world incidents. Peaks in the index may occur when multiple "
+        "media outlets report the same event."
     )
 
-    return " ".join(text)
+    commentary = " ".join([intro, situation, methodology, interpretation])
+
+    return commentary
 
 
 def main():
@@ -88,7 +96,13 @@ def main():
     else:
         conflict_index = round(total_score / article_count, 2)
 
-    commentary = generate_commentary(conflict_index, article_count, total_score)
+    assessment = classify_index(conflict_index)
+
+    commentary = generate_commentary(
+        conflict_index,
+        article_count,
+        total_score
+    )
 
     summary = {
         "report_date": data.get("created_at", "")[:10],
@@ -96,14 +110,14 @@ def main():
         "article_count": article_count,
         "total_score": total_score,
         "conflict_index": conflict_index,
-        "assessment": classify_index(conflict_index),
+        "assessment": assessment,
         "commentary": commentary
     }
 
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(summary, f, indent=2, ensure_ascii=False)
 
-    print("Dashboard summary updated.")
+    print("Dashboard summary generated.")
 
 
 if __name__ == "__main__":
