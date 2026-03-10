@@ -14,7 +14,7 @@
     }
 
     .container {
-      max-width: 980px;
+      max-width: 1080px;
       margin: auto;
       background: white;
       padding: 30px;
@@ -31,7 +31,9 @@
     .forecast,
     .table-block,
     .chart,
-    .report-link {
+    .report-link,
+    .signals,
+    .headlines {
       margin-top: 24px;
       padding: 20px;
       background: #fafafa;
@@ -97,13 +99,34 @@
       color: #555;
     }
 
-    .pill {
+    .signal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    ul.signal-list {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    ul.signal-list li {
+      margin-bottom: 10px;
+    }
+
+    .score-badge {
       display: inline-block;
-      padding: 4px 10px;
+      margin-left: 8px;
+      padding: 2px 8px;
       border-radius: 999px;
       background: #ececec;
-      font-size: 13px;
-      margin-left: 6px;
+      font-size: 12px;
+    }
+
+    @media (max-width: 800px) {
+      .signal-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -135,6 +158,31 @@
       <p class="small-note">
         The forecast is an automated estimate based on headline intensity, normalized conflict index and short-term trend direction. It is not a prediction of a precise end date, but a directional signal about escalation pressure.
       </p>
+    </div>
+
+    <div class="signals">
+      <h2>Top Signals Today</h2>
+      <div class="signal-grid">
+        <div>
+          <h3>Top escalation signals</h3>
+          <ul id="top_escalation_signals" class="signal-list">
+            <li class="loading">Loading...</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Top diplomatic signals</h3>
+          <ul id="top_diplomatic_signals" class="signal-list">
+            <li class="loading">Loading...</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="headlines">
+      <h2>Key Headlines Today</h2>
+      <ul id="key_headlines" class="signal-list">
+        <li class="loading">Loading...</li>
+      </ul>
     </div>
 
     <div class="methodology">
@@ -203,7 +251,7 @@
     <div class="chart">
       <h2>Conflict Trend</h2>
       <p class="small-note">
-        The chart shows both the daily conflict index and the 3-day moving average.
+        The chart shows the daily conflict index, the 3-day moving average and the broader trend line.
       </p>
       <img src="./conflict_trend.png" alt="Conflict trend chart">
     </div>
@@ -239,6 +287,36 @@
       return "There is not enough trend data yet to estimate short-term trajectory reliably.";
     }
 
+    function renderArticleList(elementId, items, emptyText) {
+      const container = document.getElementById(elementId);
+      container.innerHTML = "";
+
+      if (!items || items.length === 0) {
+        const li = document.createElement("li");
+        li.textContent = emptyText;
+        container.appendChild(li);
+        return;
+      }
+
+      items.forEach(item => {
+        const li = document.createElement("li");
+
+        const link = document.createElement("a");
+        link.href = item.link || "#";
+        link.textContent = item.title || "Untitled";
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+
+        const badge = document.createElement("span");
+        badge.className = "score-badge";
+        badge.textContent = "score: " + (item.score ?? "n/a");
+
+        li.appendChild(link);
+        li.appendChild(badge);
+        container.appendChild(li);
+      });
+    }
+
     fetch('./latest_summary.json?ts=' + Date.now())
       .then(response => {
         if (!response.ok) {
@@ -259,6 +337,24 @@
         const idx = Number(data.conflict_index ?? 0);
         const trajectory = data.trajectory ?? '';
         document.getElementById('forecast_text').textContent = buildForecastText(idx, trajectory);
+
+        renderArticleList(
+          "top_escalation_signals",
+          data.top_escalation_signals,
+          "No clear escalation signals detected today."
+        );
+
+        renderArticleList(
+          "top_diplomatic_signals",
+          data.top_diplomatic_signals,
+          "No clear diplomatic signals detected today."
+        );
+
+        renderArticleList(
+          "key_headlines",
+          data.key_headlines,
+          "No key headlines available."
+        );
       })
       .catch(error => {
         document.getElementById('report_date').textContent = 'error';
