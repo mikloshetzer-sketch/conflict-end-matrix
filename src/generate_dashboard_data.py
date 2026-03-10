@@ -135,6 +135,37 @@ def load_history_with_index(history_file: Path):
     return rows
 
 
+def extract_signal_lists(scored_articles):
+    escalation_articles = sorted(
+        [a for a in scored_articles if a.get("score", 0) < 0],
+        key=lambda x: x.get("score", 0)
+    )[:5]
+
+    diplomatic_articles = sorted(
+        [a for a in scored_articles if a.get("score", 0) > 0],
+        key=lambda x: x.get("score", 0),
+        reverse=True
+    )[:5]
+
+    key_headlines = sorted(
+        scored_articles,
+        key=lambda x: abs(x.get("score", 0)),
+        reverse=True
+    )[:5]
+
+    return escalation_articles, diplomatic_articles, key_headlines
+
+
+def compact_article(article):
+    return {
+        "title": article.get("title", ""),
+        "link": article.get("link", ""),
+        "source": article.get("source", ""),
+        "published": article.get("published", ""),
+        "score": article.get("score", 0)
+    }
+
+
 def main():
     base_dir = Path(__file__).resolve().parent.parent
 
@@ -149,6 +180,7 @@ def main():
 
     article_count = data.get("article_count", 0)
     total_score = data.get("total_score", 0)
+    scored_articles = data.get("articles", [])
 
     if article_count == 0:
         conflict_index = 0
@@ -169,6 +201,8 @@ def main():
         outlook
     )
 
+    escalation_articles, diplomatic_articles, key_headlines = extract_signal_lists(scored_articles)
+
     summary = {
         "report_date": data.get("created_at", "")[:10],
         "created_at": data.get("created_at", ""),
@@ -178,13 +212,16 @@ def main():
         "assessment": assessment,
         "trajectory": trajectory,
         "outlook": outlook,
-        "commentary": commentary
+        "commentary": commentary,
+        "top_escalation_signals": [compact_article(a) for a in escalation_articles],
+        "top_diplomatic_signals": [compact_article(a) for a in diplomatic_articles],
+        "key_headlines": [compact_article(a) for a in key_headlines]
     }
 
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(summary, f, indent=2, ensure_ascii=False)
 
-    print("Dashboard summary generated.")
+    print("Dashboard summary generated with signal lists.")
 
 
 if __name__ == "__main__":
