@@ -1,110 +1,252 @@
-import json
-from pathlib import Path
-
-
-def classify_index(index: float) -> str:
-    if index <= -2:
-        return "strong escalation"
-    if index <= -1:
-        return "moderate escalation"
-    if index < 0:
-        return "mild escalation"
-    if index < 1:
-        return "neutral"
-    return "de-escalation"
-
-
-def generate_commentary(index: float, article_count: int, total_score: int) -> str:
-
-    direction = classify_index(index)
-
-    text = []
-
-    text.append("Daily conflict signal assessment:")
-
-    if direction == "strong escalation":
-        text.append(
-            "The current news flow indicates strong escalation dynamics. "
-            "Media reporting is dominated by military actions such as strikes, "
-            "missile activity or retaliatory operations."
-        )
-
-    elif direction == "moderate escalation":
-        text.append(
-            "The information environment suggests moderate escalation. "
-            "Military developments appear frequently in headlines, "
-            "but the situation does not yet indicate a large-scale expansion."
-        )
-
-    elif direction == "mild escalation":
-        text.append(
-            "The news environment shows mild escalation signals. "
-            "Some conflict-related developments appear, but they are not dominant."
-        )
-
-    elif direction == "neutral":
-        text.append(
-            "The information flow appears relatively balanced. "
-            "Escalatory and diplomatic signals are roughly balanced."
-        )
-
-    else:
-        text.append(
-            "News signals suggest possible de-escalation dynamics. "
-            "Diplomatic engagement or negotiation signals appear in reporting."
-        )
-
-    text.append(
-        f"The system analysed {article_count} news headlines "
-        f"with a combined escalation score of {total_score}."
-    )
-
-    text.append(
-        "The normalized conflict index allows comparison between days "
-        "independently of the number of analysed articles."
-    )
-
-    return " ".join(text)
-
-
-def main():
-
-    base_dir = Path(__file__).resolve().parent.parent
-
-    input_file = base_dir / "data" / "processed" / "latest_scored.json"
-    output_dir = base_dir / "docs"
-    output_dir.mkdir(parents=True, exist_ok=True)
-
-    output_file = output_dir / "latest_summary.json"
-
-    with open(input_file, "r", encoding="utf-8") as f:
-        data = json.load(f)
-
-    article_count = data.get("article_count", 0)
-    total_score = data.get("total_score", 0)
-
-    if article_count == 0:
-        conflict_index = 0
-    else:
-        conflict_index = round(total_score / article_count, 2)
-
-    commentary = generate_commentary(conflict_index, article_count, total_score)
-
-    summary = {
-        "report_date": data.get("created_at", "")[:10],
-        "created_at": data.get("created_at", ""),
-        "article_count": article_count,
-        "total_score": total_score,
-        "conflict_index": conflict_index,
-        "assessment": classify_index(conflict_index),
-        "commentary": commentary
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conflict Monitoring Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 40px;
+      background: #f5f5f5;
+      color: #222;
+      line-height: 1.6;
     }
 
-    with open(output_file, "w", encoding="utf-8") as f:
-        json.dump(summary, f, indent=2, ensure_ascii=False)
+    .container {
+      max-width: 980px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
 
-    print("Dashboard summary updated.")
+    h1, h2, h3 {
+      margin-top: 0;
+    }
 
+    .summary,
+    .methodology,
+    .forecast,
+    .table-block,
+    .chart,
+    .report-link {
+      margin-top: 24px;
+      padding: 20px;
+      background: #fafafa;
+      border: 1px solid #e3e3e3;
+      border-radius: 8px;
+    }
 
-if __name__ == "__main__":
-    main()
+    .summary p,
+    .methodology p,
+    .forecast p,
+    .report-link p {
+      margin: 8px 0;
+    }
+
+    .highlight {
+      font-size: 1.05rem;
+      font-weight: bold;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      background: white;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+    }
+
+    th, td {
+      border: 1px solid #d9d9d9;
+      padding: 10px;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    th {
+      background: #efefef;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: #666;
+    }
+
+    .loading {
+      color: #777;
+      font-style: italic;
+    }
+
+    .error {
+      color: #b00020;
+      font-weight: bold;
+    }
+
+    .small-note {
+      font-size: 13px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Conflict Escalation Monitor</h1>
+
+    <p>
+      Automated monitoring of conflict escalation and de-escalation signals based on daily international news analysis.
+    </p>
+
+    <div class="summary">
+      <h2>Latest Summary</h2>
+      <p><strong>Report date:</strong> <span id="report_date" class="loading">Loading...</span></p>
+      <p><strong>Assessment:</strong> <span id="assessment" class="loading">Loading...</span></p>
+      <p><strong>Total score:</strong> <span id="total_score" class="loading">Loading...</span></p>
+      <p><strong>Conflict index:</strong> <span id="conflict_index" class="loading">Loading...</span></p>
+      <p><strong>Articles analyzed:</strong> <span id="article_count" class="loading">Loading...</span></p>
+
+      <h3>Automated analysis</h3>
+      <p id="commentary" class="loading">Loading commentary...</p>
+    </div>
+
+    <div class="forecast">
+      <h2>What this means</h2>
+      <p class="highlight" id="forecast_text">Loading forecast...</p>
+      <p class="small-note">
+        The forecast is an automated estimate based on headline intensity and conflict-related keywords. It is not a prediction of a precise end date, but a directional signal about escalation pressure.
+      </p>
+    </div>
+
+    <div class="methodology">
+      <h2>Methodology</h2>
+      <p>
+        This dashboard analyses daily news headlines related to the conflict and assigns escalation or de-escalation scores based on predefined keywords.
+      </p>
+      <p>
+        Negative values indicate escalation signals such as strikes, missile activity, retaliation or casualties. Positive values indicate de-escalation signals such as ceasefires, diplomacy, negotiations or mediation.
+      </p>
+      <p>
+        The <strong>total score</strong> reflects the cumulative daily signal, while the <strong>conflict index</strong> normalizes that score by the number of analysed articles, making day-to-day comparisons more reliable.
+      </p>
+    </div>
+
+    <div class="table-block">
+      <h2>Interpretation Table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Conflict Index</th>
+            <th>Interpretation</th>
+            <th>Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>&lt;= -2.00</td>
+            <td>Strong escalation</td>
+            <td>Heavy concentration of military and retaliatory signals in the news flow.</td>
+          </tr>
+          <tr>
+            <td>&gt; -2.00 and &lt;= -1.00</td>
+            <td>Moderate escalation</td>
+            <td>Conflict activity is dominant, but not at the highest observed intensity.</td>
+          </tr>
+          <tr>
+            <td>&gt; -1.00 and &lt; 0.00</td>
+            <td>Mild escalation</td>
+            <td>Tensions are present, though not overwhelming in media reporting.</td>
+          </tr>
+          <tr>
+            <td>&gt;= 0.00 and &lt; 1.00</td>
+            <td>Neutral / mixed</td>
+            <td>Escalatory and de-escalatory signals appear relatively balanced.</td>
+          </tr>
+          <tr>
+            <td>&gt;= 1.00</td>
+            <td>De-escalation</td>
+            <td>Diplomacy, ceasefire or negotiation-related signals are becoming more visible.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="report-link">
+      <h2>Latest Report</h2>
+      <p>
+        <a href="./latest_report_proxy.html">Open latest conflict report</a>
+      </p>
+    </div>
+
+    <div class="chart">
+      <h2>Conflict Trend</h2>
+      <img src="./conflict_trend.png" alt="Conflict trend chart">
+    </div>
+
+    <div class="footer">
+      <p>
+        Data source: automated news monitoring pipeline.<br>
+        Repository updated daily via GitHub Actions.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function buildForecastText(conflictIndex, assessment) {
+      if (conflictIndex <= -2) {
+        return "The current signal suggests strong escalation pressure. In the short term, further military action or retaliatory dynamics are more likely than stabilization.";
+      }
+      if (conflictIndex <= -1) {
+        return "The current signal suggests moderate escalation. The conflict environment remains tense, and a rapid de-escalation is not yet strongly visible.";
+      }
+      if (conflictIndex < 0) {
+        return "The current signal suggests mild escalation. Tensions remain present, but the information environment is less intense than during peak escalation.";
+      }
+      if (conflictIndex < 1) {
+        return "The current signal is mixed. No clear dominant trajectory is visible, and the situation may move toward either renewed escalation or gradual stabilization.";
+      }
+      return "The current signal suggests potential de-escalation. Diplomatic or stabilizing signals are becoming more visible in the reporting environment.";
+    }
+
+    fetch('./latest_summary.json?ts=' + Date.now())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('HTTP error: ' + response.status);
+        }
+        return response.json();
+      })
+      .then(data => {
+        document.getElementById('report_date').textContent = data.report_date ?? 'n/a';
+        document.getElementById('assessment').textContent = data.assessment ?? 'n/a';
+        document.getElementById('total_score').textContent = data.total_score ?? 'n/a';
+        document.getElementById('conflict_index').textContent = data.conflict_index ?? 'n/a';
+        document.getElementById('article_count').textContent = data.article_count ?? 'n/a';
+        document.getElementById('commentary').textContent = data.commentary ?? 'No commentary available.';
+
+        const idx = Number(data.conflict_index ?? 0);
+        const assessment = data.assessment ?? '';
+        document.getElementById('forecast_text').textContent = buildForecastText(idx, assessment);
+      })
+      .catch(error => {
+        document.getElementById('report_date').textContent = 'error';
+        document.getElementById('assessment').textContent = 'error';
+        document.getElementById('total_score').textContent = 'error';
+        document.getElementById('conflict_index').textContent = 'error';
+        document.getElementById('article_count').textContent = 'error';
+        document.getElementById('commentary').textContent = 'Failed to load automated commentary.';
+        document.getElementById('forecast_text').textContent = 'Failed to load forecast.';
+        document.getElementById('commentary').className = 'error';
+        document.getElementById('forecast_text').className = 'error';
+        console.error(error);
+      });
+  </script>
+</body>
+</html>
