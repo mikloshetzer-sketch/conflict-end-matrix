@@ -17,38 +17,31 @@ def main():
     assessment = data.get("assessment", "")
     article_count = data.get("article_count", 0)
 
-    new_row = {
+    latest_row = {
         "date": date,
-        "total_score": total_score,
+        "total_score": str(total_score),
         "assessment": assessment,
-        "article_count": article_count
+        "article_count": str(article_count)
     }
 
-    rows = []
+    deduplicated = {}
 
     if history_file.exists():
         with open(history_file, "r", newline="", encoding="utf-8") as f:
             reader = csv.DictReader(f)
-            rows = list(reader)
+            for row in reader:
+                row_date = row.get("date", "").strip()
+                if row_date:
+                    deduplicated[row_date] = {
+                        "date": row_date,
+                        "total_score": row.get("total_score", "").strip(),
+                        "assessment": row.get("assessment", "").strip(),
+                        "article_count": row.get("article_count", "").strip()
+                    }
 
-    updated = False
-    for row in rows:
-        if row["date"] == date:
-            row["total_score"] = str(total_score)
-            row["assessment"] = assessment
-            row["article_count"] = str(article_count)
-            updated = True
-            break
+    deduplicated[date] = latest_row
 
-    if not updated:
-        rows.append({
-            "date": date,
-            "total_score": str(total_score),
-            "assessment": assessment,
-            "article_count": str(article_count)
-        })
-
-    rows = sorted(rows, key=lambda x: x["date"])
+    rows = [deduplicated[d] for d in sorted(deduplicated.keys())]
 
     with open(history_file, "w", newline="", encoding="utf-8") as f:
         fieldnames = ["date", "total_score", "assessment", "article_count"]
@@ -56,10 +49,8 @@ def main():
         writer.writeheader()
         writer.writerows(rows)
 
-    if updated:
-        print(f"Updated existing history row for {date}")
-    else:
-        print(f"Added new history row for {date}")
+    print(f"History cleaned and updated for {date}")
+    print(f"Total unique days stored: {len(rows)}")
 
 
 if __name__ == "__main__":
