@@ -36,10 +36,13 @@ jobs:
       - name: Generate markdown report
         run: python src/generate_markdown_report.py
 
+      - name: Generate chart
+        run: python src/generate_chart.py
+
       - name: Commit generated files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ reports/
-          git diff --cached --quiet || git commit -m "Update news data, scores, history and reports"
+          git add data/ reports/ docs/
+          git diff --cached --quiet || git commit -m "Update news, scores, history, reports and chart"
           git push
