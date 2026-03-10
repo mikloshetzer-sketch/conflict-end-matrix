@@ -1,7 +1,6 @@
 import json
 import csv
 from pathlib import Path
-from datetime import datetime
 
 
 def main():
@@ -18,19 +17,49 @@ def main():
     assessment = data.get("assessment", "")
     article_count = data.get("article_count", 0)
 
-    row = [date, total_score, assessment, article_count]
+    new_row = {
+        "date": date,
+        "total_score": total_score,
+        "assessment": assessment,
+        "article_count": article_count
+    }
 
-    file_exists = history_file.exists()
+    rows = []
 
-    with open(history_file, "a", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
+    if history_file.exists():
+        with open(history_file, "r", newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            rows = list(reader)
 
-        if not file_exists:
-            writer.writerow(["date", "total_score", "assessment", "article_count"])
+    updated = False
+    for row in rows:
+        if row["date"] == date:
+            row["total_score"] = str(total_score)
+            row["assessment"] = assessment
+            row["article_count"] = str(article_count)
+            updated = True
+            break
 
-        writer.writerow(row)
+    if not updated:
+        rows.append({
+            "date": date,
+            "total_score": str(total_score),
+            "assessment": assessment,
+            "article_count": str(article_count)
+        })
 
-    print("History updated:", row)
+    rows = sorted(rows, key=lambda x: x["date"])
+
+    with open(history_file, "w", newline="", encoding="utf-8") as f:
+        fieldnames = ["date", "total_score", "assessment", "article_count"]
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+
+    if updated:
+        print(f"Updated existing history row for {date}")
+    else:
+        print(f"Added new history row for {date}")
 
 
 if __name__ == "__main__":
