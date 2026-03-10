@@ -1,0 +1,40 @@
+name: Backfill Conflict History
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch last 7 days of news
+        run: python src/fetch_news.py
+
+      - name: Backfill history
+        run: python src/backfill_history.py
+
+      - name: Generate chart
+        run: python src/generate_chart.py
+
+      - name: Commit generated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ docs/
+          git diff --cached --quiet || git commit -m "Backfill conflict history data"
+          git push
