@@ -17,15 +17,28 @@ def main():
         return
 
     df["date"] = pd.to_datetime(df["date"], errors="coerce")
-    df = df.dropna(subset=["date"])
+    df["total_score"] = pd.to_numeric(df["total_score"], errors="coerce")
+    df["article_count"] = pd.to_numeric(df["article_count"], errors="coerce")
+
+    df = df.dropna(subset=["date", "total_score", "article_count"])
     df = df.sort_values("date")
 
+    df["conflict_index"] = df.apply(
+        lambda row: row["total_score"] / row["article_count"] if row["article_count"] > 0 else 0,
+        axis=1
+    )
+
+    df["moving_average_3"] = df["conflict_index"].rolling(window=3, min_periods=1).mean()
+
     plt.figure(figsize=(10, 5))
-    plt.plot(df["date"], df["total_score"], marker="o")
+    plt.plot(df["date"], df["conflict_index"], marker="o", label="Daily conflict index")
+    plt.plot(df["date"], df["moving_average_3"], marker="o", label="3-day moving average")
+
     plt.title("Conflict Escalation / De-escalation Trend")
     plt.xlabel("Date")
-    plt.ylabel("Total Score")
+    plt.ylabel("Conflict Index")
     plt.xticks(rotation=45)
+    plt.legend()
     plt.tight_layout()
     plt.savefig(output_file, dpi=150)
     plt.close()
