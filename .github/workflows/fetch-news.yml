@@ -1,4 +1,4 @@
-name: Fetch News
+name: Daily Conflict Update
 
 on:
   workflow_dispatch:
@@ -30,9 +30,6 @@ jobs:
       - name: Score news
         run: python src/score_news.py
 
-      - name: Backfill last 7 days
-        run: python src/backfill_history.py
-
       - name: Update history
         run: python src/update_history.py
 
@@ -50,5 +47,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/ reports/ docs/
-          git diff --cached --quiet || git commit -m "Update news, scores, history, reports, chart and dashboard data"
+          git diff --cached --quiet || git commit -m "Update daily conflict monitoring data"
           git push
