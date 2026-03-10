@@ -30,6 +30,9 @@ jobs:
       - name: Score news
         run: python src/score_news.py
 
+      - name: Backfill last 7 days
+        run: python src/backfill_history.py
+
       - name: Update history
         run: python src/update_history.py
 
