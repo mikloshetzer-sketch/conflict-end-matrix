@@ -1,4 +1,5 @@
 import json
+import csv
 from pathlib import Path
 
 
@@ -14,8 +15,44 @@ def classify_index(index: float) -> str:
     return "de-escalation"
 
 
-def generate_commentary(index: float, article_count: int, total_score: int):
+def calculate_trajectory(history_rows):
+    if len(history_rows) < 3:
+        return "insufficient data"
 
+    last_three = history_rows[-3:]
+    values = []
+
+    for row in last_three:
+        try:
+            values.append(float(row["conflict_index"]))
+        except Exception:
+            return "insufficient data"
+
+    if values[2] < values[1] < values[0]:
+        return "escalating"
+    if values[2] > values[1] > values[0]:
+        return "stabilizing"
+    return "uncertain"
+
+
+def build_outlook(conflict_index: float, trajectory: str) -> str:
+    if trajectory == "escalating":
+        if conflict_index <= -1:
+            return "High short-term escalation pressure."
+        return "Rising tension, but not yet at peak intensity."
+
+    if trajectory == "stabilizing":
+        if conflict_index < 0:
+            return "Tension remains present, but escalation pressure may be easing."
+        return "The information environment is moving toward stabilization."
+
+    if trajectory == "uncertain":
+        return "Short-term direction remains uncertain."
+
+    return "Not enough trend data for a short-term outlook."
+
+
+def generate_commentary(index: float, article_count: int, total_score: int, trajectory: str, outlook: str):
     assessment = classify_index(index)
 
     intro = (
@@ -23,34 +60,28 @@ def generate_commentary(index: float, article_count: int, total_score: int):
         "related to the monitored conflict environment."
     )
 
-    situation = ""
-
     if assessment == "strong escalation":
         situation = (
             "The current information environment indicates strong escalation dynamics. "
             "A high concentration of headlines refers to military activity such as strikes, "
             "missile launches, retaliatory actions or combat developments."
         )
-
     elif assessment == "moderate escalation":
         situation = (
             "The news environment suggests moderate escalation pressure. "
-            "Military developments appear regularly in reporting, "
-            "though the information pattern does not yet indicate a full-scale conflict surge."
+            "Military developments appear regularly in reporting, though the pattern does not yet "
+            "indicate the highest observable intensity."
         )
-
     elif assessment == "mild escalation":
         situation = (
             "The conflict environment shows mild escalation signals. "
             "Some military-related reporting appears, but it does not dominate the information flow."
         )
-
     elif assessment == "neutral":
         situation = (
             "The news flow currently appears relatively balanced. "
             "Escalatory signals and diplomatic reporting appear in similar proportions."
         )
-
     else:
         situation = (
             "The current reporting environment suggests possible de-escalation dynamics. "
@@ -58,31 +89,59 @@ def generate_commentary(index: float, article_count: int, total_score: int):
         )
 
     methodology = (
-        f"The system analysed {article_count} headlines with a cumulative "
-        f"escalation score of {total_score}. "
-        "To make comparisons between days more reliable, a normalized conflict index "
-        "is calculated by dividing the total escalation score by the number of analysed articles."
+        f"The system analysed {article_count} headlines with a cumulative score of {total_score}. "
+        "To make day-to-day comparison more reliable, a normalized conflict index is calculated "
+        "by dividing the total score by the number of analysed articles."
+    )
+
+    trend = (
+        f"The short-term trajectory is currently assessed as {trajectory}. "
+        f"Current outlook: {outlook}"
     )
 
     interpretation = (
-        "This index reflects the overall tone of the information environment rather than "
-        "the exact number of real-world incidents. Peaks in the index may occur when multiple "
-        "media outlets report the same event."
+        "This index reflects the tone of the information environment rather than the exact number "
+        "of real-world incidents. Large moves may partly reflect repeated reporting on the same event."
     )
 
-    commentary = " ".join([intro, situation, methodology, interpretation])
+    return " ".join([intro, situation, methodology, trend, interpretation])
 
-    return commentary
+
+def load_history_with_index(history_file: Path):
+    rows = []
+
+    if not history_file.exists():
+        return rows
+
+    with open(history_file, "r", newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            try:
+                total_score = float(row.get("total_score", 0))
+                article_count = float(row.get("article_count", 0))
+                conflict_index = round(total_score / article_count, 2) if article_count > 0 else 0
+            except Exception:
+                conflict_index = 0
+
+            rows.append({
+                "date": row.get("date", ""),
+                "total_score": row.get("total_score", ""),
+                "assessment": row.get("assessment", ""),
+                "article_count": row.get("article_count", ""),
+                "conflict_index": conflict_index
+            })
+
+    rows = sorted(rows, key=lambda x: x["date"])
+    return rows
 
 
 def main():
-
     base_dir = Path(__file__).resolve().parent.parent
 
     input_file = base_dir / "data" / "processed" / "latest_scored.json"
+    history_file = base_dir / "data" / "conflict_history.csv"
     output_dir = base_dir / "docs"
     output_dir.mkdir(parents=True, exist_ok=True)
-
     output_file = output_dir / "latest_summary.json"
 
     with open(input_file, "r", encoding="utf-8") as f:
@@ -98,10 +157,16 @@ def main():
 
     assessment = classify_index(conflict_index)
 
+    history_rows = load_history_with_index(history_file)
+    trajectory = calculate_trajectory(history_rows)
+    outlook = build_outlook(conflict_index, trajectory)
+
     commentary = generate_commentary(
         conflict_index,
         article_count,
-        total_score
+        total_score,
+        trajectory,
+        outlook
     )
 
     summary = {
@@ -111,6 +176,8 @@ def main():
         "total_score": total_score,
         "conflict_index": conflict_index,
         "assessment": assessment,
+        "trajectory": trajectory,
+        "outlook": outlook,
         "commentary": commentary
     }
 
