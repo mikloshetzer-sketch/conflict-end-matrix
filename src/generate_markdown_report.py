@@ -6,12 +6,34 @@ from datetime import datetime
 def load_json(path: Path):
     if not path.exists():
         return None
-
     try:
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
     except Exception:
         return None
+
+
+def safe_text(value):
+    if value is None:
+        return ""
+    return str(value).strip()
+
+
+def format_number(value, decimals=2):
+    try:
+        num = float(value)
+        formatted = f"{num:,.{decimals}f}"
+        return formatted.replace(",", " ").replace(".", ",")
+    except Exception:
+        return str(value)
+
+
+def format_int(value):
+    try:
+        num = int(float(value))
+        return f"{num:,}".replace(",", " ")
+    except Exception:
+        return str(value)
 
 
 def top_negative_articles(articles, limit=5):
@@ -31,8 +53,8 @@ def extract_keyword_summary(articles):
 
     for article in articles:
         for match in article.get("matched_keywords", []):
-            keyword = match.get("keyword", "").strip()
-            category = match.get("category", "").strip()
+            keyword = safe_text(match.get("keyword"))
+            category = safe_text(match.get("category"))
             if not keyword:
                 continue
             key = (keyword, category)
@@ -68,7 +90,7 @@ def theme_counts(articles):
     counts = {theme: 0 for theme in themes}
 
     for article in articles:
-        title = article.get("title", "").lower()
+        title = safe_text(article.get("title")).lower()
         for theme, keywords in themes.items():
             if any(keyword in title for keyword in keywords):
                 counts[theme] += 1
@@ -87,96 +109,49 @@ def translate_assessment(assessment: str) -> str:
     return mapping.get(assessment, assessment)
 
 
-def assessment_to_brief(total_score, assessment, article_count, escalation_count, deescalation_count):
+def build_lead_summary(total_score, assessment, article_count, escalation_count, deescalation_count, neutral_count):
     if assessment == "strong escalation":
         return (
-            f"A napi médiakép összességében egyértelműen eszkalációs karakterű volt. "
-            f"A feldolgozott {article_count} cikk közül {escalation_count} hordozott konfliktuserősítő mintázatot, "
-            f"miközben a deeszkalációra utaló hírek száma {deescalation_count} maradt. "
-            f"Ez arra utal, hogy a vizsgált időszakban a katonai aktivitás, a csapások és a fronthelyzettel kapcsolatos fejlemények uralták a napirendet."
+            f"A napi médiakép összességében erősen eszkalációs képet mutatott. "
+            f"A feldolgozott {article_count} cikk közül {escalation_count} hordozott kifejezetten konfliktuserősítő mintázatot, "
+            f"miközben a deeszkalációra utaló hírek száma mindössze {deescalation_count} volt. "
+            f"Ez arra utal, hogy a napirendet elsősorban a katonai aktivitás, a csapásmérések és a harctéri nyomás fennmaradása alakította."
         )
+
     if assessment == "moderate escalation":
         return (
-            f"A napi hírkép mérsékelt eszkalációs túlsúlyt mutatott. "
-            f"A katonai események és támadások dominálták a tudósításokat, de ezzel párhuzamosan korlátozott számú tárgyalásos vagy politikai enyhülésre utaló jelzés is megjelent."
+            f"A napi hírkép mérsékelt, de jól érzékelhető eszkalációs túlsúlyt mutatott. "
+            f"A katonai és biztonsági fejlemények dominálták a médiateret, ugyanakkor korlátozott számban "
+            f"enyhülésre vagy politikai mozgásra utaló jelzések is megjelentek."
         )
+
     if assessment == "mixed / unstable":
         return (
             f"A napi kép vegyes és instabil volt. "
-            f"A hírek egyszerre tükrözték a katonai nyomás fennmaradását és bizonyos korlátozott diplomáciai vagy politikai mozgásokat, "
-            f"ezért nem rajzolódott ki egyértelmű elmozdulás sem az eszkaláció, sem a deeszkaláció irányába."
+            f"Az összesen {article_count} cikkből {escalation_count} eszkalációs, {deescalation_count} deeszkalációs "
+            f"és {neutral_count} semleges mintázatot mutatott, vagyis a médiás környezet nem rajzolt ki egyértelmű elmozdulást. "
+            f"A katonai nyomás és a politikai-diplomáciai zaj egyszerre maradt jelen."
         )
+
     if assessment == "moderate de-escalation":
         return (
-            f"A napi hírkép mérsékelt enyhülési irányt mutatott. "
-            f"Bár a harctéri fejlemények továbbra is jelen voltak, a tudósításokban a tárgyalási, egyeztetési és politikai rendezésre utaló elemek hangsúlyosabban jelentek meg."
+            f"A napi médiakép mérsékelt enyhülési irányt mutatott. "
+            f"A harctéri fejlemények mellett hangsúlyosabban jelentek meg a diplomáciai, tárgyalási vagy politikai rendezésre utaló elemek."
         )
+
     return (
-        f"A napi hírek alapján erősebb deeszkalációs tendencia volt megfigyelhető. "
-        f"A konfliktusról szóló beszámolókban az egyeztetés, a politikai rendezés és az enyhülés jelei voltak hangsúlyosabbak, mint a közvetlen katonai eszkaláció."
+        f"A napi hírek alapján erősebb deeszkalációs tendencia körvonalazódott. "
+        f"A konfliktusról szóló beszámolókban az egyeztetés, a politikai rendezés és az enyhülés jelei voltak hangsúlyosabbak, "
+        f"mint a közvetlen katonai eszkaláció."
     )
 
 
-def build_military_section(counts):
-    frontline = counts.get("frontline", 0)
-    air_strikes = counts.get("air_strikes", 0)
-
-    if frontline == 0 and air_strikes == 0:
-        return (
-            "A napi híranyagban a harctéri és csapásjellegű események nem alkottak különösen erős tematikus blokkot. "
-            "Ez azonban nem feltétlenül jelent alacsonyabb intenzitást, inkább azt, hogy a címek megfogalmazása kevésbé koncentrálódott ezekre a kulcsszavakra."
-        )
-
-    if air_strikes > frontline:
-        return (
-            f"A katonai dimenzióban a légi csapásokhoz, rakéta- és dróntámadásokhoz kapcsolódó hírek domináltak ({air_strikes} releváns cím), "
-            f"miközben a klasszikus frontvonalhoz kötődő tudósítások valamivel kisebb súllyal jelentek meg ({frontline} cím). "
-            "Ez olyan médiaképet jelez, amelyben a távolsági csapásmérés és a városi vagy infrastrukturális célpontok elleni támadások erősebben tematizálták a konfliktust."
-        )
-
+def build_main_trends(escalation_count, deescalation_count, neutral_count):
     return (
-        f"A katonai dimenzióban a fronthelyzettel és szárazföldi műveletekkel összefüggő hírek jelentek meg hangsúlyosabban ({frontline} releváns cím), "
-        f"miközben a légi csapásokkal összefüggő tudósítások is számottevőek maradtak ({air_strikes} cím). "
-        "Ez arra utal, hogy a napi híráramlásban egyszerre volt jelen a harctéri dinamika és a mélységi csapások kérdésköre."
-    )
-
-
-def build_diplomatic_section(counts):
-    diplomacy = counts.get("diplomacy", 0)
-    leadership = counts.get("leadership", 0)
-
-    if diplomacy == 0 and leadership == 0:
-        return (
-            "A diplomáciai és politikai dimenzió a napi híranyagban háttérbe szorult. "
-            "A konfliktus értelmezését így elsősorban a katonai fejlemények alakították, nem pedig a rendezési vagy tárgyalásos kezdeményezések."
-        )
-
-    if diplomacy > 0 and leadership > 0:
-        return (
-            f"A diplomáciai-politikai dimenzió korlátozott, de érzékelhető jelenléttel bírt: "
-            f"{diplomacy} cím utalt tárgyalásokra, egyeztetésekre vagy rendezési törekvésekre, "
-            f"miközben {leadership} cím a vezetői szintű politikai kommunikációt vagy döntéshozói kontextust emelte be. "
-            "Ez arra utal, hogy a napi napirend nem kizárólag a harctéri események köré szerveződött."
-        )
-
-    return (
-        f"A diplomáciai-politikai dimenzió visszafogottan jelent meg a napi hírekben ({diplomacy} releváns cím). "
-        "A tudósítások fő súlypontja továbbra is a konfliktus operatív és katonai vetülete maradt."
-    )
-
-
-def build_support_section(counts):
-    support = counts.get("support", 0)
-
-    if support == 0:
-        return (
-            "A külső támogatáshoz, fegyverszállításokhoz és szankciós környezethez kapcsolódó hírek a vizsgált napon nem alkottak külön domináns blokkot."
-        )
-
-    return (
-        f"A nemzetközi támogatási környezet a napi médiaképben is látható maradt ({support} releváns cím). "
-        "Ez arra utal, hogy a konfliktus értelmezésében továbbra is fontos szerepet játszik a nyugati katonai támogatás, "
-        "a védelmi képességek fenntartása és a gazdasági nyomásgyakorlási dimenzió."
+        f"A napi cikkmegoszlás alapján **{escalation_count}** eszkalációs, "
+        f"**{deescalation_count}** deeszkalációs és **{neutral_count}** semleges hír került a mintába. "
+        f"Ez a megoszlás rövid távú képet ad az információs környezet irányáról: minél nagyobb az eszkalációs arány, "
+        f"annál inkább katonai és biztonsági fejlemények uralják a napirendet, míg a pozitívabb elmozdulás inkább a diplomáciai nyitás jele."
     )
 
 
@@ -184,62 +159,119 @@ def build_operational_picture(counts):
     frontline = counts.get("frontline", 0)
     air = counts.get("air_strikes", 0)
 
-    if frontline > air:
+    if frontline == 0 and air == 0:
         return (
-            "A médiaképet elsősorban a szárazföldi műveletek és frontvonalhoz kapcsolódó hírek határozták meg. "
-            "Ez arra utal, hogy a konfliktus narratívájában a harctéri dinamika dominál, "
-            "nem pedig a mélységi csapások vagy stratégiai infrastruktúra elleni támadások."
+            "A médiás mintában a fronthelyzetre és csapásjellegű eseményekre utaló kulcsszavak nem alkottak különösen erős blokkot. "
+            "Ez inkább a hírcímek szerkezetét tükrözi, mintsem azt, hogy a terepen ne lett volna aktivitás."
         )
 
     if air > frontline:
         return (
-            "A napi tudósításokban a rakéta- és dróntámadások, valamint a légi csapások voltak hangsúlyosabbak. "
-            "Ez a konfliktus azon dimenziójára utal, ahol a felek mélységi célpontok ellen alkalmaznak távolsági fegyverrendszereket."
+            f"A napi tudósításokban a rakéta-, drón- és egyéb légi csapások hangsúlyosabb szerepet kaptak ({air} releváns cím), "
+            f"miközben a klasszikus frontvonalhoz kötődő hírek kisebb súllyal jelentek meg ({frontline} cím). "
+            f"Ez arra utal, hogy a konfliktus napi médiaképe inkább a mélységi csapásmérés és az infrastruktúra elleni támadások irányába tolódott."
+        )
+
+    if frontline > air:
+        return (
+            f"A napi médiaképben a fronthelyzethez, szárazföldi műveletekhez és előretörésekhez kapcsolódó hírek voltak hangsúlyosabbak ({frontline} releváns cím), "
+            f"miközben a légi csapásokról szóló tudósítások is jelentős számban jelen maradtak ({air} cím). "
+            f"Ez a harctéri dinamika folyamatos napirenden maradására utal."
         )
 
     return (
-        "A napi médiakép kiegyensúlyozottan tükrözte a frontvonalon zajló harcokat és a légi csapásokat. "
-        "Ez egy komplex, többdimenziós hadműveleti helyzet narratívájára utal."
+        f"A fronthelyzethez és a légi csapásokhoz kötődő hírek közel azonos súllyal jelentek meg ({frontline} illetve {air} releváns cím). "
+        f"Ez kiegyensúlyozott, de továbbra is feszült hadműveleti képet jelez."
     )
 
 
-def media_narrative(articles):
-    escalation = len([a for a in articles if a.get("score", 0) < 0])
-    deesc = len([a for a in articles if a.get("score", 0) > 0])
+def build_external_brief_text(brief_data):
+    if not brief_data or not isinstance(brief_data, dict):
+        return None
 
-    if escalation > deesc * 2:
-        return (
-            "A médiakép erősen konfliktuscentrikus volt: a címek többsége katonai eseményeket, "
-            "csapásokat vagy harctéri fejleményeket hangsúlyozott."
+    occupied_km2 = brief_data.get("occupied_km2")
+    daily_delta_km2 = brief_data.get("daily_delta_km2")
+    daily_interpretation = safe_text(brief_data.get("daily_interpretation"))
+    weekly_delta_km2 = brief_data.get("weekly_delta_km2")
+    weekly_interpretation = safe_text(brief_data.get("weekly_interpretation"))
+    ground_raw_total = brief_data.get("ground_raw_total")
+    ground_kept_points = brief_data.get("ground_kept_points")
+    ground_kept_lines = brief_data.get("ground_kept_lines")
+    uav_events_total = brief_data.get("uav_events_total")
+    uav_events_7d = brief_data.get("uav_events_7d")
+    gained_sector = safe_text(brief_data.get("gained_sector"))
+    lost_sector = safe_text(brief_data.get("lost_sector"))
+
+    parts = []
+
+    if occupied_km2 is not None:
+        parts.append(
+            f"A külső fronthelyzeti adatok alapján az orosz erők által ellenőrzött terület nagysága "
+            f"megközelítőleg {format_number(occupied_km2)} km²."
         )
 
-    if deesc > escalation:
-        return (
-            "A médiában viszonylag erősebb szerepet kaptak a diplomáciai és politikai fejlemények. "
-            "Ez részben a konfliktus politikai kezelésének narratíváját erősítheti."
+    if daily_delta_km2 is not None and daily_interpretation:
+        if abs(float(daily_delta_km2)) < 1:
+            parts.append(
+                f"Napi összevetésben csak korlátozott területi elmozdulás látszott ({format_number(daily_delta_km2)} km²), "
+                f"ami összességében {daily_interpretation} irányába mutat."
+            )
+        else:
+            parts.append(
+                f"Napi összevetésben a területi változás {format_number(daily_delta_km2)} km² volt, "
+                f"ami {daily_interpretation} irányába mutat."
+            )
+
+    if weekly_delta_km2 is not None and weekly_interpretation:
+        if abs(float(weekly_delta_km2)) < 5:
+            parts.append(
+                f"Heti távlatban a mozgás visszafogott maradt ({format_number(weekly_delta_km2)} km²), "
+                f"de az összkép továbbra is {weekly_interpretation} felé mutat."
+            )
+        else:
+            parts.append(
+                f"Heti összevetésben a változás {format_number(weekly_delta_km2)} km², "
+                f"ami már jól érzékelhetően {weekly_interpretation} képet rajzol ki."
+            )
+
+    sector_parts = []
+    if gained_sector:
+        sector_parts.append(f"a legfontosabb előretörési irány {gained_sector} térségében jelent meg")
+    if lost_sector:
+        sector_parts.append(f"a legkedvezőtlenebb elmozdulás {lost_sector} környezetében volt megfigyelhető")
+
+    if sector_parts:
+        parts.append("Területi értelemben " + ", miközben ".join(sector_parts) + ".")
+
+    activity_fragments = []
+    if ground_raw_total is not None:
+        activity_fragments.append(f"a nyers földi események száma {format_int(ground_raw_total)}")
+    if ground_kept_points is not None:
+        activity_fragments.append(f"a szűrés után {format_int(ground_kept_points)} releváns pontszerű elem maradt")
+    if ground_kept_lines is not None:
+        activity_fragments.append(f"a vonalas elemek száma {format_int(ground_kept_lines)}")
+
+    if activity_fragments:
+        parts.append(
+            "A földi aktivitási rétegben " + ", ".join(activity_fragments) + "."
         )
 
-    return (
-        "A hírek narratívája vegyes képet mutatott, amelyben a katonai események és a politikai reakciók egyaránt jelen voltak."
-    )
+    if uav_events_total is not None or uav_events_7d is not None:
+        details = []
+        if uav_events_total is not None:
+            details.append(f"az összes rögzített UAV-esemény száma {format_int(uav_events_total)}")
+        if uav_events_7d is not None:
+            details.append(f"ebből {format_int(uav_events_7d)} az elmúlt hét naphoz köthető")
 
+        if details:
+            parts.append(
+                "A dróntevékenység továbbra is jelentős: " + ", ".join(details) + "."
+            )
 
-def risk_indicator(total_score):
-    if total_score < -50:
-        return "Rövid távon fokozott eszkalációs kockázat érzékelhető."
-    if total_score < -20:
-        return "A konfliktus intenzitása stabilan magas szinten marad."
-    if total_score < 10:
-        return "A helyzet rövid távon instabil, de nem mutat egyértelmű eszkalációs irányt."
-    return "A médiakép alapján rövid távú enyhülési jelzések is megfigyelhetők."
+    if not parts:
+        return None
 
-
-def markdown_article_line(article):
-    title = article.get("title", "N/A")
-    score = article.get("score", 0)
-    source = article.get("source", "N/A")
-    link = article.get("link", "")
-    return f"- **[{title}]({link})** — pontszám: `{score}`, forrás: {source}"
+    return " ".join(parts)
 
 
 def normalize_external_text(value):
@@ -251,52 +283,21 @@ def normalize_external_text(value):
         parts = []
         for item in value:
             if isinstance(item, str):
-                item = item.strip()
-                if item:
-                    parts.append(item)
+                t = item.strip()
+                if t:
+                    parts.append(t)
             elif isinstance(item, dict):
                 text = item.get("text") or item.get("title") or item.get("summary") or ""
-                text = str(text).strip()
+                text = safe_text(text)
                 if text:
                     parts.append(text)
         return "\n".join(parts).strip()
     if isinstance(value, dict):
         for key in ["text", "summary", "brief", "content", "description"]:
-            if key in value and str(value[key]).strip():
-                return str(value[key]).strip()
+            if key in value and safe_text(value[key]):
+                return safe_text(value[key])
         return json.dumps(value, ensure_ascii=False, indent=2)
     return str(value).strip()
-
-
-def extract_external_brief(brief_data):
-    if not brief_data:
-        return None
-
-    candidates = [
-        brief_data.get("brief"),
-        brief_data.get("summary"),
-        brief_data.get("daily_brief"),
-        brief_data.get("content"),
-        brief_data.get("text"),
-        brief_data.get("report"),
-    ]
-
-    for candidate in candidates:
-        text = normalize_external_text(candidate)
-        if text:
-            return text
-
-    # fallback: ha nincs ismert főmező, próbáljuk a teljes objektumból kiolvasni a fontosabb stringeket
-    collected = []
-    for key, value in brief_data.items():
-        text = normalize_external_text(value)
-        if text and len(text) > 20:
-            collected.append(f"**{key}**: {text}")
-
-    if collected:
-        return "\n\n".join(collected[:5])
-
-    return None
 
 
 def extract_change_summary(change_data):
@@ -329,22 +330,63 @@ def extract_change_summary(change_data):
     return None
 
 
-def build_external_operational_section(brief_text, change_text):
-    if brief_text and change_text:
+def build_diplomatic_section(counts):
+    diplomacy = counts.get("diplomacy", 0)
+    leadership = counts.get("leadership", 0)
+
+    if diplomacy == 0 and leadership == 0:
         return (
-            "A külső operatív adatforrás és a médiakép együtt használva árnyaltabb napi helyzetképet ad. "
-            "A fronthelyzeti réteg a terepi változásokra, míg a médiás réteg az információs környezet hangsúlyaira érzékeny."
+            "A diplomáciai és politikai dimenzió a napi híranyagban háttérbe szorult. "
+            "A konfliktus értelmezését így elsősorban a katonai fejlemények és a biztonsági megfontolások alakították."
         )
-    if brief_text:
+
+    if diplomacy > 0 and leadership > 0:
         return (
-            "A külső napi operatív brief alapján a jelentés nemcsak médiás jelzéseket, hanem a fronthelyzetről szóló összefoglaló réteget is figyelembe veszi."
+            f"A diplomáciai-politikai dimenzió korlátozott, de érzékelhető súllyal maradt jelen: "
+            f"{diplomacy} cím utalt tárgyalásokra, egyeztetésekre vagy rendezési törekvésekre, "
+            f"miközben {leadership} cím vezetői szintű politikai kommunikációt vagy döntéshozói kontextust emelt be. "
+            f"Ez azt mutatja, hogy a napi napirend nem kizárólag a harctéri események köré szerveződött."
         )
-    if change_text:
-        return (
-            "A külső változásjelző adat alapján a jelentés a napi médiaképet kiegészíti a legfrissebb terepi vagy térképi elmozdulások rövid összegzésével."
-        )
+
     return (
-        "Külső operatív forrás nem állt rendelkezésre, ezért a napi jelentés főként a médiás konfliktusjelzésekből épül fel."
+        f"A diplomáciai-politikai szál visszafogottan jelent meg a napi hírekben ({diplomacy} releváns cím). "
+        f"A hangsúly továbbra is a konfliktus operatív és katonai vetületén maradt."
+    )
+
+
+def build_support_section(counts):
+    support = counts.get("support", 0)
+
+    if support == 0:
+        return (
+            "A külső támogatáshoz, fegyverszállításokhoz és szankciós környezethez kapcsolódó hírek nem alkottak külön domináns blokkot a vizsgált napon."
+        )
+
+    return (
+        f"A nemzetközi támogatási környezet a napi médiaképben is látható maradt ({support} releváns cím). "
+        f"Ez arra utal, hogy a konfliktus értelmezésében továbbra is fontos szerepet játszik a nyugati katonai támogatás, "
+        f"a védelmi képességek fenntartása és a gazdasági nyomásgyakorlás dimenziója."
+    )
+
+
+def media_narrative(articles):
+    escalation = len([a for a in articles if a.get("score", 0) < 0])
+    deesc = len([a for a in articles if a.get("score", 0) > 0])
+
+    if escalation > deesc * 2:
+        return (
+            "A médiakép erősen konfliktuscentrikus volt: a címek többsége katonai eseményeket, "
+            "csapásokat vagy harctéri fejleményeket hangsúlyozott, miközben a diplomáciai jelzések háttérben maradtak."
+        )
+
+    if deesc > escalation:
+        return (
+            "A médiában a szokásosnál erősebben jelentek meg a diplomáciai és politikai fejlemények. "
+            "Ez részben a konfliktus politikai kezelésének és a tárgyalási lehetőségek narratíváját erősítheti."
+        )
+
+    return (
+        "A napi hírek narratívája vegyes képet mutatott: a katonai események, a politikai reakciók és a stratégiai bizonytalanság egyszerre voltak jelen."
     )
 
 
@@ -356,17 +398,39 @@ def build_consistency_assessment(total_score, brief_text, change_text):
 
     if total_score <= -15:
         return (
-            "A médiás index eszkalációs képet jelez, és a külső operatív források bevonása ezt nagy valószínűséggel megerősítő vagy legalábbis kontextualizáló szerepet játszik."
+            "A médiás index egyértelműen feszült, eszkalációs képet jelez. "
+            "A külső operatív réteg bevonása ezt nem pusztán kiegészíti, hanem segít elválasztani a médiás zajt a valós terepi elmozdulásoktól."
         )
 
     if total_score >= 10:
         return (
-            "A médiás kép enyhébb vagy kiegyensúlyozottabb napi környezetet jelez, ezért különösen fontos figyelni, hogy a külső fronthelyzeti adatok mennyiben támasztják ezt alá."
+            "A médiás környezet viszonylag enyhébb vagy kiegyensúlyozottabb napi képet mutat, ezért különösen fontos figyelni, "
+            "hogy a külső fronthelyzeti adatok mennyiben támasztják ezt alá vagy árnyalják."
         )
 
     return (
-        "A napi médiás és operatív rétegek együtt vegyes, összetett képet rajzolnak ki, ahol az információs környezet és a terepi dinamika nem feltétlenül mozog azonos intenzitással."
+        "A médiás és az operatív réteg együtt összetett képet rajzol ki: "
+        "az információs környezet és a terepi dinamika nem feltétlenül azonos intenzitással mozog, "
+        "ezért a napi helyzet értelmezésében mindkét szempontot érdemes együtt kezelni."
     )
+
+
+def risk_indicator(total_score):
+    if total_score < -50:
+        return "Rövid távon fokozott eszkalációs kockázat érzékelhető."
+    if total_score < -20:
+        return "A konfliktus intenzitása stabilan magas szinten marad."
+    if total_score < 10:
+        return "A helyzet rövid távon instabil, de nem mutat teljesen egyértelmű eszkalációs irányt."
+    return "A médiakép alapján rövid távú enyhülési jelzések is megfigyelhetők."
+
+
+def markdown_article_line(article):
+    title = safe_text(article.get("title")) or "N/A"
+    score = article.get("score", 0)
+    source = safe_text(article.get("source")) or "N/A"
+    link = safe_text(article.get("link"))
+    return f"- **[{title}]({link})** — pontszám: `{score}`, forrás: {source}"
 
 
 def main():
@@ -384,11 +448,11 @@ def main():
     brief_data = load_json(brief_path)
     change_data = load_json(change_path)
 
-    created_at = data.get("created_at", "")
+    created_at = safe_text(data.get("created_at"))
     date_str = created_at[:10] if created_at else datetime.utcnow().date().isoformat()
     article_count = data.get("article_count", 0)
     total_score = data.get("total_score", 0)
-    assessment = data.get("assessment", "unknown")
+    assessment = safe_text(data.get("assessment")) or "unknown"
     assessment_hu = translate_assessment(assessment)
     escalation_count = data.get("escalation_articles", 0)
     deescalation_count = data.get("deescalation_articles", 0)
@@ -400,31 +464,25 @@ def main():
     keywords = extract_keyword_summary(articles)
     counts = theme_counts(articles)
 
-    brief = assessment_to_brief(
+    lead_summary = build_lead_summary(
         total_score,
         assessment,
         article_count,
         escalation_count,
-        deescalation_count
+        deescalation_count,
+        neutral_count
     )
+    main_trends = build_main_trends(escalation_count, deescalation_count, neutral_count)
+    operational_picture = build_operational_picture(counts)
     military_section = build_military_section(counts)
     diplomatic_section = build_diplomatic_section(counts)
     support_section = build_support_section(counts)
-    operational_picture = build_operational_picture(counts)
     narrative = media_narrative(articles)
     risk_text = risk_indicator(total_score)
 
-    external_brief_text = extract_external_brief(brief_data)
+    external_brief_text = build_external_brief_text(brief_data)
     external_change_text = extract_change_summary(change_data)
-    external_operational_text = build_external_operational_section(
-        external_brief_text,
-        external_change_text
-    )
-    consistency_text = build_consistency_assessment(
-        total_score,
-        external_brief_text,
-        external_change_text
-    )
+    consistency_text = build_consistency_assessment(total_score, external_brief_text, external_change_text)
 
     report_path = reports_dir / f"{date_str}_report.md"
 
@@ -439,46 +497,38 @@ def main():
 
     lines.append("## 1. Helyzetkép")
     lines.append("")
-    lines.append(brief)
+    lines.append(lead_summary)
     lines.append("")
 
     lines.append("## 2. Fő trendek")
     lines.append("")
-    lines.append(
-        f"A napi cikkmegoszlás alapján **{escalation_count}** eszkalációs, "
-        f"**{deescalation_count}** deeszkalációs és **{neutral_count}** semleges hír került a mintába. "
-        "Ez a megoszlás rövid távú médiaképet ad a konfliktus intenzitásáról, nem pedig teljes körű hadműveleti helyzetképet."
-    )
+    lines.append(main_trends)
     lines.append("")
 
     lines.append("## 3. Operatív helyzetkép")
     lines.append("")
     lines.append(operational_picture)
     lines.append("")
-    lines.append(external_operational_text)
+
+    lines.append("## 4. Külső fronthelyzeti napi brief")
+    lines.append("")
+    if external_brief_text:
+        lines.append(external_brief_text)
+    else:
+        lines.append(
+            "A mai futás során nem állt rendelkezésre olyan külső fronthelyzeti brief, amely érdemben kiegészíthette volna a médiás réteget."
+        )
     lines.append("")
 
-    if external_brief_text:
-        lines.append("## 4. Külső fronthelyzeti napi brief")
-        lines.append("")
-        lines.append(external_brief_text)
-        lines.append("")
-    else:
-        lines.append("## 4. Külső fronthelyzeti napi brief")
-        lines.append("")
-        lines.append("A mai futás során nem állt rendelkezésre külön külső napi operatív brief.")
-        lines.append("")
-
+    lines.append("## 5. Külső változásjelző összefoglaló")
+    lines.append("")
     if external_change_text:
-        lines.append("## 5. Külső változásjelző összefoglaló")
-        lines.append("")
         lines.append(external_change_text)
-        lines.append("")
     else:
-        lines.append("## 5. Külső változásjelző összefoglaló")
-        lines.append("")
-        lines.append("A mai futás során nem érkezett külön változásjelző összefoglaló a külső adatforrásból.")
-        lines.append("")
+        lines.append(
+            "A mai futás során nem érkezett külön változásjelző összefoglaló a külső adatforrásból."
+        )
+    lines.append("")
 
     lines.append("## 6. Katonai dimenzió")
     lines.append("")
@@ -544,7 +594,7 @@ def main():
         "amelyet külső operatív és fronthelyzeti adatforrások egészíthetnek ki. "
         "Erőssége a gyors trendkövetés és a napi narratív változások megragadása, "
         "korlátja ugyanakkor, hogy a médiás és térképi források eltérő logikával működnek, "
-        "ezért a végső következtetések mindig óvatos értelmezést igényelnek."
+        "ezért a végső következtetések mindig óvatos, többforrású értelmezést igényelnek."
     )
     lines.append("")
 
@@ -552,6 +602,36 @@ def main():
         f.write("\n".join(lines))
 
     print(f"Integrated markdown report generated: {report_path}")
+
+
+def build_military_section(counts):
+    frontline = counts.get("frontline", 0)
+    air_strikes = counts.get("air_strikes", 0)
+
+    if frontline == 0 and air_strikes == 0:
+        return (
+            "A napi híranyagban a harctéri és csapásjellegű események nem alkottak különösen erős tematikus blokkot. "
+            "Ez nem feltétlenül alacsonyabb intenzitásra utal, inkább arra, hogy a hírcímek más hangsúlyok mentén szerveződtek."
+        )
+
+    if air_strikes > frontline:
+        return (
+            f"A katonai dimenzióban a légi csapásokhoz, rakéta- és dróntámadásokhoz kapcsolódó hírek domináltak ({air_strikes} releváns cím), "
+            f"miközben a klasszikus frontvonalhoz kötődő tudósítások kisebb súllyal jelentek meg ({frontline} cím). "
+            f"Ez olyan napi képet jelez, amelyben a mélységi csapásmérés és az infrastruktúra elleni támadások erősebben tematizálták a konfliktust."
+        )
+
+    if frontline > air_strikes:
+        return (
+            f"A katonai dimenzióban a fronthelyzettel és szárazföldi műveletekkel összefüggő hírek jelentek meg hangsúlyosabban ({frontline} releváns cím), "
+            f"miközben a légi csapásokkal összefüggő tudósítások is számottevőek maradtak ({air_strikes} cím). "
+            f"Ez arra utal, hogy a napi híráramlásban a harctéri dinamika továbbra is meghatározó maradt."
+        )
+
+    return (
+        f"A fronthelyzettel és a légi csapásokkal összefüggő hírek közel azonos súllyal jelentek meg ({frontline} illetve {air_strikes} releváns cím). "
+        f"Ez kiegyensúlyozott, de továbbra is feszült katonai képet mutat."
+    )
 
 
 if __name__ == "__main__":
