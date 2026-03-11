@@ -1,15 +1,15 @@
-name: Daily Conflict Monitor
+name: Daily Conflict Update
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 6 * * *"
+    - cron: "17 6 * * *"
 
 permissions:
   contents: write
 
 jobs:
-  daily-monitor:
+  fetch:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,17 +24,13 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Fetch external map data
-        continue-on-error: true
-        run: python src/fetch_external_map_data.py
-
       - name: Fetch news
         run: python src/fetch_news.py
 
       - name: Score news
         run: python src/score_news.py
 
-      - name: Update conflict history
+      - name: Update history
         run: python src/update_history.py
 
       - name: Generate markdown report
@@ -46,15 +42,10 @@ jobs:
       - name: Generate dashboard data
         run: python src/generate_dashboard_data.py
 
-      - name: Copy latest report into docs
-        run: |
-          latest_report=$(ls -t reports/*_report.md | head -n 1)
-          cp "$latest_report" docs/latest_report.md
-
-      - name: Commit updated files
+      - name: Commit generated files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ docs/ reports/
-          git diff --cached --quiet || git commit -m "Update daily conflict monitor outputs"
+          git add data/ reports/ docs/
+          git diff --cached --quiet || git commit -m "Update daily conflict monitoring data"
           git push
