@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conflict Driver Analysis</title>
+
+  <style>
+    :root {
+      --navy: #173f59;
+      --navy-2: #245f83;
+      --blue: #2788c4;
+      --blue-dark: #1f6f9d;
+      --teal: #079b91;
+      --green: #2f8f74;
+      --red: #c6535c;
+      --red-soft: #fff1f2;
+      --green-soft: #eef9f5;
+      --page: #edf4f8;
+      --panel: #ffffff;
+      --panel-soft: #f7fafc;
+      --line: #d5e1e9;
+      --text: #16364d;
+      --muted: #687f90;
+      --shadow: 0 8px 24px rgba(31, 72, 99, 0.10);
+      --danger: #b93b46;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--page);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background: var(--page);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a {
+      color: #167bb5;
+    }
+
+    a:hover {
+      color: #0c5f90;
+    }
+
+    /* =========================================================
+       HERO / MAGAS FEJLÉC
+       ========================================================= */
+
+    .hero {
+      min-height: 310px;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 82% 18%, rgba(73, 164, 214, 0.34) 0%, rgba(73, 164, 214, 0) 29%),
+        radial-gradient(circle at 18% 78%, rgba(53, 133, 179, 0.20) 0%, rgba(53, 133, 179, 0) 31%),
+        linear-gradient(135deg, #12384f 0%, #1c5677 56%, #287ca8 100%);
+      color: #fff;
+      border-bottom: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 8px 24px rgba(25, 64, 88, 0.16);
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 46px 24px 38px;
+    }
+
+    .brand {
+      display: inline-block;
+      margin-bottom: 14px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #bfe4f6;
+    }
+
+    .hero h1 {
+      margin: 0;
+      max-width: 850px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(38px, 6vw, 62px);
+      line-height: 1.02;
+      letter-spacing: -0.035em;
+      color: #fff;
+    }
+
+    .hero-subtitle {
+      max-width: 830px;
+      margin: 16px 0 0;
+      font-size: 18px;
+      color: #d8eef8;
+    }
+
+    .hero-description {
+      max-width: 830px;
+      margin: 8px 0 0;
+      font-size: 14px;
+      color: #c7dde9;
+    }
+
+    .dashboard-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 9px 18px;
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 9px;
+      color: #eef9ff;
+      background: rgba(255,255,255,0.08);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.18s ease;
+    }
+
+    .nav-btn:hover {
+      color: #fff;
+      background: rgba(255,255,255,0.16);
+    }
+
+    .nav-btn.active {
+      color: var(--navy);
+      background: #fff;
+      border-color: #fff;
+      box-shadow: 0 5px 16px rgba(0,0,0,0.13);
+    }
+
+    /* =========================================================
+       OLDAL
+       ========================================================= */
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 30px 24px 46px;
+    }
+
+    .section-title {
+      margin: 0 0 14px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 27px;
+      color: var(--text);
+    }
+
+    .section-intro {
+      margin: -4px 0 18px;
+      max-width: 860px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .section {
+      margin-top: 28px;
+    }
+
+    /* =========================================================
+       KPI
+       ========================================================= */
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .kpi-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kpi-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: var(--blue);
+    }
+
+    .kpi-card.escalation::before {
+      background: var(--red);
+    }
+
+    .kpi-card.diplomacy::before {
+      background: var(--green);
+    }
+
+    .kpi-card.net::before {
+      background: var(--teal);
+    }
+
+    .kpi-label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .kpi-value {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      line-height: 1;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .kpi-note {
+      display: block;
+      margin-top: 9px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* =========================================================
+       KÖZÖS PANEL
+       ========================================================= */
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 22px 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .panel h3 {
+      margin: 0 0 14px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 21px;
+      color: var(--text);
+    }
+
+    .panel-note {
+      margin: -7px 0 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================================================
+       ESCALATION VS DIPLOMACY
+       ========================================================= */
+
+    .pressure-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .pressure-card {
+      padding: 18px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--panel-soft);
+    }
+
+    .pressure-card.escalation {
+      background: var(--red-soft);
+      border-color: #efd3d6;
+    }
+
+    .pressure-card.diplomacy {
+      background: var(--green-soft);
+      border-color: #cfe9df;
+    }
+
+    .pressure-title {
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+
+    .pressure-value {
+      display: block;
+      margin-top: 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 36px;
+      font-weight: 700;
+    }
+
+    .pressure-card.escalation .pressure-value {
+      color: #a43e48;
+    }
+
+    .pressure-card.diplomacy .pressure-value {
+      color: #26785f;
+    }
+
+    .balance-track {
+      display: flex;
+      width: 100%;
+      height: 28px;
+      margin-top: 20px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: #e6edf2;
+      border: 1px solid var(--line);
+    }
+
+    .balance-escalation {
+      height: 100%;
+      background: #cf6169;
+      width: 50%;
+      transition: width 0.35s ease;
+    }
+
+    .balance-diplomacy {
+      height: 100%;
+      background: #42a080;
+      width: 50%;
+      transition: width 0.35s ease;
+    }
+
+    .balance-labels {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* =========================================================
+       TOP DRIVERS
+       ========================================================= */
+
+    .driver-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .driver-row {
+      display: grid;
+      grid-template-columns: 180px 1fr 80px 80px;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .driver-name {
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    .driver-bar-track {
+      height: 18px;
+      background: #eaf0f4;
+      border: 1px solid #dae4ea;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .driver-bar {
+      height: 100%;
+      width: 0%;
+      transition: width 0.35s ease;
+    }
+
+    .driver-bar.negative {
+      background: #cb5a64;
+    }
+
+    .driver-bar.positive {
+      background: #3f9c7c;
+    }
+
+    .driver-count,
+    .driver-impact {
+      text-align: right;
+      font-size: 13px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .driver-impact.negative {
+      color: #a43e48;
+      font-weight: 700;
+    }
+
+    .driver-impact.positive {
+      color: #26785f;
+      font-weight: 700;
+    }
+
+    /* =========================================================
+       DRIVER CATEGORIES
+       ========================================================= */
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .category-card {
+      padding: 17px;
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    .category-name {
+      display: block;
+      font-weight: 800;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .category-score {
+      display: block;
+      margin-top: 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .category-keywords {
+      display: block;
+      margin-top: 7px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* =========================================================
+       KEY SIGNALS
+       ========================================================= */
+
+    .signal-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 11px;
+    }
+
+    .signal-item {
+      padding: 14px 16px;
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      border-radius: 11px;
+    }
+
+    .signal-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .signal-title {
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .signal-title:hover {
+      text-decoration: underline;
+    }
+
+    .signal-score {
+      flex: 0 0 auto;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 12px;
+      background: #edf3f7;
+      border: 1px solid var(--line);
+    }
+
+    .signal-score.negative {
+      color: #9d3640;
+      background: #fff0f1;
+      border-color: #efd3d6;
+    }
+
+    .signal-score.positive {
+      color: #246f59;
+      background: #eef9f5;
+      border-color: #cfe9df;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 9px;
+    }
+
+    .tag {
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #eaf3f8;
+      color: #466a80;
+      border: 1px solid #d2e1e9;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    /* =========================================================
+       ANALYST INTERPRETATION
+       ========================================================= */
+
+    .interpretation {
+      margin-top: 14px;
+      padding: 17px 18px;
+      background: #edf7fc;
+      border: 1px solid #cfe3ee;
+      border-left: 5px solid var(--blue);
+      border-radius: 11px;
+    }
+
+    .interpretation-title {
+      display: block;
+      margin-bottom: 11px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #3d7798;
+    }
+
+    .interpretation-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .interpretation h4 {
+      margin: 0 0 5px;
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    .interpretation p {
+      margin: 0;
+      font-size: 13px;
+      color: #4f6878;
+    }
+
+    /* =========================================================
+       TABLE
+       ========================================================= */
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 11px 12px;
+      border-bottom: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      text-align: left;
+      font-size: 13px;
+    }
+
+    th {
+      background: #edf5f9;
+    }
+
+    th:last-child,
+    td:last-child {
+      border-right: 0;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .loading {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .error-box {
+      padding: 14px 16px;
+      border-radius: 10px;
+      color: var(--danger);
+      background: #fff2f3;
+      border: 1px solid #efcfd2;
+      font-weight: 700;
+    }
+
+    .footer {
+      margin-top: 40px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: #7d919f;
+      font-size: 12px;
+    }
+
+    @media (max-width: 980px) {
+      .kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .interpretation-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .driver-row {
+        grid-template-columns: 140px 1fr 64px 70px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        min-height: 280px;
+      }
+
+      .hero-inner {
+        padding: 36px 16px 30px;
+      }
+
+      .container {
+        padding: 22px 12px 38px;
+      }
+
+      .kpi-grid,
+      .pressure-grid,
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dashboard-nav {
+        width: 100%;
+      }
+
+      .nav-btn {
+        flex: 1 1 160px;
+      }
+
+      .driver-row {
+        grid-template-columns: 1fr 70px;
+        gap: 7px 12px;
+      }
+
+      .driver-bar-track {
+        grid-column: 1 / -1;
+        grid-row: 2;
+      }
+
+      .driver-count,
+      .driver-impact {
+        text-align: left;
+      }
+
+      .signal-header {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <span class="brand">TÖRÉSVONALAK.BLOG</span>
+      <h1>Conflict Driver Analysis</h1>
+      <p class="hero-subtitle">
+        Daily conflict direction and information-space drivers
+      </p>
+      <p class="hero-description">
+        The page explains which escalation and de-escalation signals shape the current daily conflict index,
+        how their impact is calculated, and what can be concluded from the balance of signals.
+      </p>
+
+      <nav class="dashboard-nav" aria-label="Dashboard navigation">
+        <a href="./index.html" class="nav-btn">Overview</a>
+        <a href="./analysis.html" class="nav-btn active" aria-current="page">Daily Driver Analysis</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- =======================================================
+         1. DAILY CONFLICT OVERVIEW
+         ======================================================= -->
+    <section class="section">
+      <h2 class="section-title">Daily Conflict Overview</h2>
+      <p class="section-intro">
+        Core indicators summarising the direction and intensity of the current daily information environment.
+      </p>
+
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <span class="kpi-label">Conflict Index</span>
+          <span class="kpi-value" id="conflict_index">Loading...</span>
+          <span class="kpi-note" id="assessment">Loading assessment...</span>
+        </div>
+
+        <div class="kpi-card escalation">
+          <span class="kpi-label">Escalation Pressure</span>
+          <span class="kpi-value" id="escalation_pressure">Loading...</span>
+          <span class="kpi-note">Weighted negative conflict signals</span>
+        </div>
+
+        <div class="kpi-card diplomacy">
+          <span class="kpi-label">Diplomatic Pressure</span>
+          <span class="kpi-value" id="diplomatic_pressure">Loading...</span>
+          <span class="kpi-note">Weighted positive diplomatic signals</span>
+        </div>
+
+        <div class="kpi-card net">
+          <span class="kpi-label">Net Signal</span>
+          <span class="kpi-value" id="net_signal">Loading...</span>
+          <span class="kpi-note">Escalation + diplomacy balance</span>
+        </div>
+      </div>
+
+      <div class="interpretation">
+        <span class="interpretation-title">Analyst Interpretation</span>
+        <div class="interpretation-grid">
+          <div>
+            <h4>What are we seeing?</h4>
+            <p id="overview_what">Loading interpretation...</p>
+          </div>
+          <div>
+            <h4>How is it calculated?</h4>
+            <p>
+              The conflict index is derived from the weighted daily headline score and normalised by the number
+              of analysed articles. Escalation and diplomatic pressure separate negative and positive signal contributions.
+            </p>
+          </div>
+          <div>
+            <h4>Conclusion</h4>
+            <p id="overview_conclusion">Loading conclusion...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         2. ESCALATION VS DIPLOMACY
+         ======================================================= -->
+    <section class="section">
+      <div class="panel">
+        <h3>Escalation vs Diplomacy</h3>
+        <p class="panel-note">
+          Direct comparison of the weighted negative and positive signals identified in today's news flow.
+        </p>
+
+        <div class="pressure-grid">
+          <div class="pressure-card escalation">
+            <span class="pressure-title">Escalation share</span>
+            <span class="pressure-value" id="escalation_share">Loading...</span>
+          </div>
+
+          <div class="pressure-card diplomacy">
+            <span class="pressure-title">Diplomatic share</span>
+            <span class="pressure-value" id="diplomatic_share">Loading...</span>
+          </div>
+        </div>
+
+        <div class="balance-track" aria-label="Escalation and diplomacy balance">
+          <div class="balance-escalation" id="balance_escalation"></div>
+          <div class="balance-diplomacy" id="balance_diplomacy"></div>
+        </div>
+
+        <div class="balance-labels">
+          <span>Escalation</span>
+          <span>Diplomacy</span>
+        </div>
+
+        <div class="interpretation">
+          <span class="interpretation-title">Analyst Interpretation</span>
+          <div class="interpretation-grid">
+            <div>
+              <h4>What are we seeing?</h4>
+              <p id="balance_what">Loading interpretation...</p>
+            </div>
+            <div>
+              <h4>How is it calculated?</h4>
+              <p>
+                The absolute weighted escalation score and diplomatic score are added together.
+                Each side is then expressed as a percentage of the combined signal volume.
+              </p>
+            </div>
+            <div>
+              <h4>Conclusion</h4>
+              <p id="balance_conclusion">Loading conclusion...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         3. TOP CONFLICT DRIVERS
+         ======================================================= -->
+    <section class="section">
+      <div class="panel">
+        <h3>Top Conflict Drivers</h3>
+        <p class="panel-note">
+          Keywords and phrases with the strongest weighted contribution to today's total score.
+        </p>
+
+        <div id="driver_list" class="driver-list">
+          <div class="loading">Loading top drivers...</div>
+        </div>
+
+        <div class="interpretation">
+          <span class="interpretation-title">Analyst Interpretation</span>
+          <div class="interpretation-grid">
+            <div>
+              <h4>What are we seeing?</h4>
+              <p id="drivers_what">Loading interpretation...</p>
+            </div>
+            <div>
+              <h4>How is it calculated?</h4>
+              <p>
+                Each recognised keyword has a predefined score. Daily impact equals the number of recognised
+                occurrences multiplied by the keyword weight. Drivers are ranked by absolute impact.
+              </p>
+            </div>
+            <div>
+              <h4>Conclusion</h4>
+              <p id="drivers_conclusion">Loading conclusion...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         4. DRIVER CATEGORIES
+         ======================================================= -->
+    <section class="section">
+      <div class="panel">
+        <h3>Driver Categories</h3>
+        <p class="panel-note">
+          Individual keywords are grouped into broader analytical themes to make the daily information environment easier to interpret.
+        </p>
+
+        <div id="category_grid" class="category-grid">
+          <div class="loading">Loading categories...</div>
+        </div>
+
+        <div class="interpretation">
+          <span class="interpretation-title">Analyst Interpretation</span>
+          <div class="interpretation-grid">
+            <div>
+              <h4>What are we seeing?</h4>
+              <p id="categories_what">Loading interpretation...</p>
+            </div>
+            <div>
+              <h4>How is it calculated?</h4>
+              <p>
+                Related keywords are aggregated into analytical groups such as military escalation,
+                casualties, threats, diplomacy, ceasefire and negotiation activity.
+              </p>
+            </div>
+            <div>
+              <h4>Conclusion</h4>
+              <p id="categories_conclusion">Loading conclusion...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         5. KEY DAILY SIGNALS
+         ======================================================= -->
+    <section class="section">
+      <div class="panel">
+        <h3>Key Daily Signals</h3>
+        <p class="panel-note">
+          Selected headlines with the largest positive or negative weighted contribution to the daily conflict signal.
+        </p>
+
+        <ul id="signal_list" class="signal-list">
+          <li class="loading">Loading daily signals...</li>
+        </ul>
+
+        <div class="interpretation">
+          <span class="interpretation-title">Analyst Interpretation</span>
+          <div class="interpretation-grid">
+            <div>
+              <h4>What are we seeing?</h4>
+              <p id="signals_what">Loading interpretation...</p>
+            </div>
+            <div>
+              <h4>How is it calculated?</h4>
+              <p>
+                Headlines are ranked using their existing article score. The strongest escalation and de-escalation
+                items are displayed with the matched signal tags that produced the score.
+              </p>
+            </div>
+            <div>
+              <h4>Conclusion</h4>
+              <p id="signals_conclusion">Loading conclusion...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         6. DAILY DRIVER TABLE
+         ======================================================= -->
+    <section class="section">
+      <div class="panel">
+        <h3>Daily Driver Table</h3>
+        <p class="panel-note">
+          Detailed numerical breakdown of the main daily conflict drivers.
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Driver</th>
+                <th>Category</th>
+                <th>Count</th>
+                <th>Weight</th>
+                <th>Impact</th>
+              </tr>
+            </thead>
+            <tbody id="driver_table_body">
+              <tr>
+                <td colspan="5" class="loading">Loading driver table...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="interpretation">
+          <span class="interpretation-title">Analyst Interpretation</span>
+          <div class="interpretation-grid">
+            <div>
+              <h4>What are we seeing?</h4>
+              <p>
+                The table provides the numerical detail behind the visual driver ranking and shows which terms are responsible for the daily score.
+              </p>
+            </div>
+            <div>
+              <h4>How is it calculated?</h4>
+              <p>
+                Impact is calculated as the detected daily count multiplied by the predefined keyword weight.
+              </p>
+            </div>
+            <div>
+              <h4>Conclusion</h4>
+              <p id="table_conclusion">Loading conclusion...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="load_error" style="display:none; margin-top:20px;" class="error-box"></div>
+
+    <footer class="footer">
+      Data source: automated news monitoring pipeline.<br>
+      This analytical page explains the current day's conflict signals and does not yet use historical driver data.
+    </footer>
+
+  </main>
+
+  <script>
+    const formatSigned = (value) => {
+      const num = Number(value ?? 0);
+      if (num > 0) return "+" + num;
+      return String(num);
+    };
+
+    const safeArray = (value) => Array.isArray(value) ? value : [];
+
+    function buildOverviewText(data) {
+      const index = Number(data.conflict_index ?? 0);
+      const assessment = data.assessment ?? "unknown";
+
+      let what = `The current conflict index is ${index.toFixed(2)}, classified as ${assessment}. `;
+      if (index < 0) {
+        what += "The daily information environment is therefore tilted toward escalation.";
+      } else if (index > 0) {
+        what += "The daily information environment is therefore tilted toward de-escalation.";
+      } else {
+        what += "The daily information environment is currently balanced.";
+      }
+
+      let conclusion;
+      if (index <= -2) {
+        conclusion = "Escalatory signals are strongly dominant. Military, retaliatory or casualty-related reporting is exerting substantial downward pressure on the index.";
+      } else if (index < -1) {
+        conclusion = "The balance still points clearly toward escalation, although the intensity is below the strongest escalation range.";
+      } else if (index < 0) {
+        conclusion = "Tension remains visible, but the information environment is not dominated by extreme escalation signals.";
+      } else if (index < 1) {
+        conclusion = "Escalatory and diplomatic signals are relatively balanced, so the current direction remains mixed.";
+      } else {
+        conclusion = "Diplomatic and de-escalatory signals are currently strong enough to dominate the daily information environment.";
+      }
+
+      return { what, conclusion };
+    }
+
+    function renderBalance(data) {
+      const escalation = Math.abs(Number(data.escalation_pressure ?? 0));
+      const diplomacy = Math.abs(Number(data.diplomatic_pressure ?? 0));
+      const total = escalation + diplomacy;
+
+      const escalationShare = total > 0 ? (escalation / total) * 100 : 0;
+      const diplomacyShare = total > 0 ? (diplomacy / total) * 100 : 0;
+
+      document.getElementById("escalation_share").textContent = escalationShare.toFixed(1) + "%";
+      document.getElementById("diplomatic_share").textContent = diplomacyShare.toFixed(1) + "%";
+      document.getElementById("balance_escalation").style.width = escalationShare + "%";
+      document.getElementById("balance_diplomacy").style.width = diplomacyShare + "%";
+
+      let what = `Escalation accounts for ${escalationShare.toFixed(1)}% of weighted directional signals, while diplomacy accounts for ${diplomacyShare.toFixed(1)}%.`;
+      let conclusion;
+
+      if (escalationShare >= 70) {
+        conclusion = "The daily signal balance is heavily escalation-dominated. Diplomatic reporting is present but does not materially offset military or coercive signals.";
+      } else if (diplomacyShare >= 70) {
+        conclusion = "The daily signal balance is heavily diplomacy-dominated, indicating a strong shift toward negotiation, ceasefire or de-escalation language.";
+      } else {
+        conclusion = "Neither side completely dominates the information environment. The conflict signal remains mixed and should be interpreted together with the overall index.";
+      }
+
+      document.getElementById("balance_what").textContent = what;
+      document.getElementById("balance_conclusion").textContent = conclusion;
+    }
+
+    function renderDrivers(drivers) {
+      const list = document.getElementById("driver_list");
+      list.innerHTML = "";
+
+      if (!drivers.length) {
+        list.innerHTML = '<div class="loading">No driver data available.</div>';
+        return;
+      }
+
+      const maxImpact = Math.max(...drivers.map(d => Math.abs(Number(d.impact ?? 0))), 1);
+
+      drivers.slice(0, 10).forEach(driver => {
+        const impact = Number(driver.impact ?? 0);
+        const row = document.createElement("div");
+        row.className = "driver-row";
+
+        const name = document.createElement("div");
+        name.className = "driver-name";
+        name.textContent = driver.driver ?? driver.keyword ?? "Unknown";
+
+        const track = document.createElement("div");
+        track.className = "driver-bar-track";
+
+        const bar = document.createElement("div");
+        bar.className = "driver-bar " + (impact < 0 ? "negative" : "positive");
+        bar.style.width = Math.max(3, (Math.abs(impact) / maxImpact) * 100) + "%";
+        track.appendChild(bar);
+
+        const count = document.createElement("div");
+        count.className = "driver-count";
+        count.textContent = "× " + (driver.count ?? 0);
+
+        const impactEl = document.createElement("div");
+        impactEl.className = "driver-impact " + (impact < 0 ? "negative" : "positive");
+        impactEl.textContent = formatSigned(impact);
+
+        row.appendChild(name);
+        row.appendChild(track);
+        row.appendChild(count);
+        row.appendChild(impactEl);
+
+        list.appendChild(row);
+      });
+
+      const first = drivers[0];
+      const firstName = first?.driver ?? first?.keyword ?? "the leading driver";
+      const firstImpact = Number(first?.impact ?? 0);
+
+      document.getElementById("drivers_what").textContent =
+        `${firstName} is currently the strongest individual driver, with a weighted impact of ${formatSigned(firstImpact)}.`;
+
+      document.getElementById("drivers_conclusion").textContent =
+        firstImpact < 0
+          ? "The strongest individual signals are reinforcing escalation pressure in the daily score."
+          : "The strongest individual signals are currently supporting de-escalation pressure in the daily score.";
+    }
+
+    function renderCategories(categories) {
+      const grid = document.getElementById("category_grid");
+      grid.innerHTML = "";
+
+      if (!categories.length) {
+        grid.innerHTML = '<div class="loading">No category data available.</div>';
+        return;
+      }
+
+      categories.forEach(category => {
+        const card = document.createElement("div");
+        card.className = "category-card";
+
+        const name = document.createElement("span");
+        name.className = "category-name";
+        name.textContent = category.category ?? "Unknown category";
+
+        const score = document.createElement("span");
+        score.className = "category-score";
+        score.textContent = formatSigned(category.score ?? 0);
+        score.style.color = Number(category.score ?? 0) < 0 ? "#a43e48" : "#26785f";
+
+        const keywords = document.createElement("span");
+        keywords.className = "category-keywords";
+        keywords.textContent = safeArray(category.keywords).join(", ") || "No keyword detail";
+
+        card.appendChild(name);
+        card.appendChild(score);
+        card.appendChild(keywords);
+        grid.appendChild(card);
+      });
+
+      const sorted = [...categories].sort((a, b) => Math.abs(Number(b.score ?? 0)) - Math.abs(Number(a.score ?? 0)));
+      const dominant = sorted[0];
+
+      document.getElementById("categories_what").textContent =
+        dominant
+          ? `${dominant.category} is the strongest thematic category today, with an aggregated score of ${formatSigned(dominant.score)}.`
+          : "No dominant thematic category could be identified.";
+
+      document.getElementById("categories_conclusion").textContent =
+        dominant && Number(dominant.score) < 0
+          ? "The dominant thematic cluster is contributing to escalation, indicating that related conflict signals are concentrated rather than isolated."
+          : "The dominant thematic cluster is contributing to de-escalation or remains balanced.";
+    }
+
+    function renderSignals(signals) {
+      const list = document.getElementById("signal_list");
+      list.innerHTML = "";
+
+      if (!signals.length) {
+        list.innerHTML = '<li class="loading">No key daily signals available.</li>';
+        return;
+      }
+
+      signals.slice(0, 12).forEach(signal => {
+        const li = document.createElement("li");
+        li.className = "signal-item";
+
+        const header = document.createElement("div");
+        header.className = "signal-header";
+
+        const link = document.createElement("a");
+        link.className = "signal-title";
+        link.href = signal.link || "#";
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = signal.title || "Untitled signal";
+
+        const score = Number(signal.score ?? 0);
+        const badge = document.createElement("span");
+        badge.className = "signal-score " + (score < 0 ? "negative" : "positive");
+        badge.textContent = "score " + formatSigned(score);
+
+        header.appendChild(link);
+        header.appendChild(badge);
+        li.appendChild(header);
+
+        const tags = safeArray(signal.tags ?? signal.keywords);
+        if (tags.length) {
+          const tagRow = document.createElement("div");
+          tagRow.className = "tag-row";
+
+          tags.forEach(tagText => {
+            const tag = document.createElement("span");
+            tag.className = "tag";
+            tag.textContent = tagText;
+            tagRow.appendChild(tag);
+          });
+
+          li.appendChild(tagRow);
+        }
+
+        list.appendChild(li);
+      });
+
+      const negative = signals.filter(s => Number(s.score ?? 0) < 0).length;
+      const positive = signals.filter(s => Number(s.score ?? 0) > 0).length;
+
+      document.getElementById("signals_what").textContent =
+        `${signals.length} high-impact daily signals are displayed: ${negative} escalation-oriented and ${positive} de-escalation-oriented.`;
+
+      document.getElementById("signals_conclusion").textContent =
+        negative > positive
+          ? "The most influential headlines are skewed toward escalation, which supports the negative side of the daily index."
+          : positive > negative
+            ? "The most influential headlines are skewed toward diplomacy and de-escalation."
+            : "The strongest daily headlines are evenly split between escalation and de-escalation signals.";
+    }
+
+    function renderDriverTable(drivers) {
+      const tbody = document.getElementById("driver_table_body");
+      tbody.innerHTML = "";
+
+      if (!drivers.length) {
+        tbody.innerHTML = '<tr><td colspan="5">No driver data available.</td></tr>';
+        return;
+      }
+
+      drivers.forEach(driver => {
+        const tr = document.createElement("tr");
+
+        const values = [
+          driver.driver ?? driver.keyword ?? "Unknown",
+          driver.category ?? "Uncategorised",
+          driver.count ?? 0,
+          formatSigned(driver.weight ?? 0),
+          formatSigned(driver.impact ?? 0)
+        ];
+
+        values.forEach(value => {
+          const td = document.createElement("td");
+          td.textContent = value;
+          tr.appendChild(td);
+        });
+
+        tbody.appendChild(tr);
+      });
+
+      const negativeTotal = drivers
+        .filter(d => Number(d.impact ?? 0) < 0)
+        .reduce((sum, d) => sum + Number(d.impact ?? 0), 0);
+
+      const positiveTotal = drivers
+        .filter(d => Number(d.impact ?? 0) > 0)
+        .reduce((sum, d) => sum + Number(d.impact ?? 0), 0);
+
+      document.getElementById("table_conclusion").textContent =
+        `The detailed driver table contains ${drivers.length} detected terms. Their listed impacts sum to ${formatSigned(negativeTotal)} on the escalation side and ${formatSigned(positiveTotal)} on the de-escalation side.`;
+    }
+
+    fetch("./analysis.json?ts=" + Date.now())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("HTTP error: " + response.status);
+        }
+        return response.json();
+      })
+      .then(data => {
+        document.getElementById("conflict_index").textContent =
+          Number(data.conflict_index ?? 0).toFixed(2);
+
+        document.getElementById("assessment").textContent =
+          data.assessment ?? "n/a";
+
+        document.getElementById("escalation_pressure").textContent =
+          formatSigned(data.escalation_pressure ?? 0);
+
+        document.getElementById("diplomatic_pressure").textContent =
+          formatSigned(data.diplomatic_pressure ?? 0);
+
+        document.getElementById("net_signal").textContent =
+          formatSigned(data.net_signal ?? 0);
+
+        const overview = buildOverviewText(data);
+        document.getElementById("overview_what").textContent = overview.what;
+        document.getElementById("overview_conclusion").textContent = overview.conclusion;
+
+        renderBalance(data);
+
+        const drivers = safeArray(data.top_drivers ?? data.drivers);
+        const categories = safeArray(data.categories);
+        const signals = safeArray(data.key_signals ?? data.signals);
+
+        renderDrivers(drivers);
+        renderCategories(categories);
+        renderSignals(signals);
+        renderDriverTable(drivers);
+      })
+      .catch(error => {
+        const box = document.getElementById("load_error");
+        box.style.display = "block";
+        box.textContent =
+          "analysis.json could not be loaded. The page layout is ready, but the daily analysis data generator still needs to be connected.";
+        console.error(error);
+      });
+  </script>
+</body>
+</html>
