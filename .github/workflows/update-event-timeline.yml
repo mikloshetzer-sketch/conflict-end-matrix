@@ -14,8 +14,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout full repository history
         uses: actions/checkout@v4
+        with:
+          # REQUIRED:
+          # generate_event_timeline.py reconstructs historical
+          # latest_scored.json versions from Git history.
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -29,14 +34,12 @@ jobs:
             pip install -r requirements.txt
           fi
 
-      - name: Generate non-kinetic event timeline
+      - name: Generate historical non-kinetic event timeline
         run: |
           python src/generate_event_timeline.py
 
       - name: Validate event timeline
         run: |
-          echo "Checking docs/event_timeline.json..."
-
           if [ ! -f docs/event_timeline.json ]; then
             echo "ERROR: docs/event_timeline.json was not generated."
             exit 1
@@ -51,40 +54,42 @@ jobs:
           with path.open("r", encoding="utf-8") as f:
               data = json.load(f)
 
-          if "events" not in data:
-              raise SystemExit("ERROR: 'events' key missing from event_timeline.json")
+          events = data.get("events")
 
-          if not isinstance(data["events"], list):
+          if not isinstance(events, list):
               raise SystemExit("ERROR: 'events' must be a list")
 
-          for i, event in enumerate(data["events"]):
-              required = [
-                  "event_id",
-                  "timestamp",
-                  "event_type",
-                  "subtype",
-                  "diplomatic_event",
-                  "military_event",
-                  "direction",
-                  "keywords",
-              ]
+          required_event_fields = {
+              "event_id",
+              "timestamp",
+              "event_type",
+              "subtype",
+              "diplomatic_event",
+              "military_event",
+              "direction",
+              "keywords",
+          }
 
-              missing = [key for key in required if key not in event]
-
+          for index, event in enumerate(events):
+              missing = sorted(required_event_fields - set(event))
               if missing:
                   raise SystemExit(
-                      f"ERROR: Event {i} missing fields: {', '.join(missing)}"
+                      f"ERROR: event {index} missing: {', '.join(missing)}"
                   )
 
               if event.get("military_event"):
                   raise SystemExit(
-                      f"ERROR: Event {i} contains military_event data. "
-                      "This generator must remain non-kinetic only."
+                      f"ERROR: event {index} contains military_event data. "
+                      "This generator must stay non-kinetic."
                   )
 
           print("event_timeline.json valid")
-          print("Events:", len(data["events"]))
-          print("Military events included:", data.get("military_events_included"))
+          print("Historical versions:",
+                data.get("historical_scored_versions_read"))
+          print("Unique articles:",
+                data.get("unique_articles_scanned"))
+          print("Events:", len(events))
+          print("Types:", data.get("event_type_counts"))
           PY
 
       - name: Commit event timeline
@@ -97,6 +102,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No event timeline changes to commit."
           else
-            git commit -m "Update diplomacy and conflict event timeline"
+            git commit -m "Update historical diplomacy event timeline"
             git push
           fi
