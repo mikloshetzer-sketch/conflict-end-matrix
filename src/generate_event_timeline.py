@@ -55,6 +55,7 @@ THREAT_TERMS = {
     "warns",
     "ultimatum",
     "retaliation",
+    "escalation",
 }
 
 # Titles containing these ideas are usually descriptive reporting about
@@ -92,6 +93,33 @@ THREAT_PATTERNS = [
     r"\bultimatum\b",
     r"\bvows?\s+(?:to\s+)?(?:retaliate|respond|strike|attack)\b",
     r"\bpromises?\s+(?:a\s+)?(?:response|retaliation)\b",
+]
+
+# Broader NON-KINETIC escalation signals. These capture political/military
+# posture and breakdown of diplomacy without treating an actual attack
+# as an informational event.
+ESCALATION_POSTURE_PATTERNS = [
+    # Explicit intensification / escalation announcements
+    r"\b(?:plans?|planning|ready|prepares?|preparing|intends?|intention)\b.*\b(?:intensify|escalate|expand|broaden)\b",
+    r"\b(?:intensify|intensifies|intensified|escalate|escalates|escalated|escalation)\b.*\b(?:conflict|war|campaign|pressure|response|operations?)\b",
+
+    # Military posture without an actual strike
+    r"\b(?:deploys?|deployment|sends?|sending|moves?|moving)\b.*\b(?:troops?|forces?|aircraft|bombers?|warships?|carrier|missiles?|air defence|air defense)\b",
+    r"\b(?:raises?|raised|increases?|increased)\b.*\b(?:alert|readiness|military readiness|force posture)\b",
+    r"\b(?:mobilises?|mobilizes?|mobilisation|mobilization)\b",
+
+    # Diplomatic breakdown / rejection
+    r"\b(?:rejects?|rejected|rules out|ruled out)\b.*\b(?:ceasefire|truce|talks?|negotiations?|deal|peace proposal|peace plan)\b",
+    r"\b(?:suspends?|suspended|halts?|halted|breaks off|broke off|withdraws?|withdrew)\b.*\b(?:talks?|negotiations?|dialogue|agreement|deal|ceasefire)\b",
+    r"\b(?:talks?|negotiations?)\b.*\b(?:collapse|collapsed|fail|failed|break down|broke down|deadlock|stalemate)\b",
+
+    # Coercive political/economic pressure
+    r"\b(?:imposes?|imposed|announces?|announced)\b.*\b(?:new sanctions|sanctions|blockade|embargo)\b",
+    r"\b(?:tightens?|tightened|expands?|expanded)\b.*\b(?:sanctions|blockade|embargo|restrictions)\b",
+
+    # Red-line / consequence language
+    r"\b(?:red line|red lines)\b",
+    r"\b(?:serious|grave|severe)\s+consequences\b",
 ]
 
 # Strong diplomatic language in title.
@@ -271,6 +299,22 @@ def is_real_threat_statement(title: str, terms: set[str]) -> bool:
     return regex_any(THREAT_PATTERNS, title_lower)
 
 
+def is_escalation_posture(title: str, terms: set[str]) -> bool:
+    """
+    Detect non-kinetic escalatory posture such as military deployments,
+    readiness increases, rejection/breakdown of talks, sanctions pressure,
+    explicit plans to intensify operations, or red-line rhetoric.
+
+    Completed kinetic actions remain excluded by KINETIC_ACTION_PATTERNS.
+    """
+    title_lower = title.lower()
+
+    if regex_any(KINETIC_ACTION_PATTERNS, title_lower):
+        return False
+
+    return regex_any(ESCALATION_POSTURE_PATTERNS, title_lower)
+
+
 def is_diplomatic_event(title: str, terms: set[str]) -> bool:
     title_lower = title.lower()
 
@@ -322,9 +366,26 @@ def classify_non_kinetic_event(
             "primary_keyword": primary,
         }
 
+    # Broader non-kinetic escalation posture:
+    # deployment/readiness, rejection or collapse of talks, sanctions,
+    # explicit plans to intensify operations, red-line rhetoric.
+    if is_escalation_posture(title, terms):
+        posture_keyword = "escalatory_posture"
+        matched_escalation_terms = sorted(terms & THREAT_TERMS)
+        if matched_escalation_terms:
+            posture_keyword = matched_escalation_terms[0]
+
+        return {
+            "event_type": "threat",
+            "subtype": posture_keyword,
+            "direction": "escalation",
+            "primary_keyword": posture_keyword,
+        }
+
     # Threat / warning / retaliation statement.
     if is_real_threat_statement(title, terms):
-        primary = sorted(terms & THREAT_TERMS)[0]
+        matched_threat_terms = sorted(terms & THREAT_TERMS)
+        primary = matched_threat_terms[0] if matched_threat_terms else "threat"
         return {
             "event_type": "threat",
             "subtype": primary,
