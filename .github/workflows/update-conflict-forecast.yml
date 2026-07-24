@@ -1,0 +1,112 @@
+name: Update Conflict Forecast
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    # Runs after the conflict-analysis workflow.
+    - cron: "25 6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: conflict-forecast
+  cancel-in-progress: false
+
+jobs:
+  update-conflict-forecast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Check analysis input
+        run: |
+          test -f docs/conflict_analysis.json
+
+      - name: Generate walk-forward backtest and forecast
+        run: |
+          python src/generate_conflict_forecast.py
+
+      - name: Validate forecast
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("docs/conflict_forecast.json")
+
+          if not path.exists():
+              raise SystemExit("ERROR: conflict_forecast.json missing")
+
+          with path.open("r", encoding="utf-8") as f:
+              data = json.load(f)
+
+          if data.get("forecast_model") != "historical_analogue_walkforward_v1":
+              raise SystemExit("ERROR: unexpected forecast model")
+
+          backtest = data.get("backtest", {})
+          metrics = backtest.get("model_metrics", {})
+          baseline = backtest.get("persistence_baseline", {})
+          latest = data.get("latest_forecast", {}).get("forecasts", {})
+
+          for horizon in ("24h", "48h", "72h"):
+              if horizon not in metrics:
+                  raise SystemExit(f"ERROR: missing backtest metric {horizon}")
+
+              accuracy = metrics[horizon].get("accuracy_pct")
+              if accuracy is not None and not (0 <= float(accuracy) <= 100):
+                  raise SystemExit(
+                      f"ERROR: invalid accuracy for {horizon}: {accuracy}"
+                  )
+
+              if horizon not in baseline:
+                  raise SystemExit(f"ERROR: missing baseline {horizon}")
+
+              forecast = latest.get(horizon)
+              if forecast is not None:
+                  if forecast.get("direction") not in {
+                      "increase", "stable", "decrease"
+                  }:
+                      raise SystemExit(
+                          f"ERROR: invalid direction for {horizon}"
+                      )
+
+                  confidence = forecast.get("confidence")
+                  if confidence not in {"alacsony", "közepes", "magas"}:
+                      raise SystemExit(
+                          f"ERROR: invalid confidence for {horizon}"
+                      )
+
+          print("conflict_forecast.json valid")
+          print("Model metrics:", metrics)
+          print("Baseline:", baseline)
+          print("Latest:", latest)
+          print("HU summary:", data.get("hungarian_summary"))
+          PY
+
+      - name: Commit forecast output
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add docs/conflict_forecast.json
+
+          if git diff --cached --quiet; then
+            echo "No forecast changes to commit."
+          else
+            git commit -m "Update short-term conflict forecast"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
