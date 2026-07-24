@@ -54,8 +54,12 @@ jobs:
           with path.open("r", encoding="utf-8") as f:
               data = json.load(f)
 
-          if data.get("analysis_model") != "conflict_analysis_v1":
+          if data.get("analysis_model") != "conflict_analysis_v1_1":
               raise SystemExit("ERROR: unexpected analysis model")
+
+          period = data.get("analysis_period", {})
+          if not period.get("start") or not period.get("end"):
+              raise SystemExit("ERROR: analysis_period missing")
 
           daily = data.get("daily")
           if not isinstance(daily, list) or not daily:
@@ -93,6 +97,7 @@ jobs:
               raise SystemExit("ERROR: lag signals missing")
 
           print("conflict_analysis.json valid")
+          print("Analysis period:", data.get("analysis_period"))
           print("Daily rows:", len(daily))
           print("Latest:", data.get("latest"))
           print(
