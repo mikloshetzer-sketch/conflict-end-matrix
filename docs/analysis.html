@@ -1144,6 +1144,113 @@
       }
     }
 
+    /* =========================================================
+       CONFLICT ANALYSIS V1.2 VISUAL LAYER
+       ========================================================= */
+    .analysis-kpis{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+      margin:16px 0;
+    }
+    .analysis-kpi{
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:14px;
+      background:#fff;
+      box-shadow:0 6px 20px rgba(31,72,99,.05);
+    }
+    .analysis-kpi .label{
+      font-size:10px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+      color:var(--muted);
+    }
+    .analysis-kpi .value{
+      margin-top:6px;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:30px;
+      font-weight:700;
+      color:var(--text);
+    }
+    .analysis-kpi .sub{
+      margin-top:4px;
+      font-size:11px;
+      color:var(--muted);
+      line-height:1.4;
+    }
+    .analysis-kpi.military{background:#fff7f7}
+    .analysis-kpi.diplomatic{background:#f5fbff}
+    .analysis-kpi.gap{background:#fbf8ff}
+
+    .analytics-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-top:14px;
+    }
+    .analytics-card{
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#fff;
+      padding:14px;
+    }
+    .analytics-card h3{
+      margin:0 0 4px;
+      font-size:16px;
+      color:var(--text);
+    }
+    .analytics-card .card-sub{
+      color:var(--muted);
+      font-size:11px;
+      margin-bottom:10px;
+      line-height:1.45;
+    }
+    .analytics-chart{
+      position:relative;
+      min-height:300px;
+      border:1px solid #e1e9ee;
+      border-radius:10px;
+      background:#fbfdfe;
+      overflow:hidden;
+    }
+    .analytics-chart svg{
+      display:block;
+      width:100%;
+      height:300px;
+    }
+    .lag-table{
+      width:100%;
+      border-collapse:collapse;
+      font-size:11px;
+    }
+    .lag-table th,.lag-table td{
+      border-bottom:1px solid #e2eaef;
+      padding:8px 6px;
+      text-align:center;
+    }
+    .lag-table th:first-child,.lag-table td:first-child{text-align:left}
+    .lag-good{color:#2a7758;font-weight:800}
+    .lag-bad{color:#aa3943;font-weight:800}
+    .lag-neutral{color:#6f7f89;font-weight:800}
+    .analysis-badge{
+      display:inline-block;
+      padding:4px 8px;
+      border-radius:999px;
+      font-size:10px;
+      font-weight:800;
+      border:1px solid #d7e3ea;
+      background:#f7fafc;
+    }
+    .analysis-badge.high{background:#fff0f1;color:#a63b45;border-color:#efcfd3}
+    .analysis-badge.low{background:#eef8f4;color:#2a725a;border-color:#cfe5dc}
+    .analysis-badge.moderate{background:#fff6e8;color:#986100;border-color:#ecd7ae}
+    .analysis-badge.very-high{background:#f7edf9;color:#7b3d8d;border-color:#dfcae5}
+    @media (max-width:900px){
+      .analysis-kpis,.analytics-grid{grid-template-columns:1fr}
+    }
+
   </style>
 </head>
 
@@ -1525,6 +1632,92 @@
         </div>
 
         
+        
+        <div class="event-balance-panel" id="conflict_analysis_panel">
+          <div class="event-balance-header">
+            <span class="event-balance-title">Conflict Analysis</span>
+            <span class="event-balance-period" id="analysis_period_label">Loading…</span>
+          </div>
+
+          <div class="analysis-kpis">
+            <div class="analysis-kpi military">
+              <div class="label">Military Activity Index</div>
+              <div class="value" id="kpi_mai">—</div>
+              <div class="sub" id="kpi_mai_sub">Weighted daily kinetic intensity</div>
+            </div>
+            <div class="analysis-kpi diplomatic">
+              <div class="label">Diplomatic Direction Index</div>
+              <div class="value" id="kpi_ddi">—</div>
+              <div class="sub" id="kpi_ddi_sub">−100 escalation · +100 de-escalation</div>
+            </div>
+            <div class="analysis-kpi gap">
+              <div class="label">Diplomacy–Military Gap</div>
+              <div class="value" id="kpi_gap">—</div>
+              <div class="sub" id="kpi_gap_sub">Signal–activity divergence</div>
+            </div>
+          </div>
+
+          <div class="analytics-grid">
+            <div class="analytics-card">
+              <h3>MAI + DDI Time Series</h3>
+              <div class="card-sub">Military Activity Index and Diplomatic Direction Index across complete UTC days.</div>
+              <div class="analytics-chart">
+                <svg id="mai_ddi_svg" viewBox="0 0 1000 300" preserveAspectRatio="none"></svg>
+              </div>
+            </div>
+
+            <div class="analytics-card">
+              <h3>Diplomacy–Military Gap</h3>
+              <div class="card-sub">Daily divergence/convergence between diplomatic signalling and military pressure.</div>
+              <div class="analytics-chart">
+                <svg id="gap_svg" viewBox="0 0 1000 300" preserveAspectRatio="none"></svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="analytics-card" style="margin-top:14px">
+            <h3>Lag Analysis</h3>
+            <div class="card-sub">How weighted military activity changes after classified diplomatic signals. Temporal association only.</div>
+            <div style="overflow-x:auto">
+              <table class="lag-table">
+                <thead>
+                  <tr>
+                    <th>Signal</th>
+                    <th>6h</th>
+                    <th>12h</th>
+                    <th>24h</th>
+                    <th>48h</th>
+                    <th>72h</th>
+                  </tr>
+                </thead>
+                <tbody id="lag_analysis_body">
+                  <tr><td colspan="6">Loading…</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="interpretation">
+            <span class="interpretation-title">Analyst Interpretation</span>
+            <div class="interpretation-grid">
+              <div>
+                <h4>What are we seeing?</h4>
+                <p id="conflict_analysis_what">Loading analytical metrics…</p>
+              </div>
+              <div>
+                <h4>How is it calculated?</h4>
+                <p id="conflict_analysis_how">
+                  MAI uses weighted kinetic activity. DDI aggregates daily direction scores. The Gap compares DDI with military pressure relative to the previous 7-day average.
+                </p>
+              </div>
+              <div>
+                <h4>Conclusion</h4>
+                <p id="conflict_analysis_conclusion">Loading…</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="matrix-toolbar">
           <div class="matrix-nav">
             <button id="matrix_prev" class="matrix-btn" type="button">← Previous 7 days</button>
@@ -2156,6 +2349,157 @@
     function setupTimelineControls(){document.querySelectorAll(".range-btn").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".range-btn").forEach(x=>x.classList.remove("active"));b.classList.add("active");currentRange=b.dataset.range;document.getElementById("custom_range").classList.toggle("visible",currentRange==="custom");applyTimelineFilters()}));["actor_filter","event_filter","confidence_filter","linked_filter","date_from","date_to"].forEach(id=>document.getElementById(id).addEventListener("change",applyTimelineFilters));document.getElementById("event_search").addEventListener("input",applyTimelineFilters);document.getElementById("load_more_events").addEventListener("click",()=>{visibleEventRows+=30;renderTimeline()})}
 
 
+
+    // =========================================================
+    // CONFLICT ANALYSIS V1.2 VISUALS
+    // =========================================================
+    function analyticsSvgEl(name,attrs={}){
+      const el=document.createElementNS("http://www.w3.org/2000/svg",name);
+      Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,String(v)));
+      return el;
+    }
+
+    function renderDualSeries(svgId, rows){
+      const svg=document.getElementById(svgId);
+      if(!svg||!rows.length)return;
+      svg.innerHTML="";
+      const W=1000,H=300,left=56,right=18,top=18,bottom=34;
+      const cw=W-left-right,ch=H-top-bottom;
+
+      [-100,-50,0,50,100].forEach(v=>{
+        const y=top+ch-((v+100)/200)*ch;
+        svg.appendChild(analyticsSvgEl("line",{x1:left,y1:y,x2:W-right,y2:y,stroke:"#e0e8ed","stroke-width":1}));
+        const t=analyticsSvgEl("text",{x:left-8,y:y+4,"text-anchor":"end","font-size":10,fill:"#7c8f9b"});
+        t.textContent=v;
+        svg.appendChild(t);
+      });
+
+      const x=i=>left+(i/(rows.length-1||1))*cw;
+      const y=v=>top+ch-((v+100)/200)*ch;
+
+      const maiPath=rows.map((r,i)=>(i?"L":"M")+x(i)+" "+y((r.military.activity_index*2)-100)).join(" ");
+      const ddiPath=rows.map((r,i)=>(i?"L":"M")+x(i)+" "+y(r.diplomatic.direction_index)).join(" ");
+
+      svg.appendChild(analyticsSvgEl("path",{d:maiPath,fill:"none",stroke:"#c6535c","stroke-width":3,"stroke-linejoin":"round"}));
+      svg.appendChild(analyticsSvgEl("path",{d:ddiPath,fill:"none",stroke:"#2788c4","stroke-width":3,"stroke-linejoin":"round"}));
+
+      const l1=analyticsSvgEl("text",{x:left,y:14,"font-size":11,fill:"#c6535c"}); l1.textContent="MAI (scaled to -100..100)";
+      const l2=analyticsSvgEl("text",{x:left+180,y:14,"font-size":11,fill:"#2788c4"}); l2.textContent="DDI";
+      svg.appendChild(l1); svg.appendChild(l2);
+    }
+
+    function renderGap(svgId, rows){
+      const svg=document.getElementById(svgId);
+      if(!svg||!rows.length)return;
+      svg.innerHTML="";
+      const W=1000,H=300,left=56,right=18,top=18,bottom=34;
+      const cw=W-left-right,ch=H-top-bottom;
+      const values=rows.map(r=>Number(r.gap.divergence_score||0));
+      const maxAbs=Math.max(100,...values.map(v=>Math.abs(v)));
+      const x=i=>left+(i/(rows.length-1||1))*cw;
+      const y=v=>top+ch-((v+maxAbs)/(maxAbs*2))*ch;
+
+      [-maxAbs,0,maxAbs].forEach(v=>{
+        const yy=y(v);
+        svg.appendChild(analyticsSvgEl("line",{x1:left,y1:yy,x2:W-right,y2:yy,stroke:"#e0e8ed","stroke-width":1}));
+        const t=analyticsSvgEl("text",{x:left-8,y:yy+4,"text-anchor":"end","font-size":10,fill:"#7c8f9b"});
+        t.textContent=Math.round(v);
+        svg.appendChild(t);
+      });
+
+      const p=rows.map((r,i)=>(i?"L":"M")+x(i)+" "+y(Number(r.gap.divergence_score||0))).join(" ");
+      svg.appendChild(analyticsSvgEl("path",{d:p,fill:"none",stroke:"#7d5aa6","stroke-width":3,"stroke-linejoin":"round"}));
+    }
+
+    function renderLagTable(lag){
+      const body=document.getElementById("lag_analysis_body");
+      if(!body)return;
+      body.innerHTML="";
+
+      ["escalation","de-escalation"].forEach(direction=>{
+        const tr=document.createElement("tr");
+        const first=document.createElement("td");
+        first.innerHTML=`<strong>${direction}</strong>`;
+        tr.appendChild(first);
+
+        ["6h","12h","24h","48h","72h"].forEach(key=>{
+          const td=document.createElement("td");
+          const item=lag?.aggregate?.[direction]?.[key];
+          if(!item||item.median_change_pct==null){
+            td.textContent="—";
+          }else{
+            const v=Number(item.median_change_pct);
+            const cls=v>5?"lag-bad":v<-5?"lag-good":"lag-neutral";
+            td.innerHTML=`<span class="${cls}">${v>0?"+":""}${v.toFixed(1)}%</span><br><small>${item.signal_count} signals</small>`;
+          }
+          tr.appendChild(td);
+        });
+
+        body.appendChild(tr);
+      });
+    }
+
+    function renderConflictAnalysis(data){
+      const latest=data.latest||{};
+      const period=data.analysis_period||{};
+      const daily=Array.isArray(data.daily)?data.daily:[];
+
+      document.getElementById("analysis_period_label").textContent=
+        `${period.daily_analysis_start_date||"?"} – ${period.end_date||"?"}`;
+
+      document.getElementById("kpi_mai").textContent=
+        latest.military_activity_index!=null?Number(latest.military_activity_index).toFixed(1):"—";
+      document.getElementById("kpi_mai_sub").textContent=
+        latest.military_change_vs_7d_pct!=null
+          ? `${latest.military_change_vs_7d_pct>0?"+":""}${Number(latest.military_change_vs_7d_pct).toFixed(1)}% vs previous 7-day average`
+          : "No 7-day comparison available";
+
+      document.getElementById("kpi_ddi").textContent=
+        latest.diplomatic_direction_index!=null
+          ? `${Number(latest.diplomatic_direction_index)>0?"+":""}${Number(latest.diplomatic_direction_index).toFixed(1)}`
+          : "—";
+
+      const gap=latest.diplomacy_military_gap||{};
+      document.getElementById("kpi_gap").textContent=
+        gap.strength!=null?Number(gap.strength).toFixed(1):"—";
+      document.getElementById("kpi_gap_sub").innerHTML=
+        gap.level
+          ? `<span class="analysis-badge ${String(gap.level).toLowerCase().replace(/\s+/g,"-")}">${gap.level}</span> ${gap.pattern||""}`
+          : "No gap classification";
+
+      renderDualSeries("mai_ddi_svg",daily);
+      renderGap("gap_svg",daily);
+      renderLagTable(data.lag_analysis||{});
+
+      document.getElementById("conflict_analysis_what").textContent=
+        `The dashboard currently compares ${daily.length} complete UTC days of diplomatic signalling and military activity.`;
+
+      const last7=daily.slice(-7);
+      const avgMai=last7.length?last7.reduce((s,r)=>s+Number(r.military.activity_index||0),0)/last7.length:0;
+      const avgDdi=last7.length?last7.reduce((s,r)=>s+Number(r.diplomatic.direction_index||0),0)/last7.length:0;
+
+      let conclusion=`Over the last 7 complete days, average MAI is ${avgMai.toFixed(1)} and average DDI is ${avgDdi>0?"+":""}${avgDdi.toFixed(1)}. `;
+      if(gap.pattern) conclusion+=`Latest pattern: ${gap.pattern}. `;
+      conclusion+="Lag results indicate temporal association only and should not be read as proof of causation.";
+      document.getElementById("conflict_analysis_conclusion").textContent=conclusion;
+    }
+
+    function loadConflictAnalysis(){
+      fetch("./conflict_analysis.json?ts="+Date.now())
+        .then(r=>{
+          if(!r.ok)throw new Error("conflict_analysis.json HTTP "+r.status);
+          return r.json();
+        })
+        .then(renderConflictAnalysis)
+        .catch(err=>{
+          document.getElementById("conflict_analysis_what").textContent=
+            "Conflict-analysis metrics could not be loaded.";
+          document.getElementById("conflict_analysis_conclusion").textContent=
+            "Check docs/conflict_analysis.json and the analysis workflow.";
+          console.warn("Conflict analysis load failed:",err);
+        });
+    }
+
     // =========================================================
     // 7-DAY DAILY EVENT MATRIX
     // =========================================================
@@ -2780,6 +3124,7 @@
     }
 
     loadEventTimeline();
+    loadConflictAnalysis();
 
     fetch("./analysis.json?ts=" + Date.now())
       .then(response => {
