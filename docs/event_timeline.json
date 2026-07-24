@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-07-24T09:11:38.358832+00:00",
+  "generated_at": "2026-07-24T09:19:26.173958+00:00",
   "source": "Conflict End Matrix Git history + current latest_scored.json",
   "scope": "historical non-kinetic diplomatic, ceasefire and threat/statement events",
-  "direction_model": "context_direction_v3",
+  "direction_model": "context_direction_v3_1",
   "military_events_included": false,
   "historical_scored_versions_read": 155,
   "unique_articles_scanned": 1999,
@@ -13,9 +13,9 @@
     "threat": 25
   },
   "direction_counts": {
-    "mixed": 352,
-    "escalation": 71,
-    "de-escalation": 48
+    "mixed": 358,
+    "escalation": 58,
+    "de-escalation": 55
   },
   "events": [
     {
@@ -28,6 +28,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -59,6 +61,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -89,6 +93,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -120,6 +126,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -156,6 +164,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -185,15 +195,13 @@
       "diplomatic_event": "Can mediators broker a truce between the US and Iran? - Al Jazeera",
       "military_event": "",
       "direction": "mixed",
-      "direction_score": 0,
+      "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
           "points": 1
-        },
-        {
-          "rule": "question_headline",
-          "points": -1
         }
       ],
       "old_direction": "de-escalation",
@@ -226,14 +234,24 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 3,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "deescalation_explicit",
-          "points": 2
+          "points": 3
         },
         {
           "rule": "escalation_explicit",
           "points": -2
+        },
+        {
+          "rule": "speculative_hope",
+          "points": -1
+        },
+        {
+          "rule": "competing_signals_mixed",
+          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -266,6 +284,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -301,11 +321,13 @@
       "diplomatic_event": "U.S. war with Iran risks spiraling as attacks intensify and diplomatic efforts stall, experts warn - NBC News",
       "military_event": "",
       "direction": "escalation",
-      "direction_score": -5,
+      "direction_score": -6,
+      "positive_signal_score": 0,
+      "negative_signal_score": -6,
       "direction_reasons": [
         {
           "rule": "talks_stall_fail",
-          "points": -3
+          "points": -4
         },
         {
           "rule": "attacks_intensify",
@@ -344,6 +366,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -373,15 +397,13 @@
       "diplomatic_event": "US or Iran — Who needs a new truce deal more? - Al Jazeera",
       "military_event": "",
       "direction": "mixed",
-      "direction_score": 0,
+      "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
           "points": 1
-        },
-        {
-          "rule": "question_headline",
-          "points": -1
         }
       ],
       "old_direction": "de-escalation",
@@ -414,6 +436,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -444,6 +468,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -3,
+      "positive_signal_score": 0,
+      "negative_signal_score": -3,
       "direction_reasons": [
         {
           "rule": "red_line",
@@ -476,11 +502,13 @@
       "diplomatic_event": "Iran says peace deal voided, fighting ‘existential war’ after US attacks - Al Jazeera",
       "military_event": "",
       "direction": "escalation",
-      "direction_score": -5,
+      "direction_score": -6,
+      "positive_signal_score": 0,
+      "negative_signal_score": -6,
       "direction_reasons": [
         {
           "rule": "deal_voided_cancelled",
-          "points": -4
+          "points": -5
         },
         {
           "rule": "existential_war",
@@ -520,6 +548,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -550,6 +580,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "escalation_explicit",
@@ -585,6 +617,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -3,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "attacks_intensify",
@@ -626,6 +660,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "threat_topic_prior",
@@ -668,6 +704,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -698,6 +736,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -728,6 +768,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -759,6 +801,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -795,7 +839,14 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
-      "direction_reasons": [],
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "active_attacks_plus_ceasefire",
+          "points": 0
+        }
+      ],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -824,20 +875,18 @@
       "title": "US-Iran war: Will peace talks resume, and when? - Al Jazeera",
       "diplomatic_event": "US-Iran war: Will peace talks resume, and when? - Al Jazeera",
       "military_event": "",
-      "direction": "mixed",
-      "direction_score": 1,
+      "direction": "de-escalation",
+      "direction_score": 3,
+      "positive_signal_score": 3,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "talks_begin_resume",
-          "points": 2
-        },
-        {
-          "rule": "question_headline",
-          "points": -1
+          "points": 3
         }
       ],
       "old_direction": "de-escalation",
-      "direction_changed": true,
+      "direction_changed": false,
       "actors": [],
       "target": "",
       "location": "",
@@ -867,6 +916,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -897,6 +948,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -927,8 +980,10 @@
       "title": "US-Iran conflict escalates as fresh missile strikes threaten Middle East ceasefire - France 24",
       "diplomatic_event": "US-Iran conflict escalates as fresh missile strikes threaten Middle East ceasefire - France 24",
       "military_event": "",
-      "direction": "escalation",
+      "direction": "mixed",
       "direction_score": -6,
+      "positive_signal_score": 0,
+      "negative_signal_score": -5,
       "direction_reasons": [
         {
           "rule": "threat_direct",
@@ -941,6 +996,10 @@
         {
           "rule": "existing_score_negative_tiebreak",
           "points": -1
+        },
+        {
+          "rule": "active_attacks_plus_ceasefire",
+          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -974,12 +1033,18 @@
       "title": "Iran threatens to hit Israel if infrastructure attacks continue, Trump maintains truce is over - France 24",
       "diplomatic_event": "Iran threatens to hit Israel if infrastructure attacks continue, Trump maintains truce is over - France 24",
       "military_event": "",
-      "direction": "escalation",
+      "direction": "mixed",
       "direction_score": -3,
+      "positive_signal_score": 0,
+      "negative_signal_score": -3,
       "direction_reasons": [
         {
           "rule": "threat_direct",
           "points": -3
+        },
+        {
+          "rule": "active_attacks_plus_ceasefire",
+          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -1015,6 +1080,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -1046,6 +1113,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -1076,7 +1145,14 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
-      "direction_reasons": [],
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "active_attacks_plus_ceasefire",
+          "points": 0
+        }
+      ],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -1108,7 +1184,14 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
-      "direction_reasons": [],
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "active_attacks_plus_ceasefire",
+          "points": 0
+        }
+      ],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -1140,7 +1223,14 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
-      "direction_reasons": [],
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "active_attacks_plus_ceasefire",
+          "points": 0
+        }
+      ],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -1173,6 +1263,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -3,
+      "positive_signal_score": 0,
+      "negative_signal_score": -3,
       "direction_reasons": [
         {
           "rule": "threat_direct",
@@ -1210,6 +1302,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -7,
+      "positive_signal_score": 0,
+      "negative_signal_score": -6,
       "direction_reasons": [
         {
           "rule": "threat_direct",
@@ -1257,7 +1351,14 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
-      "direction_reasons": [],
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "ceasefire_plus_active_attacks",
+          "points": 0
+        }
+      ],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -1290,6 +1391,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -1326,6 +1429,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -1358,6 +1463,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -1388,6 +1495,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -1418,6 +1527,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -1449,6 +1560,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -1480,6 +1593,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -1510,6 +1625,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -1546,6 +1663,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -1577,6 +1696,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -3,
+      "positive_signal_score": 0,
+      "negative_signal_score": -3,
       "direction_reasons": [
         {
           "rule": "threat_direct",
@@ -1614,6 +1735,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -1645,6 +1768,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": -1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "threat_topic_prior",
@@ -1680,6 +1805,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -1710,6 +1837,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -1740,6 +1869,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -1770,6 +1901,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -1799,11 +1932,13 @@
       "diplomatic_event": "Trump hails \"very good meetings\" in Qatar as indirect negotiations resume - CBS News",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 3,
+      "direction_score": 4,
+      "positive_signal_score": 3,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "talks_begin_resume",
-          "points": 2
+          "points": 3
         },
         {
           "rule": "existing_score_positive_tiebreak",
@@ -1839,15 +1974,13 @@
       "diplomatic_event": "US-Iran negotiations: What’s the latest? - Al Jazeera",
       "military_event": "",
       "direction": "mixed",
-      "direction_score": 0,
+      "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
           "points": 1
-        },
-        {
-          "rule": "question_headline",
-          "points": -1
         }
       ],
       "old_direction": "de-escalation",
@@ -1880,6 +2013,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -1911,6 +2046,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -1942,6 +2079,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -1972,6 +2111,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -2004,6 +2145,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -2034,6 +2177,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -2064,6 +2209,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -2094,6 +2241,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -2124,6 +2273,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -2155,6 +2306,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -2188,6 +2341,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -2218,6 +2373,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -2248,12 +2405,14 @@
       "title": "Iran threatens \"complete halt\" to talks after trading strikes with U.S.; Washington official says talks to continue - CBS News",
       "diplomatic_event": "Iran threatens \"complete halt\" to talks after trading strikes with U.S.; Washington official says talks to continue - CBS News",
       "military_event": "",
-      "direction": "escalation",
-      "direction_score": -2,
+      "direction": "mixed",
+      "direction_score": -1,
+      "positive_signal_score": 3,
+      "negative_signal_score": -3,
       "direction_reasons": [
         {
           "rule": "talks_begin_resume",
-          "points": 2
+          "points": 3
         },
         {
           "rule": "threat_direct",
@@ -2262,6 +2421,10 @@
         {
           "rule": "existing_score_negative_tiebreak",
           "points": -1
+        },
+        {
+          "rule": "threat_plus_talks_progress",
+          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -2297,7 +2460,14 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
-      "direction_reasons": [],
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "active_attacks_plus_ceasefire",
+          "points": 0
+        }
+      ],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -2329,6 +2499,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -4,
+      "positive_signal_score": 0,
+      "negative_signal_score": -3,
       "direction_reasons": [
         {
           "rule": "threat_direct",
@@ -2374,6 +2546,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -2402,8 +2576,10 @@
       "title": "Escalating US-Iran strikes threaten interim peace agreement - The Guardian",
       "diplomatic_event": "Escalating US-Iran strikes threaten interim peace agreement - The Guardian",
       "military_event": "",
-      "direction": "escalation",
+      "direction": "mixed",
       "direction_score": -5,
+      "positive_signal_score": 0,
+      "negative_signal_score": -5,
       "direction_reasons": [
         {
           "rule": "threat_direct",
@@ -2412,6 +2588,10 @@
         {
           "rule": "escalation_explicit",
           "points": -2
+        },
+        {
+          "rule": "active_attacks_plus_ceasefire",
+          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -2447,7 +2627,14 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
-      "direction_reasons": [],
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "active_attacks_plus_ceasefire",
+          "points": 0
+        }
+      ],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -2479,6 +2666,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -3,
+      "positive_signal_score": 0,
+      "negative_signal_score": -3,
       "direction_reasons": [
         {
           "rule": "red_line",
@@ -2512,7 +2701,14 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
-      "direction_reasons": [],
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "active_attacks_plus_ceasefire",
+          "points": 0
+        }
+      ],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -2545,6 +2741,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -2579,6 +2777,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -2609,6 +2809,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -2638,11 +2840,13 @@
       "diplomatic_event": "Pragmatic choice: Israel’s war backfires as Gulf backs US-Iran deal - Al Jazeera",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 2,
+      "direction_score": 3,
+      "positive_signal_score": 3,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "peace_proposal_positive",
-          "points": 2
+          "points": 3
         }
       ],
       "old_direction": "de-escalation",
@@ -2675,6 +2879,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -2705,6 +2911,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -2735,6 +2943,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -2771,6 +2981,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -2802,6 +3014,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -2833,6 +3047,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -2865,6 +3081,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -2894,11 +3112,13 @@
       "diplomatic_event": "Vance says Iran to let international nuclear inspections resume after \"good day\" of talks - CBS News",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 2,
+      "direction_score": 3,
+      "positive_signal_score": 3,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "actor_resumes_talks",
-          "points": 2
+          "points": 3
         }
       ],
       "old_direction": "de-escalation",
@@ -2930,6 +3150,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -2966,6 +3188,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -3003,6 +3227,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -3038,11 +3264,13 @@
       "diplomatic_event": "Iran agrees to UN nuclear inspectors’ return as part of agreement with US - The Guardian",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 3,
+      "direction_score": 4,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "truce_agreed",
-          "points": 3
+          "points": 4
         }
       ],
       "old_direction": "de-escalation",
@@ -3074,6 +3302,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -3105,6 +3335,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -3141,6 +3373,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -3171,6 +3405,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -3201,6 +3437,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -3231,11 +3469,13 @@
       "diplomatic_event": "US-Iran talks begin in Switzerland as Tehran says it closed Strait of Hormuz - BBC",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 2,
+      "direction_score": 3,
+      "positive_signal_score": 3,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "talks_begin_resume",
-          "points": 2
+          "points": 3
         }
       ],
       "old_direction": "de-escalation",
@@ -3267,6 +3507,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -3297,6 +3539,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -3327,6 +3571,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -3,
+      "positive_signal_score": 0,
+      "negative_signal_score": -3,
       "direction_reasons": [
         {
           "rule": "threat_direct",
@@ -3363,15 +3609,21 @@
       "diplomatic_event": "Israel and Hezbollah agree to a ceasefire as deadly fighting threatens U.S.-Iran deal - PBS",
       "military_event": "",
       "direction": "mixed",
-      "direction_score": 0,
+      "direction_score": 1,
+      "positive_signal_score": 4,
+      "negative_signal_score": -3,
       "direction_reasons": [
         {
           "rule": "truce_agreed",
-          "points": 3
+          "points": 4
         },
         {
           "rule": "threat_direct",
           "points": -3
+        },
+        {
+          "rule": "ceasefire_plus_active_attacks",
+          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -3405,12 +3657,14 @@
       "title": "Israel and Hezbollah agree to a ceasefire after intensified fighting threatens U.S.-Iran talks - NBC News",
       "diplomatic_event": "Israel and Hezbollah agree to a ceasefire after intensified fighting threatens U.S.-Iran talks - NBC News",
       "military_event": "",
-      "direction": "escalation",
-      "direction_score": -2,
+      "direction": "mixed",
+      "direction_score": -1,
+      "positive_signal_score": 4,
+      "negative_signal_score": -5,
       "direction_reasons": [
         {
           "rule": "truce_agreed",
-          "points": 3
+          "points": 4
         },
         {
           "rule": "threat_direct",
@@ -3419,6 +3673,10 @@
         {
           "rule": "intensify_attacks",
           "points": -2
+        },
+        {
+          "rule": "ceasefire_plus_active_attacks",
+          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -3451,16 +3709,22 @@
       "title": "Israel and Hezbollah agree ceasefire, US says, as more Lebanon strikes reported - BBC",
       "diplomatic_event": "Israel and Hezbollah agree ceasefire, US says, as more Lebanon strikes reported - BBC",
       "military_event": "",
-      "direction": "de-escalation",
-      "direction_score": 3,
+      "direction": "mixed",
+      "direction_score": 4,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "truce_agreed",
-          "points": 3
+          "points": 4
+        },
+        {
+          "rule": "ceasefire_plus_active_attacks",
+          "points": 0
         }
       ],
       "old_direction": "de-escalation",
-      "direction_changed": false,
+      "direction_changed": true,
       "actors": [],
       "target": "",
       "location": "",
@@ -3490,6 +3754,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -3520,10 +3786,16 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
           "points": 1
+        },
+        {
+          "rule": "ceasefire_plus_active_attacks",
+          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -3556,6 +3828,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -3589,6 +3863,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -3619,6 +3895,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -3649,6 +3927,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -3680,6 +3960,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -3710,6 +3992,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": -1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_negative_tiebreak",
@@ -3748,6 +4032,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -3779,6 +4065,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -3815,6 +4103,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -3843,12 +4133,22 @@
       "title": "Trump Says Iran Deal to End Middle East Conflict Expected to Be Signed 'Shortly,' Warns of Consequences Over Violations - Kurdistan24",
       "diplomatic_event": "Trump Says Iran Deal to End Middle East Conflict Expected to Be Signed 'Shortly,' Warns of Consequences Over Violations - Kurdistan24",
       "military_event": "",
-      "direction": "escalation",
-      "direction_score": -3,
+      "direction": "mixed",
+      "direction_score": -1,
+      "positive_signal_score": 2,
+      "negative_signal_score": -3,
       "direction_reasons": [
+        {
+          "rule": "deal_close",
+          "points": 2
+        },
         {
           "rule": "warning_consequences",
           "points": -3
+        },
+        {
+          "rule": "deal_progress_plus_warning",
+          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -3881,6 +4181,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -3910,11 +4212,13 @@
       "diplomatic_event": "WATCH: Vance holds White House briefing after Trump signs Iran war agreement - PBS",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 3,
+      "direction_score": 4,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "truce_agreed",
-          "points": 3
+          "points": 4
         }
       ],
       "old_direction": "de-escalation",
@@ -3947,6 +4251,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -3977,6 +4283,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -4014,11 +4322,13 @@
       "diplomatic_event": "US and Iran sign initial deal to end war, ease sanctions and open strait as nuclear talks continue - AP News",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 2,
+      "direction_score": 3,
+      "positive_signal_score": 3,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "talks_begin_resume",
-          "points": 2
+          "points": 3
         }
       ],
       "old_direction": "de-escalation",
@@ -4052,6 +4362,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -4082,6 +4394,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -4112,6 +4426,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -4143,6 +4459,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -4173,6 +4491,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -4204,6 +4524,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -4234,6 +4556,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -4264,6 +4588,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -4296,6 +4622,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -4326,6 +4654,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -4357,6 +4687,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -4393,6 +4725,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -4423,6 +4757,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -4459,6 +4795,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -4489,6 +4827,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -4519,6 +4859,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -4557,6 +4899,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -4588,6 +4932,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -4619,6 +4965,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -4649,6 +4997,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -4679,11 +5029,13 @@
       "diplomatic_event": "Trump declares US-Iran peace deal ‘all signed’ as G7 leaders battle to tie up loose ends - The Guardian",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 3,
+      "direction_score": 4,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "peace_deal_reached",
-          "points": 3
+          "points": 4
         }
       ],
       "old_direction": "de-escalation",
@@ -4716,6 +5068,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -4747,6 +5101,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -4778,6 +5134,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -4808,6 +5166,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -4838,11 +5198,13 @@
       "diplomatic_event": "Iran and U.S. reach an initial deal to extend the ceasefire and open the Strait of Hormuz but challenges remain - PBS",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 4,
+      "direction_score": 5,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "truce_agreed",
-          "points": 3
+          "points": 4
         },
         {
           "rule": "existing_score_positive_tiebreak",
@@ -4879,6 +5241,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -4910,6 +5274,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -4940,6 +5306,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -4971,6 +5339,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -5001,15 +5371,21 @@
       "diplomatic_event": "Iran and U.S. reach deal, Trump and Pakistani prime minister say, as Israeli strikes in Lebanon threaten agreement - CBS News",
       "military_event": "",
       "direction": "mixed",
-      "direction_score": 0,
+      "direction_score": 1,
+      "positive_signal_score": 4,
+      "negative_signal_score": -3,
       "direction_reasons": [
         {
           "rule": "truce_agreed",
-          "points": 3
+          "points": 4
         },
         {
           "rule": "threat_direct",
           "points": -3
+        },
+        {
+          "rule": "active_attacks_plus_ceasefire",
+          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -5044,11 +5420,13 @@
       "diplomatic_event": "US, Iran to sign a ‘peace deal’ on Friday: What we know - Al Jazeera",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 3,
+      "direction_score": 4,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "truce_agreed",
-          "points": 3
+          "points": 4
         }
       ],
       "old_direction": "de-escalation",
@@ -5081,6 +5459,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "sanctions_pressure",
@@ -5117,6 +5497,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -5148,6 +5530,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -5178,6 +5562,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -5208,6 +5594,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -5238,6 +5626,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -5269,6 +5659,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "sanctions_pressure",
@@ -5304,11 +5696,13 @@
       "diplomatic_event": "U.S. and Iran reach deal to end the Mideast war, with agreement set to be signed Friday - CNBC",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 3,
+      "direction_score": 4,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "truce_agreed",
-          "points": 3
+          "points": 4
         }
       ],
       "old_direction": "de-escalation",
@@ -5341,11 +5735,13 @@
       "diplomatic_event": "US and Iran reach framework peace deal to end war - The Guardian",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 3,
+      "direction_score": 4,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "truce_agreed",
-          "points": 3
+          "points": 4
         }
       ],
       "old_direction": "de-escalation",
@@ -5379,6 +5775,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -5413,6 +5811,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -5442,11 +5842,13 @@
       "diplomatic_event": "Trump Says Peace Deal Will Be Signed Sunday, but Iran Disputes Timeline - The New York Times",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 3,
+      "direction_score": 4,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "peace_deal_reached",
-          "points": 3
+          "points": 4
         }
       ],
       "old_direction": "de-escalation",
@@ -5479,6 +5881,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -5509,6 +5913,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -5540,6 +5946,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -5569,8 +5977,19 @@
       "diplomatic_event": "Iranians divided on peace prospects after US-Iran say a deal is near - Al Jazeera",
       "military_event": "",
       "direction": "mixed",
-      "direction_score": 0,
-      "direction_reasons": [],
+      "direction_score": 1,
+      "positive_signal_score": 2,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "deal_close",
+          "points": 2
+        },
+        {
+          "rule": "speculative_hope",
+          "points": -1
+        }
+      ],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -5601,6 +6020,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -5630,9 +6051,15 @@
       "title": "Trump Again Claims Deal Is Close After Retracting Threat of Strikes - The New York Times",
       "diplomatic_event": "Trump Again Claims Deal Is Close After Retracting Threat of Strikes - The New York Times",
       "military_event": "",
-      "direction": "escalation",
-      "direction_score": -4,
+      "direction": "mixed",
+      "direction_score": -2,
+      "positive_signal_score": 2,
+      "negative_signal_score": -3,
       "direction_reasons": [
+        {
+          "rule": "deal_close",
+          "points": 2
+        },
         {
           "rule": "threat_direct",
           "points": -3
@@ -5640,6 +6067,10 @@
         {
           "rule": "existing_score_negative_tiebreak",
           "points": -1
+        },
+        {
+          "rule": "competing_signals_mixed",
+          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -5674,6 +6105,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -5705,6 +6138,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -5736,6 +6171,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -5767,6 +6204,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -5796,11 +6235,18 @@
       "title": "Iran war day 105: US and Iran signal a peace deal is close - Al Jazeera",
       "diplomatic_event": "Iran war day 105: US and Iran signal a peace deal is close - Al Jazeera",
       "military_event": "",
-      "direction": "mixed",
-      "direction_score": 0,
-      "direction_reasons": [],
+      "direction": "de-escalation",
+      "direction_score": 2,
+      "positive_signal_score": 2,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "deal_close",
+          "points": 2
+        }
+      ],
       "old_direction": "de-escalation",
-      "direction_changed": true,
+      "direction_changed": false,
       "actors": [],
       "target": "",
       "location": "",
@@ -5830,6 +6276,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -5860,6 +6308,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -5889,11 +6339,18 @@
       "title": "Trump claims deal to end Iran war near as Tehran says 'nothing' finalised - BBC",
       "diplomatic_event": "Trump claims deal to end Iran war near as Tehran says 'nothing' finalised - BBC",
       "military_event": "",
-      "direction": "mixed",
-      "direction_score": 0,
-      "direction_reasons": [],
+      "direction": "de-escalation",
+      "direction_score": 2,
+      "positive_signal_score": 2,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "deal_close",
+          "points": 2
+        }
+      ],
       "old_direction": "de-escalation",
-      "direction_changed": true,
+      "direction_changed": false,
       "actors": [],
       "target": "",
       "location": "",
@@ -5922,6 +6379,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "escalation_explicit",
@@ -5957,7 +6416,14 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
-      "direction_reasons": [],
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "ceasefire_plus_active_attacks",
+          "points": 0
+        }
+      ],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -5989,6 +6455,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "escalation_explicit",
@@ -6026,6 +6494,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -6057,6 +6527,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -6085,16 +6557,22 @@
       "title": "Iran war day 102: Trump warns Israel against new strikes as ceasefire holds - Al Jazeera",
       "diplomatic_event": "Iran war day 102: Trump warns Israel against new strikes as ceasefire holds - Al Jazeera",
       "military_event": "",
-      "direction": "de-escalation",
-      "direction_score": 3,
+      "direction": "mixed",
+      "direction_score": 4,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "ceasefire_takes_effect",
-          "points": 3
+          "points": 4
+        },
+        {
+          "rule": "active_attacks_plus_ceasefire",
+          "points": 0
         }
       ],
       "old_direction": "de-escalation",
-      "direction_changed": false,
+      "direction_changed": true,
       "actors": [],
       "target": "",
       "location": "",
@@ -6125,7 +6603,14 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
-      "direction_reasons": [],
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "active_attacks_plus_ceasefire",
+          "points": 0
+        }
+      ],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -6158,6 +6643,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "escalation_explicit",
@@ -6193,7 +6680,14 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
-      "direction_reasons": [],
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "active_attacks_plus_ceasefire",
+          "points": 0
+        }
+      ],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -6226,7 +6720,14 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
-      "direction_reasons": [],
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "active_attacks_plus_ceasefire",
+          "points": 0
+        }
+      ],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -6259,7 +6760,14 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
-      "direction_reasons": [],
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "active_attacks_plus_ceasefire",
+          "points": 0
+        }
+      ],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -6292,6 +6800,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -6322,7 +6832,14 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
-      "direction_reasons": [],
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "active_attacks_plus_ceasefire",
+          "points": 0
+        }
+      ],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -6354,6 +6871,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -6386,6 +6905,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -6416,6 +6937,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -6449,10 +6972,16 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": -1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_negative_tiebreak",
           "points": -1
+        },
+        {
+          "rule": "active_attacks_plus_ceasefire",
+          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -6488,6 +7017,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -6520,6 +7051,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -6554,6 +7087,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -6585,6 +7120,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -6614,15 +7151,13 @@
       "diplomatic_event": "From Tehran to Tel Aviv: How press in Middle East is framing Iran war, ceasefire negotiations? - The Jerusalem Post",
       "military_event": "",
       "direction": "mixed",
-      "direction_score": 0,
+      "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
           "points": 1
-        },
-        {
-          "rule": "question_headline",
-          "points": -1
         }
       ],
       "old_direction": "de-escalation",
@@ -6657,6 +7192,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -6688,6 +7225,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -6720,6 +7259,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -6751,6 +7292,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -6780,16 +7323,18 @@
       "title": "Iran war day 97: Tehran says no progress in talks; Israel attacks Lebanon - Al Jazeera",
       "diplomatic_event": "Iran war day 97: Tehran says no progress in talks; Israel attacks Lebanon - Al Jazeera",
       "military_event": "",
-      "direction": "mixed",
-      "direction_score": 1,
+      "direction": "de-escalation",
+      "direction_score": 2,
+      "positive_signal_score": 2,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "diplomatic_progress",
-          "points": 1
+          "points": 2
         }
       ],
       "old_direction": "de-escalation",
-      "direction_changed": true,
+      "direction_changed": false,
       "actors": [],
       "target": "",
       "location": "",
@@ -6820,6 +7365,8 @@
       "military_event": "",
       "direction": "de-escalation",
       "direction_score": 3,
+      "positive_signal_score": 2,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "mediation_active",
@@ -6860,11 +7407,13 @@
       "diplomatic_event": "Middle East: US and Iran trade fire amid stalled talks - DW",
       "military_event": "",
       "direction": "escalation",
-      "direction_score": -3,
+      "direction_score": -4,
+      "positive_signal_score": 0,
+      "negative_signal_score": -4,
       "direction_reasons": [
         {
           "rule": "efforts_stall",
-          "points": -3
+          "points": -4
         }
       ],
       "old_direction": "de-escalation",
@@ -6896,6 +7445,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -6930,16 +7481,22 @@
       "title": "Israel, Lebanon agree to renew ceasefire as Iran launches deadly attack on Kuwait airport - CBS News",
       "diplomatic_event": "Israel, Lebanon agree to renew ceasefire as Iran launches deadly attack on Kuwait airport - CBS News",
       "military_event": "",
-      "direction": "de-escalation",
-      "direction_score": 3,
+      "direction": "mixed",
+      "direction_score": 4,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "truce_agreed",
-          "points": 3
+          "points": 4
+        },
+        {
+          "rule": "ceasefire_plus_active_attacks",
+          "points": 0
         }
       ],
       "old_direction": "de-escalation",
-      "direction_changed": false,
+      "direction_changed": true,
       "actors": [],
       "target": "",
       "location": "",
@@ -6969,6 +7526,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -6999,11 +7558,13 @@
       "diplomatic_event": "Israel, Lebanon agree to implement ceasefire, boosting hopes for Iran deal - Reuters",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 3,
+      "direction_score": 4,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "truce_agreed",
-          "points": 3
+          "points": 4
         },
         {
           "rule": "existing_score_positive_tiebreak",
@@ -7044,6 +7605,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": -1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_negative_tiebreak",
@@ -7083,11 +7646,13 @@
       "diplomatic_event": "Iran’s supreme leader appears more active as talks continue: US’s Rubio - Al Jazeera",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 2,
+      "direction_score": 3,
+      "positive_signal_score": 3,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "talks_begin_resume",
-          "points": 2
+          "points": 3
         }
       ],
       "old_direction": "de-escalation",
@@ -7119,6 +7684,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -7149,6 +7716,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -7181,6 +7750,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -7217,11 +7788,13 @@
       "diplomatic_event": "Trump seeks to revive Iran peace talks after negotiations stall - USA Today",
       "military_event": "",
       "direction": "escalation",
-      "direction_score": -2,
+      "direction_score": -3,
+      "positive_signal_score": 0,
+      "negative_signal_score": -4,
       "direction_reasons": [
         {
           "rule": "talks_stall_fail",
-          "points": -3
+          "points": -4
         },
         {
           "rule": "existing_score_positive_tiebreak",
@@ -7260,6 +7833,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -7288,12 +7863,18 @@
       "title": "Iran warns Israeli attacks in Lebanon and Gaza threaten US ceasefire talks - Al Jazeera",
       "diplomatic_event": "Iran warns Israeli attacks in Lebanon and Gaza threaten US ceasefire talks - Al Jazeera",
       "military_event": "",
-      "direction": "escalation",
+      "direction": "mixed",
       "direction_score": -3,
+      "positive_signal_score": 0,
+      "negative_signal_score": -3,
       "direction_reasons": [
         {
           "rule": "threat_direct",
           "points": -3
+        },
+        {
+          "rule": "active_attacks_plus_ceasefire",
+          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -7330,6 +7911,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -7366,7 +7949,14 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
-      "direction_reasons": [],
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "ceasefire_plus_active_attacks",
+          "points": 0
+        }
+      ],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -7398,6 +7988,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "escalation_explicit",
@@ -7431,12 +8023,18 @@
       "title": "Trump says Iran talks continuing at \"rapid pace\" after regime threatens \"other fronts\" in war - CBS News",
       "diplomatic_event": "Trump says Iran talks continuing at \"rapid pace\" after regime threatens \"other fronts\" in war - CBS News",
       "military_event": "",
-      "direction": "escalation",
+      "direction": "mixed",
       "direction_score": -3,
+      "positive_signal_score": 0,
+      "negative_signal_score": -3,
       "direction_reasons": [
         {
           "rule": "threat_direct",
           "points": -3
+        },
+        {
+          "rule": "talks_progress_plus_threat",
+          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -7471,6 +8069,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -7503,6 +8103,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -7533,6 +8135,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -7562,11 +8166,18 @@
       "title": "Trump Says Peace Deal Is Near - The New York Times",
       "diplomatic_event": "Trump Says Peace Deal Is Near - The New York Times",
       "military_event": "",
-      "direction": "mixed",
-      "direction_score": 0,
-      "direction_reasons": [],
+      "direction": "de-escalation",
+      "direction_score": 2,
+      "positive_signal_score": 2,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "deal_close",
+          "points": 2
+        }
+      ],
       "old_direction": "de-escalation",
-      "direction_changed": true,
+      "direction_changed": false,
       "actors": [],
       "target": "",
       "location": "",
@@ -7595,6 +8206,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -7625,6 +8238,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -3,
       "direction_reasons": [
         {
           "rule": "threat_direct",
@@ -7668,6 +8283,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": -1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "threat_topic_prior",
@@ -7701,6 +8318,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -7732,6 +8351,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "attacks_intensify",
@@ -7768,6 +8389,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -7797,11 +8420,13 @@
       "diplomatic_event": "Iran rejects US deal without firm guarantees as Washington warns war could resume - France 24",
       "military_event": "",
       "direction": "escalation",
-      "direction_score": -3,
+      "direction_score": -4,
+      "positive_signal_score": 0,
+      "negative_signal_score": -4,
       "direction_reasons": [
         {
           "rule": "proposal_rejected",
-          "points": -3
+          "points": -4
         }
       ],
       "old_direction": "de-escalation",
@@ -7834,6 +8459,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -7864,6 +8491,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -7894,6 +8523,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -7924,6 +8555,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -7955,6 +8588,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -7991,6 +8626,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -8022,6 +8659,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -8053,6 +8692,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -8082,11 +8723,13 @@
       "diplomatic_event": "US and Iran reach tentative deal for 60-day truce extension, officials say - Al Jazeera",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 4,
+      "direction_score": 5,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "truce_agreed",
-          "points": 3
+          "points": 4
         },
         {
           "rule": "existing_score_positive_tiebreak",
@@ -8123,6 +8766,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "escalation_explicit",
@@ -8157,11 +8802,13 @@
       "diplomatic_event": "Iran and US agree on ceasefire deal framework, but still need Trump’s approval - France 24",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 4,
+      "direction_score": 5,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "truce_agreed",
-          "points": 3
+          "points": 4
         },
         {
           "rule": "existing_score_positive_tiebreak",
@@ -8198,6 +8845,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -8228,6 +8877,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -8259,6 +8910,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -8291,11 +8944,13 @@
       "diplomatic_event": "Anticipation in Iran as talks with US continue amid attacks, war of words - Al Jazeera",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 2,
+      "direction_score": 3,
+      "positive_signal_score": 3,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "talks_begin_resume",
-          "points": 2
+          "points": 3
         }
       ],
       "old_direction": "de-escalation",
@@ -8330,7 +8985,14 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
-      "direction_reasons": [],
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "active_attacks_plus_ceasefire",
+          "points": 0
+        }
+      ],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -8362,6 +9024,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -8394,11 +9058,17 @@
       "diplomatic_event": "U.S. and Iran suggest progress on peace talks, but deal ‘not imminent’ - PBS",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 2,
+      "direction_score": 5,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "diplomatic_progress",
-          "points": 1
+          "points": 2
+        },
+        {
+          "rule": "deal_close",
+          "points": 2
         },
         {
           "rule": "existing_score_positive_tiebreak",
@@ -8436,6 +9106,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -8466,6 +9138,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -8497,6 +9171,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -8526,11 +9202,18 @@
       "title": "Iran denies deal with US is imminent despite some progress - The Guardian",
       "diplomatic_event": "Iran denies deal with US is imminent despite some progress - The Guardian",
       "military_event": "",
-      "direction": "mixed",
-      "direction_score": 0,
-      "direction_reasons": [],
+      "direction": "de-escalation",
+      "direction_score": 2,
+      "positive_signal_score": 2,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "deal_close",
+          "points": 2
+        }
+      ],
       "old_direction": "de-escalation",
-      "direction_changed": true,
+      "direction_changed": false,
       "actors": [],
       "target": "",
       "location": "",
@@ -8558,7 +9241,14 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
-      "direction_reasons": [],
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "active_attacks_plus_ceasefire",
+          "points": 0
+        }
+      ],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -8591,11 +9281,13 @@
       "diplomatic_event": "Iran-U.S. negotiators have agreed to broad principles of agreement, official says; Trump says \"time is on our side\" - CBS News",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 3,
+      "direction_score": 4,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "truce_agreed",
-          "points": 3
+          "points": 4
         }
       ],
       "old_direction": "de-escalation",
@@ -8627,6 +9319,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -8662,6 +9356,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -8693,6 +9389,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -8723,6 +9421,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -8754,6 +9454,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -8785,6 +9487,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -8816,6 +9520,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -8846,6 +9552,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -8876,6 +9584,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -8906,6 +9616,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -8936,6 +9648,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -8966,6 +9680,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -8997,6 +9713,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -9028,6 +9746,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -9057,15 +9777,17 @@
       "diplomatic_event": "U.S. says 'slight progress' in Iran talks amid uncertainty about whether war will resume - PBS",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 3,
+      "direction_score": 5,
+      "positive_signal_score": 5,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "talks_begin_resume",
-          "points": 2
+          "points": 3
         },
         {
           "rule": "diplomatic_progress",
-          "points": 1
+          "points": 2
         }
       ],
       "old_direction": "de-escalation",
@@ -9098,6 +9820,8 @@
       "military_event": "",
       "direction": "de-escalation",
       "direction_score": 2,
+      "positive_signal_score": 2,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "mediation_active",
@@ -9135,6 +9859,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": -1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_negative_tiebreak",
@@ -9173,6 +9899,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -9204,6 +9932,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -9235,6 +9965,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -9265,6 +9997,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -9295,6 +10029,8 @@
       "military_event": "",
       "direction": "de-escalation",
       "direction_score": 2,
+      "positive_signal_score": 2,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "mediation_active",
@@ -9331,6 +10067,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -9361,6 +10099,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -4,
+      "positive_signal_score": 0,
+      "negative_signal_score": -3,
       "direction_reasons": [
         {
           "rule": "threat_direct",
@@ -9404,6 +10144,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -9434,6 +10176,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -9465,6 +10209,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -9496,6 +10242,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -3,
+      "positive_signal_score": 0,
+      "negative_signal_score": -3,
       "direction_reasons": [
         {
           "rule": "threat_direct",
@@ -9533,6 +10281,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -9565,6 +10315,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -9595,6 +10347,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -9624,16 +10378,22 @@
       "title": "Trump calls off scheduled attack on Iran amid \"serious negotiations\" toward peace deal - CBS News",
       "diplomatic_event": "Trump calls off scheduled attack on Iran amid \"serious negotiations\" toward peace deal - CBS News",
       "military_event": "",
-      "direction": "mixed",
-      "direction_score": 1,
+      "direction": "de-escalation",
+      "direction_score": 6,
+      "positive_signal_score": 5,
+      "negative_signal_score": 0,
       "direction_reasons": [
+        {
+          "rule": "calls_off_ultimatum",
+          "points": 5
+        },
         {
           "rule": "existing_score_positive_tiebreak",
           "points": 1
         }
       ],
       "old_direction": "de-escalation",
-      "direction_changed": true,
+      "direction_changed": false,
       "actors": [],
       "target": "",
       "location": "",
@@ -9666,6 +10426,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -9697,6 +10459,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -9726,11 +10490,13 @@
       "diplomatic_event": "Trump issues new warning to Iran to accept peace deal - France 24",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 2,
+      "direction_score": 3,
+      "positive_signal_score": 3,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "peace_proposal_positive",
-          "points": 2
+          "points": 3
         }
       ],
       "old_direction": "de-escalation",
@@ -9764,6 +10530,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -9795,6 +10563,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -9825,11 +10595,13 @@
       "diplomatic_event": "As Iran talks stall, Israel and US prepping to renew war as soon as next week – report - The Times of Israel",
       "military_event": "",
       "direction": "escalation",
-      "direction_score": -3,
+      "direction_score": -4,
+      "positive_signal_score": 0,
+      "negative_signal_score": -4,
       "direction_reasons": [
         {
           "rule": "talks_stall_fail",
-          "points": -3
+          "points": -4
         }
       ],
       "old_direction": "de-escalation",
@@ -9862,6 +10634,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -9898,11 +10672,13 @@
       "diplomatic_event": "Israel and Lebanon agree to 45-day extension of ceasefire, U.S. State Department says - PBS",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 3,
+      "direction_score": 4,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "truce_agreed",
-          "points": 3
+          "points": 4
         }
       ],
       "old_direction": "de-escalation",
@@ -9934,6 +10710,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -9970,6 +10748,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "escalation_explicit",
@@ -10003,16 +10783,18 @@
       "title": "Iran war day 76: Vance says progress made in talks; Israel pounds Lebanon - Al Jazeera",
       "diplomatic_event": "Iran war day 76: Vance says progress made in talks; Israel pounds Lebanon - Al Jazeera",
       "military_event": "",
-      "direction": "mixed",
-      "direction_score": 1,
+      "direction": "de-escalation",
+      "direction_score": 2,
+      "positive_signal_score": 2,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "diplomatic_progress",
-          "points": 1
+          "points": 2
         }
       ],
       "old_direction": "de-escalation",
-      "direction_changed": true,
+      "direction_changed": false,
       "actors": [],
       "target": "",
       "location": "",
@@ -10041,6 +10823,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -10071,6 +10855,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -10102,6 +10888,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -10131,11 +10919,13 @@
       "diplomatic_event": "Iran warns US to accept peace plan or risk collapse of Mideast truce - France 24",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 3,
+      "direction_score": 4,
+      "positive_signal_score": 3,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "peace_proposal_positive",
-          "points": 2
+          "points": 3
         },
         {
           "rule": "existing_score_positive_tiebreak",
@@ -10172,11 +10962,13 @@
       "diplomatic_event": "Trump and Hegseth claim 'control' over Iran and the Strait of Hormuz as ceasefire talks are stalled - AP News",
       "military_event": "",
       "direction": "escalation",
-      "direction_score": -2,
+      "direction_score": -3,
+      "positive_signal_score": 0,
+      "negative_signal_score": -4,
       "direction_reasons": [
         {
           "rule": "talks_stall_fail",
-          "points": -3
+          "points": -4
         },
         {
           "rule": "existing_score_positive_tiebreak",
@@ -10213,6 +11005,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -10242,12 +11036,18 @@
       "title": "Iran threatens to \"teach a lesson\" if U.S. attacks, Trump says ceasefire is \"on life support\" - CBS News",
       "diplomatic_event": "Iran threatens to \"teach a lesson\" if U.S. attacks, Trump says ceasefire is \"on life support\" - CBS News",
       "military_event": "",
-      "direction": "escalation",
+      "direction": "mixed",
       "direction_score": -3,
+      "positive_signal_score": 0,
+      "negative_signal_score": -3,
       "direction_reasons": [
         {
           "rule": "threat_direct",
           "points": -3
+        },
+        {
+          "rule": "active_attacks_plus_ceasefire",
+          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -10283,6 +11083,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -10314,6 +11116,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -10346,6 +11150,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -10377,6 +11183,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -10407,6 +11215,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -10437,6 +11247,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -10473,6 +11285,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -10504,6 +11318,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -10534,7 +11350,14 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
-      "direction_reasons": [],
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "ceasefire_plus_active_attacks",
+          "points": 0
+        }
+      ],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -10566,6 +11389,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -10598,6 +11423,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -10628,6 +11455,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -10658,6 +11487,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -10688,6 +11519,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -10724,6 +11557,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -10754,6 +11589,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -10784,6 +11621,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -10815,6 +11654,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -10846,6 +11687,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -10876,16 +11719,18 @@
       "title": "Iran war day 68: Trump talks about progress in talks; Rubio says war ‘over’ - Al Jazeera",
       "diplomatic_event": "Iran war day 68: Trump talks about progress in talks; Rubio says war ‘over’ - Al Jazeera",
       "military_event": "",
-      "direction": "mixed",
-      "direction_score": 1,
+      "direction": "de-escalation",
+      "direction_score": 2,
+      "positive_signal_score": 2,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "diplomatic_progress",
-          "points": 1
+          "points": 2
         }
       ],
       "old_direction": "de-escalation",
-      "direction_changed": true,
+      "direction_changed": false,
       "actors": [],
       "target": "",
       "location": "",
@@ -10914,6 +11759,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -10945,6 +11792,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -10974,11 +11823,13 @@
       "diplomatic_event": "US-Iran ceasefire holds despite Hormuz standoff: Pentagon chief Hegseth - Al Jazeera",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 3,
+      "direction_score": 4,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "ceasefire_takes_effect",
-          "points": 3
+          "points": 4
         }
       ],
       "old_direction": "de-escalation",
@@ -11010,6 +11861,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -11040,6 +11893,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "escalation_explicit",
@@ -11075,18 +11930,24 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 4,
+      "negative_signal_score": -4,
       "direction_reasons": [
         {
           "rule": "truce_agreed",
-          "points": 3
+          "points": 4
         },
         {
           "rule": "efforts_stall",
-          "points": -3
+          "points": -4
         },
         {
           "rule": "existing_score_positive_tiebreak",
           "points": 1
+        },
+        {
+          "rule": "competing_signals_mixed",
+          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -11120,6 +11981,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -11156,6 +12019,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "sanctions_pressure",
@@ -11190,15 +12055,13 @@
       "diplomatic_event": "What are the sticking points in US-Iran peace negotiations? - DW.com",
       "military_event": "",
       "direction": "mixed",
-      "direction_score": 0,
+      "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
           "points": 1
-        },
-        {
-          "rule": "question_headline",
-          "points": -1
         }
       ],
       "old_direction": "de-escalation",
@@ -11232,6 +12095,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -11262,6 +12127,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -11292,6 +12159,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -11328,6 +12197,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -11359,6 +12230,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -11389,6 +12262,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -11421,6 +12296,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -11451,6 +12328,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -11480,11 +12359,13 @@
       "diplomatic_event": "As US-Iran talks remain ‘stalled’, experts warn of ‘long-term disruptions’ - Al Jazeera",
       "military_event": "",
       "direction": "escalation",
-      "direction_score": -3,
+      "direction_score": -4,
+      "positive_signal_score": 0,
+      "negative_signal_score": -4,
       "direction_reasons": [
         {
           "rule": "talks_stall_fail",
-          "points": -3
+          "points": -4
         }
       ],
       "old_direction": "de-escalation",
@@ -11517,6 +12398,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -11548,6 +12431,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -11585,6 +12470,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -11615,6 +12502,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -11651,15 +12540,17 @@
       "diplomatic_event": "Have US-Iran talks failed? Why no deal yet doesn’t mean diplomacy is dead - Al Jazeera",
       "military_event": "",
       "direction": "escalation",
-      "direction_score": -7,
+      "direction_score": -9,
+      "positive_signal_score": 0,
+      "negative_signal_score": -9,
       "direction_reasons": [
         {
           "rule": "deal_voided_cancelled",
-          "points": -4
+          "points": -5
         },
         {
           "rule": "talks_stall_fail",
-          "points": -3
+          "points": -4
         }
       ],
       "old_direction": "de-escalation",
@@ -11694,6 +12585,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -11725,6 +12618,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -11756,6 +12651,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -11786,6 +12683,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -11816,11 +12715,13 @@
       "diplomatic_event": "US-Iran conflict: What’s the latest as the Islamabad talks stall? - Al Jazeera",
       "military_event": "",
       "direction": "escalation",
-      "direction_score": -3,
+      "direction_score": -4,
+      "positive_signal_score": 0,
+      "negative_signal_score": -4,
       "direction_reasons": [
         {
           "rule": "talks_stall_fail",
-          "points": -3
+          "points": -4
         }
       ],
       "old_direction": "de-escalation",
@@ -11852,6 +12753,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -11882,15 +12785,17 @@
       "diplomatic_event": "Latest ceasefire talks fail as Iran's top diplomat leaves Pakistan and Trump tells envoys not to go - PBS",
       "military_event": "",
       "direction": "escalation",
-      "direction_score": -6,
+      "direction_score": -8,
+      "positive_signal_score": 0,
+      "negative_signal_score": -9,
       "direction_reasons": [
         {
           "rule": "ceasefire_collapses",
-          "points": -4
+          "points": -5
         },
         {
           "rule": "talks_stall_fail",
-          "points": -3
+          "points": -4
         },
         {
           "rule": "existing_score_positive_tiebreak",
@@ -11927,6 +12832,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -11957,6 +12864,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -11988,6 +12897,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -12018,6 +12929,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -12049,6 +12962,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -12079,6 +12994,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -12109,15 +13026,13 @@
       "diplomatic_event": "Ceasefire extended: What's next in the Iran war? - DW.com",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 2,
+      "direction_score": 4,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "ceasefire_takes_effect",
-          "points": 3
-        },
-        {
-          "rule": "question_headline",
-          "points": -1
+          "points": 4
         }
       ],
       "old_direction": "de-escalation",
@@ -12150,6 +13065,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "escalation_explicit",
@@ -12184,11 +13101,13 @@
       "diplomatic_event": "Israel-Lebanon Talks Resume Amid U.S.-Iran Impasse - Council on Foreign Relations",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 2,
+      "direction_score": 3,
+      "positive_signal_score": 3,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "talks_begin_resume",
-          "points": 2
+          "points": 3
         }
       ],
       "old_direction": "de-escalation",
@@ -12220,6 +13139,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -12251,6 +13172,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "sanctions_pressure",
@@ -12286,6 +13209,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -12323,6 +13248,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -12354,6 +13281,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "sanctions_pressure",
@@ -12389,6 +13318,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -12419,6 +13350,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -12449,6 +13382,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -12480,6 +13415,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -12518,6 +13455,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -12549,6 +13488,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -12580,6 +13521,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -12611,6 +13554,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -12641,6 +13586,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -12671,6 +13618,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -12701,6 +13650,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -12738,11 +13689,13 @@
       "diplomatic_event": "Trump’s Erratic Behavior May Tank Negotiations, Iran Says, Warning of “Significantly Greater Costs” to the U.S. if War Resumes - Drop Site News",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 2,
+      "direction_score": 3,
+      "positive_signal_score": 3,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "talks_begin_resume",
-          "points": 2
+          "points": 3
         }
       ],
       "old_direction": "de-escalation",
@@ -12776,6 +13729,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -12812,6 +13767,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -5,
+      "positive_signal_score": 0,
+      "negative_signal_score": -5,
       "direction_reasons": [
         {
           "rule": "threat_direct",
@@ -12852,6 +13809,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "escalation_explicit",
@@ -12887,6 +13846,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -12916,11 +13877,13 @@
       "diplomatic_event": "Israel-Lebanon ceasefire begins as Iran keeps Strait of Hormuz gridlocked - CBS News",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 3,
+      "direction_score": 4,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "ceasefire_takes_effect",
-          "points": 3
+          "points": 4
         }
       ],
       "old_direction": "de-escalation",
@@ -12951,11 +13914,13 @@
       "diplomatic_event": "Middle East: Ten-day ceasefire agreed by Israel and Lebanon takes effect - France 24",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 3,
+      "direction_score": 4,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "ceasefire_takes_effect",
-          "points": 3
+          "points": 4
         }
       ],
       "old_direction": "de-escalation",
@@ -12987,6 +13952,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -13023,6 +13990,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "sanctions_pressure",
@@ -13059,6 +14028,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -5,
+      "positive_signal_score": 0,
+      "negative_signal_score": -5,
       "direction_reasons": [
         {
           "rule": "threat_direct",
@@ -13100,7 +14071,9 @@
       "diplomatic_event": "US-Iran talks: What’s the latest on mediation efforts? - Al Jazeera",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 2,
+      "direction_score": 3,
+      "positive_signal_score": 2,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "mediation_active",
@@ -13109,10 +14082,6 @@
         {
           "rule": "existing_score_positive_tiebreak",
           "points": 1
-        },
-        {
-          "rule": "question_headline",
-          "points": -1
         }
       ],
       "old_direction": "de-escalation",
@@ -13145,6 +14114,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -13176,6 +14147,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "sanctions_pressure",
@@ -13211,6 +14184,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -13241,15 +14216,21 @@
       "diplomatic_event": "Trump hints Iran talks could resume this week as US port blockade continues - BBC",
       "military_event": "",
       "direction": "mixed",
-      "direction_score": 0,
+      "direction_score": 1,
+      "positive_signal_score": 3,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "talks_begin_resume",
-          "points": 2
+          "points": 3
         },
         {
           "rule": "sanctions_pressure",
           "points": -2
+        },
+        {
+          "rule": "competing_signals_mixed",
+          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -13281,6 +14262,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "sanctions_pressure",
@@ -13316,6 +14299,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -13347,6 +14332,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "escalation_explicit",
@@ -13384,6 +14371,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -13414,6 +14403,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -13444,6 +14435,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -13475,11 +14468,13 @@
       "diplomatic_event": "U.S. will begin blockading ships in Strait of Hormuz on Monday after Iran talks yield no deal - CBS News",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 2,
+      "direction_score": 3,
+      "positive_signal_score": 3,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "actor_resumes_talks",
-          "points": 2
+          "points": 3
         }
       ],
       "old_direction": "de-escalation",
@@ -13512,6 +14507,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": -1,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "sanctions_pressure",
@@ -13553,6 +14550,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -13583,11 +14582,13 @@
       "diplomatic_event": "US and Iran fail to reach a deal after marathon talks in Pakistan - Al Jazeera",
       "military_event": "",
       "direction": "escalation",
-      "direction_score": -3,
+      "direction_score": -4,
+      "positive_signal_score": 0,
+      "negative_signal_score": -4,
       "direction_reasons": [
         {
           "rule": "efforts_stall",
-          "points": -3
+          "points": -4
         }
       ],
       "old_direction": "de-escalation",
@@ -13620,6 +14621,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -13651,6 +14654,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -13689,6 +14694,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -13719,6 +14726,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -13748,15 +14757,21 @@
       "diplomatic_event": "Israel agrees to talks with Lebanon as strikes there threaten fragile U.S.-Iran truce - PBS",
       "military_event": "",
       "direction": "mixed",
-      "direction_score": 0,
+      "direction_score": 1,
+      "positive_signal_score": 4,
+      "negative_signal_score": -3,
       "direction_reasons": [
         {
           "rule": "truce_agreed",
-          "points": 3
+          "points": 4
         },
         {
           "rule": "threat_direct",
           "points": -3
+        },
+        {
+          "rule": "active_attacks_plus_ceasefire",
+          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -13792,6 +14807,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -13823,6 +14840,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -13854,6 +14873,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "existing_score_positive_tiebreak",
@@ -13891,6 +14912,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -13920,11 +14943,13 @@
       "diplomatic_event": "Trump cautions Iran against charging tolls to go through Strait of Hormuz as fragile ceasefire holds - CBS News",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 3,
+      "direction_score": 4,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "ceasefire_takes_effect",
-          "points": 3
+          "points": 4
         }
       ],
       "old_direction": "de-escalation",
@@ -13956,6 +14981,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -13986,11 +15013,13 @@
       "diplomatic_event": "Israel backs US-Iran ceasefire but Netanyahu's war goals remain unfulfilled - BBC",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 2,
+      "direction_score": 3,
+      "positive_signal_score": 3,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "peace_proposal_positive",
-          "points": 2
+          "points": 3
         }
       ],
       "old_direction": "de-escalation",
@@ -14021,12 +15050,18 @@
       "title": "Ceasefire is threatened as Israel expands Lebanon strikes and Iran closes strait again - PBS",
       "diplomatic_event": "Ceasefire is threatened as Israel expands Lebanon strikes and Iran closes strait again - PBS",
       "military_event": "",
-      "direction": "escalation",
+      "direction": "mixed",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "intensify_attacks",
           "points": -2
+        },
+        {
+          "rule": "ceasefire_plus_active_attacks",
+          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -14061,6 +15096,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -14091,6 +15128,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -14122,6 +15161,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -14151,11 +15192,13 @@
       "diplomatic_event": "Much remains unclear after U.S., Israel and Iran agree to a 2-week ceasefire - PBS",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 3,
+      "direction_score": 4,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "truce_agreed",
-          "points": 3
+          "points": 4
         }
       ],
       "old_direction": "de-escalation",
@@ -14187,6 +15230,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -14217,6 +15262,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -14247,6 +15294,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -14277,6 +15326,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -14307,7 +15358,14 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
-      "direction_reasons": [],
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "ceasefire_plus_active_attacks",
+          "points": 0
+        }
+      ],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -14339,7 +15397,14 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
-      "direction_reasons": [],
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "ceasefire_plus_active_attacks",
+          "points": 0
+        }
+      ],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -14370,11 +15435,13 @@
       "diplomatic_event": "US and Iran agree to 2-week ceasefire as Trump pulls back on threats - AP News",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 3,
+      "direction_score": 4,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "truce_agreed",
-          "points": 3
+          "points": 4
         }
       ],
       "old_direction": "de-escalation",
@@ -14406,11 +15473,13 @@
       "diplomatic_event": "Iran's Supreme National Security Council says it has accepted two-week ceasefire in the war - PBS",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 2,
+      "direction_score": 3,
+      "positive_signal_score": 3,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "peace_proposal_positive",
-          "points": 2
+          "points": 3
         }
       ],
       "old_direction": "de-escalation",
@@ -14442,11 +15511,13 @@
       "diplomatic_event": "US and Iran agree to provisional ceasefire as Tehran says it will reopen strait of Hormuz | US-Israel war on Iran - The Guardian",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 3,
+      "direction_score": 4,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "truce_agreed",
-          "points": 3
+          "points": 4
         }
       ],
       "old_direction": "de-escalation",
@@ -14479,6 +15550,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -14508,11 +15581,13 @@
       "diplomatic_event": "U.S. and Iran reach 2-week ceasefire ahead of Trump's deadline - CBS News",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 3,
+      "direction_score": 4,
+      "positive_signal_score": 4,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "truce_agreed",
-          "points": 3
+          "points": 4
         }
       ],
       "old_direction": "de-escalation",
@@ -14544,11 +15619,13 @@
       "diplomatic_event": "Iran rejects latest ceasefire proposal as Trump deadline approaches - PBS",
       "military_event": "",
       "direction": "escalation",
-      "direction_score": -3,
+      "direction_score": -4,
+      "positive_signal_score": 0,
+      "negative_signal_score": -4,
       "direction_reasons": [
         {
           "rule": "proposal_rejected",
-          "points": -3
+          "points": -4
         }
       ],
       "old_direction": "de-escalation",
@@ -14581,6 +15658,8 @@
       "military_event": "",
       "direction": "de-escalation",
       "direction_score": 3,
+      "positive_signal_score": 2,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "mediation_active",
@@ -14621,6 +15700,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -14651,6 +15732,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "escalation_explicit",
@@ -14686,6 +15769,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -14717,6 +15802,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -14747,6 +15834,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -14777,6 +15866,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "escalation_explicit",
@@ -14810,6 +15901,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "escalation_explicit",
@@ -14846,6 +15939,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -6,
+      "positive_signal_score": 0,
+      "negative_signal_score": -5,
       "direction_reasons": [
         {
           "rule": "threat_direct",
@@ -14893,6 +15988,8 @@
       "military_event": "",
       "direction": "de-escalation",
       "direction_score": 2,
+      "positive_signal_score": 2,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "mediation_active",
@@ -14929,6 +16026,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -14960,6 +16059,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -14991,6 +16092,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -15022,6 +16125,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -15054,6 +16159,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -15084,6 +16191,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -15114,6 +16223,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -15144,6 +16255,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": -1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "threat_topic_prior",
@@ -15179,6 +16292,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -15207,16 +16322,22 @@
       "title": "Trump calls off Strait of Hormuz ultimatum as Iran receives U.S. message from mediators - CBS News",
       "diplomatic_event": "Trump calls off Strait of Hormuz ultimatum as Iran receives U.S. message from mediators - CBS News",
       "military_event": "",
-      "direction": "escalation",
-      "direction_score": -3,
+      "direction": "de-escalation",
+      "direction_score": 5,
+      "positive_signal_score": 5,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
-          "rule": "threat_direct",
-          "points": -3
+          "rule": "calls_off_ultimatum",
+          "points": 5
+        },
+        {
+          "rule": "reversal_suppresses_generic_threat",
+          "points": 3
         }
       ],
       "old_direction": "de-escalation",
-      "direction_changed": true,
+      "direction_changed": false,
       "actors": [],
       "target": "",
       "location": "",
@@ -15244,6 +16365,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -15274,6 +16397,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -15304,11 +16429,13 @@
       "diplomatic_event": "Trump says Iran is ready to negotiate a ceasefire but he's not ready to make a deal - NBC News",
       "military_event": "",
       "direction": "de-escalation",
-      "direction_score": 2,
+      "direction_score": 3,
+      "positive_signal_score": 2,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "open_to_talks",
-          "points": 1
+          "points": 2
         },
         {
           "rule": "existing_score_positive_tiebreak",
@@ -15345,6 +16472,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -5,
+      "positive_signal_score": 0,
+      "negative_signal_score": -5,
       "direction_reasons": [
         {
           "rule": "threat_direct",
@@ -15384,6 +16513,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -15415,6 +16546,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [
         {
           "rule": "threat_topic_prior",
@@ -15455,16 +16588,22 @@
       "title": "Iran rules out ceasefire talks; US threatens ‘most intense day of strikes’ - Al Jazeera",
       "diplomatic_event": "Iran rules out ceasefire talks; US threatens ‘most intense day of strikes’ - Al Jazeera",
       "military_event": "",
-      "direction": "escalation",
-      "direction_score": -6,
+      "direction": "mixed",
+      "direction_score": -7,
+      "positive_signal_score": 0,
+      "negative_signal_score": -7,
       "direction_reasons": [
         {
           "rule": "proposal_rejected",
-          "points": -3
+          "points": -4
         },
         {
           "rule": "threat_direct",
           "points": -3
+        },
+        {
+          "rule": "ceasefire_plus_active_attacks",
+          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -15500,11 +16639,13 @@
       "diplomatic_event": "Iran war live: Tehran vows to use powerful missiles, rejects Trump talks - Al Jazeera",
       "military_event": "",
       "direction": "escalation",
-      "direction_score": -3,
+      "direction_score": -4,
+      "positive_signal_score": 0,
+      "negative_signal_score": -4,
       "direction_reasons": [
         {
           "rule": "proposal_rejected",
-          "points": -3
+          "points": -4
         }
       ],
       "old_direction": "de-escalation",
@@ -15539,6 +16680,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -15570,11 +16713,13 @@
       "diplomatic_event": "U.S. orders staff to leave Saudi Arabia as war spreads; Iran rules out immediate ceasefire - CNBC",
       "military_event": "",
       "direction": "escalation",
-      "direction_score": -3,
+      "direction_score": -4,
+      "positive_signal_score": 0,
+      "negative_signal_score": -4,
       "direction_reasons": [
         {
           "rule": "proposal_rejected",
-          "points": -3
+          "points": -4
         }
       ],
       "old_direction": "de-escalation",
@@ -15607,6 +16752,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -15638,6 +16785,8 @@
       "military_event": "",
       "direction": "mixed",
       "direction_score": 0,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
       "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
@@ -15669,6 +16818,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "escalation_explicit",
@@ -15704,6 +16855,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "escalation_explicit",
@@ -15739,6 +16892,8 @@
       "military_event": "",
       "direction": "escalation",
       "direction_score": -2,
+      "positive_signal_score": 0,
+      "negative_signal_score": -2,
       "direction_reasons": [
         {
           "rule": "escalation_explicit",
