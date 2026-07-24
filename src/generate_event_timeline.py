@@ -7,21 +7,21 @@ from typing import Any
 
 
 # =====================================================================
-# Conflict End Matrix -> historical non-kinetic event timeline V3
+# Conflict End Matrix -> historical non-kinetic event timeline V3.1
 #
-# V3 change:
-# Event TYPE and event DIRECTION are now separate analytical questions.
+# V3.1 refinements:
+# - Explicit reversal phrases such as:
+#     "calls off ultimatum"
+#     "retracts threat"
+#     "withdraws threat"
+#     "backs away from threat"
+#   are treated as de-escalatory.
 #
-# Example:
-#   "peace deal voided" can remain a ceasefire/deal TOPIC,
-#   but its direction becomes ESCALATION.
+# - When meaningful positive AND negative signals coexist in the same
+#   headline, the event can become MIXED instead of being forced into
+#   escalation/de-escalation.
 #
-# Direction values:
-#   de-escalation
-#   escalation
-#   mixed
-#
-# The existing Conflict End Matrix scoring model is NOT changed.
+# - Event TYPE and event DIRECTION remain separate analytical questions.
 # =====================================================================
 
 SCORED_RELATIVE_PATH = "data/processed/latest_scored.json"
@@ -96,57 +96,106 @@ KINETIC_ACTION_PATTERNS = [
 
 
 # =====================================================================
-# DIRECTION MODEL V3
-#
-# Each matching pattern contributes points:
-# positive -> de-escalation
-# negative -> escalation
-#
-# Threshold:
-#   score >= +2 -> de-escalation
-#   score <= -2 -> escalation
-#   otherwise   -> mixed
-#
-# Strong reversal/breakdown phrases are weighted heavily so that
-# "peace deal voided" is not classified as de-escalation merely because
-# it contains "peace" and "deal".
+# DIRECTION MODEL V3.1
 # =====================================================================
 
+# Strong reversal language must be evaluated before generic "threat" rules.
+REVERSAL_DEESCALATION_RULES = [
+    (5, "calls_off_ultimatum",
+     r"\b(?:calls?|called)\s+off\b.*\b(?:ultimatum|threat|strike|attack|military action)\b"),
+    (5, "retracts_threat",
+     r"\b(?:retracts?|retracted|withdraws?|withdrew|withdrawn)\b.*\b(?:threat|ultimatum|warning)\b"),
+    (5, "backs_away_from_threat",
+     r"\b(?:backs?|backed)\s+away\s+from\b.*\b(?:threat|ultimatum|strike|attack|military action)\b"),
+    (5, "drops_threat",
+     r"\b(?:drops?|dropped|abandons?|abandoned)\b.*\b(?:threat|ultimatum|military option)\b"),
+    (4, "stands_down",
+     r"\b(?:stands?|stood)\s+down\b.*\b(?:forces?|troops?|military|strike|attack)\b"),
+]
+
 POSITIVE_DIRECTION_RULES = [
-    (3, "ceasefire_takes_effect", r"\bcease[- ]?fire\b.*\b(?:takes? effect|begins?|starts?|implemented|implementation|holds?|holding|extended|renewed)\b"),
-    (3, "truce_agreed", r"\b(?:agree|agrees|agreed|reach|reaches|reached|sign|signs|signed)\b.*\b(?:cease[- ]?fire|truce|peace deal|peace agreement|agreement)\b"),
-    (3, "peace_deal_reached", r"\b(?:peace deal|peace agreement|settlement)\b.*\b(?:agreed|reached|signed|accepted|approved|implemented)\b"),
-    (2, "talks_begin_resume", r"\b(?:talks?|negotiations?|dialogue)\b.*\b(?:begin|begins|began|start|starts|started|resume|resumes|resumed|continue|continues|continued)\b"),
-    (2, "actor_resumes_talks", r"\b(?:resume|resumes|resumed|begin|begins|began|start|starts|started|continue|continues)\b.*\b(?:talks?|negotiations?|dialogue)\b"),
-    (2, "mediation_active", r"\b(?:mediator|mediators|mediation)\b.*\b(?:effort|efforts|push|initiative|talks?|meeting|meetings)\b"),
-    (2, "peace_proposal_positive", r"\b(?:accepts?|accepted|backs?|backed|supports?|supported|welcomes?|welcomed)\b.*\b(?:peace proposal|peace plan|cease[- ]?fire|truce|deal|agreement)\b"),
-    (2, "deescalation_explicit", r"\bde[- ]?escalat(?:e|es|ed|ing|ion)\b"),
-    (1, "diplomatic_progress", r"\b(?:progress|breakthrough|constructive|productive)\b.*\b(?:talks?|negotiations?|diplomacy|dialogue)\b"),
-    (1, "open_to_talks", r"\b(?:open|ready|willing)\s+to\b.*\b(?:talk|negotiate|dialogue)\b"),
+    (4, "ceasefire_takes_effect",
+     r"\bcease[- ]?fire\b.*\b(?:takes? effect|begins?|starts?|implemented|implementation|holds?|holding|extended|renewed)\b"),
+    (4, "truce_agreed",
+     r"\b(?:agree|agrees|agreed|reach|reaches|reached|sign|signs|signed)\b.*\b(?:cease[- ]?fire|truce|peace deal|peace agreement|agreement)\b"),
+    (4, "peace_deal_reached",
+     r"\b(?:peace deal|peace agreement|settlement)\b.*\b(?:agreed|reached|signed|accepted|approved|implemented)\b"),
+    (3, "talks_begin_resume",
+     r"\b(?:talks?|negotiations?|dialogue)\b.*\b(?:begin|begins|began|start|starts|started|resume|resumes|resumed|continue|continues|continued)\b"),
+    (3, "actor_resumes_talks",
+     r"\b(?:resume|resumes|resumed|begin|begins|began|start|starts|started|continue|continues)\b.*\b(?:talks?|negotiations?|dialogue)\b"),
+    (2, "mediation_active",
+     r"\b(?:mediator|mediators|mediation)\b.*\b(?:effort|efforts|push|initiative|talks?|meeting|meetings)\b"),
+    (3, "peace_proposal_positive",
+     r"\b(?:accepts?|accepted|backs?|backed|supports?|supported|welcomes?|welcomed)\b.*\b(?:peace proposal|peace plan|cease[- ]?fire|truce|deal|agreement)\b"),
+    (3, "deescalation_explicit",
+     r"\bde[- ]?escalat(?:e|es|ed|ing|ion)\b"),
+    (2, "diplomatic_progress",
+     r"\b(?:progress|breakthrough|constructive|productive|rapid pace)\b.*\b(?:talks?|negotiations?|diplomacy|dialogue)\b"),
+    (2, "open_to_talks",
+     r"\b(?:open|ready|willing)\s+to\b.*\b(?:talk|negotiate|dialogue)\b"),
+    (2, "deal_close",
+     r"\b(?:deal|agreement)\b.*\b(?:close|near|imminent|expected to be signed|shortly)\b"),
 ]
 
 NEGATIVE_DIRECTION_RULES = [
-    (-4, "deal_voided_cancelled", r"\b(?:peace deal|deal|agreement|cease[- ]?fire|truce)\b.*\b(?:voided|cancelled|canceled|terminated|abandoned|scrapped|dead)\b"),
-    (-4, "actor_voids_deal", r"\b(?:voids?|voided|cancels?|cancelled|canceled|terminates?|terminated|abandons?|abandoned|scraps?|scrapped)\b.*\b(?:peace deal|deal|agreement|cease[- ]?fire|truce)\b"),
-    (-4, "ceasefire_collapses", r"\b(?:cease[- ]?fire|truce|peace deal|agreement)\b.*\b(?:collapse|collapses|collapsed|breaks down|broke down|fails?|failed|shatters?|shattered)\b"),
-    (-3, "proposal_rejected", r"\b(?:rejects?|rejected|rules out|ruled out|refuses?|refused)\b.*\b(?:cease[- ]?fire|truce|peace proposal|peace plan|deal|agreement|talks?|negotiations?)\b"),
-    (-3, "talks_stall_fail", r"\b(?:talks?|negotiations?|diplomatic efforts?|dialogue)\b.*\b(?:stall|stalls|stalled|fail|fails|failed|collapse|collapsed|deadlock|stalemate|break down|broke down|suspended|halted)\b"),
-    (-3, "efforts_stall", r"\b(?:stall|stalls|stalled|fail|fails|failed|collapse|collapsed)\b.*\b(?:talks?|negotiations?|diplomatic efforts?|dialogue)\b"),
-    (-3, "threat_direct", r"\b(?:threatens?|threat|ultimatum|retaliation|retaliatory)\b"),
+    (-5, "deal_voided_cancelled",
+     r"\b(?:peace deal|deal|agreement|cease[- ]?fire|truce)\b.*\b(?:voided|cancelled|canceled|terminated|abandoned|scrapped|dead)\b"),
+    (-5, "actor_voids_deal",
+     r"\b(?:voids?|voided|cancels?|cancelled|canceled|terminates?|terminated|abandons?|abandoned|scraps?|scrapped)\b.*\b(?:peace deal|deal|agreement|cease[- ]?fire|truce)\b"),
+    (-5, "ceasefire_collapses",
+     r"\b(?:cease[- ]?fire|truce|peace deal|agreement)\b.*\b(?:collapse|collapses|collapsed|breaks down|broke down|fails?|failed|shatters?|shattered)\b"),
+    (-4, "proposal_rejected",
+     r"\b(?:rejects?|rejected|rules out|ruled out|refuses?|refused)\b.*\b(?:cease[- ]?fire|truce|peace proposal|peace plan|deal|agreement|talks?|negotiations?)\b"),
+    (-4, "talks_stall_fail",
+     r"\b(?:talks?|negotiations?|diplomatic efforts?|dialogue)\b.*\b(?:stall|stalls|stalled|fail|fails|failed|collapse|collapsed|deadlock|stalemate|break down|broke down|suspended|halted)\b"),
+    (-4, "efforts_stall",
+     r"\b(?:stall|stalls|stalled|fail|fails|failed|collapse|collapsed)\b.*\b(?:talks?|negotiations?|diplomatic efforts?|dialogue)\b"),
+    (-3, "threat_direct",
+     r"\b(?:threatens?|threat|ultimatum|retaliation|retaliatory)\b"),
     (-3, "red_line", r"\bred lines?\b"),
-    (-3, "warning_consequences", r"\bwarns?\b.*\b(?:attack|strike|retaliat|response|consequences|military|force)\b"),
+    (-3, "warning_consequences",
+     r"\bwarns?\b.*\b(?:attack|strike|retaliat|response|consequences|military|force)\b"),
     (-2, "escalation_explicit", r"\bescalat(?:e|es|ed|ing|ion)\b"),
-    (-2, "attacks_intensify", r"\b(?:attacks?|strikes?|fighting|war|hostilities)\b.*\b(?:intensify|intensifies|intensified|expand|expands|expanded|spiral|spiraling|spiralling)\b"),
-    (-2, "intensify_attacks", r"\b(?:intensify|intensifies|intensified|expand|expands|expanded)\b.*\b(?:attacks?|strikes?|fighting|war|hostilities)\b"),
-    (-2, "military_posture", r"\b(?:deploys?|deployment|mobilizes?|mobilises?|raises? readiness|military buildup|build-up)\b"),
-    (-2, "sanctions_pressure", r"\b(?:new sanctions|tightens? sanctions|expands? sanctions|blockade|embargo)\b"),
+    (-2, "attacks_intensify",
+     r"\b(?:attacks?|strikes?|fighting|war|hostilities)\b.*\b(?:intensify|intensifies|intensified|expand|expands|expanded|spiral|spiraling|spiralling)\b"),
+    (-2, "intensify_attacks",
+     r"\b(?:intensify|intensifies|intensified|expand|expands|expanded)\b.*\b(?:attacks?|strikes?|fighting|war|hostilities)\b"),
+    (-2, "military_posture",
+     r"\b(?:deploys?|deployment|mobilizes?|mobilises?|raises? readiness|military buildup|build-up)\b"),
+    (-2, "sanctions_pressure",
+     r"\b(?:new sanctions|tightens? sanctions|expands? sanctions|blockade|embargo)\b"),
     (-1, "existential_war", r"\bexistential war\b"),
 ]
 
-NEGATION_GUARDS = [
-    # Prevent "hopes of de-escalation" from getting full positive weight.
-    ("speculative_hope", r"\b(?:hope|hopes|hoping|prospect|prospects|possibility|possible)\b.*\b(?:de[- ]?escalation|cease[- ]?fire|truce|deal|peace)\b"),
-    ("question_headline", r"\?\s*(?:-|$)"),
+SPECULATIVE_POSITIVE_GUARDS = [
+    ("speculative_hope",
+     r"\b(?:hope|hopes|hoping|prospect|prospects|possibility|possible)\b.*\b(?:de[- ]?escalation|cease[- ]?fire|truce|deal|peace)\b"),
+]
+
+# These combinations are analytically useful as MIXED rather than
+# forcing the stronger raw score to one side.
+EXPLICIT_MIXED_PATTERNS = [
+    (
+        "talks_progress_plus_threat",
+        r"\b(?:talks?|negotiations?)\b.*\b(?:continue|continuing|progress|rapid pace|resume|resumed)\b.*\b(?:threat|threatens|warns|other fronts|retaliat)\b"
+    ),
+    (
+        "threat_plus_talks_progress",
+        r"\b(?:threat|threatens|warns|other fronts|retaliat)\b.*\b(?:talks?|negotiations?)\b.*\b(?:continue|continuing|progress|rapid pace|resume|resumed)\b"
+    ),
+    (
+        "deal_progress_plus_warning",
+        r"\b(?:deal|agreement)\b.*\b(?:close|near|expected to be signed|shortly)\b.*\b(?:warns?|consequences|violations?)\b"
+    ),
+    (
+        "ceasefire_plus_active_attacks",
+        r"\b(?:cease[- ]?fire|truce|agreement)\b.*\b(?:attacks?|strikes?|fighting|hostilities)\b"
+    ),
+    (
+        "active_attacks_plus_ceasefire",
+        r"\b(?:attacks?|strikes?|fighting|hostilities)\b.*\b(?:cease[- ]?fire|truce|agreement)\b"
+    ),
 ]
 
 
@@ -274,11 +323,6 @@ def is_diplomatic_event(title: str, terms: set[str]) -> bool:
 
 
 def classify_non_kinetic_event(article: dict[str, Any]) -> dict[str, str] | None:
-    """
-    Classify event TOPIC only.
-
-    Direction is intentionally NOT assigned here anymore.
-    """
     title = str(article.get("title", "")).strip()
     terms = matched_terms(article)
 
@@ -287,7 +331,6 @@ def classify_non_kinetic_event(article: dict[str, Any]) -> dict[str, str] | None
 
     title_lower = title.lower()
 
-    # Keep topic grouping stable for dashboard compatibility.
     if terms & CEASEFIRE_TERMS:
         if regex_any(DIPLOMACY_PATTERNS, title_lower) or not regex_any(
             KINETIC_ACTION_PATTERNS,
@@ -330,10 +373,22 @@ def classify_non_kinetic_event(article: dict[str, Any]) -> dict[str, str] | None
 
 
 def legacy_direction(event_type: str) -> str:
-    """
-    Reproduces the old V2 direction behaviour for validation reporting.
-    """
     return "escalation" if event_type == "threat" else "de-escalation"
+
+
+def collect_rule_hits(
+    title: str,
+    rules: list[tuple[int, str, str]],
+) -> tuple[int, list[dict[str, Any]]]:
+    score = 0
+    reasons: list[dict[str, Any]] = []
+
+    for weight, name, pattern in rules:
+        if re.search(pattern, title, flags=re.IGNORECASE):
+            score += weight
+            reasons.append({"rule": name, "points": weight})
+
+    return score, reasons
 
 
 def classify_direction(
@@ -341,34 +396,51 @@ def classify_direction(
     article_score: int,
     event_type: str,
 ) -> dict[str, Any]:
-    """
-    Context-sensitive direction scoring.
-
-    The article's existing score is only a weak tie-breaker.
-    It cannot override strong contextual phrases such as
-    "ceasefire collapsed" or "deal agreed".
-    """
     text = title.lower()
-    score = 0
-    reasons: list[dict[str, Any]] = []
 
-    for weight, name, pattern in POSITIVE_DIRECTION_RULES:
-        if re.search(pattern, text, flags=re.IGNORECASE):
-            score += weight
-            reasons.append({"rule": name, "points": weight})
+    # 1) Strong reversal language first.
+    reversal_score, reversal_reasons = collect_rule_hits(
+        text,
+        REVERSAL_DEESCALATION_RULES,
+    )
 
-    for weight, name, pattern in NEGATIVE_DIRECTION_RULES:
-        if re.search(pattern, text, flags=re.IGNORECASE):
-            score += weight
-            reasons.append({"rule": name, "points": weight})
+    positive_score, positive_reasons = collect_rule_hits(
+        text,
+        POSITIVE_DIRECTION_RULES,
+    )
 
-    # Generic topic priors are deliberately small.
-    # This avoids classifying every mention of "deal" or "peace" as positive.
-    if event_type == "threat" and score > -2:
+    negative_score, negative_reasons = collect_rule_hits(
+        text,
+        NEGATIVE_DIRECTION_RULES,
+    )
+
+    reasons = reversal_reasons + positive_reasons + negative_reasons
+
+    # If a threat/ultimatum was explicitly called off/retracted/withdrawn,
+    # suppress generic threat penalties that refer to the same phrase.
+    if reversal_score > 0:
+        suppressed = {"threat_direct", "red_line", "warning_consequences"}
+        negative_removed = sum(
+            int(r["points"])
+            for r in reasons
+            if r["rule"] in suppressed and int(r["points"]) < 0
+        )
+        if negative_removed:
+            negative_score -= negative_removed
+            reasons = [r for r in reasons if r["rule"] not in suppressed]
+            reasons.append({
+                "rule": "reversal_suppresses_generic_threat",
+                "points": -negative_removed,
+            })
+
+    score = reversal_score + positive_score + negative_score
+
+    # Weak topic prior.
+    if event_type == "threat" and score > -2 and reversal_score == 0:
         score -= 1
         reasons.append({"rule": "threat_topic_prior", "points": -1})
 
-    # Existing Conflict End Matrix score is used only as a weak secondary signal.
+    # Existing index score is only a weak tie-breaker.
     if article_score <= -4:
         score -= 1
         reasons.append({"rule": "existing_score_negative_tiebreak", "points": -1})
@@ -376,14 +448,39 @@ def classify_direction(
         score += 1
         reasons.append({"rule": "existing_score_positive_tiebreak", "points": 1})
 
-    # Speculative language reduces confidence in a positive classification.
+    # Speculative positive language receives less weight.
     if score > 0:
-        for name, pattern in NEGATION_GUARDS:
+        for name, pattern in SPECULATIVE_POSITIVE_GUARDS:
             if re.search(pattern, text, flags=re.IGNORECASE):
                 score -= 1
                 reasons.append({"rule": name, "points": -1})
 
-    if score >= 2:
+    explicit_mixed_reason = None
+    for name, pattern in EXPLICIT_MIXED_PATTERNS:
+        if re.search(pattern, text, flags=re.IGNORECASE):
+            explicit_mixed_reason = name
+            break
+
+    has_positive = (reversal_score + positive_score) >= 2
+    has_negative = negative_score <= -2
+
+    # Strong coexistence of positive and negative signals -> MIXED.
+    if explicit_mixed_reason:
+        direction = "mixed"
+        reasons.append({"rule": explicit_mixed_reason, "points": 0})
+    elif has_positive and has_negative:
+        # If one side is overwhelmingly stronger, keep that direction.
+        positive_strength = reversal_score + positive_score
+        negative_strength = abs(negative_score)
+
+        if positive_strength >= negative_strength + 4:
+            direction = "de-escalation"
+        elif negative_strength >= positive_strength + 4:
+            direction = "escalation"
+        else:
+            direction = "mixed"
+            reasons.append({"rule": "competing_signals_mixed", "points": 0})
+    elif score >= 2:
         direction = "de-escalation"
     elif score <= -2:
         direction = "escalation"
@@ -394,6 +491,8 @@ def classify_direction(
         "direction": direction,
         "direction_score": score,
         "direction_reasons": reasons,
+        "positive_signal_score": reversal_score + positive_score,
+        "negative_signal_score": negative_score,
     }
 
 
@@ -434,6 +533,8 @@ def build_event(
         "military_event": "",
         "direction": direction_result["direction"],
         "direction_score": direction_result["direction_score"],
+        "positive_signal_score": direction_result["positive_signal_score"],
+        "negative_signal_score": direction_result["negative_signal_score"],
         "direction_reasons": direction_result["direction_reasons"],
         "old_direction": old_direction,
         "direction_changed": old_direction != direction_result["direction"],
@@ -488,15 +589,26 @@ def count_by(events: list[dict[str, Any]], field: str) -> dict[str, int]:
 def create_validation_report(events: list[dict[str, Any]]) -> dict[str, Any]:
     changed = [e for e in events if e.get("direction_changed")]
 
-    # Prioritize stronger direction changes for manual review.
+    # Explicitly surface known tricky semantic cases.
+    tricky_terms = (
+        "calls off", "retract", "withdraw", "backs away",
+        "rapid pace", "continuing", "stall", "voided",
+        "threat", "ultimatum", "ceasefire", "deal"
+    )
+
+    tricky = [
+        e for e in events
+        if any(term in str(e.get("title", "")).lower() for term in tricky_terms)
+    ]
+
     examples = sorted(
-        changed,
+        tricky,
         key=lambda e: (
             abs(int(e.get("direction_score", 0))),
             parse_datetime(str(e.get("timestamp", ""))),
         ),
         reverse=True,
-    )[:30]
+    )[:40]
 
     transition_counts: dict[str, int] = {}
     for event in events:
@@ -505,7 +617,7 @@ def create_validation_report(events: list[dict[str, Any]]) -> dict[str, Any]:
 
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "model": "context_direction_v3",
+        "model": "context_direction_v3_1",
         "event_count": len(events),
         "old_direction_counts": count_by(events, "old_direction"),
         "new_direction_counts": count_by(events, "direction"),
@@ -521,6 +633,8 @@ def create_validation_report(events: list[dict[str, Any]]) -> dict[str, Any]:
                 "old_direction": e.get("old_direction"),
                 "new_direction": e.get("direction"),
                 "direction_score": e.get("direction_score"),
+                "positive_signal_score": e.get("positive_signal_score"),
+                "negative_signal_score": e.get("negative_signal_score"),
                 "direction_reasons": e.get("direction_reasons"),
                 "score": e.get("score"),
                 "link": e.get("link"),
@@ -566,7 +680,7 @@ def main() -> None:
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "source": "Conflict End Matrix Git history + current latest_scored.json",
         "scope": "historical non-kinetic diplomatic, ceasefire and threat/statement events",
-        "direction_model": "context_direction_v3",
+        "direction_model": "context_direction_v3_1",
         "military_events_included": False,
         "historical_scored_versions_read": historical_versions,
         "unique_articles_scanned": len(all_articles),
@@ -584,7 +698,7 @@ def main() -> None:
     with validation_path.open("w", encoding="utf-8") as f:
         json.dump(validation, f, indent=2, ensure_ascii=False)
 
-    print("Historical non-kinetic event timeline V3 generated.")
+    print("Historical non-kinetic event timeline V3.1 generated.")
     print(f"Historical scored versions read: {historical_versions}")
     print(f"Unique articles scanned: {len(all_articles)}")
     print(f"Events extracted: {len(events)}")
