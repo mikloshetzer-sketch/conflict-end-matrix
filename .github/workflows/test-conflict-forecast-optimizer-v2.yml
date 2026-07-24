@@ -1,4 +1,4 @@
-name: TEST - Conflict Forecast Optimizer V2
+name: TEST - Conflict Forecast V3 NO SIGNAL
 
 on:
   workflow_dispatch:
@@ -7,12 +7,12 @@ permissions:
   contents: write
 
 concurrency:
-  group: test-conflict-forecast-optimizer-v2
+  group: test-conflict-forecast-v3-no-signal
   cancel-in-progress: false
 
 jobs:
-  test-conflict-forecast-optimizer:
-    name: TEST - Optimize and Backtest Forecast
+  test-v3:
+    name: TEST - V3 NO SIGNAL Backtest
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
@@ -27,97 +27,60 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Check required files
+      - name: Check required inputs
         run: |
           test -f docs/conflict_analysis.json
-          test -f src/optimize_conflict_forecast_v2.py
-          echo "Required files found."
+          test -f src/test_conflict_forecast_v3.py
 
-      - name: TEST - Run forecast optimizer
+      - name: TEST - Run V3 NO SIGNAL optimizer
         run: |
-          python src/optimize_conflict_forecast_v2.py
+          python src/test_conflict_forecast_v3.py
 
-      - name: TEST - Validate optimization output
+      - name: TEST - Validate and print results
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
 
-          path = Path("docs/conflict_forecast_optimization.json")
-          if not path.exists():
-              raise SystemExit("ERROR: optimization output was not created")
+          p=Path("docs/conflict_forecast_v3_test.json")
+          if not p.exists():
+              raise SystemExit("ERROR: V3 test output missing")
 
-          with path.open("r", encoding="utf-8") as f:
-              data = json.load(f)
+          d=json.loads(p.read_text(encoding="utf-8"))
+          if d.get("status")!="TEST_ONLY":
+              raise SystemExit("ERROR: output is not marked TEST_ONLY")
 
-          if data.get("optimizer_version") != "conflict_forecast_optimizer_v2":
-              raise SystemExit("ERROR: unexpected optimizer version")
+          for h in ("48h","72h"):
+              x=d.get("horizons",{}).get(h)
+              if not x:
+                  raise SystemExit(f"ERROR: missing {h}")
 
-          tested = data.get("tested_grid", {})
-          winners = data.get("winning_models", {})
+              rule=x.get("selected_no_signal_rule")
+              if not rule:
+                  raise SystemExit(f"ERROR: no selected NO SIGNAL rule for {h}")
 
-          print("Optimizer:", data.get("optimizer_version"))
-          print("Candidate count:", tested.get("candidate_count"))
-          print()
-
-          for horizon in ("24h", "48h", "72h"):
-              winner = winners.get(horizon)
-              if not winner:
-                  print(horizon, "- NO WINNING MODEL")
-                  continue
-
-              metrics = winner.get("metrics", {})
-              baseline = winner.get("baseline", {})
-
-              print("====", horizon, "====")
-              print("Feature set:", winner.get("feature_set"))
-              print("Stable threshold:", winner.get("stable_threshold_pct"))
-              print("K neighbours:", winner.get("k_neighbors"))
-              print("Accuracy:", metrics.get("accuracy_pct"))
-              print("Balanced accuracy:", metrics.get("balanced_accuracy_pct"))
-              print("Baseline:", baseline.get("accuracy_pct"))
-              print("Improvement pp:", winner.get("baseline_improvement_pp"))
-              print("Confidence:", winner.get("confidence_metrics"))
-              print("Class metrics:", metrics.get("class_metrics"))
+              print(f"===== {h} =====")
+              print("Backtest sample:",x.get("backtest_sample"))
+              print("Selected rule:",rule)
+              print("Latest raw prediction:",x.get("latest_raw_prediction"))
+              print("Latest public signal:",x.get("latest_public_signal"))
               print()
 
-          latest = data.get("latest_forecast", {})
-          print("==== LATEST FORECAST ====")
-          for horizon in ("24h", "48h", "72h"):
-              forecast = latest.get(horizon)
-              if not forecast:
-                  print(horizon, "- unavailable")
-                  continue
-              print(
-                  horizon,
-                  "| direction:", forecast.get("direction"),
-                  "| confidence:", forecast.get("confidence_score"),
-                  "| validated accuracy:", forecast.get("validated_accuracy_pct"),
-                  "| balanced:", forecast.get("validated_balanced_accuracy_pct"),
-                  "| model:", forecast.get("model_configuration"),
-              )
-
-          print()
-          print("Validation OK")
+          print("V3 TEST validation OK")
           PY
 
-      - name: Show generated file status
-        run: |
-          git status --short
-          ls -lh docs/conflict_forecast_optimization.json
-
-      - name: Commit TEST optimization result
+      - name: Commit TEST result
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email \
-            "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add docs/conflict_forecast_optimization.json
+          git add docs/conflict_forecast_v3_test.json
 
           if git diff --cached --quiet; then
-            echo "No optimization changes to commit."
+            echo "No V3 TEST changes to commit."
           else
-            git commit -m "TEST: update conflict forecast optimization"
+            git commit -m "TEST: update V3 conflict forecast no-signal analysis"
             git pull --rebase origin main
             git push origin HEAD:main
           fi
+
