@@ -193,6 +193,40 @@ def filter_events_to_analysis_window(
     return filtered
 
 
+def first_full_utc_day_after(start: datetime) -> datetime:
+    """
+    Return the first complete UTC calendar day available after the raw
+    common-data start timestamp.
+
+    Example:
+      raw start = 2026-05-04 17:29 UTC
+      daily start = 2026-05-05 00:00 UTC
+
+    The partial first day remains available to lag analysis, but is excluded
+    from MAI / DDI / Gap daily-baseline calculations.
+    """
+    start_utc = start.astimezone(timezone.utc)
+
+    # If data happen to start exactly at 00:00:00 UTC, that day is complete
+    # and may be used directly.
+    if (
+        start_utc.hour == 0
+        and start_utc.minute == 0
+        and start_utc.second == 0
+        and start_utc.microsecond == 0
+    ):
+        return start_utc
+
+    next_day = start_utc.date() + timedelta(days=1)
+
+    return datetime(
+        next_day.year,
+        next_day.month,
+        next_day.day,
+        tzinfo=timezone.utc,
+    )
+
+
 def build_day_range(
     start: datetime,
     end: datetime,
@@ -627,7 +661,15 @@ def main() -> int:
         raise ValueError("No valid military event timestamps found.")
 
     analysis_start, analysis_end = analysis_window
+    daily_analysis_start = first_full_utc_day_after(analysis_start)
 
+    if daily_analysis_start > analysis_end:
+        raise ValueError(
+            "No complete UTC day is available inside the common analysis period."
+        )
+
+    # Full common-period event sets:
+    # used by lag analysis so the partial first day remains usable.
     diplomatic_events = filter_events_to_analysis_window(
         diplomatic_events_all,
         analysis_start,
@@ -640,13 +682,27 @@ def main() -> int:
         analysis_end,
     )
 
-    daily = build_daily_metrics(
-        diplomatic_events,
-        military_events,
-        analysis_start,
+    # Daily MAI / DDI / Gap starts only on the first COMPLETE UTC day.
+    daily_diplomatic_events = filter_events_to_analysis_window(
+        diplomatic_events_all,
+        daily_analysis_start,
         analysis_end,
     )
 
+    daily_military_events = filter_events_to_analysis_window(
+        military_events_all,
+        daily_analysis_start,
+        analysis_end,
+    )
+
+    daily = build_daily_metrics(
+        daily_diplomatic_events,
+        daily_military_events,
+        daily_analysis_start,
+        analysis_end,
+    )
+
+    # Lag analysis deliberately retains the raw common-data start.
     lag = build_lag_analysis(
         diplomatic_events,
         military_events,
@@ -656,13 +712,18 @@ def main() -> int:
 
     payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "analysis_model": "conflict_analysis_v1_1",
+        "analysis_model": "conflict_analysis_v1_2",
         "analysis_period": {
-            "start": analysis_start.isoformat().replace("+00:00", "Z"),
+            "raw_common_start": analysis_start.isoformat().replace("+00:00", "Z"),
+            "daily_analysis_start": daily_analysis_start.isoformat().replace("+00:00", "Z"),
             "end": analysis_end.isoformat().replace("+00:00", "Z"),
-            "start_date": analysis_start.date().isoformat(),
+            "raw_common_start_date": analysis_start.date().isoformat(),
+            "daily_analysis_start_date": daily_analysis_start.date().isoformat(),
             "end_date": analysis_end.date().isoformat(),
-            "basis": "First valid kinetic event through latest available event timestamp",
+            "basis": (
+                "Lag analysis starts at the first valid kinetic event. "
+                "Daily MAI/DDI/Gap starts at the first complete UTC day."
+            ),
         },
         "inputs": {
             "event_timeline_generated_at": timeline_data.get("generated_at"),
@@ -672,9 +733,11 @@ def main() -> int:
             "kinetic_generated_at": kinetic_data.get("generated_at"),
             "kinetic_cleaning_mode": kinetic_data.get("cleaning_mode"),
             "diplomatic_events_total_history": len(diplomatic_events_all),
-            "diplomatic_events_in_analysis_period": len(diplomatic_events),
+            "diplomatic_events_in_common_period": len(diplomatic_events),
+            "diplomatic_events_in_daily_period": len(daily_diplomatic_events),
             "military_events_total_history": len(military_events_all),
-            "military_events_in_analysis_period": len(military_events),
+            "military_events_in_common_period": len(military_events),
+            "military_events_in_daily_period": len(daily_military_events),
         },
         "methodology": {
             "military_activity_index": {
@@ -723,10 +786,16 @@ def main() -> int:
 
     temp.replace(OUTPUT)
 
-    print("Conflict analysis V1.1 generated.")
+    print("Conflict analysis V1.2 generated.")
     print(
-        "Analysis period:",
+        "Raw common period:",
         analysis_start.isoformat(),
+        "->",
+        analysis_end.isoformat(),
+    )
+    print(
+        "Daily MAI/DDI/Gap period:",
+        daily_analysis_start.isoformat(),
         "->",
         analysis_end.isoformat(),
     )
@@ -735,8 +804,16 @@ def main() -> int:
         f"{len(diplomatic_events)} / {len(diplomatic_events_all)}"
     )
     print(
+        f"Diplomatic events in daily period: "
+        f"{len(daily_diplomatic_events)}"
+    )
+    print(
         f"Military events in common period: "
         f"{len(military_events)} / {len(military_events_all)}"
+    )
+    print(
+        f"Military events in daily period: "
+        f"{len(daily_military_events)}"
     )
     print(f"Daily rows: {len(daily)}")
     print(
