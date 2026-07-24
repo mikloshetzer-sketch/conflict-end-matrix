@@ -464,10 +464,20 @@ def classify_direction(
     has_positive = (reversal_score + positive_score) >= 2
     has_negative = negative_score <= -2
 
-    # Strong coexistence of positive and negative signals -> MIXED.
-    if explicit_mixed_reason:
+    # V3.2 RULE:
+    # MIXED is only allowed when BOTH a real positive and a real negative
+    # signal are present. A mere mention of "ceasefire", "deal", "talks"
+    # or "peace" is not enough to count as a positive signal.
+    #
+    # Example:
+    # "Iran rules out ceasefire talks; US threatens strikes"
+    # positive_signal_score = 0
+    # negative_signal_score < 0
+    # -> ESCALATION, not MIXED.
+    if explicit_mixed_reason and has_positive and has_negative:
         direction = "mixed"
         reasons.append({"rule": explicit_mixed_reason, "points": 0})
+
     elif has_positive and has_negative:
         # If one side is overwhelmingly stronger, keep that direction.
         positive_strength = reversal_score + positive_score
@@ -480,10 +490,13 @@ def classify_direction(
         else:
             direction = "mixed"
             reasons.append({"rule": "competing_signals_mixed", "points": 0})
+
     elif score >= 2:
         direction = "de-escalation"
+
     elif score <= -2:
         direction = "escalation"
+
     else:
         direction = "mixed"
 
@@ -617,7 +630,7 @@ def create_validation_report(events: list[dict[str, Any]]) -> dict[str, Any]:
 
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "model": "context_direction_v3_1",
+        "model": "context_direction_v3_2",
         "event_count": len(events),
         "old_direction_counts": count_by(events, "old_direction"),
         "new_direction_counts": count_by(events, "direction"),
@@ -680,7 +693,7 @@ def main() -> None:
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "source": "Conflict End Matrix Git history + current latest_scored.json",
         "scope": "historical non-kinetic diplomatic, ceasefire and threat/statement events",
-        "direction_model": "context_direction_v3_1",
+        "direction_model": "context_direction_v3_2",
         "military_events_included": False,
         "historical_scored_versions_read": historical_versions,
         "unique_articles_scanned": len(all_articles),
@@ -698,7 +711,7 @@ def main() -> None:
     with validation_path.open("w", encoding="utf-8") as f:
         json.dump(validation, f, indent=2, ensure_ascii=False)
 
-    print("Historical non-kinetic event timeline V3.1 generated.")
+    print("Historical non-kinetic event timeline V3.2 generated.")
     print(f"Historical scored versions read: {historical_versions}")
     print(f"Unique articles scanned: {len(all_articles)}")
     print(f"Events extracted: {len(events)}")
@@ -712,4 +725,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
