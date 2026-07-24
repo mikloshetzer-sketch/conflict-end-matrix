@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-07-24T09:19:26.177689+00:00",
-  "model": "context_direction_v3_1",
+  "generated_at": "2026-07-24T09:31:26.291043+00:00",
+  "model": "context_direction_v3_2",
   "event_count": 471,
   "old_direction_counts": {
     "de-escalation": 446,
     "escalation": 25
   },
   "new_direction_counts": {
-    "mixed": 358,
-    "escalation": 58,
-    "de-escalation": 55
+    "mixed": 347,
+    "escalation": 66,
+    "de-escalation": 58
   },
-  "changed_count": 394,
-  "changed_share": 83.65,
+  "changed_count": 391,
+  "changed_share": 83.01,
   "transition_counts": {
-    "de-escalation -> mixed": 355,
-    "de-escalation -> escalation": 36,
+    "de-escalation -> mixed": 344,
+    "de-escalation -> escalation": 44,
     "escalation -> escalation": 22,
-    "de-escalation -> de-escalation": 55,
+    "de-escalation -> de-escalation": 58,
     "escalation -> mixed": 3
   },
   "review_examples": [
@@ -104,7 +104,7 @@
       "title": "Iran rules out ceasefire talks; US threatens ‘most intense day of strikes’ - Al Jazeera",
       "event_type": "ceasefire",
       "old_direction": "de-escalation",
-      "new_direction": "mixed",
+      "new_direction": "escalation",
       "direction_score": -7,
       "positive_signal_score": 0,
       "negative_signal_score": -7,
@@ -116,10 +116,6 @@
         {
           "rule": "threat_direct",
           "points": -3
-        },
-        {
-          "rule": "ceasefire_plus_active_attacks",
-          "points": 0
         }
       ],
       "score": -1,
@@ -177,7 +173,7 @@
       "title": "US-Iran conflict escalates as fresh missile strikes threaten Middle East ceasefire - France 24",
       "event_type": "ceasefire",
       "old_direction": "de-escalation",
-      "new_direction": "mixed",
+      "new_direction": "escalation",
       "direction_score": -6,
       "positive_signal_score": 0,
       "negative_signal_score": -5,
@@ -193,10 +189,6 @@
         {
           "rule": "existing_score_negative_tiebreak",
           "points": -1
-        },
-        {
-          "rule": "active_attacks_plus_ceasefire",
-          "points": 0
         }
       ],
       "score": -4,
@@ -258,7 +250,7 @@
       "title": "Escalating US-Iran strikes threaten interim peace agreement - The Guardian",
       "event_type": "ceasefire",
       "old_direction": "de-escalation",
-      "new_direction": "mixed",
+      "new_direction": "escalation",
       "direction_score": -5,
       "positive_signal_score": 0,
       "negative_signal_score": -5,
@@ -270,10 +262,6 @@
         {
           "rule": "escalation_explicit",
           "points": -2
-        },
-        {
-          "rule": "active_attacks_plus_ceasefire",
-          "points": 0
         }
       ],
       "score": -1,
@@ -473,7 +461,7 @@
       "title": "Israel and Hezbollah agree ceasefire, US says, as more Lebanon strikes reported - BBC",
       "event_type": "ceasefire",
       "old_direction": "de-escalation",
-      "new_direction": "mixed",
+      "new_direction": "de-escalation",
       "direction_score": 4,
       "positive_signal_score": 4,
       "negative_signal_score": 0,
@@ -481,10 +469,6 @@
         {
           "rule": "truce_agreed",
           "points": 4
-        },
-        {
-          "rule": "ceasefire_plus_active_attacks",
-          "points": 0
         }
       ],
       "score": -1,
@@ -591,7 +575,7 @@
       "title": "Iran war day 102: Trump warns Israel against new strikes as ceasefire holds - Al Jazeera",
       "event_type": "ceasefire",
       "old_direction": "de-escalation",
-      "new_direction": "mixed",
+      "new_direction": "de-escalation",
       "direction_score": 4,
       "positive_signal_score": 4,
       "negative_signal_score": 0,
@@ -599,10 +583,6 @@
         {
           "rule": "ceasefire_takes_effect",
           "points": 4
-        },
-        {
-          "rule": "active_attacks_plus_ceasefire",
-          "points": 0
         }
       ],
       "score": -2,
@@ -633,7 +613,7 @@
       "title": "Israel, Lebanon agree to renew ceasefire as Iran launches deadly attack on Kuwait airport - CBS News",
       "event_type": "ceasefire",
       "old_direction": "de-escalation",
-      "new_direction": "mixed",
+      "new_direction": "de-escalation",
       "direction_score": 4,
       "positive_signal_score": 4,
       "negative_signal_score": 0,
@@ -641,10 +621,6 @@
         {
           "rule": "truce_agreed",
           "points": 4
-        },
-        {
-          "rule": "ceasefire_plus_active_attacks",
-          "points": 0
         }
       ],
       "score": -1,

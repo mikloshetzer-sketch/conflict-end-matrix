@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-07-24T09:19:26.173958+00:00",
+  "generated_at": "2026-07-24T09:31:26.287154+00:00",
   "source": "Conflict End Matrix Git history + current latest_scored.json",
   "scope": "historical non-kinetic diplomatic, ceasefire and threat/statement events",
-  "direction_model": "context_direction_v3_1",
+  "direction_model": "context_direction_v3_2",
   "military_events_included": false,
   "historical_scored_versions_read": 155,
   "unique_articles_scanned": 1999,
@@ -13,9 +13,9 @@
     "threat": 25
   },
   "direction_counts": {
-    "mixed": 358,
-    "escalation": 58,
-    "de-escalation": 55
+    "mixed": 347,
+    "escalation": 66,
+    "de-escalation": 58
   },
   "events": [
     {
@@ -841,12 +841,7 @@
       "direction_score": 0,
       "positive_signal_score": 0,
       "negative_signal_score": 0,
-      "direction_reasons": [
-        {
-          "rule": "active_attacks_plus_ceasefire",
-          "points": 0
-        }
-      ],
+      "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -980,7 +975,7 @@
       "title": "US-Iran conflict escalates as fresh missile strikes threaten Middle East ceasefire - France 24",
       "diplomatic_event": "US-Iran conflict escalates as fresh missile strikes threaten Middle East ceasefire - France 24",
       "military_event": "",
-      "direction": "mixed",
+      "direction": "escalation",
       "direction_score": -6,
       "positive_signal_score": 0,
       "negative_signal_score": -5,
@@ -996,10 +991,6 @@
         {
           "rule": "existing_score_negative_tiebreak",
           "points": -1
-        },
-        {
-          "rule": "active_attacks_plus_ceasefire",
-          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -1033,7 +1024,7 @@
       "title": "Iran threatens to hit Israel if infrastructure attacks continue, Trump maintains truce is over - France 24",
       "diplomatic_event": "Iran threatens to hit Israel if infrastructure attacks continue, Trump maintains truce is over - France 24",
       "military_event": "",
-      "direction": "mixed",
+      "direction": "escalation",
       "direction_score": -3,
       "positive_signal_score": 0,
       "negative_signal_score": -3,
@@ -1041,10 +1032,6 @@
         {
           "rule": "threat_direct",
           "points": -3
-        },
-        {
-          "rule": "active_attacks_plus_ceasefire",
-          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -1147,12 +1134,7 @@
       "direction_score": 0,
       "positive_signal_score": 0,
       "negative_signal_score": 0,
-      "direction_reasons": [
-        {
-          "rule": "active_attacks_plus_ceasefire",
-          "points": 0
-        }
-      ],
+      "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -1186,12 +1168,7 @@
       "direction_score": 0,
       "positive_signal_score": 0,
       "negative_signal_score": 0,
-      "direction_reasons": [
-        {
-          "rule": "active_attacks_plus_ceasefire",
-          "points": 0
-        }
-      ],
+      "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -1225,12 +1202,7 @@
       "direction_score": 0,
       "positive_signal_score": 0,
       "negative_signal_score": 0,
-      "direction_reasons": [
-        {
-          "rule": "active_attacks_plus_ceasefire",
-          "points": 0
-        }
-      ],
+      "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -1353,12 +1325,7 @@
       "direction_score": 0,
       "positive_signal_score": 0,
       "negative_signal_score": 0,
-      "direction_reasons": [
-        {
-          "rule": "ceasefire_plus_active_attacks",
-          "points": 0
-        }
-      ],
+      "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -2462,12 +2429,7 @@
       "direction_score": 0,
       "positive_signal_score": 0,
       "negative_signal_score": 0,
-      "direction_reasons": [
-        {
-          "rule": "active_attacks_plus_ceasefire",
-          "points": 0
-        }
-      ],
+      "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -2576,7 +2538,7 @@
       "title": "Escalating US-Iran strikes threaten interim peace agreement - The Guardian",
       "diplomatic_event": "Escalating US-Iran strikes threaten interim peace agreement - The Guardian",
       "military_event": "",
-      "direction": "mixed",
+      "direction": "escalation",
       "direction_score": -5,
       "positive_signal_score": 0,
       "negative_signal_score": -5,
@@ -2588,10 +2550,6 @@
         {
           "rule": "escalation_explicit",
           "points": -2
-        },
-        {
-          "rule": "active_attacks_plus_ceasefire",
-          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -2629,12 +2587,7 @@
       "direction_score": 0,
       "positive_signal_score": 0,
       "negative_signal_score": 0,
-      "direction_reasons": [
-        {
-          "rule": "active_attacks_plus_ceasefire",
-          "points": 0
-        }
-      ],
+      "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -2703,12 +2656,7 @@
       "direction_score": 0,
       "positive_signal_score": 0,
       "negative_signal_score": 0,
-      "direction_reasons": [
-        {
-          "rule": "active_attacks_plus_ceasefire",
-          "points": 0
-        }
-      ],
+      "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -3709,7 +3657,7 @@
       "title": "Israel and Hezbollah agree ceasefire, US says, as more Lebanon strikes reported - BBC",
       "diplomatic_event": "Israel and Hezbollah agree ceasefire, US says, as more Lebanon strikes reported - BBC",
       "military_event": "",
-      "direction": "mixed",
+      "direction": "de-escalation",
       "direction_score": 4,
       "positive_signal_score": 4,
       "negative_signal_score": 0,
@@ -3717,14 +3665,10 @@
         {
           "rule": "truce_agreed",
           "points": 4
-        },
-        {
-          "rule": "ceasefire_plus_active_attacks",
-          "points": 0
         }
       ],
       "old_direction": "de-escalation",
-      "direction_changed": true,
+      "direction_changed": false,
       "actors": [],
       "target": "",
       "location": "",
@@ -3792,10 +3736,6 @@
         {
           "rule": "existing_score_positive_tiebreak",
           "points": 1
-        },
-        {
-          "rule": "ceasefire_plus_active_attacks",
-          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -6418,12 +6358,7 @@
       "direction_score": 0,
       "positive_signal_score": 0,
       "negative_signal_score": 0,
-      "direction_reasons": [
-        {
-          "rule": "ceasefire_plus_active_attacks",
-          "points": 0
-        }
-      ],
+      "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -6557,7 +6492,7 @@
       "title": "Iran war day 102: Trump warns Israel against new strikes as ceasefire holds - Al Jazeera",
       "diplomatic_event": "Iran war day 102: Trump warns Israel against new strikes as ceasefire holds - Al Jazeera",
       "military_event": "",
-      "direction": "mixed",
+      "direction": "de-escalation",
       "direction_score": 4,
       "positive_signal_score": 4,
       "negative_signal_score": 0,
@@ -6565,14 +6500,10 @@
         {
           "rule": "ceasefire_takes_effect",
           "points": 4
-        },
-        {
-          "rule": "active_attacks_plus_ceasefire",
-          "points": 0
         }
       ],
       "old_direction": "de-escalation",
-      "direction_changed": true,
+      "direction_changed": false,
       "actors": [],
       "target": "",
       "location": "",
@@ -6605,12 +6536,7 @@
       "direction_score": 0,
       "positive_signal_score": 0,
       "negative_signal_score": 0,
-      "direction_reasons": [
-        {
-          "rule": "active_attacks_plus_ceasefire",
-          "points": 0
-        }
-      ],
+      "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -6682,12 +6608,7 @@
       "direction_score": 0,
       "positive_signal_score": 0,
       "negative_signal_score": 0,
-      "direction_reasons": [
-        {
-          "rule": "active_attacks_plus_ceasefire",
-          "points": 0
-        }
-      ],
+      "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -6722,12 +6643,7 @@
       "direction_score": 0,
       "positive_signal_score": 0,
       "negative_signal_score": 0,
-      "direction_reasons": [
-        {
-          "rule": "active_attacks_plus_ceasefire",
-          "points": 0
-        }
-      ],
+      "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -6762,12 +6678,7 @@
       "direction_score": 0,
       "positive_signal_score": 0,
       "negative_signal_score": 0,
-      "direction_reasons": [
-        {
-          "rule": "active_attacks_plus_ceasefire",
-          "points": 0
-        }
-      ],
+      "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -6834,12 +6745,7 @@
       "direction_score": 0,
       "positive_signal_score": 0,
       "negative_signal_score": 0,
-      "direction_reasons": [
-        {
-          "rule": "active_attacks_plus_ceasefire",
-          "points": 0
-        }
-      ],
+      "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -6978,10 +6884,6 @@
         {
           "rule": "existing_score_negative_tiebreak",
           "points": -1
-        },
-        {
-          "rule": "active_attacks_plus_ceasefire",
-          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -7481,7 +7383,7 @@
       "title": "Israel, Lebanon agree to renew ceasefire as Iran launches deadly attack on Kuwait airport - CBS News",
       "diplomatic_event": "Israel, Lebanon agree to renew ceasefire as Iran launches deadly attack on Kuwait airport - CBS News",
       "military_event": "",
-      "direction": "mixed",
+      "direction": "de-escalation",
       "direction_score": 4,
       "positive_signal_score": 4,
       "negative_signal_score": 0,
@@ -7489,14 +7391,10 @@
         {
           "rule": "truce_agreed",
           "points": 4
-        },
-        {
-          "rule": "ceasefire_plus_active_attacks",
-          "points": 0
         }
       ],
       "old_direction": "de-escalation",
-      "direction_changed": true,
+      "direction_changed": false,
       "actors": [],
       "target": "",
       "location": "",
@@ -7863,7 +7761,7 @@
       "title": "Iran warns Israeli attacks in Lebanon and Gaza threaten US ceasefire talks - Al Jazeera",
       "diplomatic_event": "Iran warns Israeli attacks in Lebanon and Gaza threaten US ceasefire talks - Al Jazeera",
       "military_event": "",
-      "direction": "mixed",
+      "direction": "escalation",
       "direction_score": -3,
       "positive_signal_score": 0,
       "negative_signal_score": -3,
@@ -7871,10 +7769,6 @@
         {
           "rule": "threat_direct",
           "points": -3
-        },
-        {
-          "rule": "active_attacks_plus_ceasefire",
-          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -7951,12 +7845,7 @@
       "direction_score": 0,
       "positive_signal_score": 0,
       "negative_signal_score": 0,
-      "direction_reasons": [
-        {
-          "rule": "ceasefire_plus_active_attacks",
-          "points": 0
-        }
-      ],
+      "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -8023,7 +7912,7 @@
       "title": "Trump says Iran talks continuing at \"rapid pace\" after regime threatens \"other fronts\" in war - CBS News",
       "diplomatic_event": "Trump says Iran talks continuing at \"rapid pace\" after regime threatens \"other fronts\" in war - CBS News",
       "military_event": "",
-      "direction": "mixed",
+      "direction": "escalation",
       "direction_score": -3,
       "positive_signal_score": 0,
       "negative_signal_score": -3,
@@ -8031,10 +7920,6 @@
         {
           "rule": "threat_direct",
           "points": -3
-        },
-        {
-          "rule": "talks_progress_plus_threat",
-          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -8987,12 +8872,7 @@
       "direction_score": 0,
       "positive_signal_score": 0,
       "negative_signal_score": 0,
-      "direction_reasons": [
-        {
-          "rule": "active_attacks_plus_ceasefire",
-          "points": 0
-        }
-      ],
+      "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -9243,12 +9123,7 @@
       "direction_score": 0,
       "positive_signal_score": 0,
       "negative_signal_score": 0,
-      "direction_reasons": [
-        {
-          "rule": "active_attacks_plus_ceasefire",
-          "points": 0
-        }
-      ],
+      "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -11036,7 +10911,7 @@
       "title": "Iran threatens to \"teach a lesson\" if U.S. attacks, Trump says ceasefire is \"on life support\" - CBS News",
       "diplomatic_event": "Iran threatens to \"teach a lesson\" if U.S. attacks, Trump says ceasefire is \"on life support\" - CBS News",
       "military_event": "",
-      "direction": "mixed",
+      "direction": "escalation",
       "direction_score": -3,
       "positive_signal_score": 0,
       "negative_signal_score": -3,
@@ -11044,10 +10919,6 @@
         {
           "rule": "threat_direct",
           "points": -3
-        },
-        {
-          "rule": "active_attacks_plus_ceasefire",
-          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -11352,12 +11223,7 @@
       "direction_score": 0,
       "positive_signal_score": 0,
       "negative_signal_score": 0,
-      "direction_reasons": [
-        {
-          "rule": "ceasefire_plus_active_attacks",
-          "points": 0
-        }
-      ],
+      "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -15050,7 +14916,7 @@
       "title": "Ceasefire is threatened as Israel expands Lebanon strikes and Iran closes strait again - PBS",
       "diplomatic_event": "Ceasefire is threatened as Israel expands Lebanon strikes and Iran closes strait again - PBS",
       "military_event": "",
-      "direction": "mixed",
+      "direction": "escalation",
       "direction_score": -2,
       "positive_signal_score": 0,
       "negative_signal_score": -2,
@@ -15058,10 +14924,6 @@
         {
           "rule": "intensify_attacks",
           "points": -2
-        },
-        {
-          "rule": "ceasefire_plus_active_attacks",
-          "points": 0
         }
       ],
       "old_direction": "de-escalation",
@@ -15360,12 +15222,7 @@
       "direction_score": 0,
       "positive_signal_score": 0,
       "negative_signal_score": 0,
-      "direction_reasons": [
-        {
-          "rule": "ceasefire_plus_active_attacks",
-          "points": 0
-        }
-      ],
+      "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -15399,12 +15256,7 @@
       "direction_score": 0,
       "positive_signal_score": 0,
       "negative_signal_score": 0,
-      "direction_reasons": [
-        {
-          "rule": "ceasefire_plus_active_attacks",
-          "points": 0
-        }
-      ],
+      "direction_reasons": [],
       "old_direction": "de-escalation",
       "direction_changed": true,
       "actors": [],
@@ -16588,7 +16440,7 @@
       "title": "Iran rules out ceasefire talks; US threatens ‘most intense day of strikes’ - Al Jazeera",
       "diplomatic_event": "Iran rules out ceasefire talks; US threatens ‘most intense day of strikes’ - Al Jazeera",
       "military_event": "",
-      "direction": "mixed",
+      "direction": "escalation",
       "direction_score": -7,
       "positive_signal_score": 0,
       "negative_signal_score": -7,
@@ -16600,10 +16452,6 @@
         {
           "rule": "threat_direct",
           "points": -3
-        },
-        {
-          "rule": "ceasefire_plus_active_attacks",
-          "points": 0
         }
       ],
       "old_direction": "de-escalation",
