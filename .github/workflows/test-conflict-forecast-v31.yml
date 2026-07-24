@@ -1,0 +1,92 @@
+name: TEST - Conflict Forecast V3.1 Accuracy First
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: test-conflict-forecast-v31
+  cancel-in-progress: false
+
+jobs:
+  test-v31:
+    name: TEST - V3.1 Accuracy First
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Check required inputs
+        run: |
+          test -f docs/conflict_analysis.json
+          test -f src/test_conflict_forecast_v31.py
+          echo "Required files found."
+
+      - name: TEST - Run V3.1 refinement
+        run: |
+          python src/test_conflict_forecast_v31.py
+
+      - name: Validate V3.1 result
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          p = Path("docs/conflict_forecast_v31_test.json")
+          if not p.exists():
+              raise SystemExit("ERROR: V3.1 output missing")
+
+          d = json.loads(p.read_text(encoding="utf-8"))
+
+          if d.get("status") != "TEST_ONLY":
+              raise SystemExit("ERROR: result is not TEST_ONLY")
+
+          for h in ("48h", "72h"):
+              x = d["horizons"][h]
+              rule = x.get("selected_no_signal_rule")
+
+              if not rule:
+                  raise SystemExit(f"ERROR: no rule selected for {h}")
+
+              print(f"===== {h} =====")
+              print("Selection:", x.get("selection"))
+              print("Backtest:", x.get("backtest_sample"))
+              print("Selected rule:", rule)
+              print("Latest raw:", x.get("latest_raw_prediction"))
+              print("Latest public:", x.get("latest_public_signal"))
+              print()
+
+          print("V3.1 TEST validation OK")
+          PY
+
+      - name: Show output
+        run: |
+          ls -lh docs/conflict_forecast_v31_test.json
+          git status --short
+
+      - name: Commit TEST result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add docs/conflict_forecast_v31_test.json
+
+          if git diff --cached --quiet; then
+            echo "No V3.1 TEST changes to commit."
+          else
+            git commit -m "TEST: update V3.1 accuracy-first conflict forecast"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
