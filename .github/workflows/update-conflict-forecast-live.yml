@@ -1,0 +1,126 @@
+name: Update Conflict Forecast LIVE
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    # Daily run after the conflict-analysis data refresh.
+    - cron: "35 6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: conflict-forecast-live
+  cancel-in-progress: false
+
+jobs:
+  update-forecast:
+    name: Update 48h / 72h Forecast
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Check required files
+        run: |
+          test -f docs/conflict_analysis.json
+          test -f src/generate_conflict_forecast_live.py
+          echo "Required files found."
+
+      - name: Run production forecast engine
+        run: |
+          python src/generate_conflict_forecast_live.py
+
+      - name: Validate production outputs
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          live_path = Path("docs/conflict_forecast_live.json")
+          history_path = Path("docs/conflict_forecast_history.json")
+
+          for path in (live_path, history_path):
+              if not path.exists():
+                  raise SystemExit(f"ERROR: missing output {path}")
+
+          live = json.loads(live_path.read_text(encoding="utf-8"))
+          history = json.loads(history_path.read_text(encoding="utf-8"))
+
+          if live.get("model_version") != "conflict_forecast_live_v1":
+              raise SystemExit("ERROR: unexpected model version")
+
+          reference_date = live.get("forecast_reference_date")
+          if not reference_date:
+              raise SystemExit("ERROR: missing forecast reference date")
+
+          for horizon in ("48h", "72h"):
+              x = live.get("horizons", {}).get(horizon)
+              if not x:
+                  raise SystemExit(f"ERROR: missing {horizon}")
+
+              public = x.get("public_signal", {})
+              if public.get("direction") not in {
+                  "increase", "stable", "decrease", "no_signal"
+              }:
+                  raise SystemExit(
+                      f"ERROR: invalid public direction for {horizon}"
+                  )
+
+              raw = x.get("raw_prediction")
+              if raw is not None:
+                  conf = float(raw.get("confidence_score", -1))
+                  prob = float(raw.get("top_probability", -1))
+                  if not (0 <= conf <= 1 and 0 <= prob <= 1):
+                      raise SystemExit(
+                          f"ERROR: invalid confidence/probability for {horizon}"
+                      )
+
+          records = history.get("records", [])
+          print("Reference date:", reference_date)
+          print("History records:", len(records))
+          print("Learning:", live.get("learning"))
+
+          for horizon in ("48h", "72h"):
+              x = live["horizons"][horizon]
+              print(f"\n===== {horizon} =====")
+              print("Public:", x["public_signal"])
+              print("Raw:", x["raw_prediction"])
+              print("Gate calibration:", x["gate_calibration"])
+              print(
+                  "Live performance:",
+                  x["live_out_of_sample_performance"],
+              )
+
+          print("\nProduction validation OK")
+          PY
+
+      - name: Commit forecast and history
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add \
+            docs/conflict_forecast_live.json \
+            docs/conflict_forecast_history.json
+
+          if git diff --cached --quiet; then
+            echo "No forecast/history changes to commit."
+          else
+            git commit -m "Update live conflict forecast and forecast history"
+
+            # Protect accumulated history if another workflow committed meanwhile.
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
