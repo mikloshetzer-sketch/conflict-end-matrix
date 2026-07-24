@@ -145,27 +145,65 @@ def military_event_weight(event: dict[str, Any]) -> float:
     return sw * cw
 
 
-def build_day_range(
+def get_analysis_window(
     diplomatic_events: list[dict[str, Any]],
     military_events: list[dict[str, Any]],
-) -> list[str]:
-    dates: list[datetime] = []
+) -> tuple[datetime, datetime] | None:
+    """
+    The joint analysis period starts at the first valid military event.
 
-    for event in diplomatic_events + military_events:
+    Diplomatic history may begin earlier, but MAI / DDI / Gap / lag analysis
+    must only use the period in which both analytical layers can coexist.
+    """
+    military_dates = [
+        dt
+        for event in military_events
+        if (dt := parse_dt(event.get("timestamp") or event.get("date"))) is not None
+    ]
+
+    diplomatic_dates = [
+        dt
+        for event in diplomatic_events
+        if (dt := parse_dt(event.get("timestamp") or event.get("date"))) is not None
+    ]
+
+    if not military_dates:
+        return None
+
+    start = min(military_dates)
+
+    all_end_dates = military_dates + diplomatic_dates
+    end = max(all_end_dates) if all_end_dates else max(military_dates)
+
+    return start, end
+
+
+def filter_events_to_analysis_window(
+    events: list[dict[str, Any]],
+    start: datetime,
+    end: datetime,
+) -> list[dict[str, Any]]:
+    filtered: list[dict[str, Any]] = []
+
+    for event in events:
         dt = parse_dt(event.get("timestamp") or event.get("date"))
-        if dt is not None:
-            dates.append(dt)
+        if dt is not None and start <= dt <= end:
+            filtered.append(event)
 
-    if not dates:
-        return []
+    return filtered
 
-    start = min(dates).date()
-    end = max(dates).date()
+
+def build_day_range(
+    start: datetime,
+    end: datetime,
+) -> list[str]:
+    start_day = start.astimezone(timezone.utc).date()
+    end_day = end.astimezone(timezone.utc).date()
 
     days: list[str] = []
-    cursor = start
+    cursor = start_day
 
-    while cursor <= end:
+    while cursor <= end_day:
         days.append(cursor.isoformat())
         cursor += timedelta(days=1)
 
@@ -175,6 +213,8 @@ def build_day_range(
 def build_daily_metrics(
     diplomatic_events: list[dict[str, Any]],
     military_events: list[dict[str, Any]],
+    analysis_start: datetime,
+    analysis_end: datetime,
 ) -> list[dict[str, Any]]:
     dip_by_day: dict[str, list[dict[str, Any]]] = defaultdict(list)
     mil_by_day: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -189,7 +229,7 @@ def build_daily_metrics(
         if dt:
             mil_by_day[day_key(dt)].append(event)
 
-    all_days = build_day_range(diplomatic_events, military_events)
+    all_days = build_day_range(analysis_start, analysis_end)
 
     raw_military_scores: list[float] = []
 
@@ -361,6 +401,8 @@ def weighted_activity_between(
 def build_lag_analysis(
     diplomatic_events: list[dict[str, Any]],
     military_events: list[dict[str, Any]],
+    analysis_start: datetime,
+    analysis_end: datetime,
 ) -> dict[str, Any]:
     """
     Event-study style temporal analysis.
@@ -383,11 +425,30 @@ def build_lag_analysis(
         if event_dt is None:
             continue
 
+        # Only analyse diplomatic signals inside the common data period.
+        if not (analysis_start <= event_dt <= analysis_end):
+            continue
+
         windows: dict[str, Any] = {}
 
         for hours in LAG_WINDOWS_HOURS:
             before_start = event_dt - timedelta(hours=hours)
             after_end = event_dt + timedelta(hours=hours)
+
+            # Require a complete symmetric window. Otherwise the first/last
+            # observations would be structurally biased by missing coverage.
+            if before_start < analysis_start or after_end > analysis_end:
+                windows[f"{hours}h"] = {
+                    "available": False,
+                    "before_event_count": None,
+                    "after_event_count": None,
+                    "delta_event_count": None,
+                    "before_weighted_activity": None,
+                    "after_weighted_activity": None,
+                    "delta_weighted_activity": None,
+                    "weighted_activity_change_pct": None,
+                }
+                continue
 
             before_count, before_weight = weighted_activity_between(
                 military_events,
@@ -404,6 +465,7 @@ def build_lag_analysis(
             delta_weight = after_weight - before_weight
 
             windows[f"{hours}h"] = {
+                "available": True,
                 "before_event_count": before_count,
                 "after_event_count": after_count,
                 "delta_event_count": delta_count,
@@ -443,19 +505,25 @@ def build_lag_analysis(
 
         for hours in LAG_WINDOWS_HOURS:
             key = f"{hours}h"
+            available_group = [
+                r for r in group
+                if r["windows"].get(key, {}).get("available") is True
+            ]
+
             deltas = [
                 float(r["windows"][key]["delta_weighted_activity"])
-                for r in group
+                for r in available_group
             ]
 
             pct_values = [
                 float(r["windows"][key]["weighted_activity_change_pct"])
-                for r in group
+                for r in available_group
                 if r["windows"][key]["weighted_activity_change_pct"] is not None
             ]
 
             aggregate[direction][key] = {
-                "signal_count": len(group),
+                "signal_count": len(available_group),
+                "excluded_edge_signals": len(group) - len(available_group),
                 "median_delta_weighted_activity": (
                     round(median(deltas), 2)
                     if deltas else None
@@ -486,9 +554,10 @@ def build_lag_analysis(
 
     return {
         "method": (
-            "For each classified escalation/de-escalation signal, "
-            "weighted military activity in an equal pre-event and post-event "
-            "window is compared. Temporal association only; no causation inferred."
+            "For each classified escalation/de-escalation signal inside the "
+            "common diplomatic-military analysis period, weighted military activity "
+            "in an equal pre-event and post-event window is compared. Only complete "
+            "symmetric windows are included. Temporal association only; no causation inferred."
         ),
         "windows_hours": LAG_WINDOWS_HOURS,
         "aggregate": aggregate,
@@ -540,28 +609,61 @@ def main() -> int:
     timeline_data = load_json(EVENT_TIMELINE)
     kinetic_data = load_json(KINETIC_EVENTS)
 
-    diplomatic_events = timeline_data.get("events", [])
-    military_events = kinetic_data.get("events", [])
+    diplomatic_events_all = timeline_data.get("events", [])
+    military_events_all = kinetic_data.get("events", [])
 
-    if not isinstance(diplomatic_events, list):
+    if not isinstance(diplomatic_events_all, list):
         raise ValueError("event_timeline.json events must be a list.")
 
-    if not isinstance(military_events, list):
+    if not isinstance(military_events_all, list):
         raise ValueError("kinetic_events.json events must be a list.")
+
+    analysis_window = get_analysis_window(
+        diplomatic_events_all,
+        military_events_all,
+    )
+
+    if analysis_window is None:
+        raise ValueError("No valid military event timestamps found.")
+
+    analysis_start, analysis_end = analysis_window
+
+    diplomatic_events = filter_events_to_analysis_window(
+        diplomatic_events_all,
+        analysis_start,
+        analysis_end,
+    )
+
+    military_events = filter_events_to_analysis_window(
+        military_events_all,
+        analysis_start,
+        analysis_end,
+    )
 
     daily = build_daily_metrics(
         diplomatic_events,
         military_events,
+        analysis_start,
+        analysis_end,
     )
 
     lag = build_lag_analysis(
         diplomatic_events,
         military_events,
+        analysis_start,
+        analysis_end,
     )
 
     payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "analysis_model": "conflict_analysis_v1",
+        "analysis_model": "conflict_analysis_v1_1",
+        "analysis_period": {
+            "start": analysis_start.isoformat().replace("+00:00", "Z"),
+            "end": analysis_end.isoformat().replace("+00:00", "Z"),
+            "start_date": analysis_start.date().isoformat(),
+            "end_date": analysis_end.date().isoformat(),
+            "basis": "First valid kinetic event through latest available event timestamp",
+        },
         "inputs": {
             "event_timeline_generated_at": timeline_data.get("generated_at"),
             "event_timeline_direction_model": timeline_data.get(
@@ -569,6 +671,10 @@ def main() -> int:
             ),
             "kinetic_generated_at": kinetic_data.get("generated_at"),
             "kinetic_cleaning_mode": kinetic_data.get("cleaning_mode"),
+            "diplomatic_events_total_history": len(diplomatic_events_all),
+            "diplomatic_events_in_analysis_period": len(diplomatic_events),
+            "military_events_total_history": len(military_events_all),
+            "military_events_in_analysis_period": len(military_events),
         },
         "methodology": {
             "military_activity_index": {
@@ -617,9 +723,21 @@ def main() -> int:
 
     temp.replace(OUTPUT)
 
-    print("Conflict analysis generated.")
-    print(f"Diplomatic events: {len(diplomatic_events)}")
-    print(f"Military events: {len(military_events)}")
+    print("Conflict analysis V1.1 generated.")
+    print(
+        "Analysis period:",
+        analysis_start.isoformat(),
+        "->",
+        analysis_end.isoformat(),
+    )
+    print(
+        f"Diplomatic events in common period: "
+        f"{len(diplomatic_events)} / {len(diplomatic_events_all)}"
+    )
+    print(
+        f"Military events in common period: "
+        f"{len(military_events)} / {len(military_events_all)}"
+    )
     print(f"Daily rows: {len(daily)}")
     print(
         "Lag signals:",
