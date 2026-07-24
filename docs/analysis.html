@@ -1512,6 +1512,152 @@
       color:#244b63;
     }
 
+    /* =========================================================
+       V7 - CÉL ÉS ADATFORRÁSOK BEVEZETŐ RÉTEG
+       ========================================================= */
+    .analysis-scope{
+      margin:0 0 16px;
+      padding:17px;
+      border:1px solid #c9dbe6;
+      border-radius:12px;
+      background:linear-gradient(180deg,#f8fcff 0%,#f2f8fc 100%);
+    }
+    .analysis-scope-title{
+      margin:0 0 6px;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:21px;
+      line-height:1.2;
+      color:#103b59;
+    }
+    .analysis-scope-lead{
+      margin:0 0 14px;
+      max-width:1100px;
+      font-size:12px;
+      line-height:1.65;
+      color:#405f70;
+    }
+    .analysis-scope-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .analysis-scope-card{
+      padding:14px;
+      background:#fff;
+      border:1px solid #d8e5ec;
+      border-radius:10px;
+    }
+    .analysis-scope-card h3{
+      margin:0 0 7px;
+      font-size:12px;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      color:#174a69;
+    }
+    .analysis-scope-card p{
+      margin:0;
+      font-size:11px;
+      line-height:1.65;
+      color:#4d6978;
+    }
+    .analysis-question-list{
+      display:grid;
+      gap:7px;
+      margin-top:10px;
+    }
+    .analysis-question{
+      display:flex;
+      gap:8px;
+      align-items:flex-start;
+      padding:8px 9px;
+      border-radius:8px;
+      background:#f3f8fb;
+      color:#355b70;
+      font-size:11px;
+      line-height:1.45;
+    }
+    .analysis-question-number{
+      flex:0 0 auto;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:19px;
+      height:19px;
+      border-radius:50%;
+      background:#2f8cc0;
+      color:#fff;
+      font-size:9px;
+      font-weight:800;
+    }
+    .source-list{
+      display:grid;
+      gap:8px;
+      margin-top:9px;
+    }
+    .source-item{
+      padding:9px 10px;
+      border-radius:8px;
+      border:1px solid #e2eaee;
+      background:#f9fbfc;
+    }
+    .source-name{
+      display:block;
+      font-size:11px;
+      font-weight:800;
+      color:#204e68;
+    }
+    .source-desc{
+      display:block;
+      margin-top:3px;
+      font-size:10px;
+      line-height:1.5;
+      color:#69808d;
+    }
+    .analysis-scope-stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:10px;
+      margin-top:14px;
+    }
+    .analysis-scope-stat{
+      padding:10px 11px;
+      border:1px solid #dbe6ec;
+      border-radius:9px;
+      background:#fff;
+    }
+    .analysis-scope-stat span{
+      display:block;
+    }
+    .analysis-scope-stat .stat-label{
+      font-size:9px;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      color:#82929b;
+    }
+    .analysis-scope-stat .stat-value{
+      margin-top:4px;
+      font-size:15px;
+      font-weight:800;
+      color:#173f5b;
+    }
+    .analysis-source-note{
+      margin-top:11px;
+      padding:9px 11px;
+      border-left:4px solid #7895a6;
+      border-radius:8px;
+      background:#f7fafb;
+      font-size:10px;
+      line-height:1.55;
+      color:#667d89;
+    }
+    @media(max-width:900px){
+      .analysis-scope-grid{grid-template-columns:1fr}
+      .analysis-scope-stats{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:560px){
+      .analysis-scope-stats{grid-template-columns:1fr}
+    }
+
   </style>
 </head>
 
@@ -1893,9 +2039,91 @@
 
         
         
+
+        <div class="analysis-scope" id="analysis_scope">
+          <h2 class="analysis-scope-title">Az elemzés célja és adatforrásai</h2>
+          <p class="analysis-scope-lead">
+            Ez a modul a diplomáciai kommunikációt és a tényleges katonai aktivitást közös idővonalon vizsgálja.
+            A cél nem egy konkrét támadás megjóslása, hanem annak feltárása, hogyan változik a konfliktus intenzitása,
+            mennyire mozognak együtt a politikai jelzések és a katonai események, valamint hogy a korábbi mintázatok
+            alapján kirajzolódik-e rövid távú, 48–72 órás aktivitási irány.
+          </p>
+
+          <div class="analysis-scope-grid">
+            <div class="analysis-scope-card">
+              <h3>Milyen kérdésekre keressük a választ?</h3>
+              <div class="analysis-question-list">
+                <div class="analysis-question">
+                  <span class="analysis-question-number">1</span>
+                  <span><strong>Mi történik jelenleg?</strong> Mekkora a katonai aktivitás és milyen irányba mutatnak a diplomáciai jelzések?</span>
+                </div>
+                <div class="analysis-question">
+                  <span class="analysis-question-number">2</span>
+                  <span><strong>Összhangban vannak-e a szavak és a cselekmények?</strong> Együtt mozog-e a diplomácia és a katonai nyomás?</span>
+                </div>
+                <div class="analysis-question">
+                  <span class="analysis-question-number">3</span>
+                  <span><strong>Mi következhet rövid távon?</strong> A történeti analógiák alapján nőhet, csökkenhet vagy változatlan maradhat-e az aktivitás 48–72 órán belül?</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="analysis-scope-card">
+              <h3>Honnan származnak az adatok?</h3>
+              <p>
+                A rendszer két összekapcsolt, nyílt forrású adatfolyamot használ. A rekordokhoz – ahol rendelkezésre áll –
+                megmarad az eredeti hírforrás és annak hivatkozása is.
+              </p>
+
+              <div class="source-list">
+                <div class="source-item">
+                  <span class="source-name">Conflict End Matrix</span>
+                  <span class="source-desc">
+                    Automatikus hírmonitoringból származó diplomáciai és politikai események:
+                    tárgyalás, közvetítés, tűzszünet, fenyegetés, eszkalációs és deeszkalációs jelzések.
+                  </span>
+                </div>
+                <div class="source-item">
+                  <span class="source-name">ME Security Monitor</span>
+                  <span class="source-desc">
+                    Tisztított kinetikus és katonai események: többek között rakéta-, drón- és légicsapások,
+                    robbanások, illetve más azonosított katonai aktivitások.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="analysis-scope-stats">
+            <div class="analysis-scope-stat">
+              <span class="stat-label">Vizsgált időszak</span>
+              <span class="stat-value" id="scope_period">—</span>
+            </div>
+            <div class="analysis-scope-stat">
+              <span class="stat-label">Teljes UTC napok</span>
+              <span class="stat-value" id="scope_days">—</span>
+            </div>
+            <div class="analysis-scope-stat">
+              <span class="stat-label">Diplomáciai események</span>
+              <span class="stat-value" id="scope_diplomatic">—</span>
+            </div>
+            <div class="analysis-scope-stat">
+              <span class="stat-label">Katonai események</span>
+              <span class="stat-value" id="scope_military">—</span>
+            </div>
+          </div>
+
+          <div class="analysis-source-note">
+            <strong>Fontos:</strong> az adatok OSINT jellegűek és az elérhető nyílt forrásoktól függenek.
+            Az események azonosítása, besorolása és súlyozása elemzői modell segítségével történik.
+            A mutatók ezért a konfliktus dinamikájának összehasonlító értelmezését támogatják,
+            nem tekinthetők teljes körű katonai eseményjegyzéknek.
+          </div>
+        </div>
+
         <div class="event-balance-panel" id="conflict_analysis_panel">
           <div class="event-balance-header">
-            <span class="event-balance-title">Konfliktusdinamikai elemzés</span>
+            <span class="event-balance-title">Aktuális konfliktusdinamika</span>
             <span class="event-balance-period" id="analysis_period_label">Loading…</span>
           </div>
 
@@ -3032,7 +3260,36 @@
       return {text,watch};
     }
 
+
+    function renderAnalysisScope(data){
+      const period=data?.analysis_period||{};
+      const daily=Array.isArray(data?.daily)?data.daily:[];
+
+      const totalDiplomatic=daily.reduce((sum,row)=>{
+        return sum + Number(row?.diplomatic?.event_count||0);
+      },0);
+
+      const totalMilitary=daily.reduce((sum,row)=>{
+        return sum + Number(row?.military?.event_count||0);
+      },0);
+
+      const start=period.daily_analysis_start_date||"?";
+      const end=period.end_date||"?";
+
+      const periodEl=document.getElementById("scope_period");
+      const daysEl=document.getElementById("scope_days");
+      const diplomaticEl=document.getElementById("scope_diplomatic");
+      const militaryEl=document.getElementById("scope_military");
+
+      if(periodEl)periodEl.textContent=`${start} – ${end}`;
+      if(daysEl)daysEl.textContent=String(daily.length);
+      if(diplomaticEl)diplomaticEl.textContent=totalDiplomatic.toLocaleString("hu-HU");
+      if(militaryEl)militaryEl.textContent=totalMilitary.toLocaleString("hu-HU");
+    }
+
     function renderConflictAnalysis(data){
+      renderAnalysisScope(data);
+
       const latest=data.latest||{};
       const period=data.analysis_period||{};
       const daily=Array.isArray(data.daily)?data.daily:[];
