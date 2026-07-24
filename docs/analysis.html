@@ -1266,6 +1266,70 @@
     .gap-zone-key span{padding:4px 7px;border-radius:999px;border:1px solid #dde6eb;background:#fff}
     .lag-summary-line{margin-top:8px;font-size:11px;line-height:1.45;color:var(--muted)}
 
+    /* =========================================================
+       CONFLICT ANALYSIS V3 - MAGYAR ÉRTELMEZÉSI RÉTEG
+       ========================================================= */
+    .metric-explainer{
+      margin-top:10px;
+      padding-top:10px;
+      border-top:1px solid #e3ebef;
+      font-size:11px;
+      line-height:1.5;
+      color:#516c7c;
+    }
+    .metric-explainer strong{
+      color:#173f5f;
+    }
+    .question-strip{
+      margin:10px 0 12px;
+      padding:9px 11px;
+      border-left:4px solid #2f8cc0;
+      background:#eef7fc;
+      border-radius:8px;
+      font-size:11px;
+      line-height:1.45;
+      color:#315b72;
+    }
+    .current-assessment{
+      margin-top:16px;
+      border:1px solid #bdd7e7;
+      border-left:5px solid #2f8cc0;
+      border-radius:12px;
+      background:linear-gradient(180deg,#f4fbff 0%,#eef7fc 100%);
+      padding:16px;
+    }
+    .current-assessment h3{
+      margin:0 0 8px;
+      font-family:Georgia,"Times New Roman",serif;
+      color:#103b59;
+      font-size:19px;
+    }
+    .assessment-lead{
+      font-size:14px;
+      line-height:1.6;
+      color:#163f58;
+      margin-bottom:12px;
+    }
+    .assessment-watch{
+      margin-top:12px;
+      padding:11px 12px;
+      border-radius:9px;
+      background:#fff;
+      border:1px solid #d6e5ed;
+      font-size:12px;
+      line-height:1.55;
+      color:#38586a;
+    }
+    .assessment-watch strong{
+      color:#123f5d;
+    }
+    .mini-method{
+      margin-top:8px;
+      font-size:10px;
+      line-height:1.45;
+      color:#7a8d98;
+    }
+
   </style>
 </head>
 
@@ -1327,22 +1391,34 @@
         </div>
       </div>
 
-      <div class="interpretation">
-        <span class="interpretation-title">Analyst Interpretation</span>
+      
+          <div class="current-assessment">
+            <h3>Mit mondanak most az adatok?</h3>
+            <div class="assessment-lead" id="current_assessment_text">Az aktuális konfliktusértékelés betöltése…</div>
+            <div class="assessment-watch" id="current_assessment_watch">
+              <strong>Mire érdemes figyelni?</strong> Az értékelés az aktuális MAI, DDI, Gap és lag-adatokból automatikusan készül.
+            </div>
+            <div class="mini-method">
+              Az értékelés leíró jellegű. Az időbeli együttmozgás nem bizonyít közvetlen ok-okozati kapcsolatot.
+            </div>
+          </div>
+
+          <div class="interpretation">
+        <span class="interpretation-title">Elemzői értelmezés</span>
         <div class="interpretation-grid">
           <div>
-            <h4>What are we seeing?</h4>
+            <h4>Mit látunk?</h4>
             <p id="overview_what">Loading interpretation...</p>
           </div>
           <div>
-            <h4>How is it calculated?</h4>
+            <h4>Hogyan számoljuk?</h4>
             <p>
               The conflict index is derived from the weighted daily headline score and normalised by the number
               of analysed articles. Escalation and diplomatic pressure separate negative and positive signal contributions.
             </p>
           </div>
           <div>
-            <h4>Conclusion</h4>
+            <h4>Következtetés</h4>
             <p id="overview_conclusion">Loading conclusion...</p>
           </div>
         </div>
@@ -1382,21 +1458,21 @@
         </div>
 
         <div class="interpretation">
-          <span class="interpretation-title">Analyst Interpretation</span>
+          <span class="interpretation-title">Elemzői értelmezés</span>
           <div class="interpretation-grid">
             <div>
-              <h4>What are we seeing?</h4>
+              <h4>Mit látunk?</h4>
               <p id="balance_what">Loading interpretation...</p>
             </div>
             <div>
-              <h4>How is it calculated?</h4>
+              <h4>Hogyan számoljuk?</h4>
               <p>
                 The absolute weighted escalation score and diplomatic score are added together.
                 Each side is then expressed as a percentage of the combined signal volume.
               </p>
             </div>
             <div>
-              <h4>Conclusion</h4>
+              <h4>Következtetés</h4>
               <p id="balance_conclusion">Loading conclusion...</p>
             </div>
           </div>
@@ -1419,21 +1495,21 @@
         </div>
 
         <div class="interpretation">
-          <span class="interpretation-title">Analyst Interpretation</span>
+          <span class="interpretation-title">Elemzői értelmezés</span>
           <div class="interpretation-grid">
             <div>
-              <h4>What are we seeing?</h4>
+              <h4>Mit látunk?</h4>
               <p id="drivers_what">Loading interpretation...</p>
             </div>
             <div>
-              <h4>How is it calculated?</h4>
+              <h4>Hogyan számoljuk?</h4>
               <p>
                 Each recognised keyword has a predefined score. Daily impact equals the number of recognised
                 occurrences multiplied by the keyword weight. Drivers are ranked by absolute impact.
               </p>
             </div>
             <div>
-              <h4>Conclusion</h4>
+              <h4>Következtetés</h4>
               <p id="drivers_conclusion">Loading conclusion...</p>
             </div>
           </div>
@@ -1456,21 +1532,21 @@
         </div>
 
         <div class="interpretation">
-          <span class="interpretation-title">Analyst Interpretation</span>
+          <span class="interpretation-title">Elemzői értelmezés</span>
           <div class="interpretation-grid">
             <div>
-              <h4>What are we seeing?</h4>
+              <h4>Mit látunk?</h4>
               <p id="categories_what">Loading interpretation...</p>
             </div>
             <div>
-              <h4>How is it calculated?</h4>
+              <h4>Hogyan számoljuk?</h4>
               <p>
                 Related keywords are aggregated into analytical groups such as military escalation,
                 casualties, threats, diplomacy, ceasefire and negotiation activity.
               </p>
             </div>
             <div>
-              <h4>Conclusion</h4>
+              <h4>Következtetés</h4>
               <p id="categories_conclusion">Loading conclusion...</p>
             </div>
           </div>
@@ -1493,21 +1569,21 @@
         </ul>
 
         <div class="interpretation">
-          <span class="interpretation-title">Analyst Interpretation</span>
+          <span class="interpretation-title">Elemzői értelmezés</span>
           <div class="interpretation-grid">
             <div>
-              <h4>What are we seeing?</h4>
+              <h4>Mit látunk?</h4>
               <p id="signals_what">Loading interpretation...</p>
             </div>
             <div>
-              <h4>How is it calculated?</h4>
+              <h4>Hogyan számoljuk?</h4>
               <p>
                 Headlines are ranked using their existing article score. The strongest escalation and de-escalation
                 items are displayed with the matched signal tags that produced the score.
               </p>
             </div>
             <div>
-              <h4>Conclusion</h4>
+              <h4>Következtetés</h4>
               <p id="signals_conclusion">Loading conclusion...</p>
             </div>
           </div>
@@ -1545,22 +1621,22 @@
         </div>
 
         <div class="interpretation">
-          <span class="interpretation-title">Analyst Interpretation</span>
+          <span class="interpretation-title">Elemzői értelmezés</span>
           <div class="interpretation-grid">
             <div>
-              <h4>What are we seeing?</h4>
+              <h4>Mit látunk?</h4>
               <p>
                 The table provides the numerical detail behind the visual driver ranking and shows which terms are responsible for the daily score.
               </p>
             </div>
             <div>
-              <h4>How is it calculated?</h4>
+              <h4>Hogyan számoljuk?</h4>
               <p>
                 Impact is calculated as the detected daily count multiplied by the predefined keyword weight.
               </p>
             </div>
             <div>
-              <h4>Conclusion</h4>
+              <h4>Következtetés</h4>
               <p id="table_conclusion">Loading conclusion...</p>
             </div>
           </div>
@@ -1587,7 +1663,7 @@
             <div class="event-balance-track" aria-label="Diplomatic, escalation and ceasefire event balance"><div id="event_balance_diplomatic" class="event-balance-segment diplomatic"></div><div id="event_balance_escalation" class="event-balance-segment escalation"></div><div id="event_balance_ceasefire" class="event-balance-segment ceasefire"></div></div>
             <div class="event-balance-legend"><span><span class="legend-dot diplomatic"></span>Diplomatic</span><span><span class="legend-dot escalation"></span>Escalatory</span><span><span class="legend-dot ceasefire"></span>Ceasefire / de-escalation</span></div>
           </div>
-          <div class="interpretation"><span class="interpretation-title">Analyst Interpretation</span><div class="interpretation-grid"><div><h4>What are we seeing?</h4><p id="event_summary_what">The summary shows the balance of non-kinetic events in the selected period.</p></div><div><h4>How is it calculated?</h4><p>The summary cards use the latest 30-day window. Diplomatic events, escalation-oriented statements and ceasefire/de-escalation signals come from the Conflict End Matrix event layer. Military events come from the cleaned kinetic_events.json dataset generated from ME Security Monitor / IranStrike.</p></div><div><h4>Conclusion</h4><p id="event_summary_conclusion">The balance helps show whether the political and information environment is dominated by diplomacy, escalation-oriented signalling or de-escalation efforts.</p></div></div></div>
+          <div class="interpretation"><span class="interpretation-title">Elemzői értelmezés</span><div class="interpretation-grid"><div><h4>Mit látunk?</h4><p id="event_summary_what">The summary shows the balance of non-kinetic events in the selected period.</p></div><div><h4>Hogyan számoljuk?</h4><p>The summary cards use the latest 30-day window. Diplomatic events, escalation-oriented statements and ceasefire/de-escalation signals come from the Conflict End Matrix event layer. Military events come from the cleaned kinetic_events.json dataset generated from ME Security Monitor / IranStrike.</p></div><div><h4>Következtetés</h4><p id="event_summary_conclusion">The balance helps show whether the political and information environment is dominated by diplomacy, escalation-oriented signalling or de-escalation efforts.</p></div></div></div>
         </div>
 
         
@@ -1626,20 +1702,20 @@
           </div>
 
           <div class="interpretation">
-            <span class="interpretation-title">Analyst Interpretation</span>
+            <span class="interpretation-title">Elemzői értelmezés</span>
             <div class="interpretation-grid">
               <div>
-                <h4>What are we seeing?</h4>
+                <h4>Mit látunk?</h4>
                 <p id="trend_what">Daily movement of non-kinetic signals and validated military events over a longer time horizon.</p>
               </div>
               <div>
-                <h4>How is it calculated?</h4>
+                <h4>Hogyan számoljuk?</h4>
                 <p id="trend_how">
                   Events are grouped by UTC calendar day. Relative mode expresses each series as a percentage of its own maximum daily value; absolute mode shows the raw number of events.
                 </p>
               </div>
               <div>
-                <h4>Conclusion</h4>
+                <h4>Következtetés</h4>
                 <p id="trend_conclusion">The chart helps identify whether changes in the information and diplomatic environment move before, together with, or after changes in kinetic activity.</p>
               </div>
             </div>
@@ -1656,67 +1732,88 @@
 
           <div class="analysis-kpis">
             <div class="analysis-kpi military">
-              <div class="label">Military Activity Index</div>
+              <div class="label">MAI – Katonai aktivitási index</div>
               <div class="value" id="kpi_mai">—</div>
-              <div class="sub" id="kpi_mai_sub">Weighted daily kinetic intensity</div>
+              <div class="sub" id="kpi_mai_sub">Súlyozott napi katonai intenzitás</div>
+              <div class="metric-explainer">
+                <strong>Mit mutat?</strong> A katonai események napi intenzitását a teljes vizsgált időszakhoz képest.
+                A magasabb érték erősebb katonai aktivitást jelez.
+              </div>
             </div>
             <div class="analysis-kpi diplomatic">
-              <div class="label">Diplomatic Direction Index</div>
+              <div class="label">DDI – Diplomáciai irány index</div>
               <div class="value" id="kpi_ddi">—</div>
-              <div class="sub" id="kpi_ddi_sub">−100 escalation · +100 de-escalation</div>
+              <div class="sub" id="kpi_ddi_sub">−100 eszkaláció · 0 vegyes · +100 deeszkaláció</div>
+              <div class="metric-explainer">
+                <strong>Mit mutat?</strong> A politikai és diplomáciai jelzések irányát.
+                Negatív érték eszkalációs, pozitív érték deeszkalációs környezetet jelez.
+              </div>
             </div>
             <div class="analysis-kpi gap">
-              <div class="label">Diplomacy–Military Gap</div>
+              <div class="label">Diplomácia–katonai eltérés</div>
               <div class="value" id="kpi_gap">—</div>
-              <div class="sub" id="kpi_gap_sub">Signal–activity divergence</div>
+              <div class="sub" id="kpi_gap_sub">A kommunikáció és a katonai aktivitás eltérése</div>
+              <div class="metric-explainer">
+                <strong>Mit mutat?</strong> Mennyire van összhangban a diplomáciai kommunikáció és a tényleges katonai viselkedés.
+                A nagyobb érték erősebb eltérést jelez.
+              </div>
             </div>
           </div>
 
           <div class="analytics-grid">
             <div class="analytics-card">
-              <h3>MAI + DDI Time Series</h3>
-              <div class="card-sub">Military Activity Index and Diplomatic Direction Index across complete UTC days.</div>
+              <h3>Diplomácia és katonai aktivitás alakulása</h3>
+              <div class="card-sub">A MAI és a DDI napi értékei és 7 napos trendje a közös vizsgálati időszakban.</div>
+              <div class="question-strip">
+                <strong>Kérdés:</strong> A diplomáciai jelzések változását követi-e a tényleges katonai aktivitás változása?
+              </div>
               <div class="analytics-chart">
                 <svg id="mai_ddi_svg" viewBox="0 0 1000 330" preserveAspectRatio="none"></svg>
               </div>
               <div class="chart-note">
-                <span style="color:#c6535c"><i class="legend-line"></i> MAI daily</span>
-                <span style="color:#c6535c"><i class="legend-line dashed"></i> MAI 7-day average</span>
-                <span style="color:#2788c4"><i class="legend-line"></i> DDI daily</span>
-                <span style="color:#2788c4"><i class="legend-line dashed"></i> DDI 7-day average</span>
+                <span style="color:#c6535c"><i class="legend-line"></i> MAI napi érték</span>
+                <span style="color:#c6535c"><i class="legend-line dashed"></i> MAI 7 napos átlag</span>
+                <span style="color:#2788c4"><i class="legend-line"></i> DDI napi érték</span>
+                <span style="color:#2788c4"><i class="legend-line dashed"></i> DDI 7 napos átlag</span>
               </div>
             </div>
 
             <div class="analytics-card">
-              <h3>Diplomacy–Military Gap</h3>
-              <div class="card-sub">Daily divergence/convergence between diplomatic signalling and military pressure.</div>
+              <h3>Összhangban vannak a szavak és a katonai cselekmények?</h3>
+              <div class="card-sub">A diplomáciai jelzések és a katonai aktivitás napi eltérése vagy együttmozgása.</div>
+              <div class="question-strip">
+                <strong>Kérdés:</strong> Ugyanabba az irányba mutat-e a politikai kommunikáció és a tényleges katonai viselkedés?
+              </div>
               <div class="analytics-chart">
                 <svg id="gap_svg" viewBox="0 0 1000 330" preserveAspectRatio="none"></svg>
               </div>
               <div class="gap-zone-key">
-                <span>Upper: de-escalatory signalling / military pressure</span>
-                <span>Centre: limited divergence</span>
-                <span>Lower: escalatory signalling / lower military pressure</span>
+                <span>Felső zóna: deeszkalációs jelzések / magasabb katonai nyomás</span>
+                <span>Középső zóna: korlátozott eltérés</span>
+                <span>Alsó zóna: eszkalációs jelzések / alacsonyabb katonai nyomás</span>
               </div>
             </div>
           </div>
 
           <div class="analytics-card" style="margin-top:14px">
-            <h3>Lag Analysis</h3>
-            <div class="card-sub">How weighted military activity changes after classified diplomatic signals. Temporal association only.</div>
+            <h3>Mennyi idő múlva változik a katonai aktivitás?</h3>
+            <div class="card-sub">A katonai aktivitás változása eszkalációs vagy deeszkalációs diplomáciai jelzések után 6, 12, 24, 48 és 72 órán belül.</div>
+            <div class="question-strip">
+              <strong>Kérdés:</strong> Egy diplomáciai jelzés után mikor jelenik meg mérhető változás a katonai aktivitásban?
+            </div>
             <div class="lag-curve-wrap">
               <svg id="lag_curve_svg" viewBox="0 0 1000 300" preserveAspectRatio="none"></svg>
             </div>
             <div class="chart-note">
-              <span style="color:#c6535c"><i class="legend-line"></i> Escalation signal</span>
-              <span style="color:#2d8c68"><i class="legend-line"></i> De-escalation signal</span>
+              <span style="color:#c6535c"><i class="legend-line"></i> Eszkalációs jelzés</span>
+              <span style="color:#2d8c68"><i class="legend-line"></i> Deeszkalációs jelzés</span>
             </div>
             <div class="lag-summary-line" id="lag_summary_line">Loading lag-response profile…</div>
             <div style="overflow-x:auto; margin-top:12px">
               <table class="lag-table">
                 <thead>
                   <tr>
-                    <th>Signal</th>
+                    <th>Jelzés</th>
                     <th>6h</th>
                     <th>12h</th>
                     <th>24h</th>
@@ -1732,20 +1829,20 @@
           </div>
 
           <div class="interpretation">
-            <span class="interpretation-title">Analyst Interpretation</span>
+            <span class="interpretation-title">Elemzői értelmezés</span>
             <div class="interpretation-grid">
               <div>
-                <h4>What are we seeing?</h4>
+                <h4>Mit látunk?</h4>
                 <p id="conflict_analysis_what">Loading analytical metrics…</p>
               </div>
               <div>
-                <h4>How is it calculated?</h4>
+                <h4>Hogyan számoljuk?</h4>
                 <p id="conflict_analysis_how">
-                  MAI uses weighted kinetic activity. DDI aggregates daily direction scores. The Gap compares DDI with military pressure relative to the previous 7-day average.
+                  A MAI a katonai események típusát és súlyosságát súlyozza. A DDI a napi diplomáciai iránypontszámokat összesíti. A Gap a DDI-t hasonlítja össze az előző 7 nap átlagához viszonyított katonai nyomással.
                 </p>
               </div>
               <div>
-                <h4>Conclusion</h4>
+                <h4>Következtetés</h4>
                 <p id="conflict_analysis_conclusion">Loading…</p>
               </div>
             </div>
@@ -1769,22 +1866,22 @@
         </div>
 
         <div class="interpretation">
-          <span class="interpretation-title">Analyst Interpretation</span>
+          <span class="interpretation-title">Elemzői értelmezés</span>
           <div class="interpretation-grid">
             <div>
-              <h4>What are we seeing?</h4>
+              <h4>Mit látunk?</h4>
               <p id="matrix_what">
                 Seven consecutive days are compared side by side so diplomatic and military activity can be read vertically for each day.
               </p>
             </div>
             <div>
-              <h4>How is it calculated?</h4>
+              <h4>Hogyan számoljuk?</h4>
               <p>
                 Events are grouped by UTC calendar day. Diplomatic rows summarize Conflict End Matrix non-kinetic events; Military rows summarize cleaned kinetic events. Direction is based on the daily balance of escalation versus de-escalation signals. Actors are the unique identified participants in that day's records.
               </p>
             </div>
             <div>
-              <h4>Conclusion</h4>
+              <h4>Következtetés</h4>
               <p id="matrix_conclusion">
                 Relation / Time is intentionally descriptive only at this stage. It does not claim causation until a dedicated Statement → Action linkage model is added.
               </p>
@@ -2520,7 +2617,7 @@
       if(summary){
         const e48=lag?.aggregate?.escalation?.["48h"]?.median_change_pct;
         const d48=lag?.aggregate?.["de-escalation"]?.["48h"]?.median_change_pct;
-        summary.textContent=`48h median response: escalation ${e48==null?"—":(Number(e48)>0?"+":"")+Number(e48).toFixed(1)+"%"} · de-escalation ${d48==null?"—":(Number(d48)>0?"+":"")+Number(d48).toFixed(1)+"%"}.`;
+        summary.textContent=`48 órás medián változás: eszkaláció ${e48==null?"—":(Number(e48)>0?"+":"")+Number(e48).toFixed(1)+"%"} · deeszkaláció ${d48==null?"—":(Number(d48)>0?"+":"")+Number(d48).toFixed(1)+"%"}.`;
       }
     }
 
@@ -2532,7 +2629,7 @@
       ["escalation","de-escalation"].forEach(direction=>{
         const tr=document.createElement("tr");
         const first=document.createElement("td");
-        first.innerHTML=`<strong>${direction}</strong>`;
+        first.innerHTML=`<strong>${direction==='escalation'?'eszkaláció':'deeszkaláció'}</strong>`;
         tr.appendChild(first);
 
         ["6h","12h","24h","48h","72h"].forEach(key=>{
@@ -2552,6 +2649,102 @@
       });
     }
 
+
+    function huSigned(v,digits=1){
+      const n=Number(v);
+      if(!Number.isFinite(n)) return "—";
+      return `${n>0?"+":""}${n.toFixed(digits)}`;
+    }
+
+    function huMilitaryState(mai){
+      if(mai>=80) return "nagyon magas";
+      if(mai>=60) return "magas";
+      if(mai>=40) return "közepes";
+      if(mai>=20) return "alacsony";
+      return "nagyon alacsony";
+    }
+
+    function huDiplomaticState(ddi){
+      if(ddi>=35) return "egyértelműen deeszkalációs";
+      if(ddi>=15) return "mérsékelten deeszkalációs";
+      if(ddi<=-35) return "egyértelműen eszkalációs";
+      if(ddi<=-15) return "mérsékelten eszkalációs";
+      return "vegyes vagy semleges";
+    }
+
+    function huGapState(level){
+      const map={
+        "LOW":"alacsony",
+        "MODERATE":"közepes",
+        "HIGH":"magas",
+        "VERY HIGH":"nagyon magas"
+      };
+      return map[level]||"nem besorolt";
+    }
+
+    function buildHungarianAssessment(data){
+      const latest=data.latest||{};
+      const daily=Array.isArray(data.daily)?data.daily:[];
+      const gap=latest.diplomacy_military_gap||{};
+      const mai=Number(latest.military_activity_index||0);
+      const ddi=Number(latest.diplomatic_direction_index||0);
+      const change=Number(latest.military_change_vs_7d_pct||0);
+
+      const last7=daily.slice(-7);
+      const avgMai=last7.length
+        ? last7.reduce((s,r)=>s+Number(r.military.activity_index||0),0)/last7.length
+        : mai;
+      const avgDdi=last7.length
+        ? last7.reduce((s,r)=>s+Number(r.diplomatic.direction_index||0),0)/last7.length
+        : ddi;
+
+      const lag=data.lag_analysis?.aggregate||{};
+      const esc48=lag?.escalation?.["48h"]?.median_change_pct;
+      const de48=lag?.["de-escalation"]?.["48h"]?.median_change_pct;
+
+      let text=
+        `A katonai aktivitás jelenleg ${huMilitaryState(mai)} szinten áll (MAI ${mai.toFixed(1)}). `+
+        `A legutóbbi érték ${change<0?"alacsonyabb":"magasabb"} az előző 7 nap átlagánál (${huSigned(change)}%). `+
+        `A diplomáciai környezet jelenleg ${huDiplomaticState(ddi)} (DDI ${huSigned(ddi)}). `+
+        `A diplomáciai és katonai réteg közötti eltérés ${huGapState(gap.level)} szintű`;
+
+      if(gap.strength!=null){
+        text+=` (Gap ${Number(gap.strength).toFixed(1)})`;
+      }
+      text+=".";
+
+      if(avgMai>=60 && avgDdi>10){
+        text+=" A közelmúltban a katonai aktivitás magas maradt annak ellenére, hogy a diplomáciai jelzések inkább enyhülés felé mutattak.";
+      }else if(avgMai>=60 && avgDdi<-10){
+        text+=" A magas katonai aktivitás és az eszkalációs diplomáciai jelzések egymást erősítő képet adnak.";
+      }else if(avgMai<40 && avgDdi>10){
+        text+=" Az alacsonyabb katonai aktivitás és a deeszkalációs diplomáciai irány együtt enyhülő konfliktusképet jelez.";
+      }else if(avgMai<40 && avgDdi<-10){
+        text+=" A diplomáciai retorika eszkalációsabb, miközben a katonai aktivitás visszafogottabb; ez eltérést jelez a kommunikáció és a tényleges katonai viselkedés között.";
+      }else{
+        text+=" A két réteg jelenleg nem ad egyértelmű, egységes irányjelzést.";
+      }
+
+      let watch="<strong>Mire érdemes figyelni?</strong> ";
+
+      if(ddi>=15){
+        watch+="Ha a DDI pozitív tartományban marad és közben a MAI tartósan csökken, az erősebb deeszkalációs mintázatot jelezhet. ";
+      }else if(ddi<=-15){
+        watch+="Ha az eszkalációs diplomáciai jelzéseket a MAI újabb emelkedése követi, az a politikai és katonai eszkaláció összekapcsolódását erősítené. ";
+      }else{
+        watch+="A következő napokban azt érdemes figyelni, hogy a DDI kilép-e a semleges tartományból, és ezt követi-e a MAI azonos vagy ellentétes irányú változása. ";
+      }
+
+      if(de48!=null){
+        watch+=`A jelenlegi lag-minta szerint a deeszkalációs jelzéseket 48 órán belül medián ${huSigned(de48)}%-os katonai aktivitásváltozás követte. `;
+      }
+      if(esc48!=null){
+        watch+=`Az eszkalációs jelzéseknél ugyanez 48 órán belül ${huSigned(esc48)}%.`;
+      }
+
+      return {text,watch};
+    }
+
     function renderConflictAnalysis(data){
       const latest=data.latest||{};
       const period=data.analysis_period||{};
@@ -2564,8 +2757,8 @@
         latest.military_activity_index!=null?Number(latest.military_activity_index).toFixed(1):"—";
       document.getElementById("kpi_mai_sub").textContent=
         latest.military_change_vs_7d_pct!=null
-          ? `${latest.military_change_vs_7d_pct>0?"+":""}${Number(latest.military_change_vs_7d_pct).toFixed(1)}% vs previous 7-day average`
-          : "No 7-day comparison available";
+          ? `${latest.military_change_vs_7d_pct>0?"+":""}${Number(latest.military_change_vs_7d_pct).toFixed(1)}% az előző 7 nap átlagához képest`
+          : "Nincs elérhető 7 napos összehasonlítás";
 
       document.getElementById("kpi_ddi").textContent=
         latest.diplomatic_direction_index!=null
@@ -2582,10 +2775,24 @@
         gapDisplayPattern="MODERATE DIVERGENCE";
       }
 
+      const gapLevelHu={
+        "LOW":"ALACSONY",
+        "MODERATE":"KÖZEPES",
+        "HIGH":"MAGAS",
+        "VERY HIGH":"NAGYON MAGAS"
+      };
+      const gapPatternHu={
+        "SIGNIFICANT DIVERGENCE":"JELENTŐS ELTÉRÉS",
+        "MODERATE DIVERGENCE":"KÖZEPES ELTÉRÉS",
+        "CONVERGENCE - EASING":"EGYÜTTMOZGÁS – ENYHÜLÉS",
+        "CONVERGENCE - ESCALATION":"EGYÜTTMOZGÁS – ESZKALÁCIÓ",
+        "DE-ESCALATORY SIGNALS / HIGH MILITARY ACTIVITY":"DEESZKALÁCIÓS JELZÉSEK / MAGAS KATONAI AKTIVITÁS",
+        "ESCALATORY SIGNALS / LOW MILITARY ACTIVITY":"ESZKALÁCIÓS JELZÉSEK / ALACSONYABB KATONAI AKTIVITÁS"
+      };
       document.getElementById("kpi_gap_sub").innerHTML=
         gap.level
-          ? `<span class="analysis-badge ${String(gap.level).toLowerCase().replace(/\s+/g,"-")}">${gap.level}</span> ${gapDisplayPattern}`
-          : "No gap classification";
+          ? `<span class="analysis-badge ${String(gap.level).toLowerCase().replace(/\s+/g,"-")}">${gapLevelHu[gap.level]||gap.level}</span> ${gapPatternHu[gapDisplayPattern]||gapDisplayPattern}`
+          : "Nincs besorolható eltérés";
 
       renderDualSeries("mai_ddi_svg",daily);
       renderGap("gap_svg",daily);
@@ -2593,16 +2800,21 @@
       renderLagTable(data.lag_analysis||{});
 
       document.getElementById("conflict_analysis_what").textContent=
-        `The dashboard currently compares ${daily.length} complete UTC days of diplomatic signalling and military activity.`;
+        `A dashboard jelenleg ${daily.length} teljes UTC nap diplomáciai jelzéseit és katonai aktivitását hasonlítja össze.`;
 
       const last7=daily.slice(-7);
       const avgMai=last7.length?last7.reduce((s,r)=>s+Number(r.military.activity_index||0),0)/last7.length:0;
       const avgDdi=last7.length?last7.reduce((s,r)=>s+Number(r.diplomatic.direction_index||0),0)/last7.length:0;
 
-      let conclusion=`Over the last 7 complete days, average MAI is ${avgMai.toFixed(1)} and average DDI is ${avgDdi>0?"+":""}${avgDdi.toFixed(1)}. `;
-      if(gapDisplayPattern) conclusion+=`Latest pattern: ${gapDisplayPattern}. `;
-      conclusion+="Lag results indicate temporal association only and should not be read as proof of causation.";
+      let conclusion=`Az elmúlt 7 teljes nap átlagos MAI értéke ${avgMai.toFixed(1)}, az átlagos DDI ${avgDdi>0?"+":""}${avgDdi.toFixed(1)}. `;
+      conclusion+="A lag-eredmények időbeli együttmozgást mutatnak, de önmagukban nem bizonyítanak ok-okozati kapcsolatot.";
       document.getElementById("conflict_analysis_conclusion").textContent=conclusion;
+
+      const assessment=buildHungarianAssessment(data);
+      const assessmentText=document.getElementById("current_assessment_text");
+      const assessmentWatch=document.getElementById("current_assessment_watch");
+      if(assessmentText)assessmentText.textContent=assessment.text;
+      if(assessmentWatch)assessmentWatch.innerHTML=assessment.watch;
     }
 
     function loadConflictAnalysis(){
@@ -2614,9 +2826,9 @@
         .then(renderConflictAnalysis)
         .catch(err=>{
           document.getElementById("conflict_analysis_what").textContent=
-            "Conflict-analysis metrics could not be loaded.";
+            "Az elemzési mutatókat nem sikerült betölteni.";
           document.getElementById("conflict_analysis_conclusion").textContent=
-            "Check docs/conflict_analysis.json and the analysis workflow.";
+            "Ellenőrizd a docs/conflict_analysis.json fájlt és az elemzési workflow futását.";
           console.warn("Conflict analysis load failed:",err);
         });
     }
@@ -3295,4 +3507,5 @@
   </script>
 </body>
 </html>
+
 
