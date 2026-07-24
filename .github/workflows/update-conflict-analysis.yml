@@ -54,16 +54,32 @@ jobs:
           with path.open("r", encoding="utf-8") as f:
               data = json.load(f)
 
-          if data.get("analysis_model") != "conflict_analysis_v1_1":
+          if data.get("analysis_model") != "conflict_analysis_v1_2":
               raise SystemExit("ERROR: unexpected analysis model")
 
           period = data.get("analysis_period", {})
-          if not period.get("start") or not period.get("end"):
+          if (
+              not period.get("raw_common_start")
+              or not period.get("daily_analysis_start")
+              or not period.get("end")
+          ):
               raise SystemExit("ERROR: analysis_period missing")
+
+          if period["daily_analysis_start"] < period["raw_common_start"]:
+              raise SystemExit(
+                  "ERROR: daily_analysis_start precedes raw_common_start"
+              )
 
           daily = data.get("daily")
           if not isinstance(daily, list) or not daily:
               raise SystemExit("ERROR: daily analysis is empty")
+
+          expected_first_day = period.get("daily_analysis_start_date")
+          if daily[0].get("date") != expected_first_day:
+              raise SystemExit(
+                  "ERROR: first daily row does not match "
+                  "daily_analysis_start_date"
+              )
 
           required_daily = {
               "date",
