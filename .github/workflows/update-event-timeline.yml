@@ -128,8 +128,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No event timeline changes to commit."
           else
-            git commit -m "Refine diplomatic direction classification"
+            git commit -m "Finalize diplomatic direction classification V3.2"
             git pull --rebase origin main
             git push origin HEAD:main
           fi
-
