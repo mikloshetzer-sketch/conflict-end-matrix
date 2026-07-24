@@ -1330,6 +1330,29 @@
       color:#7a8d98;
     }
 
+    /* =========================================================
+       CONFLICT ANALYSIS V4 - MAGYAR ÉRTELMEZÉS FINOMÍTÁS
+       ========================================================= */
+    .lag-interpretation-note{
+      margin-top:14px;
+      padding:12px 14px;
+      border-left:4px solid #d39b32;
+      border-radius:9px;
+      background:#fff8e9;
+      color:#5c4a27;
+      font-size:11px;
+      line-height:1.6;
+    }
+    .lag-interpretation-note strong{color:#7a5510}
+    .current-assessment{
+      margin-top:16px;
+      box-shadow:0 8px 24px rgba(31,72,99,.06);
+    }
+    .current-assessment .assessment-lead{
+      font-size:13px;
+      line-height:1.7;
+    }
+
   </style>
 </head>
 
@@ -1390,20 +1413,7 @@
           <span class="kpi-note">Escalation + diplomacy balance</span>
         </div>
       </div>
-
-      
-          <div class="current-assessment">
-            <h3>Mit mondanak most az adatok?</h3>
-            <div class="assessment-lead" id="current_assessment_text">Az aktuális konfliktusértékelés betöltése…</div>
-            <div class="assessment-watch" id="current_assessment_watch">
-              <strong>Mire érdemes figyelni?</strong> Az értékelés az aktuális MAI, DDI, Gap és lag-adatokból automatikusan készül.
-            </div>
-            <div class="mini-method">
-              Az értékelés leíró jellegű. Az időbeli együttmozgás nem bizonyít közvetlen ok-okozati kapcsolatot.
-            </div>
-          </div>
-
-          <div class="interpretation">
+<div class="interpretation">
         <span class="interpretation-title">Elemzői értelmezés</span>
         <div class="interpretation-grid">
           <div>
@@ -1726,7 +1736,7 @@
         
         <div class="event-balance-panel" id="conflict_analysis_panel">
           <div class="event-balance-header">
-            <span class="event-balance-title">Conflict Analysis</span>
+            <span class="event-balance-title">Konfliktusdinamikai elemzés</span>
             <span class="event-balance-period" id="analysis_period_label">Loading…</span>
           </div>
 
@@ -1808,7 +1818,7 @@
               <span style="color:#c6535c"><i class="legend-line"></i> Eszkalációs jelzés</span>
               <span style="color:#2d8c68"><i class="legend-line"></i> Deeszkalációs jelzés</span>
             </div>
-            <div class="lag-summary-line" id="lag_summary_line">Loading lag-response profile…</div>
+            <div class="lag-summary-line" id="lag_summary_line">A késleltetett reakciós minta betöltése…</div>
             <div style="overflow-x:auto; margin-top:12px">
               <table class="lag-table">
                 <thead>
@@ -1822,14 +1832,24 @@
                   </tr>
                 </thead>
                 <tbody id="lag_analysis_body">
-                  <tr><td colspan="6">Loading…</td></tr>
+                  <tr><td colspan="6">Betöltés…</td></tr>
                 </tbody>
               </table>
+            </div>
+
+            <div class="lag-interpretation-note">
+              <strong>Értelmezési megjegyzés:</strong>
+              Az eszkalációs diplomáciai jelzések után mért katonai aktivitáscsökkenés nem jelenti azt,
+              hogy az eszkalációs kommunikáció mérsékli a katonai műveleteket.
+              A jelenlegi adatok inkább arra utalhatnak, hogy az eszkalációs politikai jelzések gyakran már
+              magas katonai aktivitás alatt vagy annak tetőzése körül jelennek meg, ezért az utánuk vizsgált
+              időablakban visszaesés figyelhető meg. Az összefüggés időbeli kapcsolatot jelez, nem bizonyít
+              ok-okozati hatást.
             </div>
           </div>
 
           <div class="interpretation">
-            <span class="interpretation-title">Elemzői értelmezés</span>
+            <span class="interpretation-title">Módszertani értelmezés</span>
             <div class="interpretation-grid">
               <div>
                 <h4>Mit látunk?</h4>
@@ -1842,9 +1862,23 @@
                 </p>
               </div>
               <div>
-                <h4>Következtetés</h4>
+                <h4>Mit jelent ez?</h4>
                 <p id="conflict_analysis_conclusion">Loading…</p>
               </div>
+            </div>
+          </div>
+
+          <div class="current-assessment">
+            <h3>Mit mondanak most az adatok a konfliktusról?</h3>
+            <div class="assessment-lead" id="current_assessment_text">
+              Az aktuális konfliktusértékelés betöltése…
+            </div>
+            <div class="assessment-watch" id="current_assessment_watch">
+              <strong>Mire érdemes figyelni?</strong>
+              Az értékelés az aktuális MAI, DDI, Gap és lag-adatokból automatikusan készül.
+            </div>
+            <div class="mini-method">
+              Az értékelés leíró jellegű. Az időbeli együttmozgás nem bizonyít közvetlen ok-okozati kapcsolatot.
             </div>
           </div>
         </div>
@@ -2640,7 +2674,7 @@
           }else{
             const v=Number(item.median_change_pct);
             const cls=v>5?"lag-bad":v<-5?"lag-good":"lag-neutral";
-            td.innerHTML=`<span class="${cls}">${v>0?"+":""}${v.toFixed(1)}%</span><br><small>${item.signal_count} signals</small>`;
+            td.innerHTML=`<span class="${cls}">${v>0?"+":""}${v.toFixed(1)}%</span><br><small>${item.signal_count} jelzés</small>`;
           }
           tr.appendChild(td);
         });
@@ -2800,14 +2834,14 @@
       renderLagTable(data.lag_analysis||{});
 
       document.getElementById("conflict_analysis_what").textContent=
-        `A dashboard jelenleg ${daily.length} teljes UTC nap diplomáciai jelzéseit és katonai aktivitását hasonlítja össze.`;
+        `A rendszer ${daily.length} teljes UTC nap alapján azt vizsgálja, hogyan változik egymáshoz képest a diplomáciai jelzés és a tényleges katonai aktivitás.`;
 
       const last7=daily.slice(-7);
       const avgMai=last7.length?last7.reduce((s,r)=>s+Number(r.military.activity_index||0),0)/last7.length:0;
       const avgDdi=last7.length?last7.reduce((s,r)=>s+Number(r.diplomatic.direction_index||0),0)/last7.length:0;
 
-      let conclusion=`Az elmúlt 7 teljes nap átlagos MAI értéke ${avgMai.toFixed(1)}, az átlagos DDI ${avgDdi>0?"+":""}${avgDdi.toFixed(1)}. `;
-      conclusion+="A lag-eredmények időbeli együttmozgást mutatnak, de önmagukban nem bizonyítanak ok-okozati kapcsolatot.";
+      let conclusion=`Az elmúlt 7 teljes nap átlagos katonai aktivitása MAI ${avgMai.toFixed(1)}, az átlagos diplomáciai irány DDI ${avgDdi>0?"+":""}${avgDdi.toFixed(1)}. `;
+      conclusion+="Az eltérés és a lag-vizsgálat azt mutatja meg, hogy a politikai jelzések és a katonai folyamatok mennyire mozognak együtt, illetve milyen időbeli reakcióminta figyelhető meg.";
       document.getElementById("conflict_analysis_conclusion").textContent=conclusion;
 
       const assessment=buildHungarianAssessment(data);
@@ -3507,5 +3541,4 @@
   </script>
 </body>
 </html>
-
 
