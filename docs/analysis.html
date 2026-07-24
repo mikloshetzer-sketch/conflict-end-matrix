@@ -1353,6 +1353,155 @@
       line-height:1.7;
     }
 
+    /* =========================================================
+       CONFLICT FORECAST V5 - VIZUÁLIS ÉS MAGYAR ÉRTELMEZÉSI RÉTEG
+       ========================================================= */
+    .forecast-panel{
+      margin-top:16px;
+      border:1px solid #c9dbe6;
+      border-radius:12px;
+      background:linear-gradient(180deg,#f8fcff 0%,#f1f8fc 100%);
+      padding:16px;
+      box-shadow:0 8px 24px rgba(31,72,99,.06);
+    }
+    .forecast-header{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:12px;
+    }
+    .forecast-title{
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:20px;
+      font-weight:700;
+      color:#103b59;
+    }
+    .forecast-date{
+      font-size:10px;
+      color:#748995;
+      text-align:right;
+      white-space:nowrap;
+    }
+    .forecast-intro{
+      margin:0 0 14px;
+      font-size:12px;
+      line-height:1.6;
+      color:#3e5f72;
+    }
+    .forecast-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .forecast-card{
+      border:1px solid #d7e3ea;
+      border-radius:12px;
+      background:#fff;
+      padding:15px;
+      min-height:180px;
+    }
+    .forecast-card.signal-up{border-top:4px solid #c6535c}
+    .forecast-card.signal-down{border-top:4px solid #2d8c68}
+    .forecast-card.signal-stable{border-top:4px solid #2f8cc0}
+    .forecast-card.signal-none{border-top:4px solid #c79537}
+    .forecast-horizon{
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      color:#69808e;
+    }
+    .forecast-main{
+      margin-top:7px;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:24px;
+      line-height:1.15;
+      font-weight:700;
+      color:#153f5c;
+    }
+    .forecast-main.up{color:#a84049}
+    .forecast-main.down{color:#28745b}
+    .forecast-main.stable{color:#286f99}
+    .forecast-main.none{color:#8a641d}
+    .forecast-meta{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+      margin-top:12px;
+    }
+    .forecast-meta-box{
+      background:#f6f9fb;
+      border:1px solid #e1e9ee;
+      border-radius:8px;
+      padding:8px;
+    }
+    .forecast-meta-label{
+      display:block;
+      font-size:9px;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      color:#81929c;
+    }
+    .forecast-meta-value{
+      display:block;
+      margin-top:3px;
+      font-size:13px;
+      font-weight:800;
+      color:#244b63;
+    }
+    .forecast-explain{
+      margin-top:11px;
+      padding-top:10px;
+      border-top:1px solid #e7edf1;
+      font-size:11px;
+      line-height:1.55;
+      color:#506b7b;
+    }
+    .forecast-assessment{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:12px;
+    }
+    .forecast-assessment-box{
+      padding:13px 14px;
+      border-radius:10px;
+      background:#fff;
+      border:1px solid #dbe6ec;
+    }
+    .forecast-assessment-box h4{
+      margin:0 0 6px;
+      font-size:12px;
+      color:#123f5d;
+    }
+    .forecast-assessment-box p{
+      margin:0;
+      font-size:11px;
+      line-height:1.6;
+      color:#486473;
+    }
+    .forecast-method-note{
+      margin-top:12px;
+      padding:10px 12px;
+      border-left:4px solid #708a99;
+      background:#f7fafb;
+      border-radius:8px;
+      font-size:10px;
+      line-height:1.55;
+      color:#667c88;
+    }
+    .forecast-live-score{
+      margin-top:8px;
+      font-size:10px;
+      color:#6d808a;
+    }
+    @media(max-width:900px){
+      .forecast-grid,.forecast-assessment{grid-template-columns:1fr}
+      .forecast-header{display:block}
+      .forecast-date{text-align:left;margin-top:5px}
+    }
+
   </style>
 </head>
 
@@ -1883,7 +2032,93 @@
           </div>
         </div>
 
-        <div class="matrix-toolbar">
+
+          <div class="forecast-panel" id="forecast_panel">
+            <div class="forecast-header">
+              <div>
+                <div class="forecast-title">Rövid távú konfliktus-előrejelzés</div>
+              </div>
+              <div class="forecast-date" id="forecast_reference_label">Betöltés…</div>
+            </div>
+
+            <p class="forecast-intro">
+              A modell azt becsüli, hogy a jelenlegi katonai és diplomáciai mintázatok alapján
+              a következő 48 és 72 órában milyen irányba változhat az <strong>összesített katonai aktivitás</strong>.
+              Nem konkrét támadást vagy célpontot jelez előre. Ha a történeti analógiák nem adnak elég erős,
+              egyirányú mintát, a rendszer inkább azt jelzi: <strong>nincs egyértelmű jelzés</strong>.
+            </p>
+
+            <div class="forecast-grid">
+              <div class="forecast-card signal-none" id="forecast_card_48h">
+                <div class="forecast-horizon">Következő 48 óra</div>
+                <div class="forecast-main none" id="forecast_main_48h">Betöltés…</div>
+
+                <div class="forecast-meta">
+                  <div class="forecast-meta-box">
+                    <span class="forecast-meta-label">Modell iránytámogatása</span>
+                    <span class="forecast-meta-value" id="forecast_prob_48h">—</span>
+                  </div>
+                  <div class="forecast-meta-box">
+                    <span class="forecast-meta-label">Történeti jelzési pontosság</span>
+                    <span class="forecast-meta-value" id="forecast_hist_48h">—</span>
+                  </div>
+                </div>
+
+                <div class="forecast-explain" id="forecast_explain_48h">
+                  Az értelmezés betöltése…
+                </div>
+                <div class="forecast-live-score" id="forecast_live_48h"></div>
+              </div>
+
+              <div class="forecast-card signal-none" id="forecast_card_72h">
+                <div class="forecast-horizon">Következő 72 óra</div>
+                <div class="forecast-main none" id="forecast_main_72h">Betöltés…</div>
+
+                <div class="forecast-meta">
+                  <div class="forecast-meta-box">
+                    <span class="forecast-meta-label">Modell iránytámogatása</span>
+                    <span class="forecast-meta-value" id="forecast_prob_72h">—</span>
+                  </div>
+                  <div class="forecast-meta-box">
+                    <span class="forecast-meta-label">Történeti jelzési pontosság</span>
+                    <span class="forecast-meta-value" id="forecast_hist_72h">—</span>
+                  </div>
+                </div>
+
+                <div class="forecast-explain" id="forecast_explain_72h">
+                  Az értelmezés betöltése…
+                </div>
+                <div class="forecast-live-score" id="forecast_live_72h"></div>
+              </div>
+            </div>
+
+            <div class="forecast-assessment">
+              <div class="forecast-assessment-box">
+                <h4>Mit mond most az előrejelzés?</h4>
+                <p id="forecast_overall_assessment">
+                  Az aktuális rövid távú értékelés betöltése…
+                </p>
+              </div>
+              <div class="forecast-assessment-box">
+                <h4>Hogyan kell értelmezni?</h4>
+                <p>
+                  A „nincs egyértelmű jelzés” <strong>nem nyugalmat jelent</strong>, hanem azt,
+                  hogy a jelenlegi adatokból a modell nem tud kellően megbízható irányt kiválasztani.
+                  A növekedés vagy csökkenés jelzés az aktivitás várható irányára vonatkozik,
+                  nem egy konkrét katonai esemény bekövetkezésére.
+                </p>
+              </div>
+            </div>
+
+            <div class="forecast-method-note" id="forecast_method_note">
+              A 48 és 72 órás jelzések történeti walk-forward backtesttel lettek kiválasztva.
+              A rendszer minden napi éles becslést eltárol, majd a megfelelő időtáv letelte után
+              automatikusan visszaértékeli. Az élő teljesítmény növekedésével a NO SIGNAL küszöbök
+              kontrolláltan újrakalibrálhatók.
+            </div>
+          </div>
+
+                <div class="matrix-toolbar">
           <div class="matrix-nav">
             <button id="matrix_prev" class="matrix-btn" type="button">← Previous 7 days</button>
             <button id="matrix_today" class="matrix-btn" type="button">Latest 7 days</button>
@@ -2851,6 +3086,189 @@
       if(assessmentWatch)assessmentWatch.innerHTML=assessment.watch;
     }
 
+
+    // =========================================================
+    // LIVE 48H / 72H CONFLICT FORECAST
+    // =========================================================
+    function forecastPercent(value){
+      const n=Number(value);
+      return Number.isFinite(n) ? `${(n*100).toFixed(1)}%` : "—";
+    }
+
+    function forecastSignalStyle(direction){
+      if(direction==="increase") return {card:"signal-up",main:"up",arrow:"↑"};
+      if(direction==="decrease") return {card:"signal-down",main:"down",arrow:"↓"};
+      if(direction==="stable") return {card:"signal-stable",main:"stable",arrow:"→"};
+      return {card:"signal-none",main:"none",arrow:"•"};
+    }
+
+    function forecastDirectionHu(direction){
+      return {
+        increase:"növekvő katonai aktivitás",
+        decrease:"csökkenő katonai aktivitás",
+        stable:"lényegében változatlan katonai aktivitás",
+        no_signal:"nincs egyértelmű jelzés"
+      }[direction] || "nincs egyértelmű jelzés";
+    }
+
+    function forecastStrength(raw, publicSignal, horizon){
+      if(!raw || !publicSignal?.has_signal) return "nincs publikus jelzés";
+
+      const p=Number(raw.top_probability||0);
+      if(horizon==="72h"){
+        if(p>=0.85) return "erős";
+        if(p>=0.79) return "mérsékelt";
+      }else{
+        if(p>=0.70) return "erős";
+        if(p>=0.58) return "mérsékelt";
+      }
+      return "gyenge";
+    }
+
+    function buildForecastExplanation(horizon, item){
+      const raw=item?.raw_prediction;
+      const pub=item?.public_signal;
+      const gate=pub?.gate_used||{};
+
+      if(!raw){
+        return "A modellhez jelenleg nincs elegendő értékelhető adat.";
+      }
+
+      const top=forecastPercent(raw.top_probability);
+      const direction=forecastDirectionHu(raw.direction);
+
+      if(!pub?.has_signal){
+        return `A nyers modell leginkább ${direction} irányába mutat (${top}), `+
+               `de a jelzés nem érte el a ${Math.round(Number(gate.probability_threshold||0)*100)}%-os `+
+               `iránytámogatási és a szükséges bizonyossági küszöböt. Ezért a rendszer nem ad ki irányjelzést.`;
+      }
+
+      const strength=forecastStrength(raw,pub,horizon);
+      return `A történeti analóg minták többsége ${direction} irányába mutat. `+
+             `A modell iránytámogatása ${top}; a jelzés erőssége jelenleg ${strength}.`;
+    }
+
+    function renderForecastCard(horizon,item){
+      const suffix=horizon==="48h"?"48h":"72h";
+      const pub=item?.public_signal||{};
+      const raw=item?.raw_prediction||{};
+      const direction=pub.direction||"no_signal";
+      const style=forecastSignalStyle(direction);
+
+      const card=document.getElementById(`forecast_card_${suffix}`);
+      const main=document.getElementById(`forecast_main_${suffix}`);
+      if(card){
+        card.classList.remove("signal-up","signal-down","signal-stable","signal-none");
+        card.classList.add(style.card);
+      }
+      if(main){
+        main.classList.remove("up","down","stable","none");
+        main.classList.add(style.main);
+        main.textContent=`${style.arrow} ${forecastDirectionHu(direction)}`;
+      }
+
+      const prob=document.getElementById(`forecast_prob_${suffix}`);
+      if(prob){
+        prob.textContent=raw.top_probability!=null
+          ? forecastPercent(raw.top_probability)
+          : "—";
+      }
+
+      const hist=document.getElementById(`forecast_hist_${suffix}`);
+      if(hist){
+        const acc=item?.historical_v31_validation?.signal_accuracy_pct;
+        hist.textContent=acc!=null?`${Number(acc).toFixed(1)}%`:"—";
+      }
+
+      const explain=document.getElementById(`forecast_explain_${suffix}`);
+      if(explain) explain.textContent=buildForecastExplanation(horizon,item);
+
+      const live=document.getElementById(`forecast_live_${suffix}`);
+      if(live){
+        const perf=item?.live_out_of_sample_performance||{};
+        if(Number(perf.evaluated_forecasts||0)>0){
+          const liveAcc=perf.issued_signal_accuracy_pct;
+          live.textContent=
+            `Élő visszamérés: ${perf.evaluated_forecasts} kiértékelt előrejelzés`+
+            (liveAcc!=null?`, publikus jelzések találati aránya ${Number(liveAcc).toFixed(1)}%.`:"." );
+        }else{
+          live.textContent="Élő visszamérés: az első éles előrejelzések még nem értek be.";
+        }
+      }
+    }
+
+    function buildOverallForecastAssessment(data){
+      const h48=data?.horizons?.["48h"];
+      const h72=data?.horizons?.["72h"];
+      const s48=h48?.public_signal?.direction||"no_signal";
+      const s72=h72?.public_signal?.direction||"no_signal";
+
+      if(s48==="no_signal" && s72==="no_signal"){
+        return "A jelenlegi adatok alapján sem 48, sem 72 órás időtávon nincs elég erős, egyirányú történeti minta. " +
+               "Ez nem a konfliktus nyugalmát jelenti, hanem azt, hogy a rövid távú aktivitási irány most bizonytalan.";
+      }
+
+      if(s48===s72 && s48!=="no_signal"){
+        return `A 48 és 72 órás modell ugyanabba az irányba mutat: ${forecastDirectionHu(s48)}. `+
+               "Az egyező időtávok erősebb rövid távú mintát jeleznek, de továbbra sem konkrét eseményt jósolnak.";
+      }
+
+      if(s48==="no_signal" && s72!=="no_signal"){
+        return `48 órára nincs kellően erős jelzés, 72 órára viszont ${forecastDirectionHu(s72)} látszik. `+
+               "Ez arra utal, hogy a modell a távolabbi rövid távon lát határozottabb történeti analógiát, miközben a közvetlen következő két nap képe bizonytalan.";
+      }
+
+      if(s48!=="no_signal" && s72==="no_signal"){
+        return `48 órára ${forecastDirectionHu(s48)} jelzés látszik, 72 órára azonban nincs egyértelmű irány. `+
+               "A rövidebb távú minta ezért jelenleg erősebb, de nem látszik stabilan fennmaradni a harmadik napig.";
+      }
+
+      return `A 48 és 72 órás modellek eltérő irányt jeleznek. Ez átmeneti vagy változó konfliktusdinamikára utal, ezért az előrejelzést fokozott óvatossággal kell értelmezni.`;
+    }
+
+    function renderLiveForecast(data){
+      const ref=data?.forecast_reference_date;
+      const label=document.getElementById("forecast_reference_label");
+      if(label){
+        label.textContent=ref
+          ? `Referencia: ${ref} · lezárt UTC nap`
+          : "Referencia-nap nem elérhető";
+      }
+
+      renderForecastCard("48h",data?.horizons?.["48h"]);
+      renderForecastCard("72h",data?.horizons?.["72h"]);
+
+      const overall=document.getElementById("forecast_overall_assessment");
+      if(overall) overall.textContent=buildOverallForecastAssessment(data);
+
+      const note=document.getElementById("forecast_method_note");
+      const days=data?.learning?.analogue_library_days;
+      const newly=data?.learning?.newly_evaluated_forecasts_this_run;
+      if(note && days!=null){
+        note.textContent=
+          `A modell jelenleg ${days} teljes napi megfigyelésből dolgozik. `+
+          `Minden éles napi becslés archiválódik, majd 48/72 óra elteltével automatikusan visszamérésre kerül. `+
+          `${Number(newly||0)} korábbi előrejelzés értékelődött ki a legutóbbi futásban. `+
+          `Az adaptív küszöbhangolás csak elegendő élő, out-of-sample eredmény után lép működésbe.`;
+      }
+    }
+
+    function loadLiveForecast(){
+      fetch("./conflict_forecast_live.json?ts="+Date.now())
+        .then(r=>{
+          if(!r.ok) throw new Error("conflict_forecast_live.json HTTP "+r.status);
+          return r.json();
+        })
+        .then(renderLiveForecast)
+        .catch(err=>{
+          const overall=document.getElementById("forecast_overall_assessment");
+          if(overall){
+            overall.textContent="A rövid távú előrejelzés jelenleg nem tölthető be.";
+          }
+          console.warn("Live conflict forecast load failed:",err);
+        });
+    }
+
     function loadConflictAnalysis(){
       fetch("./conflict_analysis.json?ts="+Date.now())
         .then(r=>{
@@ -3492,6 +3910,7 @@
 
     loadEventTimeline();
     loadConflictAnalysis();
+    loadLiveForecast();
 
     fetch("./analysis.json?ts=" + Date.now())
       .then(response => {
@@ -3541,4 +3960,5 @@
   </script>
 </body>
 </html>
+
 
