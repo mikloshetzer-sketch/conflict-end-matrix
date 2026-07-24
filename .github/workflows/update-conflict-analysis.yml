@@ -1,0 +1,118 @@
+name: Update Conflict Analysis
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    # Runs after Event Timeline (04:30 UTC) and Kinetic Event Layer
+    # (05:15 UTC + retry window).
+    - cron: "10 6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: conflict-analysis
+  cancel-in-progress: false
+
+jobs:
+  update-conflict-analysis:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Check required input files
+        shell: bash
+        run: |
+          test -f docs/event_timeline.json
+          test -f docs/kinetic_events.json
+
+      - name: Generate analytical metrics
+        run: |
+          python src/generate_conflict_analysis.py
+
+      - name: Validate analysis output
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("docs/conflict_analysis.json")
+          if not path.exists():
+              raise SystemExit("ERROR: conflict_analysis.json missing")
+
+          with path.open("r", encoding="utf-8") as f:
+              data = json.load(f)
+
+          if data.get("analysis_model") != "conflict_analysis_v1":
+              raise SystemExit("ERROR: unexpected analysis model")
+
+          daily = data.get("daily")
+          if not isinstance(daily, list) or not daily:
+              raise SystemExit("ERROR: daily analysis is empty")
+
+          required_daily = {
+              "date",
+              "diplomatic",
+              "military",
+              "gap",
+          }
+
+          for i, row in enumerate(daily):
+              missing = required_daily - set(row)
+              if missing:
+                  raise SystemExit(
+                      f"ERROR: daily row {i} missing {sorted(missing)}"
+                  )
+
+              mai = row["military"].get("activity_index")
+              ddi = row["diplomatic"].get("direction_index")
+
+              if not (0 <= float(mai) <= 100):
+                  raise SystemExit(
+                      f"ERROR: MAI out of range on row {i}: {mai}"
+                  )
+
+              if not (-100 <= float(ddi) <= 100):
+                  raise SystemExit(
+                      f"ERROR: DDI out of range on row {i}: {ddi}"
+                  )
+
+          lag = data.get("lag_analysis", {})
+          if not isinstance(lag.get("signals"), list):
+              raise SystemExit("ERROR: lag signals missing")
+
+          print("conflict_analysis.json valid")
+          print("Daily rows:", len(daily))
+          print("Latest:", data.get("latest"))
+          print(
+              "Lag signals:",
+              len(lag.get("signals", [])),
+          )
+          PY
+
+      - name: Commit analysis output
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add docs/conflict_analysis.json
+
+          if git diff --cached --quiet; then
+            echo "No conflict-analysis changes to commit."
+          else
+            git commit -m "Update conflict analysis metrics"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
