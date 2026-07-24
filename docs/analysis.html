@@ -1017,21 +1017,21 @@
     <section class="section" id="event-timeline-section">
       <div class="panel">
         <h3>Daily Diplomacy &amp; Conflict Timeline</h3>
-        <p class="panel-note">A filtered chronological view of diplomatic or political signals and military events. The default view shows the latest 7 days so the table remains compact as the dataset grows.</p>
+        <p class="panel-note">A filtered chronological view combining Conflict End Matrix diplomatic/political signals with validated military events from ME Security Monitor / IranStrike. The default view shows the latest 7 days so the table remains compact as the dataset grows.</p>
         
         <div id="event_signal_summary">
           <div class="event-summary-grid">
             <div class="event-summary-card diplomatic"><span class="event-summary-label">Diplomatic events</span><span class="event-summary-value" id="summary_diplomatic">0</span><span class="event-summary-note">Talks, mediation, dialogue and diplomatic initiatives</span></div>
             <div class="event-summary-card escalation"><span class="event-summary-label">Escalatory signals</span><span class="event-summary-value" id="summary_escalation">0</span><span class="event-summary-note">Threats, warnings, coercive posture and diplomatic breakdown</span></div>
             <div class="event-summary-card ceasefire"><span class="event-summary-label">Ceasefire / de-escalation</span><span class="event-summary-value" id="summary_ceasefire">0</span><span class="event-summary-note">Ceasefire, truce, settlement and de-escalation signals</span></div>
-            <div class="event-summary-card military"><span class="event-summary-label">Linked military events</span><span class="event-summary-value" id="summary_military">0</span><span class="event-summary-note">Reserved for the future kinetic event layer</span></div>
+            <div class="event-summary-card military"><span class="event-summary-label">Military events</span><span class="event-summary-value" id="summary_military">0</span><span class="event-summary-note">Validated kinetic events from ME Security Monitor / IranStrike</span></div>
           </div>
           <div class="event-balance-panel">
             <div class="event-balance-header"><span class="event-balance-title">Non-kinetic event balance</span><span class="event-balance-period" id="event_balance_period">Current filter</span></div>
             <div class="event-balance-track" aria-label="Diplomatic, escalation and ceasefire event balance"><div id="event_balance_diplomatic" class="event-balance-segment diplomatic"></div><div id="event_balance_escalation" class="event-balance-segment escalation"></div><div id="event_balance_ceasefire" class="event-balance-segment ceasefire"></div></div>
             <div class="event-balance-legend"><span><span class="legend-dot diplomatic"></span>Diplomatic</span><span><span class="legend-dot escalation"></span>Escalatory</span><span><span class="legend-dot ceasefire"></span>Ceasefire / de-escalation</span></div>
           </div>
-          <div class="interpretation"><span class="interpretation-title">Analyst Interpretation</span><div class="interpretation-grid"><div><h4>What are we seeing?</h4><p id="event_summary_what">The summary shows the balance of non-kinetic events in the selected period.</p></div><div><h4>How is it calculated?</h4><p>Events are counted from the currently filtered timeline. Diplomatic events, escalation-oriented statements and ceasefire/de-escalation signals are separated by event type. The military-event counter is reserved for the later kinetic data layer and is currently zero unless linked military data are added.</p></div><div><h4>Conclusion</h4><p id="event_summary_conclusion">The balance helps show whether the political and information environment is dominated by diplomacy, escalation-oriented signalling or de-escalation efforts.</p></div></div></div>
+          <div class="interpretation"><span class="interpretation-title">Analyst Interpretation</span><div class="interpretation-grid"><div><h4>What are we seeing?</h4><p id="event_summary_what">The summary shows the balance of non-kinetic events in the selected period.</p></div><div><h4>How is it calculated?</h4><p>Events are counted from the currently filtered timeline. Diplomatic events, escalation-oriented statements and ceasefire/de-escalation signals come from the Conflict End Matrix event layer. Military events come from the cleaned kinetic_events.json dataset generated from ME Security Monitor / IranStrike.</p></div><div><h4>Conclusion</h4><p id="event_summary_conclusion">The balance helps show whether the political and information environment is dominated by diplomacy, escalation-oriented signalling or de-escalation efforts.</p></div></div></div>
         </div>
 
         <div class="range-buttons" aria-label="Timeline period">
@@ -1343,11 +1343,59 @@
     function formatLagMinutes(m){const v=Number(m);if(!Number.isFinite(v)||v<0)return"";const d=Math.floor(v/1440),h=Math.floor((v%1440)/60),n=Math.round(v%60),p=[];if(d)p.push(d+"d");if(h)p.push(h+"h");if(n||!p.length)p.push(n+"m");return p.join(" ")}
     function normalizeDirection(x){const d=String(x||"").toLowerCase();if(d.includes("de-escal")||d.includes("deescal")||d==="positive")return"deescalation";if(d.includes("escal")||d==="negative")return"escalation";return"mixed"}
     function extractActors(e){const r=e.actors??e.actor??[];return Array.isArray(r)?r.filter(Boolean).map(String):(r?[String(r)]:[])}
-    function eventSearchText(e){return[e.timestamp,e.date,e.event_type,e.subtype,e.direction,e.title,e.summary,e.location,e.target,e.diplomatic_event,e.military_event,...extractActors(e),...(Array.isArray(e.keywords)?e.keywords:[])].filter(Boolean).join(" ").toLowerCase()}
+    function eventSearchText(e){return[e.timestamp,e.date,e.event_type,e.subtype,e.category,e.direction,e.title,e.summary,e.description,e.location,e.target,e.target_country,e.severity,e.source_name,e.diplomatic_event,e.military_event,...extractActors(e),...(Array.isArray(e.keywords)?e.keywords:[])].filter(Boolean).join(" ").toLowerCase()}
     function getRangeBounds(){const now=new Date();let from=null,to=new Date(now);if(currentRange==="today"){from=new Date(now);from.setHours(0,0,0,0)}else if(currentRange==="7"||currentRange==="30"){from=new Date(now);from.setDate(from.getDate()-(Number(currentRange)-1));from.setHours(0,0,0,0)}else{const f=document.getElementById("date_from").value,t=document.getElementById("date_to").value;if(f)from=new Date(f+"T00:00:00");if(t)to=new Date(t+"T23:59:59")}return{from,to}}
     function populateActorFilter(events){const s=document.getElementById("actor_filter"),cur=s.value,actors=[...new Set(events.flatMap(extractActors).filter(Boolean))].sort((a,b)=>a.localeCompare(b));s.innerHTML='<option value="">All actors</option>';actors.forEach(a=>{const o=document.createElement("option");o.value=a;o.textContent=a;s.appendChild(o)});if(actors.includes(cur))s.value=cur}
     function applyTimelineFilters(){const actor=document.getElementById("actor_filter").value,type=document.getElementById("event_filter").value,conf=document.getElementById("confidence_filter").value,linked=document.getElementById("linked_filter").value,search=document.getElementById("event_search").value.trim().toLowerCase(),{from,to}=getRangeBounds();filteredTimelineData=eventTimelineData.filter(e=>{const dt=parseEventDate(e.timestamp??e.date);if(from&&dt&&dt<from)return false;if(to&&dt&&dt>to)return false;const acts=extractActors(e);if(actor&&!acts.includes(actor))return false;const blob=[e.event_type,e.subtype,e.direction].filter(Boolean).join(" ").toLowerCase();if(type==="diplomatic"&&!/(diplom|politic|statement|negotiat|mediat)/.test(blob))return false;if(type==="threat"&&!/(threat|warning|ultimatum|retaliat)/.test(blob))return false;if(type==="kinetic"&&!/(kinetic|strike|attack|missile|drone|bomb|military)/.test(blob))return false;if(type==="ceasefire"&&!/(ceasefire|truce|de-escal|peace|agreement)/.test(blob))return false;const c=String(e.link_confidence??e.confidence??"").toLowerCase();if(conf&&c!==conf)return false;const isLinked=Boolean(e.linked_event_id||e.linked_statement||e.linked_military_event||(e.lag_minutes!==undefined&&e.lag_minutes!==null));if(linked==="linked"&&!isLinked)return false;if(linked==="unlinked"&&isLinked)return false;if(search&&!eventSearchText(e).includes(search))return false;return true});filteredTimelineData.sort((a,b)=>(parseEventDate(b.timestamp??b.date)?.getTime()??0)-(parseEventDate(a.timestamp??a.date)?.getTime()??0));visibleEventRows=30;renderTimeline()}
-    function buildEventCell(e,kind){const w=document.createElement("div");let text="",type=String(e.event_type||"").toLowerCase(),isMil=/(kinetic|military|strike|attack|missile|drone)/.test(type);if(kind==="diplomatic"){text=e.diplomatic_event||(!isMil?(e.title||e.summary||""):"")}else{text=e.military_event||(isMil?(e.title||e.summary||""):"")}if(!text){w.className="event-empty";w.textContent="—";return w}const t=document.createElement("span");t.className="event-title";t.textContent=text;w.appendChild(t);const m=[];if(e.subtype)m.push(e.subtype);if(e.location)m.push(e.location);if(e.target)m.push("Target: "+e.target);if(m.length){const x=document.createElement("span");x.className="event-meta";x.textContent=m.join(" · ");w.appendChild(x)}return w}
+    function buildEventCell(e,kind){
+      const w=document.createElement("div");
+      let text="";
+      const type=String(e.event_type||"").toLowerCase();
+      const isMil=(type==="kinetic"||type==="military");
+
+      if(kind==="diplomatic"){
+        text=e.diplomatic_event||(!isMil?(e.title||e.summary||e.description||""):"");
+      }else{
+        text=e.military_event||(isMil?(e.description||e.title||e.summary||""):"");
+      }
+
+      if(!text){
+        w.className="event-empty";
+        w.textContent="—";
+        return w;
+      }
+
+      const t=document.createElement("span");
+      t.className="event-title";
+      t.textContent=text;
+      w.appendChild(t);
+
+      const m=[];
+      if(e.subtype)m.push(e.subtype);
+      if(e.severity)m.push("Severity: "+e.severity);
+      if(e.location)m.push(e.location);
+      if(e.target)m.push("Target: "+e.target);
+      else if(e.target_country)m.push("Target: "+e.target_country);
+
+      if(m.length){
+        const x=document.createElement("span");
+        x.className="event-meta";
+        x.textContent=m.join(" · ");
+        w.appendChild(x);
+      }
+
+      if(e.source_url){
+        const source=document.createElement("a");
+        source.className="event-meta";
+        source.href=e.source_url;
+        source.target="_blank";
+        source.rel="noopener noreferrer";
+        source.textContent=e.source_name ? "Source: "+e.source_name : "Open source";
+        w.appendChild(source);
+      }
+
+      return w;
+    }
 
     function updateEventSignalSummary(events) {
       const diplomatic = events.filter(event =>
@@ -1357,7 +1405,7 @@
       const escalation = events.filter(event => {
         const type = String(event.event_type || "").toLowerCase();
         const direction = String(event.direction || "").toLowerCase();
-        return type === "threat" || direction === "escalation";
+        return type === "threat" || (type !== "kinetic" && direction === "escalation");
       }).length;
 
       const ceasefire = events.filter(event =>
@@ -1366,7 +1414,7 @@
 
       const military = events.filter(event => {
         const type = String(event.event_type || "").toLowerCase();
-        return Boolean(event.military_event) || type === "kinetic" || type === "military";
+        return type === "kinetic" || type === "military" || Boolean(event.military_event);
       }).length;
 
       const setText = (id, value) => {
@@ -1379,11 +1427,10 @@
       setText("summary_ceasefire", ceasefire);
       setText("summary_military", military);
 
-      const total = diplomatic + escalation + ceasefire;
-
-      const dipShare = total ? diplomatic / total * 100 : 0;
-      const escShare = total ? escalation / total * 100 : 0;
-      const cfShare = total ? ceasefire / total * 100 : 0;
+      const nonKineticTotal = diplomatic + escalation + ceasefire;
+      const dipShare = nonKineticTotal ? diplomatic / nonKineticTotal * 100 : 0;
+      const escShare = nonKineticTotal ? escalation / nonKineticTotal * 100 : 0;
+      const cfShare = nonKineticTotal ? ceasefire / nonKineticTotal * 100 : 0;
 
       const dipBar = document.getElementById("event_balance_diplomatic");
       const escBar = document.getElementById("event_balance_escalation");
@@ -1395,35 +1442,42 @@
 
       let periodText = "Current filter";
       if (currentRange === "today") periodText = "Today";
-      if (currentRange === "7") periodText = "Last 7 days";
-      if (currentRange === "30") periodText = "Last 30 days";
-      if (currentRange === "custom") periodText = "Custom period";
+      else if (currentRange === "7") periodText = "Last 7 days";
+      else if (currentRange === "30") periodText = "Last 30 days";
+      else if (currentRange === "custom") periodText = "Custom period";
       setText("event_balance_period", periodText);
 
       setText(
         "event_summary_what",
-        `The current selection contains ${diplomatic} diplomatic events, ${escalation} escalation-oriented signals and ${ceasefire} ceasefire or de-escalation events.`
+        `The current selection contains ${diplomatic} diplomatic events, ${escalation} escalation-oriented non-kinetic signals, ${ceasefire} ceasefire or de-escalation events and ${military} validated military events.`
       );
 
-      let conclusion = "No clear non-kinetic signal dominates the selected period.";
+      let conclusion = "";
 
-      if (total === 0) {
-        conclusion = "No non-kinetic events are available for the current filter selection.";
-      } else if (escalation > diplomatic && escalation > ceasefire) {
-        conclusion = `Escalation-oriented signalling is the largest non-kinetic category, representing ${escShare.toFixed(1)}% of classified events.`;
-      } else if (diplomatic > escalation && diplomatic > ceasefire) {
-        conclusion = `Diplomatic activity is the largest non-kinetic category, representing ${dipShare.toFixed(1)}% of classified events.`;
-      } else if (ceasefire > escalation && ceasefire > diplomatic) {
-        conclusion = `Ceasefire and de-escalation signals are the largest non-kinetic category, representing ${cfShare.toFixed(1)}% of classified events.`;
-      }
+      if (nonKineticTotal === 0 && military === 0) {
+        conclusion = "No events are available for the current filter selection.";
+      } else {
+        if (nonKineticTotal > 0) {
+          if (escalation > diplomatic && escalation > ceasefire) {
+            conclusion = `Escalation-oriented signalling is the largest non-kinetic category, representing ${escShare.toFixed(1)}% of classified non-kinetic events. `;
+          } else if (diplomatic > escalation && diplomatic > ceasefire) {
+            conclusion = `Diplomatic activity is the largest non-kinetic category, representing ${dipShare.toFixed(1)}% of classified non-kinetic events. `;
+          } else if (ceasefire > escalation && ceasefire > diplomatic) {
+            conclusion = `Ceasefire and de-escalation signals are the largest non-kinetic category, representing ${cfShare.toFixed(1)}% of classified non-kinetic events. `;
+          } else {
+            conclusion = "The non-kinetic signal balance is mixed. ";
+          }
+        }
 
-      if (military === 0) {
-        conclusion += " The separate military-event layer is not connected yet.";
+        if (military > 0) {
+          conclusion += `${military} validated kinetic events occurred in the same filtered period. They are displayed alongside the information layer, but Statement → Action links are not calculated yet.`;
+        } else {
+          conclusion += "No validated kinetic events are visible for the current filter.";
+        }
       }
 
       setText("event_summary_conclusion", conclusion);
     }
-
 
     function renderTimeline() {
       const body = document.getElementById("event_timeline_body");
@@ -1531,12 +1585,12 @@
         )
       ).length;
 
-      const diplomaticCount = filteredTimelineData.filter(event =>
-        String(event.event_type || "").toLowerCase() !== "kinetic" &&
-        String(event.event_type || "").toLowerCase() !== "military"
-      ).length;
+      const militaryCount = filteredTimelineData.filter(event => {
+        const type = String(event.event_type || "").toLowerCase();
+        return type === "kinetic" || type === "military";
+      }).length;
 
-      const militaryCount = filteredTimelineData.length - diplomaticCount;
+      const diplomaticCount = filteredTimelineData.length - militaryCount;
 
       summary.innerHTML = "";
 
@@ -1589,7 +1643,93 @@
     }
 
     function setupTimelineControls(){document.querySelectorAll(".range-btn").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".range-btn").forEach(x=>x.classList.remove("active"));b.classList.add("active");currentRange=b.dataset.range;document.getElementById("custom_range").classList.toggle("visible",currentRange==="custom");applyTimelineFilters()}));["actor_filter","event_filter","confidence_filter","linked_filter","date_from","date_to"].forEach(id=>document.getElementById(id).addEventListener("change",applyTimelineFilters));document.getElementById("event_search").addEventListener("input",applyTimelineFilters);document.getElementById("load_more_events").addEventListener("click",()=>{visibleEventRows+=30;renderTimeline()})}
-    function loadEventTimeline(){setupTimelineControls();fetch("./event_timeline.json?ts="+Date.now()).then(r=>{if(!r.ok)throw new Error("HTTP error: "+r.status);return r.json()}).then(data=>{eventTimelineData=Array.isArray(data)?data:(Array.isArray(data.events)?data.events:[]);populateActorFilter(eventTimelineData);applyTimelineFilters()}).catch(err=>{document.getElementById("event_timeline_body").innerHTML='<tr><td colspan="6">event_timeline.json is not connected yet. The timeline interface and filters are ready.</td></tr>';document.getElementById("timeline_summary").innerHTML='<span class="summary-chip">Event data source not connected</span>';document.getElementById("timeline_what").textContent="The timeline interface is ready, but the diplomacy and military event dataset has not yet been connected.";document.getElementById("timeline_conclusion").textContent="Once event_timeline.json is generated, this table will automatically support date, actor, event-type, confidence and linked-event filtering.";console.warn(err)})}
+    function normalizeKineticForTimeline(event) {
+      return {
+        event_id: event.event_id || "",
+        timestamp: event.timestamp || "",
+        event_type: "kinetic",
+        subtype: event.subtype || event.category || "military",
+        category: event.category || event.subtype || "military",
+        title: event.description || "Military event",
+        description: event.description || "",
+        diplomatic_event: "",
+        military_event: event.description || "",
+        direction: "escalation",
+        actors: event.actor_label ? [event.actor_label] : [],
+        actor: event.actor_label || event.actor || "",
+        target: event.target_country || "",
+        target_country: event.target_country || "",
+        location: event.location || "",
+        latitude: event.latitude,
+        longitude: event.longitude,
+        severity: event.severity || "",
+        source_name: event.source_name || "",
+        source_url: event.source_url || "",
+        keywords: [event.category, event.subtype].filter(Boolean),
+        linked_event_id: "",
+        linked_statement: "",
+        linked_military_event: "",
+        relation_type: "",
+        lag_minutes: null,
+        link_confidence: ""
+      };
+    }
+
+    function loadEventTimeline(){
+      setupTimelineControls();
+      const cacheBust = Date.now();
+
+      Promise.all([
+        fetch("./event_timeline.json?ts="+cacheBust).then(r=>{
+          if(!r.ok) throw new Error("event_timeline.json HTTP "+r.status);
+          return r.json();
+        }),
+        fetch("./kinetic_events.json?ts="+cacheBust).then(r=>{
+          if(!r.ok) throw new Error("kinetic_events.json HTTP "+r.status);
+          return r.json();
+        })
+      ])
+      .then(([infoData, kineticData])=>{
+        const infoEvents = Array.isArray(infoData)
+          ? infoData
+          : (Array.isArray(infoData.events) ? infoData.events : []);
+
+        const rawKinetic = Array.isArray(kineticData)
+          ? kineticData
+          : (Array.isArray(kineticData.events) ? kineticData.events : []);
+
+        const kineticEvents = rawKinetic.map(normalizeKineticForTimeline);
+
+        eventTimelineData = [...infoEvents, ...kineticEvents];
+
+        populateActorFilter(eventTimelineData);
+        applyTimelineFilters();
+
+        console.log(
+          "Timeline loaded:",
+          infoEvents.length,
+          "non-kinetic +",
+          kineticEvents.length,
+          "kinetic events"
+        );
+      })
+      .catch(err=>{
+        document.getElementById("event_timeline_body").innerHTML =
+          '<tr><td colspan="6">The combined event timeline could not be loaded. Check event_timeline.json and kinetic_events.json.</td></tr>';
+
+        document.getElementById("timeline_summary").innerHTML =
+          '<span class="summary-chip">Combined event data unavailable</span>';
+
+        document.getElementById("timeline_what").textContent =
+          "The dashboard now expects both the Conflict End Matrix event timeline and the cleaned kinetic event dataset.";
+
+        document.getElementById("timeline_conclusion").textContent =
+          "No combined assessment is shown because at least one required event source failed to load.";
+
+        console.warn("Combined timeline load failed:", err);
+      });
+    }
+
     loadEventTimeline();
 
     fetch("./analysis.json?ts=" + Date.now())
