@@ -27,14 +27,37 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Debug repository paths
+        run: |
+          echo "PWD:"
+          pwd
+          echo
+          echo "Repository root:"
+          ls -la
+          echo
+          echo "src:"
+          ls -la src || true
+          echo
+          echo "docs:"
+          ls -la docs || true
+
       - name: Check required inputs
         run: |
           test -f docs/conflict_analysis.json
           test -f src/test_conflict_forecast_v3.py
+          echo "Required input files found."
 
       - name: TEST - Run V3 NO SIGNAL optimizer
         run: |
           python src/test_conflict_forecast_v3.py
+
+      - name: Check generated output
+        run: |
+          echo "Checking generated file..."
+          pwd
+          find . -maxdepth 3 -name "conflict_forecast_v3_test.json" -print
+          test -f docs/conflict_forecast_v3_test.json
+          ls -lh docs/conflict_forecast_v3_test.json
 
       - name: TEST - Validate and print results
         run: |
@@ -42,28 +65,40 @@ jobs:
           import json
           from pathlib import Path
 
-          p=Path("docs/conflict_forecast_v3_test.json")
-          if not p.exists():
-              raise SystemExit("ERROR: V3 test output missing")
+          p = Path("docs/conflict_forecast_v3_test.json")
 
-          d=json.loads(p.read_text(encoding="utf-8"))
-          if d.get("status")!="TEST_ONLY":
+          if not p.exists():
+              raise SystemExit(
+                  f"ERROR: V3 test output missing at {p.resolve()}"
+              )
+
+          d = json.loads(p.read_text(encoding="utf-8"))
+
+          if d.get("status") != "TEST_ONLY":
               raise SystemExit("ERROR: output is not marked TEST_ONLY")
 
-          for h in ("48h","72h"):
-              x=d.get("horizons",{}).get(h)
+          for h in ("48h", "72h"):
+              x = d.get("horizons", {}).get(h)
               if not x:
                   raise SystemExit(f"ERROR: missing {h}")
 
-              rule=x.get("selected_no_signal_rule")
+              rule = x.get("selected_no_signal_rule")
               if not rule:
-                  raise SystemExit(f"ERROR: no selected NO SIGNAL rule for {h}")
+                  raise SystemExit(
+                      f"ERROR: no selected NO SIGNAL rule for {h}"
+                  )
 
               print(f"===== {h} =====")
-              print("Backtest sample:",x.get("backtest_sample"))
-              print("Selected rule:",rule)
-              print("Latest raw prediction:",x.get("latest_raw_prediction"))
-              print("Latest public signal:",x.get("latest_public_signal"))
+              print("Backtest sample:", x.get("backtest_sample"))
+              print("Selected rule:", rule)
+              print(
+                  "Latest raw prediction:",
+                  x.get("latest_raw_prediction"),
+              )
+              print(
+                  "Latest public signal:",
+                  x.get("latest_public_signal"),
+              )
               print()
 
           print("V3 TEST validation OK")
@@ -72,7 +107,8 @@ jobs:
       - name: Commit TEST result
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add docs/conflict_forecast_v3_test.json
 
@@ -83,4 +119,3 @@ jobs:
             git pull --rebase origin main
             git push origin HEAD:main
           fi
-
