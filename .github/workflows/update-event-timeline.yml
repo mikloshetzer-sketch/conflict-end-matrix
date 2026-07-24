@@ -17,9 +17,6 @@ jobs:
       - name: Checkout full repository history
         uses: actions/checkout@v4
         with:
-          # REQUIRED:
-          # generate_event_timeline.py reconstructs historical
-          # latest_scored.json versions from Git history.
           fetch-depth: 0
 
       - name: Set up Python
@@ -34,74 +31,98 @@ jobs:
             pip install -r requirements.txt
           fi
 
-      - name: Generate historical non-kinetic event timeline
+      - name: Generate historical non-kinetic timeline
         run: |
           python src/generate_event_timeline.py
 
-      - name: Validate event timeline
+      - name: Validate timeline and direction model
         run: |
-          if [ ! -f docs/event_timeline.json ]; then
-            echo "ERROR: docs/event_timeline.json was not generated."
-            exit 1
-          fi
-
           python - <<'PY'
           import json
           from pathlib import Path
 
-          path = Path("docs/event_timeline.json")
+          timeline_path = Path("docs/event_timeline.json")
+          validation_path = Path("docs/event_direction_validation.json")
 
-          with path.open("r", encoding="utf-8") as f:
+          for path in (timeline_path, validation_path):
+              if not path.exists():
+                  raise SystemExit(f"ERROR: missing {path}")
+
+          with timeline_path.open("r", encoding="utf-8") as f:
               data = json.load(f)
 
           events = data.get("events")
-
           if not isinstance(events, list):
-              raise SystemExit("ERROR: 'events' must be a list")
+              raise SystemExit("ERROR: timeline 'events' must be a list")
 
-          required_event_fields = {
-              "event_id",
-              "timestamp",
-              "event_type",
-              "subtype",
-              "diplomatic_event",
-              "military_event",
-              "direction",
-              "keywords",
-          }
+          allowed_directions = {"escalation", "de-escalation", "mixed"}
 
-          for index, event in enumerate(events):
-              missing = sorted(required_event_fields - set(event))
+          for i, event in enumerate(events):
+              required = {
+                  "event_id",
+                  "timestamp",
+                  "event_type",
+                  "subtype",
+                  "direction",
+                  "direction_score",
+                  "direction_reasons",
+                  "diplomatic_event",
+                  "military_event",
+              }
+
+              missing = sorted(required - set(event))
               if missing:
                   raise SystemExit(
-                      f"ERROR: event {index} missing: {', '.join(missing)}"
+                      f"ERROR: event {i} missing: {', '.join(missing)}"
+                  )
+
+              if event["direction"] not in allowed_directions:
+                  raise SystemExit(
+                      f"ERROR: invalid direction on event {i}: "
+                      f"{event['direction']}"
                   )
 
               if event.get("military_event"):
                   raise SystemExit(
-                      f"ERROR: event {index} contains military_event data. "
-                      "This generator must stay non-kinetic."
+                      f"ERROR: event {i} contains military data"
                   )
 
+          with validation_path.open("r", encoding="utf-8") as f:
+              validation = json.load(f)
+
           print("event_timeline.json valid")
-          print("Historical versions:",
-                data.get("historical_scored_versions_read"))
-          print("Unique articles:",
-                data.get("unique_articles_scanned"))
+          print("Direction model:", data.get("direction_model"))
           print("Events:", len(events))
-          print("Types:", data.get("event_type_counts"))
+          print("Direction counts:", data.get("direction_counts"))
+          print("Changed:", validation.get("changed_count"))
+          print("Transitions:", validation.get("transition_counts"))
+
+          print("\nManual-review examples:")
+          for example in validation.get("review_examples", [])[:10]:
+              print(
+                  example.get("old_direction"),
+                  "->",
+                  example.get("new_direction"),
+                  "|",
+                  example.get("direction_score"),
+                  "|",
+                  example.get("title"),
+              )
           PY
 
-      - name: Commit event timeline
+      - name: Commit timeline and validation report
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add docs/event_timeline.json
+          git add \
+            docs/event_timeline.json \
+            docs/event_direction_validation.json
 
           if git diff --cached --quiet; then
             echo "No event timeline changes to commit."
           else
-            git commit -m "Update historical diplomacy event timeline"
-            git push
+            git commit -m "Improve diplomatic direction classification"
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
