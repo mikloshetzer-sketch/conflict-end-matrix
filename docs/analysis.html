@@ -798,6 +798,176 @@
       color:var(--text);
     }
 
+    /* =========================================================
+       7-DAY DAILY EVENT MATRIX
+       ========================================================= */
+    .matrix-toolbar{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      margin:14px 0 12px;
+    }
+    .matrix-nav{
+      display:flex;
+      gap:7px;
+      flex-wrap:wrap;
+    }
+    .matrix-btn{
+      min-height:36px;
+      padding:7px 12px;
+      border:1px solid #ccdbe4;
+      border-radius:8px;
+      background:#fff;
+      color:#315f7a;
+      font-weight:800;
+      font-size:11px;
+      cursor:pointer;
+    }
+    .matrix-btn:hover{background:#eef7fc}
+    .matrix-range-label{
+      font-size:12px;
+      font-weight:800;
+      color:var(--muted);
+    }
+    .daily-matrix-wrap{
+      overflow-x:auto;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#fff;
+    }
+    .daily-matrix{
+      width:100%;
+      min-width:1120px;
+      border-collapse:collapse;
+      table-layout:fixed;
+    }
+    .daily-matrix th,
+    .daily-matrix td{
+      border-right:1px solid #dbe5eb;
+      border-bottom:1px solid #dbe5eb;
+      vertical-align:top;
+      padding:10px;
+    }
+    .daily-matrix th:last-child,
+    .daily-matrix td:last-child{border-right:none}
+    .daily-matrix tr:last-child td,
+    .daily-matrix tr:last-child th{border-bottom:none}
+    .matrix-row-label{
+      width:140px;
+      background:#f5f9fb;
+      color:var(--text);
+      font-weight:800;
+      text-align:left;
+      position:sticky;
+      left:0;
+      z-index:2;
+    }
+    .matrix-date{
+      background:#f8fbfd;
+      color:var(--text);
+      font-weight:800;
+      text-align:center;
+      font-size:12px;
+    }
+    .matrix-date small{
+      display:block;
+      margin-top:3px;
+      color:var(--muted);
+      font-size:10px;
+      font-weight:600;
+    }
+    .matrix-cell-summary{
+      font-size:11px;
+      line-height:1.45;
+      color:var(--text);
+    }
+    .matrix-count{
+      display:block;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:22px;
+      line-height:1;
+      font-weight:700;
+      color:var(--text);
+      margin-bottom:5px;
+    }
+    .matrix-meta{
+      display:block;
+      color:var(--muted);
+      font-size:10px;
+      margin-top:4px;
+    }
+    .matrix-details-btn{
+      margin-top:7px;
+      border:0;
+      padding:0;
+      background:transparent;
+      color:var(--blue);
+      font-weight:800;
+      font-size:10px;
+      cursor:pointer;
+    }
+    .matrix-details{
+      display:none;
+      margin-top:8px;
+      padding-top:7px;
+      border-top:1px solid #e2ebf0;
+      max-height:220px;
+      overflow:auto;
+    }
+    .matrix-details.open{display:block}
+    .matrix-event{
+      padding:6px 0;
+      border-bottom:1px dashed #dde7ec;
+      font-size:10px;
+      line-height:1.35;
+    }
+    .matrix-event:last-child{border-bottom:none}
+    .matrix-event-time{
+      font-weight:800;
+      color:#315f7a;
+    }
+    .matrix-event-title{
+      display:block;
+      margin-top:2px;
+      color:var(--text);
+    }
+    .matrix-event-sub{
+      display:block;
+      color:var(--muted);
+      margin-top:2px;
+    }
+    .matrix-direction{
+      display:inline-flex;
+      align-items:center;
+      padding:4px 7px;
+      border-radius:999px;
+      font-size:10px;
+      font-weight:800;
+      text-transform:uppercase;
+    }
+    .matrix-direction.escalation{
+      color:#9c3942;background:#fff0f1;border:1px solid #efd0d3;
+    }
+    .matrix-direction.deescalation{
+      color:#276f59;background:#edf9f4;border:1px solid #cee8de;
+    }
+    .matrix-direction.mixed{
+      color:#6c687d;background:#f4f2f8;border:1px solid #ddd8e7;
+    }
+    .matrix-actors{
+      font-size:10px;
+      line-height:1.45;
+      color:var(--text);
+    }
+    .matrix-empty{color:#9aabb6;font-size:11px}
+    .matrix-relation-note{
+      color:var(--muted);
+      font-size:10px;
+      line-height:1.4;
+    }
+
   </style>
 </head>
 
@@ -1178,26 +1348,47 @@
           </div>
         </div>
 
-        <div class="range-buttons" aria-label="Timeline period">
-          <button class="range-btn" data-range="today" type="button">Today</button>
-          <button class="range-btn active" data-range="7" type="button">7 days</button>
-          <button class="range-btn" data-range="30" type="button">30 days</button>
-          <button class="range-btn" data-range="custom" type="button">Custom</button>
+        
+        <div class="matrix-toolbar">
+          <div class="matrix-nav">
+            <button id="matrix_prev" class="matrix-btn" type="button">← Previous 7 days</button>
+            <button id="matrix_today" class="matrix-btn" type="button">Latest 7 days</button>
+            <button id="matrix_next" class="matrix-btn" type="button">Next 7 days →</button>
+          </div>
+          <div id="matrix_range_label" class="matrix-range-label">Latest 7 days</div>
         </div>
-        <div id="custom_range" class="custom-range"><div><label class="filter-label" for="date_from">From</label><input id="date_from" class="filter-input" type="date"></div><div><label class="filter-label" for="date_to">To</label><input id="date_to" class="filter-input" type="date"></div></div>
-        <div class="filter-bar">
-          <div class="filter-group"><label class="filter-label" for="actor_filter">Actor</label><select id="actor_filter" class="filter-control"><option value="">All actors</option></select></div>
-          <div class="filter-group"><label class="filter-label" for="event_filter">Event type</label><select id="event_filter" class="filter-control"><option value="">All event types</option><option value="diplomatic">Diplomacy / political</option><option value="threat">Threat / warning</option><option value="kinetic">Military / kinetic</option><option value="ceasefire">Ceasefire / de-escalation</option></select></div>
-          <div class="filter-group"><label class="filter-label" for="confidence_filter">Relation confidence</label><select id="confidence_filter" class="filter-control"><option value="">All confidence levels</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option></select></div>
-          <div class="filter-group"><label class="filter-label" for="linked_filter">Relations</label><select id="linked_filter" class="filter-control"><option value="">All events</option><option value="linked">Linked events only</option><option value="unlinked">Unlinked events only</option></select></div>
-          <div class="filter-group" style="grid-column:1 / -1"><label class="filter-label" for="event_search">Search</label><input id="event_search" class="filter-input" type="search" placeholder="Search actor, place, event, target or keyword..."></div>
+
+        <div class="daily-matrix-wrap">
+          <table class="daily-matrix">
+            <thead id="daily_matrix_head"></thead>
+            <tbody id="daily_matrix_body"></tbody>
+          </table>
         </div>
-        <div id="timeline_summary" class="timeline-summary"><span class="summary-chip">Loading event data...</span></div>
-        <div class="table-wrap"><table class="timeline-table"><thead><tr><th>Date / time</th><th>Diplomatic / political event</th><th>Direction</th><th>Military event</th><th>Actors</th><th>Relation / elapsed time</th></tr></thead><tbody id="event_timeline_body"><tr><td colspan="6" class="loading">Loading diplomacy and conflict timeline...</td></tr></tbody></table></div>
-        <div class="load-more-wrap"><button id="load_more_events" class="load-more-btn" type="button" style="display:none">Load more</button></div>
-        <div class="interpretation"><span class="interpretation-title">Analyst Interpretation</span><div class="interpretation-grid"><div><h4>What are we seeing?</h4><p id="timeline_what">The table places diplomatic and political signals next to military events in chronological order.</p></div><div><h4>How is it calculated?</h4><p>Events are filtered by timestamp, actor and event type. Where a political or diplomatic signal is linked to a later military event, elapsed time is calculated from the two timestamps. A confidence label describes the strength of the identified relationship; it does not prove causation.</p></div><div><h4>Conclusion</h4><p id="timeline_conclusion">Once the military event layer is connected, this block will show whether statements, warnings or diplomatic developments are followed by observable kinetic activity and how quickly that occurs.</p></div></div></div>
-      </div>
-    </section>
+
+        <div class="interpretation">
+          <span class="interpretation-title">Analyst Interpretation</span>
+          <div class="interpretation-grid">
+            <div>
+              <h4>What are we seeing?</h4>
+              <p id="matrix_what">
+                Seven consecutive days are compared side by side so diplomatic and military activity can be read vertically for each day.
+              </p>
+            </div>
+            <div>
+              <h4>How is it calculated?</h4>
+              <p>
+                Events are grouped by UTC calendar day. Diplomatic rows summarize Conflict End Matrix non-kinetic events; Military rows summarize cleaned kinetic events. Direction is based on the daily balance of escalation versus de-escalation signals. Actors are the unique identified participants in that day's records.
+              </p>
+            </div>
+            <div>
+              <h4>Conclusion</h4>
+              <p id="matrix_conclusion">
+                Relation / Time is intentionally descriptive only at this stage. It does not claim causation until a dedicated Statement → Action linkage model is added.
+              </p>
+            </div>
+          </div>
+        </div>
+</section>
 
     <footer class="footer">
       Data source: automated news monitoring pipeline.<br>
@@ -1788,6 +1979,325 @@
 
     function setupTimelineControls(){document.querySelectorAll(".range-btn").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".range-btn").forEach(x=>x.classList.remove("active"));b.classList.add("active");currentRange=b.dataset.range;document.getElementById("custom_range").classList.toggle("visible",currentRange==="custom");applyTimelineFilters()}));["actor_filter","event_filter","confidence_filter","linked_filter","date_from","date_to"].forEach(id=>document.getElementById(id).addEventListener("change",applyTimelineFilters));document.getElementById("event_search").addEventListener("input",applyTimelineFilters);document.getElementById("load_more_events").addEventListener("click",()=>{visibleEventRows+=30;renderTimeline()})}
 
+
+    // =========================================================
+    // 7-DAY DAILY EVENT MATRIX
+    // =========================================================
+    let matrixEndDate = null;
+
+    function startOfUtcDay(date){
+      return new Date(Date.UTC(date.getUTCFullYear(),date.getUTCMonth(),date.getUTCDate()));
+    }
+
+    function formatMatrixDate(date){
+      return new Intl.DateTimeFormat("en-GB",{day:"2-digit",month:"short"}).format(date);
+    }
+
+    function getLatestEventDate(){
+      const dates=eventTimelineData
+        .map(e=>parseEventDate(e.timestamp??e.date))
+        .filter(Boolean)
+        .sort((a,b)=>b-a);
+      return dates.length ? startOfUtcDay(dates[0]) : startOfUtcDay(new Date());
+    }
+
+    function getMatrixDays(){
+      if(!matrixEndDate)matrixEndDate=getLatestEventDate();
+      const days=[];
+      for(let i=6;i>=0;i--){
+        const d=new Date(matrixEndDate);
+        d.setUTCDate(matrixEndDate.getUTCDate()-i);
+        days.push(d);
+      }
+      return days;
+    }
+
+    function eventsForDay(day){
+      const key=day.toISOString().slice(0,10);
+      return eventTimelineData.filter(e=>utcDayKey(e.timestamp??e.date)===key);
+    }
+
+    function summarizeMilitary(events){
+      const counts={};
+      let peak="";
+
+      const sevRank={critical:4,high:3,medium:2,low:1,"":0};
+      let maxRank=0;
+
+      events.forEach(e=>{
+        const cat=String(e.category||e.subtype||"military").toLowerCase();
+        counts[cat]=(counts[cat]||0)+1;
+        const sev=String(e.severity||"").toLowerCase();
+        if((sevRank[sev]||0)>maxRank){maxRank=sevRank[sev]||0;peak=sev}
+      });
+
+      const top=Object.entries(counts)
+        .sort((a,b)=>b[1]-a[1])
+        .slice(0,3)
+        .map(([k,v])=>`${v} ${k}`)
+        .join(" · ");
+
+      return {top,peak:peak?peak.toUpperCase():"n/a"};
+    }
+
+    function summarizeDirection(events){
+      let esc=0,de=0;
+      events.forEach(e=>{
+        const type=String(e.event_type||"").toLowerCase();
+        if(type==="kinetic"||type==="military")return;
+        const d=normalizeDirection(e.direction);
+        if(d==="escalation")esc++;
+        if(d==="deescalation")de++;
+      });
+
+      if(esc===0&&de===0)return {label:"Mixed / no signal",cls:"mixed",esc,de};
+      if(esc>de)return {label:`Escalation +${esc-de}`,cls:"escalation",esc,de};
+      if(de>esc)return {label:`De-escalation +${de-esc}`,cls:"deescalation",esc,de};
+      return {label:"Mixed",cls:"mixed",esc,de};
+    }
+
+    function uniqueActors(events){
+      const s=new Set();
+      events.forEach(e=>extractActors(e).forEach(a=>s.add(a)));
+      return [...s].sort();
+    }
+
+    function eventTime(value){
+      const d=parseEventDate(value);
+      if(!d)return "";
+      return new Intl.DateTimeFormat("en-GB",{hour:"2-digit",minute:"2-digit",timeZone:"UTC"}).format(d)+" UTC";
+    }
+
+    function detailList(events,kind){
+      const wrap=document.createElement("div");
+      wrap.className="matrix-details";
+
+      events.slice(0,100).forEach(e=>{
+        const item=document.createElement("div");
+        item.className="matrix-event";
+
+        const tm=document.createElement("span");
+        tm.className="matrix-event-time";
+        tm.textContent=eventTime(e.timestamp??e.date);
+
+        const title=document.createElement("span");
+        title.className="matrix-event-title";
+        title.textContent=
+          kind==="military"
+            ? (e.military_event||e.description||e.title||"Military event")
+            : (e.diplomatic_event||e.title||e.summary||"Diplomatic event");
+
+        item.appendChild(tm);
+        item.appendChild(title);
+
+        const sub=[];
+        if(e.subtype)sub.push(e.subtype);
+        if(e.severity)sub.push("severity: "+e.severity);
+        if(e.location)sub.push(e.location);
+        const actors=extractActors(e);
+        if(actors.length)sub.push(actors.join(" → "));
+
+        if(sub.length){
+          const meta=document.createElement("span");
+          meta.className="matrix-event-sub";
+          meta.textContent=sub.join(" · ");
+          item.appendChild(meta);
+        }
+
+        wrap.appendChild(item);
+      });
+
+      return wrap;
+    }
+
+    function summaryCell(events,kind){
+      const td=document.createElement("td");
+
+      if(!events.length){
+        td.innerHTML='<span class="matrix-empty">No events</span>';
+        return td;
+      }
+
+      const box=document.createElement("div");
+      box.className="matrix-cell-summary";
+
+      const count=document.createElement("span");
+      count.className="matrix-count";
+      count.textContent=events.length+" event"+(events.length===1?"":"s");
+      box.appendChild(count);
+
+      if(kind==="military"){
+        const s=summarizeMilitary(events);
+        if(s.top){
+          const meta=document.createElement("span");
+          meta.className="matrix-meta";
+          meta.textContent=s.top;
+          box.appendChild(meta);
+        }
+        const peak=document.createElement("span");
+        peak.className="matrix-meta";
+        peak.textContent="Peak severity: "+s.peak;
+        box.appendChild(peak);
+      }else{
+        const types={};
+        events.forEach(e=>{
+          const t=String(e.event_type||"signal");
+          types[t]=(types[t]||0)+1;
+        });
+        const meta=document.createElement("span");
+        meta.className="matrix-meta";
+        meta.textContent=Object.entries(types)
+          .sort((a,b)=>b[1]-a[1])
+          .map(([k,v])=>`${v} ${k}`)
+          .slice(0,3)
+          .join(" · ");
+        box.appendChild(meta);
+      }
+
+      if(events.length>1){
+        const btn=document.createElement("button");
+        btn.className="matrix-details-btn";
+        btn.type="button";
+        btn.textContent="▼ Details";
+        const details=detailList(events,kind);
+        btn.addEventListener("click",()=>{
+          const open=details.classList.toggle("open");
+          btn.textContent=open?"▲ Close":"▼ Details";
+        });
+        box.appendChild(btn);
+        box.appendChild(details);
+      }else{
+        const details=detailList(events,kind);
+        details.classList.add("open");
+        box.appendChild(details);
+      }
+
+      td.appendChild(box);
+      return td;
+    }
+
+    function renderDailyMatrix(){
+      const head=document.getElementById("daily_matrix_head");
+      const body=document.getElementById("daily_matrix_body");
+      if(!head||!body)return;
+
+      const days=getMatrixDays();
+
+      head.innerHTML="";
+      body.innerHTML="";
+
+      const hr=document.createElement("tr");
+      const corner=document.createElement("th");
+      corner.className="matrix-row-label";
+      corner.textContent="Daily layer";
+      hr.appendChild(corner);
+
+      days.forEach(day=>{
+        const th=document.createElement("th");
+        th.className="matrix-date";
+        th.innerHTML=`${formatMatrixDate(day)}<small>${day.toISOString().slice(0,10)}</small>`;
+        hr.appendChild(th);
+      });
+      head.appendChild(hr);
+
+      const rowDefs=[
+        ["Diplomatic","diplomatic"],
+        ["Military","military"],
+        ["Direction","direction"],
+        ["Actors","actors"],
+        ["Relation / Time","relation"]
+      ];
+
+      rowDefs.forEach(([label,key])=>{
+        const tr=document.createElement("tr");
+        const th=document.createElement("th");
+        th.className="matrix-row-label";
+        th.textContent=label;
+        tr.appendChild(th);
+
+        days.forEach(day=>{
+          const all=eventsForDay(day);
+          const dip=all.filter(e=>{
+            const t=String(e.event_type||"").toLowerCase();
+            return t!=="kinetic"&&t!=="military";
+          });
+          const mil=all.filter(e=>{
+            const t=String(e.event_type||"").toLowerCase();
+            return t==="kinetic"||t==="military";
+          });
+
+          if(key==="diplomatic"){
+            tr.appendChild(summaryCell(dip,"diplomatic"));
+          }else if(key==="military"){
+            tr.appendChild(summaryCell(mil,"military"));
+          }else if(key==="direction"){
+            const td=document.createElement("td");
+            const s=summarizeDirection(dip);
+            td.innerHTML=`<span class="matrix-direction ${s.cls}">${s.label}</span><span class="matrix-meta">${s.esc} escalation · ${s.de} de-escalation</span>`;
+            tr.appendChild(td);
+          }else if(key==="actors"){
+            const td=document.createElement("td");
+            const actors=uniqueActors(all);
+            td.innerHTML=actors.length
+              ? `<div class="matrix-actors">${actors.join("<br>")}</div>`
+              : '<span class="matrix-empty">No actors</span>';
+            tr.appendChild(td);
+          }else{
+            const td=document.createElement("td");
+            td.innerHTML=
+              '<div class="matrix-relation-note">Statement → Action linking is not calculated yet.<br><strong>Temporal relation:</strong> pending.</div>';
+            tr.appendChild(td);
+          }
+        });
+
+        body.appendChild(tr);
+      });
+
+      const start=days[0];
+      const end=days[days.length-1];
+      document.getElementById("matrix_range_label").textContent=
+        `${formatMatrixDate(start)} – ${formatMatrixDate(end)} ${end.getUTCFullYear()}`;
+
+      const totalDip=days.reduce((sum,d)=>sum+eventsForDay(d).filter(e=>{
+        const t=String(e.event_type||"").toLowerCase();
+        return t!=="kinetic"&&t!=="military";
+      }).length,0);
+
+      const totalMil=days.reduce((sum,d)=>sum+eventsForDay(d).filter(e=>{
+        const t=String(e.event_type||"").toLowerCase();
+        return t==="kinetic"||t==="military";
+      }).length,0);
+
+      document.getElementById("matrix_what").textContent=
+        `Across this 7-day window the matrix contains ${totalDip} diplomatic/non-kinetic events and ${totalMil} validated military events.`;
+
+      document.getElementById("matrix_conclusion").textContent=
+        `This matrix is designed for day-by-day comparison. Multiple events can be expanded inside each cell. Relation / Time remains unlinked until a dedicated Statement → Action model is introduced.`;
+    }
+
+    function setupDailyMatrixControls(){
+      document.getElementById("matrix_prev").addEventListener("click",()=>{
+        if(!matrixEndDate)matrixEndDate=getLatestEventDate();
+        matrixEndDate.setUTCDate(matrixEndDate.getUTCDate()-7);
+        renderDailyMatrix();
+      });
+
+      document.getElementById("matrix_next").addEventListener("click",()=>{
+        if(!matrixEndDate)matrixEndDate=getLatestEventDate();
+        const latest=getLatestEventDate();
+        const candidate=new Date(matrixEndDate);
+        candidate.setUTCDate(candidate.getUTCDate()+7);
+        matrixEndDate=candidate>latest?latest:candidate;
+        renderDailyMatrix();
+      });
+
+      document.getElementById("matrix_today").addEventListener("click",()=>{
+        matrixEndDate=getLatestEventDate();
+        renderDailyMatrix();
+      });
+    }
+
+
     // =========================================================
     // LONG-RANGE EVENT ACTIVITY TREND
     // =========================================================
@@ -2004,6 +2514,7 @@
     function loadEventTimeline(){
       setupTimelineControls();
       setupEventTrendControls();
+      setupDailyMatrixControls();
       const cacheBust = Date.now();
 
       Promise.all([
@@ -2032,6 +2543,8 @@
         populateActorFilter(eventTimelineData);
         applyTimelineFilters();
         renderEventTrend();
+        matrixEndDate=getLatestEventDate();
+        renderDailyMatrix();
 
         console.log(
           "Timeline loaded:",
@@ -2108,3 +2621,4 @@
   </script>
 </body>
 </html>
+
