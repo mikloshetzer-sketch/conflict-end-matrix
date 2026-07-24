@@ -710,6 +710,94 @@
     .legend-dot{display:inline-block;width:9px;height:9px;margin-right:5px;border-radius:999px}.legend-dot.diplomatic{background:#4297c9}.legend-dot.escalation{background:#cb616a}.legend-dot.ceasefire{background:#42a080}
     @media(max-width:900px){.event-summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.event-summary-grid{grid-template-columns:1fr}}
 
+    /* =========================================================
+       LONG-RANGE EVENT ACTIVITY TREND
+       ========================================================= */
+    .event-trend-toolbar{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:10px;
+      align-items:center;
+      margin:14px 0 12px;
+    }
+    .trend-mode-group,.trend-period-group{
+      display:flex;
+      flex-wrap:wrap;
+      gap:7px;
+    }
+    .trend-btn{
+      min-height:34px;
+      padding:6px 11px;
+      border:1px solid #ccdbe4;
+      border-radius:8px;
+      background:#fff;
+      color:#4a687b;
+      font-weight:700;
+      font-size:11px;
+      cursor:pointer;
+    }
+    .trend-btn.active{
+      color:#fff;
+      background:var(--blue);
+      border-color:var(--blue);
+    }
+    .event-trend-wrap{
+      position:relative;
+      width:100%;
+      min-height:330px;
+      padding:12px 10px 6px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#fbfdfe;
+      overflow:hidden;
+    }
+    #event_trend_svg{
+      display:block;
+      width:100%;
+      height:310px;
+    }
+    .trend-legend{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:8px;
+      font-size:11px;
+      color:var(--muted);
+    }
+    .trend-legend-item{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+    }
+    .trend-swatch{
+      width:18px;
+      height:3px;
+      border-radius:999px;
+      display:inline-block;
+      background:#2788c4;
+    }
+    .trend-swatch.military{background:#c6535c}
+    .trend-note{
+      margin-top:8px;
+      font-size:11px;
+      color:var(--muted);
+    }
+    .trend-tooltip{
+      position:absolute;
+      display:none;
+      z-index:3;
+      pointer-events:none;
+      min-width:150px;
+      padding:8px 10px;
+      border:1px solid #cddbe4;
+      border-radius:8px;
+      background:#fff;
+      box-shadow:0 8px 22px rgba(31,72,99,.14);
+      font-size:11px;
+      color:var(--text);
+    }
+
   </style>
 </head>
 
@@ -1032,6 +1120,62 @@
             <div class="event-balance-legend"><span><span class="legend-dot diplomatic"></span>Diplomatic</span><span><span class="legend-dot escalation"></span>Escalatory</span><span><span class="legend-dot ceasefire"></span>Ceasefire / de-escalation</span></div>
           </div>
           <div class="interpretation"><span class="interpretation-title">Analyst Interpretation</span><div class="interpretation-grid"><div><h4>What are we seeing?</h4><p id="event_summary_what">The summary shows the balance of non-kinetic events in the selected period.</p></div><div><h4>How is it calculated?</h4><p>Events are counted from the currently filtered timeline. Diplomatic events, escalation-oriented statements and ceasefire/de-escalation signals come from the Conflict End Matrix event layer. Military events come from the cleaned kinetic_events.json dataset generated from ME Security Monitor / IranStrike.</p></div><div><h4>Conclusion</h4><p id="event_summary_conclusion">The balance helps show whether the political and information environment is dominated by diplomacy, escalation-oriented signalling or de-escalation efforts.</p></div></div></div>
+        </div>
+
+        
+        <div class="event-balance-panel" id="event_trend_panel">
+          <div class="event-balance-header">
+            <span class="event-balance-title">Event Activity Trend</span>
+            <span class="event-balance-period" id="trend_period_label">Last 30 days</span>
+          </div>
+
+          <div class="event-trend-toolbar">
+            <div class="trend-period-group">
+              <button class="trend-btn active" type="button" data-trend-days="30">30 days</button>
+              <button class="trend-btn" type="button" data-trend-days="60">60 days</button>
+              <button class="trend-btn" type="button" data-trend-days="90">90 days</button>
+            </div>
+
+            <div class="trend-mode-group">
+              <button class="trend-btn active" type="button" data-trend-mode="relative">Relative trend</button>
+              <button class="trend-btn" type="button" data-trend-mode="absolute">Absolute counts</button>
+            </div>
+          </div>
+
+          <div class="event-trend-wrap">
+            <svg id="event_trend_svg" viewBox="0 0 1000 310" preserveAspectRatio="none"
+                 aria-label="Daily military and non-kinetic event activity trend"></svg>
+            <div id="event_trend_tooltip" class="trend-tooltip"></div>
+          </div>
+
+          <div class="trend-legend">
+            <span class="trend-legend-item"><span class="trend-swatch"></span>Diplomatic / non-kinetic signals</span>
+            <span class="trend-legend-item"><span class="trend-swatch military"></span>Validated military events</span>
+          </div>
+
+          <div class="trend-note" id="trend_note">
+            Relative mode normalizes each series to its own peak so the shape of both trends can be compared despite very different event volumes.
+          </div>
+
+          <div class="interpretation">
+            <span class="interpretation-title">Analyst Interpretation</span>
+            <div class="interpretation-grid">
+              <div>
+                <h4>What are we seeing?</h4>
+                <p id="trend_what">Daily movement of non-kinetic signals and validated military events over a longer time horizon.</p>
+              </div>
+              <div>
+                <h4>How is it calculated?</h4>
+                <p id="trend_how">
+                  Events are grouped by UTC calendar day. Relative mode expresses each series as a percentage of its own maximum daily value; absolute mode shows the raw number of events.
+                </p>
+              </div>
+              <div>
+                <h4>Conclusion</h4>
+                <p id="trend_conclusion">The chart helps identify whether changes in the information and diplomatic environment move before, together with, or after changes in kinetic activity.</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="range-buttons" aria-label="Timeline period">
@@ -1643,6 +1787,188 @@
     }
 
     function setupTimelineControls(){document.querySelectorAll(".range-btn").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".range-btn").forEach(x=>x.classList.remove("active"));b.classList.add("active");currentRange=b.dataset.range;document.getElementById("custom_range").classList.toggle("visible",currentRange==="custom");applyTimelineFilters()}));["actor_filter","event_filter","confidence_filter","linked_filter","date_from","date_to"].forEach(id=>document.getElementById(id).addEventListener("change",applyTimelineFilters));document.getElementById("event_search").addEventListener("input",applyTimelineFilters);document.getElementById("load_more_events").addEventListener("click",()=>{visibleEventRows+=30;renderTimeline()})}
+
+    // =========================================================
+    // LONG-RANGE EVENT ACTIVITY TREND
+    // =========================================================
+    let trendDays = 30;
+    let trendMode = "relative";
+
+    function utcDayKey(value){
+      const d=parseEventDate(value);
+      if(!d)return null;
+      return d.toISOString().slice(0,10);
+    }
+
+    function buildDailyTrendData(events,days){
+      const today=new Date();
+      const end=new Date(Date.UTC(today.getUTCFullYear(),today.getUTCMonth(),today.getUTCDate()));
+      const start=new Date(end);
+      start.setUTCDate(start.getUTCDate()-(days-1));
+
+      const rows=[];
+      const byDay=new Map();
+
+      for(let i=0;i<days;i++){
+        const d=new Date(start);
+        d.setUTCDate(start.getUTCDate()+i);
+        const key=d.toISOString().slice(0,10);
+        const row={date:key,nonKinetic:0,military:0};
+        rows.push(row);
+        byDay.set(key,row);
+      }
+
+      events.forEach(event=>{
+        const key=utcDayKey(event.timestamp??event.date);
+        if(!key||!byDay.has(key))return;
+        const row=byDay.get(key);
+        const type=String(event.event_type||"").toLowerCase();
+        if(type==="kinetic"||type==="military")row.military+=1;
+        else row.nonKinetic+=1;
+      });
+
+      return rows;
+    }
+
+    function svgEl(name,attrs={}){
+      const el=document.createElementNS("http://www.w3.org/2000/svg",name);
+      Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,String(v)));
+      return el;
+    }
+
+    function renderEventTrend(){
+      const svg=document.getElementById("event_trend_svg");
+      if(!svg)return;
+
+      const rows=buildDailyTrendData(eventTimelineData,trendDays);
+      svg.innerHTML="";
+
+      const W=1000,H=310;
+      const left=54,right=20,top=20,bottom=42;
+      const cw=W-left-right,ch=H-top-bottom;
+
+      const maxNon=Math.max(1,...rows.map(r=>r.nonKinetic));
+      const maxMil=Math.max(1,...rows.map(r=>r.military));
+      const maxAbs=Math.max(maxNon,maxMil,1);
+
+      const values=rows.map(r=>{
+        if(trendMode==="relative"){
+          return {
+            ...r,
+            nonPlot:(r.nonKinetic/maxNon)*100,
+            milPlot:(r.military/maxMil)*100
+          };
+        }
+        return {...r,nonPlot:r.nonKinetic,milPlot:r.military};
+      });
+
+      const yMax=trendMode==="relative"?100:maxAbs;
+
+      // grid
+      [0,.25,.5,.75,1].forEach(frac=>{
+        const y=top+ch-(frac*ch);
+        svg.appendChild(svgEl("line",{x1:left,y1:y,x2:W-right,y2:y,stroke:"#dfe8ed","stroke-width":1}));
+        const label=svgEl("text",{x:left-8,y:y+4,"text-anchor":"end","font-size":11,fill:"#78909f"});
+        label.textContent=trendMode==="relative"?Math.round(frac*100)+"%":Math.round(frac*yMax);
+        svg.appendChild(label);
+      });
+
+      const x=(i)=>left+(rows.length===1?0:(i/(rows.length-1))*cw);
+      const y=(v)=>top+ch-(Math.max(0,v)/yMax)*ch;
+
+      function pathFor(key){
+        return values.map((r,i)=>(i===0?"M":"L")+x(i).toFixed(2)+" "+y(r[key]).toFixed(2)).join(" ");
+      }
+
+      svg.appendChild(svgEl("path",{
+        d:pathFor("nonPlot"),fill:"none",stroke:"#2788c4","stroke-width":3,
+        "stroke-linejoin":"round","stroke-linecap":"round"
+      }));
+      svg.appendChild(svgEl("path",{
+        d:pathFor("milPlot"),fill:"none",stroke:"#c6535c","stroke-width":3,
+        "stroke-linejoin":"round","stroke-linecap":"round"
+      }));
+
+      // x ticks
+      const tickEvery=trendDays<=30?5:trendDays<=60?10:15;
+      rows.forEach((r,i)=>{
+        if(i%tickEvery!==0 && i!==rows.length-1)return;
+        const label=svgEl("text",{x:x(i),y:H-15,"text-anchor":"middle","font-size":10,fill:"#78909f"});
+        const d=new Date(r.date+"T00:00:00Z");
+        label.textContent=new Intl.DateTimeFormat("en-GB",{day:"2-digit",month:"short"}).format(d);
+        svg.appendChild(label);
+      });
+
+      // hover columns
+      rows.forEach((r,i)=>{
+        const nextX=i<rows.length-1?x(i+1):W-right;
+        const prevX=i>0?x(i-1):left;
+        const width=Math.max(8,(nextX-prevX)/2);
+        const rect=svgEl("rect",{
+          x:x(i)-width/2,y:top,width:width,height:ch,
+          fill:"transparent","data-trend-index":i
+        });
+        svg.appendChild(rect);
+      });
+
+      const totalNon=rows.reduce((s,r)=>s+r.nonKinetic,0);
+      const totalMil=rows.reduce((s,r)=>s+r.military,0);
+
+      document.getElementById("trend_period_label").textContent=`Last ${trendDays} days`;
+      document.getElementById("trend_note").textContent=
+        trendMode==="relative"
+          ? `Relative mode: non-kinetic peak = ${maxNon} events/day; military peak = ${maxMil} events/day. Each line is normalized to its own peak.`
+          : `Absolute mode: raw daily event counts. Military volume may visually dominate because it is much larger than the non-kinetic series.`;
+
+      document.getElementById("trend_what").textContent=
+        `Across the last ${trendDays} days the dataset contains ${totalNon} non-kinetic signals and ${totalMil} validated military events.`;
+
+      const ratio=totalNon>0?totalMil/totalNon:null;
+      document.getElementById("trend_conclusion").textContent=
+        ratio===null
+          ? `Military activity is visible, but no non-kinetic events are available in this period for comparison.`
+          : `Military event volume is ${ratio.toFixed(1)} times the non-kinetic signal volume in this period. Use the relative view to compare timing and direction rather than raw scale.`;
+
+      // tooltip
+      const wrap=svg.parentElement;
+      const tooltip=document.getElementById("event_trend_tooltip");
+
+      svg.onmousemove=(ev)=>{
+        const pt=svg.createSVGPoint();
+        pt.x=ev.clientX; pt.y=ev.clientY;
+        const local=pt.matrixTransform(svg.getScreenCTM().inverse());
+        const idx=Math.max(0,Math.min(rows.length-1,Math.round(((local.x-left)/cw)*(rows.length-1))));
+        const r=rows[idx];
+        tooltip.style.display="block";
+        tooltip.innerHTML=`<strong>${r.date}</strong><br>Non-kinetic: ${r.nonKinetic}<br>Military: ${r.military}`;
+        const rect=wrap.getBoundingClientRect();
+        tooltip.style.left=Math.min(ev.clientX-rect.left+12,rect.width-170)+"px";
+        tooltip.style.top=Math.max(8,ev.clientY-rect.top-10)+"px";
+      };
+      svg.onmouseleave=()=>{tooltip.style.display="none"};
+    }
+
+    function setupEventTrendControls(){
+      document.querySelectorAll("[data-trend-days]").forEach(btn=>{
+        btn.addEventListener("click",()=>{
+          document.querySelectorAll("[data-trend-days]").forEach(x=>x.classList.remove("active"));
+          btn.classList.add("active");
+          trendDays=Number(btn.dataset.trendDays);
+          renderEventTrend();
+        });
+      });
+
+      document.querySelectorAll("[data-trend-mode]").forEach(btn=>{
+        btn.addEventListener("click",()=>{
+          document.querySelectorAll("[data-trend-mode]").forEach(x=>x.classList.remove("active"));
+          btn.classList.add("active");
+          trendMode=btn.dataset.trendMode;
+          renderEventTrend();
+        });
+      });
+    }
+
+
     function normalizeKineticForTimeline(event) {
       return {
         event_id: event.event_id || "",
@@ -1677,6 +2003,7 @@
 
     function loadEventTimeline(){
       setupTimelineControls();
+      setupEventTrendControls();
       const cacheBust = Date.now();
 
       Promise.all([
@@ -1704,6 +2031,7 @@
 
         populateActorFilter(eventTimelineData);
         applyTimelineFilters();
+        renderEventTrend();
 
         console.log(
           "Timeline loaded:",
