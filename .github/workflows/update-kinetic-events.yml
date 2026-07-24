@@ -1,0 +1,154 @@
+name: Update Kinetic Event Layer
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    # me-security-monitor / IranStrike is normally refreshed earlier.
+    # This job starts later and also retries if the source is not ready.
+    - cron: "15 5 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kinetic-event-layer
+  cancel-in-progress: false
+
+jobs:
+  update-kinetic-events:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+
+    steps:
+      - name: Checkout Conflict End Matrix
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Import fresh kinetic events with retry
+        shell: bash
+        run: |
+          set -uo pipefail
+
+          MAX_ATTEMPTS=4
+          WAIT_SECONDS=600
+
+          for attempt in $(seq 1 "$MAX_ATTEMPTS"); do
+            echo "Attempt $attempt/$MAX_ATTEMPTS"
+
+            set +e
+            python src/generate_kinetic_events.py \
+              --days 90 \
+              --max-age-hours 8 \
+              --require-today \
+              --output docs/kinetic_events.json
+            status=$?
+            set -e
+
+            if [ "$status" -eq 0 ]; then
+              echo "Fresh kinetic event data imported."
+              exit 0
+            fi
+
+            if [ "$status" -eq 3 ] && [ "$attempt" -lt "$MAX_ATTEMPTS" ]; then
+              echo "Source is not ready yet."
+              echo "Waiting 10 minutes before retry..."
+              sleep "$WAIT_SECONDS"
+              continue
+            fi
+
+            echo "Import failed with exit code $status."
+            exit "$status"
+          done
+
+          exit 1
+
+      - name: Validate generated kinetic data
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          path = Path("docs/kinetic_events.json")
+
+          if not path.exists():
+              raise SystemExit(
+                  "ERROR: docs/kinetic_events.json does not exist."
+              )
+
+          with path.open("r", encoding="utf-8") as f:
+              data = json.load(f)
+
+          events = data.get("events")
+          if not isinstance(events, list) or not events:
+              raise SystemExit("ERROR: kinetic events list is empty.")
+
+          source_generated_at = data.get("source_generated_at")
+          if not source_generated_at:
+              raise SystemExit("ERROR: source_generated_at missing.")
+
+          source_dt = datetime.fromisoformat(
+              source_generated_at.replace("Z", "+00:00")
+          ).astimezone(timezone.utc)
+
+          today = datetime.now(timezone.utc).date()
+          if source_dt.date() != today:
+              raise SystemExit(
+                  f"ERROR: source is not today's UTC dataset: "
+                  f"{source_dt.date()} != {today}"
+              )
+
+          allowed = {
+              "missile",
+              "drone",
+              "strike",
+              "airstrike",
+              "explosion",
+              "ground",
+              "intercept",
+          }
+
+          invalid = sorted({
+              str(event.get("category", ""))
+              for event in events
+              if str(event.get("category", "")) not in allowed
+          })
+
+          if invalid:
+              raise SystemExit(
+                  "ERROR: invalid kinetic categories: "
+                  + ", ".join(invalid)
+              )
+
+          print("kinetic_events.json valid")
+          print("Source generated_at:", source_generated_at)
+          print("Events:", len(events))
+          print("Categories:", data.get("category_counts"))
+          print("Actors:", data.get("actor_counts"))
+          PY
+
+      - name: Commit kinetic event layer
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add docs/kinetic_events.json
+
+          if git diff --cached --quiet; then
+            echo "No kinetic-event changes to commit."
+          else
+            git commit -m "Update kinetic event layer"
+
+            # The source repo and this repo update independently.
+            # Rebase once before push to reduce routine race failures.
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
