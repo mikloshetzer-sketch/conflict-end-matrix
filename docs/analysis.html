@@ -1251,6 +1251,21 @@
       .analysis-kpis,.analytics-grid{grid-template-columns:1fr}
     }
 
+    /* =========================================================
+       CONFLICT ANALYSIS V2 - READABILITY / TREND VISUALS
+       ========================================================= */
+    .analytics-chart{min-height:330px;background:#fbfdfe}
+    .analytics-chart svg{height:330px}
+    .lag-curve-wrap{margin:10px 0 16px;border:1px solid #e1e9ee;border-radius:10px;background:#fbfdfe;overflow:hidden}
+    .lag-curve-wrap svg{display:block;width:100%;height:300px}
+    .chart-note{display:flex;flex-wrap:wrap;gap:10px 16px;margin-top:8px;font-size:10px;color:var(--muted)}
+    .chart-note span{display:inline-flex;align-items:center;gap:5px}
+    .legend-line{width:18px;height:0;border-top:3px solid currentColor;display:inline-block}
+    .legend-line.dashed{border-top-style:dashed}
+    .gap-zone-key{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;font-size:10px;color:var(--muted)}
+    .gap-zone-key span{padding:4px 7px;border-radius:999px;border:1px solid #dde6eb;background:#fff}
+    .lag-summary-line{margin-top:8px;font-size:11px;line-height:1.45;color:var(--muted)}
+
   </style>
 </head>
 
@@ -1662,7 +1677,13 @@
               <h3>MAI + DDI Time Series</h3>
               <div class="card-sub">Military Activity Index and Diplomatic Direction Index across complete UTC days.</div>
               <div class="analytics-chart">
-                <svg id="mai_ddi_svg" viewBox="0 0 1000 300" preserveAspectRatio="none"></svg>
+                <svg id="mai_ddi_svg" viewBox="0 0 1000 330" preserveAspectRatio="none"></svg>
+              </div>
+              <div class="chart-note">
+                <span style="color:#c6535c"><i class="legend-line"></i> MAI daily</span>
+                <span style="color:#c6535c"><i class="legend-line dashed"></i> MAI 7-day average</span>
+                <span style="color:#2788c4"><i class="legend-line"></i> DDI daily</span>
+                <span style="color:#2788c4"><i class="legend-line dashed"></i> DDI 7-day average</span>
               </div>
             </div>
 
@@ -1670,7 +1691,12 @@
               <h3>Diplomacy–Military Gap</h3>
               <div class="card-sub">Daily divergence/convergence between diplomatic signalling and military pressure.</div>
               <div class="analytics-chart">
-                <svg id="gap_svg" viewBox="0 0 1000 300" preserveAspectRatio="none"></svg>
+                <svg id="gap_svg" viewBox="0 0 1000 330" preserveAspectRatio="none"></svg>
+              </div>
+              <div class="gap-zone-key">
+                <span>Upper: de-escalatory signalling / military pressure</span>
+                <span>Centre: limited divergence</span>
+                <span>Lower: escalatory signalling / lower military pressure</span>
               </div>
             </div>
           </div>
@@ -1678,7 +1704,15 @@
           <div class="analytics-card" style="margin-top:14px">
             <h3>Lag Analysis</h3>
             <div class="card-sub">How weighted military activity changes after classified diplomatic signals. Temporal association only.</div>
-            <div style="overflow-x:auto">
+            <div class="lag-curve-wrap">
+              <svg id="lag_curve_svg" viewBox="0 0 1000 300" preserveAspectRatio="none"></svg>
+            </div>
+            <div class="chart-note">
+              <span style="color:#c6535c"><i class="legend-line"></i> Escalation signal</span>
+              <span style="color:#2d8c68"><i class="legend-line"></i> De-escalation signal</span>
+            </div>
+            <div class="lag-summary-line" id="lag_summary_line">Loading lag-response profile…</div>
+            <div style="overflow-x:auto; margin-top:12px">
               <table class="lag-table">
                 <thead>
                   <tr>
@@ -2359,56 +2393,135 @@
       return el;
     }
 
+    function movingAverageSeries(values,windowSize=7){
+      return values.map((_,i)=>{
+        const start=Math.max(0,i-windowSize+1);
+        const slice=values.slice(start,i+1);
+        return slice.reduce((a,b)=>a+b,0)/slice.length;
+      });
+    }
+
+    function chartDateLabel(dateStr){
+      const d=new Date(dateStr+"T00:00:00Z");
+      return new Intl.DateTimeFormat("en-GB",{day:"2-digit",month:"short",timeZone:"UTC"}).format(d);
+    }
+
     function renderDualSeries(svgId, rows){
       const svg=document.getElementById(svgId);
       if(!svg||!rows.length)return;
       svg.innerHTML="";
-      const W=1000,H=300,left=56,right=18,top=18,bottom=34;
+      const W=1000,H=330,left=58,right=20,top=22,bottom=52;
       const cw=W-left-right,ch=H-top-bottom;
 
-      [-100,-50,0,50,100].forEach(v=>{
-        const y=top+ch-((v+100)/200)*ch;
-        svg.appendChild(analyticsSvgEl("line",{x1:left,y1:y,x2:W-right,y2:y,stroke:"#e0e8ed","stroke-width":1}));
-        const t=analyticsSvgEl("text",{x:left-8,y:y+4,"text-anchor":"end","font-size":10,fill:"#7c8f9b"});
-        t.textContent=v;
-        svg.appendChild(t);
-      });
+      const maiDaily=rows.map(r=>(Number(r.military.activity_index||0)*2)-100);
+      const ddiDaily=rows.map(r=>Number(r.diplomatic.direction_index||0));
+      const maiAvg=movingAverageSeries(maiDaily,7);
+      const ddiAvg=movingAverageSeries(ddiDaily,7);
 
       const x=i=>left+(i/(rows.length-1||1))*cw;
       const y=v=>top+ch-((v+100)/200)*ch;
 
-      const maiPath=rows.map((r,i)=>(i?"L":"M")+x(i)+" "+y((r.military.activity_index*2)-100)).join(" ");
-      const ddiPath=rows.map((r,i)=>(i?"L":"M")+x(i)+" "+y(r.diplomatic.direction_index)).join(" ");
+      [-100,-50,0,50,100].forEach(v=>{
+        const yy=y(v);
+        svg.appendChild(analyticsSvgEl("line",{x1:left,y1:yy,x2:W-right,y2:yy,stroke:v===0?"#9aabb5":"#e2e9ed","stroke-width":v===0?2:1}));
+        const t=analyticsSvgEl("text",{x:left-8,y:yy+4,"text-anchor":"end","font-size":10,fill:"#7c8f9b"});
+        t.textContent=v; svg.appendChild(t);
+      });
 
-      svg.appendChild(analyticsSvgEl("path",{d:maiPath,fill:"none",stroke:"#c6535c","stroke-width":3,"stroke-linejoin":"round"}));
-      svg.appendChild(analyticsSvgEl("path",{d:ddiPath,fill:"none",stroke:"#2788c4","stroke-width":3,"stroke-linejoin":"round"}));
+      const step=Math.max(1,Math.ceil(rows.length/9));
+      rows.forEach((r,i)=>{
+        if(i%step!==0 && i!==rows.length-1)return;
+        const xx=x(i);
+        svg.appendChild(analyticsSvgEl("line",{x1:xx,y1:top+ch,x2:xx,y2:top+ch+5,stroke:"#9eb0ba","stroke-width":1}));
+        const t=analyticsSvgEl("text",{x:xx,y:H-18,"text-anchor":"middle","font-size":10,fill:"#71838e"});
+        t.textContent=chartDateLabel(r.date); svg.appendChild(t);
+      });
 
-      const l1=analyticsSvgEl("text",{x:left,y:14,"font-size":11,fill:"#c6535c"}); l1.textContent="MAI (scaled to -100..100)";
-      const l2=analyticsSvgEl("text",{x:left+180,y:14,"font-size":11,fill:"#2788c4"}); l2.textContent="DDI";
-      svg.appendChild(l1); svg.appendChild(l2);
+      const pathFor=vals=>vals.map((v,i)=>(i?"L":"M")+x(i)+" "+y(v)).join(" ");
+
+      svg.appendChild(analyticsSvgEl("path",{d:pathFor(maiDaily),fill:"none",stroke:"#d66a72","stroke-width":1.6,opacity:.55}));
+      svg.appendChild(analyticsSvgEl("path",{d:pathFor(ddiDaily),fill:"none",stroke:"#3c9bd1","stroke-width":1.6,opacity:.55}));
+      svg.appendChild(analyticsSvgEl("path",{d:pathFor(maiAvg),fill:"none",stroke:"#b93f49","stroke-width":3.2,"stroke-dasharray":"8 5"}));
+      svg.appendChild(analyticsSvgEl("path",{d:pathFor(ddiAvg),fill:"none",stroke:"#197daf","stroke-width":3.2,"stroke-dasharray":"8 5"}));
     }
 
     function renderGap(svgId, rows){
       const svg=document.getElementById(svgId);
       if(!svg||!rows.length)return;
       svg.innerHTML="";
-      const W=1000,H=300,left=56,right=18,top=18,bottom=34;
+      const W=1000,H=330,left=58,right=20,top=22,bottom=52;
       const cw=W-left-right,ch=H-top-bottom;
       const values=rows.map(r=>Number(r.gap.divergence_score||0));
       const maxAbs=Math.max(100,...values.map(v=>Math.abs(v)));
       const x=i=>left+(i/(rows.length-1||1))*cw;
       const y=v=>top+ch-((v+maxAbs)/(maxAbs*2))*ch;
 
-      [-maxAbs,0,maxAbs].forEach(v=>{
+      const zone25=y(maxAbs*.25), zoneNeg25=y(-maxAbs*.25);
+      svg.appendChild(analyticsSvgEl("rect",{x:left,y:top,width:cw,height:zone25-top,fill:"#edf8f4"}));
+      svg.appendChild(analyticsSvgEl("rect",{x:left,y:zone25,width:cw,height:zoneNeg25-zone25,fill:"#fbfcfd"}));
+      svg.appendChild(analyticsSvgEl("rect",{x:left,y:zoneNeg25,width:cw,height:top+ch-zoneNeg25,fill:"#fff2f3"}));
+
+      [-maxAbs,-maxAbs*.5,0,maxAbs*.5,maxAbs].forEach(v=>{
         const yy=y(v);
-        svg.appendChild(analyticsSvgEl("line",{x1:left,y1:yy,x2:W-right,y2:yy,stroke:"#e0e8ed","stroke-width":1}));
+        svg.appendChild(analyticsSvgEl("line",{x1:left,y1:yy,x2:W-right,y2:yy,stroke:v===0?"#738895":"#e0e8ed","stroke-width":v===0?2.2:1}));
         const t=analyticsSvgEl("text",{x:left-8,y:yy+4,"text-anchor":"end","font-size":10,fill:"#7c8f9b"});
-        t.textContent=Math.round(v);
-        svg.appendChild(t);
+        t.textContent=Math.round(v); svg.appendChild(t);
+      });
+
+      const step=Math.max(1,Math.ceil(rows.length/9));
+      rows.forEach((r,i)=>{
+        if(i%step!==0 && i!==rows.length-1)return;
+        const xx=x(i);
+        svg.appendChild(analyticsSvgEl("line",{x1:xx,y1:top+ch,x2:xx,y2:top+ch+5,stroke:"#9eb0ba","stroke-width":1}));
+        const t=analyticsSvgEl("text",{x:xx,y:H-18,"text-anchor":"middle","font-size":10,fill:"#71838e"});
+        t.textContent=chartDateLabel(r.date); svg.appendChild(t);
       });
 
       const p=rows.map((r,i)=>(i?"L":"M")+x(i)+" "+y(Number(r.gap.divergence_score||0))).join(" ");
-      svg.appendChild(analyticsSvgEl("path",{d:p,fill:"none",stroke:"#7d5aa6","stroke-width":3,"stroke-linejoin":"round"}));
+      svg.appendChild(analyticsSvgEl("path",{d:p,fill:"none",stroke:"#7d5aa6","stroke-width":2.7}));
+    }
+
+    function renderLagCurve(lag){
+      const svg=document.getElementById("lag_curve_svg");
+      if(!svg)return;
+      svg.innerHTML="";
+
+      const windows=["6h","12h","24h","48h","72h"];
+      const esc=windows.map(k=>Number(lag?.aggregate?.escalation?.[k]?.median_change_pct ?? 0));
+      const de=windows.map(k=>Number(lag?.aggregate?.["de-escalation"]?.[k]?.median_change_pct ?? 0));
+      const maxAbs=Math.max(10,...[...esc,...de].map(v=>Math.abs(v)));
+      const minY=-(maxAbs*1.2), maxY=maxAbs*1.2;
+
+      const W=1000,H=300,left=58,right=20,top=20,bottom=45;
+      const cw=W-left-right,ch=H-top-bottom;
+      const x=i=>left+(i/(windows.length-1))*cw;
+      const y=v=>top+ch-((v-minY)/(maxY-minY))*ch;
+
+      [minY,0,maxY].forEach(v=>{
+        const yy=y(v);
+        svg.appendChild(analyticsSvgEl("line",{x1:left,y1:yy,x2:W-right,y2:yy,stroke:v===0?"#7f929d":"#e1e8ed","stroke-width":v===0?2:1}));
+        const t=analyticsSvgEl("text",{x:left-8,y:yy+4,"text-anchor":"end","font-size":10,fill:"#748690"});
+        t.textContent=(v>0?"+":"")+v.toFixed(0)+"%"; svg.appendChild(t);
+      });
+
+      windows.forEach((w,i)=>{
+        const t=analyticsSvgEl("text",{x:x(i),y:H-16,"text-anchor":"middle","font-size":11,fill:"#687b86"});
+        t.textContent=w; svg.appendChild(t);
+      });
+
+      const pathFor=vals=>vals.map((v,i)=>(i?"L":"M")+x(i)+" "+y(v)).join(" ");
+      svg.appendChild(analyticsSvgEl("path",{d:pathFor(esc),fill:"none",stroke:"#c6535c","stroke-width":3}));
+      svg.appendChild(analyticsSvgEl("path",{d:pathFor(de),fill:"none",stroke:"#2d8c68","stroke-width":3}));
+
+      esc.forEach((v,i)=>svg.appendChild(analyticsSvgEl("circle",{cx:x(i),cy:y(v),r:4.5,fill:"#c6535c"})));
+      de.forEach((v,i)=>svg.appendChild(analyticsSvgEl("circle",{cx:x(i),cy:y(v),r:4.5,fill:"#2d8c68"})));
+
+      const summary=document.getElementById("lag_summary_line");
+      if(summary){
+        const e48=lag?.aggregate?.escalation?.["48h"]?.median_change_pct;
+        const d48=lag?.aggregate?.["de-escalation"]?.["48h"]?.median_change_pct;
+        summary.textContent=`48h median response: escalation ${e48==null?"—":(Number(e48)>0?"+":"")+Number(e48).toFixed(1)+"%"} · de-escalation ${d48==null?"—":(Number(d48)>0?"+":"")+Number(d48).toFixed(1)+"%"}.`;
+      }
     }
 
     function renderLagTable(lag){
@@ -2462,13 +2575,21 @@
       const gap=latest.diplomacy_military_gap||{};
       document.getElementById("kpi_gap").textContent=
         gap.strength!=null?Number(gap.strength).toFixed(1):"—";
+      let gapDisplayPattern=gap.pattern||"";
+      if((gap.level==="HIGH"||gap.level==="VERY HIGH") && gapDisplayPattern==="MIXED / LIMITED DIVERGENCE"){
+        gapDisplayPattern="SIGNIFICANT DIVERGENCE";
+      }else if(gap.level==="MODERATE" && gapDisplayPattern==="MIXED / LIMITED DIVERGENCE"){
+        gapDisplayPattern="MODERATE DIVERGENCE";
+      }
+
       document.getElementById("kpi_gap_sub").innerHTML=
         gap.level
-          ? `<span class="analysis-badge ${String(gap.level).toLowerCase().replace(/\s+/g,"-")}">${gap.level}</span> ${gap.pattern||""}`
+          ? `<span class="analysis-badge ${String(gap.level).toLowerCase().replace(/\s+/g,"-")}">${gap.level}</span> ${gapDisplayPattern}`
           : "No gap classification";
 
       renderDualSeries("mai_ddi_svg",daily);
       renderGap("gap_svg",daily);
+      renderLagCurve(data.lag_analysis||{});
       renderLagTable(data.lag_analysis||{});
 
       document.getElementById("conflict_analysis_what").textContent=
@@ -2479,7 +2600,7 @@
       const avgDdi=last7.length?last7.reduce((s,r)=>s+Number(r.diplomatic.direction_index||0),0)/last7.length:0;
 
       let conclusion=`Over the last 7 complete days, average MAI is ${avgMai.toFixed(1)} and average DDI is ${avgDdi>0?"+":""}${avgDdi.toFixed(1)}. `;
-      if(gap.pattern) conclusion+=`Latest pattern: ${gap.pattern}. `;
+      if(gapDisplayPattern) conclusion+=`Latest pattern: ${gapDisplayPattern}. `;
       conclusion+="Lag results indicate temporal association only and should not be read as proof of causation.";
       document.getElementById("conflict_analysis_conclusion").textContent=conclusion;
     }
@@ -3174,3 +3295,4 @@
   </script>
 </body>
 </html>
+
