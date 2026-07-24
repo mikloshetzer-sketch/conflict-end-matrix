@@ -1,0 +1,822 @@
+{
+  "generated_at": "2026-07-24T12:25:01.161506+00:00",
+  "test_version": "conflict_forecast_v31_accuracy_first_test",
+  "status": "TEST_ONLY",
+  "source_analysis_period": {
+    "raw_common_start": "2026-05-04T17:29:00Z",
+    "daily_analysis_start": "2026-05-05T00:00:00Z",
+    "end": "2026-07-24T06:55:10Z",
+    "raw_common_start_date": "2026-05-04",
+    "daily_analysis_start_date": "2026-05-05",
+    "end_date": "2026-07-24",
+    "basis": "Lag analysis starts at the first valid kinetic event. Daily MAI/DDI/Gap starts at the first complete UTC day."
+  },
+  "method": {
+    "focus": [
+      "48h",
+      "72h"
+    ],
+    "24h": "excluded from main forecast",
+    "selection_policy": "First require >=75% historical signal accuracy and maximize coverage. If unavailable, require >=70% and maximize coverage. Otherwise use best utility.",
+    "minimum_signal_sample": 12,
+    "minimum_coverage_pct": 25.0,
+    "warning": "Historical threshold optimization is exploratory. Live out-of-sample validation remains necessary."
+  },
+  "horizons": {
+    "48h": {
+      "configuration": {
+        "days": 2,
+        "stable_threshold_pct": 25.0,
+        "k_neighbors": 10,
+        "features": [
+          "mai",
+          "mai_change_1d",
+          "mai_change_3d",
+          "mai_change_7d",
+          "weighted_change_1d",
+          "ddi",
+          "ddi_change_1d",
+          "ddi_change_3d",
+          "gap",
+          "gap_change_1d",
+          "military_pressure",
+          "military_event_count",
+          "diplomatic_event_count",
+          "escalation_count",
+          "deescalation_count",
+          "mixed_count"
+        ]
+      },
+      "backtest_sample": 60,
+      "selection": {
+        "selection_mode": "accuracy_at_least_75_maximize_coverage",
+        "target_accuracy_pct": 75.0
+      },
+      "selected_no_signal_rule": {
+        "confidence_threshold": 0.45,
+        "probability_threshold": 0.5,
+        "signal_sample": 44,
+        "total_sample": 60,
+        "coverage_pct": 73.3,
+        "signal_accuracy_pct": 75.0,
+        "no_signal_sample": 16,
+        "utility_score": 0.6728
+      },
+      "latest_raw_prediction": {
+        "direction": "increase",
+        "top_probability": 0.5332,
+        "confidence_score": 0.4889,
+        "probabilities": {
+          "increase": 0.5332,
+          "stable": 0.1897,
+          "decrease": 0.2771
+        },
+        "nearest_analogues": [
+          {
+            "date": "2026-05-10",
+            "distance": 0.315,
+            "observed_direction": "increase"
+          },
+          {
+            "date": "2026-07-19",
+            "distance": 0.501,
+            "observed_direction": "increase"
+          },
+          {
+            "date": "2026-07-04",
+            "distance": 0.654,
+            "observed_direction": "stable"
+          },
+          {
+            "date": "2026-05-14",
+            "distance": 0.664,
+            "observed_direction": "decrease"
+          },
+          {
+            "date": "2026-05-27",
+            "distance": 0.705,
+            "observed_direction": "stable"
+          },
+          {
+            "date": "2026-07-06",
+            "distance": 0.711,
+            "observed_direction": "increase"
+          },
+          {
+            "date": "2026-05-09",
+            "distance": 0.714,
+            "observed_direction": "decrease"
+          },
+          {
+            "date": "2026-06-05",
+            "distance": 0.727,
+            "observed_direction": "increase"
+          },
+          {
+            "date": "2026-05-29",
+            "distance": 0.745,
+            "observed_direction": "increase"
+          },
+          {
+            "date": "2026-06-29",
+            "distance": 0.746,
+            "observed_direction": "decrease"
+          }
+        ]
+      },
+      "latest_public_signal": {
+        "direction": "increase",
+        "has_signal": true,
+        "label_hu": "növekvő katonai aktivitás"
+      },
+      "diagnostics": {
+        "eligible_rule_count": 528,
+        "top_accuracy_rules": [
+          {
+            "confidence_threshold": 0.62,
+            "probability_threshold": 0.71,
+            "signal_sample": 18,
+            "total_sample": 60,
+            "coverage_pct": 30.0,
+            "signal_accuracy_pct": 83.3,
+            "no_signal_sample": 42,
+            "utility_score": 0.5468
+          },
+          {
+            "confidence_threshold": 0.63,
+            "probability_threshold": 0.5,
+            "signal_sample": 18,
+            "total_sample": 60,
+            "coverage_pct": 30.0,
+            "signal_accuracy_pct": 83.3,
+            "no_signal_sample": 42,
+            "utility_score": 0.5468
+          },
+          {
+            "confidence_threshold": 0.63,
+            "probability_threshold": 0.51,
+            "signal_sample": 18,
+            "total_sample": 60,
+            "coverage_pct": 30.0,
+            "signal_accuracy_pct": 83.3,
+            "no_signal_sample": 42,
+            "utility_score": 0.5468
+          },
+          {
+            "confidence_threshold": 0.63,
+            "probability_threshold": 0.52,
+            "signal_sample": 18,
+            "total_sample": 60,
+            "coverage_pct": 30.0,
+            "signal_accuracy_pct": 83.3,
+            "no_signal_sample": 42,
+            "utility_score": 0.5468
+          },
+          {
+            "confidence_threshold": 0.63,
+            "probability_threshold": 0.53,
+            "signal_sample": 18,
+            "total_sample": 60,
+            "coverage_pct": 30.0,
+            "signal_accuracy_pct": 83.3,
+            "no_signal_sample": 42,
+            "utility_score": 0.5468
+          },
+          {
+            "confidence_threshold": 0.63,
+            "probability_threshold": 0.54,
+            "signal_sample": 18,
+            "total_sample": 60,
+            "coverage_pct": 30.0,
+            "signal_accuracy_pct": 83.3,
+            "no_signal_sample": 42,
+            "utility_score": 0.5468
+          },
+          {
+            "confidence_threshold": 0.63,
+            "probability_threshold": 0.55,
+            "signal_sample": 18,
+            "total_sample": 60,
+            "coverage_pct": 30.0,
+            "signal_accuracy_pct": 83.3,
+            "no_signal_sample": 42,
+            "utility_score": 0.5468
+          },
+          {
+            "confidence_threshold": 0.63,
+            "probability_threshold": 0.56,
+            "signal_sample": 18,
+            "total_sample": 60,
+            "coverage_pct": 30.0,
+            "signal_accuracy_pct": 83.3,
+            "no_signal_sample": 42,
+            "utility_score": 0.5468
+          },
+          {
+            "confidence_threshold": 0.63,
+            "probability_threshold": 0.57,
+            "signal_sample": 18,
+            "total_sample": 60,
+            "coverage_pct": 30.0,
+            "signal_accuracy_pct": 83.3,
+            "no_signal_sample": 42,
+            "utility_score": 0.5468
+          },
+          {
+            "confidence_threshold": 0.63,
+            "probability_threshold": 0.58,
+            "signal_sample": 18,
+            "total_sample": 60,
+            "coverage_pct": 30.0,
+            "signal_accuracy_pct": 83.3,
+            "no_signal_sample": 42,
+            "utility_score": 0.5468
+          },
+          {
+            "confidence_threshold": 0.63,
+            "probability_threshold": 0.59,
+            "signal_sample": 18,
+            "total_sample": 60,
+            "coverage_pct": 30.0,
+            "signal_accuracy_pct": 83.3,
+            "no_signal_sample": 42,
+            "utility_score": 0.5468
+          },
+          {
+            "confidence_threshold": 0.63,
+            "probability_threshold": 0.6,
+            "signal_sample": 18,
+            "total_sample": 60,
+            "coverage_pct": 30.0,
+            "signal_accuracy_pct": 83.3,
+            "no_signal_sample": 42,
+            "utility_score": 0.5468
+          },
+          {
+            "confidence_threshold": 0.63,
+            "probability_threshold": 0.61,
+            "signal_sample": 18,
+            "total_sample": 60,
+            "coverage_pct": 30.0,
+            "signal_accuracy_pct": 83.3,
+            "no_signal_sample": 42,
+            "utility_score": 0.5468
+          },
+          {
+            "confidence_threshold": 0.63,
+            "probability_threshold": 0.62,
+            "signal_sample": 18,
+            "total_sample": 60,
+            "coverage_pct": 30.0,
+            "signal_accuracy_pct": 83.3,
+            "no_signal_sample": 42,
+            "utility_score": 0.5468
+          },
+          {
+            "confidence_threshold": 0.63,
+            "probability_threshold": 0.63,
+            "signal_sample": 18,
+            "total_sample": 60,
+            "coverage_pct": 30.0,
+            "signal_accuracy_pct": 83.3,
+            "no_signal_sample": 42,
+            "utility_score": 0.5468
+          }
+        ],
+        "best_coverage_rules_with_accuracy_at_least_75": [
+          {
+            "confidence_threshold": 0.45,
+            "probability_threshold": 0.5,
+            "signal_sample": 44,
+            "total_sample": 60,
+            "coverage_pct": 73.3,
+            "signal_accuracy_pct": 75.0,
+            "no_signal_sample": 16,
+            "utility_score": 0.6728
+          },
+          {
+            "confidence_threshold": 0.45,
+            "probability_threshold": 0.51,
+            "signal_sample": 44,
+            "total_sample": 60,
+            "coverage_pct": 73.3,
+            "signal_accuracy_pct": 75.0,
+            "no_signal_sample": 16,
+            "utility_score": 0.6728
+          },
+          {
+            "confidence_threshold": 0.45,
+            "probability_threshold": 0.52,
+            "signal_sample": 44,
+            "total_sample": 60,
+            "coverage_pct": 73.3,
+            "signal_accuracy_pct": 75.0,
+            "no_signal_sample": 16,
+            "utility_score": 0.6728
+          },
+          {
+            "confidence_threshold": 0.46,
+            "probability_threshold": 0.5,
+            "signal_sample": 43,
+            "total_sample": 60,
+            "coverage_pct": 71.7,
+            "signal_accuracy_pct": 76.7,
+            "no_signal_sample": 17,
+            "utility_score": 0.683
+          },
+          {
+            "confidence_threshold": 0.46,
+            "probability_threshold": 0.51,
+            "signal_sample": 43,
+            "total_sample": 60,
+            "coverage_pct": 71.7,
+            "signal_accuracy_pct": 76.7,
+            "no_signal_sample": 17,
+            "utility_score": 0.683
+          },
+          {
+            "confidence_threshold": 0.46,
+            "probability_threshold": 0.52,
+            "signal_sample": 43,
+            "total_sample": 60,
+            "coverage_pct": 71.7,
+            "signal_accuracy_pct": 76.7,
+            "no_signal_sample": 17,
+            "utility_score": 0.683
+          },
+          {
+            "confidence_threshold": 0.45,
+            "probability_threshold": 0.54,
+            "signal_sample": 42,
+            "total_sample": 60,
+            "coverage_pct": 70.0,
+            "signal_accuracy_pct": 76.2,
+            "no_signal_sample": 18,
+            "utility_score": 0.6725
+          },
+          {
+            "confidence_threshold": 0.45,
+            "probability_threshold": 0.55,
+            "signal_sample": 42,
+            "total_sample": 60,
+            "coverage_pct": 70.0,
+            "signal_accuracy_pct": 76.2,
+            "no_signal_sample": 18,
+            "utility_score": 0.6725
+          },
+          {
+            "confidence_threshold": 0.45,
+            "probability_threshold": 0.56,
+            "signal_sample": 42,
+            "total_sample": 60,
+            "coverage_pct": 70.0,
+            "signal_accuracy_pct": 76.2,
+            "no_signal_sample": 18,
+            "utility_score": 0.6725
+          },
+          {
+            "confidence_threshold": 0.45,
+            "probability_threshold": 0.57,
+            "signal_sample": 42,
+            "total_sample": 60,
+            "coverage_pct": 70.0,
+            "signal_accuracy_pct": 76.2,
+            "no_signal_sample": 18,
+            "utility_score": 0.6725
+          },
+          {
+            "confidence_threshold": 0.46,
+            "probability_threshold": 0.53,
+            "signal_sample": 42,
+            "total_sample": 60,
+            "coverage_pct": 70.0,
+            "signal_accuracy_pct": 76.2,
+            "no_signal_sample": 18,
+            "utility_score": 0.6725
+          },
+          {
+            "confidence_threshold": 0.46,
+            "probability_threshold": 0.54,
+            "signal_sample": 42,
+            "total_sample": 60,
+            "coverage_pct": 70.0,
+            "signal_accuracy_pct": 76.2,
+            "no_signal_sample": 18,
+            "utility_score": 0.6725
+          },
+          {
+            "confidence_threshold": 0.46,
+            "probability_threshold": 0.55,
+            "signal_sample": 42,
+            "total_sample": 60,
+            "coverage_pct": 70.0,
+            "signal_accuracy_pct": 76.2,
+            "no_signal_sample": 18,
+            "utility_score": 0.6725
+          },
+          {
+            "confidence_threshold": 0.46,
+            "probability_threshold": 0.56,
+            "signal_sample": 42,
+            "total_sample": 60,
+            "coverage_pct": 70.0,
+            "signal_accuracy_pct": 76.2,
+            "no_signal_sample": 18,
+            "utility_score": 0.6725
+          },
+          {
+            "confidence_threshold": 0.46,
+            "probability_threshold": 0.57,
+            "signal_sample": 42,
+            "total_sample": 60,
+            "coverage_pct": 70.0,
+            "signal_accuracy_pct": 76.2,
+            "no_signal_sample": 18,
+            "utility_score": 0.6725
+          }
+        ]
+      }
+    },
+    "72h": {
+      "configuration": {
+        "days": 3,
+        "stable_threshold_pct": 10.0,
+        "k_neighbors": 5,
+        "features": [
+          "mai",
+          "mai_change_1d",
+          "mai_change_3d",
+          "mai_change_7d",
+          "weighted_change_1d",
+          "ddi",
+          "ddi_change_1d",
+          "ddi_change_3d"
+        ]
+      },
+      "backtest_sample": 58,
+      "selection": {
+        "selection_mode": "accuracy_at_least_75_maximize_coverage",
+        "target_accuracy_pct": 75.0
+      },
+      "selected_no_signal_rule": {
+        "confidence_threshold": 0.45,
+        "probability_threshold": 0.79,
+        "signal_sample": 28,
+        "total_sample": 58,
+        "coverage_pct": 48.3,
+        "signal_accuracy_pct": 75.0,
+        "no_signal_sample": 30,
+        "utility_score": 0.5813
+      },
+      "latest_raw_prediction": {
+        "direction": "increase",
+        "top_probability": 0.8217,
+        "confidence_score": 0.7621,
+        "probabilities": {
+          "increase": 0.8217,
+          "stable": 0.0,
+          "decrease": 0.1783
+        },
+        "nearest_analogues": [
+          {
+            "date": "2026-06-16",
+            "distance": 0.374,
+            "observed_direction": "increase"
+          },
+          {
+            "date": "2026-05-10",
+            "distance": 0.432,
+            "observed_direction": "increase"
+          },
+          {
+            "date": "2026-05-14",
+            "distance": 0.507,
+            "observed_direction": "increase"
+          },
+          {
+            "date": "2026-06-13",
+            "distance": 0.603,
+            "observed_direction": "decrease"
+          },
+          {
+            "date": "2026-07-19",
+            "distance": 0.64,
+            "observed_direction": "increase"
+          }
+        ]
+      },
+      "latest_public_signal": {
+        "direction": "increase",
+        "has_signal": true,
+        "label_hu": "növekvő katonai aktivitás"
+      },
+      "diagnostics": {
+        "eligible_rule_count": 1023,
+        "top_accuracy_rules": [
+          {
+            "confidence_threshold": 0.45,
+            "probability_threshold": 0.82,
+            "signal_sample": 16,
+            "total_sample": 58,
+            "coverage_pct": 27.6,
+            "signal_accuracy_pct": 87.5,
+            "no_signal_sample": 42,
+            "utility_score": 0.5575
+          },
+          {
+            "confidence_threshold": 0.46,
+            "probability_threshold": 0.82,
+            "signal_sample": 16,
+            "total_sample": 58,
+            "coverage_pct": 27.6,
+            "signal_accuracy_pct": 87.5,
+            "no_signal_sample": 42,
+            "utility_score": 0.5575
+          },
+          {
+            "confidence_threshold": 0.47,
+            "probability_threshold": 0.82,
+            "signal_sample": 16,
+            "total_sample": 58,
+            "coverage_pct": 27.6,
+            "signal_accuracy_pct": 87.5,
+            "no_signal_sample": 42,
+            "utility_score": 0.5575
+          },
+          {
+            "confidence_threshold": 0.48,
+            "probability_threshold": 0.82,
+            "signal_sample": 16,
+            "total_sample": 58,
+            "coverage_pct": 27.6,
+            "signal_accuracy_pct": 87.5,
+            "no_signal_sample": 42,
+            "utility_score": 0.5575
+          },
+          {
+            "confidence_threshold": 0.49,
+            "probability_threshold": 0.82,
+            "signal_sample": 16,
+            "total_sample": 58,
+            "coverage_pct": 27.6,
+            "signal_accuracy_pct": 87.5,
+            "no_signal_sample": 42,
+            "utility_score": 0.5575
+          },
+          {
+            "confidence_threshold": 0.5,
+            "probability_threshold": 0.82,
+            "signal_sample": 16,
+            "total_sample": 58,
+            "coverage_pct": 27.6,
+            "signal_accuracy_pct": 87.5,
+            "no_signal_sample": 42,
+            "utility_score": 0.5575
+          },
+          {
+            "confidence_threshold": 0.51,
+            "probability_threshold": 0.82,
+            "signal_sample": 16,
+            "total_sample": 58,
+            "coverage_pct": 27.6,
+            "signal_accuracy_pct": 87.5,
+            "no_signal_sample": 42,
+            "utility_score": 0.5575
+          },
+          {
+            "confidence_threshold": 0.52,
+            "probability_threshold": 0.82,
+            "signal_sample": 16,
+            "total_sample": 58,
+            "coverage_pct": 27.6,
+            "signal_accuracy_pct": 87.5,
+            "no_signal_sample": 42,
+            "utility_score": 0.5575
+          },
+          {
+            "confidence_threshold": 0.53,
+            "probability_threshold": 0.82,
+            "signal_sample": 16,
+            "total_sample": 58,
+            "coverage_pct": 27.6,
+            "signal_accuracy_pct": 87.5,
+            "no_signal_sample": 42,
+            "utility_score": 0.5575
+          },
+          {
+            "confidence_threshold": 0.54,
+            "probability_threshold": 0.82,
+            "signal_sample": 16,
+            "total_sample": 58,
+            "coverage_pct": 27.6,
+            "signal_accuracy_pct": 87.5,
+            "no_signal_sample": 42,
+            "utility_score": 0.5575
+          },
+          {
+            "confidence_threshold": 0.55,
+            "probability_threshold": 0.82,
+            "signal_sample": 16,
+            "total_sample": 58,
+            "coverage_pct": 27.6,
+            "signal_accuracy_pct": 87.5,
+            "no_signal_sample": 42,
+            "utility_score": 0.5575
+          },
+          {
+            "confidence_threshold": 0.56,
+            "probability_threshold": 0.82,
+            "signal_sample": 16,
+            "total_sample": 58,
+            "coverage_pct": 27.6,
+            "signal_accuracy_pct": 87.5,
+            "no_signal_sample": 42,
+            "utility_score": 0.5575
+          },
+          {
+            "confidence_threshold": 0.57,
+            "probability_threshold": 0.82,
+            "signal_sample": 16,
+            "total_sample": 58,
+            "coverage_pct": 27.6,
+            "signal_accuracy_pct": 87.5,
+            "no_signal_sample": 42,
+            "utility_score": 0.5575
+          },
+          {
+            "confidence_threshold": 0.58,
+            "probability_threshold": 0.82,
+            "signal_sample": 16,
+            "total_sample": 58,
+            "coverage_pct": 27.6,
+            "signal_accuracy_pct": 87.5,
+            "no_signal_sample": 42,
+            "utility_score": 0.5575
+          },
+          {
+            "confidence_threshold": 0.59,
+            "probability_threshold": 0.82,
+            "signal_sample": 16,
+            "total_sample": 58,
+            "coverage_pct": 27.6,
+            "signal_accuracy_pct": 87.5,
+            "no_signal_sample": 42,
+            "utility_score": 0.5575
+          }
+        ],
+        "best_coverage_rules_with_accuracy_at_least_75": [
+          {
+            "confidence_threshold": 0.45,
+            "probability_threshold": 0.79,
+            "signal_sample": 28,
+            "total_sample": 58,
+            "coverage_pct": 48.3,
+            "signal_accuracy_pct": 75.0,
+            "no_signal_sample": 30,
+            "utility_score": 0.5813
+          },
+          {
+            "confidence_threshold": 0.46,
+            "probability_threshold": 0.79,
+            "signal_sample": 28,
+            "total_sample": 58,
+            "coverage_pct": 48.3,
+            "signal_accuracy_pct": 75.0,
+            "no_signal_sample": 30,
+            "utility_score": 0.5813
+          },
+          {
+            "confidence_threshold": 0.47,
+            "probability_threshold": 0.79,
+            "signal_sample": 28,
+            "total_sample": 58,
+            "coverage_pct": 48.3,
+            "signal_accuracy_pct": 75.0,
+            "no_signal_sample": 30,
+            "utility_score": 0.5813
+          },
+          {
+            "confidence_threshold": 0.48,
+            "probability_threshold": 0.79,
+            "signal_sample": 28,
+            "total_sample": 58,
+            "coverage_pct": 48.3,
+            "signal_accuracy_pct": 75.0,
+            "no_signal_sample": 30,
+            "utility_score": 0.5813
+          },
+          {
+            "confidence_threshold": 0.49,
+            "probability_threshold": 0.79,
+            "signal_sample": 28,
+            "total_sample": 58,
+            "coverage_pct": 48.3,
+            "signal_accuracy_pct": 75.0,
+            "no_signal_sample": 30,
+            "utility_score": 0.5813
+          },
+          {
+            "confidence_threshold": 0.5,
+            "probability_threshold": 0.79,
+            "signal_sample": 28,
+            "total_sample": 58,
+            "coverage_pct": 48.3,
+            "signal_accuracy_pct": 75.0,
+            "no_signal_sample": 30,
+            "utility_score": 0.5813
+          },
+          {
+            "confidence_threshold": 0.51,
+            "probability_threshold": 0.79,
+            "signal_sample": 28,
+            "total_sample": 58,
+            "coverage_pct": 48.3,
+            "signal_accuracy_pct": 75.0,
+            "no_signal_sample": 30,
+            "utility_score": 0.5813
+          },
+          {
+            "confidence_threshold": 0.52,
+            "probability_threshold": 0.79,
+            "signal_sample": 28,
+            "total_sample": 58,
+            "coverage_pct": 48.3,
+            "signal_accuracy_pct": 75.0,
+            "no_signal_sample": 30,
+            "utility_score": 0.5813
+          },
+          {
+            "confidence_threshold": 0.53,
+            "probability_threshold": 0.79,
+            "signal_sample": 28,
+            "total_sample": 58,
+            "coverage_pct": 48.3,
+            "signal_accuracy_pct": 75.0,
+            "no_signal_sample": 30,
+            "utility_score": 0.5813
+          },
+          {
+            "confidence_threshold": 0.54,
+            "probability_threshold": 0.79,
+            "signal_sample": 28,
+            "total_sample": 58,
+            "coverage_pct": 48.3,
+            "signal_accuracy_pct": 75.0,
+            "no_signal_sample": 30,
+            "utility_score": 0.5813
+          },
+          {
+            "confidence_threshold": 0.55,
+            "probability_threshold": 0.79,
+            "signal_sample": 28,
+            "total_sample": 58,
+            "coverage_pct": 48.3,
+            "signal_accuracy_pct": 75.0,
+            "no_signal_sample": 30,
+            "utility_score": 0.5813
+          },
+          {
+            "confidence_threshold": 0.56,
+            "probability_threshold": 0.79,
+            "signal_sample": 28,
+            "total_sample": 58,
+            "coverage_pct": 48.3,
+            "signal_accuracy_pct": 75.0,
+            "no_signal_sample": 30,
+            "utility_score": 0.5813
+          },
+          {
+            "confidence_threshold": 0.57,
+            "probability_threshold": 0.79,
+            "signal_sample": 28,
+            "total_sample": 58,
+            "coverage_pct": 48.3,
+            "signal_accuracy_pct": 75.0,
+            "no_signal_sample": 30,
+            "utility_score": 0.5813
+          },
+          {
+            "confidence_threshold": 0.58,
+            "probability_threshold": 0.79,
+            "signal_sample": 28,
+            "total_sample": 58,
+            "coverage_pct": 48.3,
+            "signal_accuracy_pct": 75.0,
+            "no_signal_sample": 30,
+            "utility_score": 0.5813
+          },
+          {
+            "confidence_threshold": 0.59,
+            "probability_threshold": 0.79,
+            "signal_sample": 28,
+            "total_sample": 58,
+            "coverage_pct": 48.3,
+            "signal_accuracy_pct": 75.0,
+            "no_signal_sample": 30,
+            "utility_score": 0.5813
+          }
+        ]
+      }
+    }
+  }
+}
