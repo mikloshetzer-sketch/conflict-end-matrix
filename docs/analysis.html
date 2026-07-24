@@ -1502,6 +1502,16 @@
       .forecast-date{text-align:left;margin-top:5px}
     }
 
+    .forecast-raw-tendency{
+      margin-top:7px;
+      font-size:11px;
+      line-height:1.45;
+      color:#667d89;
+    }
+    .forecast-raw-tendency strong{
+      color:#244b63;
+    }
+
   </style>
 </head>
 
@@ -2052,14 +2062,17 @@
               <div class="forecast-card signal-none" id="forecast_card_48h">
                 <div class="forecast-horizon">Következő 48 óra</div>
                 <div class="forecast-main none" id="forecast_main_48h">Betöltés…</div>
+                <div class="forecast-raw-tendency" id="forecast_tendency_48h">
+                  Modellhajlás: betöltés…
+                </div>
 
                 <div class="forecast-meta">
                   <div class="forecast-meta-box">
-                    <span class="forecast-meta-label">Modell iránytámogatása</span>
+                    <span class="forecast-meta-label">Legvalószínűbb modellirány</span>
                     <span class="forecast-meta-value" id="forecast_prob_48h">—</span>
                   </div>
                   <div class="forecast-meta-box">
-                    <span class="forecast-meta-label">Történeti jelzési pontosság</span>
+                    <span class="forecast-meta-label">Backtest találati arány</span>
                     <span class="forecast-meta-value" id="forecast_hist_48h">—</span>
                   </div>
                 </div>
@@ -2073,14 +2086,17 @@
               <div class="forecast-card signal-none" id="forecast_card_72h">
                 <div class="forecast-horizon">Következő 72 óra</div>
                 <div class="forecast-main none" id="forecast_main_72h">Betöltés…</div>
+                <div class="forecast-raw-tendency" id="forecast_tendency_72h">
+                  Modellhajlás: betöltés…
+                </div>
 
                 <div class="forecast-meta">
                   <div class="forecast-meta-box">
-                    <span class="forecast-meta-label">Modell iránytámogatása</span>
+                    <span class="forecast-meta-label">Legvalószínűbb modellirány</span>
                     <span class="forecast-meta-value" id="forecast_prob_72h">—</span>
                   </div>
                   <div class="forecast-meta-box">
-                    <span class="forecast-meta-label">Történeti jelzési pontosság</span>
+                    <span class="forecast-meta-label">Backtest találati arány</span>
                     <span class="forecast-meta-value" id="forecast_hist_72h">—</span>
                   </div>
                 </div>
@@ -2106,6 +2122,8 @@
                   hogy a jelenlegi adatokból a modell nem tud kellően megbízható irányt kiválasztani.
                   A növekedés vagy csökkenés jelzés az aktivitás várható irányára vonatkozik,
                   nem egy konkrét katonai esemény bekövetkezésére.
+                  A <strong>backtest találati arány</strong> a történeti teszt teljesítményét mutatja,
+                  nem a mostani előrejelzés bekövetkezési valószínűségét.
                 </p>
               </div>
             </div>
@@ -3111,6 +3129,15 @@
       }[direction] || "nincs egyértelmű jelzés";
     }
 
+
+    function forecastRawDirectionShort(direction){
+      return {
+        increase:"↑ növekvő aktivitás",
+        decrease:"↓ csökkenő aktivitás",
+        stable:"→ változatlan aktivitás"
+      }[direction] || "—";
+    }
+
     function forecastStrength(raw, publicSignal, horizon){
       if(!raw || !publicSignal?.has_signal) return "nincs publikus jelzés";
 
@@ -3138,9 +3165,9 @@
       const direction=forecastDirectionHu(raw.direction);
 
       if(!pub?.has_signal){
-        return `A nyers modell leginkább ${direction} irányába mutat (${top}), `+
-               `de a jelzés nem érte el a ${Math.round(Number(gate.probability_threshold||0)*100)}%-os `+
-               `iránytámogatási és a szükséges bizonyossági küszöböt. Ezért a rendszer nem ad ki irányjelzést.`;
+        return `A modell jelenlegi hajlása ${direction} (${top}), de ez nem elég erős ahhoz, hogy publikus irányjelzésként megjelenjen. `+
+               `A kiadási küszöb ezen az időtávon legalább ${Math.round(Number(gate.probability_threshold||0)*100)}% iránytámogatás, `+
+               `valamint a szükséges bizonyossági szint teljesülése.`;
       }
 
       const strength=forecastStrength(raw,pub,horizon);
@@ -3170,8 +3197,15 @@
       const prob=document.getElementById(`forecast_prob_${suffix}`);
       if(prob){
         prob.textContent=raw.top_probability!=null
-          ? forecastPercent(raw.top_probability)
+          ? `${forecastRawDirectionShort(raw.direction)} · ${forecastPercent(raw.top_probability)}`
           : "—";
+      }
+
+      const tendency=document.getElementById(`forecast_tendency_${suffix}`);
+      if(tendency){
+        tendency.innerHTML=raw.top_probability!=null
+          ? `Modellhajlás: <strong>${forecastRawDirectionShort(raw.direction)} (${forecastPercent(raw.top_probability)})</strong>`
+          : "Modellhajlás: —";
       }
 
       const hist=document.getElementById(`forecast_hist_${suffix}`);
@@ -3204,8 +3238,19 @@
       const s72=h72?.public_signal?.direction||"no_signal";
 
       if(s48==="no_signal" && s72==="no_signal"){
-        return "A jelenlegi adatok alapján sem 48, sem 72 órás időtávon nincs elég erős, egyirányú történeti minta. " +
-               "Ez nem a konfliktus nyugalmát jelenti, hanem azt, hogy a rövid távú aktivitási irány most bizonytalan.";
+        const r48=h48?.raw_prediction;
+        const r72=h72?.raw_prediction;
+
+        const t48=r48
+          ? `${forecastRawDirectionShort(r48.direction).replace(/[↑↓→]\s*/,"")} felé hajlik (${forecastPercent(r48.top_probability)})`
+          : "nem értékelhető";
+        const t72=r72
+          ? `${forecastRawDirectionShort(r72.direction).replace(/[↑↓→]\s*/,"")} felé hajlik (${forecastPercent(r72.top_probability)})`
+          : "nem értékelhető";
+
+        return `A modell jelenleg egyik időtávon sem azonosít kellően erős mintát ahhoz, hogy megbízható irányjelzést adjon. `+
+               `A 48 órás kép ${t48}, míg a 72 órás kép ${t72}, de egyik sem éri el a jelzéshez szükséges küszöböt. `+
+               `A jelenlegi helyzet ezért rövid távon bizonytalannak értékelhető.`;
       }
 
       if(s48===s72 && s48!=="no_signal"){
