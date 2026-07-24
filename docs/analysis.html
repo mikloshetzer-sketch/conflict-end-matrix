@@ -1289,7 +1289,7 @@
             <div class="event-balance-track" aria-label="Diplomatic, escalation and ceasefire event balance"><div id="event_balance_diplomatic" class="event-balance-segment diplomatic"></div><div id="event_balance_escalation" class="event-balance-segment escalation"></div><div id="event_balance_ceasefire" class="event-balance-segment ceasefire"></div></div>
             <div class="event-balance-legend"><span><span class="legend-dot diplomatic"></span>Diplomatic</span><span><span class="legend-dot escalation"></span>Escalatory</span><span><span class="legend-dot ceasefire"></span>Ceasefire / de-escalation</span></div>
           </div>
-          <div class="interpretation"><span class="interpretation-title">Analyst Interpretation</span><div class="interpretation-grid"><div><h4>What are we seeing?</h4><p id="event_summary_what">The summary shows the balance of non-kinetic events in the selected period.</p></div><div><h4>How is it calculated?</h4><p>Events are counted from the currently filtered timeline. Diplomatic events, escalation-oriented statements and ceasefire/de-escalation signals come from the Conflict End Matrix event layer. Military events come from the cleaned kinetic_events.json dataset generated from ME Security Monitor / IranStrike.</p></div><div><h4>Conclusion</h4><p id="event_summary_conclusion">The balance helps show whether the political and information environment is dominated by diplomacy, escalation-oriented signalling or de-escalation efforts.</p></div></div></div>
+          <div class="interpretation"><span class="interpretation-title">Analyst Interpretation</span><div class="interpretation-grid"><div><h4>What are we seeing?</h4><p id="event_summary_what">The summary shows the balance of non-kinetic events in the selected period.</p></div><div><h4>How is it calculated?</h4><p>The summary cards use the latest 30-day window. Diplomatic events, escalation-oriented statements and ceasefire/de-escalation signals come from the Conflict End Matrix event layer. Military events come from the cleaned kinetic_events.json dataset generated from ME Security Monitor / IranStrike.</p></div><div><h4>Conclusion</h4><p id="event_summary_conclusion">The balance helps show whether the political and information environment is dominated by diplomacy, escalation-oriented signalling or de-escalation efforts.</p></div></div></div>
         </div>
 
         
@@ -1784,7 +1784,7 @@
 
       setText(
         "event_summary_what",
-        `The current selection contains ${diplomatic} diplomatic events, ${escalation} escalation-oriented non-kinetic signals, ${ceasefire} ceasefire or de-escalation events and ${military} validated military events.`
+        `The latest 30-day window contains ${diplomatic} diplomatic events, ${escalation} escalation-oriented non-kinetic signals, ${ceasefire} ceasefire or de-escalation events and ${military} validated military events.`
       );
 
       let conclusion = "";
@@ -2511,10 +2511,30 @@
       };
     }
 
+    function getLastNDaysEvents(events, days){
+      const latestDates = events
+        .map(e => parseEventDate(e.timestamp ?? e.date))
+        .filter(Boolean)
+        .sort((a,b) => b-a);
+
+      const anchor = latestDates.length ? latestDates[0] : new Date();
+      const end = new Date(anchor);
+      const start = new Date(anchor);
+      start.setUTCDate(start.getUTCDate()-(days-1));
+      start.setUTCHours(0,0,0,0);
+
+      return events.filter(e=>{
+        const d=parseEventDate(e.timestamp ?? e.date);
+        return d && d>=start && d<=end;
+      });
+    }
+
     function loadEventTimeline(){
-      setupTimelineControls();
+      // The old filter/table controls were removed when the daily matrix
+      // replaced the vertical event table. Do NOT initialize them here.
       setupEventTrendControls();
       setupDailyMatrixControls();
+
       const cacheBust = Date.now();
 
       Promise.all([
@@ -2540,14 +2560,20 @@
 
         eventTimelineData = [...infoEvents, ...kineticEvents];
 
-        populateActorFilter(eventTimelineData);
-        applyTimelineFilters();
+        // The summary cards now use a stable 30-day window.
+        filteredTimelineData = getLastNDaysEvents(eventTimelineData,30);
+        updateEventSignalSummary(filteredTimelineData);
+
+        const periodEl=document.getElementById("event_balance_period");
+        if(periodEl)periodEl.textContent="Last 30 days";
+
         renderEventTrend();
+
         matrixEndDate=getLatestEventDate();
         renderDailyMatrix();
 
         console.log(
-          "Timeline loaded:",
+          "Analysis data loaded:",
           infoEvents.length,
           "non-kinetic +",
           kineticEvents.length,
@@ -2555,19 +2581,25 @@
         );
       })
       .catch(err=>{
-        document.getElementById("event_timeline_body").innerHTML =
-          '<tr><td colspan="6">The combined event timeline could not be loaded. Check event_timeline.json and kinetic_events.json.</td></tr>';
+        const matrixBody=document.getElementById("daily_matrix_body");
+        if(matrixBody){
+          matrixBody.innerHTML=
+            '<tr><th class="matrix-row-label">Status</th><td colspan="7">The combined event data could not be loaded. Check event_timeline.json and kinetic_events.json.</td></tr>';
+        }
 
-        document.getElementById("timeline_summary").innerHTML =
-          '<span class="summary-chip">Combined event data unavailable</span>';
+        const what=document.getElementById("matrix_what");
+        if(what){
+          what.textContent=
+            "The dashboard requires both the Conflict End Matrix event timeline and the cleaned kinetic event dataset.";
+        }
 
-        document.getElementById("timeline_what").textContent =
-          "The dashboard now expects both the Conflict End Matrix event timeline and the cleaned kinetic event dataset.";
+        const conclusion=document.getElementById("matrix_conclusion");
+        if(conclusion){
+          conclusion.textContent=
+            "No matrix assessment is shown because at least one required event source failed to load.";
+        }
 
-        document.getElementById("timeline_conclusion").textContent =
-          "No combined assessment is shown because at least one required event source failed to load.";
-
-        console.warn("Combined timeline load failed:", err);
+        console.warn("Combined matrix load failed:", err);
       });
     }
 
@@ -2621,4 +2653,3 @@
   </script>
 </body>
 </html>
-
