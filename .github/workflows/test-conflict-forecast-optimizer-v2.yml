@@ -1,0 +1,123 @@
+name: TEST - Conflict Forecast Optimizer V2
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: test-conflict-forecast-optimizer-v2
+  cancel-in-progress: false
+
+jobs:
+  test-conflict-forecast-optimizer:
+    name: TEST - Optimize and Backtest Forecast
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Check required files
+        run: |
+          test -f docs/conflict_analysis.json
+          test -f src/optimize_conflict_forecast_v2.py
+          echo "Required files found."
+
+      - name: TEST - Run forecast optimizer
+        run: |
+          python src/optimize_conflict_forecast_v2.py
+
+      - name: TEST - Validate optimization output
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("docs/conflict_forecast_optimization.json")
+          if not path.exists():
+              raise SystemExit("ERROR: optimization output was not created")
+
+          with path.open("r", encoding="utf-8") as f:
+              data = json.load(f)
+
+          if data.get("optimizer_version") != "conflict_forecast_optimizer_v2":
+              raise SystemExit("ERROR: unexpected optimizer version")
+
+          tested = data.get("tested_grid", {})
+          winners = data.get("winning_models", {})
+
+          print("Optimizer:", data.get("optimizer_version"))
+          print("Candidate count:", tested.get("candidate_count"))
+          print()
+
+          for horizon in ("24h", "48h", "72h"):
+              winner = winners.get(horizon)
+              if not winner:
+                  print(horizon, "- NO WINNING MODEL")
+                  continue
+
+              metrics = winner.get("metrics", {})
+              baseline = winner.get("baseline", {})
+
+              print("====", horizon, "====")
+              print("Feature set:", winner.get("feature_set"))
+              print("Stable threshold:", winner.get("stable_threshold_pct"))
+              print("K neighbours:", winner.get("k_neighbors"))
+              print("Accuracy:", metrics.get("accuracy_pct"))
+              print("Balanced accuracy:", metrics.get("balanced_accuracy_pct"))
+              print("Baseline:", baseline.get("accuracy_pct"))
+              print("Improvement pp:", winner.get("baseline_improvement_pp"))
+              print("Confidence:", winner.get("confidence_metrics"))
+              print("Class metrics:", metrics.get("class_metrics"))
+              print()
+
+          latest = data.get("latest_forecast", {})
+          print("==== LATEST FORECAST ====")
+          for horizon in ("24h", "48h", "72h"):
+              forecast = latest.get(horizon)
+              if not forecast:
+                  print(horizon, "- unavailable")
+                  continue
+              print(
+                  horizon,
+                  "| direction:", forecast.get("direction"),
+                  "| confidence:", forecast.get("confidence_score"),
+                  "| validated accuracy:", forecast.get("validated_accuracy_pct"),
+                  "| balanced:", forecast.get("validated_balanced_accuracy_pct"),
+                  "| model:", forecast.get("model_configuration"),
+              )
+
+          print()
+          print("Validation OK")
+          PY
+
+      - name: Show generated file status
+        run: |
+          git status --short
+          ls -lh docs/conflict_forecast_optimization.json
+
+      - name: Commit TEST optimization result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add docs/conflict_forecast_optimization.json
+
+          if git diff --cached --quiet; then
+            echo "No optimization changes to commit."
+          else
+            git commit -m "TEST: update conflict forecast optimization"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
