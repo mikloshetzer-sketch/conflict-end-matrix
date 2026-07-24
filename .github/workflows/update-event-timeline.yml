@@ -65,6 +65,8 @@ jobs:
                   "subtype",
                   "direction",
                   "direction_score",
+                  "positive_signal_score",
+                  "negative_signal_score",
                   "direction_reasons",
                   "diplomatic_event",
                   "military_event",
@@ -98,13 +100,17 @@ jobs:
           print("Transitions:", validation.get("transition_counts"))
 
           print("\nManual-review examples:")
-          for example in validation.get("review_examples", [])[:10]:
+          for example in validation.get("review_examples", [])[:15]:
               print(
                   example.get("old_direction"),
                   "->",
                   example.get("new_direction"),
-                  "|",
+                  "| score:",
                   example.get("direction_score"),
+                  "| +:",
+                  example.get("positive_signal_score"),
+                  "| -:",
+                  example.get("negative_signal_score"),
                   "|",
                   example.get("title"),
               )
@@ -122,7 +128,8 @@ jobs:
           if git diff --cached --quiet; then
             echo "No event timeline changes to commit."
           else
-            git commit -m "Improve diplomatic direction classification"
+            git commit -m "Refine diplomatic direction classification"
             git pull --rebase origin main
             git push origin HEAD:main
           fi
+
