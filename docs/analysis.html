@@ -1658,6 +1658,23 @@
       .analysis-scope-stats{grid-template-columns:1fr}
     }
 
+    /* =========================================================
+       V8 - FORECAST MODELLHAJLÁS NAPI VÁLTOZÁS
+       ========================================================= */
+    .forecast-trend{
+      margin-top:8px;display:flex;align-items:center;gap:7px;flex-wrap:wrap;
+      font-size:10px;color:#667d89;
+    }
+    .forecast-trend-badge{
+      display:inline-flex;align-items:center;gap:4px;padding:4px 7px;border-radius:999px;
+      border:1px solid #dbe5ea;background:#f8fafb;font-weight:800;color:#35586c;
+    }
+    .forecast-trend-badge.rising{background:#fff1f2;border-color:#efc8cc;color:#a63f48}
+    .forecast-trend-badge.falling{background:#eef8f3;border-color:#c8e2d6;color:#28745b}
+    .forecast-trend-badge.flat{background:#f3f6f8;border-color:#d9e1e6;color:#657985}
+    .forecast-trend-badge.new{background:#f5f2fb;border-color:#ddd3ef;color:#6d55a0}
+    .forecast-trend-note{color:#788b95;line-height:1.4}
+
   </style>
 </head>
 
@@ -2293,6 +2310,9 @@
                 <div class="forecast-raw-tendency" id="forecast_tendency_48h">
                   Modellhajlás: betöltés…
                 </div>
+                <div class="forecast-trend" id="forecast_trend_48h">
+                  <span class="forecast-trend-badge new">Napi változás: —</span>
+                </div>
 
                 <div class="forecast-meta">
                   <div class="forecast-meta-box">
@@ -2316,6 +2336,9 @@
                 <div class="forecast-main none" id="forecast_main_72h">Betöltés…</div>
                 <div class="forecast-raw-tendency" id="forecast_tendency_72h">
                   Modellhajlás: betöltés…
+                </div>
+                <div class="forecast-trend" id="forecast_trend_72h">
+                  <span class="forecast-trend-badge new">Napi változás: —</span>
                 </div>
 
                 <div class="forecast-meta">
@@ -3528,7 +3551,78 @@
       return `A 48 és 72 órás modellek eltérő irányt jeleznek. Ez átmeneti vagy változó konfliktusdinamikára utal, ezért az előrejelzést fokozott óvatossággal kell értelmezni.`;
     }
 
-    function renderLiveForecast(data){
+
+    function forecastPreviousRecord(history,horizon,currentReferenceDate){
+      const records=Array.isArray(history?.records)?history.records:[];
+      const filtered=records
+        .filter(r=>r?.horizon===horizon && r?.forecast_reference_date && r.forecast_reference_date<currentReferenceDate)
+        .sort((a,b)=>String(b.forecast_reference_date).localeCompare(String(a.forecast_reference_date)));
+      return filtered.length?filtered[0]:null;
+    }
+
+    function forecastTrendData(currentItem,previousRecord){
+      const currentRaw=currentItem?.raw_prediction;
+      const previousRaw=previousRecord?.raw_prediction;
+
+      if(!currentRaw || !previousRaw){
+        return {state:"new",symbol:"•",label:"Nincs előző napi összehasonlítás",detail:""};
+      }
+
+      const currentDirection=currentRaw.direction;
+      const previousDirection=previousRaw.direction;
+      const currentProb=Number(currentRaw.top_probability||0);
+      const previousProb=Number(previousRaw.top_probability||0);
+
+      if(currentDirection!==previousDirection){
+        return {
+          state:"new",symbol:"↺",
+          label:`Irányváltás: ${forecastRawDirectionShort(previousDirection)} → ${forecastRawDirectionShort(currentDirection)}`,
+          detail:`${forecastPercent(previousProb)} → ${forecastPercent(currentProb)}`
+        };
+      }
+
+      const diff=(currentProb-previousProb)*100;
+      if(Math.abs(diff)<1){
+        return {
+          state:"flat",symbol:"→",label:"Lényegében változatlan modellhajlás",
+          detail:`${forecastPercent(previousProb)} → ${forecastPercent(currentProb)}`
+        };
+      }
+
+      return {
+        state:diff>0?"rising":"falling",
+        symbol:diff>0?"↑":"↓",
+        label:`${diff>0?"Erősödő":"Gyengülő"} modellhajlás`,
+        detail:`${forecastPercent(previousProb)} → ${forecastPercent(currentProb)} (${diff>0?"+":""}${diff.toFixed(1)} százalékpont)`
+      };
+    }
+
+    function renderForecastTrend(horizon,currentItem,history,currentReferenceDate){
+      const suffix=horizon==="48h"?"48h":"72h";
+      const el=document.getElementById(`forecast_trend_${suffix}`);
+      if(!el)return;
+      const previous=forecastPreviousRecord(history,horizon,currentReferenceDate);
+      const trend=forecastTrendData(currentItem,previous);
+      el.innerHTML=
+        `<span class="forecast-trend-badge ${trend.state}">${trend.symbol} ${trend.label}</span>`+
+        (trend.detail?`<span class="forecast-trend-note">${trend.detail}</span>`:"");
+    }
+
+    function buildForecastTrendSentence(horizon,item,history,currentReferenceDate){
+      const previous=forecastPreviousRecord(history,horizon,currentReferenceDate);
+      const trend=forecastTrendData(item,previous);
+
+      if(trend.state==="new"){
+        if(trend.symbol==="↺") return `${horizon}-n az előző naphoz képest irányváltás történt: ${trend.detail}.`;
+        return "";
+      }
+      if(trend.state==="flat"){
+        return `${horizon}-n a modellhajlás lényegében nem változott (${trend.detail}).`;
+      }
+      return `${horizon}-n ${trend.state==="rising"?"erősödött":"gyengült"} a vezető modellirány támogatása (${trend.detail}).`;
+    }
+
+    function renderLiveForecast(data,history){
       const ref=data?.forecast_reference_date;
       const label=document.getElementById("forecast_reference_label");
       if(label){
@@ -3540,8 +3634,18 @@
       renderForecastCard("48h",data?.horizons?.["48h"]);
       renderForecastCard("72h",data?.horizons?.["72h"]);
 
+      renderForecastTrend("48h",data?.horizons?.["48h"],history,ref);
+      renderForecastTrend("72h",data?.horizons?.["72h"],history,ref);
+
       const overall=document.getElementById("forecast_overall_assessment");
-      if(overall) overall.textContent=buildOverallForecastAssessment(data);
+      if(overall){
+        let text=buildOverallForecastAssessment(data);
+        const trend48=buildForecastTrendSentence("48h",data?.horizons?.["48h"],history,ref);
+        const trend72=buildForecastTrendSentence("72h",data?.horizons?.["72h"],history,ref);
+        const extra=[trend48,trend72].filter(Boolean).join(" ");
+        if(extra)text+=" "+extra;
+        overall.textContent=text;
+      }
 
       const note=document.getElementById("forecast_method_note");
       const days=data?.learning?.analogue_library_days;
@@ -3556,12 +3660,17 @@
     }
 
     function loadLiveForecast(){
-      fetch("./conflict_forecast_live.json?ts="+Date.now())
-        .then(r=>{
+      const ts=Date.now();
+      Promise.all([
+        fetch("./conflict_forecast_live.json?ts="+ts).then(r=>{
           if(!r.ok) throw new Error("conflict_forecast_live.json HTTP "+r.status);
           return r.json();
-        })
-        .then(renderLiveForecast)
+        }),
+        fetch("./conflict_forecast_history.json?ts="+ts)
+          .then(r=>r.ok?r.json():{records:[]})
+          .catch(()=>({records:[]}))
+      ])
+        .then(([live,history])=>renderLiveForecast(live,history))
         .catch(err=>{
           const overall=document.getElementById("forecast_overall_assessment");
           if(overall){
@@ -4262,5 +4371,3 @@
   </script>
 </body>
 </html>
-
-
