@@ -1,66 +1,302 @@
 name: Generate Strategic Pressure
 
 on:
+  # Kézi indítás továbbra is elérhető
   workflow_dispatch:
+
+  # Napi automatikus futás
+  # 03:15 UTC = magyar nyári idő szerint 05:15,
+  # magyar téli idő szerint 04:15
+  schedule:
+    - cron: "15 3 * * *"
 
 permissions:
   contents: write
 
+concurrency:
+  group: strategic-analysis-pipeline
+  cancel-in-progress: false
+
 jobs:
   generate-strategic-pressure:
+    name: Generate Strategic Pressure
     runs-on: ubuntu-latest
 
     steps:
+      # =========================================================
+      # 1. REPOSITORY
+      # =========================================================
+
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      # =========================================================
+      # 2. PYTHON
+      # =========================================================
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python -m pip install --upgrade pip
+
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          fi
+
+      # =========================================================
+      # 3. REQUIRED FILES
+      # =========================================================
+
+      - name: Verify required scripts
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          required_files=(
+            "src/generate_event_timeline.py"
+            "src/generate_kinetic_events.py"
+            "src/generate_strategic_pressure.py"
+          )
+
+          for file in "${required_files[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "::error file=$file::Required file is missing: $file"
+              exit 1
+            fi
+
+            echo "Found: $file"
+          done
+
+      # =========================================================
+      # 4. PYTHON VALIDATION
+      # =========================================================
+
+      - name: Validate Python scripts
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python -m py_compile \
+            src/generate_event_timeline.py \
+            src/generate_kinetic_events.py \
+            src/generate_strategic_pressure.py
+
+      # =========================================================
+      # 5. GENERATION
+      # =========================================================
 
       - name: Generate historical event timeline
-        run: python src/generate_event_timeline.py
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python src/generate_event_timeline.py
 
       - name: Generate kinetic events
-        run: python src/generate_kinetic_events.py
-
-      - name: Generate strategic pressure
-        run: python src/generate_strategic_pressure.py
-
-      - name: Check generated files
+        shell: bash
         run: |
-          test -f docs/strategic_pressure.json
-          test -f docs/strategic_pressure_history.json
+          set -euo pipefail
 
-      - name: Commit generated strategic pressure files
+          python src/generate_kinetic_events.py
+
+      - name: Generate Strategic Pressure
+        shell: bash
         run: |
+          set -euo pipefail
+
+          python src/generate_strategic_pressure.py
+
+      # =========================================================
+      # 6. OUTPUT FILE CHECK
+      # =========================================================
+
+      - name: Verify generated files
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          required_outputs=(
+            "docs/event_timeline.json"
+            "docs/event_direction_validation.json"
+            "docs/strategic_pressure.json"
+            "docs/strategic_pressure_history.json"
+          )
+
+          for file in "${required_outputs[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "::error file=$file::Expected output file was not generated."
+              exit 1
+            fi
+
+            echo "Generated: $file"
+          done
+
+      # =========================================================
+      # 7. STRATEGIC PRESSURE VALIDATION
+      # =========================================================
+
+      - name: Validate Strategic Pressure output
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          current_path = Path("docs/strategic_pressure.json")
+          history_path = Path("docs/strategic_pressure_history.json")
+
+          with current_path.open("r", encoding="utf-8") as file:
+              current_data = json.load(file)
+
+          with history_path.open("r", encoding="utf-8") as file:
+              history_data = json.load(file)
+
+          if not isinstance(current_data, dict):
+              raise SystemExit(
+                  "::error file=docs/strategic_pressure.json::"
+                  "The Strategic Pressure current output is invalid."
+              )
+
+          if not isinstance(history_data, dict):
+              raise SystemExit(
+                  "::error file=docs/strategic_pressure_history.json::"
+                  "The Strategic Pressure history output is invalid."
+              )
+
+          days = history_data.get("days")
+
+          if not isinstance(days, list) or not days:
+              raise SystemExit(
+                  "::error file=docs/strategic_pressure_history.json::"
+                  "The history file does not contain a non-empty days[] array."
+              )
+
+          dated_days = [
+              day
+              for day in days
+              if isinstance(day, dict)
+              and isinstance(day.get("date"), str)
+              and day["date"].strip()
+          ]
+
+          if not dated_days:
+              raise SystemExit(
+                  "::error file=docs/strategic_pressure_history.json::"
+                  "No valid dated records were found in days[]."
+              )
+
+          dates = sorted(day["date"] for day in dated_days)
+
+          current_node = current_data.get("current", current_data)
+
+          current_date = (
+              current_node.get("date")
+              if isinstance(current_node, dict)
+              else None
+          )
+
+          current_date = (
+              current_date
+              or current_data.get("latest_complete_utc_day")
+              or "unknown"
+          )
+
+          print("")
+          print("Strategic Pressure generation completed")
+          print("---------------------------------------")
+          print(f"Current date: {current_date}")
+          print(f"History records: {len(days)}")
+          print(f"Valid dated records: {len(dated_days)}")
+          print(f"History start: {dates[0]}")
+          print(f"History end: {dates[-1]}")
+          PY
+
+      # =========================================================
+      # 8. GENERATED FILE INFORMATION
+      # =========================================================
+
+      - name: Show generated file information
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          ls -lh docs/event_timeline.json
+          ls -lh docs/event_direction_validation.json
+          ls -lh docs/strategic_pressure.json
+          ls -lh docs/strategic_pressure_history.json
+
+          optional_outputs=(
+            "docs/kinetic_events.json"
+            "docs/event_timeline_kinetic.json"
+            "docs/kinetic_event_timeline.json"
+          )
+
+          for file in "${optional_outputs[@]}"; do
+            if [ -f "$file" ]; then
+              ls -lh "$file"
+            fi
+          done
+
+      # =========================================================
+      # 9. COMMIT
+      # =========================================================
+
+      - name: Commit generated files
+        id: commit
+        shell: bash
+        run: |
+          set -euo pipefail
+
           git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add docs/event_timeline.json
           git add docs/event_direction_validation.json
-
-          if [ -f docs/kinetic_events.json ]; then
-            git add docs/kinetic_events.json
-          fi
-
-          if [ -f docs/event_timeline_kinetic.json ]; then
-            git add docs/event_timeline_kinetic.json
-          fi
-
-          if [ -f docs/kinetic_event_timeline.json ]; then
-            git add docs/kinetic_event_timeline.json
-          fi
-
           git add docs/strategic_pressure.json
           git add docs/strategic_pressure_history.json
 
+          optional_outputs=(
+            "docs/kinetic_events.json"
+            "docs/event_timeline_kinetic.json"
+            "docs/kinetic_event_timeline.json"
+          )
+
+          for file in "${optional_outputs[@]}"; do
+            if [ -f "$file" ]; then
+              git add "$file"
+            fi
+          done
+
           if git diff --cached --quiet; then
             echo "No changes to commit."
-          else
-            git commit -m "Update strategic pressure data"
-            git push
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
+
+          git commit -m "Update Strategic Pressure data"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      # =========================================================
+      # 10. PUSH
+      # =========================================================
+
+      - name: Push changes
+        if: steps.commit.outputs.changed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git push origin "HEAD:${GITHUB_REF_NAME}"
