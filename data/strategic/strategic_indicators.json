@@ -1,0 +1,159 @@
+{
+  "metadata": {
+    "version": "strategic_pressure_v1",
+    "last_updated": "2026-07-28",
+    "description": "Daily strategic pressure indicators for the US-Iran conflict."
+  },
+
+  "usa": {
+
+    "increase_pressure": [
+
+      {
+        "id": "carrier_deployment",
+        "name": "Carrier Strike Group deployment",
+        "score": 8
+      },
+      {
+        "id": "bomber_deployment",
+        "name": "Strategic bomber deployment",
+        "score": 9
+      },
+      {
+        "id": "additional_air_defense",
+        "name": "Additional air defence deployment",
+        "score": 5
+      },
+      {
+        "id": "new_sanctions",
+        "name": "New sanctions",
+        "score": 4
+      },
+      {
+        "id": "evacuation_warning",
+        "name": "Embassy or civilian evacuation warning",
+        "score": 8
+      },
+      {
+        "id": "force_protection",
+        "name": "Raised force protection level",
+        "score": 7
+      },
+      {
+        "id": "presidential_warning",
+        "name": "Presidential warning",
+        "score": 5
+      },
+      {
+        "id": "military_exercise",
+        "name": "Large regional military exercise",
+        "score": 5
+      },
+      {
+        "id": "strike_preparation",
+        "name": "Preparation for military strike",
+        "score": 10
+      }
+    ],
+
+    "decrease_pressure": [
+
+      {
+        "id": "negotiation",
+        "name": "Negotiation",
+        "score": -6
+      },
+      {
+        "id": "ceasefire_support",
+        "name": "Support for ceasefire",
+        "score": -7
+      },
+      {
+        "id": "sanction_relief",
+        "name": "Sanction relief",
+        "score": -5
+      },
+      {
+        "id": "troop_withdrawal",
+        "name": "Military withdrawal",
+        "score": -8
+      }
+    ]
+  },
+
+  "iran": {
+
+    "increase_pressure": [
+
+      {
+        "id": "missile_preparation",
+        "name": "Missile force preparation",
+        "score": 9
+      },
+      {
+        "id": "proxy_activation",
+        "name": "Proxy force activation",
+        "score": 8
+      },
+      {
+        "id": "missile_test",
+        "name": "Missile test",
+        "score": 6
+      },
+      {
+        "id": "nuclear_activity",
+        "name": "Nuclear programme escalation",
+        "score": 8
+      },
+      {
+        "id": "hormuz_threat",
+        "name": "Hormuz threat",
+        "score": 7
+      },
+      {
+        "id": "supreme_leader_statement",
+        "name": "Supreme Leader escalation statement",
+        "score": 5
+      },
+      {
+        "id": "irgc_alert",
+        "name": "IRGC readiness increase",
+        "score": 8
+      },
+      {
+        "id": "military_exercise",
+        "name": "Large military exercise",
+        "score": 5
+      },
+      {
+        "id": "strike_preparation",
+        "name": "Preparation for military strike",
+        "score": 10
+      }
+    ],
+
+    "decrease_pressure": [
+
+      {
+        "id": "negotiation",
+        "name": "Negotiation",
+        "score": -6
+      },
+      {
+        "id": "iaea_cooperation",
+        "name": "IAEA cooperation",
+        "score": -5
+      },
+      {
+        "id": "proxy_restraint",
+        "name": "Proxy restraint",
+        "score": -7
+      },
+      {
+        "id": "de_escalation_statement",
+        "name": "Official de-escalation statement",
+        "score": -5
+      }
+    ]
+  }
+}
