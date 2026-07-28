@@ -1,0 +1,337 @@
+name: Generate Strategic Success
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-strategic-success:
+    name: Recalculate Strategic Success
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      # =========================================================
+      # 1. REPOSITORY
+      # =========================================================
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # =========================================================
+      # 2. PYTHON
+      # =========================================================
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python -m pip install --upgrade pip
+
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          fi
+
+      # =========================================================
+      # 3. INPUT VALIDATION
+      # =========================================================
+
+      - name: Verify required files
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          required_files=(
+            "docs/interest_achievement.json"
+            "src/generate_strategic_success.py"
+          )
+
+          for file in "${required_files[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "::error file=$file::Required file is missing: $file"
+              exit 1
+            fi
+
+            echo "Found: $file"
+          done
+
+      - name: Validate Interest Achievement input
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          input_path = Path("docs/interest_achievement.json")
+
+          with input_path.open("r", encoding="utf-8") as file:
+              data = json.load(file)
+
+          required_blocks = (
+              "metadata",
+              "current",
+              "history",
+              "history_summary",
+          )
+
+          missing_blocks = [
+              block
+              for block in required_blocks
+              if block not in data
+          ]
+
+          if missing_blocks:
+              raise SystemExit(
+                  "::error file=docs/interest_achievement.json::"
+                  f"Missing required blocks: {', '.join(missing_blocks)}"
+              )
+
+          current = data.get("current")
+          history = data.get("history")
+
+          if not isinstance(current, dict):
+              raise SystemExit(
+                  "::error file=docs/interest_achievement.json::"
+                  "The current block is invalid."
+              )
+
+          if not isinstance(history, list) or not history:
+              raise SystemExit(
+                  "::error file=docs/interest_achievement.json::"
+                  "The history[] array is missing or empty."
+              )
+
+          current_date = current.get("date", "unknown")
+          first_date = history[0].get("date", "unknown")
+          last_date = history[-1].get("date", "unknown")
+
+          print(f"Current date: {current_date}")
+          print(f"History records: {len(history)}")
+          print(f"History start: {first_date}")
+          print(f"History end: {last_date}")
+          PY
+
+      # =========================================================
+      # 4. SCRIPT VALIDATION
+      # =========================================================
+
+      - name: Validate Strategic Success script
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python -m py_compile src/generate_strategic_success.py
+
+      # =========================================================
+      # 5. GENERATION
+      # =========================================================
+
+      - name: Generate Strategic Success
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python src/generate_strategic_success.py \
+            --input docs/interest_achievement.json \
+            --output docs/strategic_success.json
+
+      # =========================================================
+      # 6. OUTPUT VALIDATION
+      # =========================================================
+
+      - name: Validate Strategic Success output
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          test -f docs/strategic_success.json
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          output_path = Path("docs/strategic_success.json")
+
+          with output_path.open("r", encoding="utf-8") as file:
+              data = json.load(file)
+
+          required_blocks = (
+              "metadata",
+              "current",
+              "history",
+              "history_summary",
+              "diagnostics",
+              "methodology",
+          )
+
+          missing_blocks = [
+              block
+              for block in required_blocks
+              if block not in data
+          ]
+
+          if missing_blocks:
+              raise SystemExit(
+                  "::error file=docs/strategic_success.json::"
+                  f"Missing required blocks: {', '.join(missing_blocks)}"
+              )
+
+          metadata = data.get("metadata", {})
+          current = data.get("current", {})
+          history = data.get("history")
+          history_summary = data.get("history_summary", {})
+          diagnostics = data.get("diagnostics", {})
+          counts = diagnostics.get("counts", {})
+
+          if not isinstance(history, list) or not history:
+              raise SystemExit(
+                  "::error file=docs/strategic_success.json::"
+                  "Generated history[] is empty or invalid."
+              )
+
+          actual_day_count = len(history)
+          metadata_day_count = metadata.get("history_day_count")
+          summary_day_count = history_summary.get("day_count")
+
+          if metadata_day_count != actual_day_count:
+              raise SystemExit(
+                  "::error file=docs/strategic_success.json::"
+                  "metadata.history_day_count does not match "
+                  "the actual history length."
+              )
+
+          if summary_day_count != actual_day_count:
+              raise SystemExit(
+                  "::error file=docs/strategic_success.json::"
+                  "history_summary.day_count does not match "
+                  "the actual history length."
+              )
+
+          summary = current.get("summary")
+
+          if not isinstance(summary, dict):
+              raise SystemExit(
+                  "::error file=docs/strategic_success.json::"
+                  "current.summary is missing or invalid."
+              )
+
+          required_summary_fields = (
+              "usa_success_index",
+              "iran_success_index",
+              "success_gap",
+              "strategic_balance",
+              "strategic_advantage",
+          )
+
+          missing_summary_fields = [
+              field
+              for field in required_summary_fields
+              if field not in summary
+          ]
+
+          if missing_summary_fields:
+              raise SystemExit(
+                  "::error file=docs/strategic_success.json::"
+                  "Missing current summary fields: "
+                  + ", ".join(missing_summary_fields)
+              )
+
+          print("")
+          print("Strategic Success generation completed")
+          print("--------------------------------------")
+          print(f"Current date: {current.get('date', 'unknown')}")
+          print(
+              "History range: "
+              f"{metadata.get('history_start_date', 'unknown')} "
+              "to "
+              f"{metadata.get('history_end_date', 'unknown')}"
+          )
+          print(f"History days: {actual_day_count}")
+          print(
+              "USA Strategic Success: "
+              f"{summary.get('usa_success_index')}"
+          )
+          print(
+              "Iran Strategic Success: "
+              f"{summary.get('iran_success_index')}"
+          )
+          print(
+              "Success gap: "
+              f"{summary.get('success_gap')}"
+          )
+          print(
+              "Strategic balance: "
+              f"{summary.get('strategic_balance')}"
+          )
+          print(
+              "Strategic advantage: "
+              f"{summary.get('strategic_advantage')}"
+          )
+          print(
+              "Excluded history records: "
+              f"{counts.get('excluded_history_records', 0)}"
+          )
+          print(
+              "Warnings: "
+              f"{counts.get('warnings', 0)}"
+          )
+          PY
+
+      # =========================================================
+      # 7. FILE INFORMATION
+      # =========================================================
+
+      - name: Show generated file information
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          ls -lh docs/strategic_success.json
+
+      # =========================================================
+      # 8. COMMIT
+      # =========================================================
+
+      - name: Commit generated file
+        id: commit
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add docs/strategic_success.json
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          git commit -m "Update Strategic Success"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      # =========================================================
+      # 9. PUSH
+      # =========================================================
+
+      - name: Push changes
+        if: steps.commit.outputs.changed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git push origin "HEAD:${GITHUB_REF_NAME}"
