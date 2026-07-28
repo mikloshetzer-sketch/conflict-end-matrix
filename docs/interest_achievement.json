@@ -1,93 +1,77 @@
 {
   "metadata": {
-    "model": "strategic_interest_achievement_v1",
-    "generated_at": "2026-07-28T12:36:06+00:00",
-    "reference_date": "",
+    "model": "strategic_interest_achievement_v2",
+    "generated_at": "2026-07-28T12:46:56+00:00",
+    "reference_date": "2026-07-27",
     "conflict": "United States-Iran",
-    "description": "Daily assessment of the degree to which current developments support or weaken the weighted long-term strategic interests of the United States and Iran.",
+    "description": "Daily assessment of the degree to which current developments support or weaken the weighted strategic interests of the United States and Iran.",
     "input_files": {
       "strategic_pressure": "docs/strategic_pressure.json",
       "strategic_interests": "data/strategic/strategic_interests.json",
       "interest_impact_map": "data/strategic/interest_impact_map.json"
     },
-    "pressure_model_version": "",
+    "pressure_model_version": "strategic_pressure_v1_2",
     "interests_model_version": "strategic_pressure_v1",
     "impact_map_version": "interest_impact_map_v1",
-    "warning_count": 1
+    "warning_count": 0
   },
   "summary": {
-    "usa_achievement_index": 50.0,
-    "iran_achievement_index": 50.0,
-    "achievement_gap": 0.0,
+    "usa_achievement_index": 53.21,
+    "iran_achievement_index": 53.17,
+    "achievement_gap": 0.04,
     "daily_strategic_advantage": "balanced",
-    "interpretation": "The achievement index measures whether detected daily developments support or weaken each actor's own weighted long-term interests. It does not measure military victory, legitimacy or forecast probability."
+    "interpretation": "The index measures whether the current day's detected developments support or weaken each actor's own weighted strategic interests. It does not directly measure military victory or conflict outcome."
   },
   "actors": {
     "usa": {
-      "achievement_index": 50.0,
-      "change_from_neutral": 0.0,
-      "trend": "stable",
+      "achievement_index": 53.21,
+      "change_from_neutral": 3.21,
+      "trend": "improving",
       "level": "balanced",
-      "raw_contribution": 0.0,
+      "raw_contribution": 492.0,
       "interest_count": 8,
-      "interests_with_evidence": 0,
+      "interests_with_evidence": 4,
       "strongest_interests": [
         {
           "id": "avoid_full_scale_war",
           "name": "Avoid full-scale regional war",
-          "achievement_index": 50.0,
-          "change_from_neutral": 0.0
+          "achievement_index": 62.0,
+          "change_from_neutral": 12.0
         },
         {
-          "id": "israel_security",
-          "name": "Israel security",
-          "achievement_index": 50.0,
-          "change_from_neutral": 0.0
+          "id": "nuclear_nonproliferation",
+          "name": "Prevent Iranian nuclear weapon capability",
+          "achievement_index": 55.4,
+          "change_from_neutral": 5.4
         },
         {
-          "id": "force_protection",
-          "name": "Protection of US forces",
-          "achievement_index": 50.0,
-          "change_from_neutral": 0.0
+          "id": "energy_security",
+          "name": "Global energy security",
+          "achievement_index": 54.2,
+          "change_from_neutral": 4.2
         }
       ],
       "weakest_interests": [
         {
-          "id": "avoid_full_scale_war",
-          "name": "Avoid full-scale regional war",
-          "achievement_index": 50.0,
-          "change_from_neutral": 0.0
-        },
-        {
           "id": "israel_security",
           "name": "Israel security",
           "achievement_index": 50.0,
           "change_from_neutral": 0.0
         },
         {
-          "id": "force_protection",
-          "name": "Protection of US forces",
+          "id": "freedom_of_navigation",
+          "name": "Freedom of navigation",
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0
+        },
+        {
+          "id": "regional_deterrence",
+          "name": "Regional deterrence",
           "achievement_index": 50.0,
           "change_from_neutral": 0.0
         }
       ],
       "interests": [
-        {
-          "id": "avoid_full_scale_war",
-          "name": "Avoid full-scale regional war",
-          "description": "Prevent uncontrolled regional escalation.",
-          "weight": 10.0,
-          "achievement_index": 50.0,
-          "change_from_neutral": 0.0,
-          "raw_contribution": 0,
-          "positive_contribution": 0,
-          "negative_contribution": 0,
-          "trend": "stable",
-          "level": "balanced",
-          "evidence_count": 0,
-          "top_evidence": [],
-          "evidence": []
-        },
         {
           "id": "israel_security",
           "name": "Israel security",
@@ -109,16 +93,52 @@
           "name": "Protection of US forces",
           "description": "Protect US military personnel, bases and regional assets.",
           "weight": 10.0,
-          "achievement_index": 50.0,
-          "change_from_neutral": 0.0,
-          "raw_contribution": 0,
-          "positive_contribution": 0,
-          "negative_contribution": 0,
-          "trend": "stable",
+          "achievement_index": 53.0,
+          "change_from_neutral": 3.0,
+          "raw_contribution": 60.0,
+          "positive_contribution": 60.0,
+          "negative_contribution": 0.0,
+          "trend": "improving",
           "level": "balanced",
-          "evidence_count": 0,
-          "top_evidence": [],
-          "evidence": []
+          "evidence_count": 1,
+          "top_evidence": [
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "usa",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 1.0,
+              "interest_weight": 10.0,
+              "raw_contribution": 60.0,
+              "rationale": "Reduced tension lowers the immediate threat to US forces.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            }
+          ],
+          "evidence": [
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "usa",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 1.0,
+              "interest_weight": 10.0,
+              "raw_contribution": 60.0,
+              "rationale": "Reduced tension lowers the immediate threat to US forces.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            }
+          ]
         },
         {
           "id": "freedom_of_navigation",
@@ -141,6 +161,92 @@
           "name": "Prevent Iranian nuclear weapon capability",
           "description": "Limit or delay Iran's military nuclear programme.",
           "weight": 9.0,
+          "achievement_index": 55.4,
+          "change_from_neutral": 5.4,
+          "raw_contribution": 108.0,
+          "positive_contribution": 108.0,
+          "negative_contribution": 0.0,
+          "trend": "improving",
+          "level": "moderately_positive",
+          "evidence_count": 2,
+          "top_evidence": [
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "usa",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 1.0,
+              "interest_weight": 9.0,
+              "raw_contribution": 54.0,
+              "rationale": "Diplomacy may produce limits, inspections or delays affecting Iran's nuclear programme.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            },
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "iran",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 1.0,
+              "interest_weight": 9.0,
+              "raw_contribution": 54.0,
+              "rationale": "Diplomatic agreements may constrain or monitor Iran's nuclear programme.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            }
+          ],
+          "evidence": [
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "usa",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 1.0,
+              "interest_weight": 9.0,
+              "raw_contribution": 54.0,
+              "rationale": "Diplomacy may produce limits, inspections or delays affecting Iran's nuclear programme.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            },
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "iran",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 1.0,
+              "interest_weight": 9.0,
+              "raw_contribution": 54.0,
+              "rationale": "Diplomatic agreements may constrain or monitor Iran's nuclear programme.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            }
+          ]
+        },
+        {
+          "id": "regional_deterrence",
+          "name": "Regional deterrence",
+          "description": "Maintain credible military deterrence against Iran and its proxies.",
+          "weight": 8.0,
           "achievement_index": 50.0,
           "change_from_neutral": 0.0,
           "raw_contribution": 0,
@@ -169,119 +275,313 @@
           "evidence": []
         },
         {
-          "id": "regional_deterrence",
-          "name": "Regional deterrence",
-          "description": "Maintain credible military deterrence against Iran and its proxies.",
-          "weight": 8.0,
-          "achievement_index": 50.0,
-          "change_from_neutral": 0.0,
-          "raw_contribution": 0,
-          "positive_contribution": 0,
-          "negative_contribution": 0,
-          "trend": "stable",
-          "level": "balanced",
-          "evidence_count": 0,
-          "top_evidence": [],
-          "evidence": []
-        },
-        {
           "id": "energy_security",
           "name": "Global energy security",
           "description": "Reduce disruption to global energy markets.",
           "weight": 7.0,
-          "achievement_index": 50.0,
-          "change_from_neutral": 0.0,
-          "raw_contribution": 0,
-          "positive_contribution": 0,
-          "negative_contribution": 0,
-          "trend": "stable",
+          "achievement_index": 54.2,
+          "change_from_neutral": 4.2,
+          "raw_contribution": 84.0,
+          "positive_contribution": 84.0,
+          "negative_contribution": 0.0,
+          "trend": "improving",
           "level": "balanced",
-          "evidence_count": 0,
-          "top_evidence": [],
-          "evidence": []
+          "evidence_count": 2,
+          "top_evidence": [
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "usa",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 1.0,
+              "interest_weight": 7.0,
+              "raw_contribution": 42.0,
+              "rationale": "Diplomatic engagement reduces the likelihood of major energy disruption.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            },
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "iran",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 1.0,
+              "interest_weight": 7.0,
+              "raw_contribution": 42.0,
+              "rationale": "Lower tension supports energy-market stability.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            }
+          ],
+          "evidence": [
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "usa",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 1.0,
+              "interest_weight": 7.0,
+              "raw_contribution": 42.0,
+              "rationale": "Diplomatic engagement reduces the likelihood of major energy disruption.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            },
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "iran",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 1.0,
+              "interest_weight": 7.0,
+              "raw_contribution": 42.0,
+              "rationale": "Lower tension supports energy-market stability.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            }
+          ]
+        },
+        {
+          "id": "avoid_full_scale_war",
+          "name": "Avoid full-scale regional war",
+          "description": "Prevent uncontrolled regional escalation.",
+          "weight": 10.0,
+          "achievement_index": 62.0,
+          "change_from_neutral": 12.0,
+          "raw_contribution": 240.0,
+          "positive_contribution": 240.0,
+          "negative_contribution": 0.0,
+          "trend": "improving",
+          "level": "moderately_positive",
+          "evidence_count": 2,
+          "top_evidence": [
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "usa",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 2.0,
+              "interest_weight": 10.0,
+              "raw_contribution": 120.0,
+              "rationale": "Negotiations reduce immediate escalation risk and preserve diplomatic options.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            },
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "iran",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 2.0,
+              "interest_weight": 10.0,
+              "raw_contribution": 120.0,
+              "rationale": "Negotiations support conflict containment.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            }
+          ],
+          "evidence": [
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "usa",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 2.0,
+              "interest_weight": 10.0,
+              "raw_contribution": 120.0,
+              "rationale": "Negotiations reduce immediate escalation risk and preserve diplomatic options.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            },
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "iran",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 2.0,
+              "interest_weight": 10.0,
+              "raw_contribution": 120.0,
+              "rationale": "Negotiations support conflict containment.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            }
+          ]
         }
       ]
     },
     "iran": {
-      "achievement_index": 50.0,
-      "change_from_neutral": 0.0,
-      "trend": "stable",
+      "achievement_index": 53.17,
+      "change_from_neutral": 3.17,
+      "trend": "improving",
       "level": "balanced",
-      "raw_contribution": 0.0,
+      "raw_contribution": 468.0,
       "interest_count": 8,
-      "interests_with_evidence": 0,
+      "interests_with_evidence": 3,
       "strongest_interests": [
         {
           "id": "avoid_regime_destroying_war",
           "name": "Avoid regime-destroying war",
-          "achievement_index": 50.0,
-          "change_from_neutral": 0.0
+          "achievement_index": 62.0,
+          "change_from_neutral": 12.0
         },
         {
           "id": "regime_survival",
           "name": "Regime survival",
-          "achievement_index": 50.0,
-          "change_from_neutral": 0.0
+          "achievement_index": 56.0,
+          "change_from_neutral": 6.0
         },
         {
-          "id": "strategic_deterrence",
-          "name": "Strategic deterrence",
-          "achievement_index": 50.0,
-          "change_from_neutral": 0.0
+          "id": "nuclear_programme",
+          "name": "Preserve nuclear programme",
+          "achievement_index": 55.4,
+          "change_from_neutral": 5.4
         }
       ],
       "weakest_interests": [
         {
-          "id": "avoid_regime_destroying_war",
-          "name": "Avoid regime-destroying war",
-          "achievement_index": 50.0,
-          "change_from_neutral": 0.0
-        },
-        {
-          "id": "regime_survival",
-          "name": "Regime survival",
-          "achievement_index": 50.0,
-          "change_from_neutral": 0.0
-        },
-        {
           "id": "strategic_deterrence",
           "name": "Strategic deterrence",
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0
+        },
+        {
+          "id": "missile_capability",
+          "name": "Missile capability",
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0
+        },
+        {
+          "id": "proxy_network",
+          "name": "Regional proxy network",
           "achievement_index": 50.0,
           "change_from_neutral": 0.0
         }
       ],
       "interests": [
         {
-          "id": "avoid_regime_destroying_war",
-          "name": "Avoid regime-destroying war",
-          "description": "Avoid military escalation threatening state survival.",
-          "weight": 10.0,
-          "achievement_index": 50.0,
-          "change_from_neutral": 0.0,
-          "raw_contribution": 0,
-          "positive_contribution": 0,
-          "negative_contribution": 0,
-          "trend": "stable",
-          "level": "balanced",
-          "evidence_count": 0,
-          "top_evidence": [],
-          "evidence": []
-        },
-        {
           "id": "regime_survival",
           "name": "Regime survival",
           "description": "Ensure survival and stability of the Islamic Republic.",
           "weight": 10.0,
-          "achievement_index": 50.0,
-          "change_from_neutral": 0.0,
-          "raw_contribution": 0,
-          "positive_contribution": 0,
-          "negative_contribution": 0,
-          "trend": "stable",
-          "level": "balanced",
-          "evidence_count": 0,
-          "top_evidence": [],
-          "evidence": []
+          "achievement_index": 56.0,
+          "change_from_neutral": 6.0,
+          "raw_contribution": 120.0,
+          "positive_contribution": 120.0,
+          "negative_contribution": 0.0,
+          "trend": "improving",
+          "level": "moderately_positive",
+          "evidence_count": 2,
+          "top_evidence": [
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "usa",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 1.0,
+              "interest_weight": 10.0,
+              "raw_contribution": 60.0,
+              "rationale": "Negotiations lower the immediate military threat to the Iranian state.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            },
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "iran",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 1.0,
+              "interest_weight": 10.0,
+              "raw_contribution": 60.0,
+              "rationale": "Negotiations reduce immediate pressure on the Iranian state.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            }
+          ],
+          "evidence": [
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "usa",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 1.0,
+              "interest_weight": 10.0,
+              "raw_contribution": 60.0,
+              "rationale": "Negotiations lower the immediate military threat to the Iranian state.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            },
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "iran",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 1.0,
+              "interest_weight": 10.0,
+              "raw_contribution": 60.0,
+              "rationale": "Negotiations reduce immediate pressure on the Iranian state.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            }
+          ]
         },
         {
           "id": "strategic_deterrence",
@@ -300,6 +600,92 @@
           "evidence": []
         },
         {
+          "id": "nuclear_programme",
+          "name": "Preserve nuclear programme",
+          "description": "Protect strategic nuclear infrastructure and capabilities.",
+          "weight": 9.0,
+          "achievement_index": 55.4,
+          "change_from_neutral": 5.4,
+          "raw_contribution": 108.0,
+          "positive_contribution": 108.0,
+          "negative_contribution": 0.0,
+          "trend": "improving",
+          "level": "moderately_positive",
+          "evidence_count": 2,
+          "top_evidence": [
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "usa",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 1.0,
+              "interest_weight": 9.0,
+              "raw_contribution": 54.0,
+              "rationale": "Negotiations may allow Iran to preserve part of its nuclear infrastructure under agreed restrictions.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            },
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "iran",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 1.0,
+              "interest_weight": 9.0,
+              "raw_contribution": 54.0,
+              "rationale": "Negotiations may allow Iran to preserve controlled nuclear capabilities.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            }
+          ],
+          "evidence": [
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "usa",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 1.0,
+              "interest_weight": 9.0,
+              "raw_contribution": 54.0,
+              "rationale": "Negotiations may allow Iran to preserve part of its nuclear infrastructure under agreed restrictions.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            },
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "iran",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 1.0,
+              "interest_weight": 9.0,
+              "raw_contribution": 54.0,
+              "rationale": "Negotiations may allow Iran to preserve controlled nuclear capabilities.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            }
+          ]
+        },
+        {
           "id": "missile_capability",
           "name": "Missile capability",
           "description": "Maintain and develop long-range missile forces.",
@@ -316,25 +702,9 @@
           "evidence": []
         },
         {
-          "id": "nuclear_programme",
-          "name": "Preserve nuclear programme",
-          "description": "Protect strategic nuclear infrastructure and capabilities.",
-          "weight": 9.0,
-          "achievement_index": 50.0,
-          "change_from_neutral": 0.0,
-          "raw_contribution": 0,
-          "positive_contribution": 0,
-          "negative_contribution": 0,
-          "trend": "stable",
-          "level": "balanced",
-          "evidence_count": 0,
-          "top_evidence": [],
-          "evidence": []
-        },
-        {
-          "id": "hormuz_leverage",
-          "name": "Hormuz leverage",
-          "description": "Retain the ability to influence maritime traffic through the Strait of Hormuz.",
+          "id": "proxy_network",
+          "name": "Regional proxy network",
+          "description": "Maintain influence through regional partner organisations.",
           "weight": 8.0,
           "achievement_index": 50.0,
           "change_from_neutral": 0.0,
@@ -364,9 +734,9 @@
           "evidence": []
         },
         {
-          "id": "proxy_network",
-          "name": "Regional proxy network",
-          "description": "Maintain influence through regional partner organisations.",
+          "id": "hormuz_leverage",
+          "name": "Hormuz leverage",
+          "description": "Retain the ability to influence maritime traffic through the Strait of Hormuz.",
           "weight": 8.0,
           "achievement_index": 50.0,
           "change_from_neutral": 0.0,
@@ -378,11 +748,330 @@
           "evidence_count": 0,
           "top_evidence": [],
           "evidence": []
+        },
+        {
+          "id": "avoid_regime_destroying_war",
+          "name": "Avoid regime-destroying war",
+          "description": "Avoid military escalation threatening state survival.",
+          "weight": 10.0,
+          "achievement_index": 62.0,
+          "change_from_neutral": 12.0,
+          "raw_contribution": 240.0,
+          "positive_contribution": 240.0,
+          "negative_contribution": 0.0,
+          "trend": "improving",
+          "level": "moderately_positive",
+          "evidence_count": 2,
+          "top_evidence": [
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "usa",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 2.0,
+              "interest_weight": 10.0,
+              "raw_contribution": 120.0,
+              "rationale": "Diplomatic engagement directly reduces the probability of a regime-threatening war.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            },
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "iran",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 2.0,
+              "interest_weight": 10.0,
+              "raw_contribution": 120.0,
+              "rationale": "Diplomacy lowers the likelihood of a war threatening regime survival.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            }
+          ],
+          "evidence": [
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "usa",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 2.0,
+              "interest_weight": 10.0,
+              "raw_contribution": 120.0,
+              "rationale": "Diplomatic engagement directly reduces the probability of a regime-threatening war.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            },
+            {
+              "event_id": "INFO-000002",
+              "date": "2026-07-27",
+              "source_actor": "iran",
+              "indicator": "negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "effect": 2.0,
+              "interest_weight": 10.0,
+              "raw_contribution": 120.0,
+              "rationale": "Diplomacy lowers the likelihood of a war threatening regime survival.",
+              "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+              "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+              "source": "\"iran israel usa war when:7d\" - Google News",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5"
+            }
+          ]
         }
       ]
     }
   },
-  "processed_evidence": [],
+  "processed_evidence": [
+    {
+      "event_id": "INFO-000002",
+      "timestamp": "2026-07-27T21:10:56+00:00",
+      "date": "2026-07-27",
+      "source_actor": "usa",
+      "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+      "event_type": "diplomatic",
+      "event_direction": "mixed",
+      "source_layer": "non_kinetic",
+      "final_score": -6.0,
+      "original_final_score": -6.0,
+      "operational_component": 0.0,
+      "strategic_modifier": -6.0,
+      "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5",
+      "daily_score_suppressed": false,
+      "suppression_reason": "",
+      "mapped_indicators": [
+        {
+          "indicator": "negotiation",
+          "indicator_name": "Negotiation",
+          "pressure_direction": "decrease_pressure",
+          "indicator_score": -6.0,
+          "indicator_strength": 6.0,
+          "mapped_impacts": [
+            {
+              "target_actor": "usa",
+              "interest_id": "avoid_full_scale_war",
+              "effect": 2.0,
+              "interest_weight": 10.0,
+              "raw_contribution": 120.0,
+              "rationale": "Negotiations reduce immediate escalation risk and preserve diplomatic options."
+            },
+            {
+              "target_actor": "usa",
+              "interest_id": "nuclear_nonproliferation",
+              "effect": 1.0,
+              "interest_weight": 9.0,
+              "raw_contribution": 54.0,
+              "rationale": "Diplomacy may produce limits, inspections or delays affecting Iran's nuclear programme."
+            },
+            {
+              "target_actor": "usa",
+              "interest_id": "force_protection",
+              "effect": 1.0,
+              "interest_weight": 10.0,
+              "raw_contribution": 60.0,
+              "rationale": "Reduced tension lowers the immediate threat to US forces."
+            },
+            {
+              "target_actor": "usa",
+              "interest_id": "energy_security",
+              "effect": 1.0,
+              "interest_weight": 7.0,
+              "raw_contribution": 42.0,
+              "rationale": "Diplomatic engagement reduces the likelihood of major energy disruption."
+            },
+            {
+              "target_actor": "iran",
+              "interest_id": "regime_survival",
+              "effect": 1.0,
+              "interest_weight": 10.0,
+              "raw_contribution": 60.0,
+              "rationale": "Negotiations lower the immediate military threat to the Iranian state."
+            },
+            {
+              "target_actor": "iran",
+              "interest_id": "avoid_regime_destroying_war",
+              "effect": 2.0,
+              "interest_weight": 10.0,
+              "raw_contribution": 120.0,
+              "rationale": "Diplomatic engagement directly reduces the probability of a regime-threatening war."
+            },
+            {
+              "target_actor": "iran",
+              "interest_id": "nuclear_programme",
+              "effect": 1.0,
+              "interest_weight": 9.0,
+              "raw_contribution": 54.0,
+              "rationale": "Negotiations may allow Iran to preserve part of its nuclear infrastructure under agreed restrictions."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": "INFO-000002",
+      "timestamp": "2026-07-27T21:10:56+00:00",
+      "date": "2026-07-27",
+      "source_actor": "iran",
+      "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+      "event_type": "diplomatic",
+      "event_direction": "mixed",
+      "source_layer": "non_kinetic",
+      "final_score": -6.0,
+      "original_final_score": -6.0,
+      "operational_component": 0.0,
+      "strategic_modifier": -6.0,
+      "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5",
+      "daily_score_suppressed": false,
+      "suppression_reason": "",
+      "mapped_indicators": [
+        {
+          "indicator": "negotiation",
+          "indicator_name": "Negotiation",
+          "pressure_direction": "decrease_pressure",
+          "indicator_score": -6.0,
+          "indicator_strength": 6.0,
+          "mapped_impacts": [
+            {
+              "target_actor": "iran",
+              "interest_id": "regime_survival",
+              "effect": 1.0,
+              "interest_weight": 10.0,
+              "raw_contribution": 60.0,
+              "rationale": "Negotiations reduce immediate pressure on the Iranian state."
+            },
+            {
+              "target_actor": "iran",
+              "interest_id": "avoid_regime_destroying_war",
+              "effect": 2.0,
+              "interest_weight": 10.0,
+              "raw_contribution": 120.0,
+              "rationale": "Diplomacy lowers the likelihood of a war threatening regime survival."
+            },
+            {
+              "target_actor": "iran",
+              "interest_id": "nuclear_programme",
+              "effect": 1.0,
+              "interest_weight": 9.0,
+              "raw_contribution": 54.0,
+              "rationale": "Negotiations may allow Iran to preserve controlled nuclear capabilities."
+            },
+            {
+              "target_actor": "usa",
+              "interest_id": "avoid_full_scale_war",
+              "effect": 2.0,
+              "interest_weight": 10.0,
+              "raw_contribution": 120.0,
+              "rationale": "Negotiations support conflict containment."
+            },
+            {
+              "target_actor": "usa",
+              "interest_id": "nuclear_nonproliferation",
+              "effect": 1.0,
+              "interest_weight": 9.0,
+              "raw_contribution": 54.0,
+              "rationale": "Diplomatic agreements may constrain or monitor Iran's nuclear programme."
+            },
+            {
+              "target_actor": "usa",
+              "interest_id": "energy_security",
+              "effect": 1.0,
+              "interest_weight": 7.0,
+              "raw_contribution": 42.0,
+              "rationale": "Lower tension supports energy-market stability."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "suppressed_evidence": [
+    {
+      "event_id": "INFO-000004",
+      "timestamp": "2026-07-27T03:54:44+00:00",
+      "date": "2026-07-27",
+      "source_actor": "usa",
+      "title": "Khamenei ties US-Iran peace deal to Israel ending attacks on Lebanon - Al Jazeera",
+      "event_type": "ceasefire",
+      "event_direction": "mixed",
+      "source_layer": "non_kinetic",
+      "final_score": 0.0,
+      "original_final_score": -6.0,
+      "operational_component": 0.0,
+      "strategic_modifier": -6.0,
+      "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Khamenei ties US-Iran peace deal to Israel ending attacks on Lebanon - Al Jazeera",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdlZIaGtLT0ItbHVjQ0xEWFoyU2I5anhKZHp2QlZhVW1kWTRuOXRBMy1uQlc3a29vTVRTT21vMXZ3dTQ3UTkyVFZSNElnNzQ2VjZDWERjSEQ2bTFDOUpGMkVsOEozVkN0Nm9TVVphV1U5Yll1UEx1cXRsWFBKLU1xMUl1T2lUX3NqVkI1dXBaY2k3cWJiRmRRdkdQVTRacU5hTExkbndBWHQ0VGfSAbABQVVfeXFMUEVoS2VuR3pBZ1YyVzlYTTIyU0Z4eGFfSEhGd2Y0M3lMQ3ZUUFFndDVZUHh5cGhYRUU5enpINl9ha3FHclJuc3dVSkRFWXdFSXNuZjVoZU9qV0FMYjRYcjZIenBFLWRIczhIeEVIalFqLUNjR0Rscm5wMGlramFQZGJXZWRSVDdtcW9la2xxZEhlSGFvRmlYdTVybDY2MTI4Q2tLTmc4TG12TmtyczlZejM?oc=5",
+      "daily_score_suppressed": true,
+      "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+      "indicators": [
+        "negotiation"
+      ]
+    },
+    {
+      "event_id": "INFO-000004",
+      "timestamp": "2026-07-27T03:54:44+00:00",
+      "date": "2026-07-27",
+      "source_actor": "iran",
+      "title": "Khamenei ties US-Iran peace deal to Israel ending attacks on Lebanon - Al Jazeera",
+      "event_type": "ceasefire",
+      "event_direction": "mixed",
+      "source_layer": "non_kinetic",
+      "final_score": 0.0,
+      "original_final_score": -6.0,
+      "operational_component": 0.0,
+      "strategic_modifier": -6.0,
+      "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Khamenei ties US-Iran peace deal to Israel ending attacks on Lebanon - Al Jazeera",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdlZIaGtLT0ItbHVjQ0xEWFoyU2I5anhKZHp2QlZhVW1kWTRuOXRBMy1uQlc3a29vTVRTT21vMXZ3dTQ3UTkyVFZSNElnNzQ2VjZDWERjSEQ2bTFDOUpGMkVsOEozVkN0Nm9TVVphV1U5Yll1UEx1cXRsWFBKLU1xMUl1T2lUX3NqVkI1dXBaY2k3cWJiRmRRdkdQVTRacU5hTExkbndBWHQ0VGfSAbABQVVfeXFMUEVoS2VuR3pBZ1YyVzlYTTIyU0Z4eGFfSEhGd2Y0M3lMQ3ZUUFFndDVZUHh5cGhYRUU5enpINl9ha3FHclJuc3dVSkRFWXdFSXNuZjVoZU9qV0FMYjRYcjZIenBFLWRIczhIeEVIalFqLUNjR0Rscm5wMGlramFQZGJXZWRSVDdtcW9la2xxZEhlSGFvRmlYdTVybDY2MTI4Q2tLTmc4TG12TmtyczlZejM?oc=5",
+      "daily_score_suppressed": true,
+      "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+      "indicators": [
+        "negotiation"
+      ]
+    },
+    {
+      "event_id": "INFO-000003",
+      "timestamp": "2026-07-27T07:13:00+00:00",
+      "date": "2026-07-27",
+      "source_actor": "iran",
+      "title": "U.S. pauses Iran strikes for second straight night as talks move in positive direction - CBS News",
+      "event_type": "ceasefire",
+      "event_direction": "mixed",
+      "source_layer": "non_kinetic",
+      "final_score": 0.0,
+      "original_final_score": -6.0,
+      "operational_component": 0.0,
+      "strategic_modifier": -6.0,
+      "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: U.S. pauses Iran strikes for second straight night as talks move in positive direction - CBS News",
+      "source": "\"middle east conflict when:7d\" - Google News",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPX3lNZnhiOVFueGNzd0dnbGM3V0d5emVUZTZhaXRRNmVpXzhVaVNRcVlWQ29XcGZDUnkwM0hhN1BYRmhnWEZhQlhFU1ItX0x6R3k3enA3VC00LVpKQi1xMWJPeXJ3VmQ5WDRhbzIzLWZ3MUgwS25ScHZOOXRnWmxWMzFacTlvRWNC?oc=5",
+      "daily_score_suppressed": true,
+      "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+      "indicators": [
+        "negotiation"
+      ]
+    }
+  ],
   "unmapped_evidence": [],
   "calculation": {
     "neutral_score": 50.0,
@@ -390,21 +1079,20 @@
     "maximum_score": 100.0,
     "normalisation_divisor": 20.0,
     "indicator_strength_cap": 20.0,
-    "formula": "raw_contribution = absolute_indicator_strength × mapped_interest_effect × interest_weight; interest_index = clamp(50 + raw_contribution / normalisation_divisor, 0, 100); actor_index = interest-weighted mean of interest indices"
+    "formula": "raw_contribution = absolute_indicator_score × mapped_interest_effect × interest_weight; interest_index = clamp(50 + raw_contribution / normalisation_divisor, 0, 100); actor_index = interest-weighted mean of the actor's interest indices"
   },
-  "warnings": [
-    "No Strategic Pressure evidence objects were detected. All interest scores remain neutral."
-  ],
+  "warnings": [],
   "methodology": {
-    "scope": "The model evaluates daily changes against static, weighted long-term national interests.",
-    "baseline": "A score of 50 represents a neutral daily position with no detected supporting or weakening evidence.",
-    "positive_score": "A score above 50 means the day's detected developments support the actor's weighted strategic interests overall.",
-    "negative_score": "A score below 50 means the day's detected developments weaken the actor's weighted strategic interests overall.",
+    "source_scope": "Only non-suppressed contributors from the current Strategic Pressure assessment are included.",
+    "duplicate_policy": "Contributors with daily_score_suppressed=true or a zero final score caused by daily deduplication do not affect the achievement index.",
+    "baseline": "A score of 50 represents a neutral position with no supporting or weakening mapped evidence.",
+    "positive_score": "A score above 50 indicates that the current developments support the actor's weighted strategic interests overall.",
+    "negative_score": "A score below 50 indicates that the current developments weaken the actor's weighted strategic interests overall.",
     "limitations": [
-      "The result depends on the completeness and accuracy of the Strategic Pressure evidence.",
-      "Impact mappings are analytical judgements and should be reviewed when strategic conditions change.",
-      "The index measures interest alignment, not battlefield victory or final conflict outcome.",
-      "The current version is a daily assessment and does not yet calculate historical trend against previous output files."
+      "The result depends on the completeness of Strategic Pressure evidence.",
+      "Indicator-to-interest effects are analytical judgements.",
+      "The index measures strategic interest alignment, not military victory or legitimacy.",
+      "The current version evaluates the latest complete UTC day and does not yet calculate a historical achievement trend."
     ]
   }
 }
