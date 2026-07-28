@@ -5,57 +5,297 @@ on:
 
 jobs:
   generate-interest-achievement:
+    name: Recalculate Interest Achievement
     runs-on: ubuntu-latest
 
     permissions:
       contents: write
 
     steps:
+      # =========================================================
+      # 1. REPOSITORY
+      # =========================================================
+
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      # =========================================================
+      # 2. PYTHON
+      # =========================================================
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: "pip"
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
 
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          fi
+
+      # =========================================================
+      # 3. INPUT VALIDATION
+      # =========================================================
+
       - name: Verify required files
+        shell: bash
         run: |
-          test -f docs/strategic_pressure.json
-          test -f data/strategic/strategic_interests.json
-          test -f data/strategic/interest_impact_map.json
-          test -f src/generate_interest_achievement.py
+          set -euo pipefail
 
-      - name: Generate Interest Achievement
-        run: |
-          python src/generate_interest_achievement.py
+          required_files=(
+            "docs/strategic_pressure.json"
+            "docs/strategic_pressure_history.json"
+            "data/strategic/strategic_interests.json"
+            "data/strategic/interest_impact_map.json"
+            "src/generate_interest_achievement.py"
+          )
 
-      - name: Show generated file
-        run: |
-          ls -lh docs/
-          cat docs/interest_achievement.json
+          for file in "${required_files[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "::error file=$file::Required file is missing: $file"
+              exit 1
+            fi
 
-      - name: Commit generated files
+            echo "Found: $file"
+          done
+
+      # =========================================================
+      # 4. INPUT STRUCTURE CHECK
+      # =========================================================
+
+      - name: Validate Strategic Pressure history
+        shell: bash
         run: |
+          set -euo pipefail
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          current_path = Path("docs/strategic_pressure.json")
+          history_path = Path("docs/strategic_pressure_history.json")
+
+          with current_path.open("r", encoding="utf-8") as file:
+              current_data = json.load(file)
+
+          with history_path.open("r", encoding="utf-8") as file:
+              history_data = json.load(file)
+
+          days = history_data.get("days")
+
+          if not isinstance(days, list):
+              raise SystemExit(
+                  "::error file=docs/strategic_pressure_history.json::"
+                  "The history file does not contain a valid days[] array."
+              )
+
+          if not days:
+              raise SystemExit(
+                  "::error file=docs/strategic_pressure_history.json::"
+                  "The history days[] array is empty."
+              )
+
+          valid_dates = [
+              str(day.get("date", "")).strip()
+              for day in days
+              if isinstance(day, dict) and day.get("date")
+          ]
+
+          if not valid_dates:
+              raise SystemExit(
+                  "::error file=docs/strategic_pressure_history.json::"
+                  "No valid dated records were found in days[]."
+              )
+
+          current_node = current_data.get("current", current_data)
+
+          if not isinstance(current_node, dict):
+              raise SystemExit(
+                  "::error file=docs/strategic_pressure.json::"
+                  "The current Strategic Pressure structure is invalid."
+              )
+
+          current_date = (
+              current_node.get("date")
+              or current_data.get("latest_complete_utc_day")
+              or "unknown"
+          )
+
+          print(f"Current reference date: {current_date}")
+          print(f"History records: {len(days)}")
+          print(f"History start: {min(valid_dates)}")
+          print(f"History end: {max(valid_dates)}")
+          PY
+
+      # =========================================================
+      # 5. SCRIPT VALIDATION
+      # =========================================================
+
+      - name: Validate Python script
+        run: |
+          python -m py_compile src/generate_interest_achievement.py
+
+      # =========================================================
+      # 6. FULL RECALCULATION
+      # =========================================================
+
+      - name: Generate full Interest Achievement dataset
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python src/generate_interest_achievement.py \
+            --pressure docs/strategic_pressure.json \
+            --pressure-history docs/strategic_pressure_history.json \
+            --interests data/strategic/strategic_interests.json \
+            --impact-map data/strategic/interest_impact_map.json \
+            --output docs/interest_achievement.json
+
+      # =========================================================
+      # 7. OUTPUT VALIDATION
+      # =========================================================
+
+      - name: Validate generated Interest Achievement
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          test -f docs/interest_achievement.json
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          output_path = Path("docs/interest_achievement.json")
+
+          with output_path.open("r", encoding="utf-8") as file:
+              data = json.load(file)
+
+          required_blocks = (
+              "metadata",
+              "current",
+              "history",
+              "history_summary",
+              "diagnostics",
+          )
+
+          missing_blocks = [
+              block
+              for block in required_blocks
+              if block not in data
+          ]
+
+          if missing_blocks:
+              raise SystemExit(
+                  "::error file=docs/interest_achievement.json::"
+                  f"Missing required blocks: {', '.join(missing_blocks)}"
+              )
+
+          history = data.get("history")
+
+          if not isinstance(history, list) or not history:
+              raise SystemExit(
+                  "::error file=docs/interest_achievement.json::"
+                  "Generated history is empty or invalid."
+              )
+
+          metadata = data.get("metadata", {})
+          history_summary = data.get("history_summary", {})
+          current = data.get("current", {})
+          diagnostics = data.get("diagnostics", {})
+          counts = diagnostics.get("counts", {})
+
+          metadata_day_count = metadata.get("history_day_count")
+          summary_day_count = history_summary.get("day_count")
+          actual_day_count = len(history)
+
+          if metadata_day_count != actual_day_count:
+              raise SystemExit(
+                  "::error file=docs/interest_achievement.json::"
+                  "metadata.history_day_count does not match "
+                  "the generated history length."
+              )
+
+          if summary_day_count != actual_day_count:
+              raise SystemExit(
+                  "::error file=docs/interest_achievement.json::"
+                  "history_summary.day_count does not match "
+                  "the generated history length."
+              )
+
+          print("")
+          print("Interest Achievement generation completed")
+          print("-----------------------------------------")
+          print(f"Current date: {current.get('date', 'unknown')}")
+          print(
+              "History range: "
+              f"{metadata.get('history_start_date', 'unknown')} "
+              "to "
+              f"{metadata.get('history_end_date', 'unknown')}"
+          )
+          print(f"History days: {actual_day_count}")
+          print(
+              "Suppressed evidence: "
+              f"{counts.get('suppressed_evidence', 0)}"
+          )
+          print(
+              "Bilateral duplicates: "
+              f"{counts.get('bilateral_duplicates', 0)}"
+          )
+          print(
+              "Unmapped indicators: "
+              f"{counts.get('unmapped_indicators', 0)}"
+          )
+          print(f"Warnings: {counts.get('warnings', 0)}")
+          PY
+
+      # =========================================================
+      # 8. GENERATED FILE INFORMATION
+      # =========================================================
+
+      - name: Show generated file information
+        run: |
+          ls -lh docs/interest_achievement.json
+
+      # =========================================================
+      # 9. COMMIT
+      # =========================================================
+
+      - name: Commit generated file
+        id: commit
+        shell: bash
+        run: |
+          set -euo pipefail
+
           git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add docs/interest_achievement.json
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
           git commit -m "Update Strategic Interest Achievement"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      # =========================================================
+      # 10. PUSH
+      # =========================================================
 
       - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+        if: steps.commit.outputs.changed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git push origin "HEAD:${GITHUB_REF_NAME}"
