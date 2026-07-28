@@ -1,0 +1,1241 @@
+{
+  "metadata": {
+    "version": "interest_impact_map_v1",
+    "last_updated": "2026-07-28",
+    "description": "Maps Strategic Pressure indicators to their estimated effects on long-term US and Iranian strategic interests.",
+    "effect_scale": {
+      "2": "Strong positive effect",
+      "1": "Moderate positive effect",
+      "0": "No direct effect",
+      "-1": "Moderate negative effect",
+      "-2": "Strong negative effect"
+    },
+    "methodological_note": "Effects represent analytical estimates of the likely short- to medium-term strategic consequences of each indicator. Positive pressure generation does not automatically mean positive strategic interest achievement."
+  },
+
+  "indicator_impacts": {
+    "usa": {
+      "increase_pressure": {
+        "carrier_deployment": {
+          "indicator_name": "Carrier Strike Group deployment",
+          "impacts": [
+            {
+              "actor": "usa",
+              "interest_id": "force_protection",
+              "effect": 2,
+              "rationale": "A carrier strike group expands regional defensive and retaliatory capabilities."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "regional_deterrence",
+              "effect": 2,
+              "rationale": "Visible naval power strengthens the credibility of US deterrence."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "regional_partners",
+              "effect": 1,
+              "rationale": "The deployment reassures regional partners and improves rapid-response capacity."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "freedom_of_navigation",
+              "effect": 1,
+              "rationale": "Additional naval forces can help protect maritime traffic and strategic sea routes."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "avoid_full_scale_war",
+              "effect": -1,
+              "rationale": "A major deployment may increase escalation pressure and the risk of miscalculation."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "strategic_deterrence",
+              "effect": -1,
+              "rationale": "A carrier deployment increases the military threat facing Iran."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "avoid_regime_destroying_war",
+              "effect": -1,
+              "rationale": "The deployment increases the possibility of a large-scale US strike."
+            }
+          ]
+        },
+
+        "bomber_deployment": {
+          "indicator_name": "Strategic bomber deployment",
+          "impacts": [
+            {
+              "actor": "usa",
+              "interest_id": "regional_deterrence",
+              "effect": 2,
+              "rationale": "Strategic bombers demonstrate the ability to conduct long-range, high-impact strikes."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "nuclear_nonproliferation",
+              "effect": 1,
+              "rationale": "Bomber deployment supports the credibility of military options against nuclear infrastructure."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "force_protection",
+              "effect": 1,
+              "rationale": "Long-range strike capability can deter attacks against US forces."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "avoid_full_scale_war",
+              "effect": -2,
+              "rationale": "Strategic bomber deployment creates a strong perception of imminent escalation."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "nuclear_programme",
+              "effect": -2,
+              "rationale": "Strategic bombers pose a direct threat to hardened nuclear facilities."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "regime_survival",
+              "effect": -1,
+              "rationale": "The deployment increases the perceived threat to strategic state infrastructure."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "avoid_regime_destroying_war",
+              "effect": -2,
+              "rationale": "It raises the likelihood of a major war capable of threatening regime stability."
+            }
+          ]
+        },
+
+        "additional_air_defense": {
+          "indicator_name": "Additional air defence deployment",
+          "impacts": [
+            {
+              "actor": "usa",
+              "interest_id": "force_protection",
+              "effect": 2,
+              "rationale": "Additional air defence systems improve protection of US personnel and bases."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "regional_partners",
+              "effect": 2,
+              "rationale": "Air defence deployments may also protect allied facilities and population centres."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "israel_security",
+              "effect": 1,
+              "rationale": "Additional regional air defence capacity may support the interception of Iranian attacks."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "regional_deterrence",
+              "effect": 1,
+              "rationale": "Improved defensive resilience reduces the effectiveness of Iranian retaliation."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "missile_capability",
+              "effect": -1,
+              "rationale": "Improved interception capability reduces the operational value of Iranian missiles."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "strategic_deterrence",
+              "effect": -1,
+              "rationale": "Iranian deterrence weakens if missile retaliation becomes less credible."
+            }
+          ]
+        },
+
+        "new_sanctions": {
+          "indicator_name": "New sanctions",
+          "impacts": [
+            {
+              "actor": "usa",
+              "interest_id": "nuclear_nonproliferation",
+              "effect": 1,
+              "rationale": "Sanctions increase economic pressure linked to Iran's nuclear activities."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "regional_deterrence",
+              "effect": 1,
+              "rationale": "Economic coercion demonstrates the ability to impose costs without immediate military escalation."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "avoid_full_scale_war",
+              "effect": 1,
+              "rationale": "Sanctions provide a coercive option below the threshold of direct war."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "regime_survival",
+              "effect": -1,
+              "rationale": "Economic pressure may increase domestic instability and reduce state resources."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "nuclear_programme",
+              "effect": -1,
+              "rationale": "Sanctions can restrict financing, technology and procurement."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "regional_influence",
+              "effect": -1,
+              "rationale": "Reduced financial resources may constrain regional activities."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "proxy_network",
+              "effect": -1,
+              "rationale": "Economic pressure can limit funding available to regional partner organisations."
+            }
+          ]
+        },
+
+        "evacuation_warning": {
+          "indicator_name": "Embassy or civilian evacuation warning",
+          "impacts": [
+            {
+              "actor": "usa",
+              "interest_id": "force_protection",
+              "effect": 1,
+              "rationale": "Evacuation reduces exposure of US civilians and non-essential personnel."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "regional_deterrence",
+              "effect": 1,
+              "rationale": "The warning may signal that the United States is preparing for escalation."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "avoid_full_scale_war",
+              "effect": -2,
+              "rationale": "Evacuation warnings indicate a significant deterioration in the regional security environment."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "regional_partners",
+              "effect": -1,
+              "rationale": "Evacuations may reduce confidence in regional stability and US crisis management."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "avoid_regime_destroying_war",
+              "effect": -1,
+              "rationale": "Warnings can indicate that military action against Iran is becoming more likely."
+            }
+          ]
+        },
+
+        "force_protection": {
+          "indicator_name": "Raised force protection level",
+          "impacts": [
+            {
+              "actor": "usa",
+              "interest_id": "force_protection",
+              "effect": 2,
+              "rationale": "Higher readiness directly reduces the vulnerability of US personnel and facilities."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "regional_deterrence",
+              "effect": 1,
+              "rationale": "Improved defensive readiness reduces Iran's ability to achieve surprise."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "strategic_deterrence",
+              "effect": -1,
+              "rationale": "US defensive preparations reduce the expected effectiveness of Iranian retaliation."
+            }
+          ]
+        },
+
+        "presidential_warning": {
+          "indicator_name": "Presidential warning",
+          "impacts": [
+            {
+              "actor": "usa",
+              "interest_id": "regional_deterrence",
+              "effect": 2,
+              "rationale": "A presidential warning communicates high-level political willingness to impose costs."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "force_protection",
+              "effect": 1,
+              "rationale": "Explicit warnings may deter attacks against US personnel."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "regional_partners",
+              "effect": 1,
+              "rationale": "Strong political messaging may reassure regional allies."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "avoid_full_scale_war",
+              "effect": -1,
+              "rationale": "Escalatory rhetoric may narrow diplomatic space and increase miscalculation risk."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "strategic_deterrence",
+              "effect": -1,
+              "rationale": "A credible US warning challenges Iran's ability to deter military action."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "avoid_regime_destroying_war",
+              "effect": -1,
+              "rationale": "Presidential threats may indicate greater willingness to escalate."
+            }
+          ]
+        },
+
+        "military_exercise": {
+          "indicator_name": "Large regional military exercise",
+          "impacts": [
+            {
+              "actor": "usa",
+              "interest_id": "regional_deterrence",
+              "effect": 1,
+              "rationale": "Exercises demonstrate readiness and interoperability."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "force_protection",
+              "effect": 1,
+              "rationale": "Training improves defensive preparedness and operational coordination."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "regional_partners",
+              "effect": 1,
+              "rationale": "Joint exercises strengthen cooperation with regional partners."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "freedom_of_navigation",
+              "effect": 1,
+              "rationale": "Naval exercises may strengthen maritime security capabilities."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "avoid_full_scale_war",
+              "effect": -1,
+              "rationale": "Large exercises may be perceived as preparations for offensive action."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "strategic_deterrence",
+              "effect": -1,
+              "rationale": "Improved US and allied readiness weakens Iran's relative deterrent position."
+            }
+          ]
+        },
+
+        "strike_preparation": {
+          "indicator_name": "Preparation for military strike",
+          "impacts": [
+            {
+              "actor": "usa",
+              "interest_id": "regional_deterrence",
+              "effect": 2,
+              "rationale": "Strike preparation makes the US military threat more credible."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "nuclear_nonproliferation",
+              "effect": 1,
+              "rationale": "Preparations may strengthen coercive pressure against Iranian nuclear activity."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "force_protection",
+              "effect": -1,
+              "rationale": "Preparation for a strike may trigger Iranian pre-emption or retaliation."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "freedom_of_navigation",
+              "effect": -1,
+              "rationale": "Iran may respond by threatening or disrupting regional maritime traffic."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "energy_security",
+              "effect": -2,
+              "rationale": "An imminent strike may cause severe energy-market disruption."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "avoid_full_scale_war",
+              "effect": -2,
+              "rationale": "Strike preparation substantially increases the probability of direct war."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "regime_survival",
+              "effect": -2,
+              "rationale": "A US strike could damage critical state and military infrastructure."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "nuclear_programme",
+              "effect": -2,
+              "rationale": "Nuclear facilities may become primary targets."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "missile_capability",
+              "effect": -2,
+              "rationale": "Missile sites and launch infrastructure may be targeted."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "avoid_regime_destroying_war",
+              "effect": -2,
+              "rationale": "Military strike preparation creates a direct threat of large-scale escalation."
+            }
+          ]
+        }
+      },
+
+      "decrease_pressure": {
+        "negotiation": {
+          "indicator_name": "Negotiation",
+          "impacts": [
+            {
+              "actor": "usa",
+              "interest_id": "avoid_full_scale_war",
+              "effect": 2,
+              "rationale": "Negotiations reduce immediate escalation risk and preserve diplomatic options."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "nuclear_nonproliferation",
+              "effect": 1,
+              "rationale": "Diplomacy may produce limits, inspections or delays affecting Iran's nuclear programme."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "force_protection",
+              "effect": 1,
+              "rationale": "Reduced tension lowers the immediate threat to US forces."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "energy_security",
+              "effect": 1,
+              "rationale": "Diplomatic engagement reduces the likelihood of major energy disruption."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "regime_survival",
+              "effect": 1,
+              "rationale": "Negotiations lower the immediate military threat to the Iranian state."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "avoid_regime_destroying_war",
+              "effect": 2,
+              "rationale": "Diplomatic engagement directly reduces the probability of a regime-threatening war."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "nuclear_programme",
+              "effect": 1,
+              "rationale": "Negotiations may allow Iran to preserve part of its nuclear infrastructure under agreed restrictions."
+            }
+          ]
+        },
+
+        "ceasefire_support": {
+          "indicator_name": "Support for ceasefire",
+          "impacts": [
+            {
+              "actor": "usa",
+              "interest_id": "avoid_full_scale_war",
+              "effect": 2,
+              "rationale": "Ceasefire support directly advances escalation control."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "force_protection",
+              "effect": 1,
+              "rationale": "A ceasefire reduces attacks against US personnel and bases."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "regional_partners",
+              "effect": 1,
+              "rationale": "Reduced hostilities lower the security burden on regional partners."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "energy_security",
+              "effect": 2,
+              "rationale": "A ceasefire reduces the risk of disruption to oil production and transportation."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "regional_deterrence",
+              "effect": -1,
+              "rationale": "Premature ceasefire support may be interpreted as reduced willingness to sustain military pressure."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "regime_survival",
+              "effect": 1,
+              "rationale": "A ceasefire limits further damage to Iranian state capabilities."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "avoid_regime_destroying_war",
+              "effect": 2,
+              "rationale": "Termination of active hostilities reduces existential risk."
+            }
+          ]
+        },
+
+        "sanction_relief": {
+          "indicator_name": "Sanction relief",
+          "impacts": [
+            {
+              "actor": "usa",
+              "interest_id": "avoid_full_scale_war",
+              "effect": 1,
+              "rationale": "Sanction relief may support a diplomatic settlement and reduce escalation."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "energy_security",
+              "effect": 1,
+              "rationale": "Relief may increase Iranian oil availability and reduce market pressure."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "regional_deterrence",
+              "effect": -1,
+              "rationale": "Relief without sufficient concessions may weaken US coercive credibility."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "nuclear_nonproliferation",
+              "effect": -1,
+              "rationale": "Relief may reduce leverage unless tied to verifiable nuclear restrictions."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "regime_survival",
+              "effect": 2,
+              "rationale": "Economic relief improves government resources and domestic stability."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "nuclear_programme",
+              "effect": 1,
+              "rationale": "Additional resources may support preservation of nuclear infrastructure."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "regional_influence",
+              "effect": 1,
+              "rationale": "Improved finances may strengthen Iran's regional activity."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "proxy_network",
+              "effect": 1,
+              "rationale": "Sanction relief may increase resources available for regional partners."
+            }
+          ]
+        },
+
+        "troop_withdrawal": {
+          "indicator_name": "Military withdrawal",
+          "impacts": [
+            {
+              "actor": "usa",
+              "interest_id": "avoid_full_scale_war",
+              "effect": 2,
+              "rationale": "Withdrawal lowers the immediate probability of direct military confrontation."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "force_protection",
+              "effect": 1,
+              "rationale": "Reducing exposed forces may lower direct vulnerability."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "regional_deterrence",
+              "effect": -2,
+              "rationale": "Withdrawal may reduce the credibility and speed of US military response."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "regional_partners",
+              "effect": -2,
+              "rationale": "Regional partners may perceive withdrawal as declining US commitment."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "freedom_of_navigation",
+              "effect": -1,
+              "rationale": "Reduced force presence may weaken maritime security capacity."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "regional_influence",
+              "effect": 2,
+              "rationale": "Reduced US presence increases Iran's regional room for manoeuvre."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "strategic_deterrence",
+              "effect": 1,
+              "rationale": "A withdrawal may be interpreted as evidence that Iranian pressure is effective."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "avoid_regime_destroying_war",
+              "effect": 2,
+              "rationale": "Reduced US military presence lowers the immediate threat of major war."
+            }
+          ]
+        }
+      }
+    },
+
+    "iran": {
+      "increase_pressure": {
+        "missile_preparation": {
+          "indicator_name": "Missile force preparation",
+          "impacts": [
+            {
+              "actor": "iran",
+              "interest_id": "strategic_deterrence",
+              "effect": 2,
+              "rationale": "Missile readiness increases Iran's ability to threaten retaliation."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "missile_capability",
+              "effect": 2,
+              "rationale": "Preparation demonstrates and improves operational missile readiness."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "regime_survival",
+              "effect": 1,
+              "rationale": "A credible retaliatory capability may discourage attacks on the Iranian state."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "avoid_regime_destroying_war",
+              "effect": -1,
+              "rationale": "Visible missile preparations may trigger pre-emptive action."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "force_protection",
+              "effect": -2,
+              "rationale": "US bases and personnel face greater immediate missile risk."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "israel_security",
+              "effect": -2,
+              "rationale": "Israeli territory and infrastructure may face increased missile threat."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "regional_partners",
+              "effect": -1,
+              "rationale": "Gulf partners may also become potential missile targets."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "avoid_full_scale_war",
+              "effect": -2,
+              "rationale": "Missile preparation significantly increases escalation risk."
+            }
+          ]
+        },
+
+        "proxy_activation": {
+          "indicator_name": "Proxy force activation",
+          "impacts": [
+            {
+              "actor": "iran",
+              "interest_id": "proxy_network",
+              "effect": 2,
+              "rationale": "Activation demonstrates operational control and utility of Iran's regional partner network."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "regional_influence",
+              "effect": 2,
+              "rationale": "Proxy activity extends Iranian influence beyond its borders."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "strategic_deterrence",
+              "effect": 1,
+              "rationale": "Distributed retaliation complicates US and Israeli military planning."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "avoid_regime_destroying_war",
+              "effect": -1,
+              "rationale": "Proxy attacks may provoke direct retaliation against Iran."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "force_protection",
+              "effect": -2,
+              "rationale": "US personnel and bases may be targeted by Iran-aligned groups."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "israel_security",
+              "effect": -2,
+              "rationale": "Iranian partner organisations may attack Israel from multiple fronts."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "regional_partners",
+              "effect": -1,
+              "rationale": "Regional allies face increased asymmetric security pressure."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "avoid_full_scale_war",
+              "effect": -1,
+              "rationale": "Proxy escalation may expand the conflict and trigger direct intervention."
+            }
+          ]
+        },
+
+        "missile_test": {
+          "indicator_name": "Missile test",
+          "impacts": [
+            {
+              "actor": "iran",
+              "interest_id": "missile_capability",
+              "effect": 2,
+              "rationale": "Testing supports technological development and operational credibility."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "strategic_deterrence",
+              "effect": 1,
+              "rationale": "Successful tests strengthen perceptions of Iranian retaliatory capability."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "regional_deterrence",
+              "effect": -1,
+              "rationale": "Improved Iranian missile capability weakens the relative US deterrent advantage."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "israel_security",
+              "effect": -1,
+              "rationale": "Longer-range or more accurate missiles increase the threat to Israel."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "regional_partners",
+              "effect": -1,
+              "rationale": "Iranian missile advances increase risks to Gulf partners."
+            }
+          ]
+        },
+
+        "nuclear_activity": {
+          "indicator_name": "Nuclear programme escalation",
+          "impacts": [
+            {
+              "actor": "iran",
+              "interest_id": "nuclear_programme",
+              "effect": 2,
+              "rationale": "Expanded nuclear activity directly advances Iran's preservation and development of nuclear capability."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "strategic_deterrence",
+              "effect": 1,
+              "rationale": "Nuclear latency may strengthen Iran's strategic deterrent position."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "regime_survival",
+              "effect": 1,
+              "rationale": "A stronger strategic capability may discourage attempts at regime change."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "avoid_regime_destroying_war",
+              "effect": -2,
+              "rationale": "Escalating nuclear activity may trigger preventive military action."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "nuclear_nonproliferation",
+              "effect": -2,
+              "rationale": "Nuclear escalation directly contradicts the US objective of preventing Iranian weapon capability."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "israel_security",
+              "effect": -2,
+              "rationale": "Iranian nuclear advancement increases Israel's perceived existential threat."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "avoid_full_scale_war",
+              "effect": -2,
+              "rationale": "Nuclear escalation sharply increases the risk of preventive war."
+            }
+          ]
+        },
+
+        "hormuz_threat": {
+          "indicator_name": "Hormuz threat",
+          "impacts": [
+            {
+              "actor": "iran",
+              "interest_id": "hormuz_leverage",
+              "effect": 2,
+              "rationale": "Threatening the Strait demonstrates Iran's ability to influence global maritime traffic."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "strategic_deterrence",
+              "effect": 1,
+              "rationale": "The ability to impose global economic costs strengthens Iranian coercive leverage."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "regional_influence",
+              "effect": 1,
+              "rationale": "Control over escalation around Hormuz reinforces Iran's regional strategic importance."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "avoid_regime_destroying_war",
+              "effect": -1,
+              "rationale": "A serious threat to Hormuz could provoke a large international military response."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "freedom_of_navigation",
+              "effect": -2,
+              "rationale": "Threats to Hormuz directly challenge secure maritime access."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "energy_security",
+              "effect": -2,
+              "rationale": "Disruption risks increase oil prices and global market instability."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "regional_partners",
+              "effect": -1,
+              "rationale": "Gulf partners depend heavily on secure maritime export routes."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "avoid_full_scale_war",
+              "effect": -1,
+              "rationale": "A Hormuz crisis may force direct US military intervention."
+            }
+          ]
+        },
+
+        "supreme_leader_statement": {
+          "indicator_name": "Supreme Leader escalation statement",
+          "impacts": [
+            {
+              "actor": "iran",
+              "interest_id": "strategic_deterrence",
+              "effect": 1,
+              "rationale": "High-level threats communicate political resolve and willingness to retaliate."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "regime_survival",
+              "effect": 1,
+              "rationale": "Strong rhetoric may reinforce domestic cohesion and regime legitimacy."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "avoid_regime_destroying_war",
+              "effect": -1,
+              "rationale": "Escalatory rhetoric may reduce diplomatic flexibility and increase confrontation risk."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "regional_deterrence",
+              "effect": -1,
+              "rationale": "Open Iranian defiance may indicate reduced responsiveness to US deterrent pressure."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "avoid_full_scale_war",
+              "effect": -1,
+              "rationale": "High-level threats increase political pressure for retaliation."
+            }
+          ]
+        },
+
+        "irgc_alert": {
+          "indicator_name": "IRGC readiness increase",
+          "impacts": [
+            {
+              "actor": "iran",
+              "interest_id": "regime_survival",
+              "effect": 2,
+              "rationale": "Higher IRGC readiness strengthens defence of the political system and strategic infrastructure."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "strategic_deterrence",
+              "effect": 2,
+              "rationale": "Readiness signals the ability to respond rapidly to attack."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "missile_capability",
+              "effect": 1,
+              "rationale": "The IRGC controls major elements of Iran's missile force."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "proxy_network",
+              "effect": 1,
+              "rationale": "IRGC readiness may improve coordination with regional partner organisations."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "avoid_regime_destroying_war",
+              "effect": -1,
+              "rationale": "Raised readiness may be interpreted as preparation for attack and provoke pre-emption."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "force_protection",
+              "effect": -1,
+              "rationale": "Increased IRGC readiness raises the threat to US regional assets."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "avoid_full_scale_war",
+              "effect": -1,
+              "rationale": "Mutual readiness increases the probability of rapid escalation."
+            }
+          ]
+        },
+
+        "military_exercise": {
+          "indicator_name": "Large military exercise",
+          "impacts": [
+            {
+              "actor": "iran",
+              "interest_id": "strategic_deterrence",
+              "effect": 1,
+              "rationale": "Exercises demonstrate readiness and military resilience."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "missile_capability",
+              "effect": 1,
+              "rationale": "Exercises may test missile deployment, command and launch procedures."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "hormuz_leverage",
+              "effect": 1,
+              "rationale": "Naval exercises near Hormuz demonstrate Iran's capacity to influence maritime traffic."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "avoid_regime_destroying_war",
+              "effect": -1,
+              "rationale": "Large exercises may be misinterpreted as offensive preparations."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "freedom_of_navigation",
+              "effect": -1,
+              "rationale": "Iranian exercises near strategic sea routes may threaten maritime confidence."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "regional_deterrence",
+              "effect": -1,
+              "rationale": "Demonstrated Iranian readiness reduces the relative credibility of US coercion."
+            }
+          ]
+        },
+
+        "strike_preparation": {
+          "indicator_name": "Preparation for military strike",
+          "impacts": [
+            {
+              "actor": "iran",
+              "interest_id": "strategic_deterrence",
+              "effect": 2,
+              "rationale": "Strike preparation increases the credibility of Iranian retaliation."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "missile_capability",
+              "effect": 1,
+              "rationale": "Preparation demonstrates the operational availability of missile and strike forces."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "regional_influence",
+              "effect": 1,
+              "rationale": "The ability to threaten regional targets increases Iranian coercive influence."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "avoid_regime_destroying_war",
+              "effect": -2,
+              "rationale": "Imminent strike preparation creates a high risk of pre-emption and major retaliation."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "force_protection",
+              "effect": -2,
+              "rationale": "US bases and personnel face a direct threat of attack."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "israel_security",
+              "effect": -2,
+              "rationale": "Israel may be a primary target of Iranian strike preparations."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "regional_partners",
+              "effect": -2,
+              "rationale": "Gulf partners and allied infrastructure may also be targeted."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "energy_security",
+              "effect": -1,
+              "rationale": "A regional strike would increase energy-market disruption risk."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "avoid_full_scale_war",
+              "effect": -2,
+              "rationale": "Strike preparation creates a direct pathway to wider war."
+            }
+          ]
+        }
+      },
+
+      "decrease_pressure": {
+        "negotiation": {
+          "indicator_name": "Negotiation",
+          "impacts": [
+            {
+              "actor": "iran",
+              "interest_id": "regime_survival",
+              "effect": 1,
+              "rationale": "Negotiations reduce immediate pressure on the Iranian state."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "avoid_regime_destroying_war",
+              "effect": 2,
+              "rationale": "Diplomacy lowers the likelihood of a war threatening regime survival."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "nuclear_programme",
+              "effect": 1,
+              "rationale": "Negotiations may allow Iran to preserve controlled nuclear capabilities."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "avoid_full_scale_war",
+              "effect": 2,
+              "rationale": "Negotiations support conflict containment."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "nuclear_nonproliferation",
+              "effect": 1,
+              "rationale": "Diplomatic agreements may constrain or monitor Iran's nuclear programme."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "energy_security",
+              "effect": 1,
+              "rationale": "Lower tension supports energy-market stability."
+            }
+          ]
+        },
+
+        "iaea_cooperation": {
+          "indicator_name": "IAEA cooperation",
+          "impacts": [
+            {
+              "actor": "iran",
+              "interest_id": "avoid_regime_destroying_war",
+              "effect": 2,
+              "rationale": "Cooperation reduces the risk of preventive military action."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "regime_survival",
+              "effect": 1,
+              "rationale": "Improved transparency can reduce international pressure and isolation."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "nuclear_programme",
+              "effect": -1,
+              "rationale": "Inspections and monitoring may restrict undeclared or rapid nuclear expansion."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "nuclear_nonproliferation",
+              "effect": 2,
+              "rationale": "IAEA access improves monitoring and verification of Iranian nuclear activities."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "avoid_full_scale_war",
+              "effect": 1,
+              "rationale": "Verification reduces uncertainty and pressure for military action."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "israel_security",
+              "effect": 1,
+              "rationale": "Improved monitoring lowers uncertainty concerning Iran's nuclear intentions."
+            }
+          ]
+        },
+
+        "proxy_restraint": {
+          "indicator_name": "Proxy restraint",
+          "impacts": [
+            {
+              "actor": "iran",
+              "interest_id": "avoid_regime_destroying_war",
+              "effect": 2,
+              "rationale": "Proxy restraint lowers the probability of direct retaliation against Iran."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "proxy_network",
+              "effect": -1,
+              "rationale": "Prolonged restraint may reduce the perceived operational value and autonomy of partner organisations."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "regional_influence",
+              "effect": -1,
+              "rationale": "Reduced proxy activity may temporarily decrease Iran's coercive regional influence."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "strategic_deterrence",
+              "effect": -1,
+              "rationale": "Restraint may weaken the immediate credibility of distributed retaliation."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "force_protection",
+              "effect": 2,
+              "rationale": "Reduced proxy attacks lower threats to US bases and personnel."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "israel_security",
+              "effect": 1,
+              "rationale": "Proxy restraint reduces pressure on Israel from regional fronts."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "regional_partners",
+              "effect": 1,
+              "rationale": "Regional allies face fewer attacks from Iran-aligned groups."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "avoid_full_scale_war",
+              "effect": 2,
+              "rationale": "Proxy restraint reduces pathways to wider regional escalation."
+            }
+          ]
+        },
+
+        "de_escalation_statement": {
+          "indicator_name": "Official de-escalation statement",
+          "impacts": [
+            {
+              "actor": "iran",
+              "interest_id": "avoid_regime_destroying_war",
+              "effect": 2,
+              "rationale": "Official de-escalatory messaging lowers immediate confrontation risk."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "regime_survival",
+              "effect": 1,
+              "rationale": "Reduced tension limits the threat to state stability."
+            },
+            {
+              "actor": "iran",
+              "interest_id": "strategic_deterrence",
+              "effect": -1,
+              "rationale": "De-escalatory language may be interpreted as reduced willingness to retaliate."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "avoid_full_scale_war",
+              "effect": 2,
+              "rationale": "Iranian de-escalation supports regional conflict containment."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "force_protection",
+              "effect": 1,
+              "rationale": "Lower rhetorical tension may signal reduced immediate attack risk."
+            },
+            {
+              "actor": "usa",
+              "interest_id": "energy_security",
+              "effect": 1,
+              "rationale": "De-escalatory statements reduce perceived risks to Gulf energy flows."
+            }
+          ]
+        }
+      }
+    }
+  }
+}
