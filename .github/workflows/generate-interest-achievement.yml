@@ -1,0 +1,61 @@
+name: Generate Strategic Interest Achievement
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-interest-achievement:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+
+      - name: Verify required files
+        run: |
+          test -f docs/strategic_pressure.json
+          test -f data/strategic/strategic_interests.json
+          test -f data/strategic/interest_impact_map.json
+          test -f src/generate_interest_achievement.py
+
+      - name: Generate Interest Achievement
+        run: |
+          python src/generate_interest_achievement.py
+
+      - name: Show generated file
+        run: |
+          ls -lh docs/
+          cat docs/interest_achievement.json
+
+      - name: Commit generated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add docs/interest_achievement.json
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Update Strategic Interest Achievement"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
