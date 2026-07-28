@@ -4,6 +4,7 @@ Generate Strategic Interest Achievement scores for the US-Iran conflict.
 
 Inputs:
     docs/strategic_pressure.json
+    docs/strategic_pressure_history.json
     data/strategic/strategic_interests.json
     data/strategic/interest_impact_map.json
 
@@ -23,12 +24,16 @@ Data flow:
         ↓
     Actor-level Strategic Achievement Index
 
-The script reads all complete daily contributor sets from:
+The script reads the current assessment from:
 
-    days[].usa.contributors
-    days[].iran.contributors
+    docs/strategic_pressure.json -> current
 
-and uses current as a backwards-compatible fallback.
+and the complete historical daily contributor sets from:
+
+    docs/strategic_pressure_history.json -> days[].usa.contributors
+    docs/strategic_pressure_history.json -> days[].iran.contributors
+
+The current and history data flows are intentionally independent.
 
 Suppressed duplicate evidence and bilateral duplicate mappings are preserved
 in diagnostics but do not affect the achievement calculation.
@@ -47,6 +52,9 @@ from typing import Any, Mapping, Sequence
 
 
 DEFAULT_PRESSURE_PATH = Path("docs/strategic_pressure.json")
+DEFAULT_PRESSURE_HISTORY_PATH = Path(
+    "docs/strategic_pressure_history.json"
+)
 DEFAULT_INTERESTS_PATH = Path(
     "data/strategic/strategic_interests.json"
 )
@@ -100,6 +108,16 @@ def parse_args() -> argparse.Namespace:
         help=(
             "Strategic Pressure JSON. "
             f"Default: {DEFAULT_PRESSURE_PATH}"
+        ),
+    )
+
+    parser.add_argument(
+        "--pressure-history",
+        type=Path,
+        default=DEFAULT_PRESSURE_HISTORY_PATH,
+        help=(
+            "Strategic Pressure history JSON containing days[]. "
+            f"Default: {DEFAULT_PRESSURE_HISTORY_PATH}"
         ),
     )
 
@@ -1565,37 +1583,59 @@ def calculate_assessment(
     return assessment, warnings, diagnostics
 
 
-def extract_history_days(
+def extract_current_day(
     pressure_data: Mapping[str, Any],
-) -> list[dict[str, Any]]:
-    days = pressure_data.get("days")
-    output: list[dict[str, Any]] = []
-
-    if isinstance(days, list):
-        for position, day in enumerate(days):
-            if not isinstance(day, Mapping):
-                continue
-            date = clean_text(day.get("date"))[:10]
-            if not date:
-                date = f"undated-{position:04d}"
-            output.append({"date": date, "data": dict(day)})
-
-    if output:
-        output.sort(key=lambda item: item["date"])
-        return output
-
+) -> dict[str, Any]:
+    """Return the current daily record from strategic_pressure.json."""
     current = pressure_data.get("current")
     if isinstance(current, Mapping):
         date = clean_text(current.get("date"))[:10]
         if not date:
             date = extract_reference_date(pressure_data)
-        return [{"date": date, "data": dict(current)}]
+        return {"date": date, "data": dict(current)}
+
+    # Backwards-compatible support for an explicitly one-day current file.
+    days = pressure_data.get("days")
+    if isinstance(days, list) and len(days) == 1 and isinstance(days[0], Mapping):
+        day = dict(days[0])
+        date = clean_text(day.get("date"))[:10]
+        if not date:
+            date = extract_reference_date(pressure_data)
+        return {"date": date, "data": day}
 
     raise InputDataError(
-        "Strategic Pressure JSON contains neither a valid days[] "
-        "history nor a valid current object."
+        "Current Strategic Pressure JSON must contain a valid current "
+        "object or exactly one valid item in days[]."
     )
 
+
+def extract_history_days(
+    pressure_history_data: Mapping[str, Any],
+) -> list[dict[str, Any]]:
+    """Return every valid day from strategic_pressure_history.json."""
+    days = pressure_history_data.get("days")
+    output: list[dict[str, Any]] = []
+
+    if not isinstance(days, list):
+        raise InputDataError(
+            "Strategic Pressure history JSON must contain a days[] array."
+        )
+
+    for position, day in enumerate(days):
+        if not isinstance(day, Mapping):
+            continue
+        date = clean_text(day.get("date"))[:10]
+        if not date:
+            date = f"undated-{position:04d}"
+        output.append({"date": date, "data": dict(day)})
+
+    if not output:
+        raise InputDataError(
+            "Strategic Pressure history JSON contains no valid daily records."
+        )
+
+    output.sort(key=lambda item: item["date"])
+    return output
 
 def linear_trend(values: Sequence[float]) -> dict[str, Any]:
     if len(values) < 2:
@@ -1727,6 +1767,7 @@ def main() -> int:
 
     try:
         pressure_data = load_json(args.pressure)
+        pressure_history_data = load_json(args.pressure_history)
         interests_data = load_json(args.interests)
         impact_map_data = load_json(args.impact_map)
 
@@ -1736,10 +1777,32 @@ def main() -> int:
             interest_catalog,
         )
 
-        history_days = extract_history_days(pressure_data)
+        current_day = extract_current_day(pressure_data)
+        current_date = clean_text(current_day.get("date"))
+        current_data = current_day.get("data")
+        if not isinstance(current_data, Mapping):
+            raise InputDataError(
+                "Current Strategic Pressure record is invalid."
+            )
+
+        current_assessment, current_warnings, current_diagnostics = (
+            calculate_assessment(
+                daily_data=current_data,
+                assessment_date=current_date,
+                interest_catalog=interest_catalog,
+                impact_lookup=impact_lookup,
+                normalisation_divisor=args.normalisation_divisor,
+            )
+        )
+        current = {"date": current_date, **current_assessment}
+
+        history_days = extract_history_days(pressure_history_data)
         history: list[dict[str, Any]] = []
         daily_diagnostics: list[dict[str, Any]] = []
-        calculation_warnings: list[str] = []
+        calculation_warnings: list[str] = [
+            f"current {current_date}: {warning}"
+            for warning in current_warnings
+        ]
 
         for day in history_days:
             date = clean_text(day.get("date"))
@@ -1767,8 +1830,8 @@ def main() -> int:
                 "No valid daily Strategic Pressure assessments were found."
             )
 
-        current = history[-1]
         diagnostics = merge_diagnostics(daily_diagnostics)
+        diagnostics["current"] = current_diagnostics
         warnings = unique_strings(
             [*map_warnings, *calculation_warnings]
         )
@@ -1796,10 +1859,14 @@ def main() -> int:
                 ),
                 "input_files": {
                     "strategic_pressure": str(args.pressure),
+                    "strategic_pressure_history": str(args.pressure_history),
                     "strategic_interests": str(args.interests),
                     "interest_impact_map": str(args.impact_map),
                 },
                 "pressure_model_version": extract_version(pressure_data),
+                "pressure_history_model_version": extract_version(
+                    pressure_history_data
+                ),
                 "interests_model_version": extract_version(interests_data),
                 "impact_map_version": extract_version(impact_map_data),
                 "warning_count": len(diagnostics["warnings"]),
@@ -1810,9 +1877,10 @@ def main() -> int:
             "diagnostics": diagnostics,
             "methodology": {
                 "source_scope": (
-                    "Every valid day in Strategic Pressure days[] is "
-                    "processed. The current block is used only as a "
-                    "backwards-compatible fallback when days[] is absent."
+                    "The current assessment is calculated only from "
+                    "docs/strategic_pressure.json. Every valid historical "
+                    "day is calculated only from "
+                    "docs/strategic_pressure_history.json days[]."
                 ),
                 "duplicate_policy": (
                     "Evidence is counted once per date + event_id + "
