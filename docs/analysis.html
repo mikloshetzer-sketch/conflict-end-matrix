@@ -1916,6 +1916,54 @@
       #strategic_pressure_svg{height:280px}
     }
 
+
+    /* =========================================================
+       DAILY ASSESSMENT REPORTS
+       ========================================================= */
+    .report-panel{
+      margin-top:24px;
+      padding:20px;
+      border:1px solid #cbdce6;
+      border-radius:14px;
+      background:linear-gradient(180deg,#ffffff 0%,#f6fafc 100%);
+      box-shadow:0 8px 24px rgba(31,72,99,.06);
+    }
+    .report-header{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:16px}
+    .report-title{margin:0;font-family:Georgia,"Times New Roman",serif;color:#103b59;font-size:22px}
+    .report-subtitle{margin:6px 0 0;color:#617986;font-size:12px;line-height:1.6;max-width:760px}
+    .report-updated{font-size:10px;color:#78909c;white-space:nowrap;text-align:right}
+    .report-download-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:18px}
+    .report-download-card{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 15px;border:1px solid #d5e3eb;border-radius:11px;background:#fff}
+    .report-download-card strong{display:block;color:#214b64;font-size:13px}
+    .report-download-card span{display:block;margin-top:3px;color:#748895;font-size:10px}
+    .report-btn{display:inline-flex;align-items:center;justify-content:center;min-width:112px;padding:9px 13px;border-radius:8px;background:#256b93;color:#fff!important;text-decoration:none!important;font-size:11px;font-weight:800;white-space:nowrap}
+    .report-btn:hover{background:#1c5778}
+    .report-btn.secondary{background:#eef5f8;color:#285b77!important;border:1px solid #cbdfe9}
+    .report-btn.secondary:hover{background:#e1eef4}
+    .report-archive-title{margin:2px 0 10px;color:#244b63;font-size:13px;font-weight:800}
+    .report-table-wrap{overflow-x:auto;border:1px solid #d7e4eb;border-radius:10px;background:#fff}
+    .report-table{width:100%;border-collapse:collapse;min-width:720px}
+    .report-table th,.report-table td{padding:10px 11px;border-bottom:1px solid #e3edf2;text-align:left;font-size:10px;vertical-align:middle}
+    .report-table th{background:#f1f7fa;color:#496878;font-weight:800;text-transform:uppercase;letter-spacing:.03em}
+    .report-table tr:last-child td{border-bottom:0}
+    .report-date{font-weight:800;color:#214b64}
+    .report-signal{display:inline-flex;padding:3px 7px;border-radius:999px;font-size:9px;font-weight:800;background:#eef3f6;color:#506b79}
+    .report-signal.increase{background:#fff0f1;color:#a43e48}
+    .report-signal.decrease{background:#eef9f5;color:#26785f}
+    .report-signal.stable{background:#f2f6f8;color:#5c7180}
+    .report-signal.no_signal{background:#fff8e9;color:#8a6517}
+    .report-pressure{font-weight:800;color:#214b64}
+    .report-actions{display:flex;gap:6px;flex-wrap:wrap}
+    .report-empty,.report-error{padding:15px;border-radius:9px;font-size:11px;line-height:1.5}
+    .report-empty{background:#f5f8fa;color:#647b87}
+    .report-error{display:none;background:#fff2f3;border:1px solid #efcfd2;color:#a43e48;font-weight:700}
+    @media(max-width:700px){
+      .report-header{display:block}.report-updated{text-align:left;margin-top:7px}
+      .report-download-grid{grid-template-columns:1fr}
+      .report-download-card{align-items:flex-start;flex-direction:column}
+      .report-btn{width:100%}
+    }
+
   </style>
 </head>
 
@@ -2769,6 +2817,60 @@
           </div>
         </div>
 </section>
+
+
+    <!-- =======================================================
+         DAILY ASSESSMENT REPORTS
+         ======================================================= -->
+    <section class="section" id="daily-assessment-reports">
+      <h2 class="section-title">Daily Assessment Reports</h2>
+      <p class="section-intro">
+        Download the latest bilingual analytical report or browse the archived daily assessments.
+      </p>
+
+      <div class="report-panel">
+        <div class="report-header">
+          <div>
+            <h3 class="report-title">Napi elemző jelentések / Daily Assessments</h3>
+            <p class="report-subtitle">
+              A jelentések a Forecast és a Strategic Pressure lezárt UTC napi adatait egyesítik. A magyar és angol PDF külön tölthető le, a korábbi kiadások pedig dátum szerint archiválva maradnak.
+            </p>
+          </div>
+          <div class="report-updated" id="reports_updated">Betöltés…</div>
+        </div>
+
+        <div class="report-download-grid">
+          <div class="report-download-card">
+            <div><strong>Magyar napi jelentés</strong><span id="latest_hu_note">Legfrissebb elérhető kiadás</span></div>
+            <a id="latest_hu_link" class="report-btn" href="./reports/latest-hu.pdf" target="_blank" rel="noopener">PDF letöltése</a>
+          </div>
+          <div class="report-download-card">
+            <div><strong>English Daily Assessment</strong><span id="latest_en_note">Latest available edition</span></div>
+            <a id="latest_en_link" class="report-btn" href="./reports/latest-en.pdf" target="_blank" rel="noopener">Download PDF</a>
+          </div>
+        </div>
+
+        <div class="report-archive-title">Report Archive</div>
+        <div class="report-table-wrap">
+          <table class="report-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>48h Forecast</th>
+                <th>72h Forecast</th>
+                <th>Overall Pressure</th>
+                <th>Trend</th>
+                <th>Downloads</th>
+              </tr>
+            </thead>
+            <tbody id="reports_archive_body">
+              <tr><td colspan="6"><div class="report-empty">Archive loading…</div></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="report-error" id="reports_error"></div>
+      </div>
+    </section>
 
     <footer class="footer">
       Data source: automated news monitoring pipeline.<br>
@@ -4983,8 +5085,86 @@
 
     loadEventTimeline();
     loadConflictAnalysis();
+
+    function reportDirectionLabel(value){
+      const key=String(value||"no_signal").toLowerCase();
+      const labels={increase:"Increase",decrease:"Decrease",stable:"Stable",no_signal:"No signal"};
+      return labels[key]||key.replaceAll("_"," ");
+    }
+
+    function reportTrendLabel(value){
+      const key=String(value||"stable").toLowerCase();
+      const labels={strong_increase:"Strong increase",increase:"Increase",stable:"Stable",decrease:"Decrease",strong_decrease:"Strong decrease"};
+      return labels[key]||key.replaceAll("_"," ");
+    }
+
+    function reportDateLabel(value){
+      if(!value) return "—";
+      const d=new Date(value+"T00:00:00Z");
+      return Number.isNaN(d.getTime())?value:d.toLocaleDateString("hu-HU",{year:"numeric",month:"2-digit",day:"2-digit",timeZone:"UTC"});
+    }
+
+    function reportSignalHtml(direction){
+      const key=String(direction||"no_signal").toLowerCase();
+      return `<span class="report-signal ${key}">${reportDirectionLabel(key)}</span>`;
+    }
+
+    function reportDownloadButton(path,label){
+      if(!path) return "";
+      const href=`./reports/${String(path).replace(/^\.?\/?reports\//,"")}`;
+      return `<a class="report-btn secondary" href="${href}" target="_blank" rel="noopener">${label}</a>`;
+    }
+
+    function loadDailyAssessmentReports(){
+      fetch("./reports/reports_index.json",{cache:"no-store"})
+        .then(response=>{if(!response.ok) throw new Error(`HTTP ${response.status}`);return response.json();})
+        .then(data=>{
+          const latestDate=data.latest_date||"";
+          const latest=data.latest||{};
+          const reports=Array.isArray(data.reports)?data.reports:[];
+          const updated=document.getElementById("reports_updated");
+          updated.textContent=latestDate?`Latest complete day: ${reportDateLabel(latestDate)}`:"No report date";
+
+          if(latest.hu){document.getElementById("latest_hu_link").href=`./reports/${latest.hu}`;}
+          if(latest.en){document.getElementById("latest_en_link").href=`./reports/${latest.en}`;}
+          document.getElementById("latest_hu_note").textContent=latestDate?`Jelentési nap: ${reportDateLabel(latestDate)}`:"Legfrissebb elérhető kiadás";
+          document.getElementById("latest_en_note").textContent=latestDate?`Report date: ${latestDate}`:"Latest available edition";
+
+          const body=document.getElementById("reports_archive_body");
+          if(!reports.length){
+            body.innerHTML='<tr><td colspan="6"><div class="report-empty">Még nincs archivált jelentés.</div></td></tr>';
+            return;
+          }
+
+          body.innerHTML=reports.map(item=>{
+            const f48=item.forecast?.["48h"]||{};
+            const f72=item.forecast?.["72h"]||{};
+            const pressure=item.strategic_pressure||{};
+            const files=item.files||{};
+            const actions=[reportDownloadButton(files.hu,"HU PDF"),reportDownloadButton(files.en,"EN PDF")].filter(Boolean).join("");
+            return `<tr>
+              <td class="report-date">${reportDateLabel(item.date)}</td>
+              <td>${reportSignalHtml(f48.has_signal?f48.direction:"no_signal")}</td>
+              <td>${reportSignalHtml(f72.has_signal?f72.direction:"no_signal")}</td>
+              <td class="report-pressure">${Number(pressure.overall??50).toFixed(1)}</td>
+              <td>${reportTrendLabel(pressure.trend)}</td>
+              <td><div class="report-actions">${actions||"—"}</div></td>
+            </tr>`;
+          }).join("");
+        })
+        .catch(error=>{
+          const box=document.getElementById("reports_error");
+          box.style.display="block";
+          box.textContent="A napi jelentések archívuma jelenleg nem tölthető be. Ellenőrizd a docs/reports/reports_index.json fájlt.";
+          const body=document.getElementById("reports_archive_body");
+          body.innerHTML='<tr><td colspan="6"><div class="report-empty">Archive unavailable.</div></td></tr>';
+          console.error(error);
+        });
+    }
+
     loadLiveForecast();
     loadStrategicPressure();
+    loadDailyAssessmentReports();
 
     fetch("./analysis.json?ts=" + Date.now())
       .then(response => {
@@ -5034,3 +5214,4 @@
   </script>
 </body>
 </html>
+
