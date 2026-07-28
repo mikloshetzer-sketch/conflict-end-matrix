@@ -6,16 +6,16 @@ from typing import Any
 
 
 # =====================================================================
-# Conflict End Matrix -> Strategic Pressure Engine V1.1
+# Conflict End Matrix -> Strategic Pressure Engine V1.2
 #
-# Main corrections:
+# Corrections in V1.2:
+# - Presidential warning requires explicit threatening language.
+# - A simple mention of Trump, Iran and strikes is not enough.
+# - Daily indicator deduplication by actor + date + indicator.
+# - Duplicate evidence remains visible but receives zero score.
 # - Bilateral diplomacy can affect both the USA and Iran.
-# - Stronger USA actor recognition.
-# - Stricter Iranian and Supreme Leader recognition.
-# - No uncontrolled stacking of overlapping indicators.
-# - One strongest increase and one strongest decrease indicator
-#   are allowed per actor and event.
-# - Pressure index 50 is classified as balanced.
+# - Only the strongest increasing and strongest decreasing indicator
+#   may be selected for one actor within one event.
 #
 # Inputs:
 # - docs/event_timeline.json
@@ -44,7 +44,7 @@ INDICATORS_INPUT = "data/strategic/strategic_indicators.json"
 CURRENT_OUTPUT = "docs/strategic_pressure.json"
 HISTORY_OUTPUT = "docs/strategic_pressure_history.json"
 
-MODEL_VERSION = "strategic_pressure_v1_1"
+MODEL_VERSION = "strategic_pressure_v1_2"
 
 ROLLING_WINDOW_DAYS = 7
 INDEX_BASELINE = 50.0
@@ -103,9 +103,7 @@ ACTOR_PATTERNS: dict[str, list[str]] = {
 
 
 # =====================================================================
-# BILATERAL EVENTS
-#
-# These events can legitimately contribute to both actors.
+# BILATERAL DIPLOMACY
 # =====================================================================
 
 BILATERAL_INDICATORS = {
@@ -114,182 +112,186 @@ BILATERAL_INDICATORS = {
 }
 
 BILATERAL_PATTERNS = [
-    r"\bus[- ]iran\b.*\b(?:talks?|negotiations?|dialogue|deal)\b",
-    r"\b(?:talks?|negotiations?|dialogue|deal)\b.*\bus[- ]iran\b",
-    r"\bunited states\b.*\biran\b.*\b(?:talks?|negotiations?|dialogue)\b",
-    r"\biran\b.*\bunited states\b.*\b(?:talks?|negotiations?|dialogue)\b",
-    r"\bu\.s\.\b.*\biran\b.*\b(?:talks?|negotiations?|dialogue)\b",
-    r"\biran\b.*\bu\.s\.\b.*\b(?:talks?|negotiations?|dialogue)\b",
+    r"\bus[- ]iran\b.{0,120}\b(?:talks?|negotiations?|dialogue|peace deal)\b",
+    r"\b(?:talks?|negotiations?|dialogue|peace deal)\b.{0,120}\bus[- ]iran\b",
+    r"\bunited states\b.{0,120}\biran\b.{0,120}\b(?:talks?|negotiations?|dialogue)\b",
+    r"\biran\b.{0,120}\bunited states\b.{0,120}\b(?:talks?|negotiations?|dialogue)\b",
+    r"\bu\.s\.\b.{0,120}\biran\b.{0,120}\b(?:talks?|negotiations?|dialogue)\b",
+    r"\biran\b.{0,120}\bu\.s\.\b.{0,120}\b(?:talks?|negotiations?|dialogue)\b",
     r"\biran war talks\b",
-    r"\bpeace talks\b.*\b(?:iran|u\.s\.|us|united states)\b",
-    r"\b(?:iran|u\.s\.|us|united states)\b.*\bpeace talks\b",
+    r"\bpeace talks\b.{0,120}\b(?:iran|u\.s\.|us|united states)\b",
+    r"\b(?:iran|u\.s\.|us|united states)\b.{0,120}\bpeace talks\b",
 ]
 
 
 # =====================================================================
 # INDICATOR RECOGNITION
 #
-# The points are loaded from strategic_indicators.json.
-# These patterns only identify the indicator.
+# Scores are loaded from strategic_indicators.json.
 # =====================================================================
 
 INDICATOR_PATTERNS: dict[str, dict[str, list[str]]] = {
     "usa": {
         "carrier_deployment": [
             r"\bcarrier strike group\b",
-            r"\baircraft carrier\b.*\b(?:deploy|deployment|arrive|move|enter)\w*\b",
-            r"\b(?:deploy|deployment|arrive|move|enter)\w*\b.*\baircraft carrier\b",
-            r"\bcarrier\b.*\bcentcom\b",
-            r"\buss\s+[a-z0-9\- ]+\b.*\bcarrier\b",
+            r"\baircraft carrier\b.{0,100}\b(?:deploy|deployment|arrive|move|enter)\w*\b",
+            r"\b(?:deploy|deployment|arrive|move|enter)\w*\b.{0,100}\baircraft carrier\b",
+            r"\bcarrier\b.{0,100}\bcentcom\b",
+            r"\buss\s+[a-z0-9\- ]+\b.{0,100}\bcarrier\b",
         ],
         "bomber_deployment": [
-            r"\b(?:b-1|b-2|b-52)\b.*\b(?:deploy|deployment|arrive|move)\w*\b",
-            r"\b(?:deploy|deployment|arrive|move)\w*\b.*\b(?:b-1|b-2|b-52)\b",
-            r"\bstrategic bombers?\b.*\bdeploy\w*\b",
-            r"\bbombers?\b.*\bcentcom\b",
+            r"\b(?:b-1|b-2|b-52)\b.{0,100}\b(?:deploy|deployment|arrive|move)\w*\b",
+            r"\b(?:deploy|deployment|arrive|move)\w*\b.{0,100}\b(?:b-1|b-2|b-52)\b",
+            r"\bstrategic bombers?\b.{0,100}\bdeploy\w*\b",
+            r"\bbombers?\b.{0,100}\bcentcom\b",
         ],
         "additional_air_defense": [
-            r"\bdeploy\w*\b.*\b(?:patriot|thaad|air defen[cs]e)\b",
-            r"\badditional\b.*\b(?:patriot|thaad|air defen[cs]e)\b",
-            r"\breinforc\w*\b.*\bair defen[cs]e\b",
+            r"\bdeploy\w*\b.{0,100}\b(?:patriot|thaad|air defen[cs]e)\b",
+            r"\badditional\b.{0,100}\b(?:patriot|thaad|air defen[cs]e)\b",
+            r"\breinforc\w*\b.{0,100}\bair defen[cs]e\b",
         ],
         "new_sanctions": [
-            r"\b(?:us|u\.s\.|united states|washington)\b.*\bnew sanctions\b",
-            r"\b(?:us|u\.s\.|united states|washington)\b.*\bimpose\w*\b.*\bsanctions\b",
-            r"\btreasury\b.*\b(?:sanctions|designates|designation)\b",
-            r"\bnew sanctions\b.*\biran\b",
+            r"\b(?:us|u\.s\.|united states|washington)\b.{0,120}\bnew sanctions\b",
+            r"\b(?:us|u\.s\.|united states|washington)\b.{0,120}\bimpose\w*\b.{0,80}\bsanctions\b",
+            r"\btreasury\b.{0,120}\b(?:sanctions|designates|designation)\b",
+            r"\bnew sanctions\b.{0,120}\biran\b",
         ],
         "evacuation_warning": [
-            r"\b(?:us|u\.s\.|american)\b.*\bembassy\b.*\b(?:evacuat|depart|leave)\w*\b",
+            r"\b(?:us|u\.s\.|american)\b.{0,120}\bembassy\b.{0,120}\b(?:evacuat|depart|leave)\w*\b",
             r"\b(?:ordered|authorized)\s+departure\b",
-            r"\bevacuat\w*\b.*\b(?:americans|us citizens|u\.s\. citizens)\b",
-            r"\b(?:us|u\.s\.)\b.*\btravel warning\b",
+            r"\bevacuat\w*\b.{0,120}\b(?:americans|us citizens|u\.s\. citizens)\b",
+            r"\b(?:us|u\.s\.)\b.{0,100}\btravel warning\b",
         ],
         "force_protection": [
-            r"\bforce protection\b.*\b(?:raise|increase|heighten)\w*\b",
-            r"\b(?:raise|increase|heighten)\w*\b.*\bforce protection\b",
-            r"\b(?:us|u\.s\.|american)\b.*\b(?:forces|bases)\b.*\bhigh alert\b",
-            r"\b(?:us|u\.s\.)\b.*\bmilitary readiness\b",
+            r"\bforce protection\b.{0,100}\b(?:raise|increase|heighten)\w*\b",
+            r"\b(?:raise|increase|heighten)\w*\b.{0,100}\bforce protection\b",
+            r"\b(?:us|u\.s\.|american)\b.{0,120}\b(?:forces|bases)\b.{0,100}\bhigh alert\b",
+            r"\b(?:us|u\.s\.)\b.{0,100}\bmilitary readiness\b",
         ],
+
+        # V1.2: this is intentionally strict.
         "presidential_warning": [
-            r"\b(?:trump|us president|u\.s\. president)\b.{0,100}\b(?:warns?|threatens?|ultimatum|military action|severe consequences)\b",
-            r"\bwhite house\b.{0,100}\biran\b.{0,100}\b(?:warning|ultimatum|red line|military action)\b",
-            r"\btrump\b.{0,100}\biran\b.{0,100}\b(?:strike|attack|retaliation|consequences)\b",
+            r"\b(?:trump|us president|u\.s\. president|president trump)\b.{0,100}\bwarns?\b.{0,100}\b(?:iran|tehran|attack|strike|retaliation|military action|consequences)\b",
+            r"\b(?:trump|us president|u\.s\. president|president trump)\b.{0,100}\bthreatens?\b.{0,100}\b(?:iran|strike|attack|military action|retaliation)\b",
+            r"\b(?:trump|us president|u\.s\. president|president trump)\b.{0,100}\b(?:issues?|gives?)\b.{0,60}\bultimatum\b",
+            r"\b(?:trump|us president|u\.s\. president|president trump)\b.{0,100}\bwill\b.{0,30}\b(?:strike|attack|retaliate)\b",
+            r"\bwhite house\b.{0,100}\b(?:warns?|threatens?|ultimatum)\b.{0,100}\biran\b",
+            r"\b(?:severe consequences|military response|devastating response)\b.{0,100}\b(?:trump|white house|us president|u\.s\. president)\b",
         ],
         "military_exercise": [
-            r"\b(?:us|u\.s\.|american)\b.*\bmilitary exercise\b",
-            r"\b(?:us|u\.s\.)\b.*\bjoint exercise\b",
-            r"\bcentcom\b.*\bexercise\b",
-            r"\bexercise\b.*\b(?:us navy|u\.s\. navy|us air force|u\.s\. air force)\b",
+            r"\b(?:us|u\.s\.|american)\b.{0,120}\bmilitary exercise\b",
+            r"\b(?:us|u\.s\.)\b.{0,120}\bjoint exercise\b",
+            r"\bcentcom\b.{0,120}\bexercise\b",
+            r"\bexercise\b.{0,120}\b(?:us navy|u\.s\. navy|us air force|u\.s\. air force)\b",
         ],
         "strike_preparation": [
-            r"\b(?:us|u\.s\.|american)\b.*\bprepar\w*\b.*\bstrike\b",
-            r"\bpentagon\b.*\b(?:strike options|attack options|target list)\b",
-            r"\b(?:military|air)\s+strike\b.*\bimminent\b",
-            r"\b(?:us|u\.s\.)\b.*\bposition\w*\b.*\bforces\b.*\bstrike\b",
+            r"\b(?:us|u\.s\.|american)\b.{0,120}\bprepar\w*\b.{0,100}\bstrike\b",
+            r"\bpentagon\b.{0,120}\b(?:strike options|attack options|target list)\b",
+            r"\b(?:military|air)\s+strike\b.{0,100}\bimminent\b",
+            r"\b(?:us|u\.s\.)\b.{0,120}\bposition\w*\b.{0,100}\bforces\b.{0,100}\bstrike\b",
             r"\bstrike package\b",
         ],
         "negotiation": [
-            r"\b(?:us|u\.s\.|united states|washington|trump)\b.*\b(?:talks?|negotiations?|dialogue)\b",
-            r"\b(?:talks?|negotiations?|dialogue)\b.*\b(?:us|u\.s\.|united states|washington|trump)\b",
-            r"\bus[- ]iran\b.*\b(?:talks?|negotiations?|dialogue|deal)\b",
-            r"\b(?:talks?|negotiations?|dialogue|deal)\b.*\bus[- ]iran\b",
-            r"\bu\.s\.\b.*\bpauses?\b.*\bstrikes?\b.*\btalks?\b",
-            r"\btrump\b.*\biran war talks\b",
+            r"\b(?:us|u\.s\.|united states|washington|trump)\b.{0,150}\b(?:talks?|negotiations?|dialogue)\b",
+            r"\b(?:talks?|negotiations?|dialogue)\b.{0,150}\b(?:us|u\.s\.|united states|washington|trump)\b",
+            r"\bus[- ]iran\b.{0,150}\b(?:talks?|negotiations?|dialogue|deal)\b",
+            r"\b(?:talks?|negotiations?|dialogue|deal)\b.{0,150}\bus[- ]iran\b",
+            r"\bu\.s\.\b.{0,100}\bpauses?\b.{0,100}\bstrikes?\b.{0,120}\btalks?\b",
+            r"\btrump\b.{0,120}\biran war talks\b",
         ],
         "ceasefire_support": [
-            r"\b(?:us|u\.s\.|united states|white house|trump)\b.*\b(?:supports?|backs?|calls? for|urges?)\b.*\bcease[- ]?fire\b",
-            r"\b(?:us|u\.s\.)\b.*\bcease[- ]?fire proposal\b",
-            r"\b(?:us|u\.s\.)\b.*\bpauses?\b.*\bstrikes?\b",
-            r"\bpauses?\b.*\b(?:us|u\.s\.)\b.*\bstrikes?\b",
+            r"\b(?:us|u\.s\.|united states|white house|trump)\b.{0,120}\b(?:supports?|backs?|calls? for|urges?)\b.{0,100}\bcease[- ]?fire\b",
+            r"\b(?:us|u\.s\.)\b.{0,120}\bcease[- ]?fire proposal\b",
+            r"\b(?:us|u\.s\.)\b.{0,100}\bpauses?\b.{0,100}\bstrikes?\b",
+            r"\bpauses?\b.{0,100}\b(?:us|u\.s\.)\b.{0,100}\bstrikes?\b",
         ],
         "sanction_relief": [
-            r"\b(?:us|u\.s\.|united states|washington)\b.*\b(?:lifts?|eases?|waives?|suspends?)\b.*\bsanctions\b",
+            r"\b(?:us|u\.s\.|united states|washington)\b.{0,120}\b(?:lifts?|eases?|waives?|suspends?)\b.{0,100}\bsanctions\b",
             r"\bsanctions relief\b",
-            r"\bwaiver\b.*\biran\b.*\bsanctions\b",
+            r"\bwaiver\b.{0,100}\biran\b.{0,100}\bsanctions\b",
         ],
         "troop_withdrawal": [
-            r"\b(?:us|u\.s\.|american)\b.*\bwithdraw\w*\b.*\b(?:troops|forces|warships|aircraft)\b",
-            r"\b(?:troops|forces|warships|aircraft)\b.*\bwithdraw\w*\b.*\b(?:us|u\.s\.)\b",
-            r"\bstands? down\b.*\b(?:us|u\.s\.|american)\b.*\bforces\b",
+            r"\b(?:us|u\.s\.|american)\b.{0,120}\bwithdraw\w*\b.{0,100}\b(?:troops|forces|warships|aircraft)\b",
+            r"\b(?:troops|forces|warships|aircraft)\b.{0,120}\bwithdraw\w*\b.{0,100}\b(?:us|u\.s\.)\b",
+            r"\bstands? down\b.{0,100}\b(?:us|u\.s\.|american)\b.{0,100}\bforces\b",
         ],
     },
 
     "iran": {
         "missile_preparation": [
-            r"\biran(?:ian)?\b.*\bmissiles?\b.*\b(?:prepar|ready|readiness|position|deploy)\w*\b",
-            r"\b(?:prepar|ready|readiness|position|deploy)\w*\b.*\biran(?:ian)?\b.*\bmissiles?\b",
-            r"\birgc\b.*\bmissile units?\b.*\balert\b",
-            r"\biranian missile forces?\b.*\bhigh alert\b",
+            r"\biran(?:ian)?\b.{0,120}\bmissiles?\b.{0,120}\b(?:prepar|ready|readiness|position|deploy)\w*\b",
+            r"\b(?:prepar|ready|readiness|position|deploy)\w*\b.{0,120}\biran(?:ian)?\b.{0,120}\bmissiles?\b",
+            r"\birgc\b.{0,120}\bmissile units?\b.{0,100}\balert\b",
+            r"\biranian missile forces?\b.{0,100}\bhigh alert\b",
         ],
         "proxy_activation": [
-            r"\biran\b.*\b(?:activates?|mobilizes?|mobilises?|orders?)\b.*\b(?:proxies|proxy forces|allied militias)\b",
-            r"\biran-backed\b.*\b(?:militia|group|forces?)\b.*\b(?:mobiliz|activat|prepare|alert)\w*\b",
-            r"\baxis of resistance\b.*\b(?:mobiliz|activat|prepare)\w*\b",
+            r"\biran\b.{0,120}\b(?:activates?|mobilizes?|mobilises?|orders?)\b.{0,120}\b(?:proxies|proxy forces|allied militias)\b",
+            r"\biran-backed\b.{0,120}\b(?:militia|group|forces?)\b.{0,120}\b(?:mobiliz|activat|prepare|alert)\w*\b",
+            r"\baxis of resistance\b.{0,120}\b(?:mobiliz|activat|prepare)\w*\b",
         ],
         "missile_test": [
-            r"\biran(?:ian)?\b.*\b(?:tests?|tested|test-fires?|test-fired|launches?)\b.*\bmissiles?\b",
-            r"\bmissile\b.*\btest\b.*\biran\b",
-            r"\birgc\b.*\btest\w*\b.*\bmissiles?\b",
+            r"\biran(?:ian)?\b.{0,120}\b(?:tests?|tested|test-fires?|test-fired|launches?)\b.{0,120}\bmissiles?\b",
+            r"\bmissile\b.{0,100}\btest\b.{0,120}\biran\b",
+            r"\birgc\b.{0,120}\btest\w*\b.{0,100}\bmissiles?\b",
         ],
         "nuclear_activity": [
-            r"\biran\b.*\b(?:enrich|enrichment)\w*\b.*\b(?:uranium|percent|%)\b",
-            r"\biran\b.*\b(?:installs?|installed|activates?|activated)\b.*\bcentrifuges?\b",
-            r"\biran\b.*\b(?:expands?|expanded|accelerates?|accelerated)\b.*\bnuclear\b",
-            r"\b(?:fordow|natanz|arak)\b.*\b(?:expands?|enrichment|centrifuge|nuclear activity)\b",
-            r"\biaea\b.*\biran\b.*\b(?:non-compliance|violation|stockpile increase)\b",
+            r"\biran\b.{0,150}\b(?:enrich|enrichment)\w*\b.{0,100}\b(?:uranium|percent|%)\b",
+            r"\biran\b.{0,150}\b(?:installs?|installed|activates?|activated)\b.{0,100}\bcentrifuges?\b",
+            r"\biran\b.{0,150}\b(?:expands?|expanded|accelerates?|accelerated)\b.{0,120}\bnuclear\b",
+            r"\b(?:fordow|natanz|arak)\b.{0,150}\b(?:expands?|enrichment|centrifuge|nuclear activity)\b",
+            r"\biaea\b.{0,150}\biran\b.{0,150}\b(?:non-compliance|violation|stockpile increase)\b",
         ],
         "hormuz_threat": [
-            r"\biran\b.*\b(?:close|closes|closed|block|blocks|blocked|shut)\b.*\bstrait of hormuz\b",
-            r"\bstrait of hormuz\b.*\b(?:close|block|shut|disrupt|threat)\w*\b",
-            r"\birgc\b.*\bhormuz\b.*\b(?:warning|threat|closure|blockade)\b",
+            r"\biran\b.{0,120}\b(?:close|closes|closed|block|blocks|blocked|shut)\b.{0,120}\bstrait of hormuz\b",
+            r"\bstrait of hormuz\b.{0,120}\b(?:close|block|shut|disrupt|threat)\w*\b",
+            r"\birgc\b.{0,120}\bhormuz\b.{0,100}\b(?:warning|threat|closure|blockade)\b",
         ],
         "supreme_leader_statement": [
-            r"\b(?:khamenei|supreme leader|ayatollah khamenei)\b.{0,80}\b(?:warns?|threatens?|vows?|orders?|promises?)\b.{0,80}\b(?:attack|strike|retaliate|revenge|punish|destroy|military response)\b",
-            r"\b(?:khamenei|supreme leader|ayatollah khamenei)\b.{0,100}\b(?:crushing response|harsh response|severe consequences|military retaliation)\b",
-            r"\b(?:attack|strike|retaliation|revenge)\b.{0,80}\b(?:khamenei|supreme leader|ayatollah khamenei)\b",
+            r"\b(?:khamenei|supreme leader|ayatollah khamenei)\b.{0,100}\b(?:warns?|threatens?|vows?|orders?|promises?)\b.{0,100}\b(?:attack|strike|retaliate|revenge|punish|destroy|military response)\b",
+            r"\b(?:khamenei|supreme leader|ayatollah khamenei)\b.{0,120}\b(?:crushing response|harsh response|severe consequences|military retaliation)\b",
+            r"\b(?:attack|strike|retaliation|revenge)\b.{0,100}\b(?:khamenei|supreme leader|ayatollah khamenei)\b",
         ],
         "irgc_alert": [
-            r"\birgc\b.*\b(?:high alert|raised alert|combat readiness|maximum readiness)\b",
-            r"\b(?:raises?|raised|increases?|increased)\b.*\birgc\b.*\breadiness\b",
-            r"\birgc\b.*\b(?:mobilizes?|mobilises?|deploys?|deployment)\b",
+            r"\birgc\b.{0,120}\b(?:high alert|raised alert|combat readiness|maximum readiness)\b",
+            r"\b(?:raises?|raised|increases?|increased)\b.{0,100}\birgc\b.{0,100}\breadiness\b",
+            r"\birgc\b.{0,120}\b(?:mobilizes?|mobilises?|deploys?|deployment)\b",
         ],
         "military_exercise": [
-            r"\biran(?:ian)?\b.*\bmilitary exercise\b",
-            r"\birgc\b.*\bmilitary exercise\b",
-            r"\biran(?:ian)?\b.*\bwar games?\b",
-            r"\bexercise\b.*\b(?:iran|irgc)\b",
+            r"\biran(?:ian)?\b.{0,120}\bmilitary exercise\b",
+            r"\birgc\b.{0,120}\bmilitary exercise\b",
+            r"\biran(?:ian)?\b.{0,120}\bwar games?\b",
+            r"\bexercise\b.{0,120}\b(?:iran|irgc)\b",
         ],
         "strike_preparation": [
-            r"\biran(?:ian)?\b.*\bprepar\w*\b.*\b(?:strike|attack|retaliation)\b",
-            r"\birgc\b.*\bprepar\w*\b.*\b(?:strike|attack|response)\b",
-            r"\biran\b.*\bimminent\b.*\b(?:strike|attack|retaliation)\b",
-            r"\biranian\b.*\btarget list\b",
+            r"\biran(?:ian)?\b.{0,120}\bprepar\w*\b.{0,100}\b(?:strike|attack|retaliation)\b",
+            r"\birgc\b.{0,120}\bprepar\w*\b.{0,100}\b(?:strike|attack|response)\b",
+            r"\biran\b.{0,120}\bimminent\b.{0,100}\b(?:strike|attack|retaliation)\b",
+            r"\biranian\b.{0,120}\btarget list\b",
         ],
         "negotiation": [
-            r"\biran\b.*\b(?:talks?|negotiations?|dialogue)\b",
-            r"\b(?:talks?|negotiations?|dialogue)\b.*\biran\b",
-            r"\btehran\b.*\bresume\w*\b.*\bnegotiations\b",
-            r"\bus[- ]iran\b.*\b(?:talks?|negotiations?|dialogue|deal)\b",
-            r"\b(?:talks?|negotiations?|dialogue|deal)\b.*\bus[- ]iran\b",
+            r"\biran\b.{0,150}\b(?:talks?|negotiations?|dialogue)\b",
+            r"\b(?:talks?|negotiations?|dialogue)\b.{0,150}\biran\b",
+            r"\btehran\b.{0,120}\bresume\w*\b.{0,100}\bnegotiations\b",
+            r"\bus[- ]iran\b.{0,150}\b(?:talks?|negotiations?|dialogue|deal)\b",
+            r"\b(?:talks?|negotiations?|dialogue|deal)\b.{0,150}\bus[- ]iran\b",
             r"\biran war talks\b",
         ],
         "iaea_cooperation": [
-            r"\biran\b.*\bcooperat\w*\b.*\biaea\b",
-            r"\biaea\b.*\bcooperat\w*\b.*\biran\b",
-            r"\biran\b.*\b(?:allows?|allowed|grants?|granted)\b.*\b(?:inspectors?|inspection|access)\b",
-            r"\biran\b.*\breturns?\b.*\biaea compliance\b",
+            r"\biran\b.{0,150}\bcooperat\w*\b.{0,100}\biaea\b",
+            r"\biaea\b.{0,150}\bcooperat\w*\b.{0,100}\biran\b",
+            r"\biran\b.{0,150}\b(?:allows?|allowed|grants?|granted)\b.{0,120}\b(?:inspectors?|inspection|access)\b",
+            r"\biran\b.{0,150}\breturns?\b.{0,100}\biaea compliance\b",
         ],
         "proxy_restraint": [
-            r"\biran\b.*\b(?:restrains?|restrained|orders?)\b.*\b(?:proxies|proxy forces|militias)\b",
-            r"\biran-backed\b.*\b(?:groups?|militias?)\b.*\bstand down\b",
-            r"\btehran\b.*\b(?:urges?|orders?)\b.*\b(?:restraint|de-escalation)\b",
+            r"\biran\b.{0,120}\b(?:restrains?|restrained|orders?)\b.{0,120}\b(?:proxies|proxy forces|militias)\b",
+            r"\biran-backed\b.{0,120}\b(?:groups?|militias?)\b.{0,120}\bstand down\b",
+            r"\btehran\b.{0,120}\b(?:urges?|orders?)\b.{0,100}\b(?:restraint|de-escalation)\b",
         ],
         "de_escalation_statement": [
-            r"\biran\b.*\b(?:calls for|supports?|seeks?|wants?)\b.*\bde[- ]?escalation\b",
-            r"\btehran\b.*\b(?:does not seek|not seeking|wants to avoid)\b.*\bwar\b",
-            r"\biran\b.*\b(?:no intention|does not intend)\b.*\b(?:escalate|attack|war)\b",
-            r"\biran\b.*\bready\b.*\b(?:reduce tensions|de-escalate)\b",
+            r"\biran\b.{0,120}\b(?:calls for|supports?|seeks?|wants?)\b.{0,100}\bde[- ]?escalation\b",
+            r"\btehran\b.{0,120}\b(?:does not seek|not seeking|wants to avoid)\b.{0,100}\bwar\b",
+            r"\biran\b.{0,120}\b(?:no intention|does not intend)\b.{0,100}\b(?:escalate|attack|war)\b",
+            r"\biran\b.{0,120}\bready\b.{0,100}\b(?:reduce tensions|de-escalate)\b",
         ],
     },
 }
@@ -497,10 +499,10 @@ def event_identity(event: dict[str, Any]) -> str:
     )
 
     if event_id:
-        source_layer = normalise_text(
+        layer = normalise_text(
             event.get("_strategic_source_layer")
         )
-        return f"{source_layer}:id:{event_id}"
+        return f"{layer}:id:{event_id}"
 
     title = normalise_text(
         event.get("title")
@@ -744,12 +746,9 @@ def detect_actors(text: str) -> set[str]:
 
 
 def is_bilateral_event(text: str) -> bool:
-    actor_set = detect_actors(text)
+    actors = detect_actors(text)
 
-    if actor_set == {"usa", "iran"}:
-        if regex_matches(BILATERAL_PATTERNS, text):
-            return True
-
+    if actors == {"usa", "iran"}:
         if re.search(
             r"\b(?:talks?|negotiations?|dialogue|peace deal|cease[- ]?fire)\b",
             text,
@@ -760,30 +759,44 @@ def is_bilateral_event(text: str) -> bool:
     return bool(regex_matches(BILATERAL_PATTERNS, text))
 
 
-def has_explicit_threat_language(text: str) -> bool:
-    threat_patterns = [
-        r"\bthreatens?\b",
-        r"\bvows?\b.*\b(?:attack|strike|retaliate|revenge)\b",
-        r"\bwarns?\b.*\b(?:attack|strike|retaliation|military response|consequences)\b",
-        r"\bcrushing response\b",
-        r"\bharsh response\b",
-        r"\bmilitary retaliation\b",
-        r"\bsevere consequences\b",
-        r"\bwill retaliate\b",
-        r"\bwill strike\b",
-        r"\bwill attack\b",
+def has_explicit_presidential_threat(text: str) -> bool:
+    """
+    Trump/President + Iran + strike is not sufficient.
+
+    A real threat verb, warning construction or ultimatum is required.
+    """
+
+    strict_patterns = [
+        r"\b(?:trump|us president|u\.s\. president|president trump)\b.{0,100}\bwarns?\b",
+        r"\b(?:trump|us president|u\.s\. president|president trump)\b.{0,100}\bthreatens?\b",
+        r"\b(?:trump|us president|u\.s\. president|president trump)\b.{0,100}\bultimatum\b",
+        r"\b(?:trump|us president|u\.s\. president|president trump)\b.{0,100}\bwill\b.{0,30}\b(?:strike|attack|retaliate)\b",
+        r"\b(?:trump|us president|u\.s\. president|president trump)\b.{0,100}\bvows?\b.{0,80}\b(?:strike|attack|retaliate)\b",
+        r"\bwhite house\b.{0,100}\b(?:warns?|threatens?|ultimatum)\b",
+        r"\b(?:severe consequences|devastating response|military response)\b.{0,100}\b(?:trump|white house|president)\b",
     ]
 
-    return bool(regex_matches(threat_patterns, text))
+    return bool(regex_matches(strict_patterns, text))
 
 
 def is_conditional_diplomacy(text: str) -> bool:
     patterns = [
-        r"\bties?\b.*\b(?:peace deal|agreement|cease[- ]?fire|talks?)\b.*\bto\b",
-        r"\b(?:peace deal|agreement|cease[- ]?fire|talks?)\b.*\bconditional\b",
-        r"\bcondition(?:s|al)?\b.*\b(?:peace deal|agreement|cease[- ]?fire|talks?)\b",
+        r"\bties?\b.{0,100}\b(?:peace deal|agreement|cease[- ]?fire|talks?)\b.{0,60}\bto\b",
+        r"\b(?:peace deal|agreement|cease[- ]?fire|talks?)\b.{0,100}\bconditional\b",
+        r"\bcondition(?:s|al)?\b.{0,100}\b(?:peace deal|agreement|cease[- ]?fire|talks?)\b",
         r"\bon condition that\b",
-        r"\bonly if\b.*\b(?:peace|cease[- ]?fire|deal|talks?)\b",
+        r"\bonly if\b.{0,100}\b(?:peace|cease[- ]?fire|deal|talks?)\b",
+    ]
+
+    return bool(regex_matches(patterns, text))
+
+
+def has_explicit_supreme_leader_threat(text: str) -> bool:
+    patterns = [
+        r"\b(?:khamenei|supreme leader|ayatollah khamenei)\b.{0,100}\bwarns?\b.{0,100}\b(?:attack|strike|retaliation|military response|consequences)\b",
+        r"\b(?:khamenei|supreme leader|ayatollah khamenei)\b.{0,100}\bthreatens?\b",
+        r"\b(?:khamenei|supreme leader|ayatollah khamenei)\b.{0,100}\bvows?\b.{0,100}\b(?:attack|strike|retaliate|revenge)\b",
+        r"\b(?:khamenei|supreme leader|ayatollah khamenei)\b.{0,120}\b(?:crushing response|harsh response|military retaliation)\b",
     ]
 
     return bool(regex_matches(patterns, text))
@@ -795,36 +808,35 @@ def indicator_allowed(
     text: str,
     bilateral: bool,
 ) -> bool:
-    if indicator_id in BILATERAL_INDICATORS:
-        if bilateral:
-            return True
+    if indicator_id == "presidential_warning":
+        return has_explicit_presidential_threat(text)
 
     if indicator_id == "supreme_leader_statement":
         if is_conditional_diplomacy(text):
             return False
 
-        if not has_explicit_threat_language(text):
-            return False
+        return has_explicit_supreme_leader_threat(text)
 
-    if actor == "iran":
-        if indicator_id not in BILATERAL_INDICATORS:
-            iran_named = bool(
-                regex_matches(ACTOR_PATTERNS["iran"], text)
-            )
-
-            if not iran_named:
-                return False
+    if indicator_id in BILATERAL_INDICATORS and bilateral:
+        return True
 
     if actor == "usa":
-        if indicator_id not in BILATERAL_INDICATORS:
-            usa_named = bool(
-                regex_matches(ACTOR_PATTERNS["usa"], text)
+        return bool(
+            regex_matches(
+                ACTOR_PATTERNS["usa"],
+                text,
             )
+        )
 
-            if not usa_named:
-                return False
+    if actor == "iran":
+        return bool(
+            regex_matches(
+                ACTOR_PATTERNS["iran"],
+                text,
+            )
+        )
 
-    return True
+    return False
 
 
 # =====================================================================
@@ -863,7 +875,6 @@ def recognise_indicators(
 
         result = dict(configuration)
         result["matched_patterns"] = matched_patterns
-
         matches.append(result)
 
     return select_non_overlapping_indicators(matches)
@@ -872,15 +883,6 @@ def recognise_indicators(
 def select_non_overlapping_indicators(
     matches: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
-    """
-    Prevent uncontrolled score stacking.
-
-    Per actor and event:
-    - keep the strongest pressure-increasing indicator;
-    - keep the strongest pressure-decreasing indicator;
-    - allow both only when both directions are genuinely present.
-    """
-
     increasing = [
         match
         for match in matches
@@ -1080,7 +1082,7 @@ def build_reason(
         f"{operational_component:+.2f}; "
         f"strategic modifier: "
         f"{strategic_modifier:+.2f}; "
-        f"final contribution: "
+        f"final contribution before daily deduplication: "
         f"{final_score:+.2f}. "
         f"Event: {title}"
     )
@@ -1106,7 +1108,7 @@ def build_contribution(
         for indicator in indicators
     )
 
-    final_score = (
+    original_final_score = (
         operational_component
         + strategic_modifier
     )
@@ -1184,16 +1186,29 @@ def build_contribution(
             strategic_modifier
         ),
         "context_multiplier": 1.0,
-        "final_score": round_score(
-            final_score
+
+        # Before daily actor/indicator deduplication.
+        "original_final_score": round_score(
+            original_final_score
         ),
+
+        # This may later be reduced to zero.
+        "final_score": round_score(
+            original_final_score
+        ),
+
+        "duplicate_indicator_evidence": False,
+        "daily_score_suppressed": False,
+        "suppression_reason": None,
+        "primary_daily_indicator": None,
+
         "indicators": indicator_results,
         "reason": build_reason(
             actor=actor,
             title=title,
             operational_component=operational_component,
             strategic_modifier=strategic_modifier,
-            final_score=final_score,
+            final_score=original_final_score,
             indicators=indicators,
         ),
         "source": event.get("source", ""),
@@ -1270,6 +1285,218 @@ def analyse_event(
 
 
 # =====================================================================
+# DAILY INDICATOR DEDUPLICATION
+# =====================================================================
+
+def contribution_indicator_ids(
+    contribution: dict[str, Any],
+) -> list[str]:
+    ids: list[str] = []
+
+    for indicator in contribution.get(
+        "indicators",
+        [],
+    ):
+        if not isinstance(indicator, dict):
+            continue
+
+        indicator_id = str(
+            indicator.get("id", "")
+        ).strip()
+
+        if indicator_id:
+            ids.append(indicator_id)
+
+    return ids
+
+
+def contribution_priority(
+    contribution: dict[str, Any],
+) -> tuple[float, float, str]:
+    """
+    Select the strongest evidence for one actor/date/indicator.
+
+    Priority:
+    1. Largest absolute original final score.
+    2. Largest absolute strategic modifier.
+    3. Earliest timestamp for deterministic selection.
+    """
+
+    return (
+        abs(
+            safe_number(
+                contribution.get(
+                    "original_final_score"
+                )
+            )
+        ),
+        abs(
+            safe_number(
+                contribution.get(
+                    "strategic_modifier"
+                )
+            )
+        ),
+        str(contribution.get("timestamp", "")),
+    )
+
+
+def apply_daily_indicator_deduplication(
+    contributions: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """
+    The same strategic indicator may generate several headlines
+    on one day.
+
+    All evidence remains visible, but only the strongest item for
+    actor + date + indicator keeps its score.
+
+    Contributions containing two selected indicators are evaluated
+    separately for each indicator. A contribution keeps its score if
+    it is the selected representative for at least one of its
+    indicators.
+    """
+
+    grouped_candidates: dict[
+        tuple[str, str, str],
+        list[int],
+    ] = {}
+
+    for index, contribution in enumerate(contributions):
+        actor = str(
+            contribution.get("actor", "")
+        )
+
+        event_date = str(
+            contribution.get("date", "")
+        )
+
+        for indicator_id in contribution_indicator_ids(
+            contribution
+        ):
+            key = (
+                actor,
+                event_date,
+                indicator_id,
+            )
+
+            grouped_candidates.setdefault(
+                key,
+                [],
+            ).append(index)
+
+    winning_indices_by_key: dict[
+        tuple[str, str, str],
+        int,
+    ] = {}
+
+    for key, indices in grouped_candidates.items():
+        winner = max(
+            indices,
+            key=lambda item_index: (
+                contribution_priority(
+                    contributions[item_index]
+                )
+            ),
+        )
+
+        winning_indices_by_key[key] = winner
+
+    for index, contribution in enumerate(contributions):
+        actor = str(
+            contribution.get("actor", "")
+        )
+
+        event_date = str(
+            contribution.get("date", "")
+        )
+
+        indicator_ids = contribution_indicator_ids(
+            contribution
+        )
+
+        winning_indicators: list[str] = []
+        duplicate_indicators: list[str] = []
+
+        for indicator_id in indicator_ids:
+            key = (
+                actor,
+                event_date,
+                indicator_id,
+            )
+
+            if winning_indices_by_key.get(key) == index:
+                winning_indicators.append(
+                    indicator_id
+                )
+            else:
+                duplicate_indicators.append(
+                    indicator_id
+                )
+
+        if winning_indicators:
+            contribution[
+                "primary_daily_indicator"
+            ] = winning_indicators[0]
+
+            contribution[
+                "duplicate_indicator_evidence"
+            ] = bool(duplicate_indicators)
+
+            contribution[
+                "daily_score_suppressed"
+            ] = False
+
+            contribution[
+                "suppression_reason"
+            ] = (
+                "Some overlapping indicators were duplicate "
+                "daily evidence."
+                if duplicate_indicators
+                else None
+            )
+
+            contribution[
+                "winning_daily_indicators"
+            ] = winning_indicators
+
+            contribution[
+                "duplicate_daily_indicators"
+            ] = duplicate_indicators
+
+        else:
+            contribution[
+                "final_score"
+            ] = 0.0
+
+            contribution[
+                "duplicate_indicator_evidence"
+            ] = True
+
+            contribution[
+                "daily_score_suppressed"
+            ] = True
+
+            contribution[
+                "suppression_reason"
+            ] = (
+                "Another event was selected as the strongest "
+                "evidence for the same actor, UTC date and "
+                "strategic indicator."
+            )
+
+            contribution[
+                "winning_daily_indicators"
+            ] = []
+
+            contribution[
+                "duplicate_daily_indicators"
+            ] = indicator_ids
+
+    return contributions
+
+
+# =====================================================================
 # DAILY AGGREGATION
 # =====================================================================
 
@@ -1279,6 +1506,9 @@ def empty_actor_day() -> dict[str, Any]:
         "positive_score": 0.0,
         "negative_score": 0.0,
         "event_count": 0,
+        "scored_event_count": 0,
+        "evidence_event_count": 0,
+        "suppressed_duplicate_count": 0,
         "increase_event_count": 0,
         "decrease_event_count": 0,
         "contributors": [],
@@ -1313,15 +1543,28 @@ def group_contributions_by_day(
             }
 
         actor_day = grouped[day][actor]
+
         score = safe_number(
             contribution.get("final_score")
         )
 
-        actor_day["raw_score"] += score
         actor_day["event_count"] += 1
+        actor_day["evidence_event_count"] += 1
+
+        if contribution.get(
+            "daily_score_suppressed"
+        ):
+            actor_day[
+                "suppressed_duplicate_count"
+            ] += 1
+        else:
+            actor_day["scored_event_count"] += 1
+
         actor_day["contributors"].append(
             contribution
         )
+
+        actor_day["raw_score"] += score
 
         if score > 0:
             actor_day["positive_score"] += score
@@ -1346,14 +1589,18 @@ def group_contributions_by_day(
 
             actor_day["contributors"].sort(
                 key=lambda item: (
-                    abs(
+                    bool(
+                        item.get(
+                            "daily_score_suppressed"
+                        )
+                    ),
+                    -abs(
                         safe_number(
                             item.get("final_score")
                         )
                     ),
                     str(item.get("timestamp", "")),
-                ),
-                reverse=True,
+                )
             )
 
     return grouped
@@ -1631,6 +1878,54 @@ def contribution_count_by_actor(
     return counts
 
 
+def scored_contribution_count_by_actor(
+    contributions: list[dict[str, Any]],
+) -> dict[str, int]:
+    counts = {
+        "usa": 0,
+        "iran": 0,
+    }
+
+    for contribution in contributions:
+        if contribution.get(
+            "daily_score_suppressed"
+        ):
+            continue
+
+        actor = str(
+            contribution.get("actor", "")
+        )
+
+        if actor in counts:
+            counts[actor] += 1
+
+    return counts
+
+
+def suppressed_count_by_actor(
+    contributions: list[dict[str, Any]],
+) -> dict[str, int]:
+    counts = {
+        "usa": 0,
+        "iran": 0,
+    }
+
+    for contribution in contributions:
+        if not contribution.get(
+            "daily_score_suppressed"
+        ):
+            continue
+
+        actor = str(
+            contribution.get("actor", "")
+        )
+
+        if actor in counts:
+            counts[actor] += 1
+
+    return counts
+
+
 def contribution_count_by_layer(
     contributions: list[dict[str, Any]],
 ) -> dict[str, int]:
@@ -1651,10 +1946,19 @@ def contribution_count_by_layer(
 
 def indicator_count(
     contributions: list[dict[str, Any]],
+    scored_only: bool,
 ) -> dict[str, int]:
     counts: dict[str, int] = {}
 
     for contribution in contributions:
+        if (
+            scored_only
+            and contribution.get(
+                "daily_score_suppressed"
+            )
+        ):
+            continue
+
         actor = str(
             contribution.get("actor", "")
         )
@@ -1689,8 +1993,16 @@ def strongest_contributors(
     contributors: list[dict[str, Any]],
     limit: int = 10,
 ) -> list[dict[str, Any]]:
+    scored = [
+        contributor
+        for contributor in contributors
+        if not contributor.get(
+            "daily_score_suppressed"
+        )
+    ]
+
     return sorted(
-        contributors,
+        scored,
         key=lambda item: (
             abs(
                 safe_number(
@@ -1825,6 +2137,12 @@ def main() -> None:
         )
     )
 
+    contributions = (
+        apply_daily_indicator_deduplication(
+            contributions
+        )
+    )
+
     grouped = group_contributions_by_day(
         contributions
     )
@@ -1848,11 +2166,21 @@ def main() -> None:
         "unique_events_scanned": len(
             all_events
         ),
-        "strategic_contributions": len(
+        "strategic_evidence_contributions": len(
             contributions
         ),
-        "contributions_by_actor": (
+        "evidence_contributions_by_actor": (
             contribution_count_by_actor(
+                contributions
+            )
+        ),
+        "scored_contributions_by_actor": (
+            scored_contribution_count_by_actor(
+                contributions
+            )
+        ),
+        "suppressed_duplicates_by_actor": (
+            suppressed_count_by_actor(
                 contributions
             )
         ),
@@ -1861,8 +2189,17 @@ def main() -> None:
                 contributions
             )
         ),
-        "indicator_counts": indicator_count(
-            contributions
+        "evidence_indicator_counts": (
+            indicator_count(
+                contributions,
+                scored_only=False,
+            )
+        ),
+        "scored_indicator_counts": (
+            indicator_count(
+                contributions,
+                scored_only=True,
+            )
         ),
         "skipped_without_timestamp": (
             skipped_without_timestamp
@@ -1901,12 +2238,23 @@ def main() -> None:
             f"0, 100)"
         ),
         "context_multiplier": (
-            "Fixed at 1.0 in V1.1."
+            "Fixed at 1.0 in V1.2."
         ),
-        "overlap_policy": (
+        "event_overlap_policy": (
             "Per actor and event, only the strongest "
             "increasing and strongest decreasing "
-            "indicator can contribute."
+            "indicator may be selected."
+        ),
+        "daily_indicator_policy": (
+            "For each actor, UTC date and indicator, "
+            "only the strongest evidence item keeps "
+            "its score. Other items remain visible "
+            "with final_score 0."
+        ),
+        "presidential_warning_policy": (
+            "Requires an explicit warning, threat, "
+            "ultimatum or future military-action "
+            "construction."
         ),
         "bilateral_policy": (
             "Recognised bilateral negotiation and "
@@ -2006,7 +2354,7 @@ def main() -> None:
     )
 
     print(
-        "Strategic Pressure Engine V1.1 completed."
+        "Strategic Pressure Engine V1.2 completed."
     )
 
     print(
@@ -2025,13 +2373,23 @@ def main() -> None:
     )
 
     print(
-        f"Strategic contributions: "
+        "Strategic evidence contributions: "
         f"{len(contributions)}"
     )
 
     print(
-        "Contributions by actor: "
-        f"{statistics['contributions_by_actor']}"
+        "Evidence by actor: "
+        f"{statistics['evidence_contributions_by_actor']}"
+    )
+
+    print(
+        "Scored by actor: "
+        f"{statistics['scored_contributions_by_actor']}"
+    )
+
+    print(
+        "Suppressed duplicates by actor: "
+        f"{statistics['suppressed_duplicates_by_actor']}"
     )
 
     if history_rows:
