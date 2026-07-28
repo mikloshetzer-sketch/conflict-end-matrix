@@ -23,13 +23,15 @@ Data flow:
         ↓
     Actor-level Strategic Achievement Index
 
-The script reads the final daily contributors directly from:
+The script reads all complete daily contributor sets from:
 
-    current.usa.contributors
-    current.iran.contributors
+    days[].usa.contributors
+    days[].iran.contributors
 
-Suppressed duplicate evidence is preserved in diagnostics but does not
-affect the achievement calculation.
+and uses current as a backwards-compatible fallback.
+
+Suppressed duplicate evidence and bilateral duplicate mappings are preserved
+in diagnostics but do not affect the achievement calculation.
 """
 
 from __future__ import annotations
@@ -37,6 +39,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import statistics
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -623,15 +626,12 @@ def build_impact_lookup(
     return lookup, warnings
 
 
-def extract_current_contributors(
-    pressure_data: Mapping[str, Any],
+def extract_daily_contributors(
+    daily_data: Mapping[str, Any],
 ) -> dict[str, list[dict[str, Any]]]:
-    current = pressure_data.get("current")
-
-    if not isinstance(current, Mapping):
+    if not isinstance(daily_data, Mapping):
         raise InputDataError(
-            "Strategic Pressure JSON does not contain "
-            "a valid 'current' object."
+            "Strategic Pressure daily assessment must be an object."
         )
 
     output: dict[
@@ -640,11 +640,11 @@ def extract_current_contributors(
     ] = {}
 
     for actor in ACTORS:
-        actor_data = current.get(actor)
+        actor_data = daily_data.get(actor)
 
         if not isinstance(actor_data, Mapping):
             raise InputDataError(
-                f"Strategic Pressure current section "
+                f"Strategic Pressure daily section "
                 f"is missing actor '{actor}'."
             )
 
@@ -657,7 +657,7 @@ def extract_current_contributors(
 
         if not isinstance(contributors, list):
             raise InputDataError(
-                f"current.{actor}.contributors "
+                f"daily.{actor}.contributors "
                 "must be an array."
             )
 
@@ -798,7 +798,8 @@ def contributor_is_suppressed(
 
 
 def calculate_assessment(
-    pressure_data: Mapping[str, Any],
+    daily_data: Mapping[str, Any],
+    assessment_date: str,
     interest_catalog: Mapping[
         str,
         Mapping[str, Mapping[str, Any]],
@@ -808,7 +809,7 @@ def calculate_assessment(
         Sequence[Mapping[str, Any]],
     ],
     normalisation_divisor: float,
-) -> tuple[dict[str, Any], list[str]]:
+) -> tuple[dict[str, Any], list[str], dict[str, Any]]:
     if normalisation_divisor <= 0:
         raise InputDataError(
             "Normalisation divisor must be greater "
@@ -816,8 +817,8 @@ def calculate_assessment(
         )
 
     contributors_by_actor = (
-        extract_current_contributors(
-            pressure_data
+        extract_daily_contributors(
+            daily_data
         )
     )
 
@@ -848,6 +849,9 @@ def calculate_assessment(
         dict[str, Any]
     ] = []
 
+    bilateral_duplicates: list[dict[str, Any]] = []
+    used_interest_evidence: set[tuple[str, str, str, str]] = set()
+
     for source_actor in ACTORS:
         contributors = contributors_by_actor[
             source_actor
@@ -877,7 +881,7 @@ def calculate_assessment(
                 ),
                 "date": clean_text(
                     contributor.get("date")
-                ),
+                ) or assessment_date,
                 "source_actor": source_actor,
                 "title": clean_text(
                     contributor.get("title")
@@ -1140,6 +1144,49 @@ def calculate_assessment(
                         "link": base_record["link"],
                     }
 
+                    dedup_key = (
+                        base_record["date"],
+                        base_record["event_id"],
+                        target_actor,
+                        interest_id,
+                    )
+
+                    if dedup_key in used_interest_evidence:
+                        duplicate_record = {
+                            **contribution_record,
+                            "target_actor": target_actor,
+                            "interest_id": interest_id,
+                            "deduplication_key": {
+                                "date": dedup_key[0],
+                                "event_id": dedup_key[1],
+                                "target_actor": dedup_key[2],
+                                "interest_id": dedup_key[3],
+                            },
+                            "suppression_reason": (
+                                "Duplicate event-to-interest evidence "
+                                "within the same day."
+                            ),
+                        }
+                        bilateral_duplicates.append(duplicate_record)
+                        indicator_record["mapped_impacts"].append(
+                            {
+                                "target_actor": target_actor,
+                                "interest_id": interest_id,
+                                "effect": round(effect, 4),
+                                "interest_weight": round(interest_weight, 4),
+                                "raw_contribution": 0.0,
+                                "original_raw_contribution": round(
+                                    raw_contribution, 4
+                                ),
+                                "suppressed": True,
+                                "rationale": clean_text(
+                                    impact.get("rationale")
+                                ),
+                            }
+                        )
+                        continue
+
+                    used_interest_evidence.add(dedup_key)
                     interest_contributions[
                         target_actor
                     ][interest_id].append(
@@ -1501,172 +1548,302 @@ def calculate_assessment(
         "calculation": calculation,
     }
 
-    return assessment, warnings
+    diagnostics = {
+        "suppressed_evidence": suppressed_evidence,
+        "bilateral_duplicates": bilateral_duplicates,
+        "unmapped_indicators": unmapped_evidence,
+        "warnings": unique_strings(warnings),
+        "counts": {
+            "processed_evidence": len(processed_evidence),
+            "suppressed_evidence": len(suppressed_evidence),
+            "bilateral_duplicates": len(bilateral_duplicates),
+            "unmapped_indicators": len(unmapped_evidence),
+            "warnings": len(unique_strings(warnings)),
+        },
+    }
+
+    return assessment, warnings, diagnostics
+
+
+def extract_history_days(
+    pressure_data: Mapping[str, Any],
+) -> list[dict[str, Any]]:
+    days = pressure_data.get("days")
+    output: list[dict[str, Any]] = []
+
+    if isinstance(days, list):
+        for position, day in enumerate(days):
+            if not isinstance(day, Mapping):
+                continue
+            date = clean_text(day.get("date"))[:10]
+            if not date:
+                date = f"undated-{position:04d}"
+            output.append({"date": date, "data": dict(day)})
+
+    if output:
+        output.sort(key=lambda item: item["date"])
+        return output
+
+    current = pressure_data.get("current")
+    if isinstance(current, Mapping):
+        date = clean_text(current.get("date"))[:10]
+        if not date:
+            date = extract_reference_date(pressure_data)
+        return [{"date": date, "data": dict(current)}]
+
+    raise InputDataError(
+        "Strategic Pressure JSON contains neither a valid days[] "
+        "history nor a valid current object."
+    )
+
+
+def linear_trend(values: Sequence[float]) -> dict[str, Any]:
+    if len(values) < 2:
+        return {"direction": "stable", "slope": 0.0}
+    n = len(values)
+    x_mean = (n - 1) / 2.0
+    y_mean = sum(values) / n
+    denominator = sum((i - x_mean) ** 2 for i in range(n))
+    slope = (
+        sum((i - x_mean) * (value - y_mean) for i, value in enumerate(values))
+        / denominator
+        if denominator
+        else 0.0
+    )
+    if slope > 0.05:
+        direction = "improving"
+    elif slope < -0.05:
+        direction = "deteriorating"
+    else:
+        direction = "stable"
+    return {"direction": direction, "slope": round(slope, 4)}
+
+
+def rolling_average(
+    dated_values: Sequence[tuple[str, float]],
+    window: int,
+) -> list[dict[str, Any]]:
+    result: list[dict[str, Any]] = []
+    for index, (date, _) in enumerate(dated_values):
+        start = max(0, index - window + 1)
+        values = [value for _, value in dated_values[start:index + 1]]
+        result.append({
+            "date": date,
+            "value": round(sum(values) / len(values), 2),
+            "window": window,
+            "observations": len(values),
+        })
+    return result
+
+
+def build_history_summary(
+    history: Sequence[Mapping[str, Any]],
+) -> dict[str, Any]:
+    summary: dict[str, Any] = {"day_count": len(history), "actors": {}}
+    for actor in ACTORS:
+        dated_values = [
+            (
+                clean_text(day.get("date")),
+                as_float(
+                    day.get("actors", {}).get(actor, {}).get(
+                        "achievement_index"
+                    ),
+                    NEUTRAL_SCORE,
+                ),
+            )
+            for day in history
+            if isinstance(day.get("actors"), Mapping)
+        ]
+        values = [value for _, value in dated_values]
+        if not values:
+            continue
+        best_date, best_value = max(dated_values, key=lambda item: item[1])
+        worst_date, worst_value = min(dated_values, key=lambda item: item[1])
+        summary["actors"][actor] = {
+            "average": round(sum(values) / len(values), 2),
+            "median": round(statistics.median(values), 2),
+            "best_day": {"date": best_date, "value": round(best_value, 2)},
+            "worst_day": {"date": worst_date, "value": round(worst_value, 2)},
+            "rolling_averages": {
+                "7_day": rolling_average(dated_values, 7),
+                "30_day": rolling_average(dated_values, 30),
+            },
+            "trend": linear_trend(values),
+            "volatility": round(
+                statistics.pstdev(values) if len(values) > 1 else 0.0,
+                4,
+            ),
+            "latest": round(values[-1], 2),
+            "change_first_to_latest": round(values[-1] - values[0], 2),
+        }
+    return summary
+
+
+def merge_diagnostics(
+    daily_diagnostics: Sequence[Mapping[str, Any]],
+) -> dict[str, Any]:
+    merged = {
+        "suppressed_evidence": [],
+        "bilateral_duplicates": [],
+        "unmapped_indicators": [],
+        "warnings": [],
+    }
+    for item in daily_diagnostics:
+        date = clean_text(item.get("date"))
+        diagnostics = item.get("diagnostics")
+        if not isinstance(diagnostics, Mapping):
+            continue
+        for key in (
+            "suppressed_evidence",
+            "bilateral_duplicates",
+            "unmapped_indicators",
+        ):
+            values = diagnostics.get(key)
+            if isinstance(values, list):
+                merged[key].extend(
+                    {"assessment_date": date, **dict(value)}
+                    for value in values
+                    if isinstance(value, Mapping)
+                )
+        warnings = diagnostics.get("warnings")
+        if isinstance(warnings, list):
+            merged["warnings"].extend(
+                f"{date}: {clean_text(value)}"
+                for value in warnings
+                if clean_text(value)
+            )
+    merged["warnings"] = unique_strings(merged["warnings"])
+    merged["counts"] = {
+        "suppressed_evidence": len(merged["suppressed_evidence"]),
+        "bilateral_duplicates": len(merged["bilateral_duplicates"]),
+        "unmapped_indicators": len(merged["unmapped_indicators"]),
+        "warnings": len(merged["warnings"]),
+    }
+    return merged
 
 
 def main() -> int:
     args = parse_args()
 
     try:
-        pressure_data = load_json(
-            args.pressure
+        pressure_data = load_json(args.pressure)
+        interests_data = load_json(args.interests)
+        impact_map_data = load_json(args.impact_map)
+
+        interest_catalog = build_interest_catalog(interests_data)
+        impact_lookup, map_warnings = build_impact_lookup(
+            impact_map_data,
+            interest_catalog,
         )
 
-        interests_data = load_json(
-            args.interests
-        )
+        history_days = extract_history_days(pressure_data)
+        history: list[dict[str, Any]] = []
+        daily_diagnostics: list[dict[str, Any]] = []
+        calculation_warnings: list[str] = []
 
-        impact_map_data = load_json(
-            args.impact_map
-        )
+        for day in history_days:
+            date = clean_text(day.get("date"))
+            day_data = day.get("data")
+            if not isinstance(day_data, Mapping):
+                continue
 
-        interest_catalog = (
-            build_interest_catalog(
-                interests_data
-            )
-        )
-
-        impact_lookup, map_warnings = (
-            build_impact_lookup(
-                impact_map_data,
-                interest_catalog,
-            )
-        )
-
-        assessment, calculation_warnings = (
-            calculate_assessment(
-                pressure_data=pressure_data,
+            assessment, day_warnings, diagnostics = calculate_assessment(
+                daily_data=day_data,
+                assessment_date=date,
                 interest_catalog=interest_catalog,
                 impact_lookup=impact_lookup,
-                normalisation_divisor=(
-                    args.normalisation_divisor
-                ),
+                normalisation_divisor=args.normalisation_divisor,
             )
-        )
+            history.append({"date": date, **assessment})
+            daily_diagnostics.append(
+                {"date": date, "diagnostics": diagnostics}
+            )
+            calculation_warnings.extend(
+                f"{date}: {warning}" for warning in day_warnings
+            )
 
+        if not history:
+            raise InputDataError(
+                "No valid daily Strategic Pressure assessments were found."
+            )
+
+        current = history[-1]
+        diagnostics = merge_diagnostics(daily_diagnostics)
         warnings = unique_strings(
-            [
-                *map_warnings,
-                *calculation_warnings,
-            ]
+            [*map_warnings, *calculation_warnings]
+        )
+        diagnostics["warnings"] = unique_strings(
+            [*diagnostics["warnings"], *warnings]
+        )
+        diagnostics["counts"]["warnings"] = len(
+            diagnostics["warnings"]
         )
 
         output = {
             "metadata": {
                 "model": MODEL_VERSION,
                 "generated_at": utc_now_iso(),
-                "reference_date": (
-                    extract_reference_date(
-                        pressure_data
-                    )
-                ),
-                "conflict": (
-                    "United States-Iran"
-                ),
+                "reference_date": current["date"],
+                "history_start_date": history[0]["date"],
+                "history_end_date": history[-1]["date"],
+                "history_day_count": len(history),
+                "conflict": "United States-Iran",
                 "description": (
-                    "Daily assessment of the degree "
-                    "to which current developments "
-                    "support or weaken the weighted "
-                    "strategic interests of the "
-                    "United States and Iran."
+                    "Historical and current assessment of the degree to "
+                    "which detected developments support or weaken the "
+                    "weighted strategic interests of the United States "
+                    "and Iran."
                 ),
                 "input_files": {
-                    "strategic_pressure": str(
-                        args.pressure
-                    ),
-                    "strategic_interests": str(
-                        args.interests
-                    ),
-                    "interest_impact_map": str(
-                        args.impact_map
-                    ),
+                    "strategic_pressure": str(args.pressure),
+                    "strategic_interests": str(args.interests),
+                    "interest_impact_map": str(args.impact_map),
                 },
-                "pressure_model_version": (
-                    extract_version(
-                        pressure_data
-                    )
-                ),
-                "interests_model_version": (
-                    extract_version(
-                        interests_data
-                    )
-                ),
-                "impact_map_version": (
-                    extract_version(
-                        impact_map_data
-                    )
-                ),
-                "warning_count": len(
-                    warnings
-                ),
+                "pressure_model_version": extract_version(pressure_data),
+                "interests_model_version": extract_version(interests_data),
+                "impact_map_version": extract_version(impact_map_data),
+                "warning_count": len(diagnostics["warnings"]),
             },
-            **assessment,
-            "warnings": warnings,
+            "current": current,
+            "history": history,
+            "history_summary": build_history_summary(history),
+            "diagnostics": diagnostics,
             "methodology": {
                 "source_scope": (
-                    "Only non-suppressed contributors "
-                    "from the current Strategic Pressure "
-                    "assessment are included."
+                    "Every valid day in Strategic Pressure days[] is "
+                    "processed. The current block is used only as a "
+                    "backwards-compatible fallback when days[] is absent."
                 ),
                 "duplicate_policy": (
-                    "Contributors with "
-                    "daily_score_suppressed=true or "
-                    "a zero final score caused by daily "
-                    "deduplication do not affect the "
-                    "achievement index."
+                    "Evidence is counted once per date + event_id + "
+                    "target_actor + interest_id. Further occurrences remain "
+                    "visible in diagnostics.bilateral_duplicates but have "
+                    "no effect on the calculated index."
                 ),
                 "baseline": (
-                    "A score of 50 represents a neutral "
-                    "position with no supporting or "
-                    "weakening mapped evidence."
+                    "A score of 50 represents a neutral position with no "
+                    "supporting or weakening mapped evidence."
                 ),
                 "positive_score": (
-                    "A score above 50 indicates that "
-                    "the current developments support "
-                    "the actor's weighted strategic "
-                    "interests overall."
+                    "A score above 50 indicates that developments support "
+                    "the actor's weighted strategic interests overall."
                 ),
                 "negative_score": (
-                    "A score below 50 indicates that "
-                    "the current developments weaken "
-                    "the actor's weighted strategic "
-                    "interests overall."
+                    "A score below 50 indicates that developments weaken "
+                    "the actor's weighted strategic interests overall."
                 ),
                 "limitations": [
-                    (
-                        "The result depends on the "
-                        "completeness of Strategic "
-                        "Pressure evidence."
-                    ),
-                    (
-                        "Indicator-to-interest effects "
-                        "are analytical judgements."
-                    ),
-                    (
-                        "The index measures strategic "
-                        "interest alignment, not military "
-                        "victory or legitimacy."
-                    ),
-                    (
-                        "The current version evaluates "
-                        "the latest complete UTC day and "
-                        "does not yet calculate a "
-                        "historical achievement trend."
-                    ),
+                    "The result depends on the completeness of Strategic Pressure evidence.",
+                    "Indicator-to-interest effects are analytical judgements.",
+                    "The index measures strategic interest alignment, not military victory or legitimacy.",
                 ],
             },
         }
 
-        write_json(
-            args.output,
-            output,
-        )
+        write_json(args.output, output)
 
     except InputDataError as exc:
-        print(
-            f"ERROR: {exc}",
-            file=sys.stderr,
-        )
+        print(f"ERROR: {exc}", file=sys.stderr)
         return 1
 
     except Exception as exc:
@@ -1677,63 +1854,26 @@ def main() -> int:
         )
         return 1
 
-    print(
-        "Strategic Interest Achievement "
-        f"generated: {args.output}"
-    )
-
-    print(
-        "Reference date:",
-        output["metadata"]["reference_date"],
-    )
-
+    print(f"Strategic Interest Achievement generated: {args.output}")
+    print("Reference date:", output["metadata"]["reference_date"])
+    print("History days:", output["metadata"]["history_day_count"])
     print(
         "USA achievement index:",
-        output["summary"][
-            "usa_achievement_index"
-        ],
+        output["current"]["summary"]["usa_achievement_index"],
     )
-
     print(
         "Iran achievement index:",
-        output["summary"][
-            "iran_achievement_index"
-        ],
+        output["current"]["summary"]["iran_achievement_index"],
     )
-
     print(
         "Daily strategic advantage:",
-        output["summary"][
-            "daily_strategic_advantage"
-        ],
+        output["current"]["summary"]["daily_strategic_advantage"],
     )
-
     print(
-        "Processed evidence:",
-        len(
-            output["processed_evidence"]
-        ),
+        "Bilateral duplicates:",
+        output["diagnostics"]["counts"]["bilateral_duplicates"],
     )
-
-    print(
-        "Suppressed evidence:",
-        len(
-            output["suppressed_evidence"]
-        ),
-    )
-
-    print(
-        "Unmapped evidence:",
-        len(
-            output["unmapped_evidence"]
-        ),
-    )
-
-    print(
-        "Warnings:",
-        len(output["warnings"]),
-    )
-
+    print("Warnings:", output["diagnostics"]["counts"]["warnings"])
     return 0
 
 
