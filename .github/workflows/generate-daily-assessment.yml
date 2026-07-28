@@ -1,0 +1,203 @@
+name: Generate Daily Assessment PDFs
+
+on:
+  # Kézi indítás a GitHub Actions felületéről
+  workflow_dispatch:
+    inputs:
+      language:
+        description: "PDF language"
+        required: true
+        default: "all"
+        type: choice
+        options:
+          - all
+          - hu
+          - en
+
+      force_regeneration:
+        description: "Overwrite an existing archived report"
+        required: true
+        default: false
+        type: boolean
+
+  # Automatikus napi futás.
+  # UTC 10:30 = magyar nyári idő szerint 12:30.
+  schedule:
+    - cron: "30 10 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-assessment-pdf
+  cancel-in-progress: false
+
+jobs:
+  generate-reports:
+    name: Generate HU and EN reports
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install reportlab
+
+      - name: Validate input files
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          FORECAST_FILE="docs/conflict_forecast_live.json"
+          PRESSURE_FILE="docs/strategic_pressure.json"
+          SCRIPT_FILE="src/generate_daily_assessment_pdf.py"
+
+          if [ ! -f "$FORECAST_FILE" ]; then
+            echo "::error file=$FORECAST_FILE::Forecast JSON not found."
+            exit 1
+          fi
+
+          if [ ! -f "$PRESSURE_FILE" ]; then
+            echo "::error file=$PRESSURE_FILE::Strategic Pressure JSON not found."
+            exit 1
+          fi
+
+          if [ ! -f "$SCRIPT_FILE" ]; then
+            echo "::error file=$SCRIPT_FILE::PDF generator script not found."
+            exit 1
+          fi
+
+          python -m json.tool "$FORECAST_FILE" > /dev/null
+          python -m json.tool "$PRESSURE_FILE" > /dev/null
+
+          echo "All required input files are present and valid."
+
+      - name: Resolve run options
+        id: options
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            LANGUAGE="${{ inputs.language }}"
+            FORCE_REGENERATION="${{ inputs.force_regeneration }}"
+          else
+            LANGUAGE="all"
+            FORCE_REGENERATION="false"
+          fi
+
+          echo "language=$LANGUAGE" >> "$GITHUB_OUTPUT"
+          echo "force_regeneration=$FORCE_REGENERATION" >> "$GITHUB_OUTPUT"
+
+          echo "Selected language: $LANGUAGE"
+          echo "Force regeneration: $FORCE_REGENERATION"
+
+      - name: Generate daily assessment PDFs
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          COMMAND=(
+            python
+            src/generate_daily_assessment_pdf.py
+            --lang
+            "${{ steps.options.outputs.language }}"
+          )
+
+          if [ "${{ steps.options.outputs.force_regeneration }}" = "true" ]; then
+            COMMAND+=(--force)
+          fi
+
+          echo "Running: ${COMMAND[*]}"
+          "${COMMAND[@]}"
+
+      - name: Verify generated outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          LANGUAGE="${{ steps.options.outputs.language }}"
+
+          if [ "$LANGUAGE" = "all" ] || [ "$LANGUAGE" = "hu" ]; then
+            if [ ! -s "docs/reports/latest-hu.pdf" ]; then
+              echo "::error file=docs/reports/latest-hu.pdf::Hungarian PDF was not generated."
+              exit 1
+            fi
+          fi
+
+          if [ "$LANGUAGE" = "all" ] || [ "$LANGUAGE" = "en" ]; then
+            if [ ! -s "docs/reports/latest-en.pdf" ]; then
+              echo "::error file=docs/reports/latest-en.pdf::English PDF was not generated."
+              exit 1
+            fi
+          fi
+
+          if [ ! -s "docs/reports/reports_index.json" ]; then
+            echo "::error file=docs/reports/reports_index.json::Reports index was not generated."
+            exit 1
+          fi
+
+          echo "Generated report files:"
+          find docs/reports -maxdepth 2 -type f -printf "%p (%s bytes)\n" | sort
+
+      - name: Commit generated reports
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add docs/reports/
+
+          if git diff --cached --quiet; then
+            echo "No report changes to commit."
+            exit 0
+          fi
+
+          REPORT_DATE="$(
+            python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("docs/strategic_pressure.json")
+          data = json.loads(path.read_text(encoding="utf-8"))
+
+          report_date = (
+              data.get("latest_complete_utc_day")
+              or data.get("current", {}).get("date")
+              or "unknown-date"
+          )
+
+          print(report_date)
+          PY
+          )"
+
+          git commit -m "Update daily assessment reports for ${REPORT_DATE}"
+
+          # Csökkenti annak kockázatát, hogy egy közben érkezett commit miatt
+          # a push sikertelen legyen.
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Upload reports as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-assessment-pdfs-${{ github.run_number }}
+          path: |
+            docs/reports/latest-*.pdf
+            docs/reports/archive/*.pdf
+            docs/reports/reports_index.json
+          if-no-files-found: error
+          retention-days: 30
