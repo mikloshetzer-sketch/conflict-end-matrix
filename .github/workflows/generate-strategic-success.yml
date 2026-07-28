@@ -1,15 +1,33 @@
 name: Generate Strategic Success
 
 on:
+  # Kézi indítás továbbra is elérhető
   workflow_dispatch:
+
+  # Automatikus indítás az Interest Achievement után
+  workflow_run:
+    workflows:
+      - "Generate Strategic Interest Achievement"
+    types:
+      - completed
+
+permissions:
+  contents: write
+
+concurrency:
+  group: strategic-analysis-pipeline
+  cancel-in-progress: false
 
 jobs:
   generate-strategic-success:
     name: Recalculate Strategic Success
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write
+    # Automatikus futásnál csak sikeres előző workflow után induljon.
+    # Kézi futtatásnál mindig elindulhat.
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      github.event.workflow_run.conclusion == 'success'
 
     steps:
       # =========================================================
@@ -20,15 +38,39 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.ref_name }}
 
       # =========================================================
-      # 2. PYTHON
+      # 2. UPDATE REPOSITORY STATE
+      # =========================================================
+
+      - name: Update checked-out branch
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          BRANCH_NAME="${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.ref_name }}"
+
+          if [ -z "$BRANCH_NAME" ]; then
+            echo "::error::Could not determine the branch name."
+            exit 1
+          fi
+
+          echo "Using branch: $BRANCH_NAME"
+
+          git fetch origin "$BRANCH_NAME"
+          git checkout "$BRANCH_NAME"
+          git reset --hard "origin/$BRANCH_NAME"
+
+      # =========================================================
+      # 3. PYTHON
       # =========================================================
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: "pip"
 
       - name: Install dependencies
         shell: bash
@@ -42,7 +84,7 @@ jobs:
           fi
 
       # =========================================================
-      # 3. INPUT VALIDATION
+      # 4. INPUT VALIDATION
       # =========================================================
 
       - name: Verify required files
@@ -64,6 +106,10 @@ jobs:
             echo "Found: $file"
           done
 
+      # =========================================================
+      # 5. INPUT STRUCTURE CHECK
+      # =========================================================
+
       - name: Validate Interest Achievement input
         shell: bash
         run: |
@@ -83,6 +129,7 @@ jobs:
               "current",
               "history",
               "history_summary",
+              "diagnostics",
           )
 
           missing_blocks = [
@@ -97,8 +144,10 @@ jobs:
                   f"Missing required blocks: {', '.join(missing_blocks)}"
               )
 
+          metadata = data.get("metadata", {})
           current = data.get("current")
           history = data.get("history")
+          history_summary = data.get("history_summary", {})
 
           if not isinstance(current, dict):
               raise SystemExit(
@@ -112,18 +161,61 @@ jobs:
                   "The history[] array is missing or empty."
               )
 
-          current_date = current.get("date", "unknown")
-          first_date = history[0].get("date", "unknown")
-          last_date = history[-1].get("date", "unknown")
+          current_date = current.get("date")
+          first_date = history[0].get("date")
+          last_date = history[-1].get("date")
 
+          if not current_date:
+              raise SystemExit(
+                  "::error file=docs/interest_achievement.json::"
+                  "The current block has no date."
+              )
+
+          if not first_date or not last_date:
+              raise SystemExit(
+                  "::error file=docs/interest_achievement.json::"
+                  "The history contains records without valid dates."
+              )
+
+          actual_day_count = len(history)
+          metadata_day_count = metadata.get("history_day_count")
+          summary_day_count = history_summary.get("day_count")
+
+          if metadata_day_count != actual_day_count:
+              raise SystemExit(
+                  "::error file=docs/interest_achievement.json::"
+                  "metadata.history_day_count does not match "
+                  "the actual history length."
+              )
+
+          if summary_day_count != actual_day_count:
+              raise SystemExit(
+                  "::error file=docs/interest_achievement.json::"
+                  "history_summary.day_count does not match "
+                  "the actual history length."
+              )
+
+          if current_date != last_date:
+              print(
+                  "::warning file=docs/interest_achievement.json::"
+                  "Current date differs from the last history date."
+              )
+
+          print("")
+          print("Interest Achievement input validation")
+          print("-------------------------------------")
           print(f"Current date: {current_date}")
-          print(f"History records: {len(history)}")
+          print(f"History records: {actual_day_count}")
           print(f"History start: {first_date}")
           print(f"History end: {last_date}")
+          print(
+              "Model version: "
+              f"{metadata.get('model_version', 'unknown')}"
+          )
           PY
 
       # =========================================================
-      # 4. SCRIPT VALIDATION
+      # 6. SCRIPT VALIDATION
       # =========================================================
 
       - name: Validate Strategic Success script
@@ -134,7 +226,7 @@ jobs:
           python -m py_compile src/generate_strategic_success.py
 
       # =========================================================
-      # 5. GENERATION
+      # 7. GENERATION
       # =========================================================
 
       - name: Generate Strategic Success
@@ -147,7 +239,7 @@ jobs:
             --output docs/strategic_success.json
 
       # =========================================================
-      # 6. OUTPUT VALIDATION
+      # 8. OUTPUT VALIDATION
       # =========================================================
 
       - name: Validate Strategic Success output
@@ -193,11 +285,24 @@ jobs:
           history_summary = data.get("history_summary", {})
           diagnostics = data.get("diagnostics", {})
           counts = diagnostics.get("counts", {})
+          methodology = data.get("methodology", {})
+
+          if not isinstance(current, dict):
+              raise SystemExit(
+                  "::error file=docs/strategic_success.json::"
+                  "The current block is invalid."
+              )
 
           if not isinstance(history, list) or not history:
               raise SystemExit(
                   "::error file=docs/strategic_success.json::"
                   "Generated history[] is empty or invalid."
+              )
+
+          if not isinstance(methodology, dict):
+              raise SystemExit(
+                  "::error file=docs/strategic_success.json::"
+                  "The methodology block is invalid."
               )
 
           actual_day_count = len(history)
@@ -232,6 +337,8 @@ jobs:
               "success_gap",
               "strategic_balance",
               "strategic_advantage",
+              "interpretation_status",
+              "is_provisional",
           )
 
           missing_summary_fields = [
@@ -247,10 +354,90 @@ jobs:
                   + ", ".join(missing_summary_fields)
               )
 
+          data_maturity = current.get("data_maturity")
+
+          if not isinstance(data_maturity, dict):
+              raise SystemExit(
+                  "::error file=docs/strategic_success.json::"
+                  "current.data_maturity is missing or invalid."
+              )
+
+          required_maturity_fields = (
+              "status",
+              "observations",
+              "full_maturity_observations",
+              "confidence",
+              "confidence_percent",
+              "is_provisional",
+          )
+
+          missing_maturity_fields = [
+              field
+              for field in required_maturity_fields
+              if field not in data_maturity
+          ]
+
+          if missing_maturity_fields:
+              raise SystemExit(
+                  "::error file=docs/strategic_success.json::"
+                  "Missing current maturity fields: "
+                  + ", ".join(missing_maturity_fields)
+              )
+
+          maturity_distribution = history_summary.get(
+              "maturity_distribution"
+          )
+
+          if not isinstance(maturity_distribution, dict):
+              raise SystemExit(
+                  "::error file=docs/strategic_success.json::"
+                  "history_summary.maturity_distribution "
+                  "is missing or invalid."
+              )
+
+          maturity_total = sum(
+              int(maturity_distribution.get(field, 0))
+              for field in (
+                  "insufficient_days",
+                  "partial_days",
+                  "full_days",
+              )
+          )
+
+          if maturity_total != actual_day_count:
+              raise SystemExit(
+                  "::error file=docs/strategic_success.json::"
+                  "The maturity distribution does not match "
+                  "the actual history length."
+              )
+
+          history_end_date = history[-1].get("date")
+          current_date = current.get("date")
+
+          if current_date != history_end_date:
+              print(
+                  "::warning file=docs/strategic_success.json::"
+                  "Current date differs from the last history date."
+              )
+
+          metadata_warning_count = metadata.get("warning_count")
+          diagnostic_warning_count = counts.get("warnings")
+
+          if (
+              metadata_warning_count is not None
+              and diagnostic_warning_count is not None
+              and metadata_warning_count != diagnostic_warning_count
+          ):
+              raise SystemExit(
+                  "::error file=docs/strategic_success.json::"
+                  "metadata.warning_count does not match "
+                  "diagnostics.counts.warnings."
+              )
+
           print("")
           print("Strategic Success generation completed")
           print("--------------------------------------")
-          print(f"Current date: {current.get('date', 'unknown')}")
+          print(f"Current date: {current_date}")
           print(
               "History range: "
               f"{metadata.get('history_start_date', 'unknown')} "
@@ -258,6 +445,22 @@ jobs:
               f"{metadata.get('history_end_date', 'unknown')}"
           )
           print(f"History days: {actual_day_count}")
+          print(
+              "Model version: "
+              f"{metadata.get('model_version', 'unknown')}"
+          )
+          print(
+              "Current maturity: "
+              f"{data_maturity.get('status', 'unknown')}"
+          )
+          print(
+              "Maturity confidence: "
+              f"{data_maturity.get('confidence_percent', 'unknown')}%"
+          )
+          print(
+              "Current provisional: "
+              f"{data_maturity.get('is_provisional', 'unknown')}"
+          )
           print(
               "USA Strategic Success: "
               f"{summary.get('usa_success_index')}"
@@ -279,6 +482,18 @@ jobs:
               f"{summary.get('strategic_advantage')}"
           )
           print(
+              "Insufficient maturity days: "
+              f"{maturity_distribution.get('insufficient_days', 0)}"
+          )
+          print(
+              "Partial maturity days: "
+              f"{maturity_distribution.get('partial_days', 0)}"
+          )
+          print(
+              "Full maturity days: "
+              f"{maturity_distribution.get('full_days', 0)}"
+          )
+          print(
               "Excluded history records: "
               f"{counts.get('excluded_history_records', 0)}"
           )
@@ -289,7 +504,7 @@ jobs:
           PY
 
       # =========================================================
-      # 7. FILE INFORMATION
+      # 9. FILE INFORMATION
       # =========================================================
 
       - name: Show generated file information
@@ -300,7 +515,7 @@ jobs:
           ls -lh docs/strategic_success.json
 
       # =========================================================
-      # 8. COMMIT
+      # 10. COMMIT
       # =========================================================
 
       - name: Commit generated file
@@ -325,7 +540,7 @@ jobs:
           echo "changed=true" >> "$GITHUB_OUTPUT"
 
       # =========================================================
-      # 9. PUSH
+      # 11. PUSH
       # =========================================================
 
       - name: Push changes
@@ -334,4 +549,6 @@ jobs:
         run: |
           set -euo pipefail
 
-          git push origin "HEAD:${GITHUB_REF_NAME}"
+          BRANCH_NAME="${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.ref_name }}"
+
+          git push origin "HEAD:$BRANCH_NAME"
