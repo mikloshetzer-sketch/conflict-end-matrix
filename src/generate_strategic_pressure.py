@@ -1,5 +1,4 @@
 import json
-import math
 import re
 from datetime import date, datetime, timezone
 from pathlib import Path
@@ -7,34 +6,26 @@ from typing import Any
 
 
 # =====================================================================
-# Conflict End Matrix -> Strategic Pressure Engine V1
+# Conflict End Matrix -> Strategic Pressure Engine V1.1
 #
-# Purpose:
-# - Reuse the repository's existing historical and daily events.
-# - Add a separate strategic interpretation layer.
-# - Preserve the existing Forecast Engine unchanged.
-# - Produce explainable event-level contributions.
-# - Support historical backfill and continuing live collection.
+# Main corrections:
+# - Bilateral diplomacy can affect both the USA and Iran.
+# - Stronger USA actor recognition.
+# - Stricter Iranian and Supreme Leader recognition.
+# - No uncontrolled stacking of overlapping indicators.
+# - One strongest increase and one strongest decrease indicator
+#   are allowed per actor and event.
+# - Pressure index 50 is classified as balanced.
 #
 # Inputs:
 # - docs/event_timeline.json
-# - optional kinetic event file
+# - docs/kinetic_events.json, if available
 # - data/strategic/strategic_interests.json
 # - data/strategic/strategic_indicators.json
 #
 # Outputs:
 # - docs/strategic_pressure.json
 # - docs/strategic_pressure_history.json
-#
-# V1 scoring:
-#
-# strategic event score
-# =
-# existing operational event component
-# +
-# configured strategic modifier
-#
-# The current UTC day is excluded because it may be incomplete.
 # =====================================================================
 
 
@@ -53,15 +44,12 @@ INDICATORS_INPUT = "data/strategic/strategic_indicators.json"
 CURRENT_OUTPUT = "docs/strategic_pressure.json"
 HISTORY_OUTPUT = "docs/strategic_pressure_history.json"
 
-MODEL_VERSION = "strategic_pressure_v1"
+MODEL_VERSION = "strategic_pressure_v1_1"
 
 ROLLING_WINDOW_DAYS = 7
 INDEX_BASELINE = 50.0
 INDEX_POINTS_PER_SCORE = 2.0
-MAX_INDICATORS_PER_ACTOR_EVENT = 3
 
-
-# Newest day receives the highest weight.
 ROLLING_WEIGHTS = [
     1.00,
     0.85,
@@ -74,56 +62,119 @@ ROLLING_WEIGHTS = [
 
 
 # =====================================================================
-# STRATEGIC INDICATOR RECOGNITION RULES
+# ACTOR RECOGNITION
+# =====================================================================
+
+ACTOR_PATTERNS: dict[str, list[str]] = {
+    "usa": [
+        r"\bunited states\b",
+        r"\bu\.s\.\b",
+        r"\bu\.s\b",
+        r"\bus military\b",
+        r"\bus forces\b",
+        r"\bus navy\b",
+        r"\bus air force\b",
+        r"\bamerican military\b",
+        r"\bamerican forces\b",
+        r"\bamerican troops\b",
+        r"\bwashington\b",
+        r"\bwhite house\b",
+        r"\bpentagon\b",
+        r"\bcentcom\b",
+        r"\bus treasury\b",
+        r"\bu\.s\. treasury\b",
+        r"\btrump\b",
+        r"\bpresident trump\b",
+        r"\buss\s+[a-z0-9\-]+\b",
+    ],
+    "iran": [
+        r"\biran\b",
+        r"\biranian\b",
+        r"\biranians\b",
+        r"\btehran\b",
+        r"\birgc\b",
+        r"\bislamic revolutionary guard corps\b",
+        r"\brevolutionary guards?\b",
+        r"\bkhamenei\b",
+        r"\bayatollah khamenei\b",
+        r"\bsupreme leader\b",
+    ],
+}
+
+
+# =====================================================================
+# BILATERAL EVENTS
 #
-# Scores are not stored here. Scores are read from:
-# data/strategic/strategic_indicators.json
+# These events can legitimately contribute to both actors.
+# =====================================================================
+
+BILATERAL_INDICATORS = {
+    "negotiation",
+    "ceasefire_support",
+}
+
+BILATERAL_PATTERNS = [
+    r"\bus[- ]iran\b.*\b(?:talks?|negotiations?|dialogue|deal)\b",
+    r"\b(?:talks?|negotiations?|dialogue|deal)\b.*\bus[- ]iran\b",
+    r"\bunited states\b.*\biran\b.*\b(?:talks?|negotiations?|dialogue)\b",
+    r"\biran\b.*\bunited states\b.*\b(?:talks?|negotiations?|dialogue)\b",
+    r"\bu\.s\.\b.*\biran\b.*\b(?:talks?|negotiations?|dialogue)\b",
+    r"\biran\b.*\bu\.s\.\b.*\b(?:talks?|negotiations?|dialogue)\b",
+    r"\biran war talks\b",
+    r"\bpeace talks\b.*\b(?:iran|u\.s\.|us|united states)\b",
+    r"\b(?:iran|u\.s\.|us|united states)\b.*\bpeace talks\b",
+]
+
+
+# =====================================================================
+# INDICATOR RECOGNITION
 #
-# These rules only determine which configured indicator is present.
+# The points are loaded from strategic_indicators.json.
+# These patterns only identify the indicator.
 # =====================================================================
 
 INDICATOR_PATTERNS: dict[str, dict[str, list[str]]] = {
     "usa": {
         "carrier_deployment": [
             r"\bcarrier strike group\b",
-            r"\baircraft carrier\b.*\bdeploy",
-            r"\bdeploy(?:s|ed|ing|ment)?\b.*\baircraft carrier\b",
+            r"\baircraft carrier\b.*\b(?:deploy|deployment|arrive|move|enter)\w*\b",
+            r"\b(?:deploy|deployment|arrive|move|enter)\w*\b.*\baircraft carrier\b",
             r"\bcarrier\b.*\bcentcom\b",
             r"\buss\s+[a-z0-9\- ]+\b.*\bcarrier\b",
         ],
         "bomber_deployment": [
-            r"\b(?:b-1|b-2|b-52)\b.*\bdeploy",
-            r"\bdeploy(?:s|ed|ing|ment)?\b.*\b(?:b-1|b-2|b-52)\b",
-            r"\bstrategic bomber(?:s)?\b.*\bdeploy",
-            r"\bbomber(?:s)?\b.*\bcentcom\b",
+            r"\b(?:b-1|b-2|b-52)\b.*\b(?:deploy|deployment|arrive|move)\w*\b",
+            r"\b(?:deploy|deployment|arrive|move)\w*\b.*\b(?:b-1|b-2|b-52)\b",
+            r"\bstrategic bombers?\b.*\bdeploy\w*\b",
+            r"\bbombers?\b.*\bcentcom\b",
         ],
         "additional_air_defense": [
-            r"\bdeploy(?:s|ed|ing|ment)?\b.*\b(?:patriot|thaad|air defen[cs]e)\b",
+            r"\bdeploy\w*\b.*\b(?:patriot|thaad|air defen[cs]e)\b",
             r"\badditional\b.*\b(?:patriot|thaad|air defen[cs]e)\b",
-            r"\breinforc(?:e|es|ed|ing)\b.*\bair defen[cs]e\b",
+            r"\breinforc\w*\b.*\bair defen[cs]e\b",
         ],
         "new_sanctions": [
             r"\b(?:us|u\.s\.|united states|washington)\b.*\bnew sanctions\b",
-            r"\b(?:us|u\.s\.|united states|washington)\b.*\bimpose(?:s|d)?\b.*\bsanctions\b",
+            r"\b(?:us|u\.s\.|united states|washington)\b.*\bimpose\w*\b.*\bsanctions\b",
             r"\btreasury\b.*\b(?:sanctions|designates|designation)\b",
             r"\bnew sanctions\b.*\biran\b",
         ],
         "evacuation_warning": [
-            r"\b(?:us|u\.s\.|american)\b.*\bembassy\b.*\b(?:evacuat|depart|leave)\b",
+            r"\b(?:us|u\.s\.|american)\b.*\bembassy\b.*\b(?:evacuat|depart|leave)\w*\b",
             r"\b(?:ordered|authorized)\s+departure\b",
-            r"\bevacuat(?:e|es|ed|ing|ion)\b.*\b(?:americans|us citizens|u\.s\. citizens)\b",
+            r"\bevacuat\w*\b.*\b(?:americans|us citizens|u\.s\. citizens)\b",
             r"\b(?:us|u\.s\.)\b.*\btravel warning\b",
         ],
         "force_protection": [
-            r"\bforce protection\b.*\b(?:raise|increase|heighten)\b",
-            r"\b(?:raise|raises|raised|increase|increases|increased)\b.*\bforce protection\b",
+            r"\bforce protection\b.*\b(?:raise|increase|heighten)\w*\b",
+            r"\b(?:raise|increase|heighten)\w*\b.*\bforce protection\b",
             r"\b(?:us|u\.s\.|american)\b.*\b(?:forces|bases)\b.*\bhigh alert\b",
             r"\b(?:us|u\.s\.)\b.*\bmilitary readiness\b",
         ],
         "presidential_warning": [
-            r"\b(?:us president|u\.s\. president|white house|president trump)\b.*\bwarn",
-            r"\bpresident\b.*\biran\b.*\b(?:consequences|military action|strike|attack)\b",
-            r"\bwhite house\b.*\biran\b.*\b(?:warning|ultimatum|red line)\b",
+            r"\b(?:trump|us president|u\.s\. president)\b.{0,100}\b(?:warns?|threatens?|ultimatum|military action|severe consequences)\b",
+            r"\bwhite house\b.{0,100}\biran\b.{0,100}\b(?:warning|ultimatum|red line|military action)\b",
+            r"\btrump\b.{0,100}\biran\b.{0,100}\b(?:strike|attack|retaliation|consequences)\b",
         ],
         "military_exercise": [
             r"\b(?:us|u\.s\.|american)\b.*\bmilitary exercise\b",
@@ -132,21 +183,25 @@ INDICATOR_PATTERNS: dict[str, dict[str, list[str]]] = {
             r"\bexercise\b.*\b(?:us navy|u\.s\. navy|us air force|u\.s\. air force)\b",
         ],
         "strike_preparation": [
-            r"\b(?:us|u\.s\.|american)\b.*\bprepar(?:e|es|ed|ing|ation)\b.*\bstrike\b",
+            r"\b(?:us|u\.s\.|american)\b.*\bprepar\w*\b.*\bstrike\b",
             r"\bpentagon\b.*\b(?:strike options|attack options|target list)\b",
             r"\b(?:military|air)\s+strike\b.*\bimminent\b",
-            r"\b(?:us|u\.s\.)\b.*\bposition(?:s|ed|ing)?\b.*\bforces\b.*\bstrike\b",
+            r"\b(?:us|u\.s\.)\b.*\bposition\w*\b.*\bforces\b.*\bstrike\b",
             r"\bstrike package\b",
         ],
         "negotiation": [
-            r"\b(?:us|u\.s\.|united states|washington)\b.*\b(?:talks|negotiations|dialogue)\b",
-            r"\b(?:talks|negotiations|dialogue)\b.*\b(?:us|u\.s\.|united states|washington)\b",
-            r"\b(?:us|u\.s\.)\b.*\bresume(?:s|d)?\b.*\bnegotiations\b",
+            r"\b(?:us|u\.s\.|united states|washington|trump)\b.*\b(?:talks?|negotiations?|dialogue)\b",
+            r"\b(?:talks?|negotiations?|dialogue)\b.*\b(?:us|u\.s\.|united states|washington|trump)\b",
+            r"\bus[- ]iran\b.*\b(?:talks?|negotiations?|dialogue|deal)\b",
+            r"\b(?:talks?|negotiations?|dialogue|deal)\b.*\bus[- ]iran\b",
+            r"\bu\.s\.\b.*\bpauses?\b.*\bstrikes?\b.*\btalks?\b",
+            r"\btrump\b.*\biran war talks\b",
         ],
         "ceasefire_support": [
-            r"\b(?:us|u\.s\.|united states|white house)\b.*\b(?:supports?|backs?|calls for)\b.*\bceasefire\b",
-            r"\b(?:us|u\.s\.)\b.*\bceasefire proposal\b",
-            r"\bceasefire\b.*\b(?:supported|backed)\b.*\b(?:us|u\.s\.)\b",
+            r"\b(?:us|u\.s\.|united states|white house|trump)\b.*\b(?:supports?|backs?|calls? for|urges?)\b.*\bcease[- ]?fire\b",
+            r"\b(?:us|u\.s\.)\b.*\bcease[- ]?fire proposal\b",
+            r"\b(?:us|u\.s\.)\b.*\bpauses?\b.*\bstrikes?\b",
+            r"\bpauses?\b.*\b(?:us|u\.s\.)\b.*\bstrikes?\b",
         ],
         "sanction_relief": [
             r"\b(?:us|u\.s\.|united states|washington)\b.*\b(?:lifts?|eases?|waives?|suspends?)\b.*\bsanctions\b",
@@ -154,29 +209,28 @@ INDICATOR_PATTERNS: dict[str, dict[str, list[str]]] = {
             r"\bwaiver\b.*\biran\b.*\bsanctions\b",
         ],
         "troop_withdrawal": [
-            r"\b(?:us|u\.s\.|american)\b.*\bwithdraw(?:s|al|ing)?\b.*\b(?:troops|forces|warships|aircraft)\b",
-            r"\b(?:troops|forces|warships|aircraft)\b.*\bwithdraw(?:s|n|al|ing)?\b.*\b(?:us|u\.s\.)\b",
+            r"\b(?:us|u\.s\.|american)\b.*\bwithdraw\w*\b.*\b(?:troops|forces|warships|aircraft)\b",
+            r"\b(?:troops|forces|warships|aircraft)\b.*\bwithdraw\w*\b.*\b(?:us|u\.s\.)\b",
             r"\bstands? down\b.*\b(?:us|u\.s\.|american)\b.*\bforces\b",
         ],
     },
 
     "iran": {
         "missile_preparation": [
-            r"\biran(?:ian)?\b.*\bmissile(?:s)?\b.*\b(?:prepar|ready|readiness|position|deploy)\b",
-            r"\b(?:prepar|ready|readiness|position|deploy)\w*\b.*\biran(?:ian)?\b.*\bmissile",
+            r"\biran(?:ian)?\b.*\bmissiles?\b.*\b(?:prepar|ready|readiness|position|deploy)\w*\b",
+            r"\b(?:prepar|ready|readiness|position|deploy)\w*\b.*\biran(?:ian)?\b.*\bmissiles?\b",
             r"\birgc\b.*\bmissile units?\b.*\balert\b",
-            r"\bmissile forces?\b.*\bhigh alert\b",
+            r"\biranian missile forces?\b.*\bhigh alert\b",
         ],
         "proxy_activation": [
             r"\biran\b.*\b(?:activates?|mobilizes?|mobilises?|orders?)\b.*\b(?:proxies|proxy forces|allied militias)\b",
             r"\biran-backed\b.*\b(?:militia|group|forces?)\b.*\b(?:mobiliz|activat|prepare|alert)\w*\b",
-            r"\b(?:hezbollah|houthis?|iraqi militias?)\b.*\bcoordinat\w*\b.*\biran\b",
             r"\baxis of resistance\b.*\b(?:mobiliz|activat|prepare)\w*\b",
         ],
         "missile_test": [
-            r"\biran(?:ian)?\b.*\b(?:tests?|tested|test-fires?|test-fired|launches?)\b.*\bmissile",
+            r"\biran(?:ian)?\b.*\b(?:tests?|tested|test-fires?|test-fired|launches?)\b.*\bmissiles?\b",
             r"\bmissile\b.*\btest\b.*\biran\b",
-            r"\birgc\b.*\btest(?:s|ed)?\b.*\bmissile\b",
+            r"\birgc\b.*\btest\w*\b.*\bmissiles?\b",
         ],
         "nuclear_activity": [
             r"\biran\b.*\b(?:enrich|enrichment)\w*\b.*\b(?:uranium|percent|%)\b",
@@ -191,11 +245,12 @@ INDICATOR_PATTERNS: dict[str, dict[str, list[str]]] = {
             r"\birgc\b.*\bhormuz\b.*\b(?:warning|threat|closure|blockade)\b",
         ],
         "supreme_leader_statement": [
-            r"\b(?:supreme leader|ayatollah khamenei|khamenei)\b.*\b(?:warn|retaliat|revenge|punish|destroy|strike|attack)\w*\b",
-            r"\b(?:supreme leader|khamenei)\b.*\b(?:severe consequences|crushing response|harsh response)\b",
+            r"\b(?:khamenei|supreme leader|ayatollah khamenei)\b.{0,80}\b(?:warns?|threatens?|vows?|orders?|promises?)\b.{0,80}\b(?:attack|strike|retaliate|revenge|punish|destroy|military response)\b",
+            r"\b(?:khamenei|supreme leader|ayatollah khamenei)\b.{0,100}\b(?:crushing response|harsh response|severe consequences|military retaliation)\b",
+            r"\b(?:attack|strike|retaliation|revenge)\b.{0,80}\b(?:khamenei|supreme leader|ayatollah khamenei)\b",
         ],
         "irgc_alert": [
-            r"\birgc\b.*\b(?:high alert|raised alert|readiness|combat readiness|maximum readiness)\b",
+            r"\birgc\b.*\b(?:high alert|raised alert|combat readiness|maximum readiness)\b",
             r"\b(?:raises?|raised|increases?|increased)\b.*\birgc\b.*\breadiness\b",
             r"\birgc\b.*\b(?:mobilizes?|mobilises?|deploys?|deployment)\b",
         ],
@@ -206,15 +261,18 @@ INDICATOR_PATTERNS: dict[str, dict[str, list[str]]] = {
             r"\bexercise\b.*\b(?:iran|irgc)\b",
         ],
         "strike_preparation": [
-            r"\biran(?:ian)?\b.*\bprepar(?:e|es|ed|ing|ation)\b.*\b(?:strike|attack|retaliation)\b",
-            r"\birgc\b.*\bprepar(?:e|es|ed|ing|ation)\b.*\b(?:strike|attack|response)\b",
+            r"\biran(?:ian)?\b.*\bprepar\w*\b.*\b(?:strike|attack|retaliation)\b",
+            r"\birgc\b.*\bprepar\w*\b.*\b(?:strike|attack|response)\b",
             r"\biran\b.*\bimminent\b.*\b(?:strike|attack|retaliation)\b",
-            r"\biran(?:ian)?\b.*\btarget list\b",
+            r"\biranian\b.*\btarget list\b",
         ],
         "negotiation": [
-            r"\biran\b.*\b(?:talks|negotiations|dialogue)\b",
-            r"\b(?:talks|negotiations|dialogue)\b.*\biran\b",
-            r"\btehran\b.*\bresume(?:s|d)?\b.*\bnegotiations\b",
+            r"\biran\b.*\b(?:talks?|negotiations?|dialogue)\b",
+            r"\b(?:talks?|negotiations?|dialogue)\b.*\biran\b",
+            r"\btehran\b.*\bresume\w*\b.*\bnegotiations\b",
+            r"\bus[- ]iran\b.*\b(?:talks?|negotiations?|dialogue|deal)\b",
+            r"\b(?:talks?|negotiations?|dialogue|deal)\b.*\bus[- ]iran\b",
+            r"\biran war talks\b",
         ],
         "iaea_cooperation": [
             r"\biran\b.*\bcooperat\w*\b.*\biaea\b",
@@ -237,9 +295,6 @@ INDICATOR_PATTERNS: dict[str, dict[str, list[str]]] = {
 }
 
 
-# Maps strategic indicators to the long-term interest they most directly affect.
-# Interest weights are included in the output for explainability.
-# V1 does not multiply the score by the interest weight.
 INDICATOR_INTEREST_MAP: dict[str, dict[str, str]] = {
     "usa": {
         "carrier_deployment": "regional_deterrence",
@@ -274,35 +329,6 @@ INDICATOR_INTEREST_MAP: dict[str, dict[str, str]] = {
 }
 
 
-ACTOR_PATTERNS: dict[str, list[str]] = {
-    "usa": [
-        r"\bunited states\b",
-        r"\bu\.s\.\b",
-        r"\bu\.s\b",
-        r"\bus military\b",
-        r"\bus forces\b",
-        r"\bamerican\b",
-        r"\bwashington\b",
-        r"\bwhite house\b",
-        r"\bpentagon\b",
-        r"\bcentcom\b",
-        r"\btreasury\b",
-        r"\bpresident trump\b",
-        r"\buss\s+[a-z0-9\-]+\b",
-    ],
-    "iran": [
-        r"\biran\b",
-        r"\biranian\b",
-        r"\btehran\b",
-        r"\birgc\b",
-        r"\bislamic revolutionary guard corps\b",
-        r"\bkhamenei\b",
-        r"\bayatollah\b",
-        r"\bsupreme leader\b",
-    ],
-}
-
-
 # =====================================================================
 # GENERAL UTILITIES
 # =====================================================================
@@ -314,12 +340,12 @@ def load_json(path: Path, required: bool = True) -> dict[str, Any]:
         return {}
 
     with path.open("r", encoding="utf-8") as file:
-        loaded = json.load(file)
+        payload = json.load(file)
 
-    if not isinstance(loaded, dict):
-        raise ValueError(f"Expected a JSON object in: {path}")
+    if not isinstance(payload, dict):
+        raise ValueError(f"Expected JSON object: {path}")
 
-    return loaded
+    return payload
 
 
 def write_json(path: Path, payload: dict[str, Any]) -> None:
@@ -331,6 +357,45 @@ def write_json(path: Path, payload: dict[str, Any]) -> None:
         json.dump(payload, file, indent=2, ensure_ascii=False)
 
     temporary_path.replace(path)
+
+
+def safe_number(value: Any, default: float = 0.0) -> float:
+    try:
+        if value in (None, ""):
+            return default
+        return float(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def round_score(value: float) -> float:
+    return round(float(value), 2)
+
+
+def clamp(value: float, minimum: float, maximum: float) -> float:
+    return max(minimum, min(maximum, value))
+
+
+def normalise_text(value: Any) -> str:
+    text = str(value or "").lower()
+
+    text = (
+        text.replace("’", "'")
+        .replace("“", '"')
+        .replace("”", '"')
+        .replace("–", "-")
+        .replace("—", "-")
+    )
+
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def regex_matches(patterns: list[str], text: str) -> list[str]:
+    return [
+        pattern
+        for pattern in patterns
+        if re.search(pattern, text, flags=re.IGNORECASE)
+    ]
 
 
 def parse_datetime(value: Any) -> datetime | None:
@@ -366,17 +431,15 @@ def parse_datetime(value: Any) -> datetime | None:
 
 
 def event_timestamp(event: dict[str, Any]) -> datetime | None:
-    candidates = [
-        event.get("timestamp"),
-        event.get("published"),
-        event.get("date"),
-        event.get("datetime"),
-        event.get("created_at"),
-        event.get("event_time"),
-    ]
-
-    for candidate in candidates:
-        parsed = parse_datetime(candidate)
+    for key in (
+        "timestamp",
+        "published",
+        "date",
+        "datetime",
+        "created_at",
+        "event_time",
+    ):
+        parsed = parse_datetime(event.get(key))
 
         if parsed is not None:
             return parsed
@@ -384,63 +447,18 @@ def event_timestamp(event: dict[str, Any]) -> datetime | None:
     return None
 
 
-def normalise_text(value: Any) -> str:
-    text = str(value or "").lower()
-
-    text = (
-        text.replace("’", "'")
-        .replace("“", '"')
-        .replace("”", '"')
-        .replace("–", "-")
-        .replace("—", "-")
-    )
-
-    return re.sub(r"\s+", " ", text).strip()
-
-
-def safe_number(value: Any, default: float = 0.0) -> float:
-    try:
-        if value is None or value == "":
-            return default
-
-        return float(value)
-
-    except (TypeError, ValueError):
-        return default
-
-
-def clamp(value: float, minimum: float, maximum: float) -> float:
-    return max(minimum, min(maximum, value))
-
-
-def round_score(value: float) -> float:
-    return round(float(value), 2)
-
-
-def regex_matches(patterns: list[str], text: str) -> list[str]:
-    matched: list[str] = []
-
-    for pattern in patterns:
-        if re.search(pattern, text, flags=re.IGNORECASE):
-            matched.append(pattern)
-
-    return matched
-
-
 # =====================================================================
-# INPUT NORMALISATION
+# INPUT PROCESSING
 # =====================================================================
 
 def extract_events(payload: dict[str, Any]) -> list[dict[str, Any]]:
-    possible_keys = [
+    for key in (
         "events",
         "kinetic_events",
         "items",
         "articles",
         "data",
-    ]
-
-    for key in possible_keys:
+    ):
         value = payload.get(key)
 
         if isinstance(value, list):
@@ -473,24 +491,29 @@ def event_identity(event: dict[str, Any]) -> str:
     if link:
         return f"link:{link}"
 
-    external_id = normalise_text(
+    event_id = normalise_text(
         event.get("event_id")
         or event.get("id")
     )
 
-    if external_id:
-        return f"id:{external_id}"
+    if event_id:
+        source_layer = normalise_text(
+            event.get("_strategic_source_layer")
+        )
+        return f"{source_layer}:id:{event_id}"
 
     title = normalise_text(
         event.get("title")
-        or event.get("event")
         or event.get("description")
+        or event.get("event")
     )
 
     timestamp = event_timestamp(event)
-    timestamp_text = timestamp.isoformat() if timestamp else ""
 
-    return f"title:{title}|timestamp:{timestamp_text}"
+    return (
+        f"title:{title}|"
+        f"timestamp:{timestamp.isoformat() if timestamp else ''}"
+    )
 
 
 def merge_events(
@@ -513,14 +536,62 @@ def merge_events(
         if identity not in unique:
             unique[identity] = copied
 
-    merged = list(unique.values())
+    events = list(unique.values())
 
-    merged.sort(
-        key=lambda item: event_timestamp(item)
-        or datetime.min.replace(tzinfo=timezone.utc)
+    events.sort(
+        key=lambda item: (
+            event_timestamp(item)
+            or datetime.min.replace(tzinfo=timezone.utc)
+        )
     )
 
-    return merged
+    return events
+
+
+def event_text(event: dict[str, Any]) -> str:
+    parts: list[str] = []
+
+    for key in (
+        "title",
+        "description",
+        "summary",
+        "event",
+        "diplomatic_event",
+        "military_event",
+        "event_type",
+        "subtype",
+        "primary_keyword",
+        "target",
+        "location",
+        "source",
+    ):
+        value = event.get(key)
+
+        if value:
+            parts.append(str(value))
+
+    for key in (
+        "keywords",
+        "actors",
+        "matched_keywords",
+        "tags",
+    ):
+        values = event.get(key)
+
+        if not isinstance(values, list):
+            continue
+
+        for value in values:
+            if isinstance(value, dict):
+                parts.extend(
+                    str(item)
+                    for item in value.values()
+                    if item not in (None, "")
+                )
+            elif value not in (None, ""):
+                parts.append(str(value))
+
+    return normalise_text(" ".join(parts))
 
 
 # =====================================================================
@@ -530,7 +601,7 @@ def merge_events(
 def build_indicator_config(
     payload: dict[str, Any],
 ) -> dict[str, dict[str, dict[str, Any]]]:
-    config: dict[str, dict[str, dict[str, Any]]] = {
+    result: dict[str, dict[str, dict[str, Any]]] = {
         "usa": {},
         "iran": {},
     }
@@ -541,43 +612,50 @@ def build_indicator_config(
         if not isinstance(actor_payload, dict):
             continue
 
-        for direction_key in ("increase_pressure", "decrease_pressure"):
-            configured = actor_payload.get(direction_key, [])
+        for group in (
+            "increase_pressure",
+            "decrease_pressure",
+        ):
+            indicators = actor_payload.get(group, [])
 
-            if not isinstance(configured, list):
+            if not isinstance(indicators, list):
                 continue
 
-            for item in configured:
-                if not isinstance(item, dict):
+            for indicator in indicators:
+                if not isinstance(indicator, dict):
                     continue
 
-                indicator_id = str(item.get("id", "")).strip()
+                indicator_id = str(
+                    indicator.get("id", "")
+                ).strip()
 
                 if not indicator_id:
                     continue
 
-                configured_score = safe_number(item.get("score"))
+                score = safe_number(indicator.get("score"))
 
-                config[actor][indicator_id] = {
+                result[actor][indicator_id] = {
                     "id": indicator_id,
-                    "name": str(item.get("name", indicator_id)),
-                    "configured_score": configured_score,
+                    "name": str(
+                        indicator.get("name", indicator_id)
+                    ),
+                    "configured_score": score,
                     "configured_direction": (
                         "increase"
-                        if configured_score > 0
+                        if score > 0
                         else "decrease"
-                        if configured_score < 0
+                        if score < 0
                         else "neutral"
                     ),
                 }
 
-    return config
+    return result
 
 
 def build_interest_config(
     payload: dict[str, Any],
 ) -> dict[str, dict[str, dict[str, Any]]]:
-    config: dict[str, dict[str, dict[str, Any]]] = {
+    result: dict[str, dict[str, dict[str, Any]]] = {
         "usa": {},
         "iran": {},
     }
@@ -585,7 +663,7 @@ def build_interest_config(
     actors = payload.get("actors", {})
 
     if not isinstance(actors, dict):
-        return config
+        return result
 
     for actor in ("usa", "iran"):
         actor_payload = actors.get(actor, {})
@@ -602,19 +680,24 @@ def build_interest_config(
             if not isinstance(interest, dict):
                 continue
 
-            interest_id = str(interest.get("id", "")).strip()
+            interest_id = str(
+                interest.get("id", "")
+            ).strip()
 
             if not interest_id:
                 continue
 
-            config[actor][interest_id] = {
+            result[actor][interest_id] = {
                 "id": interest_id,
-                "name": str(interest.get("name", interest_id)),
-                "description": str(interest.get("description", "")),
-                "weight": safe_number(interest.get("weight")),
+                "name": str(
+                    interest.get("name", interest_id)
+                ),
+                "weight": safe_number(
+                    interest.get("weight")
+                ),
             }
 
-    return config
+    return result
 
 
 def validate_configuration(
@@ -622,104 +705,145 @@ def validate_configuration(
 ) -> list[str]:
     warnings: list[str] = []
 
-    for actor, actor_patterns in INDICATOR_PATTERNS.items():
-        configured_ids = set(indicator_config.get(actor, {}).keys())
-        pattern_ids = set(actor_patterns.keys())
+    for actor in ("usa", "iran"):
+        configured = set(
+            indicator_config.get(actor, {}).keys()
+        )
 
-        missing_in_config = sorted(pattern_ids - configured_ids)
-        missing_patterns = sorted(configured_ids - pattern_ids)
+        recognised = set(
+            INDICATOR_PATTERNS.get(actor, {}).keys()
+        )
 
-        for indicator_id in missing_in_config:
+        for indicator_id in sorted(recognised - configured):
             warnings.append(
-                f"{actor}.{indicator_id} has recognition patterns "
+                f"{actor}.{indicator_id} has patterns "
                 "but is missing from strategic_indicators.json"
             )
 
-        for indicator_id in missing_patterns:
+        for indicator_id in sorted(configured - recognised):
             warnings.append(
                 f"{actor}.{indicator_id} is configured "
-                "but has no recognition patterns in the script"
+                "but has no recognition pattern"
             )
 
     return warnings
 
 
 # =====================================================================
-# EVENT INTERPRETATION
+# RECOGNITION GUARDS
 # =====================================================================
 
-def event_text(event: dict[str, Any]) -> str:
-    text_parts: list[str] = []
-
-    scalar_fields = [
-        "title",
-        "description",
-        "summary",
-        "event",
-        "diplomatic_event",
-        "military_event",
-        "subtype",
-        "primary_keyword",
-        "target",
-        "location",
-        "actor",
-        "source",
-    ]
-
-    for field in scalar_fields:
-        value = event.get(field)
-
-        if value:
-            text_parts.append(str(value))
-
-    list_fields = [
-        "keywords",
-        "actors",
-        "matched_keywords",
-        "tags",
-    ]
-
-    for field in list_fields:
-        value = event.get(field)
-
-        if not isinstance(value, list):
-            continue
-
-        for item in value:
-            if isinstance(item, dict):
-                text_parts.extend(
-                    str(entry)
-                    for entry in item.values()
-                    if entry not in (None, "")
-                )
-            elif item not in (None, ""):
-                text_parts.append(str(item))
-
-    return normalise_text(" ".join(text_parts))
-
-
-def detect_actors(text: str) -> list[str]:
-    actors: list[str] = []
+def detect_actors(text: str) -> set[str]:
+    actors: set[str] = set()
 
     for actor, patterns in ACTOR_PATTERNS.items():
         if regex_matches(patterns, text):
-            actors.append(actor)
+            actors.add(actor)
 
     return actors
 
 
-def detect_indicators_for_actor(
+def is_bilateral_event(text: str) -> bool:
+    actor_set = detect_actors(text)
+
+    if actor_set == {"usa", "iran"}:
+        if regex_matches(BILATERAL_PATTERNS, text):
+            return True
+
+        if re.search(
+            r"\b(?:talks?|negotiations?|dialogue|peace deal|cease[- ]?fire)\b",
+            text,
+            flags=re.IGNORECASE,
+        ):
+            return True
+
+    return bool(regex_matches(BILATERAL_PATTERNS, text))
+
+
+def has_explicit_threat_language(text: str) -> bool:
+    threat_patterns = [
+        r"\bthreatens?\b",
+        r"\bvows?\b.*\b(?:attack|strike|retaliate|revenge)\b",
+        r"\bwarns?\b.*\b(?:attack|strike|retaliation|military response|consequences)\b",
+        r"\bcrushing response\b",
+        r"\bharsh response\b",
+        r"\bmilitary retaliation\b",
+        r"\bsevere consequences\b",
+        r"\bwill retaliate\b",
+        r"\bwill strike\b",
+        r"\bwill attack\b",
+    ]
+
+    return bool(regex_matches(threat_patterns, text))
+
+
+def is_conditional_diplomacy(text: str) -> bool:
+    patterns = [
+        r"\bties?\b.*\b(?:peace deal|agreement|cease[- ]?fire|talks?)\b.*\bto\b",
+        r"\b(?:peace deal|agreement|cease[- ]?fire|talks?)\b.*\bconditional\b",
+        r"\bcondition(?:s|al)?\b.*\b(?:peace deal|agreement|cease[- ]?fire|talks?)\b",
+        r"\bon condition that\b",
+        r"\bonly if\b.*\b(?:peace|cease[- ]?fire|deal|talks?)\b",
+    ]
+
+    return bool(regex_matches(patterns, text))
+
+
+def indicator_allowed(
+    actor: str,
+    indicator_id: str,
+    text: str,
+    bilateral: bool,
+) -> bool:
+    if indicator_id in BILATERAL_INDICATORS:
+        if bilateral:
+            return True
+
+    if indicator_id == "supreme_leader_statement":
+        if is_conditional_diplomacy(text):
+            return False
+
+        if not has_explicit_threat_language(text):
+            return False
+
+    if actor == "iran":
+        if indicator_id not in BILATERAL_INDICATORS:
+            iran_named = bool(
+                regex_matches(ACTOR_PATTERNS["iran"], text)
+            )
+
+            if not iran_named:
+                return False
+
+    if actor == "usa":
+        if indicator_id not in BILATERAL_INDICATORS:
+            usa_named = bool(
+                regex_matches(ACTOR_PATTERNS["usa"], text)
+            )
+
+            if not usa_named:
+                return False
+
+    return True
+
+
+# =====================================================================
+# INDICATOR SELECTION
+# =====================================================================
+
+def recognise_indicators(
     actor: str,
     text: str,
     indicator_config: dict[str, dict[str, dict[str, Any]]],
+    bilateral: bool,
 ) -> list[dict[str, Any]]:
     matches: list[dict[str, Any]] = []
 
-    actor_patterns = INDICATOR_PATTERNS.get(actor, {})
-    actor_config = indicator_config.get(actor, {})
-
-    for indicator_id, patterns in actor_patterns.items():
-        configuration = actor_config.get(indicator_id)
+    for indicator_id, patterns in INDICATOR_PATTERNS[actor].items():
+        configuration = indicator_config.get(
+            actor,
+            {},
+        ).get(indicator_id)
 
         if configuration is None:
             continue
@@ -729,21 +853,84 @@ def detect_indicators_for_actor(
         if not matched_patterns:
             continue
 
-        match = dict(configuration)
-        match["matched_patterns"] = matched_patterns
+        if not indicator_allowed(
+            actor=actor,
+            indicator_id=indicator_id,
+            text=text,
+            bilateral=bilateral,
+        ):
+            continue
 
-        matches.append(match)
+        result = dict(configuration)
+        result["matched_patterns"] = matched_patterns
 
-    matches.sort(
-        key=lambda item: (
-            abs(safe_number(item.get("configured_score"))),
-            str(item.get("id", "")),
-        ),
-        reverse=True,
-    )
+        matches.append(result)
 
-    return matches[:MAX_INDICATORS_PER_ACTOR_EVENT]
+    return select_non_overlapping_indicators(matches)
 
+
+def select_non_overlapping_indicators(
+    matches: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """
+    Prevent uncontrolled score stacking.
+
+    Per actor and event:
+    - keep the strongest pressure-increasing indicator;
+    - keep the strongest pressure-decreasing indicator;
+    - allow both only when both directions are genuinely present.
+    """
+
+    increasing = [
+        match
+        for match in matches
+        if safe_number(match.get("configured_score")) > 0
+    ]
+
+    decreasing = [
+        match
+        for match in matches
+        if safe_number(match.get("configured_score")) < 0
+    ]
+
+    selected: list[dict[str, Any]] = []
+
+    if increasing:
+        selected.append(
+            max(
+                increasing,
+                key=lambda item: (
+                    abs(
+                        safe_number(
+                            item.get("configured_score")
+                        )
+                    ),
+                    len(item.get("matched_patterns", [])),
+                ),
+            )
+        )
+
+    if decreasing:
+        selected.append(
+            max(
+                decreasing,
+                key=lambda item: (
+                    abs(
+                        safe_number(
+                            item.get("configured_score")
+                        )
+                    ),
+                    len(item.get("matched_patterns", [])),
+                ),
+            )
+        )
+
+    return selected
+
+
+# =====================================================================
+# OPERATIONAL COMPONENT
+# =====================================================================
 
 def infer_direction(event: dict[str, Any]) -> str:
     direction = normalise_text(
@@ -772,10 +959,16 @@ def infer_direction(event: dict[str, Any]) -> str:
     }:
         return "de-escalation"
 
-    if direction in {"mixed", "neutral", "unclear"}:
+    if direction in {
+        "mixed",
+        "neutral",
+        "unclear",
+    }:
         return "mixed"
 
-    event_type = normalise_text(event.get("event_type"))
+    event_type = normalise_text(
+        event.get("event_type")
+    )
 
     if event_type in {
         "kinetic",
@@ -792,7 +985,7 @@ def infer_direction(event: dict[str, Any]) -> str:
 
 
 def operational_magnitude(event: dict[str, Any]) -> float:
-    candidates = [
+    values = [
         abs(safe_number(event.get("score"))),
         abs(safe_number(event.get("direction_score"))),
         abs(safe_number(event.get("severity_score"))),
@@ -801,12 +994,9 @@ def operational_magnitude(event: dict[str, Any]) -> float:
         abs(safe_number(event.get("severity"))),
     ]
 
-    magnitude = max(candidates, default=0.0)
+    magnitude = max(values, default=0.0)
 
-    if magnitude == 0:
-        magnitude = 1.0
-
-    return magnitude
+    return magnitude if magnitude > 0 else 1.0
 
 
 def calculate_operational_component(
@@ -821,23 +1011,30 @@ def calculate_operational_component(
     if direction == "de-escalation":
         return -magnitude, direction
 
-    if direction == "mixed":
-        return 0.0, direction
-
     return 0.0, direction
 
+
+# =====================================================================
+# CONTRIBUTION BUILDING
+# =====================================================================
 
 def interest_details(
     actor: str,
     indicator_id: str,
     interest_config: dict[str, dict[str, dict[str, Any]]],
 ) -> dict[str, Any] | None:
-    interest_id = INDICATOR_INTEREST_MAP.get(actor, {}).get(indicator_id)
+    interest_id = INDICATOR_INTEREST_MAP.get(
+        actor,
+        {},
+    ).get(indicator_id)
 
     if not interest_id:
         return None
 
-    interest = interest_config.get(actor, {}).get(interest_id)
+    interest = interest_config.get(
+        actor,
+        {},
+    ).get(interest_id)
 
     if interest is None:
         return {
@@ -853,11 +1050,48 @@ def interest_details(
     }
 
 
-def build_actor_contribution(
+def build_reason(
+    actor: str,
+    title: str,
+    operational_component: float,
+    strategic_modifier: float,
+    final_score: float,
+    indicators: list[dict[str, Any]],
+) -> str:
+    actor_name = (
+        "United States"
+        if actor == "usa"
+        else "Iran"
+    )
+
+    names = ", ".join(
+        str(
+            indicator.get(
+                "name",
+                indicator.get("id", ""),
+            )
+        )
+        for indicator in indicators
+    )
+
+    return (
+        f"{actor_name}: {names}. "
+        f"Operational component: "
+        f"{operational_component:+.2f}; "
+        f"strategic modifier: "
+        f"{strategic_modifier:+.2f}; "
+        f"final contribution: "
+        f"{final_score:+.2f}. "
+        f"Event: {title}"
+    )
+
+
+def build_contribution(
     event: dict[str, Any],
     actor: str,
-    matched_indicators: list[dict[str, Any]],
+    indicators: list[dict[str, Any]],
     interest_config: dict[str, dict[str, dict[str, Any]]],
+    bilateral: bool,
 ) -> dict[str, Any]:
     timestamp = event_timestamp(event)
 
@@ -866,60 +1100,82 @@ def build_actor_contribution(
     )
 
     strategic_modifier = sum(
-        safe_number(indicator.get("configured_score"))
-        for indicator in matched_indicators
+        safe_number(
+            indicator.get("configured_score")
+        )
+        for indicator in indicators
     )
 
-    final_score = operational_component + strategic_modifier
+    final_score = (
+        operational_component
+        + strategic_modifier
+    )
 
     indicator_results: list[dict[str, Any]] = []
 
-    for indicator in matched_indicators:
+    for indicator in indicators:
         indicator_id = str(indicator.get("id", ""))
 
         indicator_results.append({
             "id": indicator_id,
             "name": indicator.get("name"),
             "score": round_score(
-                safe_number(indicator.get("configured_score"))
+                safe_number(
+                    indicator.get("configured_score")
+                )
             ),
-            "direction": indicator.get("configured_direction"),
+            "direction": indicator.get(
+                "configured_direction"
+            ),
             "interest": interest_details(
                 actor,
                 indicator_id,
                 interest_config,
             ),
             "recognition_rule_count": len(
-                indicator.get("matched_patterns", [])
+                indicator.get(
+                    "matched_patterns",
+                    [],
+                )
             ),
         })
 
-    title = (
+    title = str(
         event.get("title")
         or event.get("event")
         or event.get("description")
         or ""
     )
 
-    source_layer = event.get(
-        "_strategic_source_layer",
-        "unknown",
-    )
-
-    event_id = (
+    event_id = str(
         event.get("event_id")
         or event.get("id")
         or event_identity(event)
     )
 
     return {
-        "event_id": str(event_id),
-        "timestamp": timestamp.isoformat() if timestamp else "",
-        "date": timestamp.date().isoformat() if timestamp else "",
+        "event_id": event_id,
+        "timestamp": (
+            timestamp.isoformat()
+            if timestamp
+            else ""
+        ),
+        "date": (
+            timestamp.date().isoformat()
+            if timestamp
+            else ""
+        ),
         "actor": actor,
-        "title": str(title),
-        "source_layer": source_layer,
-        "event_type": event.get("event_type", ""),
+        "bilateral_event": bilateral,
+        "title": title,
+        "source_layer": event.get(
+            "_strategic_source_layer",
+            "unknown",
+        ),
+        "event_type": event.get(
+            "event_type",
+            "",
+        ),
         "event_direction": event_direction,
         "operational_component": round_score(
             operational_component
@@ -928,15 +1184,17 @@ def build_actor_contribution(
             strategic_modifier
         ),
         "context_multiplier": 1.0,
-        "final_score": round_score(final_score),
+        "final_score": round_score(
+            final_score
+        ),
         "indicators": indicator_results,
         "reason": build_reason(
             actor=actor,
-            title=str(title),
+            title=title,
             operational_component=operational_component,
             strategic_modifier=strategic_modifier,
             final_score=final_score,
-            matched_indicators=matched_indicators,
+            indicators=indicators,
         ),
         "source": event.get("source", ""),
         "link": (
@@ -949,36 +1207,11 @@ def build_actor_contribution(
             safe_number(event.get("score"))
         ),
         "existing_direction_score": round_score(
-            safe_number(event.get("direction_score"))
+            safe_number(
+                event.get("direction_score")
+            )
         ),
     }
-
-
-def build_reason(
-    actor: str,
-    title: str,
-    operational_component: float,
-    strategic_modifier: float,
-    final_score: float,
-    matched_indicators: list[dict[str, Any]],
-) -> str:
-    actor_name = "United States" if actor == "usa" else "Iran"
-
-    indicator_names = ", ".join(
-        str(indicator.get("name", indicator.get("id", "")))
-        for indicator in matched_indicators
-    )
-
-    return (
-        f"{actor_name}: {indicator_names}. "
-        f"Existing operational component: "
-        f"{round_score(operational_component):+.2f}; "
-        f"strategic modifier: "
-        f"{round_score(strategic_modifier):+.2f}; "
-        f"final contribution: "
-        f"{round_score(final_score):+.2f}. "
-        f"Event: {title}"
-    )
 
 
 def analyse_event(
@@ -991,43 +1224,45 @@ def analyse_event(
     if timestamp is None:
         return []
 
-    # The current UTC day is incomplete and must not be used.
-    if timestamp.date() >= datetime.now(timezone.utc).date():
+    current_utc_date = datetime.now(
+        timezone.utc
+    ).date()
+
+    if timestamp.date() >= current_utc_date:
         return []
 
     text = event_text(event)
     detected_actors = detect_actors(text)
+    bilateral = is_bilateral_event(text)
+
+    actors_to_check: set[str] = set(detected_actors)
+
+    if bilateral:
+        actors_to_check.update({"usa", "iran"})
 
     contributions: list[dict[str, Any]] = []
 
     for actor in ("usa", "iran"):
-        matched_indicators = detect_indicators_for_actor(
-            actor,
-            text,
-            indicator_config,
-        )
-
-        if not matched_indicators:
+        if actor not in actors_to_check:
             continue
 
-        # Actor-specific indicator patterns are the primary control.
-        # Actor detection provides an additional guard where possible.
-        if detected_actors and actor not in detected_actors:
-            actor_specific_pattern_match = any(
-                actor in pattern.lower()
-                for indicator in matched_indicators
-                for pattern in indicator.get("matched_patterns", [])
-            )
+        indicators = recognise_indicators(
+            actor=actor,
+            text=text,
+            indicator_config=indicator_config,
+            bilateral=bilateral,
+        )
 
-            if not actor_specific_pattern_match:
-                continue
+        if not indicators:
+            continue
 
         contributions.append(
-            build_actor_contribution(
+            build_contribution(
                 event=event,
                 actor=actor,
-                matched_indicators=matched_indicators,
+                indicators=indicators,
                 interest_config=interest_config,
+                bilateral=bilateral,
             )
         )
 
@@ -1035,7 +1270,7 @@ def analyse_event(
 
 
 # =====================================================================
-# AGGREGATION
+# DAILY AGGREGATION
 # =====================================================================
 
 def empty_actor_day() -> dict[str, Any]:
@@ -1056,9 +1291,18 @@ def group_contributions_by_day(
     grouped: dict[str, dict[str, Any]] = {}
 
     for contribution in contributions:
-        day = str(contribution.get("date", ""))
+        day = str(
+            contribution.get("date", "")
+        )
 
-        if not day:
+        actor = str(
+            contribution.get("actor", "")
+        )
+
+        if not day or actor not in {
+            "usa",
+            "iran",
+        }:
             continue
 
         if day not in grouped:
@@ -1068,45 +1312,45 @@ def group_contributions_by_day(
                 "iran": empty_actor_day(),
             }
 
-        actor = str(contribution.get("actor", ""))
-
-        if actor not in ("usa", "iran"):
-            continue
-
         actor_day = grouped[day][actor]
-        final_score = safe_number(
+        score = safe_number(
             contribution.get("final_score")
         )
 
-        actor_day["raw_score"] += final_score
+        actor_day["raw_score"] += score
         actor_day["event_count"] += 1
-        actor_day["contributors"].append(contribution)
+        actor_day["contributors"].append(
+            contribution
+        )
 
-        if final_score > 0:
-            actor_day["positive_score"] += final_score
+        if score > 0:
+            actor_day["positive_score"] += score
             actor_day["increase_event_count"] += 1
 
-        elif final_score < 0:
-            actor_day["negative_score"] += final_score
+        elif score < 0:
+            actor_day["negative_score"] += score
             actor_day["decrease_event_count"] += 1
 
     for day_payload in grouped.values():
         for actor in ("usa", "iran"):
             actor_day = day_payload[actor]
 
-            actor_day["raw_score"] = round_score(
-                actor_day["raw_score"]
-            )
-            actor_day["positive_score"] = round_score(
-                actor_day["positive_score"]
-            )
-            actor_day["negative_score"] = round_score(
-                actor_day["negative_score"]
-            )
+            for field in (
+                "raw_score",
+                "positive_score",
+                "negative_score",
+            ):
+                actor_day[field] = round_score(
+                    actor_day[field]
+                )
 
             actor_day["contributors"].sort(
                 key=lambda item: (
-                    abs(safe_number(item.get("final_score"))),
+                    abs(
+                        safe_number(
+                            item.get("final_score")
+                        )
+                    ),
                     str(item.get("timestamp", "")),
                 ),
                 reverse=True,
@@ -1115,7 +1359,7 @@ def group_contributions_by_day(
     return grouped
 
 
-def date_range_from_days(
+def complete_date_range(
     grouped: dict[str, dict[str, Any]],
 ) -> list[str]:
     if not grouped:
@@ -1123,60 +1367,58 @@ def date_range_from_days(
 
     parsed_dates = sorted(
         date.fromisoformat(day)
-        for day in grouped.keys()
+        for day in grouped
     )
 
-    start = parsed_dates[0]
-    end = parsed_dates[-1]
+    current = parsed_dates[0]
+    final = parsed_dates[-1]
 
-    days: list[str] = []
-    cursor = start
+    result: list[str] = []
 
-    while cursor <= end:
-        days.append(cursor.isoformat())
-        cursor = date.fromordinal(cursor.toordinal() + 1)
+    while current <= final:
+        result.append(current.isoformat())
+        current = date.fromordinal(
+            current.toordinal() + 1
+        )
 
-    return days
+    return result
 
 
 def weighted_rolling_score(
-    history_rows: list[dict[str, Any]],
-    row_index: int,
+    rows: list[dict[str, Any]],
+    index: int,
     actor: str,
 ) -> float:
-    weighted_total = 0.0
+    total = 0.0
 
     for offset in range(ROLLING_WINDOW_DAYS):
-        source_index = row_index - offset
+        source_index = index - offset
 
         if source_index < 0:
             break
 
-        weight = (
-            ROLLING_WEIGHTS[offset]
-            if offset < len(ROLLING_WEIGHTS)
-            else 0.0
-        )
+        weight = ROLLING_WEIGHTS[offset]
 
         raw_score = safe_number(
-            history_rows[source_index]
+            rows[source_index]
             .get(actor, {})
             .get("raw_score")
         )
 
-        weighted_total += raw_score * weight
+        total += raw_score * weight
 
-    return weighted_total
+    return total
 
 
 def score_to_index(weighted_score: float) -> float:
-    index_value = (
-        INDEX_BASELINE
-        + weighted_score * INDEX_POINTS_PER_SCORE
-    )
-
     return round_score(
-        clamp(index_value, 0.0, 100.0)
+        clamp(
+            INDEX_BASELINE
+            + weighted_score
+            * INDEX_POINTS_PER_SCORE,
+            0.0,
+            100.0,
+        )
     )
 
 
@@ -1187,10 +1429,13 @@ def pressure_level(index_value: float) -> str:
     if index_value >= 65:
         return "high"
 
-    if index_value >= 50:
+    if index_value >= 55:
         return "elevated"
 
-    if index_value >= 35:
+    if index_value >= 45:
+        return "balanced"
+
+    if index_value >= 30:
         return "reduced"
 
     return "low"
@@ -1224,14 +1469,17 @@ def build_history_rows(
     grouped: dict[str, dict[str, Any]],
     existing_history: dict[str, Any],
 ) -> list[dict[str, Any]]:
-    all_days = date_range_from_days(grouped)
+    days = complete_date_range(grouped)
 
-    if not all_days:
+    if not days:
         return []
 
     existing_modes: dict[str, str] = {}
 
-    for row in existing_history.get("days", []) or []:
+    for row in existing_history.get(
+        "days",
+        [],
+    ) or []:
         if not isinstance(row, dict):
             continue
 
@@ -1239,43 +1487,46 @@ def build_history_rows(
 
         if row_date:
             existing_modes[row_date] = str(
-                row.get("calculation_mode", "")
+                row.get(
+                    "calculation_mode",
+                    "",
+                )
             )
 
-    newest_available_day = all_days[-1]
-    history_rows: list[dict[str, Any]] = []
+    newest_day = days[-1]
+    rows: list[dict[str, Any]] = []
 
-    for day in all_days:
-        source = grouped.get(day, {
-            "date": day,
-            "usa": empty_actor_day(),
-            "iran": empty_actor_day(),
-        })
+    for day in days:
+        source = grouped.get(
+            day,
+            {
+                "date": day,
+                "usa": empty_actor_day(),
+                "iran": empty_actor_day(),
+            },
+        )
 
-        existing_mode = existing_modes.get(day)
+        previous_mode = existing_modes.get(day)
 
-        if existing_mode in {
-            "historical_backfill",
-            "live",
-        }:
-            calculation_mode = existing_mode
+        if previous_mode == "live":
+            calculation_mode = "live"
 
-        elif day == newest_available_day:
+        elif day == newest_day:
             calculation_mode = "live"
 
         else:
             calculation_mode = "historical_backfill"
 
-        history_rows.append({
+        rows.append({
             "date": day,
             "calculation_mode": calculation_mode,
             "usa": source["usa"],
             "iran": source["iran"],
         })
 
-    for index, row in enumerate(history_rows):
+    for index, row in enumerate(rows):
         previous_row = (
-            history_rows[index - 1]
+            rows[index - 1]
             if index > 0
             else None
         )
@@ -1284,7 +1535,7 @@ def build_history_rows(
 
         for actor in ("usa", "iran"):
             weighted_score = weighted_rolling_score(
-                history_rows,
+                rows,
                 index,
                 actor,
             )
@@ -1300,35 +1551,43 @@ def build_history_rows(
                     previous_row
                     .get(actor, {})
                     .get("pressure_index_7d"),
-                    default=INDEX_BASELINE,
+                    INDEX_BASELINE,
                 )
 
-            row[actor]["weighted_score_7d"] = round_score(
-                weighted_score
+            row[actor]["weighted_score_7d"] = (
+                round_score(weighted_score)
             )
-            row[actor]["pressure_index_7d"] = current_index
-            row[actor]["pressure_level"] = pressure_level(
+
+            row[actor]["pressure_index_7d"] = (
                 current_index
             )
-            row[actor]["trend"] = pressure_trend(
-                current_index,
-                previous_index,
+
+            row[actor]["pressure_level"] = (
+                pressure_level(current_index)
+            )
+
+            row[actor]["trend"] = (
+                pressure_trend(
+                    current_index,
+                    previous_index,
+                )
             )
 
             actor_indices.append(current_index)
 
         overall_index = round_score(
-            sum(actor_indices) / len(actor_indices)
+            sum(actor_indices)
+            / len(actor_indices)
         )
 
-        previous_overall_index = None
+        previous_overall = None
 
         if previous_row is not None:
-            previous_overall_index = safe_number(
+            previous_overall = safe_number(
                 previous_row
                 .get("overall", {})
                 .get("pressure_index_7d"),
-                default=INDEX_BASELINE,
+                INDEX_BASELINE,
             )
 
         row["overall"] = {
@@ -1338,7 +1597,7 @@ def build_history_rows(
             ),
             "trend": pressure_trend(
                 overall_index,
-                previous_overall_index,
+                previous_overall,
             ),
             "calculation": (
                 "Arithmetic mean of USA and Iran "
@@ -1346,31 +1605,14 @@ def build_history_rows(
             ),
         }
 
-    return history_rows
+    return rows
 
 
 # =====================================================================
-# VALIDATION AND SUMMARY
+# STATISTICS
 # =====================================================================
 
-def source_count(
-    contributions: list[dict[str, Any]],
-) -> dict[str, int]:
-    counts: dict[str, int] = {}
-
-    for contribution in contributions:
-        source_layer = str(
-            contribution.get("source_layer", "unknown")
-        )
-
-        counts[source_layer] = (
-            counts.get(source_layer, 0) + 1
-        )
-
-    return counts
-
-
-def actor_contribution_count(
+def contribution_count_by_actor(
     contributions: list[dict[str, Any]],
 ) -> dict[str, int]:
     counts = {
@@ -1379,7 +1621,9 @@ def actor_contribution_count(
     }
 
     for contribution in contributions:
-        actor = str(contribution.get("actor", ""))
+        actor = str(
+            contribution.get("actor", "")
+        )
 
         if actor in counts:
             counts[actor] += 1
@@ -1387,73 +1631,76 @@ def actor_contribution_count(
     return counts
 
 
+def contribution_count_by_layer(
+    contributions: list[dict[str, Any]],
+) -> dict[str, int]:
+    counts: dict[str, int] = {}
+
+    for contribution in contributions:
+        layer = str(
+            contribution.get(
+                "source_layer",
+                "unknown",
+            )
+        )
+
+        counts[layer] = counts.get(layer, 0) + 1
+
+    return counts
+
+
+def indicator_count(
+    contributions: list[dict[str, Any]],
+) -> dict[str, int]:
+    counts: dict[str, int] = {}
+
+    for contribution in contributions:
+        actor = str(
+            contribution.get("actor", "")
+        )
+
+        for indicator in contribution.get(
+            "indicators",
+            [],
+        ):
+            if not isinstance(indicator, dict):
+                continue
+
+            indicator_id = str(
+                indicator.get("id", "")
+            )
+
+            key = f"{actor}:{indicator_id}"
+
+            counts[key] = counts.get(key, 0) + 1
+
+    return dict(
+        sorted(
+            counts.items(),
+            key=lambda item: (
+                -item[1],
+                item[0],
+            ),
+        )
+    )
+
+
 def strongest_contributors(
     contributors: list[dict[str, Any]],
     limit: int = 10,
 ) -> list[dict[str, Any]]:
-    sorted_contributors = sorted(
+    return sorted(
         contributors,
         key=lambda item: (
-            abs(safe_number(item.get("final_score"))),
+            abs(
+                safe_number(
+                    item.get("final_score")
+                )
+            ),
             str(item.get("timestamp", "")),
         ),
         reverse=True,
-    )
-
-    return sorted_contributors[:limit]
-
-
-def current_payload(
-    history_rows: list[dict[str, Any]],
-    metadata: dict[str, Any],
-) -> dict[str, Any]:
-    if not history_rows:
-        return {
-            **metadata,
-            "status": "no_data",
-            "message": (
-                "No complete UTC day with recognised "
-                "strategic indicators was available."
-            ),
-            "current": None,
-        }
-
-    latest = history_rows[-1]
-
-    return {
-        **metadata,
-        "status": "ok",
-        "latest_complete_utc_day": latest["date"],
-        "current": {
-            "date": latest["date"],
-            "calculation_mode": latest[
-                "calculation_mode"
-            ],
-            "usa": {
-                **latest["usa"],
-                "strongest_contributors": (
-                    strongest_contributors(
-                        latest["usa"].get(
-                            "contributors",
-                            [],
-                        )
-                    )
-                ),
-            },
-            "iran": {
-                **latest["iran"],
-                "strongest_contributors": (
-                    strongest_contributors(
-                        latest["iran"].get(
-                            "contributors",
-                            [],
-                        )
-                    )
-                ),
-            },
-            "overall": latest["overall"],
-        },
-    }
+    )[:limit]
 
 
 # =====================================================================
@@ -1461,28 +1708,40 @@ def current_payload(
 # =====================================================================
 
 def main() -> None:
-    repo_root = Path(__file__).resolve().parent.parent
-
-    non_kinetic_path = repo_root / NON_KINETIC_INPUT
-    interests_path = repo_root / INTERESTS_INPUT
-    indicators_path = repo_root / INDICATORS_INPUT
-
-    current_output_path = repo_root / CURRENT_OUTPUT
-    history_output_path = repo_root / HISTORY_OUTPUT
-
-    non_kinetic_payload = load_json(
-        non_kinetic_path,
-        required=True,
+    repo_root = (
+        Path(__file__).resolve().parent.parent
     )
 
-    interests_payload = load_json(
-        interests_path,
-        required=True,
+    non_kinetic_path = (
+        repo_root / NON_KINETIC_INPUT
+    )
+
+    indicators_path = (
+        repo_root / INDICATORS_INPUT
+    )
+
+    interests_path = (
+        repo_root / INTERESTS_INPUT
+    )
+
+    current_output_path = (
+        repo_root / CURRENT_OUTPUT
+    )
+
+    history_output_path = (
+        repo_root / HISTORY_OUTPUT
+    )
+
+    non_kinetic_payload = load_json(
+        non_kinetic_path
     )
 
     indicators_payload = load_json(
-        indicators_path,
-        required=True,
+        indicators_path
+    )
+
+    interests_payload = load_json(
+        interests_path
     )
 
     existing_history = load_json(
@@ -1490,14 +1749,18 @@ def main() -> None:
         required=False,
     )
 
-    kinetic_path = find_kinetic_input(repo_root)
-    kinetic_payload: dict[str, Any] = {}
+    kinetic_path = find_kinetic_input(
+        repo_root
+    )
 
-    if kinetic_path is not None:
-        kinetic_payload = load_json(
+    kinetic_payload = (
+        load_json(
             kinetic_path,
             required=False,
         )
+        if kinetic_path
+        else {}
+    )
 
     non_kinetic_events = extract_events(
         non_kinetic_payload
@@ -1520,8 +1783,10 @@ def main() -> None:
         interests_payload
     )
 
-    configuration_warnings = validate_configuration(
-        indicator_config
+    configuration_warnings = (
+        validate_configuration(
+            indicator_config
+        )
     )
 
     contributions: list[dict[str, Any]] = []
@@ -1573,12 +1838,49 @@ def main() -> None:
         timezone.utc
     ).isoformat()
 
+    statistics = {
+        "non_kinetic_events_loaded": len(
+            non_kinetic_events
+        ),
+        "kinetic_events_loaded": len(
+            kinetic_events
+        ),
+        "unique_events_scanned": len(
+            all_events
+        ),
+        "strategic_contributions": len(
+            contributions
+        ),
+        "contributions_by_actor": (
+            contribution_count_by_actor(
+                contributions
+            )
+        ),
+        "contributions_by_source_layer": (
+            contribution_count_by_layer(
+                contributions
+            )
+        ),
+        "indicator_counts": indicator_count(
+            contributions
+        ),
+        "skipped_without_timestamp": (
+            skipped_without_timestamp
+        ),
+        "skipped_current_utc_day": (
+            skipped_current_utc_day
+        ),
+        "history_day_count": len(
+            history_rows
+        ),
+    }
+
     metadata = {
         "generated_at": generated_at,
         "model": MODEL_VERSION,
         "description": (
-            "Explainable strategic pressure layer for "
-            "the United States-Iran conflict."
+            "Explainable strategic pressure layer "
+            "for the United States-Iran conflict."
         ),
         "scoring_formula": (
             "final_event_score = "
@@ -1588,19 +1890,28 @@ def main() -> None:
         "current_day_policy": (
             "The current UTC day is excluded."
         ),
-        "rolling_window_days": ROLLING_WINDOW_DAYS,
+        "rolling_window_days": (
+            ROLLING_WINDOW_DAYS
+        ),
         "index_formula": (
             f"pressure_index = clamp("
             f"{INDEX_BASELINE} + "
             f"weighted_7d_score * "
-            f"{INDEX_POINTS_PER_SCORE}, 0, 100)"
+            f"{INDEX_POINTS_PER_SCORE}, "
+            f"0, 100)"
         ),
         "context_multiplier": (
-            "Fixed at 1.0 in V1."
+            "Fixed at 1.0 in V1.1."
         ),
-        "interest_weight_policy": (
-            "Strategic interest weights are stored "
-            "for explainability but do not alter V1 scores."
+        "overlap_policy": (
+            "Per actor and event, only the strongest "
+            "increasing and strongest decreasing "
+            "indicator can contribute."
+        ),
+        "bilateral_policy": (
+            "Recognised bilateral negotiation and "
+            "ceasefire events may contribute to both "
+            "the USA and Iran."
         ),
         "inputs": {
             "non_kinetic": NON_KINETIC_INPUT,
@@ -1610,43 +1921,17 @@ def main() -> None:
                         repo_root
                     )
                 )
-                if kinetic_path is not None
+                if kinetic_path
                 else None
             ),
-            "strategic_interests": INTERESTS_INPUT,
-            "strategic_indicators": INDICATORS_INPUT,
-        },
-        "statistics": {
-            "non_kinetic_events_loaded": len(
-                non_kinetic_events
+            "strategic_interests": (
+                INTERESTS_INPUT
             ),
-            "kinetic_events_loaded": len(
-                kinetic_events
-            ),
-            "unique_events_scanned": len(
-                all_events
-            ),
-            "strategic_contributions": len(
-                contributions
-            ),
-            "contributions_by_actor": (
-                actor_contribution_count(
-                    contributions
-                )
-            ),
-            "contributions_by_source_layer": (
-                source_count(contributions)
-            ),
-            "skipped_without_timestamp": (
-                skipped_without_timestamp
-            ),
-            "skipped_current_utc_day": (
-                skipped_current_utc_day
-            ),
-            "history_day_count": len(
-                history_rows
+            "strategic_indicators": (
+                INDICATORS_INPUT
             ),
         },
+        "statistics": statistics,
         "configuration_warnings": (
             configuration_warnings
         ),
@@ -1662,10 +1947,53 @@ def main() -> None:
         "days": history_rows,
     }
 
-    latest_payload = current_payload(
-        history_rows=history_rows,
-        metadata=metadata,
-    )
+    if history_rows:
+        latest = history_rows[-1]
+
+        current_payload = {
+            **metadata,
+            "status": "ok",
+            "latest_complete_utc_day": (
+                latest["date"]
+            ),
+            "current": {
+                "date": latest["date"],
+                "calculation_mode": latest[
+                    "calculation_mode"
+                ],
+                "usa": {
+                    **latest["usa"],
+                    "strongest_contributors": (
+                        strongest_contributors(
+                            latest["usa"].get(
+                                "contributors",
+                                [],
+                            )
+                        )
+                    ),
+                },
+                "iran": {
+                    **latest["iran"],
+                    "strongest_contributors": (
+                        strongest_contributors(
+                            latest["iran"].get(
+                                "contributors",
+                                [],
+                            )
+                        )
+                    ),
+                },
+                "overall": latest["overall"],
+            },
+        }
+
+    else:
+        current_payload = {
+            **metadata,
+            "status": "no_data",
+            "latest_complete_utc_day": None,
+            "current": None,
+        }
 
     write_json(
         history_output_path,
@@ -1674,43 +2002,37 @@ def main() -> None:
 
     write_json(
         current_output_path,
-        latest_payload,
+        current_payload,
     )
 
     print(
-        "Strategic Pressure Engine V1 completed."
+        "Strategic Pressure Engine V1.1 completed."
     )
+
     print(
         f"Non-kinetic events loaded: "
         f"{len(non_kinetic_events)}"
     )
+
     print(
         f"Kinetic events loaded: "
         f"{len(kinetic_events)}"
     )
+
     print(
         f"Unique events scanned: "
         f"{len(all_events)}"
     )
+
     print(
         f"Strategic contributions: "
         f"{len(contributions)}"
     )
-    print(
-        f"History days: "
-        f"{len(history_rows)}"
-    )
 
-    if kinetic_path is None:
-        print(
-            "Kinetic input: not found. "
-            "The engine used the non-kinetic "
-            "event timeline only."
-        )
-    else:
-        print(
-            f"Kinetic input: {kinetic_path}"
-        )
+    print(
+        "Contributions by actor: "
+        f"{statistics['contributions_by_actor']}"
+    )
 
     if history_rows:
         latest = history_rows[-1]
@@ -1719,17 +2041,23 @@ def main() -> None:
             f"Latest complete UTC day: "
             f"{latest['date']}"
         )
+
         print(
             f"USA pressure: "
-            f"{latest['usa']['pressure_index_7d']}"
+            f"{latest['usa']['pressure_index_7d']} "
+            f"({latest['usa']['pressure_level']})"
         )
+
         print(
             f"Iran pressure: "
-            f"{latest['iran']['pressure_index_7d']}"
+            f"{latest['iran']['pressure_index_7d']} "
+            f"({latest['iran']['pressure_level']})"
         )
+
         print(
             f"Overall pressure: "
-            f"{latest['overall']['pressure_index_7d']}"
+            f"{latest['overall']['pressure_index_7d']} "
+            f"({latest['overall']['pressure_level']})"
         )
 
     if configuration_warnings:
@@ -1742,6 +2070,7 @@ def main() -> None:
         f"Current output: "
         f"{current_output_path}"
     )
+
     print(
         f"History output: "
         f"{history_output_path}"
