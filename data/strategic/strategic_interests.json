@@ -1,0 +1,117 @@
+{
+  "metadata": {
+    "version": "strategic_pressure_v1",
+    "last_updated": "2026-07-28",
+    "description": "Static strategic interests used by the Strategic Pressure Engine. These values represent long-term national interests and do not change during daily execution."
+  },
+
+  "actors": {
+    "usa": {
+      "name": "United States",
+      "interests": [
+        {
+          "id": "israel_security",
+          "name": "Israel security",
+          "description": "Maintain Israel's security and military superiority.",
+          "weight": 10
+        },
+        {
+          "id": "force_protection",
+          "name": "Protection of US forces",
+          "description": "Protect US military personnel, bases and regional assets.",
+          "weight": 10
+        },
+        {
+          "id": "freedom_of_navigation",
+          "name": "Freedom of navigation",
+          "description": "Maintain secure maritime routes including the Strait of Hormuz.",
+          "weight": 9
+        },
+        {
+          "id": "nuclear_nonproliferation",
+          "name": "Prevent Iranian nuclear weapon capability",
+          "description": "Limit or delay Iran's military nuclear programme.",
+          "weight": 9
+        },
+        {
+          "id": "regional_deterrence",
+          "name": "Regional deterrence",
+          "description": "Maintain credible military deterrence against Iran and its proxies.",
+          "weight": 8
+        },
+        {
+          "id": "regional_partners",
+          "name": "Protection of regional partners",
+          "description": "Support Gulf partners and other regional allies.",
+          "weight": 8
+        },
+        {
+          "id": "energy_security",
+          "name": "Global energy security",
+          "description": "Reduce disruption to global energy markets.",
+          "weight": 7
+        },
+        {
+          "id": "avoid_full_scale_war",
+          "name": "Avoid full-scale regional war",
+          "description": "Prevent uncontrolled regional escalation.",
+          "weight": 10
+        }
+      ]
+    },
+
+    "iran": {
+      "name": "Iran",
+      "interests": [
+        {
+          "id": "regime_survival",
+          "name": "Regime survival",
+          "description": "Ensure survival and stability of the Islamic Republic.",
+          "weight": 10
+        },
+        {
+          "id": "strategic_deterrence",
+          "name": "Strategic deterrence",
+          "description": "Maintain credible military deterrence against the United States and Israel.",
+          "weight": 10
+        },
+        {
+          "id": "nuclear_programme",
+          "name": "Preserve nuclear programme",
+          "description": "Protect strategic nuclear infrastructure and capabilities.",
+          "weight": 9
+        },
+        {
+          "id": "missile_capability",
+          "name": "Missile capability",
+          "description": "Maintain and develop long-range missile forces.",
+          "weight": 9
+        },
+        {
+          "id": "proxy_network",
+          "name": "Regional proxy network",
+          "description": "Maintain influence through regional partner organisations.",
+          "weight": 8
+        },
+        {
+          "id": "regional_influence",
+          "name": "Regional influence",
+          "description": "Preserve strategic influence across the Middle East.",
+          "weight": 8
+        },
+        {
+          "id": "hormuz_leverage",
+          "name": "Hormuz leverage",
+          "description": "Retain the ability to influence maritime traffic through the Strait of Hormuz.",
+          "weight": 8
+        },
+        {
+          "id": "avoid_regime_destroying_war",
+          "name": "Avoid regime-destroying war",
+          "description": "Avoid military escalation threatening state survival.",
+          "weight": 10
+        }
+      ]
+    }
+  }
+}
