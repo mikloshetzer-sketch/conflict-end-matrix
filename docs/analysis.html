@@ -1675,6 +1675,247 @@
     .forecast-trend-badge.new{background:#f5f2fb;border-color:#ddd3ef;color:#6d55a0}
     .forecast-trend-note{color:#788b95;line-height:1.4}
 
+  
+
+    /* =========================================================
+       STRATEGIC PRESSURE V1.2
+       ========================================================= */
+    .strategic-pressure-panel{
+      margin-top:18px;
+      border:1px solid #cbdde7;
+      border-radius:14px;
+      background:linear-gradient(180deg,#fbfdff 0%,#f2f8fc 100%);
+      padding:18px;
+      box-shadow:0 8px 24px rgba(31,72,99,.07);
+    }
+    .strategic-pressure-header{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom:10px;
+    }
+    .strategic-pressure-title{
+      margin:0;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:22px;
+      color:#103b59;
+    }
+    .strategic-pressure-date{
+      flex:0 0 auto;
+      font-size:10px;
+      color:#748995;
+      text-align:right;
+    }
+    .strategic-pressure-intro{
+      margin:0 0 15px;
+      max-width:980px;
+      font-size:12px;
+      line-height:1.65;
+      color:#405f70;
+    }
+    .strategic-kpi-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:12px;
+    }
+    .strategic-kpi{
+      position:relative;
+      overflow:hidden;
+      min-height:142px;
+      padding:15px;
+      border:1px solid #d8e5ec;
+      border-radius:11px;
+      background:#fff;
+    }
+    .strategic-kpi::before{
+      content:"";
+      position:absolute;
+      inset:0 auto 0 0;
+      width:5px;
+      background:#2788c4;
+    }
+    .strategic-kpi.iran::before{background:#c6535c}
+    .strategic-kpi.overall::before{background:#079b91}
+    .strategic-kpi.momentum::before{background:#8a68b3}
+    .strategic-kpi-label{
+      display:block;
+      font-size:10px;
+      font-weight:800;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      color:#738894;
+    }
+    .strategic-kpi-value{
+      display:block;
+      margin-top:8px;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:34px;
+      line-height:1;
+      font-weight:700;
+      color:#163f59;
+    }
+    .strategic-kpi-level{
+      display:inline-flex;
+      margin-top:9px;
+      padding:3px 8px;
+      border:1px solid #d6e3ea;
+      border-radius:999px;
+      background:#f4f8fa;
+      color:#4e6b7b;
+      font-size:10px;
+      font-weight:800;
+      text-transform:uppercase;
+    }
+    .strategic-kpi-trend{
+      display:block;
+      margin-top:7px;
+      font-size:11px;
+      color:#6c818d;
+    }
+    .strategic-kpi-trend.up{color:#a84049;font-weight:700}
+    .strategic-kpi-trend.down{color:#28745b;font-weight:700}
+    .strategic-kpi-trend.flat{color:#5e7481;font-weight:700}
+    .strategic-toolbar{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      margin:17px 0 10px;
+    }
+    .strategic-range-buttons{display:flex;flex-wrap:wrap;gap:7px}
+    .strategic-range-btn{
+      min-height:34px;
+      padding:6px 11px;
+      border:1px solid #ccdbe4;
+      border-radius:8px;
+      background:#fff;
+      color:#4a687b;
+      font-weight:800;
+      font-size:11px;
+      cursor:pointer;
+    }
+    .strategic-range-btn.active{
+      color:#fff;
+      background:#2788c4;
+      border-color:#2788c4;
+    }
+    .strategic-chart-label{
+      font-size:11px;
+      color:#6f838f;
+      font-weight:700;
+    }
+    .strategic-chart-wrap{
+      position:relative;
+      min-height:340px;
+      padding:10px;
+      border:1px solid #dce7ed;
+      border-radius:11px;
+      background:#fff;
+      overflow:hidden;
+    }
+    #strategic_pressure_svg{display:block;width:100%;height:320px}
+    .strategic-tooltip{
+      position:absolute;
+      display:none;
+      z-index:4;
+      pointer-events:none;
+      min-width:170px;
+      padding:8px 10px;
+      border:1px solid #cddbe4;
+      border-radius:8px;
+      background:#fff;
+      box-shadow:0 8px 22px rgba(31,72,99,.15);
+      font-size:11px;
+      color:#173f59;
+    }
+    .strategic-legend{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:8px;
+      font-size:11px;
+      color:#687f90;
+    }
+    .strategic-legend-item{display:inline-flex;align-items:center;gap:6px}
+    .strategic-swatch{display:inline-block;width:18px;height:3px;border-radius:999px;background:#2788c4}
+    .strategic-swatch.iran{background:#c6535c}
+    .strategic-swatch.overall{background:#079b91}
+    .strategic-swatch.baseline{height:0;border-top:2px dashed #8b9ca7;background:transparent}
+    .strategic-drivers{
+      margin-top:17px;
+      padding:15px;
+      border:1px solid #dce7ed;
+      border-radius:11px;
+      background:#fff;
+    }
+    .strategic-drivers h3{
+      margin:0 0 4px;
+      font-size:16px;
+      color:#173f59;
+    }
+    .strategic-drivers-note{
+      margin:0 0 11px;
+      font-size:11px;
+      color:#708591;
+    }
+    .strategic-driver-score{
+      display:inline-flex;
+      min-width:46px;
+      justify-content:center;
+      padding:3px 7px;
+      border-radius:999px;
+      font-size:10px;
+      font-weight:800;
+    }
+    .strategic-driver-score.positive{color:#a43e48;background:#fff0f1;border:1px solid #efd3d6}
+    .strategic-driver-score.negative{color:#26785f;background:#eef9f5;border:1px solid #cfe9df}
+    .strategic-driver-score.neutral{color:#5c7180;background:#f2f6f8;border:1px solid #d9e3e8}
+    .strategic-actor-pill{
+      display:inline-flex;
+      padding:3px 8px;
+      border-radius:999px;
+      background:#eef6fb;
+      border:1px solid #d1e3ed;
+      color:#315f7a;
+      font-size:10px;
+      font-weight:800;
+      text-transform:uppercase;
+    }
+    .strategic-indicator{font-weight:800;color:#244b63}
+    .strategic-source-link{font-weight:700;text-decoration:none}
+    .strategic-source-link:hover{text-decoration:underline}
+    .strategic-method{
+      margin-top:14px;
+      padding:12px 14px;
+      border-left:4px solid #708a99;
+      border-radius:9px;
+      background:#f7fafb;
+      font-size:10px;
+      line-height:1.6;
+      color:#607682;
+    }
+    .strategic-error{
+      display:none;
+      margin-top:12px;
+      padding:11px 12px;
+      border:1px solid #efcfd2;
+      border-radius:9px;
+      background:#fff2f3;
+      color:#a43e48;
+      font-size:11px;
+      font-weight:700;
+    }
+    @media(max-width:950px){.strategic-kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:650px){
+      .strategic-pressure-header{display:block}
+      .strategic-pressure-date{text-align:left;margin-top:5px}
+      .strategic-kpi-grid{grid-template-columns:1fr}
+      .strategic-chart-wrap{min-height:300px}
+      #strategic_pressure_svg{height:280px}
+    }
+
   </style>
 </head>
 
@@ -2387,6 +2628,107 @@
             </div>
           </div>
 
+          <div class="strategic-pressure-panel" id="strategic_pressure_panel">
+            <div class="strategic-pressure-header">
+              <div>
+                <h3 class="strategic-pressure-title">Strategic Pressure</h3>
+              </div>
+              <div class="strategic-pressure-date" id="strategic_pressure_date">Betöltés…</div>
+            </div>
+
+            <p class="strategic-pressure-intro">
+              A Stratégiai Nyomásindex azt mutatja, hogy az azonosított műveleti események és stratégiai jelzések
+              mekkora ösztönzést vagy visszatartó erőt képviselnek az Egyesült Államok és Irán számára.
+              A mutató elkülönül a rövid távú előrejelzéstől: nem bekövetkezési valószínűséget mér.
+            </p>
+
+            <div class="strategic-kpi-grid">
+              <div class="strategic-kpi usa">
+                <span class="strategic-kpi-label">USA Strategic Pressure</span>
+                <span class="strategic-kpi-value" id="strategic_usa_value">—</span>
+                <span class="strategic-kpi-level" id="strategic_usa_level">Betöltés…</span>
+                <span class="strategic-kpi-trend" id="strategic_usa_trend">Trend: —</span>
+              </div>
+
+              <div class="strategic-kpi iran">
+                <span class="strategic-kpi-label">Iran Strategic Pressure</span>
+                <span class="strategic-kpi-value" id="strategic_iran_value">—</span>
+                <span class="strategic-kpi-level" id="strategic_iran_level">Betöltés…</span>
+                <span class="strategic-kpi-trend" id="strategic_iran_trend">Trend: —</span>
+              </div>
+
+              <div class="strategic-kpi overall">
+                <span class="strategic-kpi-label">Overall Strategic Pressure</span>
+                <span class="strategic-kpi-value" id="strategic_overall_value">—</span>
+                <span class="strategic-kpi-level" id="strategic_overall_level">Betöltés…</span>
+                <span class="strategic-kpi-trend" id="strategic_overall_trend">Trend: —</span>
+              </div>
+
+              <div class="strategic-kpi momentum">
+                <span class="strategic-kpi-label">Strategic Momentum</span>
+                <span class="strategic-kpi-value" id="strategic_momentum_symbol">—</span>
+                <span class="strategic-kpi-level" id="strategic_momentum_label">Betöltés…</span>
+                <span class="strategic-kpi-trend" id="strategic_momentum_change">7 napos változás: —</span>
+              </div>
+            </div>
+
+            <div class="strategic-toolbar">
+              <div class="strategic-range-buttons" aria-label="Strategic pressure chart range">
+                <button class="strategic-range-btn" type="button" data-strategic-range="7">7 nap</button>
+                <button class="strategic-range-btn active" type="button" data-strategic-range="30">30 nap</button>
+                <button class="strategic-range-btn" type="button" data-strategic-range="60">60 nap</button>
+                <button class="strategic-range-btn" type="button" data-strategic-range="all">Teljes időszak</button>
+              </div>
+              <div class="strategic-chart-label" id="strategic_chart_period">Utolsó 30 lezárt UTC nap</div>
+            </div>
+
+            <div class="strategic-chart-wrap" id="strategic_chart_wrap">
+              <svg id="strategic_pressure_svg" role="img" aria-label="USA, Iran and overall strategic pressure history"></svg>
+              <div class="strategic-tooltip" id="strategic_tooltip"></div>
+            </div>
+
+            <div class="strategic-legend">
+              <span class="strategic-legend-item"><i class="strategic-swatch"></i>USA</span>
+              <span class="strategic-legend-item"><i class="strategic-swatch iran"></i>Irán</span>
+              <span class="strategic-legend-item"><i class="strategic-swatch overall"></i>Összesített</span>
+              <span class="strategic-legend-item"><i class="strategic-swatch baseline"></i>Semleges alapvonal: 50</span>
+            </div>
+
+            <div class="strategic-drivers">
+              <h3>Latest Strategic Drivers</h3>
+              <p class="strategic-drivers-note">
+                A legfrissebb pontozott hozzájárulások. A napi duplikáció miatt lenullázott bizonyítékok nem jelennek meg ebben a fő listában.
+              </p>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Actor</th>
+                      <th>Indicator</th>
+                      <th>Impact</th>
+                      <th>Event</th>
+                      <th>Date</th>
+                      <th>Source</th>
+                    </tr>
+                  </thead>
+                  <tbody id="strategic_drivers_body">
+                    <tr><td colspan="6">Betöltés…</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="strategic-method">
+              <strong>Módszertan:</strong> a végső eseménypont az operatív komponens és a stratégiai módosító összege.
+              Az index hét lezárt UTC nap súlyozott pontszámából készül, 50-es semleges alapvonallal.
+              Egy szereplőnél ugyanazon a napon és ugyanazon indikátorból csak a legerősebb bizonyíték kap pontot.
+              A mutató magyarázható elemző index, nem valószínűségi előrejelzés.
+            </div>
+
+            <div class="strategic-error" id="strategic_pressure_error"></div>
+          </div>
+
+
                 <div class="matrix-toolbar">
           <div class="matrix-nav">
             <button id="matrix_prev" class="matrix-btn" type="button">← Previous 7 days</button>
@@ -2430,7 +2772,7 @@
 
     <footer class="footer">
       Data source: automated news monitoring pipeline.<br>
-      This analytical page explains the current day's conflict signals and does not yet use historical driver data.
+      This analytical page combines daily conflict signals, historical event analysis, strategic pressure and short-term forecasting.
     </footer>
 
   </main>
@@ -3680,6 +4022,326 @@
         });
     }
 
+
+
+    // =========================================================
+    // STRATEGIC PRESSURE V1.2
+    // =========================================================
+    let strategicPressureLive=null;
+    let strategicPressureHistory=[];
+    let strategicPressureRange="30";
+
+    function strategicNumber(value,fallback=null){
+      const n=Number(value);
+      return Number.isFinite(n)?n:fallback;
+    }
+
+    function strategicEscape(value){
+      return String(value??"")
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+    }
+
+    function strategicActorNode(day,actor){
+      return day?.[actor]??day?.actors?.[actor]??day?.pressure?.[actor]??{};
+    }
+
+    function strategicIndex(day,actor){
+      if(actor==="overall"){
+        return strategicNumber(
+          day?.overall?.pressure_index_7d??day?.overall_pressure_index_7d??day?.overall_index??day?.pressure_index_7d
+        );
+      }
+      const node=strategicActorNode(day,actor);
+      return strategicNumber(node?.pressure_index_7d??node?.pressure_index??day?.[`${actor}_pressure_index_7d`]??day?.[`${actor}_index`]);
+    }
+
+    function normalizeStrategicHistory(payload){
+      let rows=[];
+      if(Array.isArray(payload))rows=payload;
+      else if(Array.isArray(payload?.history))rows=payload.history;
+      else if(Array.isArray(payload?.records))rows=payload.records;
+      else if(Array.isArray(payload?.days))rows=payload.days;
+      else if(Array.isArray(payload?.data))rows=payload.data;
+      else if(payload?.history&&typeof payload.history==="object"){
+        rows=Object.entries(payload.history).map(([date,value])=>({date,...(value||{})}));
+      }
+
+      return rows.map(row=>{
+        const date=String(row?.date??row?.utc_date??row?.day??row?.reference_date??"").slice(0,10);
+        const usa=strategicIndex(row,"usa");
+        const iran=strategicIndex(row,"iran");
+        const explicitOverall=strategicIndex(row,"overall");
+        const overall=explicitOverall??(usa!=null&&iran!=null?(usa+iran)/2:null);
+        return {date,usa,iran,overall,raw:row};
+      }).filter(row=>row.date&&(row.usa!=null||row.iran!=null||row.overall!=null))
+        .sort((a,b)=>a.date.localeCompare(b.date));
+    }
+
+    function strategicTrendText(value){
+      const key=String(value??"").toLowerCase();
+      const map={
+        strong_increase:["↑↑","Erőteljes növekedés","up"],
+        increase:["↑","Növekedés","up"],
+        moderate_increase:["↑","Mérsékelt növekedés","up"],
+        stable:["→","Stabil","flat"],
+        unchanged:["→","Stabil","flat"],
+        decrease:["↓","Csökkenés","down"],
+        moderate_decrease:["↓","Mérsékelt csökkenés","down"],
+        strong_decrease:["↓↓","Erőteljes csökkenés","down"]
+      };
+      return map[key]??["→",key?key.replaceAll("_"," "):"Nincs trendadat","flat"];
+    }
+
+    function strategicLevelText(value){
+      const key=String(value??"").toLowerCase();
+      const map={very_low:"Nagyon alacsony",low:"Alacsony",reduced:"Mérsékelt",neutral:"Semleges",moderate:"Közepes",elevated:"Emelkedett",high:"Magas",very_high:"Nagyon magas"};
+      return map[key]??(key?key.replaceAll("_"," "):"Nincs besorolás");
+    }
+
+    function setStrategicKpi(actor,node){
+      const value=strategicNumber(node?.pressure_index_7d??node?.pressure_index);
+      const valueEl=document.getElementById(`strategic_${actor}_value`);
+      const levelEl=document.getElementById(`strategic_${actor}_level`);
+      const trendEl=document.getElementById(`strategic_${actor}_trend`);
+      if(valueEl)valueEl.textContent=value==null?"—":value.toFixed(1);
+      if(levelEl)levelEl.textContent=strategicLevelText(node?.pressure_level);
+      if(trendEl){
+        const [symbol,label,state]=strategicTrendText(node?.trend);
+        trendEl.textContent=`${symbol} ${label}`;
+        trendEl.className=`strategic-kpi-trend ${state}`;
+      }
+    }
+
+    function strategicSevenDayMomentum(){
+      const rows=strategicPressureHistory.filter(r=>r.overall!=null);
+      if(rows.length<2)return null;
+      const latest=rows.at(-1);
+      const targetDate=new Date(latest.date+"T00:00:00Z");
+      targetDate.setUTCDate(targetDate.getUTCDate()-7);
+      const targetKey=targetDate.toISOString().slice(0,10);
+      let previous=rows[0];
+      for(const row of rows){
+        if(row.date<=targetKey)previous=row;
+        else break;
+      }
+      return {change:latest.overall-previous.overall,latest,previous};
+    }
+
+    function renderStrategicMomentum(){
+      const momentum=strategicSevenDayMomentum();
+      const symbolEl=document.getElementById("strategic_momentum_symbol");
+      const labelEl=document.getElementById("strategic_momentum_label");
+      const changeEl=document.getElementById("strategic_momentum_change");
+      if(!momentum){
+        if(symbolEl)symbolEl.textContent="—";
+        if(labelEl)labelEl.textContent="Nincs elég történeti adat";
+        if(changeEl)changeEl.textContent="7 napos változás: —";
+        return;
+      }
+      const change=momentum.change;
+      let symbol="→",label="Stable",state="flat";
+      if(change>=10){symbol="↑↑";label="Accelerating";state="up";}
+      else if(change>=2){symbol="↑";label="Increasing";state="up";}
+      else if(change<=-10){symbol="↓↓";label="Rapidly decreasing";state="down";}
+      else if(change<=-2){symbol="↓";label="Decreasing";state="down";}
+      if(symbolEl)symbolEl.textContent=symbol;
+      if(labelEl)labelEl.textContent=label;
+      if(changeEl){
+        changeEl.textContent=`7 napos változás: ${change>=0?"+":""}${change.toFixed(1)} pont`;
+        changeEl.className=`strategic-kpi-trend ${state}`;
+      }
+    }
+
+    function strategicCurrentContributors(data){
+      const current=data?.current??data;
+      const contributors=[];
+      for(const actor of ["usa","iran"]){
+        const node=strategicActorNode(current,actor);
+        const items=Array.isArray(node?.strongest_contributors)&&node.strongest_contributors.length
+          ? node.strongest_contributors
+          : (Array.isArray(node?.contributors)?node.contributors:[]);
+        for(const item of items){
+          const score=strategicNumber(item?.final_score,0);
+          if(score===0||item?.daily_score_suppressed||item?.duplicate_indicator_evidence)continue;
+          contributors.push({...item,actor:item?.actor??actor});
+        }
+      }
+      return contributors.sort((a,b)=>{
+        const dateDiff=String(b?.timestamp??b?.date??"").localeCompare(String(a?.timestamp??a?.date??""));
+        if(dateDiff!==0)return dateDiff;
+        return Math.abs(strategicNumber(b?.final_score,0))-Math.abs(strategicNumber(a?.final_score,0));
+      }).slice(0,10);
+    }
+
+    function renderStrategicDrivers(data){
+      const body=document.getElementById("strategic_drivers_body");
+      if(!body)return;
+      const items=strategicCurrentContributors(data);
+      if(!items.length){
+        body.innerHTML='<tr><td colspan="6">A legfrissebb lezárt napon nincs pontozott stratégiai hozzájárulás.</td></tr>';
+        return;
+      }
+      body.innerHTML=items.map(item=>{
+        const score=strategicNumber(item?.final_score,0);
+        const scoreClass=score>0?"positive":score<0?"negative":"neutral";
+        const indicator=item?.primary_daily_indicator??item?.indicators?.[0]?.name??item?.indicators?.[0]?.id??"—";
+        const actor=String(item?.actor??"—").toUpperCase();
+        const title=strategicEscape(item?.title??item?.reason??"—");
+        const date=strategicEscape(String(item?.date??item?.timestamp??"—").slice(0,10));
+        const source=strategicEscape(item?.source??"Forrás");
+        const link=String(item?.link??"");
+        const sourceHtml=link
+          ? `<a class="strategic-source-link" href="${strategicEscape(link)}" target="_blank" rel="noopener noreferrer">${source}</a>`
+          : source;
+        return `<tr>
+          <td><span class="strategic-actor-pill">${strategicEscape(actor)}</span></td>
+          <td><span class="strategic-indicator">${strategicEscape(String(indicator).replaceAll("_"," "))}</span></td>
+          <td><span class="strategic-driver-score ${scoreClass}">${score>0?"+":""}${score.toFixed(1)}</span></td>
+          <td>${title}</td>
+          <td>${date}</td>
+          <td>${sourceHtml}</td>
+        </tr>`;
+      }).join("");
+    }
+
+    function strategicVisibleRows(){
+      if(strategicPressureRange==="all")return strategicPressureHistory;
+      return strategicPressureHistory.slice(-Number(strategicPressureRange));
+    }
+
+    function renderStrategicChart(){
+      const svg=document.getElementById("strategic_pressure_svg");
+      const wrap=document.getElementById("strategic_chart_wrap");
+      const tooltip=document.getElementById("strategic_tooltip");
+      if(!svg||!wrap)return;
+      const rows=strategicVisibleRows();
+      const label=document.getElementById("strategic_chart_period");
+      if(label)label.textContent=strategicPressureRange==="all"
+        ? `Teljes időszak · ${rows.length} lezárt UTC nap`
+        : `Utolsó ${strategicPressureRange} lezárt UTC nap`;
+      if(!rows.length){
+        svg.innerHTML='<text x="50%" y="50%" text-anchor="middle" fill="#718692" font-size="13">Nincs megjeleníthető történeti adat.</text>';
+        return;
+      }
+
+      const width=Math.max(720,wrap.clientWidth-20);
+      const height=320;
+      const m={top:18,right:22,bottom:44,left:48};
+      const plotW=width-m.left-m.right;
+      const plotH=height-m.top-m.bottom;
+      const x=i=>m.left+(rows.length===1?plotW/2:(i/(rows.length-1))*plotW);
+      const y=value=>m.top+((100-Math.max(0,Math.min(100,value)))/100)*plotH;
+      const ns="http://www.w3.org/2000/svg";
+      svg.setAttribute("viewBox",`0 0 ${width} ${height}`);
+      svg.innerHTML="";
+
+      const add=(name,attrs,parent=svg)=>{
+        const el=document.createElementNS(ns,name);
+        Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,String(v)));
+        parent.appendChild(el);
+        return el;
+      };
+
+      [0,25,50,75,100].forEach(tick=>{
+        add("line",{x1:m.left,y1:y(tick),x2:width-m.right,y2:y(tick),stroke:tick===50?"#8b9ca7":"#e3ebef","stroke-width":tick===50?1.6:1,"stroke-dasharray":tick===50?"6 5":"0"});
+        const txt=add("text",{x:m.left-8,y:y(tick)+4,"text-anchor":"end",fill:"#718692","font-size":10});
+        txt.textContent=tick;
+      });
+
+      const series=[
+        {key:"usa",stroke:"#2788c4"},
+        {key:"iran",stroke:"#c6535c"},
+        {key:"overall",stroke:"#079b91"}
+      ];
+      series.forEach(s=>{
+        const points=rows.map((row,i)=>row[s.key]==null?null:[x(i),y(row[s.key])]);
+        let path="";
+        let open=false;
+        points.forEach(point=>{
+          if(!point){open=false;return;}
+          path+=(open?" L ":"M ")+point[0].toFixed(1)+" "+point[1].toFixed(1);
+          open=true;
+        });
+        if(path)add("path",{d:path,fill:"none",stroke:s.stroke,"stroke-width":s.key==="overall"?3:2.2,"stroke-linejoin":"round","stroke-linecap":"round"});
+      });
+
+      const tickCount=Math.min(6,rows.length);
+      const indexes=[...new Set(Array.from({length:tickCount},(_,i)=>Math.round(i*(rows.length-1)/Math.max(1,tickCount-1))))];
+      indexes.forEach(i=>{
+        const txt=add("text",{x:x(i),y:height-16,"text-anchor":"middle",fill:"#718692","font-size":10});
+        txt.textContent=rows[i].date.slice(5);
+      });
+
+      rows.forEach((row,i)=>{
+        const hit=add("rect",{x:x(i)-Math.max(5,plotW/rows.length/2),y:m.top,width:Math.max(10,plotW/rows.length),height:plotH,fill:"transparent"});
+        hit.addEventListener("mousemove",event=>{
+          if(!tooltip)return;
+          tooltip.style.display="block";
+          tooltip.innerHTML=`<strong>${strategicEscape(row.date)}</strong><br>USA: ${row.usa==null?"—":row.usa.toFixed(1)}<br>Irán: ${row.iran==null?"—":row.iran.toFixed(1)}<br>Összesített: ${row.overall==null?"—":row.overall.toFixed(1)}`;
+          const rect=wrap.getBoundingClientRect();
+          tooltip.style.left=Math.min(event.clientX-rect.left+12,rect.width-190)+"px";
+          tooltip.style.top=Math.max(8,event.clientY-rect.top-70)+"px";
+        });
+        hit.addEventListener("mouseleave",()=>{if(tooltip)tooltip.style.display="none";});
+      });
+    }
+
+    function renderStrategicPressure(live,historyPayload){
+      strategicPressureLive=live;
+      strategicPressureHistory=normalizeStrategicHistory(historyPayload);
+      const current=live?.current??live;
+      const date=current?.date??live?.latest_complete_utc_day;
+      const dateEl=document.getElementById("strategic_pressure_date");
+      if(dateEl)dateEl.textContent=date?`Referencia: ${date} · lezárt UTC nap`:"Referencia-nap nem elérhető";
+
+      setStrategicKpi("usa",strategicActorNode(current,"usa"));
+      setStrategicKpi("iran",strategicActorNode(current,"iran"));
+      setStrategicKpi("overall",current?.overall??{});
+      renderStrategicMomentum();
+      renderStrategicDrivers(live);
+      renderStrategicChart();
+    }
+
+    function loadStrategicPressure(){
+      const ts=Date.now();
+      Promise.all([
+        fetch("./strategic_pressure.json?ts="+ts).then(r=>{
+          if(!r.ok)throw new Error("strategic_pressure.json HTTP "+r.status);
+          return r.json();
+        }),
+        fetch("./strategic_pressure_history.json?ts="+ts).then(r=>{
+          if(!r.ok)throw new Error("strategic_pressure_history.json HTTP "+r.status);
+          return r.json();
+        })
+      ])
+        .then(([live,history])=>renderStrategicPressure(live,history))
+        .catch(err=>{
+          const box=document.getElementById("strategic_pressure_error");
+          if(box){
+            box.style.display="block";
+            box.textContent="A Strategic Pressure adatai jelenleg nem tölthetők be. Ellenőrizd a docs/strategic_pressure.json és docs/strategic_pressure_history.json fájlokat.";
+          }
+          console.warn("Strategic pressure load failed:",err);
+        });
+    }
+
+    document.querySelectorAll("[data-strategic-range]").forEach(button=>{
+      button.addEventListener("click",()=>{
+        strategicPressureRange=button.dataset.strategicRange;
+        document.querySelectorAll("[data-strategic-range]").forEach(item=>item.classList.toggle("active",item===button));
+        renderStrategicChart();
+      });
+    });
+
+    window.addEventListener("resize",()=>{
+      if(strategicPressureHistory.length)renderStrategicChart();
+    });
+
+
     function loadConflictAnalysis(){
       fetch("./conflict_analysis.json?ts="+Date.now())
         .then(r=>{
@@ -4322,6 +4984,7 @@
     loadEventTimeline();
     loadConflictAnalysis();
     loadLiveForecast();
+    loadStrategicPressure();
 
     fetch("./analysis.json?ts=" + Date.now())
       .then(response => {
