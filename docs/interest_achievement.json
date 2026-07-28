@@ -1,0 +1,410 @@
+{
+  "metadata": {
+    "model": "strategic_interest_achievement_v1",
+    "generated_at": "2026-07-28T12:36:06+00:00",
+    "reference_date": "",
+    "conflict": "United States-Iran",
+    "description": "Daily assessment of the degree to which current developments support or weaken the weighted long-term strategic interests of the United States and Iran.",
+    "input_files": {
+      "strategic_pressure": "docs/strategic_pressure.json",
+      "strategic_interests": "data/strategic/strategic_interests.json",
+      "interest_impact_map": "data/strategic/interest_impact_map.json"
+    },
+    "pressure_model_version": "",
+    "interests_model_version": "strategic_pressure_v1",
+    "impact_map_version": "interest_impact_map_v1",
+    "warning_count": 1
+  },
+  "summary": {
+    "usa_achievement_index": 50.0,
+    "iran_achievement_index": 50.0,
+    "achievement_gap": 0.0,
+    "daily_strategic_advantage": "balanced",
+    "interpretation": "The achievement index measures whether detected daily developments support or weaken each actor's own weighted long-term interests. It does not measure military victory, legitimacy or forecast probability."
+  },
+  "actors": {
+    "usa": {
+      "achievement_index": 50.0,
+      "change_from_neutral": 0.0,
+      "trend": "stable",
+      "level": "balanced",
+      "raw_contribution": 0.0,
+      "interest_count": 8,
+      "interests_with_evidence": 0,
+      "strongest_interests": [
+        {
+          "id": "avoid_full_scale_war",
+          "name": "Avoid full-scale regional war",
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0
+        },
+        {
+          "id": "israel_security",
+          "name": "Israel security",
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0
+        },
+        {
+          "id": "force_protection",
+          "name": "Protection of US forces",
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0
+        }
+      ],
+      "weakest_interests": [
+        {
+          "id": "avoid_full_scale_war",
+          "name": "Avoid full-scale regional war",
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0
+        },
+        {
+          "id": "israel_security",
+          "name": "Israel security",
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0
+        },
+        {
+          "id": "force_protection",
+          "name": "Protection of US forces",
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0
+        }
+      ],
+      "interests": [
+        {
+          "id": "avoid_full_scale_war",
+          "name": "Avoid full-scale regional war",
+          "description": "Prevent uncontrolled regional escalation.",
+          "weight": 10.0,
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0,
+          "raw_contribution": 0,
+          "positive_contribution": 0,
+          "negative_contribution": 0,
+          "trend": "stable",
+          "level": "balanced",
+          "evidence_count": 0,
+          "top_evidence": [],
+          "evidence": []
+        },
+        {
+          "id": "israel_security",
+          "name": "Israel security",
+          "description": "Maintain Israel's security and military superiority.",
+          "weight": 10.0,
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0,
+          "raw_contribution": 0,
+          "positive_contribution": 0,
+          "negative_contribution": 0,
+          "trend": "stable",
+          "level": "balanced",
+          "evidence_count": 0,
+          "top_evidence": [],
+          "evidence": []
+        },
+        {
+          "id": "force_protection",
+          "name": "Protection of US forces",
+          "description": "Protect US military personnel, bases and regional assets.",
+          "weight": 10.0,
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0,
+          "raw_contribution": 0,
+          "positive_contribution": 0,
+          "negative_contribution": 0,
+          "trend": "stable",
+          "level": "balanced",
+          "evidence_count": 0,
+          "top_evidence": [],
+          "evidence": []
+        },
+        {
+          "id": "freedom_of_navigation",
+          "name": "Freedom of navigation",
+          "description": "Maintain secure maritime routes including the Strait of Hormuz.",
+          "weight": 9.0,
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0,
+          "raw_contribution": 0,
+          "positive_contribution": 0,
+          "negative_contribution": 0,
+          "trend": "stable",
+          "level": "balanced",
+          "evidence_count": 0,
+          "top_evidence": [],
+          "evidence": []
+        },
+        {
+          "id": "nuclear_nonproliferation",
+          "name": "Prevent Iranian nuclear weapon capability",
+          "description": "Limit or delay Iran's military nuclear programme.",
+          "weight": 9.0,
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0,
+          "raw_contribution": 0,
+          "positive_contribution": 0,
+          "negative_contribution": 0,
+          "trend": "stable",
+          "level": "balanced",
+          "evidence_count": 0,
+          "top_evidence": [],
+          "evidence": []
+        },
+        {
+          "id": "regional_partners",
+          "name": "Protection of regional partners",
+          "description": "Support Gulf partners and other regional allies.",
+          "weight": 8.0,
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0,
+          "raw_contribution": 0,
+          "positive_contribution": 0,
+          "negative_contribution": 0,
+          "trend": "stable",
+          "level": "balanced",
+          "evidence_count": 0,
+          "top_evidence": [],
+          "evidence": []
+        },
+        {
+          "id": "regional_deterrence",
+          "name": "Regional deterrence",
+          "description": "Maintain credible military deterrence against Iran and its proxies.",
+          "weight": 8.0,
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0,
+          "raw_contribution": 0,
+          "positive_contribution": 0,
+          "negative_contribution": 0,
+          "trend": "stable",
+          "level": "balanced",
+          "evidence_count": 0,
+          "top_evidence": [],
+          "evidence": []
+        },
+        {
+          "id": "energy_security",
+          "name": "Global energy security",
+          "description": "Reduce disruption to global energy markets.",
+          "weight": 7.0,
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0,
+          "raw_contribution": 0,
+          "positive_contribution": 0,
+          "negative_contribution": 0,
+          "trend": "stable",
+          "level": "balanced",
+          "evidence_count": 0,
+          "top_evidence": [],
+          "evidence": []
+        }
+      ]
+    },
+    "iran": {
+      "achievement_index": 50.0,
+      "change_from_neutral": 0.0,
+      "trend": "stable",
+      "level": "balanced",
+      "raw_contribution": 0.0,
+      "interest_count": 8,
+      "interests_with_evidence": 0,
+      "strongest_interests": [
+        {
+          "id": "avoid_regime_destroying_war",
+          "name": "Avoid regime-destroying war",
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0
+        },
+        {
+          "id": "regime_survival",
+          "name": "Regime survival",
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0
+        },
+        {
+          "id": "strategic_deterrence",
+          "name": "Strategic deterrence",
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0
+        }
+      ],
+      "weakest_interests": [
+        {
+          "id": "avoid_regime_destroying_war",
+          "name": "Avoid regime-destroying war",
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0
+        },
+        {
+          "id": "regime_survival",
+          "name": "Regime survival",
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0
+        },
+        {
+          "id": "strategic_deterrence",
+          "name": "Strategic deterrence",
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0
+        }
+      ],
+      "interests": [
+        {
+          "id": "avoid_regime_destroying_war",
+          "name": "Avoid regime-destroying war",
+          "description": "Avoid military escalation threatening state survival.",
+          "weight": 10.0,
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0,
+          "raw_contribution": 0,
+          "positive_contribution": 0,
+          "negative_contribution": 0,
+          "trend": "stable",
+          "level": "balanced",
+          "evidence_count": 0,
+          "top_evidence": [],
+          "evidence": []
+        },
+        {
+          "id": "regime_survival",
+          "name": "Regime survival",
+          "description": "Ensure survival and stability of the Islamic Republic.",
+          "weight": 10.0,
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0,
+          "raw_contribution": 0,
+          "positive_contribution": 0,
+          "negative_contribution": 0,
+          "trend": "stable",
+          "level": "balanced",
+          "evidence_count": 0,
+          "top_evidence": [],
+          "evidence": []
+        },
+        {
+          "id": "strategic_deterrence",
+          "name": "Strategic deterrence",
+          "description": "Maintain credible military deterrence against the United States and Israel.",
+          "weight": 10.0,
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0,
+          "raw_contribution": 0,
+          "positive_contribution": 0,
+          "negative_contribution": 0,
+          "trend": "stable",
+          "level": "balanced",
+          "evidence_count": 0,
+          "top_evidence": [],
+          "evidence": []
+        },
+        {
+          "id": "missile_capability",
+          "name": "Missile capability",
+          "description": "Maintain and develop long-range missile forces.",
+          "weight": 9.0,
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0,
+          "raw_contribution": 0,
+          "positive_contribution": 0,
+          "negative_contribution": 0,
+          "trend": "stable",
+          "level": "balanced",
+          "evidence_count": 0,
+          "top_evidence": [],
+          "evidence": []
+        },
+        {
+          "id": "nuclear_programme",
+          "name": "Preserve nuclear programme",
+          "description": "Protect strategic nuclear infrastructure and capabilities.",
+          "weight": 9.0,
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0,
+          "raw_contribution": 0,
+          "positive_contribution": 0,
+          "negative_contribution": 0,
+          "trend": "stable",
+          "level": "balanced",
+          "evidence_count": 0,
+          "top_evidence": [],
+          "evidence": []
+        },
+        {
+          "id": "hormuz_leverage",
+          "name": "Hormuz leverage",
+          "description": "Retain the ability to influence maritime traffic through the Strait of Hormuz.",
+          "weight": 8.0,
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0,
+          "raw_contribution": 0,
+          "positive_contribution": 0,
+          "negative_contribution": 0,
+          "trend": "stable",
+          "level": "balanced",
+          "evidence_count": 0,
+          "top_evidence": [],
+          "evidence": []
+        },
+        {
+          "id": "regional_influence",
+          "name": "Regional influence",
+          "description": "Preserve strategic influence across the Middle East.",
+          "weight": 8.0,
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0,
+          "raw_contribution": 0,
+          "positive_contribution": 0,
+          "negative_contribution": 0,
+          "trend": "stable",
+          "level": "balanced",
+          "evidence_count": 0,
+          "top_evidence": [],
+          "evidence": []
+        },
+        {
+          "id": "proxy_network",
+          "name": "Regional proxy network",
+          "description": "Maintain influence through regional partner organisations.",
+          "weight": 8.0,
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0,
+          "raw_contribution": 0,
+          "positive_contribution": 0,
+          "negative_contribution": 0,
+          "trend": "stable",
+          "level": "balanced",
+          "evidence_count": 0,
+          "top_evidence": [],
+          "evidence": []
+        }
+      ]
+    }
+  },
+  "processed_evidence": [],
+  "unmapped_evidence": [],
+  "calculation": {
+    "neutral_score": 50.0,
+    "minimum_score": 0.0,
+    "maximum_score": 100.0,
+    "normalisation_divisor": 20.0,
+    "indicator_strength_cap": 20.0,
+    "formula": "raw_contribution = absolute_indicator_strength × mapped_interest_effect × interest_weight; interest_index = clamp(50 + raw_contribution / normalisation_divisor, 0, 100); actor_index = interest-weighted mean of interest indices"
+  },
+  "warnings": [
+    "No Strategic Pressure evidence objects were detected. All interest scores remain neutral."
+  ],
+  "methodology": {
+    "scope": "The model evaluates daily changes against static, weighted long-term national interests.",
+    "baseline": "A score of 50 represents a neutral daily position with no detected supporting or weakening evidence.",
+    "positive_score": "A score above 50 means the day's detected developments support the actor's weighted strategic interests overall.",
+    "negative_score": "A score below 50 means the day's detected developments weaken the actor's weighted strategic interests overall.",
+    "limitations": [
+      "The result depends on the completeness and accuracy of the Strategic Pressure evidence.",
+      "Impact mappings are analytical judgements and should be reviewed when strategic conditions change.",
+      "The index measures interest alignment, not battlefield victory or final conflict outcome.",
+      "The current version is a daily assessment and does not yet calculate historical trend against previous output files."
+    ]
+  }
+}
