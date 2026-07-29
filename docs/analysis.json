@@ -1,55 +1,55 @@
 {
-  "report_date": "2026-07-25",
-  "created_at": "2026-07-25T08:22:06.385903",
+  "report_date": "2026-07-28",
+  "created_at": "2026-07-28T08:48:47.653471",
   "article_count": 50,
-  "total_score": -69,
-  "conflict_index": -1.38,
-  "assessment": "moderate escalation",
-  "escalation_pressure": -90,
-  "diplomatic_pressure": 21,
-  "net_signal": -69,
+  "total_score": -40,
+  "conflict_index": -0.8,
+  "assessment": "mild escalation",
+  "escalation_pressure": -69,
+  "diplomatic_pressure": 29,
+  "net_signal": -40,
   "top_drivers": [
     {
       "driver": "war",
       "category": "Military escalation",
-      "count": 19,
+      "count": 17,
       "weight": -1,
-      "impact": -19
+      "impact": -17
     },
     {
       "driver": "attack",
-      "category": "Military escalation",
-      "count": 8,
-      "weight": -2,
-      "impact": -16
-    },
-    {
-      "driver": "strike",
-      "category": "Military escalation",
-      "count": 7,
-      "weight": -2,
-      "impact": -14
-    },
-    {
-      "driver": "strikes",
       "category": "Military escalation",
       "count": 6,
       "weight": -2,
       "impact": -12
     },
     {
-      "driver": "attacks",
+      "driver": "talks",
+      "category": "Diplomacy / negotiation",
+      "count": 5,
+      "weight": 2,
+      "impact": 10
+    },
+    {
+      "driver": "strike",
       "category": "Military escalation",
       "count": 5,
       "weight": -2,
       "impact": -10
     },
     {
-      "driver": "killed",
-      "category": "Casualties",
-      "count": 3,
+      "driver": "strikes",
+      "category": "Military escalation",
+      "count": 4,
       "weight": -2,
-      "impact": -6
+      "impact": -8
+    },
+    {
+      "driver": "attacks",
+      "category": "Military escalation",
+      "count": 4,
+      "weight": -2,
+      "impact": -8
     },
     {
       "driver": "escalation",
@@ -59,25 +59,32 @@
       "impact": -6
     },
     {
-      "driver": "talks",
+      "driver": "pause",
+      "category": "Ceasefire / settlement",
+      "count": 4,
+      "weight": 1,
+      "impact": 4
+    },
+    {
+      "driver": "deal",
+      "category": "Ceasefire / settlement",
+      "count": 4,
+      "weight": 1,
+      "impact": 4
+    },
+    {
+      "driver": "peace",
       "category": "Diplomacy / negotiation",
       "count": 2,
       "weight": 2,
       "impact": 4
     },
     {
-      "driver": "threat",
-      "category": "Threats / retaliation",
-      "count": 3,
-      "weight": -1,
-      "impact": -3
-    },
-    {
-      "driver": "deal",
-      "category": "Ceasefire / settlement",
-      "count": 3,
-      "weight": 1,
-      "impact": 3
+      "driver": "mediator",
+      "category": "Diplomacy / negotiation",
+      "count": 2,
+      "weight": 2,
+      "impact": 4
     },
     {
       "driver": "de-escalation",
@@ -87,46 +94,18 @@
       "impact": 3
     },
     {
-      "driver": "ceasefire",
-      "category": "Ceasefire / settlement",
-      "count": 1,
-      "weight": 3,
-      "impact": 3
-    },
-    {
-      "driver": "threatens",
+      "driver": "threat",
       "category": "Threats / retaliation",
       "count": 2,
       "weight": -1,
       "impact": -2
     },
     {
-      "driver": "peace",
-      "category": "Diplomacy / negotiation",
+      "driver": "killed",
+      "category": "Casualties",
       "count": 1,
-      "weight": 2,
-      "impact": 2
-    },
-    {
-      "driver": "mediator",
-      "category": "Diplomacy / negotiation",
-      "count": 1,
-      "weight": 2,
-      "impact": 2
-    },
-    {
-      "driver": "mediation",
-      "category": "Diplomacy / negotiation",
-      "count": 1,
-      "weight": 2,
-      "impact": 2
-    },
-    {
-      "driver": "diplomatic",
-      "category": "Diplomacy / negotiation",
-      "count": 1,
-      "weight": 2,
-      "impact": 2
+      "weight": -2,
+      "impact": -2
     },
     {
       "driver": "bombing",
@@ -134,17 +113,32 @@
       "count": 1,
       "weight": -2,
       "impact": -2
+    },
+    {
+      "driver": "threatens",
+      "category": "Threats / retaliation",
+      "count": 1,
+      "weight": -1,
+      "impact": -1
+    },
+    {
+      "driver": "drone",
+      "category": "Military escalation",
+      "count": 1,
+      "weight": -1,
+      "impact": -1
     }
   ],
   "categories": [
     {
       "category": "Military escalation",
-      "score": -73,
-      "count": 46,
+      "score": -58,
+      "count": 38,
       "keywords": [
         "attack",
         "attacks",
         "bombing",
+        "drone",
         "strike",
         "strikes",
         "war"
@@ -152,20 +146,28 @@
     },
     {
       "category": "Diplomacy / negotiation",
-      "score": 12,
-      "count": 6,
+      "score": 18,
+      "count": 9,
       "keywords": [
-        "diplomatic",
-        "mediation",
         "mediator",
         "peace",
         "talks"
       ]
     },
     {
+      "category": "Ceasefire / settlement",
+      "score": 11,
+      "count": 9,
+      "keywords": [
+        "de-escalation",
+        "deal",
+        "pause"
+      ]
+    },
+    {
       "category": "Threats / retaliation",
-      "score": -11,
-      "count": 8,
+      "score": -9,
+      "count": 6,
       "keywords": [
         "escalation",
         "threat",
@@ -173,19 +175,9 @@
       ]
     },
     {
-      "category": "Ceasefire / settlement",
-      "score": 9,
-      "count": 5,
-      "keywords": [
-        "ceasefire",
-        "de-escalation",
-        "deal"
-      ]
-    },
-    {
       "category": "Casualties",
-      "score": -6,
-      "count": 3,
+      "score": -2,
+      "count": 1,
       "keywords": [
         "killed"
       ]
@@ -193,123 +185,16 @@
   ],
   "key_signals": [
     {
-      "title": "US expands Iran attacks as Trump warns Tehran and Houthis over Red Sea strikes - The Guardian",
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQdDhfQzhEVFVaYzlrRmoyc3lUMXlTS1pLNXc1RVNxc3lFNU9CclhqMEs2Q3BBSFI1VW5CRFRMVC1WclEydlc3WFBDa1J2RTBkcEg4MGpTYms0Q0FxZ0oyaG5hRDNsRkg0V3RaN3k5OHVMYXYyZlNydm9EVjRMN1hTYThmbDVzUzAxRml2c2F1X0ZNcW1HRVdFMERnclYwNDc5bFZsX1BNdDFoU0NoTzQyNFExWFZ5TGMycThsQ0JpSUhsUQ?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Fri, 24 Jul 2026 17:10:00 GMT",
-      "score": -9,
-      "tags": [
-        "strike",
-        "strikes",
-        "attack",
-        "attacks",
-        "war"
-      ]
-    },
-    {
       "title": "U.S. carries out more strikes as Trump threatens Iran, Houthis with \"major military punishment\" - CBS News",
       "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQbnFoblVaeW56TWFYUWE1SGl5N0RtX2t1S25oOFprWVlLZjFPa0Nmdm5hWjdzcmNpTGJCejk5OUxnMF9Pbnh0SklXc3BRYlktaVR2cS1Mbk1FNVVhak5QakV0UEh2VXF5UEFJQ2ppWXZ1Um9FX2lYSEpiaUEtT3dFaEQ2N3lRdTRLSjZRTnZGWk1PUk1tWHUwOVdVZjc?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Fri, 24 Jul 2026 10:12:00 GMT",
+      "published": "Fri, 24 Jul 2026 06:45:00 GMT",
       "score": -6,
       "tags": [
         "strike",
         "strikes",
         "threat",
         "threatens"
-      ]
-    },
-    {
-      "title": "U.S. carries out more strikes as Trump threatens Iran, Houthis with \"major military punishment\" - CBS News",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQbnFoblVaeW56TWFYUWE1SGl5N0RtX2t1S25oOFprWVlLZjFPa0Nmdm5hWjdzcmNpTGJCejk5OUxnMF9Pbnh0SklXc3BRYlktaVR2cS1Mbk1FNVVhak5QakV0UEh2VXF5UEFJQ2ppWXZ1Um9FX2lYSEpiaUEtT3dFaEQ2N3lRdTRLSjZRTnZGWk1PUk1tWHUwOVdVZjc?oc=5",
-      "source": "\"middle east conflict when:7d\" - Google News",
-      "published": "Fri, 24 Jul 2026 10:12:00 GMT",
-      "score": -6,
-      "tags": [
-        "strike",
-        "strikes",
-        "threat",
-        "threatens"
-      ]
-    },
-    {
-      "title": "Two US troops killed and one missing in Jordan after Iranian attacks - The Guardian",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQcU9EZm52ekUycVNuTEhRUk84ZXdGYVlaaXN5R3lKbGdmVzBRVHlZT0o2WVhKd29DeGNpZ3Zld1dZSm1RWjBjYXZjMmxINkgyODZkMjlhQTJmNEg1d1JFZmlFLUxicXNBVFp4cFM3OUdrQk5YSDI5bTFNNjhkVE5FazVKY25fOFJpNFN1RmczOHFTV1N4d2R5OGI4MmRFWUZYNUpSbUdpRUNVY3JZYm9xcXV4QXNxaUUtM2c?oc=5",
-      "source": "\"middle east conflict when:7d\" - Google News",
-      "published": "Sat, 18 Jul 2026 16:24:00 GMT",
-      "score": -6,
-      "tags": [
-        "attack",
-        "attacks",
-        "killed"
-      ]
-    },
-    {
-      "title": "Iran War Updates: Bridges and Water Plants Hit as Strikes Stretch to 7th Straight Day - The New York Times",
-      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1kMzBFRnhWbGIwdEpFcVJVd251LTBDMXRMS01VRmNFNUVaZlo0ZzlDWjhsOUlqVVdHYk95V2JJVFlvNWxCck0tWWRyMkhLNkZ0anVzM0dnM1BsUzZMYzNROWQ3SVRWNGNxOUU4VFdwV1JQaDJpWVE?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Sun, 19 Jul 2026 09:47:53 GMT",
-      "score": -5,
-      "tags": [
-        "strike",
-        "strikes",
-        "war"
-      ]
-    },
-    {
-      "title": "New US military death as Israel warns Tehran’s attacks coming close - The Guardian",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOVHFLaklRSVdGWFlqcWlwY1otdVY0RExtSkhnakpkck1KcFo5MG44ejdfWjFkZU1ZWHJTd0xrSm9DTnBQTWJEVTZMQ3RKRjZMNVpMYXFmcmVHT3NMakhfSHhfT3U0bk1JLXNRa2psTUdIUEYyNjFWcm5vSTFNSHY3Ty0xYldJTE9lbEhFeU10ZU9XQnZfd3ZqVQ?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Mon, 20 Jul 2026 13:05:00 GMT",
-      "score": -5,
-      "tags": [
-        "attack",
-        "attacks",
-        "war"
-      ]
-    },
-    {
-      "title": "U.S. military launches new airstrikes to punish Iran for deaths of U.S. troops - PBS",
-      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQYXBIN0R3SHpXbkk0c3dxVF91UWRNTG42S3JsV0FBb1VsOUNRSlhxczBvdFFZNW9RcDJrTXNpWkZVWWp2TlVNcm83RldmazZDZEdvYUNEcnhjekM0SVNOSFgwdEsySU5aamloaVhXNWN6a203bmFqQjR2LTdpelFlUW5GNExWWUhLb2ZCbU94TWxUeUxJaG5hb3p1VTMxMld6Tm5YM01NSmtBNGhMdFHSAbMBQVVfeXFMT0t4eXNoZGhRdm4wZ0VidFp2U1F6YmtMaEVqYmxxeFZwX2JHUUV4aW1weTVOZjVBVXFUMFUyZV8wSGtSd2hjQWdfaGcxWERwNU1ydkZUT0d6TEIySFAtX3BkV09nM0pYNGZ1Tk82ZWtfblZFUGhObEotRG00RXZkZnlseTRLTjlfdzlkTDZSU2tjajJKei1XY0lVdk5obkJwdmJwSkk0RjdPT3RDaTAzd04yQnc?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Sat, 18 Jul 2026 15:34:19 GMT",
-      "score": -4,
-      "tags": [
-        "strike",
-        "strikes"
-      ]
-    },
-    {
-      "title": "US attacks Iran for 11th consecutive night - Al Jazeera",
-      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOVG9iYmRIcFFxcEZhd1dOd1VXdFlmRFozbWFuMWR1YVptOG03UUk2VkdhcEdLN29PUENuSUZMeDNNNVdHb1FEcGF6RVFPU1NabWx2QWRWcEFqQm5FQ2t4YUhlODAtOFo4dVhUUGZnZW1RNWRtUGVTNE5PTkZjTGNlbWJqejJCajV6VWl3NXV2SdIBlAFBVV95cUxOX1J5QUlCV1Y1aXAycjhJT3gtMFVQZDAtdE1JT0FpSlEtNlJzN2JfaTFCMDR6UGZMcEk0bVdFZ2VsejlhRlhiWnpsdVQ3WTVmOHZOSllmY192Z1VvSzgwWUlDOWY2MGhZbkF6Q2lhemFnRXU4dUNBdUFfdWNVc2dPVmhmckJDM1BIbVR2eVFrejQ2NWZF?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Wed, 22 Jul 2026 09:16:51 GMT",
-      "score": -4,
-      "tags": [
-        "attack",
-        "attacks"
-      ]
-    },
-    {
-      "title": "Oman talking with Tehran on Hormuz as US and Iran continue strikes - Al Jazeera",
-      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQd2ZJX0ZWTDkxMHpET0xGNDRuRWZlZERxb2p4SWpyVGVzdmtjR0pYRkYxLW8yNEhaTC04QmpLVGkzZE9QQ2tMZnVoZFlMbmVxTExSOGxnc2JzLXpGdXdjRVFfUVh1aEdNWmxZLTVBUjhKNTl1Y3c5UUhCZlVsdFpHODRHWk1HRUtHR1F2Zk1zTUhOcElQamJubVEyWnZQa2p6blVVcWgtVjBwU1HSAbABQVVfeXFMTTBRc1hKbmxKSmlIUXVVS09ZT3Zpc0JVbVNZXzI1RFVXXzNJbHVjZndLbm9aTnRJTGlkZmV5aUxtRTJBLUgzQS1HWE1TNEhGLVg4R3JETGRBTkJ6alFGbEJnUGx2c1pJekFpUUMyc1pSRXNlN1VfdUhWb2xuV2ZPb08xMXRPWmJCbDVFMWZRYndFSHdsamxsa0R5Y1pveWVMVzZHZDUxbXdkWFdxNF9xbUM?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Fri, 24 Jul 2026 18:30:19 GMT",
-      "score": -4,
-      "tags": [
-        "strike",
-        "strikes"
-      ]
-    },
-    {
-      "title": "Iran attacks Bahrain, Kuwait and Jordan after US hits Iranian nuclear site - Al Jazeera",
-      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNVkZ5QXo1N2hOeXZuODFkalM2aVg4bjNlX0p4UHRzM0FLb3VBbzBKeFRGeVZCdENGMEFKRndFXzdTaDFTazgtczZnZDRBZWRHQjdHTjg3MHF1MjF3blhaM0pINlhCeGxPZkJDVTBYTkkyY0FPQjFpZEp0N3RzRFNSMkJBMFRxV3NCcmZpc256X0I1MlRUelMtc0g1RdIBoAFBVV95cUxQbkZxaDI5R0M0elRWcEpiTjhNeXJnQ0NJSW9VNFhTQ2MydlF1M2c0azUxbThYcksyZDMxYkZhcG40VGwySDh1VXdoS29sT1RNdEpLSnZfMTA3QmpweW1NYlhRVmVieWQ2YU1zbzl6TWJ5d0k1S3VHLTBRYUdzMkdyYTdkdDJOWFlWM1VHcVdmSFF6NmlLXzFCb0FwVXJhTEdD?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Mon, 20 Jul 2026 02:46:17 GMT",
-      "score": -4,
-      "tags": [
-        "attack",
-        "attacks"
       ]
     },
     {
@@ -324,20 +209,124 @@
       ]
     },
     {
-      "title": "Iran says diplomatic efforts ongoing via mediators amid fighting with US - Al Jazeera",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQVU9nQmJzX3FkYmpzNGh4d0Y5MUZ5eXZGbHU3OXhqTmpFZDNRS2pRQ3RwNlhIWGVIVVN4LVU4SzhOOVN6OGtYQ3lxSm5jY1A2dTVYVlF1R2c4ZE9LNERxYng2MHBpQURidkpTa0x5NjlSRnlPeW9YdTRXa1B5RlUzdHY2Q09Kd20xRGhsOG1rbFpGVVJ3Zy1La3F2ZGF2RjJhLTlfMTVUTVNTeGwwcjEwM2JHQdIBuAFBVV95cUxOZmVFM0piNlJoaGxybzhyVmdiMnVWWVpoQ1lyal93RTFQUlpUMEFaT0Z2T2hmX3RsdVpYRzBPNno0NWtxM0RrMUtzXzhFV3hjd0F1YWlMU2I4Nno4NVJkdEVUTjFLZzhFeWotcVdieWU4WjY4WU1ORWd6VzNCaHlHVURvYjBGS0JaUklXUW5kVkd3bkNPRzBNQ21FSEd2a0pweGJLSW9ERENyTHlTd1RMbE9TY01tOXgx?oc=5",
+      "title": "Mediators see progress in efforts to halt Iran war as drone attacks rattle region - AP News",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQa2M1am9JRVdmbUE2TTF1ZG5ya1dXNjVjdWUtVngzX09jamxQNk1idEJoNDBCY2Y2dlpURUpYb1Q3WTY0Qk84ZEd5V0FYaHVHakFGbmtKbEhOTy0xYmdLUnZIN3JlcS1yWXZTbnVTYlBlcVg5NUx2eGZFT0VmM0FhQkZYS2pZZHJJMlp4SmtVZkpKTmZwOTZOM2g1S3FtMGhYdWc?oc=5",
+      "source": "\"middle east conflict when:7d\" - Google News",
+      "published": "Tue, 28 Jul 2026 01:41:00 GMT",
+      "score": -4,
+      "tags": [
+        "attack",
+        "attacks",
+        "drone",
+        "war",
+        "mediator"
+      ]
+    },
+    {
+      "title": "Video Houthi attacks raise fears of wider Middle East conflict - ABC News - Breaking News, Latest News and Videos",
+      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1KTkx6bE1qZ3Q0Y1NRVUUzTDk0V0VpdGtlUEpDaW9vREp2Rnctd2dETFFVMWZJZW04UEl0TTJ0WjctVExCaHNHaFdnY04?oc=5",
+      "source": "\"middle east conflict when:7d\" - Google News",
+      "published": "Thu, 23 Jul 2026 12:32:42 GMT",
+      "score": -4,
+      "tags": [
+        "attack",
+        "attacks"
+      ]
+    },
+    {
+      "title": "Iran’s government spars with state TV as mediators push talks with US - Al Jazeera",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNYUFsY3RBUHR1ZExyR2VwQ21ReS1rQ2JiS2NUelBFWFZqNk5lcjhCUnY0alpWNEVmT3ZLZi0xb3VLTmk2X1ZiSFFObkxyN01aRXB5V09SXzIzWDdDUWlhTnpZeU1KNmNqOXVMczNQNXlNek0yVTN6NUdtdld1dW5XYzdpeHVQbk9WVTRiMmlIQVN2RlVnMzVUb2Jnek55R2tPZlpGMVlRdzh3TWM3dWfSAbMBQVVfeXFMTUk1Wkp5cmNvTWctSmwzM3pWMTJIazNwMVVGeXVRU08zenZOYlhVNXl5VTB1NG9EVFRHamdlamhtLXM3bmJiUldlaER5cVJHdXctN0Z3S01lcUZFN3d2X3Z4NkNXLWFuVkpJZ1lmdlpLNHFCQUgzaU9aUDNRR2hnTGRwekF5dGpyLTYyVVpqcmdNRk1MMURNU1U5cEtvd1BvZ3hobU9HX0VjQnRVOFFiTG1Semc?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Mon, 20 Jul 2026 16:22:06 GMT",
+      "published": "Sat, 25 Jul 2026 16:42:54 GMT",
       "score": 4,
       "tags": [
-        "diplomatic",
+        "talks",
         "mediator"
+      ]
+    },
+    {
+      "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Mon, 27 Jul 2026 21:10:56 GMT",
+      "score": -3,
+      "tags": [
+        "strike",
+        "strikes",
+        "war",
+        "talks"
+      ]
+    },
+    {
+      "title": "Trump attends dignified transfer of US service members killed in Iran war - France 24",
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPTXhXNmdMU3c3OEVsSjdoRTd5WlhueVdfMGM4dVpOVFltRUVTdGtPSHZlcHZMZlB5UWlUNlNWR1pGS2FnOFYwWWdObllMaVZBZXpkNm85QnU2SXU1dmQ1cHVrQUtHa1diZlNjUDJGMG50ZFZtWmgzZUlGbmZ4bnh3Q0ZQRG50NldxZU5yRDF5TnFDLVNySmI1V2pMQTkyVnFhOEJzV1l3eDVhRWlyVXZYak1Ra21QNmFNNUJyOTliWWdHQjA?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Wed, 22 Jul 2026 01:01:33 GMT",
+      "score": -3,
+      "tags": [
+        "war",
+        "killed"
+      ]
+    },
+    {
+      "title": "US and Iran hit pause on strikes for second day - Al Jazeera",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPUE1ZUm9RT3YyYktDNkNZNXdzdVZyVVJ0bWdEcTBtNDk3SVFnOWcxUDJKdGFQaUJvTGNYMkk5VGlla0dnb1FXTHFOMkl2Z2Uyb280MTN0SXJZYTljcGY5cDNjRnlWdlBjR1RwdGJvRTFqNmRxWXl0UWsyTk9od1hhSVZDVEwtUGpZWWxOM0pQOHgzZ9IBlwFBVV95cUxNdUU5Z2d1a2JPTm95d1llbHg0YTU2YlFBMUs3cVB0enl3NVctUFhsOHBNLU1mUU5fMUJpUy10eTNmeHBwSWV5M0x4RE1IWXZ1WlcycE5WVGFjQWxVbHNRVFZ5YmVsVkZ5WWROREV6T3lzaHNrTTQtYS1BdEhBd1U3ZFRQLXFWTU44Uk1HeHFGcXN1MXU4VFdj?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Sun, 26 Jul 2026 23:50:55 GMT",
+      "score": -3,
+      "tags": [
+        "strike",
+        "strikes",
+        "pause"
+      ]
+    },
+    {
+      "title": "U.S., Iran pause attacks for 2nd straight day - CBC",
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBZU3hhdVJneGRoS3hkRkpkRW1EclU0RGdiR0hlUmVPMjRaWlFwcVFVOWtzTEd0NXFlVGNWWFBUZ2lPWWZGekFJb2phUC1NMF9MSmlUdjFPbXZ5RmlQeUJ3WDNnMjA2QWNrYWIxOER1VHp0Y00?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Sun, 26 Jul 2026 21:16:14 GMT",
+      "score": -3,
+      "tags": [
+        "attack",
+        "attacks",
+        "pause"
+      ]
+    },
+    {
+      "title": "Netanyahu to meet Trump at White House next week amid Iran war escalation - Al Jazeera",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOeUZIdFlkcXVVVXV6LWxjMy1fTVF0MWlCckJmY1V3cHE0cllkeVlBWGF1N0tTc25NcDBMb1VhWGZKbDl1WVpPZzRlNlRHTDdOUkNzX0ZZTVBuS1pOd19QNHBqT1o1SFBZOXNrRjdIX3hVM3FHRUU5aGQwYzV6Z3NYQk5rTC1sbTF1WlpVLUdjUUhpOFdkXy1UZEZTUk4yNTZrUkd3Ynd5UEJzMHNNMHhPaF9zMS3SAboBQVVfeXFMT2pSQkdYODFBYU9YR1k5SnhiZDl0YmRDRm5uTHN3a2FROFNNY2lpei01WkxHTi1zWXFubEFCY0tjakoyU1ZOMUxSY2Nlc3J4RWg3OHpuYmEwdUJqN3k3cC1QR20tdW5GNlRmRm04a0pPdGhDT011QVRER2x4V2xRUmp2TDBiQUlqcWV5eHM4YjJiYlFWV0Raa19KanB5d1UxcGVPOU9tSy1lSmZobXdDd1RyWmoxcFE4WXln?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Fri, 24 Jul 2026 16:04:53 GMT",
+      "score": -3,
+      "tags": [
+        "escalation",
+        "war"
+      ]
+    },
+    {
+      "title": "Trump says U.S. will destroy a bridge or power plant for each Iranian attack in the Strait of Hormuz - PBS",
+      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPVGpBZ1VUa001aFE1aXZXeTcwTVlldHMyeFFiWXZ6a0hxRUR1VXZqUXhtMTRob3RrZzFKYnV2UzlqMHRmcmxsdzdjNnFZQ1hsV21yTVZSZ001NW04Ujh1RHBIa09NM0tvdlNaSnJLVHJjNUh4SEloa2o4aWQ3SWNlVTZBZGhWZVh2eXdLUkVBRkU4VDRtdHR5ZzI3MFNhT21VSDN0WVZ3T1A4WUhQMGo4ck9Fc0ZwOVBZWUJrRktHMVJ5OFVpVFR6RFZiQ2pEX0XSAdQBQVVfeXFMUG91b2tqa3pPQndEOHY2RGVObU1qT3dxQjc1QU1OX2lnbEctYktUUE90Szc0SFpVdHdGNzA3My1hOTlvdWJ2dUhSalE5NFlST1FwSkR6NXNvQUtsV3pFd1NkNnNTRWxDYXFHQ0kwWHhXZ1pXMnBnU1hnT2FpazN1NkFkdEJLcUtTdkJNTVh5S2d6VXRsXzdyajRSWjIwVzZEakQzRWxpUWlVbW9tQ0FCekhPUmZiT0trTUZLS0c2ekE3LVBsSnY4bU10WVVxUkZXNXlWWTg?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Wed, 22 Jul 2026 19:42:53 GMT",
+      "score": -2,
+      "tags": [
+        "attack"
+      ]
+    },
+    {
+      "title": "Middle East Conflict Re-Escalation Takes Portfolio Volatility Higher - BNY",
+      "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOb1M1WmxISGQycUNJbWJ6VVlYdVNmZ3pVV05TOThNbEhvLWoxc1E4aHNzRHJDYzktdzZDVlVOVTlBN0tXR1A5QmhNeHBnTzN3VS1pUmNYMG1LNDk2Wkwwdk82bkszZmlmMTNOemwwTUpSMk0yVVdvVHNKRFF2TmhRUEdSUm81TFBPdFBicV84R1VyeTRxYkJ1bmlKZUNDb2RoeFJnSk9xamVJVWQ4aVRKZGE0S1FmdXloMWY0NG5YQ0tQc2FGZ1pDcUEzcEFOOGZKRld1VG1zMXlmTHFGb2lxd0Nod3VLZw?oc=5",
+      "source": "\"middle east conflict when:7d\" - Google News",
+      "published": "Wed, 22 Jul 2026 12:03:03 GMT",
+      "score": -2,
+      "tags": [
+        "escalation"
       ]
     }
   ],
   "integrity": {
     "driver_net_equals_total_score": true,
-    "driver_net": -69,
-    "source_total_score": -69
+    "driver_net": -40,
+    "source_total_score": -40
   }
 }
