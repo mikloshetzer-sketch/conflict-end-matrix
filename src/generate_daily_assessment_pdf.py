@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate bilingual daily Conflict End Matrix assessment PDFs.
+"""Generate bilingual USA-Iran Strategic Intelligence Report PDFs.
 
 Default inputs:
   docs/conflict_forecast_live.json
@@ -56,8 +56,11 @@ except ImportError as exc:  # pragma: no cover
     ) from exc
 
 
-PROJECT_NAME = "Conflict End Matrix"
-REPORT_VERSION = "1.0"
+PROJECT_NAME = "Törésvonalak Intelligence Hub"
+REPORT_SERIES = "USA–Iran Strategic Intelligence Report"
+REPORT_VERSION = "2.0"
+TAGLINE = "Turning Open-Source Information into Strategic Intelligence through Semantic Analysis and Quantitative Assessment"
+BLOG_URL = "toresvonalak.blog"
 DEFAULT_FORECAST = Path("docs/conflict_forecast_live.json")
 DEFAULT_PRESSURE = Path("docs/strategic_pressure.json")
 DEFAULT_OUTPUT_DIR = Path("docs/reports")
@@ -66,8 +69,25 @@ LANGUAGES = ("hu", "en")
 
 TEXT = {
     "hu": {
-        "report_title": "Napi konfliktuselemző jelentés",
-        "conflict": "Egyesült Államok - Irán",
+        "report_title": "USA–Irán stratégiai hírszerzési jelentés",
+        "conflict": "Egyesült Államok – Irán",
+        "daily_assessment": "Napi értékelés",
+        "about": "A jelentésről",
+        "about_intro": (
+            "Az USA–Irán stratégiai hírszerzési jelentés a Törésvonalak Intelligence Hub elemző kiadványa. "
+            "Célja az Egyesült Államok és Irán közötti konfliktus változó stratégiai dinamikájának napi értékelése."
+        ),
+        "about_method": (
+            "A rendszer nem az egyes eseményeket elszigetelten kezeli. Nyílt forrású információkat dolgoz fel, "
+            "majd szemantikai elemzéssel stratégiai jelentést rendel azokhoz. Az így kialakított indikátorokat "
+            "pontozási, aggregációs és idősoros módszerek alakítják összehasonlítható kvantitatív értékeléssé."
+        ),
+        "about_purpose": (
+            "A jelentés célja, hogy a napi hírek mögött húzódó folyamatokat átlátható, reprodukálható és "
+            "adatvezérelt módon mutassa be. A kimenet kutatók, elemzők és döntéshozók számára ad strukturált "
+            "helyzetképet, de nem helyettesít önálló szakértői mérlegelést."
+        ),
+        "workflow": "Nyílt forrású információ → szemantikai elemzés → stratégiai indikátorok → kvantitatív értékelés → integrált stratégiai helyzetkép",
         "auto": "Automatikusan generált OSINT elemzés",
         "executive": "Vezetői összefoglaló",
         "forecast": "Forecast értékelés",
@@ -100,8 +120,25 @@ TEXT = {
         ),
     },
     "en": {
-        "report_title": "Daily Conflict Assessment",
-        "conflict": "United States - Iran",
+        "report_title": "USA–Iran Strategic Intelligence Report",
+        "conflict": "United States – Iran",
+        "daily_assessment": "Daily Assessment",
+        "about": "About this Report",
+        "about_intro": (
+            "The USA–Iran Strategic Intelligence Report is an analytical publication of the Törésvonalak Intelligence Hub. "
+            "Its purpose is to assess the evolving strategic dynamics of the confrontation between the United States and Iran."
+        ),
+        "about_method": (
+            "The system does not treat individual events in isolation. It processes open-source information, assigns strategic "
+            "meaning through semantic analysis, and converts the resulting indicators into comparable quantitative assessments "
+            "through scoring, aggregation, and time-series methods."
+        ),
+        "about_purpose": (
+            "The report is designed to reveal the processes behind daily headlines in a transparent, reproducible, and data-driven "
+            "form. It provides researchers, analysts, and decision-makers with a structured situational picture, but it does not "
+            "replace independent expert judgement."
+        ),
+        "workflow": "Open-source information → semantic analysis → strategic indicators → quantitative assessment → integrated strategic intelligence",
         "auto": "Automatically generated OSINT assessment",
         "executive": "Executive Summary",
         "forecast": "Forecast Assessment",
@@ -660,57 +697,79 @@ def register_fonts() -> tuple[str, str]:
     ]
     for regular, bold in candidates:
         if regular.exists() and bold.exists():
-            pdfmetrics.registerFont(TTFont("CEM-Regular", str(regular)))
-            pdfmetrics.registerFont(TTFont("CEM-Bold", str(bold)))
+            pdfmetrics.registerFont(TTFont("TV-Regular", str(regular)))
+            pdfmetrics.registerFont(TTFont("TV-Bold", str(bold)))
             pdfmetrics.registerFontFamily(
-                "CEM", normal="CEM-Regular", bold="CEM-Bold", italic="CEM-Regular", boldItalic="CEM-Bold"
+                "TV", normal="TV-Regular", bold="TV-Bold", italic="TV-Regular", boldItalic="TV-Bold"
             )
-            return "CEM-Regular", "CEM-Bold"
+            return "TV-Regular", "TV-Bold"
     return "Helvetica", "Helvetica-Bold"
 
 
 def make_styles(regular_font: str, bold_font: str) -> dict[str, ParagraphStyle]:
     base = getSampleStyleSheet()
+    navy = colors.HexColor("#102E4A")
+    blue = colors.HexColor("#1E5B87")
+    steel = colors.HexColor("#5E7487")
+    ink = colors.HexColor("#172431")
     return {
+        "brand": ParagraphStyle(
+            "TVBrand", parent=base["Normal"], fontName=bold_font, fontSize=12,
+            leading=14, textColor=navy, alignment=TA_CENTER, spaceAfter=1 * mm,
+        ),
+        "brand_sub": ParagraphStyle(
+            "TVBrandSub", parent=base["Normal"], fontName=bold_font, fontSize=8,
+            leading=10, textColor=blue, alignment=TA_CENTER, spaceAfter=1.5 * mm,
+        ),
+        "brand_categories": ParagraphStyle(
+            "TVBrandCategories", parent=base["Normal"], fontName=regular_font, fontSize=7.5,
+            leading=10, textColor=steel, alignment=TA_CENTER, spaceAfter=6 * mm,
+        ),
         "title": ParagraphStyle(
-            "CEMTitle", parent=base["Title"], fontName=bold_font, fontSize=23,
-            leading=28, textColor=colors.HexColor("#123A63"), alignment=TA_CENTER,
-            spaceAfter=4 * mm,
+            "TVTitle", parent=base["Title"], fontName=bold_font, fontSize=24,
+            leading=29, textColor=navy, alignment=TA_CENTER, spaceAfter=4 * mm,
+        ),
+        "tagline": ParagraphStyle(
+            "TVTagline", parent=base["Normal"], fontName=regular_font, fontSize=10.2,
+            leading=15, textColor=blue, alignment=TA_CENTER, leftIndent=10 * mm,
+            rightIndent=10 * mm, spaceAfter=5 * mm,
         ),
         "subtitle": ParagraphStyle(
-            "CEMSubtitle", parent=base["Normal"], fontName=bold_font, fontSize=13,
-            leading=17, textColor=colors.HexColor("#2F5F8F"), alignment=TA_CENTER,
-            spaceAfter=2 * mm,
+            "TVSubtitle", parent=base["Normal"], fontName=bold_font, fontSize=13,
+            leading=17, textColor=blue, alignment=TA_CENTER, spaceAfter=2 * mm,
         ),
         "meta": ParagraphStyle(
-            "CEMMeta", parent=base["Normal"], fontName=regular_font, fontSize=8.5,
-            leading=12, textColor=colors.HexColor("#586777"), alignment=TA_CENTER,
+            "TVMeta", parent=base["Normal"], fontName=regular_font, fontSize=8.5,
+            leading=12, textColor=steel, alignment=TA_CENTER,
         ),
         "h1": ParagraphStyle(
-            "CEMH1", parent=base["Heading1"], fontName=bold_font, fontSize=15,
-            leading=19, textColor=colors.HexColor("#123A63"), spaceBefore=5 * mm,
+            "TVH1", parent=base["Heading1"], fontName=bold_font, fontSize=15,
+            leading=19, textColor=navy, spaceBefore=5 * mm,
             spaceAfter=2.5 * mm, keepWithNext=True,
         ),
         "body": ParagraphStyle(
-            "CEMBody", parent=base["BodyText"], fontName=regular_font, fontSize=9.4,
-            leading=14.2, textColor=colors.HexColor("#192633"), spaceAfter=2.7 * mm,
-            alignment=TA_LEFT,
+            "TVBody", parent=base["BodyText"], fontName=regular_font, fontSize=9.4,
+            leading=14.2, textColor=ink, spaceAfter=2.7 * mm, alignment=TA_LEFT,
         ),
         "small": ParagraphStyle(
-            "CEMSmall", parent=base["BodyText"], fontName=regular_font, fontSize=7.7,
+            "TVSmall", parent=base["BodyText"], fontName=regular_font, fontSize=7.7,
             leading=10.5, textColor=colors.HexColor("#455465"), spaceAfter=1.5 * mm,
         ),
         "callout": ParagraphStyle(
-            "CEMCallout", parent=base["BodyText"], fontName=bold_font, fontSize=10,
-            leading=15, textColor=colors.HexColor("#143F68"), leftIndent=4 * mm,
-            rightIndent=4 * mm, spaceBefore=2 * mm, spaceAfter=2 * mm,
+            "TVCallout", parent=base["BodyText"], fontName=bold_font, fontSize=10,
+            leading=15, textColor=navy, leftIndent=4 * mm, rightIndent=4 * mm,
+            spaceBefore=2 * mm, spaceAfter=2 * mm,
+        ),
+        "workflow": ParagraphStyle(
+            "TVWorkflow", parent=base["BodyText"], fontName=bold_font, fontSize=9.2,
+            leading=14, textColor=navy, alignment=TA_CENTER,
         ),
         "table": ParagraphStyle(
-            "CEMTable", parent=base["BodyText"], fontName=regular_font, fontSize=7.1,
-            leading=9.2, textColor=colors.HexColor("#192633"),
+            "TVTable", parent=base["BodyText"], fontName=regular_font, fontSize=7.1,
+            leading=9.2, textColor=ink,
         ),
         "table_bold": ParagraphStyle(
-            "CEMTableBold", parent=base["BodyText"], fontName=bold_font, fontSize=7.1,
+            "TVTableBold", parent=base["BodyText"], fontName=bold_font, fontSize=7.1,
             leading=9.2, textColor=colors.white,
         ),
     }
@@ -719,19 +778,37 @@ def make_styles(regular_font: str, bold_font: str) -> dict[str, ParagraphStyle]:
 def header_footer(canvas: Any, doc: Any, lang: str, report_iso_date: str, regular_font: str, bold_font: str) -> None:
     canvas.saveState()
     width, height = A4
-    canvas.setStrokeColor(colors.HexColor("#C9D7E5"))
-    canvas.setLineWidth(0.5)
-    canvas.line(18 * mm, height - 15 * mm, width - 18 * mm, height - 15 * mm)
-    canvas.setFont(bold_font, 8)
-    canvas.setFillColor(colors.HexColor("#123A63"))
-    canvas.drawString(18 * mm, height - 11.8 * mm, PROJECT_NAME)
-    canvas.setFont(regular_font, 7.5)
-    canvas.setFillColor(colors.HexColor("#617283"))
-    canvas.drawRightString(width - 18 * mm, height - 11.8 * mm, localized_date(report_iso_date, lang))
+    navy = colors.HexColor("#102E4A")
+    blue = colors.HexColor("#1E5B87")
+    muted = colors.HexColor("#617283")
+    line = colors.HexColor("#C9D7E5")
 
+    # The cover carries the full copied Törésvonalak masthead in the story.
+    # From page 2 onward a compact version appears in the running header.
+    if doc.page > 1:
+        canvas.setFont(bold_font, 8.2)
+        canvas.setFillColor(navy)
+        canvas.drawString(18 * mm, height - 10.2 * mm, "TÖRÉSVONALAK")
+        canvas.setFont(bold_font, 6.5)
+        canvas.setFillColor(blue)
+        canvas.drawString(18 * mm, height - 13.2 * mm, "INTELLIGENCE HUB")
+
+        canvas.setFont(regular_font, 7.2)
+        canvas.setFillColor(muted)
+        canvas.drawRightString(width - 18 * mm, height - 10.2 * mm, REPORT_SERIES)
+        canvas.drawRightString(width - 18 * mm, height - 13.2 * mm, localized_date(report_iso_date, lang))
+
+        canvas.setStrokeColor(line)
+        canvas.setLineWidth(0.5)
+        canvas.line(18 * mm, height - 15.5 * mm, width - 18 * mm, height - 15.5 * mm)
+
+    canvas.setStrokeColor(line)
+    canvas.setLineWidth(0.5)
     canvas.line(18 * mm, 14 * mm, width - 18 * mm, 14 * mm)
-    canvas.setFont(regular_font, 7.4)
-    canvas.drawString(18 * mm, 9.5 * mm, TEXT[lang]["auto"])
+    canvas.setFont(regular_font, 7.2)
+    canvas.setFillColor(muted)
+    canvas.drawString(18 * mm, 9.5 * mm, f"{BLOG_URL} | Törésvonalak Intelligence Hub")
+    canvas.drawCentredString(width / 2, 9.5 * mm, "Semantic Analysis • Quantitative Assessment • Strategic Intelligence")
     canvas.drawRightString(width - 18 * mm, 9.5 * mm, f"{TEXT[lang]['page']} {doc.page}")
     canvas.restoreState()
 
@@ -882,7 +959,7 @@ def build_pdf(
         rightMargin=18 * mm,
         topMargin=21 * mm,
         bottomMargin=18 * mm,
-        title=f"{PROJECT_NAME} - {labels['report_title']} - {iso_date}",
+        title=f"{REPORT_SERIES} - {iso_date}",
         author=PROJECT_NAME,
         subject=labels["conflict"],
     )
@@ -900,20 +977,51 @@ def build_pdf(
     pressure_model = str(pressure.get("model") or "-")
     generated = forecast.get("generated_at") or pressure.get("generated_at")
 
+    categories = (
+        "Geopolitika • Biztonságpolitika • Ellátásbiztonság • OSINT-elemzés"
+        if lang == "hu"
+        else "Geopolitics • Security Policy • Supply Security • OSINT Analysis"
+    )
+
     story: list[Any] = [
-        Spacer(1, 13 * mm),
-        Paragraph(PROJECT_NAME, styles["title"]),
-        Paragraph(labels["report_title"], styles["subtitle"]),
-        Paragraph(labels["conflict"], styles["subtitle"]),
-        Spacer(1, 3 * mm),
+        Spacer(1, 9 * mm),
+        Paragraph("TÖRÉSVONALAK", styles["brand"]),
+        Paragraph("INTELLIGENCE HUB", styles["brand_sub"]),
+        Paragraph(categories, styles["brand_categories"]),
+        Spacer(1, 12 * mm),
+        Paragraph(labels["report_title"], styles["title"]),
+        Paragraph(TAGLINE, styles["tagline"]),
+        Spacer(1, 5 * mm),
+        Paragraph(labels["daily_assessment"], styles["subtitle"]),
         Paragraph(
             f"<b>{labels['date']}:</b> {escape(localized_date(iso_date, lang))}<br/>"
             f"<b>{labels['generated']}:</b> {escape(localized_datetime(generated, lang))}<br/>"
             f"<b>{labels['model']}:</b> {escape(forecast_model)} / {escape(pressure_model)}<br/>"
+            f"<b>Report ID:</b> USIR-{iso_date.replace('-', '')}<br/>"
             f"<b>Version:</b> {REPORT_VERSION}",
             styles["meta"],
         ),
-        Spacer(1, 8 * mm),
+        Spacer(1, 28 * mm),
+        Paragraph(BLOG_URL, styles["meta"]),
+        PageBreak(),
+        Paragraph(labels["about"], styles["h1"]),
+        Paragraph(labels["about_intro"], styles["body"]),
+        Paragraph(labels["about_method"], styles["body"]),
+        Paragraph(labels["about_purpose"], styles["body"]),
+        Spacer(1, 3 * mm),
+        Table(
+            [[Paragraph(labels["workflow"], styles["workflow"])]],
+            colWidths=[doc.width],
+            style=TableStyle([
+                ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#EAF1F7")),
+                ("BOX", (0, 0), (-1, -1), 0.7, colors.HexColor("#7FA0BF")),
+                ("LEFTPADDING", (0, 0), (-1, -1), 9),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 9),
+                ("TOPPADDING", (0, 0), (-1, -1), 9),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 9),
+            ]),
+        ),
+        Spacer(1, 5 * mm),
         Paragraph(labels["executive"], styles["h1"]),
     ]
     add_paragraphs(story, executive_summary(forecast, pressure, lang), styles)
@@ -1091,7 +1199,7 @@ def update_index(
 
 
 def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Generate bilingual daily Conflict End Matrix PDF reports.")
+    parser = argparse.ArgumentParser(description="Generate bilingual USA-Iran Strategic Intelligence Report PDFs.")
     parser.add_argument("--forecast", type=Path, default=DEFAULT_FORECAST, help="Path to forecast JSON.")
     parser.add_argument("--pressure", type=Path, default=DEFAULT_PRESSURE, help="Path to strategic pressure JSON.")
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR, help="Reports output directory.")
@@ -1138,3 +1246,4 @@ def main(argv: Sequence[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
