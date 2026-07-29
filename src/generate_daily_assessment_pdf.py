@@ -6,6 +6,9 @@ Default inputs:
   docs/strategic_pressure.json
   docs/interest_achievement.json
   docs/strategic_success.json
+  data/strategic/strategic_interests.json
+  data/strategic/strategic_indicators.json
+  data/strategic/interest_impact_map.json
 
 Default outputs:
   docs/reports/latest-hu.pdf
@@ -35,7 +38,7 @@ from typing import Any, Iterable, Mapping, Sequence
 
 try:
     from reportlab.lib import colors
-    from reportlab.lib.enums import TA_CENTER, TA_LEFT
+    from reportlab.lib.enums import TA_CENTER, TA_JUSTIFY, TA_LEFT
     from reportlab.lib.pagesizes import A4
     from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
     from reportlab.lib.units import mm
@@ -60,19 +63,40 @@ except ImportError as exc:  # pragma: no cover
 
 PROJECT_NAME = "Törésvonalak Intelligence Hub"
 REPORT_SERIES = "USA–Iran Strategic Intelligence Report"
-REPORT_VERSION = "2.1"
+REPORT_VERSION = "2.2"
 TAGLINE = "Turning Open-Source Information into Strategic Intelligence through Semantic Analysis and Quantitative Assessment"
 BLOG_URL = "toresvonalak.blog"
 DEFAULT_FORECAST = Path("docs/conflict_forecast_live.json")
 DEFAULT_PRESSURE = Path("docs/strategic_pressure.json")
 DEFAULT_INTEREST = Path("docs/interest_achievement.json")
 DEFAULT_SUCCESS = Path("docs/strategic_success.json")
+DEFAULT_STRATEGIC_INTERESTS = Path("data/strategic/strategic_interests.json")
+DEFAULT_STRATEGIC_INDICATORS = Path("data/strategic/strategic_indicators.json")
+DEFAULT_INTEREST_IMPACT_MAP = Path("data/strategic/interest_impact_map.json")
 DEFAULT_OUTPUT_DIR = Path("docs/reports")
 
 LANGUAGES = ("hu", "en")
 
 TEXT = {
     "hu": {
+        "at_glance": "A jelentés egy oldalon",
+        "input_models": "Elemzési bemenetek és konfigurációs állományok",
+        "input_models_intro": (
+            "A jelentés az alábbi napi modellkimenetekből és stratégiai konfigurációs állományokból épül fel. "
+            "A táblázat a felhasznált fájlokat, verziókat, referencia-időpontokat és szerepüket mutatja."
+        ),
+        "overall_assessment": "Átfogó értékelés",
+        "main_findings": "Fő megállapítások",
+        "assessment_confidence": "Értékelési megbízhatóság",
+        "model_name": "Modell vagy állomány",
+        "file_path": "Fájlútvonal",
+        "version": "Verzió",
+        "status": "Státusz",
+        "role": "Szerep",
+        "reference": "Referencia",
+        "strategic_configuration": "Stratégiai konfiguráció",
+        "model_outputs": "Napi modellkimenetek",
+
         "report_title": "USA–Irán stratégiai hírszerzési jelentés",
         "conflict": "Egyesült Államok – Irán",
         "daily_assessment": "Napi értékelés",
@@ -127,6 +151,24 @@ TEXT = {
         ),
     },
     "en": {
+        "at_glance": "Report at a Glance",
+        "input_models": "Analytical Inputs and Configuration Files",
+        "input_models_intro": (
+            "The report is built from the following daily model outputs and strategic configuration files. "
+            "The table identifies the files, versions, reference dates, and analytical roles used in production."
+        ),
+        "overall_assessment": "Overall Assessment",
+        "main_findings": "Main Findings",
+        "assessment_confidence": "Assessment Confidence",
+        "model_name": "Model or file",
+        "file_path": "File path",
+        "version": "Version",
+        "status": "Status",
+        "role": "Role",
+        "reference": "Reference",
+        "strategic_configuration": "Strategic Configuration",
+        "model_outputs": "Daily Model Outputs",
+
         "report_title": "USA–Iran Strategic Intelligence Report",
         "conflict": "United States – Iran",
         "daily_assessment": "Daily Assessment",
@@ -614,47 +656,117 @@ def combined_assessment(forecast: Mapping[str, Any], pressure: Mapping[str, Any]
     ]
 
 
-def executive_summary(forecast: Mapping[str, Any], pressure: Mapping[str, Any], lang: str) -> list[str]:
+
+def executive_summary(
+    forecast: Mapping[str, Any],
+    pressure: Mapping[str, Any],
+    interest: Mapping[str, Any],
+    success: Mapping[str, Any],
+    lang: str,
+) -> dict[str, Any]:
     h48 = horizon_data(forecast, "48h")
     h72 = horizon_data(forecast, "72h")
     raw48 = h48.get("raw_prediction") if isinstance(h48.get("raw_prediction"), Mapping) else {}
     raw72 = h72.get("raw_prediction") if isinstance(h72.get("raw_prediction"), Mapping) else {}
     pub48 = h48.get("public_signal") if isinstance(h48.get("public_signal"), Mapping) else {}
     pub72 = h72.get("public_signal") if isinstance(h72.get("public_signal"), Mapping) else {}
+
     overall = nested(pressure, "current", "overall", default={})
     overall = overall if isinstance(overall, Mapping) else {}
+    achievement = achievement_summary(interest)
+    success_data = success_summary(success)
 
     d48 = str(raw48.get("direction") or "no_signal")
     d72 = str(raw72.get("direction") or "no_signal")
-    p48 = number(raw48.get("top_probability"))
-    p72 = number(raw72.get("top_probability"))
     s48 = bool(pub48.get("has_signal"))
     s72 = bool(pub72.get("has_signal"))
-    oi = number(overall.get("pressure_index_7d"), 50)
-    ot = trend_label(overall.get("trend"), lang)
+    pressure_index = number(overall.get("pressure_index_7d"), 50.0)
+    pressure_trend = str(overall.get("trend") or "stable")
+    usa_achievement = number(achievement.get("usa_achievement_index"), 50.0)
+    iran_achievement = number(achievement.get("iran_achievement_index"), 50.0)
+    achievement_gap = number(achievement.get("achievement_gap"), usa_achievement - iran_achievement)
+    usa_success = number(success_data.get("usa_success_index"), 50.0)
+    iran_success = number(success_data.get("iran_success_index"), 50.0)
+    success_gap = number(success_data.get("success_gap"), usa_success - iran_success)
+    strategic_advantage = str(success_data.get("strategic_advantage") or "balanced")
+    maturity = str(nested(success, "current", "data_maturity", "status", default="unknown"))
+    observations = integer(nested(success, "current", "data_maturity", "observations", default=0))
+    confidence_percent = number(nested(success, "current", "data_maturity", "confidence_percent", default=0.0))
 
     if lang == "hu":
-        return [
-            (
-                f"A 48 órás modell nyers iránya <b>{escape(DIRECTION_LABELS['hu'].get(d48, d48))}</b> ({pct(p48)}), "
-                + ("és a jelzés átment a publikációs kapun. " if s48 else "de nincs kiadható egyértelmű publikus jelzés. ")
-                + f"A 72 órás nyers irány <b>{escape(DIRECTION_LABELS['hu'].get(d72, d72))}</b> ({pct(p72)}), "
-                + ("amely szintén publikus jelzés. " if s72 else "amelyet a rendszer a bizonytalanság miatt visszatartott. ")
-                + f"Az összesített Strategic Pressure index <b>{oi:.1f}</b>, trendje {escape(ot)}."
-            ),
-            combined_assessment(forecast, pressure, "hu")[0],
-        ]
-    return [
-        (
-            f"The raw 48-hour direction is <b>{escape(DIRECTION_LABELS['en'].get(d48, d48))}</b> ({pct(p48)}), "
-            + ("and the result passed the publication gate. " if s48 else "but no clear public signal was released. ")
-            + f"The raw 72-hour direction is <b>{escape(DIRECTION_LABELS['en'].get(d72, d72))}</b> ({pct(p72)}), "
-            + ("which also qualifies as a public signal. " if s72 else "which was withheld because of uncertainty. ")
-            + f"The overall Strategic Pressure Index is <b>{oi:.1f}</b>, with a {escape(ot)} trend."
-        ),
-        combined_assessment(forecast, pressure, "en")[0],
-    ]
+        if pressure_index < 40:
+            environment = "a stratégiai nyomás alacsony és csökkenő környezetet jelez"
+        elif pressure_index > 60:
+            environment = "a stratégiai nyomás emelkedett és fokozott kényszerítési környezetet jelez"
+        else:
+            environment = "a stratégiai nyomás vegyes, középső tartományban marad"
 
+        if strategic_advantage == "usa":
+            balance = "az Egyesült Államok mérsékelt stratégiai előnye"
+        elif strategic_advantage == "iran":
+            balance = "Irán mérsékelt stratégiai előnye"
+        else:
+            balance = "kiegyensúlyozott stratégiai erőviszony"
+
+        overall_text = (
+            f"A napi összkép szerint {environment}. A rövid távú Forecast "
+            f"{escape(DIRECTION_LABELS['hu'].get(d48, d48))} irányt jelez 48 órára"
+            + (" és publikálható jelzést adott. " if s48 else ", de a jelzés nem érte el a teljes publikációs küszöböt. ")
+            + f"A stratégiai eredményességi modell {balance} állapotát mutatja. "
+            f"Az érdekérvényesülési különbség {achievement_gap:+.2f} pont, a Strategic Success különbsége {success_gap:+.2f} pont."
+        )
+        findings = [
+            f"A 48 órás Forecast: {DIRECTION_LABELS['hu'].get(d48, d48)}; a 72 órás irány: {DIRECTION_LABELS['hu'].get(d72, d72)}.",
+            f"Az összesített Strategic Pressure index {pressure_index:.1f}, trendje {trend_label(pressure_trend, 'hu')}.",
+            f"Az Interest Achievement az USA esetében {usa_achievement:.1f}, Irán esetében {iran_achievement:.1f}; a napi előny {advantage_label(achievement.get('daily_strategic_advantage'), 'hu')}.",
+            f"A Strategic Success az USA esetében {usa_success:.1f}, Irán esetében {iran_success:.1f}; a modell {advantage_label(strategic_advantage, 'hu')} helyzetet jelez.",
+            "A napi események értelmezésében a diplomáciai, katonai és gazdasági jeleket együtt kell kezelni; egyetlen modell önmagában nem ad teljes konfliktusképet.",
+        ]
+        confidence = (
+            f"<b>{'MAGAS' if confidence_percent >= 80 else 'KÖZEPES' if confidence_percent >= 50 else 'ALACSONY'}</b><br/>"
+            f"Adatérettség: {escape(maturity)}<br/>"
+            f"Felhasznált megfigyelések: {observations}<br/>"
+            f"Érettségi konfidencia: {confidence_percent:.0f}%<br/>"
+            "Elemzési rétegek: 4"
+        )
+    else:
+        if pressure_index < 40:
+            environment = "strategic pressure indicates a low and declining coercive environment"
+        elif pressure_index > 60:
+            environment = "strategic pressure indicates an elevated coercive environment"
+        else:
+            environment = "strategic pressure remains in a mixed middle range"
+
+        if strategic_advantage == "usa":
+            balance = "a modest US strategic advantage"
+        elif strategic_advantage == "iran":
+            balance = "a modest Iranian strategic advantage"
+        else:
+            balance = "a broadly balanced strategic position"
+
+        overall_text = (
+            f"The daily picture indicates that {environment}. The near-term Forecast points to "
+            f"{escape(DIRECTION_LABELS['en'].get(d48, d48))} over 48 hours"
+            + (" and passed the publication gate. " if s48 else ", but did not meet the full publication threshold. ")
+            + f"The Strategic Success model indicates {balance}. "
+            f"The Interest Achievement gap is {achievement_gap:+.2f} points and the Strategic Success gap is {success_gap:+.2f} points."
+        )
+        findings = [
+            f"The 48-hour Forecast indicates {DIRECTION_LABELS['en'].get(d48, d48)}; the 72-hour direction is {DIRECTION_LABELS['en'].get(d72, d72)}.",
+            f"The overall Strategic Pressure Index is {pressure_index:.1f}, with a {trend_label(pressure_trend, 'en')} trend.",
+            f"Interest Achievement is {usa_achievement:.1f} for the United States and {iran_achievement:.1f} for Iran; the daily position is {advantage_label(achievement.get('daily_strategic_advantage'), 'en')}.",
+            f"Strategic Success is {usa_success:.1f} for the United States and {iran_success:.1f} for Iran; the model indicates a {advantage_label(strategic_advantage, 'en')} position.",
+            "Diplomatic, military, and economic signals must be interpreted together; no single model provides a complete conflict picture.",
+        ]
+        confidence = (
+            f"<b>{'HIGH' if confidence_percent >= 80 else 'MEDIUM' if confidence_percent >= 50 else 'LOW'}</b><br/>"
+            f"Data maturity: {escape(maturity)}<br/>"
+            f"Observations used: {observations}<br/>"
+            f"Maturity confidence: {confidence_percent:.0f}%<br/>"
+            "Analytical layers: 4"
+        )
+
+    return {"overall": overall_text, "findings": findings, "confidence": confidence}
 
 def principal_drivers(pressure: Mapping[str, Any]) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
@@ -877,6 +989,157 @@ def register_fonts() -> tuple[str, str]:
     return "Helvetica", "Helvetica-Bold"
 
 
+
+def model_version(data: Mapping[str, Any], *paths: Sequence[str]) -> str:
+    for path in paths:
+        value = nested(data, *path, default=None)
+        if value not in (None, ""):
+            return str(value)
+    return "-"
+
+
+def file_status(data: Mapping[str, Any], lang: str) -> str:
+    if not data:
+        return "hiányzik" if lang == "hu" else "missing"
+    status = str(data.get("status") or nested(data, "metadata", "status", default="") or "")
+    if status:
+        return status
+    return "elérhető" if lang == "hu" else "available"
+
+
+def build_input_files_table(
+    forecast: Mapping[str, Any],
+    pressure: Mapping[str, Any],
+    interest: Mapping[str, Any],
+    success: Mapping[str, Any],
+    strategic_interests: Mapping[str, Any],
+    strategic_indicators: Mapping[str, Any],
+    interest_impact_map: Mapping[str, Any],
+    lang: str,
+    styles: Mapping[str, ParagraphStyle],
+) -> Table:
+    labels = TEXT[lang]
+    header = [
+        labels["model_name"], labels["file_path"], labels["version"],
+        labels["reference"], labels["role"], labels["status"],
+    ]
+    rows: list[list[Any]] = [[Paragraph(escape(x), styles["table_bold"]) for x in header]]
+
+    if lang == "hu":
+        items = [
+            ("Forecast", "docs/conflict_forecast_live.json", model_version(forecast, ("model_version",), ("forecast_model",)),
+             str(forecast.get("forecast_reference_date") or "-"), "48 és 72 órás aktivitási irány", file_status(forecast, lang)),
+            ("Strategic Pressure", "docs/strategic_pressure.json", model_version(pressure, ("model",)),
+             str(nested(pressure, "current", "date", default=pressure.get("latest_complete_utc_day") or "-")),
+             "Hét napos stratégiai nyomás és mozgatórugók", file_status(pressure, lang)),
+            ("Interest Achievement", "docs/interest_achievement.json", model_version(interest, ("metadata", "model")),
+             str(nested(interest, "current", "date", default=nested(interest, "metadata", "reference_date", default="-"))),
+             "A súlyozott stratégiai érdekek napi teljesülése", file_status(interest, lang)),
+            ("Strategic Success", "docs/strategic_success.json", model_version(success, ("metadata", "model_version")),
+             str(nested(success, "current", "date", default=nested(success, "metadata", "current_date", default="-"))),
+             "Érdekérvényesülés, momentum, stabilitás és konzisztencia", file_status(success, lang)),
+            ("Strategic Interests", "data/strategic/strategic_interests.json", model_version(strategic_interests, ("model_version",), ("metadata", "model_version")),
+             "konfiguráció", "A felek súlyozott stratégiai érdekeinek definíciója", file_status(strategic_interests, lang)),
+            ("Strategic Indicators", "data/strategic/strategic_indicators.json", model_version(strategic_indicators, ("model_version",), ("metadata", "model_version")),
+             "konfiguráció", "Szemantikai indikátorok és felismerési szabályok", file_status(strategic_indicators, lang)),
+            ("Interest Impact Map", "data/strategic/interest_impact_map.json", model_version(interest_impact_map, ("model_version",), ("metadata", "model_version")),
+             "konfiguráció", "Az indikátorok stratégiai érdekekre gyakorolt hatása", file_status(interest_impact_map, lang)),
+        ]
+    else:
+        items = [
+            ("Forecast", "docs/conflict_forecast_live.json", model_version(forecast, ("model_version",), ("forecast_model",)),
+             str(forecast.get("forecast_reference_date") or "-"), "48- and 72-hour activity direction", file_status(forecast, lang)),
+            ("Strategic Pressure", "docs/strategic_pressure.json", model_version(pressure, ("model",)),
+             str(nested(pressure, "current", "date", default=pressure.get("latest_complete_utc_day") or "-")),
+             "Seven-day strategic pressure and principal drivers", file_status(pressure, lang)),
+            ("Interest Achievement", "docs/interest_achievement.json", model_version(interest, ("metadata", "model")),
+             str(nested(interest, "current", "date", default=nested(interest, "metadata", "reference_date", default="-"))),
+             "Daily performance of weighted strategic interests", file_status(interest, lang)),
+            ("Strategic Success", "docs/strategic_success.json", model_version(success, ("metadata", "model_version")),
+             str(nested(success, "current", "date", default=nested(success, "metadata", "current_date", default="-"))),
+             "Achievement, momentum, stability, and consistency", file_status(success, lang)),
+            ("Strategic Interests", "data/strategic/strategic_interests.json", model_version(strategic_interests, ("model_version",), ("metadata", "model_version")),
+             "configuration", "Definitions and weights of actor interests", file_status(strategic_interests, lang)),
+            ("Strategic Indicators", "data/strategic/strategic_indicators.json", model_version(strategic_indicators, ("model_version",), ("metadata", "model_version")),
+             "configuration", "Semantic indicators and recognition rules", file_status(strategic_indicators, lang)),
+            ("Interest Impact Map", "data/strategic/interest_impact_map.json", model_version(interest_impact_map, ("model_version",), ("metadata", "model_version")),
+             "configuration", "Mapped effects of indicators on strategic interests", file_status(interest_impact_map, lang)),
+        ]
+
+    for item in items:
+        rows.append([Paragraph(escape(value), styles["table"]) for value in item])
+
+    table = Table(
+        rows,
+        colWidths=[29 * mm, 42 * mm, 27 * mm, 24 * mm, 43 * mm, 17 * mm],
+        repeatRows=1,
+    )
+    table.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#1B4D7A")),
+        ("GRID", (0, 0), (-1, -1), 0.3, colors.HexColor("#CAD6E2")),
+        ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#F5F8FB")]),
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+        ("LEFTPADDING", (0, 0), (-1, -1), 3),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 3),
+        ("TOPPADDING", (0, 0), (-1, -1), 4),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
+    ]))
+    return table
+
+
+def build_at_glance_table(
+    forecast: Mapping[str, Any],
+    pressure: Mapping[str, Any],
+    interest: Mapping[str, Any],
+    success: Mapping[str, Any],
+    lang: str,
+    styles: Mapping[str, ParagraphStyle],
+) -> Table:
+    labels = TEXT[lang]
+    h48 = horizon_data(forecast, "48h")
+    h72 = horizon_data(forecast, "72h")
+    overall = nested(pressure, "current", "overall", default={})
+    achievement = achievement_summary(interest)
+    success_data = success_summary(success)
+
+    if lang == "hu":
+        data = [
+            ["Konfliktus", labels["conflict"]],
+            ["48 órás Forecast", direction(h48, lang, public=True)],
+            ["72 órás Forecast", direction(h72, lang, public=True)],
+            ["Strategic Pressure", f"{number(overall.get('pressure_index_7d'), 50):.1f} – {level_label(overall.get('pressure_level'), lang)}"],
+            ["Interest Achievement", f"USA {number(achievement.get('usa_achievement_index'), 50):.1f} | Irán {number(achievement.get('iran_achievement_index'), 50):.1f}"],
+            ["Strategic Success", f"USA {number(success_data.get('usa_success_index'), 50):.1f} | Irán {number(success_data.get('iran_success_index'), 50):.1f}"],
+            ["Stratégiai helyzet", advantage_label(success_data.get("strategic_advantage"), lang)],
+            ["Adatérettség", str(nested(success, "current", "data_maturity", "status", default="-"))],
+        ]
+    else:
+        data = [
+            ["Conflict", labels["conflict"]],
+            ["48-hour Forecast", direction(h48, lang, public=True)],
+            ["72-hour Forecast", direction(h72, lang, public=True)],
+            ["Strategic Pressure", f"{number(overall.get('pressure_index_7d'), 50):.1f} – {level_label(overall.get('pressure_level'), lang)}"],
+            ["Interest Achievement", f"US {number(achievement.get('usa_achievement_index'), 50):.1f} | Iran {number(achievement.get('iran_achievement_index'), 50):.1f}"],
+            ["Strategic Success", f"US {number(success_data.get('usa_success_index'), 50):.1f} | Iran {number(success_data.get('iran_success_index'), 50):.1f}"],
+            ["Strategic Position", advantage_label(success_data.get("strategic_advantage"), lang)],
+            ["Data Maturity", str(nested(success, "current", "data_maturity", "status", default="-"))],
+        ]
+
+    rows = [[Paragraph(f"<b>{escape(k)}</b>", styles["table"]), Paragraph(escape(v), styles["table"])] for k, v in data]
+    table = Table(rows, colWidths=[58 * mm, 116 * mm])
+    table.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (0, -1), colors.HexColor("#EAF1F7")),
+        ("ROWBACKGROUNDS", (1, 0), (1, -1), [colors.white, colors.HexColor("#F8FAFC")]),
+        ("BOX", (0, 0), (-1, -1), 0.6, colors.HexColor("#7FA0BF")),
+        ("INNERGRID", (0, 0), (-1, -1), 0.25, colors.HexColor("#CAD6E2")),
+        ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+        ("LEFTPADDING", (0, 0), (-1, -1), 7),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 7),
+        ("TOPPADDING", (0, 0), (-1, -1), 7),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 7),
+    ]))
+    return table
+
 def make_styles(regular_font: str, bold_font: str) -> dict[str, ParagraphStyle]:
     base = getSampleStyleSheet()
     navy = colors.HexColor("#102E4A")
@@ -920,11 +1183,16 @@ def make_styles(regular_font: str, bold_font: str) -> dict[str, ParagraphStyle]:
         ),
         "body": ParagraphStyle(
             "TVBody", parent=base["BodyText"], fontName=regular_font, fontSize=9.4,
-            leading=14.2, textColor=ink, spaceAfter=2.7 * mm, alignment=TA_LEFT,
+            leading=14.2, textColor=ink, spaceAfter=2.7 * mm, alignment=TA_JUSTIFY,
+        ),
+        "h2": ParagraphStyle(
+            "TIHH2", parent=base["Heading2"], fontName=bold_font, fontSize=11.2,
+            leading=14.5, textColor=colors.HexColor("#2F5F8F"), spaceBefore=3.5 * mm,
+            spaceAfter=1.7 * mm, keepWithNext=True,
         ),
         "small": ParagraphStyle(
             "TVSmall", parent=base["BodyText"], fontName=regular_font, fontSize=7.7,
-            leading=10.5, textColor=colors.HexColor("#455465"), spaceAfter=1.5 * mm,
+            leading=10.5, textColor=colors.HexColor("#455465"), spaceAfter=1.5 * mm, alignment=TA_JUSTIFY,
         ),
         "callout": ParagraphStyle(
             "TVCallout", parent=base["BodyText"], fontName=bold_font, fontSize=10,
@@ -1116,6 +1384,9 @@ def build_pdf(
     pressure: Mapping[str, Any],
     interest: Mapping[str, Any],
     success: Mapping[str, Any],
+    strategic_interests: Mapping[str, Any],
+    strategic_indicators: Mapping[str, Any],
+    interest_impact_map: Mapping[str, Any],
     lang: str,
     output: Path,
     iso_date: str,
@@ -1179,6 +1450,7 @@ def build_pdf(
         Spacer(1, 28 * mm),
         Paragraph(BLOG_URL, styles["meta"]),
         PageBreak(),
+
         Paragraph(labels["about"], styles["h1"]),
         Paragraph(labels["about_intro"], styles["body"]),
         Paragraph(labels["about_method"], styles["body"]),
@@ -1197,16 +1469,52 @@ def build_pdf(
             ]),
         ),
         Spacer(1, 5 * mm),
-        Paragraph(labels["executive"], styles["h1"]),
+
+        Paragraph(labels["input_models"], styles["h1"]),
+        Paragraph(labels["input_models_intro"], styles["body"]),
+        build_input_files_table(
+            forecast, pressure, interest, success,
+            strategic_interests, strategic_indicators, interest_impact_map,
+            lang, styles,
+        ),
+        PageBreak(),
+
+        Paragraph(labels["at_glance"], styles["h1"]),
+        build_at_glance_table(forecast, pressure, interest, success, lang, styles),
+        Spacer(1, 5 * mm),
     ]
-    executive = executive_summary(forecast, pressure, lang)
-    executive.extend(integrated_assessment(forecast, pressure, interest, success, lang)[:1])
-    add_paragraphs(story, executive, styles)
+
+    executive = executive_summary(forecast, pressure, interest, success, lang)
+    story.append(Paragraph(labels["executive"], styles["h1"]))
+    story.append(Paragraph(labels["overall_assessment"], styles["h2"]))
+    story.append(Paragraph(executive["overall"], styles["body"]))
+    story.append(Paragraph(labels["main_findings"], styles["h2"]))
+    findings = [[Paragraph(f"• {escape(item)}", styles["body"])] for item in executive["findings"]]
+    story.append(Table(findings, colWidths=[doc.width], style=TableStyle([
+        ("LEFTPADDING", (0, 0), (-1, -1), 4),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 4),
+        ("TOPPADDING", (0, 0), (-1, -1), 1),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 1),
+    ])))
+    story.append(Paragraph(labels["assessment_confidence"], styles["h2"]))
+    story.append(Table(
+        [[Paragraph(executive["confidence"], styles["callout"])]],
+        colWidths=[doc.width],
+        style=TableStyle([
+            ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#EAF1F7")),
+            ("BOX", (0, 0), (-1, -1), 0.7, colors.HexColor("#7FA0BF")),
+            ("LEFTPADDING", (0, 0), (-1, -1), 8),
+            ("RIGHTPADDING", (0, 0), (-1, -1), 8),
+            ("TOPPADDING", (0, 0), (-1, -1), 8),
+            ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+        ]),
+    ))
 
     story.extend([
-        Spacer(1, 1 * mm),
-        build_forecast_table(forecast, lang, styles),
+        PageBreak(),
         Paragraph(labels["forecast"], styles["h1"]),
+        build_forecast_table(forecast, lang, styles),
+        Spacer(1, 2 * mm),
     ])
     add_paragraphs(story, analyse_forecast(forecast, lang), styles)
 
@@ -1214,11 +1522,12 @@ def build_pdf(
         table = analogue_table(forecast, horizon, lang, styles)
         if table is not None:
             heading = f"{horizon} - " + ("legközelebbi történeti analógok" if lang == "hu" else "nearest historical analogues")
-            story.append(Paragraph(escape(heading), styles["small"]))
+            story.append(Paragraph(escape(heading), styles["h2"]))
             story.append(table)
             story.append(Spacer(1, 2 * mm))
 
     story.extend([
+        PageBreak(),
         Paragraph(labels["pressure"], styles["h1"]),
         build_pressure_table(pressure, lang, styles),
         Spacer(1, 2 * mm),
@@ -1226,6 +1535,7 @@ def build_pdf(
     add_paragraphs(story, analyse_pressure(pressure, lang), styles)
 
     story.extend([
+        PageBreak(),
         Paragraph(labels["interest"], styles["h1"]),
         build_interest_table(interest, lang, styles),
         Spacer(1, 2 * mm),
@@ -1233,13 +1543,17 @@ def build_pdf(
     add_paragraphs(story, analyse_interest(interest, lang), styles)
 
     story.extend([
+        PageBreak(),
         Paragraph(labels["success"], styles["h1"]),
         build_success_table(success, lang, styles),
         Spacer(1, 2 * mm),
     ])
     add_paragraphs(story, analyse_success(success, lang), styles)
 
-    story.append(Paragraph(labels["integrated"], styles["h1"]))
+    story.extend([
+        PageBreak(),
+        Paragraph(labels["integrated"], styles["h1"]),
+    ])
     integrated = integrated_assessment(forecast, pressure, interest, success, lang)
     story.append(Table(
         [[Paragraph(integrated[0], styles["callout"])]],
@@ -1258,52 +1572,87 @@ def build_pdf(
     story.extend([
         Paragraph(labels["drivers"], styles["h1"]),
         build_drivers_table(pressure, lang, styles),
+        PageBreak(),
         Paragraph(labels["method"], styles["h1"]),
     ])
 
     if lang == "hu":
-        method_paragraphs = [
-            (
-                "A Forecast történeti analóg napokat keres a jelenlegi helyzethez, majd a hasonló korábbi állapotok után megfigyelt katonai aktivitásból "
-                "becsli a 48 és 72 órás irányt. A publikus jelzés csak akkor jelenik meg, ha a valószínűség és a konfidencia teljesíti a horizont kapufeltételeit."
-            ),
-            (
-                "A Strategic Pressure index az esemény operatív komponensét és stratégiai módosítóját egyesíti. A hét napra súlyozott pontszámot egy 0-100-as indexre "
-                "vetíti. Az 50 alatti érték csökkent, az 50 feletti érték fokozott stratégiai nyomást jelez."
-            ),
-            (
-                "A Strategic Interest Achievement az azonosított indikátorokat a felek súlyozott stratégiai érdekeihez kapcsolja. Az 50-es érték semleges helyzetet, az 50 feletti érték támogató, az 50 alatti gyengítő napi környezetet jelez."
-            ),
-            (
-                "A Strategic Success az Interest Achievement aktuális szintjét a 7 és 30 napos momentummal, a stabilitással és a konzisztenciával egyesíti. A korai idősorok érettségkorrekciót kapnak, ezért a provisional státuszt külön kell kezelni."
-            ),
-            (
-                "A rendszer kizárja az aktuális, még nem teljes UTC-napot. Azonos szereplőhöz, naphoz és indikátorhoz tartozó ismétlődő hírek közül csak a legerősebb "
-                "bizonyíték tartja meg a pontszámát; a többi átláthatósági okból látható marad, de nem torzítja az indexet."
-            ),
+        method_sections = [
+            ("1. Adatgyűjtés és forráskör",
+             "A rendszer nyílt forrású információkat használ. A nem kinetikus események híroldalakból, RSS-forrásokból és strukturált OSINT-adatfolyamokból származnak. "
+             "A kinetikus események külön adatállományban szerepelnek. A jelentés csak a legutóbbi teljes UTC-napot értékeli, ezért a még nem lezárt nap adatai nem kerülnek a napi indexbe."),
+            ("2. Szemantikai feldolgozás",
+             "A feldolgozás első lépése nem matematikai pontozás, hanem szemantikai értelmezés. A rendszer szereplőket, eseménytípusokat, irányokat, kulcskifejezéseket és stratégiai összefüggéseket azonosít. "
+             "A strategic_indicators.json határozza meg a felismerhető indikátorokat és azok szabályait. A nyelvi jelzésekből így strukturált, magyarázható stratégiai események jönnek létre."),
+            ("3. Stratégiai érdekek",
+             "A strategic_interests.json tartalmazza az Egyesült Államok és Irán súlyozott stratégiai érdekeit. Minden érdekhez név, leírás és súly tartozik. "
+             "A súly azt fejezi ki, hogy az adott cél milyen jelentőséggel szerepel a modell összesített értékelésében."),
+            ("4. Indikátor–érdek kapcsolat",
+             "Az interest_impact_map.json kapcsolja össze a szemantikai indikátorokat a stratégiai érdekekkel. A kapcsolat pozitív, negatív vagy semleges lehet, és hatáserősséget is tartalmazhat. "
+             "Ez teszi lehetővé, hogy ugyanaz az esemény a két szereplő számára eltérő stratégiai következményt hordozzon."),
+            ("5. Strategic Pressure",
+             "A Strategic Pressure minden eseménynél egyesíti a már meglévő operatív komponenst és a stratégiai módosítót. A hét napos súlyozott pontszámot 0–100 közötti indexre vetíti. "
+             "Az 50 alatti érték csökkent nyomást, az 50 feletti érték fokozott nyomást jelez. Az index nem támadási valószínűség, hanem a kényszerítés, elrettentés és érdekérvényesítés intenzitásának közelítése."),
+            ("6. Strategic Interest Achievement",
+             "Az Interest Achievement azt méri, hogy a napi fejlemények mennyiben támogatják vagy gyengítik az egyes szereplők saját, súlyozott stratégiai érdekeit. "
+             "Az 50-es érték semleges helyzet. Az 50 feletti érték támogató, az 50 alatti érték gyengítő környezetet jelez. A mutató nem katonai győzelmet és nem politikai legitimációt mér."),
+            ("7. Strategic Success",
+             "A Strategic Success az aktuális érdekérvényesülési szintet négy komponensben értékeli: achievement, momentum, stabilitás és konzisztencia. "
+             "Az achievement súlya 50%, a momentumé 20%, a stabilitásé és a konzisztenciáé 15–15%. A momentum a 7 és 30 napos átlag közötti eltérést, a stabilitás az ingadozást, a konzisztencia pedig a pozitív napok tartósságát vizsgálja."),
+            ("8. Forecast",
+             "A Forecast történeti analóg napokat keres a jelenlegi helyzethez. A hasonló korábbi állapotokat követő katonai aktivitásból becsli a 48 és 72 órás irányt. "
+             "A nyers eredmény csak akkor válik publikus jelzéssé, ha teljesíti az adott időtáv valószínűségi és konfidenciaküszöbeit. A modell nem konkrét támadást vagy célpontot jelez előre."),
+            ("9. Duplikáció és bizonyítékkezelés",
+             "Azonos szereplőhöz, naphoz és indikátorhoz tartozó ismétlődő hírek közül csak a legerősebb bizonyíték tartja meg a pontszámát. "
+             "A többi elem átláthatósági okból látható marad, de nem növeli mesterségesen az indexeket. A kétoldalú tárgyalási és tűzszüneti események mindkét szereplő értékelésében megjelenhetnek."),
+            ("10. Integrált értékelés",
+             "Az integrált stratégiai értékelés négy eltérő kérdést kapcsol össze. A Forecast azt vizsgálja, merre változhat a rövid távú katonai aktivitás. "
+             "A Strategic Pressure a kényszerítési környezetet méri. Az Interest Achievement a napi érdekilleszkedést, a Strategic Success pedig ennek tartósságát és minőségét vizsgálja. "
+             "A jelentés végső következtetése ezért nem egyetlen indexből, hanem a négy modell közötti összhangból vagy eltérésből születik."),
+            ("11. Korlátok",
+             "A modell az elérhető nyílt források teljességétől és minőségétől függ. A szemantikai szabályok és az indikátor–érdek kapcsolatok elemzői ítéleteket tartalmaznak. "
+             "Az alacsony forrásszám, a propaganda, a késleltetett jelentések és a hibás attribúció torzíthatják az eredményt. A jelentés döntéstámogató eszköz, nem önálló döntési mechanizmus."),
         ]
     else:
-        method_paragraphs = [
-            (
-                "The Forecast identifies historical analogue days resembling the current situation and estimates the 48- and 72-hour direction from the military activity "
-                "observed after those earlier states. A public signal is released only when probability and confidence satisfy the horizon-specific gate."
-            ),
-            (
-                "Strategic Pressure combines each event's operational component with a strategic modifier. The seven-day weighted score is mapped to a 0-100 index. "
-                "Values below 50 indicate reduced pressure; values above 50 indicate elevated pressure."
-            ),
-            (
-                "Strategic Interest Achievement maps detected indicators to each actor's weighted strategic interests. A value of 50 is neutral; values above 50 indicate a supportive daily environment, while values below 50 indicate weakening conditions."
-            ),
-            (
-                "Strategic Success combines the current Interest Achievement level with seven- and thirty-day momentum, stability, and consistency. Early time series are maturity-adjusted, so provisional status must be interpreted separately."
-            ),
-            (
-                "The current incomplete UTC day is excluded. Among repeated reports assigned to the same actor, date, and indicator, only the strongest evidence retains its score; "
-                "the remaining evidence stays visible for transparency but does not inflate the index."
-            ),
+        method_sections = [
+            ("1. Data Collection and Source Scope",
+             "The system uses open-source information. Non-kinetic events are derived from news reporting, RSS sources, and structured OSINT feeds, while kinetic events are maintained in a separate dataset. "
+             "Only the latest complete UTC day is assessed, so the still-open current day is excluded from the daily indices."),
+            ("2. Semantic Processing",
+             "The first analytical step is semantic interpretation rather than mathematical scoring. The system identifies actors, event types, directions, key expressions, and strategic relationships. "
+             "The strategic_indicators.json file defines recognised indicators and their detection rules, converting language signals into structured and explainable strategic events."),
+            ("3. Strategic Interests",
+             "The strategic_interests.json file contains the weighted strategic interests of the United States and Iran. Each interest has a name, description, and weight. "
+             "The weight represents the relative importance of that objective in the combined assessment."),
+            ("4. Indicator-to-Interest Mapping",
+             "The interest_impact_map.json file links semantic indicators to strategic interests. A relationship may be supportive, weakening, or neutral and may include an effect strength. "
+             "This allows the same event to carry different strategic consequences for the two actors."),
+            ("5. Strategic Pressure",
+             "Strategic Pressure combines each event's existing operational component with a strategic modifier. The seven-day weighted score is mapped to a 0–100 index. "
+             "Values below 50 indicate reduced pressure and values above 50 indicate elevated pressure. The index is not an attack probability; it approximates the intensity of coercion, deterrence, and leverage."),
+            ("6. Strategic Interest Achievement",
+             "Interest Achievement measures whether current developments support or weaken each actor's own weighted strategic interests. A score of 50 is neutral. "
+             "Values above 50 indicate a supportive environment and values below 50 indicate weakening conditions. The measure does not represent military victory or political legitimacy."),
+            ("7. Strategic Success",
+             "Strategic Success evaluates current performance through four components: achievement, momentum, stability, and consistency. Achievement carries a 50% weight, momentum 20%, and stability and consistency 15% each. "
+             "Momentum compares seven- and thirty-day averages, stability measures volatility, and consistency examines the persistence of positive performance."),
+            ("8. Forecast",
+             "The Forecast identifies historical analogue days resembling the present situation and estimates 48- and 72-hour direction from the military activity observed after those states. "
+             "A raw result becomes a public signal only when horizon-specific probability and confidence thresholds are met. The model does not predict a specific attack or target."),
+            ("9. Deduplication and Evidence Handling",
+             "Among repeated reports assigned to the same actor, UTC date, and indicator, only the strongest evidence item retains its score. Other items remain visible for transparency but do not inflate the indices. "
+             "Recognised bilateral negotiation and ceasefire events may contribute to both actors."),
+            ("10. Integrated Assessment",
+             "The integrated assessment connects four different questions. Forecast estimates near-term operational direction. Strategic Pressure measures the coercive environment. "
+             "Interest Achievement evaluates daily alignment with strategic interests, while Strategic Success examines sustainability and quality. The final judgement is therefore based on convergence or divergence across the four models."),
+            ("11. Limitations",
+             "The models depend on the completeness and quality of available open sources. Semantic rules and indicator-to-interest mappings contain analytical judgement. "
+             "Low source volume, propaganda, delayed reporting, and incorrect attribution may distort results. The report is a decision-support tool rather than an autonomous decision mechanism."),
         ]
-    add_paragraphs(story, method_paragraphs, styles)
+
+    for heading, paragraph in method_sections:
+        story.append(Paragraph(heading, styles["h2"]))
+        story.append(Paragraph(paragraph, styles["body"]))
     story.append(Table(
         [[Paragraph(escape(labels["disclaimer"]), styles["small"])]],
         colWidths=[doc.width],
@@ -1421,6 +1770,9 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--pressure", type=Path, default=DEFAULT_PRESSURE, help="Path to strategic pressure JSON.")
     parser.add_argument("--interest", type=Path, default=DEFAULT_INTEREST, help="Path to interest achievement JSON.")
     parser.add_argument("--success", type=Path, default=DEFAULT_SUCCESS, help="Path to strategic success JSON.")
+    parser.add_argument("--strategic-interests", type=Path, default=DEFAULT_STRATEGIC_INTERESTS, help="Path to strategic interests JSON.")
+    parser.add_argument("--strategic-indicators", type=Path, default=DEFAULT_STRATEGIC_INDICATORS, help="Path to strategic indicators JSON.")
+    parser.add_argument("--interest-impact-map", type=Path, default=DEFAULT_INTEREST_IMPACT_MAP, help="Path to interest impact map JSON.")
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR, help="Reports output directory.")
     parser.add_argument("--lang", choices=("hu", "en", "all"), default="all", help="Language to generate.")
     parser.add_argument(
@@ -1438,6 +1790,9 @@ def main(argv: Sequence[str] | None = None) -> int:
         pressure = load_json(args.pressure)
         interest = load_json(args.interest)
         success = load_json(args.success)
+        strategic_interests = load_json(args.strategic_interests)
+        strategic_indicators = load_json(args.strategic_indicators)
+        interest_impact_map = load_json(args.interest_impact_map)
         iso_date = report_date(forecast, pressure, interest, success)
         languages = LANGUAGES if args.lang == "all" else (args.lang,)
 
@@ -1449,7 +1804,11 @@ def main(argv: Sequence[str] | None = None) -> int:
             if paths.archive.exists() and not args.force:
                 print(f"Archive already exists, preserving it: {paths.archive}")
             else:
-                build_pdf(forecast, pressure, interest, success, lang, paths.archive, iso_date)
+                build_pdf(
+                    forecast, pressure, interest, success,
+                    strategic_interests, strategic_indicators, interest_impact_map,
+                    lang, paths.archive, iso_date,
+                )
                 print(f"Created archive: {paths.archive}")
 
             # latest is always refreshed from the dated archive so both paths stay identical.
