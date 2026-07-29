@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conflict Driver Analysis</title>
+  <title>USA–Iran Strategic Intelligence Report</title>
 
   <style>
     :root {
@@ -2023,23 +2023,33 @@
   <header class="hero">
     <div class="hero-inner">
       <span class="brand">TÖRÉSVONALAK.BLOG</span>
-      <h1>Conflict Driver Analysis</h1>
-      <p class="hero-subtitle">
-        Daily conflict direction and information-space drivers
+      <h1 id="dashboard_main_title">USA–Iran Strategic Intelligence Report</h1>
+      <p class="hero-subtitle" id="dashboard_main_subtitle">
+        Turning Open-Source Information into Strategic Intelligence through Semantic Analysis and Quantitative Assessment
       </p>
-      <p class="hero-description">
-        The page explains which escalation and de-escalation signals shape the current daily conflict index,
-        how their impact is calculated, and what can be concluded from the balance of signals.
+      <p class="hero-description" id="dashboard_main_description">
+        The dashboard tracks whether daily events move the conflict toward escalation, de-escalation or a mixed state. It explains the main information-space drivers and short-term strategic pressure; it does not predict when the conflict will end.
       </p>
 
       <nav class="dashboard-nav" aria-label="Dashboard navigation">
-        <a href="./index.html" class="nav-btn">Overview</a>
-        <a href="./analysis.html" class="nav-btn active" aria-current="page">Daily Driver Analysis</a>
+        <a href="./index.html" class="nav-btn" data-i18n-key="nav_overview">Overview</a>
+        <a href="./analysis.html" class="nav-btn active" aria-current="page" data-i18n-key="nav_analysis">Daily Driver Analysis</a>
+        <button type="button" class="nav-btn" id="lang_hu" aria-label="Magyar nyelv">HU</button>
+        <button type="button" class="nav-btn" id="lang_en" aria-label="English language">EN</button>
       </nav>
     </div>
   </header>
 
   <main class="container">
+
+    <section class="section" id="dashboard-purpose" style="margin-top:0">
+      <div class="panel">
+        <h3 id="purpose_title">What does this dashboard measure?</h3>
+        <p class="panel-note" id="purpose_lead" style="margin-bottom:0">
+          It measures the daily direction of the conflict environment from weighted open-source signals. Negative values indicate escalation pressure, positive values indicate de-escalation pressure, while values near zero indicate a mixed or balanced signal environment. The model does not estimate the date of conflict termination.
+        </p>
+      </div>
+    </section>
 
     <!-- =======================================================
          1. DAILY CONFLICT OVERVIEW
@@ -5445,6 +5455,284 @@
         console.error(error);
       });
   </script>
+
+
+  <script>
+  (() => {
+    "use strict";
+
+    const STORAGE_KEY = "conflict-dashboard-language";
+    const supportedLanguages = new Set(["hu", "en"]);
+
+    const ui = {
+      en: {
+        document_title: "USA–Iran Strategic Intelligence Report",
+        dashboard_main_title: "USA–Iran Strategic Intelligence Report",
+        dashboard_main_subtitle: "Turning Open-Source Information into Strategic Intelligence through Semantic Analysis and Quantitative Assessment",
+        dashboard_main_description: "The dashboard tracks whether daily events move the conflict toward escalation, de-escalation or a mixed state. It explains the main information-space drivers and short-term strategic pressure; it does not predict when the conflict will end.",
+        purpose_title: "What does this dashboard measure?",
+        purpose_lead: "It measures the daily direction of the conflict environment from weighted open-source signals. Negative values indicate escalation pressure, positive values indicate de-escalation pressure, while values near zero indicate a mixed or balanced signal environment. The model does not estimate the date of conflict termination.",
+        nav_overview: "Overview",
+        nav_analysis: "Daily Driver Analysis"
+      },
+      hu: {
+        document_title: "USA–Irán stratégiai hírszerzési jelentés",
+        dashboard_main_title: "USA–Irán stratégiai hírszerzési jelentés",
+        dashboard_main_subtitle: "Nyílt forrású információból stratégiai hírszerzés szemantikai elemzéssel és kvantitatív értékeléssel",
+        dashboard_main_description: "A dashboard azt követi, hogy a napi események az eszkaláció, a deeszkaláció vagy egy vegyes állapot irányába mozdítják-e a konfliktust. Bemutatja az információs tér fő mozgatórugóit és a rövid távú stratégiai nyomást, de nem jósolja meg a konfliktus befejezésének időpontját.",
+        purpose_title: "Mit mér ez a dashboard?",
+        purpose_lead: "A rendszer súlyozott nyílt forrású jelzések alapján méri a konfliktuskörnyezet napi irányát. A negatív érték eszkalációs nyomást, a pozitív érték deeszkalációs nyomást, a nulla közeli tartomány pedig vegyes vagy kiegyensúlyozott jelzéskörnyezetet mutat. A modell nem becsüli meg a konfliktus lezárásának időpontját.",
+        nav_overview: "Áttekintés",
+        nav_analysis: "Napi mozgatórugók"
+      }
+    };
+
+    const exact = new Map([
+      ["Daily Conflict Overview", "Napi konfliktusáttekintés"],
+      ["Core indicators summarising the direction and intensity of the current daily information environment.", "A napi információs környezet irányát és intenzitását összefoglaló alapmutatók."],
+      ["Conflict Index", "Konfliktusindex"],
+      ["Escalation Pressure", "Eszkalációs nyomás"],
+      ["Weighted negative conflict signals", "Súlyozott negatív konfliktusjelzések"],
+      ["Diplomatic Pressure", "Diplomáciai nyomás"],
+      ["Weighted positive diplomatic signals", "Súlyozott pozitív diplomáciai jelzések"],
+      ["Net Signal", "Nettó jelzés"],
+      ["Escalation + diplomacy balance", "Az eszkaláció és a diplomácia egyenlege"],
+      ["Elemzői értelmezés", "Analyst interpretation"],
+      ["Mit látunk?", "What do we see?"],
+      ["Hogyan számoljuk?", "How is it calculated?"],
+      ["Következtetés", "Conclusion"],
+      ["Mit jelent ez?", "What does it mean?"],
+      ["Escalation vs Diplomacy", "Eszkaláció és diplomácia"],
+      ["Escalation share", "Eszkaláció aránya"],
+      ["Diplomatic share", "Diplomácia aránya"],
+      ["Top Conflict Drivers", "A konfliktus fő mozgatórugói"],
+      ["Driver Categories", "Mozgatórugó-kategóriák"],
+      ["Key Daily Signals", "A napi indexet mozgató események"],
+      ["Selected headlines with the largest positive or negative weighted contribution to the daily conflict signal.", "A napi konfliktusjelzéshez a legnagyobb pozitív vagy negatív súlyozott hozzájárulást adó kiválasztott hírek."],
+      ["Daily Driver Table", "Napi mozgatórugó-táblázat"],
+      ["Detailed numerical breakdown of the main daily conflict drivers.", "A napi konfliktus fő mozgatórugóinak részletes számszerű bontása."],
+      ["Driver", "Mozgatórugó"],
+      ["Category", "Kategória"],
+      ["Count", "Darabszám"],
+      ["Weight", "Súly"],
+      ["Impact", "Hatás"],
+      ["Daily Diplomacy & Conflict Timeline", "Napi diplomáciai és konfliktusesemény-idővonal"],
+      ["Event", "Esemény"],
+      ["Direction", "Irány"],
+      ["Diplomatic event", "Diplomáciai esemény"],
+      ["Military event", "Katonai esemény"],
+      ["Actors", "Szereplők"],
+      ["Relation / Time", "Kapcsolat / idő"],
+      ["All directions", "Minden irány"],
+      ["All actors", "Minden szereplő"],
+      ["All event types", "Minden eseménytípus"],
+      ["Latest 7 days", "Legutóbbi 7 nap"],
+      ["Latest 30 days", "Legutóbbi 30 nap"],
+      ["Latest 90 days", "Legutóbbi 90 nap"],
+      ["Custom range", "Egyéni időszak"],
+      ["Load more", "További események"],
+      ["Previous 7 days", "Előző 7 nap"],
+      ["Next 7 days", "Következő 7 nap"],
+      ["Az elemzés célja és adatforrásai", "Purpose and data sources"],
+      ["Milyen kérdésekre keressük a választ?", "Which questions does the analysis address?"],
+      ["Honnan származnak az adatok?", "Where do the data come from?"],
+      ["Diplomácia és katonai aktivitás alakulása", "Diplomatic and military activity over time"],
+      ["Összhangban vannak a szavak és a katonai cselekmények?", "Do statements and military actions move together?"],
+      ["Mennyi idő múlva változik a katonai aktivitás?", "How long before military activity changes?"],
+      ["Mit mondanak most az adatok a konfliktusról?", "What do the data currently indicate about the conflict?"],
+      ["Mit mond most az előrejelzés?", "What does the forecast currently indicate?"],
+      ["Hogyan kell értelmezni?", "How should it be interpreted?"],
+      ["Strategic Pressure", "Stratégiai nyomás"],
+      ["Latest Strategic Drivers", "Legfrissebb stratégiai mozgatórugók"],
+      ["Strategic Outcome Dashboard", "Stratégiai eredménydashboard"],
+      ["Interest Achievement", "Érdekérvényesítés"],
+      ["Strategic Success", "Stratégiai siker"],
+      ["Interest Achievement trend", "Az érdekérvényesítés trendje"],
+      ["Strategic Success trend", "A stratégiai siker trendje"],
+      ["USA – Success components", "USA – a siker összetevői"],
+      ["Irán – Success components", "Irán – a siker összetevői"],
+      ["Daily Assessment Reports", "Napi elemző jelentések"],
+      ["Download the latest bilingual analytical report or browse the archived daily assessments.", "Töltsd le a legfrissebb kétnyelvű elemző jelentést, vagy böngészd a korábbi napi értékeléseket."],
+      ["Napi elemző jelentések / Daily Assessments", "Daily analytical reports"],
+      ["Magyar napi jelentés", "Hungarian daily report"],
+      ["English Daily Assessment", "English daily assessment"],
+      ["Legfrissebb elérhető kiadás", "Latest available edition"],
+      ["PDF letöltése", "Download PDF"],
+      ["Report Archive", "Jelentésarchívum"],
+      ["Date", "Dátum"],
+      ["Overall Pressure", "Összesített nyomás"],
+      ["Trend", "Trend"],
+      ["Downloads", "Letöltések"],
+      ["Loading...", "Betöltés…"],
+      ["Loading assessment...", "Értékelés betöltése…"],
+      ["Loading interpretation...", "Értelmezés betöltése…"],
+      ["Loading conclusion...", "Következtetés betöltése…"],
+      ["Loading daily signals...", "Napi jelzések betöltése…"],
+      ["Loading driver table...", "Mozgatórugó-táblázat betöltése…"],
+      ["No driver data available.", "Nem áll rendelkezésre mozgatórugó-adat."],
+      ["No events match the current filters.", "Nincs a jelenlegi szűrőknek megfelelő esemény."],
+      ["Archive loading…", "Archívum betöltése…"],
+      ["Archive unavailable.", "Az archívum nem érhető el."],
+      ["Még nincs archivált jelentés.", "No archived report is available yet."],
+      ["De-escalation", "Deeszkaláció"],
+      ["Escalation", "Eszkaláció"],
+      ["Mixed", "Vegyes"],
+      ["High confidence", "Magas bizonyosság"],
+      ["Medium confidence", "Közepes bizonyosság"],
+      ["Low confidence", "Alacsony bizonyosság"],
+      ["No signal", "Nincs jelzés"],
+      ["Stable", "Stabil"],
+      ["Increasing", "Növekvő"],
+      ["Decreasing", "Csökkenő"]
+    ]);
+
+    const reverseExact = new Map(Array.from(exact, ([en, hu]) => [hu, en]));
+    const originals = new WeakMap();
+    let activeLanguage = "en";
+    let translating = false;
+
+    const dynamicRulesHu = [
+      [/^The current conflict index is ([^,]+), classified as ([^.]+)\. ?/, "A jelenlegi konfliktusindex $1, besorolása: $2. "],
+      [/The daily information environment is therefore tilted toward escalation\./g, "A napi információs környezet ezért az eszkaláció irányába mutat."],
+      [/The daily information environment is therefore tilted toward de-escalation\./g, "A napi információs környezet ezért a deeszkaláció irányába mutat."],
+      [/The daily information environment is currently balanced\./g, "A napi információs környezet jelenleg kiegyensúlyozott."],
+      [/Escalatory signals are strongly dominant\./g, "Az eszkalációs jelzések erősen dominálnak."],
+      [/The balance still points clearly toward escalation/g, "Az egyensúly továbbra is egyértelműen az eszkaláció felé mutat"],
+      [/Tension remains visible/g, "A feszültség továbbra is látható"],
+      [/Escalatory and diplomatic signals are relatively balanced/g, "Az eszkalációs és diplomáciai jelzések viszonylag kiegyensúlyozottak"],
+      [/Diplomatic and de-escalatory signals are currently strong enough to dominate the daily information environment\./g, "A diplomáciai és deeszkalációs jelzések jelenleg elég erősek ahhoz, hogy meghatározzák a napi információs környezetet."],
+      [/Escalation accounts for ([0-9.]+)% of weighted directional signals, while diplomacy accounts for ([0-9.]+)%\./g, "A súlyozott irányjelzések $1%-át az eszkaláció, $2%-át a diplomácia adja."],
+      [/is currently the strongest individual driver, with a weighted impact of/g, "jelenleg a legerősebb egyedi mozgatórugó, súlyozott hatása"],
+      [/The strongest individual signals are reinforcing escalation pressure in the daily score\./g, "A legerősebb egyedi jelzések növelik az eszkalációs nyomást a napi pontszámban."],
+      [/The strongest individual signals are currently supporting de-escalation pressure in the daily score\./g, "A legerősebb egyedi jelzések jelenleg a deeszkalációs irányt erősítik a napi pontszámban."],
+      [/No validated kinetic events are visible for the current filter\./g, "A jelenlegi szűrésben nem látható validált kinetikus esemény."],
+      [/Elapsed: /g, "Eltelt idő: "]
+    ];
+
+    function translateString(value, language) {
+      if (!value || !value.trim()) return value;
+      const leading = value.match(/^\s*/)?.[0] || "";
+      const trailing = value.match(/\s*$/)?.[0] || "";
+      const core = value.trim();
+      let translated = core;
+
+      if (language === "hu") {
+        translated = exact.get(core) || core;
+        if (translated === core) {
+          dynamicRulesHu.forEach(([pattern, replacement]) => {
+            translated = translated.replace(pattern, replacement);
+          });
+        }
+      } else {
+        translated = reverseExact.get(core) || core;
+      }
+      return leading + translated + trailing;
+    }
+
+    function translateTextNode(node, language) {
+      if (!node.nodeValue || !node.nodeValue.trim()) return;
+      if (!originals.has(node)) originals.set(node, node.nodeValue);
+      const original = originals.get(node);
+      node.nodeValue = language === "en"
+        ? translateString(original, "en")
+        : translateString(translateString(original, "en"), "hu");
+    }
+
+    function translateElementAttributes(element, language) {
+      ["placeholder", "title", "aria-label"].forEach(attribute => {
+        if (!element.hasAttribute?.(attribute)) return;
+        const key = `${attribute}:${element.getAttribute(attribute)}`;
+        if (!originals.has(element)) originals.set(element, {});
+        const store = originals.get(element);
+        if (!(key in store)) store[key] = element.getAttribute(attribute);
+        const original = store[key];
+        element.setAttribute(
+          attribute,
+          language === "en"
+            ? translateString(original, "en")
+            : translateString(translateString(original, "en"), "hu")
+        );
+      });
+    }
+
+    function walk(root, language) {
+      if (!root) return;
+      if (root.nodeType === Node.TEXT_NODE) {
+        translateTextNode(root, language);
+        return;
+      }
+      if (root.nodeType !== Node.ELEMENT_NODE && root.nodeType !== Node.DOCUMENT_NODE) return;
+      if (root.nodeType === Node.ELEMENT_NODE) {
+        if (["SCRIPT", "STYLE", "NOSCRIPT"].includes(root.tagName)) return;
+        translateElementAttributes(root, language);
+      }
+      Array.from(root.childNodes).forEach(child => walk(child, language));
+    }
+
+    function setNamedContent(language) {
+      const values = ui[language];
+      document.title = values.document_title;
+      Object.entries(values).forEach(([id, value]) => {
+        if (id === "document_title") return;
+        const element = document.getElementById(id);
+        if (element) element.textContent = value;
+      });
+      document.querySelectorAll("[data-i18n-key]").forEach(element => {
+        const key = element.dataset.i18nKey;
+        if (values[key]) element.textContent = values[key];
+      });
+    }
+
+    function updateButtons(language) {
+      const hu = document.getElementById("lang_hu");
+      const en = document.getElementById("lang_en");
+      if (!hu || !en) return;
+      hu.classList.toggle("active", language === "hu");
+      en.classList.toggle("active", language === "en");
+      hu.setAttribute("aria-pressed", language === "hu" ? "true" : "false");
+      en.setAttribute("aria-pressed", language === "en" ? "true" : "false");
+    }
+
+    function applyLanguage(language, persist = true) {
+      if (!supportedLanguages.has(language)) language = "en";
+      activeLanguage = language;
+      translating = true;
+      document.documentElement.lang = language;
+      walk(document.body, language);
+      setNamedContent(language);
+      updateButtons(language);
+      translating = false;
+      if (persist) localStorage.setItem(STORAGE_KEY, language);
+    }
+
+    const observer = new MutationObserver(mutations => {
+      if (translating || activeLanguage !== "hu") return;
+      translating = true;
+      mutations.forEach(mutation => {
+        mutation.addedNodes.forEach(node => walk(node, activeLanguage));
+        if (mutation.type === "characterData") walk(mutation.target, activeLanguage);
+      });
+      setNamedContent(activeLanguage);
+      translating = false;
+    });
+
+    function initialise() {
+      document.getElementById("lang_hu")?.addEventListener("click", () => applyLanguage("hu"));
+      document.getElementById("lang_en")?.addEventListener("click", () => applyLanguage("en"));
+      observer.observe(document.body, { childList: true, subtree: true, characterData: true });
+      const saved = localStorage.getItem(STORAGE_KEY);
+      const browserLanguage = (navigator.language || "en").toLowerCase().startsWith("hu") ? "hu" : "en";
+      applyLanguage(supportedLanguages.has(saved) ? saved : browserLanguage, false);
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initialise, { once: true });
+    } else {
+      initialise();
+    }
+  })();
+  </script>
+
 </body>
 </html>
 
