@@ -5633,9 +5633,10 @@
       if (!node.nodeValue || !node.nodeValue.trim()) return;
       if (!originals.has(node)) originals.set(node, node.nodeValue);
       const original = originals.get(node);
-      node.nodeValue = language === "en"
+      const nextValue = language === "en"
         ? translateString(original, "en")
         : translateString(translateString(original, "en"), "hu");
+      if (node.nodeValue !== nextValue) node.nodeValue = nextValue;
     }
 
     function translateElementAttributes(element, language) {
@@ -5675,7 +5676,7 @@
       Object.entries(values).forEach(([id, value]) => {
         if (id === "document_title") return;
         const element = document.getElementById(id);
-        if (element) element.textContent = value;
+        if (element && element.textContent !== value) element.textContent = value;
       });
       document.querySelectorAll("[data-i18n-key]").forEach(element => {
         const key = element.dataset.i18nKey;
@@ -5705,24 +5706,36 @@
       if (persist) localStorage.setItem(STORAGE_KEY, language);
     }
 
+    const observerOptions = { childList: true, subtree: true, characterData: true };
+
     const observer = new MutationObserver(mutations => {
       if (translating || activeLanguage !== "hu") return;
+
+      // A fordítás maga is DOM-módosításokat végez. Az observer ideiglenes
+      // leállítása megakadályozza, hogy ezek újabb callbackeket indítsanak,
+      // és végtelen frissítési ciklust hozzanak létre.
+      observer.disconnect();
       translating = true;
-      mutations.forEach(mutation => {
-        mutation.addedNodes.forEach(node => walk(node, activeLanguage));
-        if (mutation.type === "characterData") walk(mutation.target, activeLanguage);
-      });
-      setNamedContent(activeLanguage);
-      translating = false;
+
+      try {
+        mutations.forEach(mutation => {
+          mutation.addedNodes.forEach(node => walk(node, activeLanguage));
+          if (mutation.type === "characterData") walk(mutation.target, activeLanguage);
+        });
+        setNamedContent(activeLanguage);
+      } finally {
+        translating = false;
+        observer.observe(document.body, observerOptions);
+      }
     });
 
     function initialise() {
       document.getElementById("lang_hu")?.addEventListener("click", () => applyLanguage("hu"));
       document.getElementById("lang_en")?.addEventListener("click", () => applyLanguage("en"));
-      observer.observe(document.body, { childList: true, subtree: true, characterData: true });
       const saved = localStorage.getItem(STORAGE_KEY);
       const browserLanguage = (navigator.language || "en").toLowerCase().startsWith("hu") ? "hu" : "en";
       applyLanguage(supportedLanguages.has(saved) ? saved : browserLanguage, false);
+      observer.observe(document.body, observerOptions);
     }
 
     if (document.readyState === "loading") {
@@ -5735,4 +5748,5 @@
 
 </body>
 </html>
+
 
