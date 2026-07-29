@@ -4,6 +4,8 @@
 Default inputs:
   docs/conflict_forecast_live.json
   docs/strategic_pressure.json
+  docs/interest_achievement.json
+  docs/strategic_success.json
 
 Default outputs:
   docs/reports/latest-hu.pdf
@@ -58,11 +60,13 @@ except ImportError as exc:  # pragma: no cover
 
 PROJECT_NAME = "Törésvonalak Intelligence Hub"
 REPORT_SERIES = "USA–Iran Strategic Intelligence Report"
-REPORT_VERSION = "2.0"
+REPORT_VERSION = "2.1"
 TAGLINE = "Turning Open-Source Information into Strategic Intelligence through Semantic Analysis and Quantitative Assessment"
 BLOG_URL = "toresvonalak.blog"
 DEFAULT_FORECAST = Path("docs/conflict_forecast_live.json")
 DEFAULT_PRESSURE = Path("docs/strategic_pressure.json")
+DEFAULT_INTEREST = Path("docs/interest_achievement.json")
+DEFAULT_SUCCESS = Path("docs/strategic_success.json")
 DEFAULT_OUTPUT_DIR = Path("docs/reports")
 
 LANGUAGES = ("hu", "en")
@@ -92,6 +96,9 @@ TEXT = {
         "executive": "Vezetői összefoglaló",
         "forecast": "Forecast értékelés",
         "pressure": "Stratégiai nyomás értékelése",
+        "interest": "Stratégiai érdekérvényesülés",
+        "success": "Stratégiai eredményesség",
+        "integrated": "Integrált stratégiai értékelés",
         "combined": "Összevont elemző értékelés",
         "drivers": "Legfontosabb stratégiai mozgatórugók",
         "method": "Módszertan és korlátok",
@@ -143,6 +150,9 @@ TEXT = {
         "executive": "Executive Summary",
         "forecast": "Forecast Assessment",
         "pressure": "Strategic Pressure Assessment",
+        "interest": "Strategic Interest Achievement",
+        "success": "Strategic Success",
+        "integrated": "Integrated Strategic Assessment",
         "combined": "Combined Analytical Assessment",
         "drivers": "Key Strategic Drivers",
         "method": "Methodology and Limitations",
@@ -295,15 +305,24 @@ def escape(value: Any) -> str:
     )
 
 
-def report_date(forecast: Mapping[str, Any], pressure: Mapping[str, Any]) -> str:
-    f_date = str(forecast.get("forecast_reference_date") or "")
-    p_date = str(nested(pressure, "current", "date", default="") or pressure.get("latest_complete_utc_day") or "")
-    if f_date and p_date and f_date != p_date:
-        raise ValueError(
-            f"Input date mismatch: forecast={f_date}, strategic_pressure={p_date}. "
-            "Both reports must refer to the same latest complete UTC day."
-        )
-    value = f_date or p_date
+def report_date(
+    forecast: Mapping[str, Any],
+    pressure: Mapping[str, Any],
+    interest: Mapping[str, Any],
+    success: Mapping[str, Any],
+) -> str:
+    dates = {
+        "forecast": str(forecast.get("forecast_reference_date") or ""),
+        "strategic_pressure": str(nested(pressure, "current", "date", default="") or pressure.get("latest_complete_utc_day") or ""),
+        "interest_achievement": str(nested(interest, "current", "date", default="") or nested(interest, "metadata", "reference_date", default="") or ""),
+        "strategic_success": str(nested(success, "current", "date", default="") or nested(success, "metadata", "current_date", default="") or ""),
+    }
+    populated = {name: value for name, value in dates.items() if value}
+    unique = set(populated.values())
+    if len(unique) > 1:
+        details = ", ".join(f"{name}={value}" for name, value in populated.items())
+        raise ValueError(f"Input date mismatch: {details}. All model outputs must refer to the same day.")
+    value = next(iter(unique), "")
     try:
         datetime.strptime(value, "%Y-%m-%d")
     except ValueError as exc:
@@ -684,6 +703,158 @@ def analogue_summary(forecast: Mapping[str, Any], horizon: str, limit: int = 5) 
     return [item for item in items[:limit] if isinstance(item, Mapping)]
 
 
+
+def achievement_summary(interest: Mapping[str, Any]) -> Mapping[str, Any]:
+    value = nested(interest, "current", "summary", default={})
+    return value if isinstance(value, Mapping) else {}
+
+
+def success_summary(success: Mapping[str, Any]) -> Mapping[str, Any]:
+    value = nested(success, "current", "summary", default={})
+    return value if isinstance(value, Mapping) else {}
+
+
+def success_actor(success: Mapping[str, Any], actor: str) -> Mapping[str, Any]:
+    value = nested(success, "current", "actors", actor, default={})
+    return value if isinstance(value, Mapping) else {}
+
+
+def interest_actor(interest: Mapping[str, Any], actor: str) -> Mapping[str, Any]:
+    value = nested(interest, "current", "actors", actor, default={})
+    return value if isinstance(value, Mapping) else {}
+
+
+def advantage_label(value: Any, lang: str) -> str:
+    code = str(value or "balanced").lower()
+    labels = {
+        "hu": {"usa": "amerikai", "iran": "iráni", "balanced": "kiegyensúlyozott"},
+        "en": {"usa": "US", "iran": "Iranian", "balanced": "balanced"},
+    }
+    return labels[lang].get(code, code.replace("_", " "))
+
+
+def build_interest_table(interest: Mapping[str, Any], lang: str, styles: Mapping[str, ParagraphStyle]) -> Table:
+    labels = TEXT[lang]
+    summary = achievement_summary(interest)
+    if lang == "hu":
+        header = ["Szereplő", "Érdekérvényesülési index", "Semlegeshez képest", "Trend", "Bizonyított érdekek"]
+    else:
+        header = ["Actor", "Achievement index", "Change from neutral", "Trend", "Interests with evidence"]
+    data: list[list[Any]] = [[Paragraph(escape(x), styles["table_bold"]) for x in header]]
+    for actor, display in (("usa", labels["usa"]), ("iran", labels["iran"])):
+        obj = interest_actor(interest, actor)
+        data.append([
+            Paragraph(escape(display), styles["table"]),
+            Paragraph(fmt_num(obj.get("achievement_index"), 2), styles["table"]),
+            Paragraph(f"{number(obj.get('change_from_neutral')):+.2f}", styles["table"]),
+            Paragraph(escape(trend_label(obj.get("trend"), lang)), styles["table"]),
+            Paragraph(f"{integer(obj.get('interests_with_evidence'))}/{integer(obj.get('interest_count'))}", styles["table"]),
+        ])
+    gap = number(summary.get("achievement_gap"))
+    data.append([
+        Paragraph(escape(labels["overall"]), styles["table"]),
+        Paragraph(f"{gap:+.2f}", styles["table"]),
+        Paragraph("-", styles["table"]),
+        Paragraph(escape(advantage_label(summary.get("daily_strategic_advantage"), lang)), styles["table"]),
+        Paragraph("-", styles["table"]),
+    ])
+    table = Table(data, colWidths=[38*mm, 39*mm, 34*mm, 35*mm, 28*mm], repeatRows=1)
+    table.setStyle(TableStyle([
+        ("BACKGROUND", (0,0), (-1,0), colors.HexColor("#1B4D7A")),
+        ("GRID", (0,0), (-1,-1), 0.35, colors.HexColor("#CAD6E2")),
+        ("ROWBACKGROUNDS", (0,1), (-1,-1), [colors.white, colors.HexColor("#F5F8FB")]),
+        ("VALIGN", (0,0), (-1,-1), "MIDDLE"),
+        ("LEFTPADDING", (0,0), (-1,-1), 4), ("RIGHTPADDING", (0,0), (-1,-1), 4),
+        ("TOPPADDING", (0,0), (-1,-1), 5), ("BOTTOMPADDING", (0,0), (-1,-1), 5),
+    ]))
+    return table
+
+
+def build_success_table(success: Mapping[str, Any], lang: str, styles: Mapping[str, ParagraphStyle]) -> Table:
+    labels = TEXT[lang]
+    if lang == "hu":
+        header = ["Szereplő", "Success index", "Érdek", "Momentum", "Stabilitás", "Konzisztencia"]
+    else:
+        header = ["Actor", "Success index", "Achievement", "Momentum", "Stability", "Consistency"]
+    data: list[list[Any]] = [[Paragraph(escape(x), styles["table_bold"]) for x in header]]
+    for actor, display in (("usa", labels["usa"]), ("iran", labels["iran"])):
+        obj = success_actor(success, actor)
+        components = obj.get("components") if isinstance(obj.get("components"), Mapping) else {}
+        data.append([
+            Paragraph(escape(display), styles["table"]),
+            Paragraph(fmt_num(obj.get("success_index"), 2), styles["table"]),
+            Paragraph(fmt_num(nested(components, "achievement", "value", default=0), 2), styles["table"]),
+            Paragraph(fmt_num(nested(components, "momentum", "score", default=0), 2), styles["table"]),
+            Paragraph(fmt_num(nested(components, "stability", "score", default=0), 2), styles["table"]),
+            Paragraph(fmt_num(nested(components, "consistency", "score", default=0), 2), styles["table"]),
+        ])
+    table = Table(data, colWidths=[38*mm, 29*mm, 27*mm, 27*mm, 27*mm, 27*mm], repeatRows=1)
+    table.setStyle(TableStyle([
+        ("BACKGROUND", (0,0), (-1,0), colors.HexColor("#1B4D7A")),
+        ("GRID", (0,0), (-1,-1), 0.35, colors.HexColor("#CAD6E2")),
+        ("ROWBACKGROUNDS", (0,1), (-1,-1), [colors.white, colors.HexColor("#F5F8FB")]),
+        ("VALIGN", (0,0), (-1,-1), "MIDDLE"),
+        ("LEFTPADDING", (0,0), (-1,-1), 4), ("RIGHTPADDING", (0,0), (-1,-1), 4),
+        ("TOPPADDING", (0,0), (-1,-1), 5), ("BOTTOMPADDING", (0,0), (-1,-1), 5),
+    ]))
+    return table
+
+
+def analyse_interest(interest: Mapping[str, Any], lang: str) -> list[str]:
+    summary = achievement_summary(interest)
+    usa = interest_actor(interest, "usa")
+    iran = interest_actor(interest, "iran")
+    ui, ii = number(usa.get("achievement_index"), 50), number(iran.get("achievement_index"), 50)
+    gap = number(summary.get("achievement_gap"), ui-ii)
+    advantage = advantage_label(summary.get("daily_strategic_advantage"), lang)
+    if lang == "hu":
+        return [
+            f"Az amerikai stratégiai érdekérvényesülési index <b>{ui:.2f}</b>, az iráni <b>{ii:.2f}</b>. A különbség {gap:+.2f} pont, ezért a napi helyzet <b>{escape(advantage)}</b>.",
+            "Az index azt méri, hogy az adott napon azonosított fejlemények mennyiben támogatják vagy gyengítik az egyes szereplők saját, súlyozott stratégiai érdekeit. Nem katonai győzelmi mutató.",
+        ]
+    return [
+        f"The US Strategic Interest Achievement Index is <b>{ui:.2f}</b>, while Iran's is <b>{ii:.2f}</b>. The gap is {gap:+.2f} points, producing a <b>{escape(advantage)}</b> daily balance.",
+        "The index measures whether detected developments support or weaken each actor's own weighted strategic interests. It is not a military-victory indicator.",
+    ]
+
+
+def analyse_success(success: Mapping[str, Any], lang: str) -> list[str]:
+    summary = success_summary(success)
+    usa, iran = success_actor(success, "usa"), success_actor(success, "iran")
+    ui, ii = number(usa.get("success_index"), 50), number(iran.get("success_index"), 50)
+    gap = number(summary.get("success_gap"), ui-ii)
+    advantage = advantage_label(summary.get("strategic_advantage"), lang)
+    maturity = nested(success, "current", "data_maturity", "status", default="unknown")
+    if lang == "hu":
+        return [
+            f"Az amerikai Strategic Success index <b>{ui:.2f}</b>, az iráni <b>{ii:.2f}</b>. A különbség {gap:+.2f} pont; a modell szerinti stratégiai előny: <b>{escape(advantage)}</b>.",
+            f"A jelenlegi adatérettség státusza <b>{escape(maturity)}</b>. A mutató az érdekérvényesülést, a momentumot, a stabilitást és a konzisztenciát egyesíti, ezért a napi teljesítmény fenntarthatóságát is vizsgálja.",
+        ]
+    return [
+        f"The US Strategic Success Index is <b>{ui:.2f}</b>, compared with <b>{ii:.2f}</b> for Iran. The gap is {gap:+.2f} points; the model's strategic advantage is <b>{escape(advantage)}</b>.",
+        f"Current data maturity is <b>{escape(maturity)}</b>. The measure combines achievement, momentum, stability, and consistency, thereby testing whether daily performance appears sustainable.",
+    ]
+
+
+def integrated_assessment(forecast: Mapping[str, Any], pressure: Mapping[str, Any], interest: Mapping[str, Any], success: Mapping[str, Any], lang: str) -> list[str]:
+    h48 = horizon_data(forecast, "48h")
+    raw = h48.get("raw_prediction") if isinstance(h48.get("raw_prediction"), Mapping) else {}
+    forecast_dir = str(raw.get("direction") or "no_signal")
+    pressure_overall = number(nested(pressure, "current", "overall", "pressure_index_7d", default=50), 50)
+    ia = achievement_summary(interest)
+    ss = success_summary(success)
+    ia_adv = advantage_label(ia.get("daily_strategic_advantage"), lang)
+    ss_adv = advantage_label(ss.get("strategic_advantage"), lang)
+    if lang == "hu":
+        return [
+            f"A 48 órás forecast nyers iránya <b>{escape(DIRECTION_LABELS['hu'].get(forecast_dir, forecast_dir))}</b>, miközben az összesített stratégiai nyomásindex <b>{pressure_overall:.1f}</b>. A napi érdekérvényesülési egyensúly {escape(ia_adv)}, a fenntartható stratégiai eredményesség pedig {escape(ss_adv)} képet mutat.",
+            "A négy modell eltérő elemzési szintet mér: a Forecast a várható műveleti aktivitást, a Strategic Pressure a kényszerítő és visszafogó ösztönzőket, az Interest Achievement a napi stratégiai érdekilleszkedést, a Strategic Success pedig ennek tartósságát. Az integrált értékelés ezért nem egyetlen index egyszerű ismétlése.",
+        ]
+    return [
+        f"The raw 48-hour forecast direction is <b>{escape(DIRECTION_LABELS['en'].get(forecast_dir, forecast_dir))}</b>, while the overall Strategic Pressure Index is <b>{pressure_overall:.1f}</b>. Daily interest achievement is {escape(ia_adv)}, and sustainable strategic success is {escape(ss_adv)}.",
+        "The four models operate at different analytical levels: Forecast estimates operational activity, Strategic Pressure measures coercive and restraining incentives, Interest Achievement measures daily alignment with strategic interests, and Strategic Success evaluates sustainability. The integrated assessment is therefore not a repetition of a single index.",
+    ]
+
 def register_fonts() -> tuple[str, str]:
     candidates = [
         (
@@ -943,6 +1114,8 @@ def add_paragraphs(story: list[Any], paragraphs: Iterable[str], styles: Mapping[
 def build_pdf(
     forecast: Mapping[str, Any],
     pressure: Mapping[str, Any],
+    interest: Mapping[str, Any],
+    success: Mapping[str, Any],
     lang: str,
     output: Path,
     iso_date: str,
@@ -975,7 +1148,9 @@ def build_pdf(
 
     forecast_model = str(forecast.get("model_version") or forecast.get("forecast_model") or "-")
     pressure_model = str(pressure.get("model") or "-")
-    generated = forecast.get("generated_at") or pressure.get("generated_at")
+    interest_model = str(nested(interest, "metadata", "model", default="-") or "-")
+    success_model = str(nested(success, "metadata", "model_version", default="-") or "-")
+    generated = forecast.get("generated_at") or pressure.get("generated_at") or nested(interest, "metadata", "generated_at") or nested(success, "metadata", "generated_at")
 
     categories = (
         "Geopolitika • Biztonságpolitika • Ellátásbiztonság • OSINT-elemzés"
@@ -996,7 +1171,7 @@ def build_pdf(
         Paragraph(
             f"<b>{labels['date']}:</b> {escape(localized_date(iso_date, lang))}<br/>"
             f"<b>{labels['generated']}:</b> {escape(localized_datetime(generated, lang))}<br/>"
-            f"<b>{labels['model']}:</b> {escape(forecast_model)} / {escape(pressure_model)}<br/>"
+            f"<b>{labels['model']}:</b> {escape(forecast_model)} / {escape(pressure_model)} / {escape(interest_model)} / {escape(success_model)}<br/>"
             f"<b>Report ID:</b> USIR-{iso_date.replace('-', '')}<br/>"
             f"<b>Version:</b> {REPORT_VERSION}",
             styles["meta"],
@@ -1024,7 +1199,9 @@ def build_pdf(
         Spacer(1, 5 * mm),
         Paragraph(labels["executive"], styles["h1"]),
     ]
-    add_paragraphs(story, executive_summary(forecast, pressure, lang), styles)
+    executive = executive_summary(forecast, pressure, lang)
+    executive.extend(integrated_assessment(forecast, pressure, interest, success, lang)[:1])
+    add_paragraphs(story, executive, styles)
 
     story.extend([
         Spacer(1, 1 * mm),
@@ -1048,22 +1225,35 @@ def build_pdf(
     ])
     add_paragraphs(story, analyse_pressure(pressure, lang), styles)
 
-    story.append(Paragraph(labels["combined"], styles["h1"]))
-    combined = combined_assessment(forecast, pressure, lang)
-    if combined:
-        story.append(Table(
-            [[Paragraph(combined[0], styles["callout"])]],
-            colWidths=[doc.width],
-            style=TableStyle([
-                ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#EAF1F7")),
-                ("BOX", (0, 0), (-1, -1), 0.7, colors.HexColor("#7FA0BF")),
-                ("LEFTPADDING", (0, 0), (-1, -1), 7),
-                ("RIGHTPADDING", (0, 0), (-1, -1), 7),
-                ("TOPPADDING", (0, 0), (-1, -1), 7),
-                ("BOTTOMPADDING", (0, 0), (-1, -1), 7),
-            ]),
-        ))
-        add_paragraphs(story, combined[1:], styles)
+    story.extend([
+        Paragraph(labels["interest"], styles["h1"]),
+        build_interest_table(interest, lang, styles),
+        Spacer(1, 2 * mm),
+    ])
+    add_paragraphs(story, analyse_interest(interest, lang), styles)
+
+    story.extend([
+        Paragraph(labels["success"], styles["h1"]),
+        build_success_table(success, lang, styles),
+        Spacer(1, 2 * mm),
+    ])
+    add_paragraphs(story, analyse_success(success, lang), styles)
+
+    story.append(Paragraph(labels["integrated"], styles["h1"]))
+    integrated = integrated_assessment(forecast, pressure, interest, success, lang)
+    story.append(Table(
+        [[Paragraph(integrated[0], styles["callout"])]],
+        colWidths=[doc.width],
+        style=TableStyle([
+            ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#EAF1F7")),
+            ("BOX", (0, 0), (-1, -1), 0.7, colors.HexColor("#7FA0BF")),
+            ("LEFTPADDING", (0, 0), (-1, -1), 7),
+            ("RIGHTPADDING", (0, 0), (-1, -1), 7),
+            ("TOPPADDING", (0, 0), (-1, -1), 7),
+            ("BOTTOMPADDING", (0, 0), (-1, -1), 7),
+        ]),
+    ))
+    add_paragraphs(story, integrated[1:], styles)
 
     story.extend([
         Paragraph(labels["drivers"], styles["h1"]),
@@ -1082,6 +1272,12 @@ def build_pdf(
                 "vetíti. Az 50 alatti érték csökkent, az 50 feletti érték fokozott stratégiai nyomást jelez."
             ),
             (
+                "A Strategic Interest Achievement az azonosított indikátorokat a felek súlyozott stratégiai érdekeihez kapcsolja. Az 50-es érték semleges helyzetet, az 50 feletti érték támogató, az 50 alatti gyengítő napi környezetet jelez."
+            ),
+            (
+                "A Strategic Success az Interest Achievement aktuális szintjét a 7 és 30 napos momentummal, a stabilitással és a konzisztenciával egyesíti. A korai idősorok érettségkorrekciót kapnak, ezért a provisional státuszt külön kell kezelni."
+            ),
+            (
                 "A rendszer kizárja az aktuális, még nem teljes UTC-napot. Azonos szereplőhöz, naphoz és indikátorhoz tartozó ismétlődő hírek közül csak a legerősebb "
                 "bizonyíték tartja meg a pontszámát; a többi átláthatósági okból látható marad, de nem torzítja az indexet."
             ),
@@ -1095,6 +1291,12 @@ def build_pdf(
             (
                 "Strategic Pressure combines each event's operational component with a strategic modifier. The seven-day weighted score is mapped to a 0-100 index. "
                 "Values below 50 indicate reduced pressure; values above 50 indicate elevated pressure."
+            ),
+            (
+                "Strategic Interest Achievement maps detected indicators to each actor's weighted strategic interests. A value of 50 is neutral; values above 50 indicate a supportive daily environment, while values below 50 indicate weakening conditions."
+            ),
+            (
+                "Strategic Success combines the current Interest Achievement level with seven- and thirty-day momentum, stability, and consistency. Early time series are maturity-adjusted, so provisional status must be interpreted separately."
             ),
             (
                 "The current incomplete UTC day is excluded. Among repeated reports assigned to the same actor, date, and indicator, only the strongest evidence retains its score; "
@@ -1132,6 +1334,8 @@ def update_index(
     created_languages: Sequence[str],
     forecast: Mapping[str, Any],
     pressure: Mapping[str, Any],
+    interest: Mapping[str, Any],
+    success: Mapping[str, Any],
 ) -> Path:
     index_path = output_dir / "reports_index.json"
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -1179,6 +1383,19 @@ def update_index(
             "overall": number(overall.get("pressure_index_7d"), 50.0),
             "trend": str(overall.get("trend") or "stable"),
         },
+        "interest_achievement": {
+            "usa": number(nested(interest, "current", "summary", "usa_achievement_index", default=50.0)),
+            "iran": number(nested(interest, "current", "summary", "iran_achievement_index", default=50.0)),
+            "gap": number(nested(interest, "current", "summary", "achievement_gap", default=0.0)),
+            "advantage": str(nested(interest, "current", "summary", "daily_strategic_advantage", default="balanced")),
+        },
+        "strategic_success": {
+            "usa": number(nested(success, "current", "summary", "usa_success_index", default=50.0)),
+            "iran": number(nested(success, "current", "summary", "iran_success_index", default=50.0)),
+            "gap": number(nested(success, "current", "summary", "success_gap", default=0.0)),
+            "advantage": str(nested(success, "current", "summary", "strategic_advantage", default="balanced")),
+            "data_maturity": str(nested(success, "current", "data_maturity", "status", default="unknown")),
+        },
     })
     reports.sort(key=lambda item: str(item.get("date") or ""), reverse=True)
 
@@ -1202,6 +1419,8 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Generate bilingual USA-Iran Strategic Intelligence Report PDFs.")
     parser.add_argument("--forecast", type=Path, default=DEFAULT_FORECAST, help="Path to forecast JSON.")
     parser.add_argument("--pressure", type=Path, default=DEFAULT_PRESSURE, help="Path to strategic pressure JSON.")
+    parser.add_argument("--interest", type=Path, default=DEFAULT_INTEREST, help="Path to interest achievement JSON.")
+    parser.add_argument("--success", type=Path, default=DEFAULT_SUCCESS, help="Path to strategic success JSON.")
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR, help="Reports output directory.")
     parser.add_argument("--lang", choices=("hu", "en", "all"), default="all", help="Language to generate.")
     parser.add_argument(
@@ -1217,7 +1436,9 @@ def main(argv: Sequence[str] | None = None) -> int:
     try:
         forecast = load_json(args.forecast)
         pressure = load_json(args.pressure)
-        iso_date = report_date(forecast, pressure)
+        interest = load_json(args.interest)
+        success = load_json(args.success)
+        iso_date = report_date(forecast, pressure, interest, success)
         languages = LANGUAGES if args.lang == "all" else (args.lang,)
 
         created: list[str] = []
@@ -1228,7 +1449,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             if paths.archive.exists() and not args.force:
                 print(f"Archive already exists, preserving it: {paths.archive}")
             else:
-                build_pdf(forecast, pressure, lang, paths.archive, iso_date)
+                build_pdf(forecast, pressure, interest, success, lang, paths.archive, iso_date)
                 print(f"Created archive: {paths.archive}")
 
             # latest is always refreshed from the dated archive so both paths stay identical.
@@ -1236,7 +1457,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(f"Updated latest: {paths.latest}")
             created.append(lang)
 
-        index_path = update_index(args.output_dir, iso_date, created, forecast, pressure)
+        index_path = update_index(args.output_dir, iso_date, created, forecast, pressure, interest, success)
         print(f"Updated archive index: {index_path}")
         return 0
     except (FileNotFoundError, ValueError, OSError) as exc:
@@ -1246,5 +1467,4 @@ def main(argv: Sequence[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
 
