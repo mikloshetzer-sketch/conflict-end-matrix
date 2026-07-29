@@ -46,6 +46,7 @@ try:
     from reportlab.pdfbase.ttfonts import TTFont
     from reportlab.platypus import (
         BaseDocTemplate,
+        CondPageBreak,
         Frame,
         KeepTogether,
         PageTemplate,
@@ -63,7 +64,7 @@ except ImportError as exc:  # pragma: no cover
 
 PROJECT_NAME = "Törésvonalak Intelligence Hub"
 REPORT_SERIES = "USA–Iran Strategic Intelligence Report"
-REPORT_VERSION = "2.3"
+REPORT_VERSION = "2.4"
 TAGLINE = "Turning Open-Source Information into Strategic Intelligence through Semantic Analysis and Quantitative Assessment"
 BLOG_URL = "toresvonalak.blog"
 DEFAULT_FORECAST = Path("docs/conflict_forecast_live.json")
@@ -912,6 +913,216 @@ def build_success_table(success: Mapping[str, Any], lang: str, styles: Mapping[s
     return table
 
 
+
+def _walk_mappings(value: Any) -> Iterable[Mapping[str, Any]]:
+    """Yield every mapping in an arbitrarily nested JSON-compatible value."""
+    if isinstance(value, Mapping):
+        yield value
+        for child in value.values():
+            yield from _walk_mappings(child)
+    elif isinstance(value, Sequence) and not isinstance(value, (str, bytes)):
+        for child in value:
+            yield from _walk_mappings(child)
+
+
+def _interest_result(interest: Mapping[str, Any], actor: str, interest_id: str) -> Mapping[str, Any]:
+    """Find the daily result object for one strategic interest without assuming one fixed schema."""
+    actor_root = interest_actor(interest, actor)
+    candidates: list[Mapping[str, Any]] = []
+    for obj in _walk_mappings(actor_root):
+        oid = str(obj.get("interest_id") or obj.get("id") or obj.get("strategic_interest_id") or "")
+        if oid == interest_id:
+            candidates.append(obj)
+    if not candidates:
+        return {}
+    # Prefer the richest object because it usually contains score, evidence and rationale.
+    return max(candidates, key=lambda item: len(item))
+
+
+def _evidence_count(obj: Mapping[str, Any]) -> int:
+    for key in ("evidence_count", "matched_events", "event_count", "observations", "sources_count"):
+        if key in obj:
+            value = obj.get(key)
+            if isinstance(value, Sequence) and not isinstance(value, (str, bytes)):
+                return len(value)
+            return integer(value)
+    for key in ("evidence", "events", "sources", "drivers"):
+        value = obj.get(key)
+        if isinstance(value, Sequence) and not isinstance(value, (str, bytes)):
+            return len(value)
+    return 0
+
+
+def _interest_effect(obj: Mapping[str, Any]) -> float | None:
+    for key in ("weighted_effect", "net_effect", "effect", "impact", "score", "contribution", "change"):
+        if key in obj and obj.get(key) is not None:
+            try:
+                return float(obj.get(key))
+            except (TypeError, ValueError):
+                pass
+    return None
+
+
+def _interest_status(effect: float | None, evidence: int, lang: str) -> str:
+    if evidence == 0 and effect is None:
+        return "nincs közvetlen napi bizonyíték" if lang == "hu" else "no direct daily evidence"
+    value = effect or 0.0
+    if value >= 1.5:
+        return "erősen támogatott" if lang == "hu" else "strongly supported"
+    if value > 0.15:
+        return "támogatott" if lang == "hu" else "supported"
+    if value <= -1.5:
+        return "erősen gyengült" if lang == "hu" else "strongly weakened"
+    if value < -0.15:
+        return "gyengült" if lang == "hu" else "weakened"
+    return "semleges vagy vegyes" if lang == "hu" else "neutral or mixed"
+
+
+def _interest_rationale(obj: Mapping[str, Any], lang: str) -> str:
+    for key in ("assessment", "rationale", "explanation", "interpretation", "summary", "reason"):
+        value = obj.get(key)
+        if isinstance(value, str) and value.strip():
+            return value.strip()
+    evidence = obj.get("evidence") or obj.get("events") or obj.get("drivers")
+    if isinstance(evidence, Sequence) and not isinstance(evidence, (str, bytes)):
+        parts = []
+        for item in evidence[:2]:
+            if isinstance(item, Mapping):
+                text = item.get("title") or item.get("event") or item.get("description") or item.get("indicator_name")
+                if text:
+                    parts.append(str(text))
+            elif item:
+                parts.append(str(item))
+        if parts:
+            return "; ".join(parts)
+    return (
+        "A napi modell nem rendelt részletes szöveges indoklást ehhez az érdekhez."
+        if lang == "hu" else
+        "The daily model did not provide a detailed textual rationale for this interest."
+    )
+
+
+def build_interest_detail_section(
+    interest: Mapping[str, Any],
+    strategic_interests: Mapping[str, Any],
+    lang: str,
+    styles: Mapping[str, ParagraphStyle],
+) -> list[Any]:
+    """Create actor-by-actor analysis of every defined strategic interest."""
+    labels = TEXT[lang]
+    flow: list[Any] = []
+    actors = strategic_interests.get("actors") if isinstance(strategic_interests.get("actors"), Mapping) else {}
+    for actor, display in (("usa", labels["usa"]), ("iran", labels["iran"])):
+        actor_cfg = actors.get(actor) if isinstance(actors.get(actor), Mapping) else {}
+        definitions = actor_cfg.get("interests") if isinstance(actor_cfg.get("interests"), Sequence) else []
+        actor_daily = interest_actor(interest, actor)
+        idx = number(actor_daily.get("achievement_index"), 50)
+        trend = trend_label(actor_daily.get("trend"), lang)
+        flow.append(CondPageBreak(70 * mm))
+        flow.append(Paragraph(
+            (f"{display}: stratégiai érdekek részletes helyzete" if lang == "hu" else f"{display}: detailed status of strategic interests"),
+            styles["h2"],
+        ))
+        intro = (
+            f"A szereplő napi indexe <b>{idx:.2f}</b>, trendje {escape(trend)}. Az alábbi bontás nemcsak a végső indexet, hanem a modellben rögzített célokat, azok súlyát, a napi bizonyítékot és az aktuális értelmezést is bemutatja."
+            if lang == "hu" else
+            f"The actor's daily index is <b>{idx:.2f}</b>, with a {escape(trend)} trend. The breakdown below presents not only the final index but also the defined objectives, their weights, daily evidence, and current interpretation."
+        )
+        flow.append(Paragraph(intro, styles["body"]))
+        header = (["Stratégiai érdek", "Súly", "Napi helyzet", "Bizonyíték", "Értelmezés"] if lang == "hu"
+                  else ["Strategic interest", "Weight", "Daily status", "Evidence", "Interpretation"])
+        rows: list[list[Any]] = [[Paragraph(escape(x), styles["table_bold"]) for x in header]]
+        for definition in definitions:
+            if not isinstance(definition, Mapping):
+                continue
+            iid = str(definition.get("id") or "")
+            result = _interest_result(interest, actor, iid)
+            effect = _interest_effect(result)
+            evidence = _evidence_count(result)
+            status = _interest_status(effect, evidence, lang)
+            name = str(definition.get("name") or iid)
+            description = str(definition.get("description") or "")
+            interest_cell = f"<b>{escape(name)}</b><br/><font size='7.5'>{escape(description)}</font>"
+            evidence_text = str(evidence) if evidence else ("0" if result else "-")
+            interpretation = _interest_rationale(result, lang) if result else (
+                "A jelenlegi napi események alapján nincs közvetlenül azonosított hatás. Ez nem jelenti azt, hogy az érdek nem fontos; csak azt, hogy ezen a napon nem volt hozzá elég bizonyíték."
+                if lang == "hu" else
+                "No direct effect was identified from the current day's events. This does not make the interest unimportant; it means the day supplied insufficient evidence for a specific assessment."
+            )
+            rows.append([
+                Paragraph(interest_cell, styles["table"]),
+                Paragraph(str(integer(definition.get("weight"))), styles["table"]),
+                Paragraph(escape(status), styles["table"]),
+                Paragraph(escape(evidence_text), styles["table"]),
+                Paragraph(escape(interpretation), styles["table"]),
+            ])
+        table = Table(rows, colWidths=[45*mm, 13*mm, 29*mm, 18*mm, 69*mm], repeatRows=1, splitByRow=1)
+        table.setStyle(TableStyle([
+            ("BACKGROUND", (0,0), (-1,0), colors.HexColor("#1B4D7A")),
+            ("GRID", (0,0), (-1,-1), 0.35, colors.HexColor("#CAD6E2")),
+            ("ROWBACKGROUNDS", (0,1), (-1,-1), [colors.white, colors.HexColor("#F5F8FB")]),
+            ("VALIGN", (0,0), (-1,-1), "TOP"),
+            ("LEFTPADDING", (0,0), (-1,-1), 4), ("RIGHTPADDING", (0,0), (-1,-1), 4),
+            ("TOPPADDING", (0,0), (-1,-1), 5), ("BOTTOMPADDING", (0,0), (-1,-1), 5),
+        ]))
+        flow.append(table)
+        flow.append(Spacer(1, 4 * mm))
+    return flow
+
+
+def build_success_detail_section(success: Mapping[str, Any], lang: str, styles: Mapping[str, ParagraphStyle]) -> list[Any]:
+    flow: list[Any] = []
+    labels = TEXT[lang]
+    component_names = {
+        "achievement": ("Érdekérvényesülés", "Achievement"),
+        "momentum": ("Momentum", "Momentum"),
+        "stability": ("Stabilitás", "Stability"),
+        "consistency": ("Konzisztencia", "Consistency"),
+    }
+    for actor, display in (("usa", labels["usa"]), ("iran", labels["iran"])):
+        obj = success_actor(success, actor)
+        components = obj.get("components") if isinstance(obj.get("components"), Mapping) else {}
+        flow.append(CondPageBreak(55 * mm))
+        flow.append(Paragraph((f"{display}: a siker összetevői" if lang == "hu" else f"{display}: components of success"), styles["h2"]))
+        rows = [[Paragraph(x, styles["table_bold"]) for x in ((["Komponens", "Érték", "Mit jelent?"] if lang == "hu" else ["Component", "Value", "Meaning"]))]]
+        explanations_hu = {
+            "achievement": "A napi események mennyiben támogatják a szereplő súlyozott stratégiai érdekeit.",
+            "momentum": "Javul-e vagy romlik-e a közelmúlt teljesítménye a hosszabb távú átlaghoz képest.",
+            "stability": "Mennyire alacsony az index ingadozása; a magasabb érték kiszámíthatóbb teljesítményt jelez.",
+            "consistency": "Mennyire tartósak és ismétlődők a kedvező napok, nem csupán egyszeri kiugrásról van-e szó.",
+        }
+        explanations_en = {
+            "achievement": "How far the day's developments support the actor's weighted strategic interests.",
+            "momentum": "Whether recent performance is improving or weakening relative to the longer-term average.",
+            "stability": "How limited the index volatility is; a higher value indicates more predictable performance.",
+            "consistency": "Whether favourable days are persistent and repeated rather than a single temporary spike.",
+        }
+        for key in ("achievement", "momentum", "stability", "consistency"):
+            comp = components.get(key) if isinstance(components.get(key), Mapping) else {}
+            val = comp.get("value", comp.get("score", comp.get("index", 0)))
+            rows.append([
+                Paragraph(component_names[key][0 if lang == "hu" else 1], styles["table"]),
+                Paragraph(fmt_num(val, 2), styles["table"]),
+                Paragraph((explanations_hu if lang == "hu" else explanations_en)[key], styles["table"]),
+            ])
+        table = Table(rows, colWidths=[35*mm, 24*mm, 115*mm], repeatRows=1)
+        table.setStyle(TableStyle([
+            ("BACKGROUND", (0,0), (-1,0), colors.HexColor("#1B4D7A")),
+            ("GRID", (0,0), (-1,-1), 0.35, colors.HexColor("#CAD6E2")),
+            ("ROWBACKGROUNDS", (0,1), (-1,-1), [colors.white, colors.HexColor("#F5F8FB")]),
+            ("VALIGN", (0,0), (-1,-1), "TOP"),
+            ("LEFTPADDING", (0,0), (-1,-1), 4), ("RIGHTPADDING", (0,0), (-1,-1), 4),
+            ("TOPPADDING", (0,0), (-1,-1), 5), ("BOTTOMPADDING", (0,0), (-1,-1), 5),
+        ]))
+        flow.append(table)
+        flow.append(Paragraph(
+            ("A végső Strategic Success érték ezért nem egyszerű napi rangsor: azt mutatja, hogy a kedvező vagy kedvezőtlen helyzet mennyire tartós, stabil és ismétlődő."
+             if lang == "hu" else
+             "The final Strategic Success reading is therefore not a simple daily ranking: it tests whether favourable or adverse performance is persistent, stable, and repeatable."),
+            styles["body"],
+        ))
+    return flow
+
 def analyse_interest(interest: Mapping[str, Any], lang: str) -> list[str]:
     summary = achievement_summary(interest)
     usa = interest_actor(interest, "usa")
@@ -1527,7 +1738,7 @@ def build_pdf(
             story.append(Spacer(1, 2 * mm))
 
     story.extend([
-        PageBreak(),
+        CondPageBreak(75 * mm),
         Paragraph(labels["pressure"], styles["h1"]),
         build_pressure_table(pressure, lang, styles),
         Spacer(1, 2 * mm),
@@ -1535,23 +1746,25 @@ def build_pdf(
     add_paragraphs(story, analyse_pressure(pressure, lang), styles)
 
     story.extend([
-        PageBreak(),
+        CondPageBreak(75 * mm),
         Paragraph(labels["interest"], styles["h1"]),
         build_interest_table(interest, lang, styles),
         Spacer(1, 2 * mm),
     ])
     add_paragraphs(story, analyse_interest(interest, lang), styles)
+    story.extend(build_interest_detail_section(interest, strategic_interests, lang, styles))
 
     story.extend([
-        PageBreak(),
+        CondPageBreak(75 * mm),
         Paragraph(labels["success"], styles["h1"]),
         build_success_table(success, lang, styles),
         Spacer(1, 2 * mm),
     ])
     add_paragraphs(story, analyse_success(success, lang), styles)
+    story.extend(build_success_detail_section(success, lang, styles))
 
     story.extend([
-        PageBreak(),
+        CondPageBreak(75 * mm),
         Paragraph(labels["integrated"], styles["h1"]),
     ])
     integrated = integrated_assessment(forecast, pressure, interest, success, lang)
@@ -1570,6 +1783,7 @@ def build_pdf(
     add_paragraphs(story, integrated[1:], styles)
 
     story.extend([
+        CondPageBreak(65 * mm),
         Paragraph(labels["drivers"], styles["h1"]),
         build_drivers_table(pressure, lang, styles),
         PageBreak(),
