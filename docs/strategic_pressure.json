@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T06:08:22.930514+00:00",
+  "generated_at": "2026-07-29T08:58:35.472882+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,29 +18,29 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 483,
-    "kinetic_events_loaded": 1394,
-    "unique_events_scanned": 1685,
-    "strategic_evidence_contributions": 293,
+    "non_kinetic_events_loaded": 485,
+    "kinetic_events_loaded": 1396,
+    "unique_events_scanned": 1689,
+    "strategic_evidence_contributions": 295,
     "evidence_contributions_by_actor": {
-      "usa": 83,
-      "iran": 210
+      "usa": 84,
+      "iran": 211
     },
     "scored_contributions_by_actor": {
-      "usa": 61,
-      "iran": 108
+      "usa": 62,
+      "iran": 109
     },
     "suppressed_duplicates_by_actor": {
       "usa": 22,
       "iran": 102
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 238,
+      "non_kinetic": 240,
       "kinetic": 55
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 154,
-      "usa:negotiation": 66,
+      "iran:negotiation": 155,
+      "usa:negotiation": 67,
       "iran:missile_test": 43,
       "usa:presidential_warning": 13,
       "iran:hormuz_threat": 9,
@@ -49,8 +49,8 @@
       "iran:nuclear_activity": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 74,
-      "usa:negotiation": 47,
+      "iran:negotiation": 75,
+      "usa:negotiation": 48,
       "iran:missile_test": 21,
       "usa:presidential_warning": 13,
       "iran:hormuz_threat": 9,
@@ -59,33 +59,33 @@
       "iran:nuclear_activity": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 15,
-    "history_day_count": 140
+    "skipped_current_utc_day": 17,
+    "history_day_count": 141
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-07-27",
+  "latest_complete_utc_day": "2026-07-28",
   "current": {
-    "date": "2026-07-27",
+    "date": "2026-07-28",
     "calculation_mode": "live",
     "usa": {
       "raw_score": -6.0,
       "positive_score": 0.0,
       "negative_score": -6.0,
-      "event_count": 2,
+      "event_count": 1,
       "scored_event_count": 1,
-      "evidence_event_count": 2,
-      "suppressed_duplicate_count": 1,
+      "evidence_event_count": 1,
+      "suppressed_duplicate_count": 0,
       "increase_event_count": 0,
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000002",
-          "timestamp": "2026-07-27T21:10:56+00:00",
-          "date": "2026-07-27",
+          "event_id": "INFO-000001",
+          "timestamp": "2026-07-28T11:28:48+00:00",
+          "date": "2026-07-28",
           "actor": "usa",
           "bilateral_event": true,
-          "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+          "title": "Where do the US-Iran talks to end the war stand? - France 24",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
           "event_direction": "mixed",
@@ -109,75 +109,32 @@
                 "name": "Avoid full-scale regional war",
                 "weight": 10.0
               },
-              "recognition_rule_count": 3
+              "recognition_rule_count": 4
             }
           ],
-          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Where do the US-Iran talks to end the war stand? - France 24",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5",
-          "existing_event_score": -3.0,
+          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZDNIVHNnT2ZJTHV3djdaLTRScEgyVGVxTzA3OHNhYTNIRnhqYU5IbVdFSUxmdkxqUkFFZ1FQXzE1VlZmamxqVWl6cDhLVl8taGMwY3BpX2lNQkIzLTJsT1BZVDhDV2lPd2pNdS1pMHhEN25Na281azJHaFpSV3hQSg?oc=5",
+          "existing_event_score": 1.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
           "duplicate_daily_indicators": []
-        },
-        {
-          "event_id": "INFO-000004",
-          "timestamp": "2026-07-27T03:54:44+00:00",
-          "date": "2026-07-27",
-          "actor": "usa",
-          "bilateral_event": true,
-          "title": "Khamenei ties US-Iran peace deal to Israel ending attacks on Lebanon - Al Jazeera",
-          "source_layer": "non_kinetic",
-          "event_type": "ceasefire",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": 0.0,
-          "duplicate_indicator_evidence": true,
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "primary_daily_indicator": null,
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_full_scale_war",
-                "name": "Avoid full-scale regional war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Khamenei ties US-Iran peace deal to Israel ending attacks on Lebanon - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdlZIaGtLT0ItbHVjQ0xEWFoyU2I5anhKZHp2QlZhVW1kWTRuOXRBMy1uQlc3a29vTVRTT21vMXZ3dTQ3UTkyVFZSNElnNzQ2VjZDWERjSEQ2bTFDOUpGMkVsOEozVkN0Nm9TVVphV1U5Yll1UEx1cXRsWFBKLU1xMUl1T2lUX3NqVkI1dXBaY2k3cWJiRmRRdkdQVTRacU5hTExkbndBWHQ0VGfSAbABQVVfeXFMUEVoS2VuR3pBZ1YyVzlYTTIyU0Z4eGFfSEhGd2Y0M3lMQ3ZUUFFndDVZUHh5cGhYRUU5enpINl9ha3FHclJuc3dVSkRFWXdFSXNuZjVoZU9qV0FMYjRYcjZIenBFLWRIczhIeEVIalFqLUNjR0Rscm5wMGlramFQZGJXZWRSVDdtcW9la2xxZEhlSGFvRmlYdTVybDY2MTI4Q2tLTmc4TG12TmtyczlZejM?oc=5",
-          "existing_event_score": -1.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [],
-          "duplicate_daily_indicators": [
-            "negotiation"
-          ]
         }
       ],
-      "weighted_score_7d": -6.2,
-      "pressure_index_7d": 37.6,
-      "pressure_level": "reduced",
+      "weighted_score_7d": -11.9,
+      "pressure_index_7d": 26.2,
+      "pressure_level": "low",
       "trend": "strong_decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000002",
-          "timestamp": "2026-07-27T21:10:56+00:00",
-          "date": "2026-07-27",
+          "event_id": "INFO-000001",
+          "timestamp": "2026-07-28T11:28:48+00:00",
+          "date": "2026-07-28",
           "actor": "usa",
           "bilateral_event": true,
-          "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+          "title": "Where do the US-Iran talks to end the war stand? - France 24",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
           "event_direction": "mixed",
@@ -201,13 +158,13 @@
                 "name": "Avoid full-scale regional war",
                 "weight": 10.0
               },
-              "recognition_rule_count": 3
+              "recognition_rule_count": 4
             }
           ],
-          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Where do the US-Iran talks to end the war stand? - France 24",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5",
-          "existing_event_score": -3.0,
+          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZDNIVHNnT2ZJTHV3djdaLTRScEgyVGVxTzA3OHNhYTNIRnhqYU5IbVdFSUxmdkxqUkFFZ1FQXzE1VlZmamxqVWl6cDhLVl8taGMwY3BpX2lNQkIzLTJsT1BZVDhDV2lPd2pNdS1pMHhEN25Na281azJHaFpSV3hQSg?oc=5",
+          "existing_event_score": 1.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
             "negotiation"
@@ -220,20 +177,20 @@
       "raw_score": -6.0,
       "positive_score": 0.0,
       "negative_score": -6.0,
-      "event_count": 3,
+      "event_count": 1,
       "scored_event_count": 1,
-      "evidence_event_count": 3,
-      "suppressed_duplicate_count": 2,
+      "evidence_event_count": 1,
+      "suppressed_duplicate_count": 0,
       "increase_event_count": 0,
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000002",
-          "timestamp": "2026-07-27T21:10:56+00:00",
-          "date": "2026-07-27",
+          "event_id": "INFO-000001",
+          "timestamp": "2026-07-28T11:28:48+00:00",
+          "date": "2026-07-28",
           "actor": "iran",
           "bilateral_event": true,
-          "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+          "title": "Where do the US-Iran talks to end the war stand? - France 24",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
           "event_direction": "mixed",
@@ -257,118 +214,32 @@
                 "name": "Avoid regime-destroying war",
                 "weight": 10.0
               },
-              "recognition_rule_count": 3
+              "recognition_rule_count": 4
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Where do the US-Iran talks to end the war stand? - France 24",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5",
-          "existing_event_score": -3.0,
+          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZDNIVHNnT2ZJTHV3djdaLTRScEgyVGVxTzA3OHNhYTNIRnhqYU5IbVdFSUxmdkxqUkFFZ1FQXzE1VlZmamxqVWl6cDhLVl8taGMwY3BpX2lNQkIzLTJsT1BZVDhDV2lPd2pNdS1pMHhEN25Na281azJHaFpSV3hQSg?oc=5",
+          "existing_event_score": 1.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
           "duplicate_daily_indicators": []
-        },
-        {
-          "event_id": "INFO-000004",
-          "timestamp": "2026-07-27T03:54:44+00:00",
-          "date": "2026-07-27",
-          "actor": "iran",
-          "bilateral_event": true,
-          "title": "Khamenei ties US-Iran peace deal to Israel ending attacks on Lebanon - Al Jazeera",
-          "source_layer": "non_kinetic",
-          "event_type": "ceasefire",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": 0.0,
-          "duplicate_indicator_evidence": true,
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "primary_daily_indicator": null,
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_regime_destroying_war",
-                "name": "Avoid regime-destroying war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Khamenei ties US-Iran peace deal to Israel ending attacks on Lebanon - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdlZIaGtLT0ItbHVjQ0xEWFoyU2I5anhKZHp2QlZhVW1kWTRuOXRBMy1uQlc3a29vTVRTT21vMXZ3dTQ3UTkyVFZSNElnNzQ2VjZDWERjSEQ2bTFDOUpGMkVsOEozVkN0Nm9TVVphV1U5Yll1UEx1cXRsWFBKLU1xMUl1T2lUX3NqVkI1dXBaY2k3cWJiRmRRdkdQVTRacU5hTExkbndBWHQ0VGfSAbABQVVfeXFMUEVoS2VuR3pBZ1YyVzlYTTIyU0Z4eGFfSEhGd2Y0M3lMQ3ZUUFFndDVZUHh5cGhYRUU5enpINl9ha3FHclJuc3dVSkRFWXdFSXNuZjVoZU9qV0FMYjRYcjZIenBFLWRIczhIeEVIalFqLUNjR0Rscm5wMGlramFQZGJXZWRSVDdtcW9la2xxZEhlSGFvRmlYdTVybDY2MTI4Q2tLTmc4TG12TmtyczlZejM?oc=5",
-          "existing_event_score": -1.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [],
-          "duplicate_daily_indicators": [
-            "negotiation"
-          ]
-        },
-        {
-          "event_id": "INFO-000003",
-          "timestamp": "2026-07-27T07:13:00+00:00",
-          "date": "2026-07-27",
-          "actor": "iran",
-          "bilateral_event": true,
-          "title": "U.S. pauses Iran strikes for second straight night as talks move in positive direction - CBS News",
-          "source_layer": "non_kinetic",
-          "event_type": "ceasefire",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": 0.0,
-          "duplicate_indicator_evidence": true,
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "primary_daily_indicator": null,
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_regime_destroying_war",
-                "name": "Avoid regime-destroying war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: U.S. pauses Iran strikes for second straight night as talks move in positive direction - CBS News",
-          "source": "\"middle east conflict when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPX3lNZnhiOVFueGNzd0dnbGM3V0d5emVUZTZhaXRRNmVpXzhVaVNRcVlWQ29XcGZDUnkwM0hhN1BYRmhnWEZhQlhFU1ItX0x6R3k3enA3VC00LVpKQi1xMWJPeXJ3VmQ5WDRhbzIzLWZ3MUgwS25ScHZOOXRnWmxWMzFacTlvRWNC?oc=5",
-          "existing_event_score": -1.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [],
-          "duplicate_daily_indicators": [
-            "negotiation"
-          ]
         }
       ],
-      "weighted_score_7d": -13.7,
-      "pressure_index_7d": 22.6,
+      "weighted_score_7d": -18.75,
+      "pressure_index_7d": 12.5,
       "pressure_level": "low",
       "trend": "strong_decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000002",
-          "timestamp": "2026-07-27T21:10:56+00:00",
-          "date": "2026-07-27",
+          "event_id": "INFO-000001",
+          "timestamp": "2026-07-28T11:28:48+00:00",
+          "date": "2026-07-28",
           "actor": "iran",
           "bilateral_event": true,
-          "title": "Trump says Iran war talks taking place during lull in strikes - BBC",
+          "title": "Where do the US-Iran talks to end the war stand? - France 24",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
           "event_direction": "mixed",
@@ -392,13 +263,13 @@
                 "name": "Avoid regime-destroying war",
                 "weight": 10.0
               },
-              "recognition_rule_count": 3
+              "recognition_rule_count": 4
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran war talks taking place during lull in strikes - BBC",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Where do the US-Iran talks to end the war stand? - France 24",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1wcUk5M3JUMm80T1VCcUtKYzRPcmt3eldDVk9QU0VwRlJ5ZFJSdExzQTJBeGpic245Y0NNaXNydE5FWDdtSVVYVENzRncweTNLSGRUYkk3Yy1DUQ?oc=5",
-          "existing_event_score": -3.0,
+          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZDNIVHNnT2ZJTHV3djdaLTRScEgyVGVxTzA3OHNhYTNIRnhqYU5IbVdFSUxmdkxqUkFFZ1FQXzE1VlZmamxqVWl6cDhLVl8taGMwY3BpX2lNQkIzLTJsT1BZVDhDV2lPd2pNdS1pMHhEN25Na281azJHaFpSV3hQSg?oc=5",
+          "existing_event_score": 1.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
             "negotiation"
@@ -408,8 +279,8 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 30.1,
-      "pressure_level": "reduced",
+      "pressure_index_7d": 19.35,
+      "pressure_level": "low",
       "trend": "strong_decrease",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
