@@ -1,30 +1,30 @@
 {
-  "generated_at": "2026-07-29T06:08:20.956993Z",
-  "source_generated_at": "2026-07-29T04:32:24Z",
+  "generated_at": "2026-07-29T08:00:17.684225Z",
+  "source_generated_at": "2026-07-29T07:32:21Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": false,
+    "required_today_utc": true,
     "max_age_hours": 8.0
   },
   "source_event_count": 10000,
-  "event_count": 1394,
-  "rejected_count": 8602,
+  "event_count": 1396,
+  "rejected_count": 8600,
   "rejection_counts": {
     "no_confirmed_action_language": 5596,
-    "category_not_kinetic": 1821,
-    "outside_window": 1091,
+    "category_not_kinetic": 1822,
+    "outside_window": 1088,
     "context_or_hypothetical": 63,
     "alert_only": 16,
     "retrospective_or_aftermath": 15
   },
   "category_counts": {
-    "missile": 467,
+    "missile": 468,
     "strike": 392,
-    "drone": 220,
+    "drone": 221,
     "airstrike": 147,
     "explosion": 101,
     "ground": 60,
@@ -32,14 +32,14 @@
   },
   "severity_counts": {
     "medium": 856,
-    "high": 454,
+    "high": 456,
     "low": 75,
     "critical": 9
   },
   "actor_counts": {
-    "Iran": 451,
+    "Iran": 452,
     "Israel": 383,
-    "United States": 244,
+    "United States": 245,
     "Lebanon": 152,
     "Unknown actor": 91,
     "Yemen": 46,
@@ -49,6 +49,32 @@
     "Kuwait": 2
   },
   "events": [
+    {
+      "event_id": "iranstrike-1dksua1pu7mo0",
+      "timestamp": "2026-07-29T05:26:07Z",
+      "event_type": "kinetic",
+      "subtype": "drone",
+      "category": "drone",
+      "severity": "high",
+      "actor": "usa",
+      "actor_label": "United States",
+      "actor_method": "raw_source.origin",
+      "target_country": "Iraq",
+      "location": "Basra",
+      "latitude": 30.5085,
+      "longitude": 47.7804,
+      "map_visualizable": true,
+      "description": "U.S. and Saudi Arabia conduct widespread strikes across Iraq targeting Popular Mobilization Forces militia camps in al-Zawb, Camp 30 in Nineveh, Karbala, Amerli, Diyala, Basra and Wasit; at least 10 militants killed in response to over 30 drone attacks by Iranian-backed Shia militias in preceding 72 hours",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/127495",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-3ohrjrctrd200",
       "timestamp": "2026-07-29T02:49:06Z",
@@ -93,6 +119,32 @@
       "description": "IRGC fires missiles at U.S. Air Force base and U.S. military command center in Jordan",
       "source_name": "idkunim_il",
       "source_url": "https://t.me/idkunim_il/62015",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-1w48i0czyq5c",
+      "timestamp": "2026-07-29T02:39:00Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "high",
+      "actor": "irn",
+      "actor_label": "Iran",
+      "actor_method": "raw_source.origin",
+      "target_country": "Iran",
+      "location": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Iran attempts surprise attack on U.S. forces in Middle East, all missiles intercepted successfully per U.S. military official statement",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/62016",
       "source_repository": "mikloshetzer-sketch/me-security-monitor",
       "source_collection": "events",
       "validation": {
