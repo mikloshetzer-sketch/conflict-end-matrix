@@ -2015,6 +2015,209 @@
     @media(max-width:980px){.outcome-kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.outcome-chart-grid,.success-components{grid-template-columns:1fr}}
     @media(max-width:700px){.strategic-outcome-header{display:block}.strategic-outcome-date{text-align:left;margin-top:5px}.strategic-pipeline{grid-template-columns:1fr}.strategic-pipeline-arrow{transform:rotate(90deg);text-align:center}.outcome-kpi-grid{grid-template-columns:1fr}.component-row{grid-template-columns:90px 1fr 44px}}
 
+
+
+    /* =========================================================
+       FORECAST VALIDATION V8 - ELŐREJELZÉS VS. REALIZÁLT EREDMÉNY
+       ========================================================= */
+    .forecast-validation{
+      margin-top:14px;
+      padding:15px;
+      border:1px solid #cfdfe8;
+      border-radius:12px;
+      background:#fff;
+    }
+    .forecast-validation-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:12px;
+    }
+    .forecast-validation-title{
+      margin:0;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:18px;
+      color:#103b59;
+    }
+    .forecast-validation-sub{
+      margin:4px 0 0;
+      max-width:790px;
+      font-size:11px;
+      line-height:1.5;
+      color:#607887;
+    }
+    .forecast-validation-tabs{
+      display:flex;
+      gap:6px;
+      flex:0 0 auto;
+    }
+    .forecast-validation-btn{
+      min-height:32px;
+      padding:5px 10px;
+      border:1px solid #cbdbe4;
+      border-radius:7px;
+      background:#fff;
+      color:#486a7e;
+      font-size:10px;
+      font-weight:800;
+      cursor:pointer;
+    }
+    .forecast-validation-btn.active{
+      color:#fff;
+      background:#2788c4;
+      border-color:#2788c4;
+    }
+    .forecast-validation-kpis{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:9px;
+      margin-bottom:11px;
+    }
+    .forecast-validation-kpi{
+      padding:10px 11px;
+      border:1px solid #dce7ed;
+      border-radius:9px;
+      background:#f8fbfd;
+    }
+    .forecast-validation-kpi span{
+      display:block;
+      font-size:9px;
+      font-weight:800;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      color:#7a909d;
+    }
+    .forecast-validation-kpi strong{
+      display:block;
+      margin-top:4px;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:22px;
+      line-height:1;
+      color:#173f59;
+    }
+    .forecast-validation-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);
+      gap:12px;
+    }
+    .forecast-validation-card{
+      min-width:0;
+      padding:11px;
+      border:1px solid #dfe8ed;
+      border-radius:10px;
+      background:#fbfdfe;
+    }
+    .forecast-validation-card h4{
+      margin:0 0 3px;
+      font-size:12px;
+      color:#173f59;
+    }
+    .forecast-validation-card p{
+      margin:0 0 8px;
+      font-size:10px;
+      line-height:1.45;
+      color:#748994;
+    }
+    .forecast-audit-chart{
+      position:relative;
+      min-height:270px;
+      overflow:hidden;
+    }
+    .forecast-audit-chart svg{
+      display:block;
+      width:100%;
+      height:270px;
+    }
+    .forecast-audit-legend{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:7px;
+      font-size:10px;
+      color:#687f8d;
+    }
+    .forecast-audit-legend span{display:inline-flex;align-items:center;gap:5px}
+    .forecast-audit-dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+    .forecast-audit-dot.predicted{background:#2788c4}
+    .forecast-audit-dot.actual{background:#173f59}
+    .forecast-audit-dot.correct{background:#2f8f74}
+    .forecast-audit-dot.wrong{background:#c6535c}
+    .forecast-audit-table-wrap{
+      max-height:302px;
+      overflow:auto;
+      border:1px solid #e0e9ee;
+      border-radius:8px;
+      background:#fff;
+    }
+    .forecast-audit-table{
+      width:100%;
+      border:0;
+      border-radius:0;
+      border-collapse:collapse;
+    }
+    .forecast-audit-table th,
+    .forecast-audit-table td{
+      padding:7px 8px;
+      border-right:0;
+      border-bottom:1px solid #e5edf1;
+      font-size:10px;
+      white-space:nowrap;
+    }
+    .forecast-audit-table th{
+      position:sticky;
+      top:0;
+      z-index:1;
+      background:#edf5f9;
+      color:#45677a;
+    }
+    .forecast-audit-table tr:last-child td{border-bottom:0}
+    .forecast-result-pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:22px;
+      padding:2px 6px;
+      border-radius:999px;
+      font-size:9px;
+      font-weight:900;
+    }
+    .forecast-result-pill.correct{color:#276f59;background:#edf9f4;border:1px solid #cee8de}
+    .forecast-result-pill.wrong{color:#9c3942;background:#fff0f1;border:1px solid #efd0d3}
+    .forecast-result-pill.no-signal{color:#75632f;background:#fff8e8;border:1px solid #eadcae}
+    .forecast-result-pill.pending{color:#657985;background:#f0f4f6;border:1px solid #dce5ea}
+    .forecast-validation-empty{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:190px;
+      padding:18px;
+      text-align:center;
+      font-size:11px;
+      line-height:1.55;
+      color:#748994;
+    }
+    .forecast-validation-note{
+      margin-top:9px;
+      padding:8px 10px;
+      border-left:4px solid #708a99;
+      border-radius:7px;
+      background:#f5f8fa;
+      font-size:10px;
+      line-height:1.5;
+      color:#687d89;
+    }
+    @media(max-width:900px){
+      .forecast-validation-grid{grid-template-columns:1fr}
+      .forecast-validation-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .forecast-validation-head{display:block}
+      .forecast-validation-tabs{margin-top:9px}
+    }
+    @media(max-width:560px){
+      .forecast-validation-kpis{grid-template-columns:1fr 1fr}
+      .forecast-validation{padding:11px}
+    }
+
   </style>
 </head>
 
@@ -2736,6 +2939,65 @@
               kontrolláltan újrakalibrálhatók.
             </div>
           </div>
+
+
+            <div class="forecast-validation" id="forecast_validation">
+              <div class="forecast-validation-head">
+                <div>
+                  <h3 class="forecast-validation-title">Előrejelzés és realizált eredmény</h3>
+                  <p class="forecast-validation-sub">
+                    A diagram a korábbi napi iránybecslést veti össze a később ténylegesen megfigyelt
+                    aktivitásváltozással. A találat csak azonos irány esetén számít helyesnek; a
+                    „nincs jelzés” napok nem kerülnek bele a publikus jelzések pontosságába.
+                  </p>
+                </div>
+                <div class="forecast-validation-tabs" aria-label="Előrejelzési időtáv">
+                  <button type="button" class="forecast-validation-btn active" data-forecast-audit-horizon="48h">48 óra</button>
+                  <button type="button" class="forecast-validation-btn" data-forecast-audit-horizon="72h">72 óra</button>
+                </div>
+              </div>
+
+              <div class="forecast-validation-kpis">
+                <div class="forecast-validation-kpi"><span>Kiértékelt becslés</span><strong id="forecast_audit_evaluated">—</strong></div>
+                <div class="forecast-validation-kpi"><span>Publikus jelzés</span><strong id="forecast_audit_signals">—</strong></div>
+                <div class="forecast-validation-kpi"><span>Jelzési pontosság</span><strong id="forecast_audit_accuracy">—</strong></div>
+                <div class="forecast-validation-kpi"><span>Nyers iránypontosság</span><strong id="forecast_audit_raw_accuracy">—</strong></div>
+              </div>
+
+              <div class="forecast-validation-grid">
+                <div class="forecast-validation-card">
+                  <h4>Napi iránybecslés vs. megvalósulás</h4>
+                  <p>Az utolsó legfeljebb 30 kiértékelt előrejelzés. A függőleges skála az aktivitás irányát mutatja.</p>
+                  <div class="forecast-audit-chart" id="forecast_audit_chart">
+                    <div class="forecast-validation-empty">A forecast history betöltése…</div>
+                  </div>
+                  <div class="forecast-audit-legend">
+                    <span><i class="forecast-audit-dot predicted"></i> előrejelzett irány</span>
+                    <span><i class="forecast-audit-dot actual"></i> realizált irány</span>
+                    <span><i class="forecast-audit-dot correct"></i> helyes publikus jelzés</span>
+                    <span><i class="forecast-audit-dot wrong"></i> hibás publikus jelzés</span>
+                  </div>
+                </div>
+
+                <div class="forecast-validation-card">
+                  <h4>Forecast audit napló</h4>
+                  <p>A legutóbbi értékelhető napi becslések, visszamérhető formában.</p>
+                  <div class="forecast-audit-table-wrap">
+                    <table class="forecast-audit-table">
+                      <thead><tr><th>Referencia</th><th>Jelzés</th><th>Valóság</th><th>Eredmény</th></tr></thead>
+                      <tbody id="forecast_audit_table_body">
+                        <tr><td colspan="4">Betöltés…</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <div class="forecast-validation-note" id="forecast_validation_note">
+                A diagram csak a history fájlban már kiértékelt előrejelzéseket jeleníti meg. A kis mintán alapuló
+                100%-os találati arány nem tekinthető stabil modellpontosságnak.
+              </div>
+            </div>
 
           <div class="strategic-pressure-panel" id="strategic_pressure_panel">
             <div class="strategic-pressure-header">
@@ -4208,6 +4470,234 @@
       return `${horizon}-n ${trend.state==="rising"?"erősödött":"gyengült"} a vezető modellirány támogatása (${trend.detail}).`;
     }
 
+
+    // =========================================================
+    // FORECAST VALIDATION V8 - FORECAST VS. REALITY
+    // =========================================================
+    let forecastAuditHistory={records:[]};
+    let forecastAuditLive=null;
+    let forecastAuditHorizon="48h";
+
+    function auditFirstValue(obj,paths){
+      for(const path of paths){
+        let value=obj;
+        for(const key of path.split(".")){
+          if(value==null || typeof value!=="object"){ value=undefined; break; }
+          value=value[key];
+        }
+        if(value!==undefined && value!==null && value!=="") return value;
+      }
+      return null;
+    }
+
+    function auditNormalizeDirection(value){
+      const v=String(value??"").trim().toLowerCase();
+      if(["increase","increasing","up","rise","rising","higher","növekedés","növekvő","novekvo"].includes(v)) return "increase";
+      if(["decrease","decreasing","down","fall","falling","lower","csökkenés","csökkenő","csokkeno"].includes(v)) return "decrease";
+      if(["stable","flat","unchanged","neutral","stagnant","változatlan","stabil"].includes(v)) return "stable";
+      if(["no_signal","none","no signal","nincs jelzés"].includes(v)) return "no_signal";
+      return null;
+    }
+
+    function auditDirectionLabel(direction,short=false){
+      if(direction==="increase") return short?"↑":"növekedés";
+      if(direction==="decrease") return short?"↓":"csökkenés";
+      if(direction==="stable") return short?"→":"stabil";
+      if(direction==="no_signal") return short?"—":"nincs jelzés";
+      return "—";
+    }
+
+    function auditPublicDirection(record){
+      const explicit=auditFirstValue(record,[
+        "public_signal.direction","public_direction","issued_direction","signal_direction",
+        "forecast.public_signal.direction","prediction.public_signal.direction"
+      ]);
+      const hasSignal=auditFirstValue(record,[
+        "public_signal.has_signal","has_signal","issued_signal",
+        "forecast.public_signal.has_signal","prediction.public_signal.has_signal"
+      ]);
+      if(hasSignal===false) return "no_signal";
+      const normalized=auditNormalizeDirection(explicit);
+      if(normalized) return normalized;
+      return hasSignal===true ? auditRawDirection(record) : null;
+    }
+
+    function auditRawDirection(record){
+      return auditNormalizeDirection(auditFirstValue(record,[
+        "raw_prediction.direction","raw_direction","predicted_direction","prediction_direction",
+        "forecast.raw_prediction.direction","prediction.raw_prediction.direction"
+      ]));
+    }
+
+    function auditActualDirection(record){
+      return auditNormalizeDirection(auditFirstValue(record,[
+        "evaluation.observed_direction","evaluation.realized_direction","evaluation.actual_direction",
+        "observed_direction","realized_direction","actual_direction","outcome.direction",
+        "verification.observed_direction","result.observed_direction","target_observed_direction"
+      ]));
+    }
+
+    function auditIsEvaluated(record){
+      const explicit=auditFirstValue(record,[
+        "evaluation.evaluated","evaluation.is_evaluated","evaluated","is_evaluated",
+        "verification.evaluated","result.evaluated","status"
+      ]);
+      if(typeof explicit==="boolean") return explicit;
+      if(String(explicit||"").toLowerCase() in {evaluated:1,verified:1,matured:1,complete:1,completed:1}) return true;
+      return !!auditActualDirection(record);
+    }
+
+    function auditRecordDate(record){
+      return String(auditFirstValue(record,[
+        "forecast_reference_date","reference_date","issued_for_date","forecast_date","date"
+      ])||"");
+    }
+
+    function auditTargetDate(record){
+      return String(auditFirstValue(record,["target_date","evaluation.target_date","verification.target_date"])||"");
+    }
+
+    function auditRecordHorizon(record){
+      return String(auditFirstValue(record,["horizon","forecast_horizon","configuration.horizon"])||"");
+    }
+
+    function auditRecords(history,horizon){
+      const source=Array.isArray(history?.records)?history.records:
+                   Array.isArray(history?.history)?history.history:
+                   Array.isArray(history)?history:[];
+      return source
+        .filter(r=>auditRecordHorizon(r)===horizon && auditIsEvaluated(r))
+        .map(r=>{
+          const raw=auditRawDirection(r);
+          const publicDirection=auditPublicDirection(r);
+          const actual=auditActualDirection(r);
+          const hasPublic=publicDirection && publicDirection!=="no_signal";
+          return {
+            source:r,
+            referenceDate:auditRecordDate(r),
+            targetDate:auditTargetDate(r),
+            raw,
+            publicDirection:publicDirection||"no_signal",
+            actual,
+            hasPublic,
+            rawCorrect:!!(raw&&actual&&raw===actual),
+            publicCorrect:!!(hasPublic&&actual&&publicDirection===actual)
+          };
+        })
+        .filter(r=>r.referenceDate&&r.actual)
+        .sort((a,b)=>a.referenceDate.localeCompare(b.referenceDate));
+    }
+
+    function auditPct(value){
+      return Number.isFinite(value)?`${value.toFixed(1)}%`:"—";
+    }
+
+    function auditEscape(value){
+      return String(value??"").replace(/[&<>'"]/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[ch]));
+    }
+
+    function auditSvg(records){
+      const data=records.slice(-30);
+      if(!data.length) return "";
+      const width=900,height=270,left=72,right=20,top=18,bottom=48;
+      const plotW=width-left-right,plotH=height-top-bottom;
+      const yMap={increase:top+18,stable:top+plotH/2,decrease:top+plotH-18};
+      const labels=[["increase","Növekedés"],["stable","Stabil"],["decrease","Csökkenés"]];
+      const x=i=>data.length===1?left+plotW/2:left+(i/(data.length-1))*plotW;
+      const parts=[`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Előrejelzett és realizált aktivitásirány összevetése">`];
+      labels.forEach(([key,label])=>{
+        const y=yMap[key];
+        parts.push(`<line x1="${left}" y1="${y}" x2="${width-right}" y2="${y}" stroke="#dbe5eb" stroke-width="1"/>`);
+        parts.push(`<text x="${left-10}" y="${y+4}" text-anchor="end" font-size="11" fill="#657d8b">${label}</text>`);
+      });
+      data.forEach((r,i)=>{
+        const px=x(i), py=yMap[r.publicDirection]??yMap[r.raw], ay=yMap[r.actual];
+        if(py!=null){
+          parts.push(`<line x1="${px}" y1="${py}" x2="${px}" y2="${ay}" stroke="${r.hasPublic?(r.publicCorrect?'#2f8f74':'#c6535c'):'#aebdc6'}" stroke-width="2" opacity=".75"/>`);
+          parts.push(`<circle cx="${px}" cy="${py}" r="5" fill="#2788c4" stroke="#fff" stroke-width="2"><title>${auditEscape(r.referenceDate)} · előrejelzés: ${auditDirectionLabel(r.publicDirection||r.raw)}</title></circle>`);
+        }
+        parts.push(`<circle cx="${px}" cy="${ay}" r="4" fill="#173f59" stroke="#fff" stroke-width="1.5"><title>${auditEscape(r.referenceDate)} · realizált: ${auditDirectionLabel(r.actual)}</title></circle>`);
+        const showLabel=data.length<=12 || i===0 || i===data.length-1 || i%5===0;
+        if(showLabel){
+          parts.push(`<text x="${px}" y="${height-19}" text-anchor="middle" font-size="9" fill="#748994">${auditEscape(r.referenceDate.slice(5))}</text>`);
+        }
+      });
+      parts.push(`</svg>`);
+      return parts.join("");
+    }
+
+    function renderForecastValidation(history,live,horizon=forecastAuditHorizon){
+      forecastAuditHistory=history||{records:[]};
+      forecastAuditLive=live||forecastAuditLive;
+      forecastAuditHorizon=horizon;
+
+      document.querySelectorAll("[data-forecast-audit-horizon]").forEach(btn=>{
+        btn.classList.toggle("active",btn.dataset.forecastAuditHorizon===horizon);
+      });
+
+      const records=auditRecords(forecastAuditHistory,horizon);
+      const publicRecords=records.filter(r=>r.hasPublic);
+      const publicCorrect=publicRecords.filter(r=>r.publicCorrect).length;
+      const rawCorrect=records.filter(r=>r.rawCorrect).length;
+      const livePerf=forecastAuditLive?.horizons?.[horizon]?.live_out_of_sample_performance||{};
+
+      const evaluated=Number.isFinite(Number(livePerf.evaluated_forecasts))?Number(livePerf.evaluated_forecasts):records.length;
+      const issued=Number.isFinite(Number(livePerf.issued_signals))?Number(livePerf.issued_signals):publicRecords.length;
+      const signalAccuracy=livePerf.issued_signal_accuracy_pct!=null
+        ?Number(livePerf.issued_signal_accuracy_pct)
+        :(publicRecords.length?publicCorrect/publicRecords.length*100:NaN);
+      const rawAccuracy=livePerf.raw_direction_accuracy_pct!=null
+        ?Number(livePerf.raw_direction_accuracy_pct)
+        :(records.length?rawCorrect/records.length*100:NaN);
+
+      const setText=(id,value)=>{const el=document.getElementById(id);if(el)el.textContent=value;};
+      setText("forecast_audit_evaluated",String(evaluated||0));
+      setText("forecast_audit_signals",String(issued||0));
+      setText("forecast_audit_accuracy",auditPct(signalAccuracy));
+      setText("forecast_audit_raw_accuracy",auditPct(rawAccuracy));
+
+      const chart=document.getElementById("forecast_audit_chart");
+      if(chart){
+        chart.innerHTML=records.length
+          ?auditSvg(records)
+          :`<div class="forecast-validation-empty">A history fájlban még nincs olyan ${horizon}-s előrejelzés, amelyhez a realizált irány is elérhető. A blokk automatikusan megtelik, amikor az archivált rekordok kiértékelési mezői megjelennek.</div>`;
+      }
+
+      const body=document.getElementById("forecast_audit_table_body");
+      if(body){
+        const rows=records.slice(-20).reverse();
+        body.innerHTML=rows.length?rows.map(r=>{
+          const result=!r.hasPublic
+            ?`<span class="forecast-result-pill no-signal">NO SIGNAL</span>`
+            :r.publicCorrect
+              ?`<span class="forecast-result-pill correct">✓</span>`
+              :`<span class="forecast-result-pill wrong">✕</span>`;
+          return `<tr>`+
+            `<td title="Céldátum: ${auditEscape(r.targetDate||'—')}">${auditEscape(r.referenceDate)}</td>`+
+            `<td>${auditDirectionLabel(r.publicDirection,true)} ${auditEscape(auditDirectionLabel(r.publicDirection))}</td>`+
+            `<td>${auditDirectionLabel(r.actual,true)} ${auditEscape(auditDirectionLabel(r.actual))}</td>`+
+            `<td>${result}</td>`+
+          `</tr>`;
+        }).join(""):`<tr><td colspan="4">Még nincs megjeleníthető kiértékelt rekord.</td></tr>`;
+      }
+
+      const note=document.getElementById("forecast_validation_note");
+      if(note){
+        note.textContent=records.length
+          ?`A ${horizon}-s nézet ${records.length} history rekordból készült. `+
+           `${publicRecords.length} esetben volt publikus irányjelzés; ezek közül ${publicCorrect} volt helyes. `+
+           `A kis mintán mért magas százalékot óvatosan kell értelmezni.`
+          :`A teljesítmény-KPI-k a live JSON összesített visszaméréséből származnak. A napi diagramhoz a history rekordokban a forecast_reference_date, horizon, előrejelzett irány és realizált irány mezők szükségesek.`;
+      }
+    }
+
+    function initForecastValidationControls(){
+      document.querySelectorAll("[data-forecast-audit-horizon]").forEach(btn=>{
+        btn.addEventListener("click",()=>renderForecastValidation(forecastAuditHistory,forecastAuditLive,btn.dataset.forecastAuditHorizon));
+      });
+    }
+
+
     function renderLiveForecast(data,history){
       const ref=data?.forecast_reference_date;
       const label=document.getElementById("forecast_reference_label");
@@ -4222,6 +4712,7 @@
 
       renderForecastTrend("48h",data?.horizons?.["48h"],history,ref);
       renderForecastTrend("72h",data?.horizons?.["72h"],history,ref);
+      renderForecastValidation(history,data,forecastAuditHorizon);
 
       const overall=document.getElementById("forecast_overall_assessment");
       if(overall){
@@ -5404,6 +5895,7 @@
         });
     }
 
+    initForecastValidationControls();
     loadLiveForecast();
     loadStrategicPressure();
     loadStrategicOutcome();
@@ -5748,5 +6240,6 @@
 
 </body>
 </html>
+
 
 
