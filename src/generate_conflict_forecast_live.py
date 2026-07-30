@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Conflict Forecast Production Engine V1
+Conflict Forecast Production Engine V2
 
 Production 48h / 72h directional forecast with:
 - expanding historical analogue learning,
@@ -41,7 +41,7 @@ ANALYSIS_PATH = ROOT / "docs" / "conflict_analysis.json"
 LIVE_PATH = ROOT / "docs" / "conflict_forecast_live.json"
 HISTORY_PATH = ROOT / "docs" / "conflict_forecast_history.json"
 
-MODEL_VERSION = "conflict_forecast_live_v1"
+MODEL_VERSION = "conflict_forecast_live_v2"
 MIN_TRAINING_ROWS = 18
 MIN_LIVE_EVALUATED_FOR_ADAPTATION = 20
 MIN_SIGNAL_SAMPLE_FOR_ADAPTATION = 12
@@ -289,7 +289,7 @@ def predict(current, training, features, k):
 
 def default_history():
     return {
-        "history_version": "conflict_forecast_history_v1",
+        "history_version": "conflict_forecast_history_v2",
         "created_at": datetime.now(timezone.utc).isoformat(),
         "updated_at": None,
         "records": [],
@@ -334,9 +334,80 @@ def evaluate_pending(history, rows):
             "public_signal_was_issued": issued != "no_signal",
             "public_signal_correct": issued == actual if issued != "no_signal" else None,
         }
+        enrich_dashboard_fields(record)
         updated += 1
 
     return updated
+
+
+
+def enrich_dashboard_fields(record: dict[str, Any]) -> None:
+    """
+    Add a stable, flat audit schema for the dashboard while preserving the
+    original nested production fields. Existing historical records are migrated
+    automatically on every run.
+    """
+    raw = record.get("raw_prediction") or {}
+    public = record.get("public_signal") or {}
+    outcome = record.get("outcome")
+
+    raw_direction = raw.get("direction")
+    public_direction = public.get("direction", "no_signal")
+    has_signal = bool(public.get("has_signal", public_direction != "no_signal"))
+
+    record["forecast_direction"] = public_direction if has_signal else raw_direction
+    record["forecast_direction_hu"] = hu(record["forecast_direction"]) if record.get("forecast_direction") else None
+    record["raw_forecast_direction"] = raw_direction
+    record["raw_forecast_direction_hu"] = hu(raw_direction) if raw_direction else None
+    record["public_forecast_direction"] = public_direction
+    record["public_forecast_direction_hu"] = hu(public_direction)
+    record["has_public_signal"] = has_signal
+    record["top_probability"] = raw.get("top_probability")
+    record["confidence_score"] = raw.get("confidence_score")
+
+    if outcome is None:
+        record["evaluated"] = False
+        record["realized_direction"] = None
+        record["realized_direction_hu"] = None
+        record["actual_direction"] = None
+        record["actual_direction_hu"] = None
+        record["actual_change_pct"] = None
+        record["is_correct"] = None
+        record["raw_is_correct"] = None
+        record["evaluation"] = None
+        return
+
+    actual = outcome.get("actual_direction")
+    public_correct = outcome.get("public_signal_correct")
+    raw_correct = outcome.get("raw_prediction_correct")
+
+    record["evaluated"] = True
+    record["realized_direction"] = actual
+    record["realized_direction_hu"] = outcome.get("actual_direction_hu") or hu(actual)
+    record["actual_direction"] = actual
+    record["actual_direction_hu"] = outcome.get("actual_direction_hu") or hu(actual)
+    record["actual_change_pct"] = outcome.get("actual_change_pct")
+    record["is_correct"] = public_correct if has_signal else None
+    record["raw_is_correct"] = raw_correct
+    record["evaluation"] = {
+        "evaluated_at": outcome.get("evaluated_at"),
+        "target_date": outcome.get("target_date") or record.get("target_date"),
+        "observed_direction": actual,
+        "observed_direction_hu": outcome.get("actual_direction_hu") or hu(actual),
+        "realized_direction": actual,
+        "realized_direction_hu": outcome.get("actual_direction_hu") or hu(actual),
+        "actual_change_pct": outcome.get("actual_change_pct"),
+        "raw_prediction_correct": raw_correct,
+        "public_signal_was_issued": outcome.get("public_signal_was_issued"),
+        "public_signal_correct": public_correct,
+    }
+
+
+def migrate_history_for_dashboard(history: dict[str, Any]) -> None:
+    """Normalize every existing record to the dashboard audit schema."""
+    for record in history.get("records", []):
+        if isinstance(record, dict):
+            enrich_dashboard_fields(record)
 
 
 def evaluated_records(history, horizon):
@@ -474,6 +545,8 @@ def main():
     if not isinstance(history, dict):
         history = default_history()
     history.setdefault("records", [])
+    history["history_version"] = "conflict_forecast_history_v2"
+    migrate_history_for_dashboard(history)
 
     newly_evaluated = evaluate_pending(history, base_rows)
 
@@ -551,7 +624,7 @@ def main():
         live["horizons"][horizon] = result
 
         if not record_exists(history, forecast_date, horizon):
-            history["records"].append({
+            new_record = {
                 "issued_at": datetime.now(timezone.utc).isoformat(),
                 "model_version": MODEL_VERSION,
                 "forecast_reference_date": forecast_date,
@@ -567,10 +640,19 @@ def main():
                     "has_signal": has_signal,
                 },
                 "outcome": None,
-            })
+            }
+            enrich_dashboard_fields(new_record)
+            history["records"].append(new_record)
 
+    migrate_history_for_dashboard(history)
+    history["records"].sort(
+        key=lambda r: (str(r.get("forecast_reference_date", "")), str(r.get("horizon", "")))
+    )
     history["updated_at"] = datetime.now(timezone.utc).isoformat()
     history["record_count"] = len(history["records"])
+    history["evaluated_record_count"] = sum(
+        1 for r in history["records"] if r.get("evaluated") is True
+    )
 
     atomic_write(HISTORY_PATH, history)
     atomic_write(LIVE_PATH, live)
