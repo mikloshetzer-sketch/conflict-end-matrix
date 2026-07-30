@@ -41,7 +41,7 @@ ANALYSIS_PATH = ROOT / "docs" / "conflict_analysis.json"
 LIVE_PATH = ROOT / "docs" / "conflict_forecast_live.json"
 HISTORY_PATH = ROOT / "docs" / "conflict_forecast_history.json"
 
-MODEL_VERSION = "conflict_forecast_live_v2"
+MODEL_VERSION = "conflict_forecast_live_v1"
 MIN_TRAINING_ROWS = 18
 MIN_LIVE_EVALUATED_FOR_ADAPTATION = 20
 MIN_SIGNAL_SAMPLE_FOR_ADAPTATION = 12
