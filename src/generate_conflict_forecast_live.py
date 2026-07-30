@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Conflict Forecast Production Engine V2
+Conflict Forecast Production Engine V1
 
 Production 48h / 72h directional forecast with:
 - expanding historical analogue learning,
