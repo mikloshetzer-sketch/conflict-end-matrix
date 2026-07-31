@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T11:14:30.101062+00:00",
+  "generated_at": "2026-07-31T11:32:47.322125+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -19,54 +19,54 @@
   },
   "statistics": {
     "non_kinetic_events_loaded": 487,
-    "kinetic_events_loaded": 1430,
-    "unique_events_scanned": 1725,
-    "strategic_evidence_contributions": 297,
+    "kinetic_events_loaded": 1440,
+    "unique_events_scanned": 1734,
+    "strategic_evidence_contributions": 300,
     "evidence_contributions_by_actor": {
       "usa": 84,
-      "iran": 213
+      "iran": 216
     },
     "scored_contributions_by_actor": {
       "usa": 62,
-      "iran": 111
+      "iran": 113
     },
     "suppressed_duplicates_by_actor": {
       "usa": 22,
-      "iran": 102
+      "iran": 103
     },
     "contributions_by_source_layer": {
       "non_kinetic": 241,
-      "kinetic": 56
+      "kinetic": 59
     },
     "evidence_indicator_counts": {
       "iran:negotiation": 156,
       "usa:negotiation": 67,
-      "iran:missile_test": 44,
+      "iran:missile_test": 46,
       "usa:presidential_warning": 13,
       "iran:hormuz_threat": 9,
+      "iran:missile_preparation": 6,
       "usa:ceasefire_support": 6,
-      "iran:missile_preparation": 5,
       "iran:nuclear_activity": 1
     },
     "scored_indicator_counts": {
       "iran:negotiation": 76,
       "usa:negotiation": 48,
-      "iran:missile_test": 22,
+      "iran:missile_test": 23,
       "usa:presidential_warning": 13,
       "iran:hormuz_threat": 9,
-      "iran:missile_preparation": 5,
+      "iran:missile_preparation": 6,
       "usa:ceasefire_support": 3,
       "iran:nuclear_activity": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 22,
-    "history_day_count": 142
+    "skipped_current_utc_day": 1,
+    "history_day_count": 143
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-07-29",
+  "latest_complete_utc_day": "2026-07-30",
   "current": {
-    "date": "2026-07-29",
+    "date": "2026-07-30",
     "calculation_mode": "live",
     "usa": {
       "raw_score": 0.0,
@@ -79,73 +79,73 @@
       "increase_event_count": 0,
       "decrease_event_count": 0,
       "contributors": [],
-      "weighted_score_7d": -9.8,
-      "pressure_index_7d": 30.4,
+      "weighted_score_7d": -7.8,
+      "pressure_index_7d": 34.4,
       "pressure_level": "reduced",
       "trend": "increase",
       "strongest_contributors": []
     },
     "iran": {
-      "raw_score": -2.0,
-      "positive_score": 7.0,
-      "negative_score": -9.0,
-      "event_count": 2,
+      "raw_score": 17.0,
+      "positive_score": 17.0,
+      "negative_score": 0.0,
+      "event_count": 3,
       "scored_event_count": 2,
-      "evidence_event_count": 2,
-      "suppressed_duplicate_count": 0,
-      "increase_event_count": 1,
-      "decrease_event_count": 1,
+      "evidence_event_count": 3,
+      "suppressed_duplicate_count": 1,
+      "increase_event_count": 2,
+      "decrease_event_count": 0,
       "contributors": [
         {
-          "event_id": "INFO-000001",
-          "timestamp": "2026-07-29T08:36:39+00:00",
-          "date": "2026-07-29",
+          "event_id": "iranstrike-2zt15j80sbg00",
+          "timestamp": "2026-07-30T02:28:51+00:00",
+          "date": "2026-07-30",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-          "source_layer": "non_kinetic",
-          "event_type": "ceasefire",
-          "event_direction": "de-escalation",
-          "operational_component": -3.0,
-          "strategic_modifier": -6.0,
+          "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+          "source_layer": "kinetic",
+          "event_type": "kinetic",
+          "event_direction": "escalation",
+          "operational_component": 1.0,
+          "strategic_modifier": 9.0,
           "context_multiplier": 1.0,
-          "original_final_score": -9.0,
-          "final_score": -9.0,
+          "original_final_score": 10.0,
+          "final_score": 10.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
-          "primary_daily_indicator": "negotiation",
+          "primary_daily_indicator": "missile_preparation",
           "indicators": [
             {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
+              "id": "missile_preparation",
+              "name": "Missile force preparation",
+              "score": 9.0,
+              "direction": "increase",
               "interest": {
-                "id": "avoid_regime_destroying_war",
-                "name": "Avoid regime-destroying war",
+                "id": "strategic_deterrence",
+                "name": "Strategic deterrence",
                 "weight": 10.0
               },
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWGJkRFYyNm95Tjd1T1B5OGc3X0hJRm8ydndRUzBfZjY0dFJETTF1cFR6a0NUblllZVY1c3NfeEJyTnYxZk9QLUNNNnk2YjgyWXNEQXk4UlVmeE5oX09FVVJfWU5abTVQbXQxbmIzMlYzVVNYcDhFYVZFbGRLTVJFdUk4UjJ4TmpsZXk4VjN0RGlNZkdfRXJyejJ4TlpkWjVK?oc=5",
-          "existing_event_score": 1.0,
-          "existing_direction_score": 3.0,
+          "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+          "source": "",
+          "link": "https://t.me/CIG_telegram/81321",
+          "existing_event_score": 0.0,
+          "existing_direction_score": 0.0,
           "winning_daily_indicators": [
-            "negotiation"
+            "missile_preparation"
           ],
           "duplicate_daily_indicators": []
         },
         {
-          "event_id": "iranstrike-12pw8fs78dxs0",
-          "timestamp": "2026-07-29T18:03:50+00:00",
-          "date": "2026-07-29",
+          "event_id": "iranstrike-fxw62tpkrw80",
+          "timestamp": "2026-07-30T05:28:58+00:00",
+          "date": "2026-07-30",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
+          "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
           "source_layer": "kinetic",
           "event_type": "kinetic",
           "event_direction": "escalation",
@@ -172,72 +172,115 @@
               "recognition_rule_count": 1
             }
           ],
-          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
+          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
           "source": "",
-          "link": "https://t.me/OSINTdefender/19630",
+          "link": "https://t.me/OSINTdefender/19640",
           "existing_event_score": 0.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
             "missile_test"
           ],
           "duplicate_daily_indicators": []
-        }
-      ],
-      "weighted_score_7d": -16.7,
-      "pressure_index_7d": 16.6,
-      "pressure_level": "low",
-      "trend": "increase",
-      "strongest_contributors": [
+        },
         {
-          "event_id": "INFO-000001",
-          "timestamp": "2026-07-29T08:36:39+00:00",
-          "date": "2026-07-29",
+          "event_id": "iranstrike-2mk28wyb15400",
+          "timestamp": "2026-07-30T04:23:14+00:00",
+          "date": "2026-07-30",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-          "source_layer": "non_kinetic",
-          "event_type": "ceasefire",
-          "event_direction": "de-escalation",
-          "operational_component": -3.0,
-          "strategic_modifier": -6.0,
+          "title": "Iran launches ballistic missiles from Khomein, Tabriz, and Yazd targeting Muwaffaq Salti airbase and U.S. forces in Jordan",
+          "source_layer": "kinetic",
+          "event_type": "kinetic",
+          "event_direction": "escalation",
+          "operational_component": 1.0,
+          "strategic_modifier": 6.0,
           "context_multiplier": 1.0,
-          "original_final_score": -9.0,
-          "final_score": -9.0,
+          "original_final_score": 7.0,
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": true,
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "primary_daily_indicator": null,
+          "indicators": [
+            {
+              "id": "missile_test",
+              "name": "Missile test",
+              "score": 6.0,
+              "direction": "increase",
+              "interest": {
+                "id": "missile_capability",
+                "name": "Missile capability",
+                "weight": 9.0
+              },
+              "recognition_rule_count": 1
+            }
+          ],
+          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles from Khomein, Tabriz, and Yazd targeting Muwaffaq Salti airbase and U.S. forces in Jordan",
+          "source": "",
+          "link": "https://t.me/CIG_telegram/81327",
+          "existing_event_score": 0.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [],
+          "duplicate_daily_indicators": [
+            "missile_test"
+          ]
+        }
+      ],
+      "weighted_score_7d": 5.0,
+      "pressure_index_7d": 60.0,
+      "pressure_level": "elevated",
+      "trend": "strong_increase",
+      "strongest_contributors": [
+        {
+          "event_id": "iranstrike-2zt15j80sbg00",
+          "timestamp": "2026-07-30T02:28:51+00:00",
+          "date": "2026-07-30",
+          "actor": "iran",
+          "bilateral_event": false,
+          "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+          "source_layer": "kinetic",
+          "event_type": "kinetic",
+          "event_direction": "escalation",
+          "operational_component": 1.0,
+          "strategic_modifier": 9.0,
+          "context_multiplier": 1.0,
+          "original_final_score": 10.0,
+          "final_score": 10.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
-          "primary_daily_indicator": "negotiation",
+          "primary_daily_indicator": "missile_preparation",
           "indicators": [
             {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
+              "id": "missile_preparation",
+              "name": "Missile force preparation",
+              "score": 9.0,
+              "direction": "increase",
               "interest": {
-                "id": "avoid_regime_destroying_war",
-                "name": "Avoid regime-destroying war",
+                "id": "strategic_deterrence",
+                "name": "Strategic deterrence",
                 "weight": 10.0
               },
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWGJkRFYyNm95Tjd1T1B5OGc3X0hJRm8ydndRUzBfZjY0dFJETTF1cFR6a0NUblllZVY1c3NfeEJyTnYxZk9QLUNNNnk2YjgyWXNEQXk4UlVmeE5oX09FVVJfWU5abTVQbXQxbmIzMlYzVVNYcDhFYVZFbGRLTVJFdUk4UjJ4TmpsZXk4VjN0RGlNZkdfRXJyejJ4TlpkWjVK?oc=5",
-          "existing_event_score": 1.0,
-          "existing_direction_score": 3.0,
+          "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+          "source": "",
+          "link": "https://t.me/CIG_telegram/81321",
+          "existing_event_score": 0.0,
+          "existing_direction_score": 0.0,
           "winning_daily_indicators": [
-            "negotiation"
+            "missile_preparation"
           ],
           "duplicate_daily_indicators": []
         },
         {
-          "event_id": "iranstrike-12pw8fs78dxs0",
-          "timestamp": "2026-07-29T18:03:50+00:00",
-          "date": "2026-07-29",
+          "event_id": "iranstrike-fxw62tpkrw80",
+          "timestamp": "2026-07-30T05:28:58+00:00",
+          "date": "2026-07-30",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
+          "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
           "source_layer": "kinetic",
           "event_type": "kinetic",
           "event_direction": "escalation",
@@ -264,9 +307,9 @@
               "recognition_rule_count": 1
             }
           ],
-          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
+          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
           "source": "",
-          "link": "https://t.me/OSINTdefender/19630",
+          "link": "https://t.me/OSINTdefender/19640",
           "existing_event_score": 0.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
@@ -277,9 +320,9 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 23.5,
-      "pressure_level": "low",
-      "trend": "increase",
+      "pressure_index_7d": 47.2,
+      "pressure_level": "balanced",
+      "trend": "strong_increase",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
   }
