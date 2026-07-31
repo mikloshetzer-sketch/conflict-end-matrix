@@ -1,11 +1,11 @@
 {
   "metadata": {
     "model": "strategic_interest_achievement_v2",
-    "generated_at": "2026-07-30T11:15:07+00:00",
-    "reference_date": "2026-07-29",
+    "generated_at": "2026-07-31T11:33:23+00:00",
+    "reference_date": "2026-07-30",
     "history_start_date": "2026-03-10",
-    "history_end_date": "2026-07-29",
-    "history_day_count": 142,
+    "history_end_date": "2026-07-30",
+    "history_day_count": 143,
     "conflict": "United States-Iran",
     "description": "Historical and current assessment of the degree to which detected developments support or weaken the weighted strategic interests of the United States and Iran.",
     "input_files": {
@@ -21,61 +21,61 @@
     "warning_count": 1
   },
   "current": {
-    "date": "2026-07-29",
+    "date": "2026-07-30",
     "summary": {
-      "usa_achievement_index": 50.43,
-      "iran_achievement_index": 52.68,
-      "achievement_gap": -2.25,
-      "daily_strategic_advantage": "balanced",
+      "usa_achievement_index": 44.83,
+      "iran_achievement_index": 53.35,
+      "achievement_gap": -8.52,
+      "daily_strategic_advantage": "iran",
       "interpretation": "The index measures whether the current day's detected developments support or weaken each actor's own weighted strategic interests. It does not directly measure military victory or conflict outcome."
     },
     "actors": {
       "usa": {
-        "achievement_index": 50.43,
-        "change_from_neutral": 0.43,
-        "trend": "stable",
-        "level": "balanced",
-        "raw_contribution": 60.0,
+        "achievement_index": 44.83,
+        "change_from_neutral": -5.17,
+        "trend": "deteriorating",
+        "level": "moderately_negative",
+        "raw_contribution": -768.0,
         "interest_count": 8,
-        "interests_with_evidence": 6,
+        "interests_with_evidence": 5,
         "strongest_interests": [
           {
-            "id": "avoid_full_scale_war",
-            "name": "Avoid full-scale regional war",
-            "achievement_index": 56.0,
-            "change_from_neutral": 6.0
+            "id": "freedom_of_navigation",
+            "name": "Freedom of navigation",
+            "achievement_index": 50.0,
+            "change_from_neutral": 0.0
           },
           {
             "id": "nuclear_nonproliferation",
             "name": "Prevent Iranian nuclear weapon capability",
-            "achievement_index": 52.7,
-            "change_from_neutral": 2.7
+            "achievement_index": 50.0,
+            "change_from_neutral": 0.0
           },
           {
             "id": "energy_security",
             "name": "Global energy security",
-            "achievement_index": 52.1,
-            "change_from_neutral": 2.1
+            "achievement_index": 50.0,
+            "change_from_neutral": 0.0
           }
         ],
         "weakest_interests": [
           {
             "id": "israel_security",
             "name": "Israel security",
-            "achievement_index": 47.0,
-            "change_from_neutral": -3.0
+            "achievement_index": 38.0,
+            "change_from_neutral": -12.0
           },
           {
-            "id": "regional_deterrence",
-            "name": "Regional deterrence",
-            "achievement_index": 47.6,
-            "change_from_neutral": -2.4
+            "id": "force_protection",
+            "name": "Protection of US forces",
+            "achievement_index": 41.0,
+            "change_from_neutral": -9.0
           },
           {
-            "id": "regional_partners",
-            "name": "Protection of regional partners",
-            "achievement_index": 47.6,
-            "change_from_neutral": -2.4
+            "id": "avoid_full_scale_war",
+            "name": "Avoid full-scale regional war",
+            "achievement_index": 41.0,
+            "change_from_neutral": -9.0
           }
         ],
         "interests": [
@@ -84,18 +84,35 @@
             "name": "Israel security",
             "description": "Maintain Israel's security and military superiority.",
             "weight": 10.0,
-            "achievement_index": 47.0,
-            "change_from_neutral": -3.0,
-            "raw_contribution": -60.0,
+            "achievement_index": 38.0,
+            "change_from_neutral": -12.0,
+            "raw_contribution": -240.0,
             "positive_contribution": 0.0,
-            "negative_contribution": -60.0,
+            "negative_contribution": -240.0,
             "trend": "deteriorating",
-            "level": "balanced",
-            "evidence_count": 1,
+            "level": "moderately_negative",
+            "evidence_count": 2,
             "top_evidence": [
               {
-                "event_id": "iranstrike-12pw8fs78dxs0",
-                "date": "2026-07-29",
+                "event_id": "iranstrike-2zt15j80sbg00",
+                "date": "2026-07-30",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": -2.0,
+                "interest_weight": 10.0,
+                "raw_contribution": -180.0,
+                "rationale": "Israeli territory and infrastructure may face increased missile threat.",
+                "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/81321"
+              },
+              {
+                "event_id": "iranstrike-fxw62tpkrw80",
+                "date": "2026-07-30",
                 "source_actor": "iran",
                 "indicator": "missile_test",
                 "pressure_direction": "increase_pressure",
@@ -105,16 +122,33 @@
                 "interest_weight": 10.0,
                 "raw_contribution": -60.0,
                 "rationale": "Longer-range or more accurate missiles increase the threat to Israel.",
-                "title": "Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
-                "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
+                "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
                 "source": "",
-                "link": "https://t.me/OSINTdefender/19630"
+                "link": "https://t.me/OSINTdefender/19640"
               }
             ],
             "evidence": [
               {
-                "event_id": "iranstrike-12pw8fs78dxs0",
-                "date": "2026-07-29",
+                "event_id": "iranstrike-2zt15j80sbg00",
+                "date": "2026-07-30",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": -2.0,
+                "interest_weight": 10.0,
+                "raw_contribution": -180.0,
+                "rationale": "Israeli territory and infrastructure may face increased missile threat.",
+                "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/81321"
+              },
+              {
+                "event_id": "iranstrike-fxw62tpkrw80",
+                "date": "2026-07-30",
                 "source_actor": "iran",
                 "indicator": "missile_test",
                 "pressure_direction": "increase_pressure",
@@ -124,10 +158,10 @@
                 "interest_weight": 10.0,
                 "raw_contribution": -60.0,
                 "rationale": "Longer-range or more accurate missiles increase the threat to Israel.",
-                "title": "Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
-                "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
+                "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
                 "source": "",
-                "link": "https://t.me/OSINTdefender/19630"
+                "link": "https://t.me/OSINTdefender/19640"
               }
             ]
           },
@@ -136,16 +170,52 @@
             "name": "Protection of US forces",
             "description": "Protect US military personnel, bases and regional assets.",
             "weight": 10.0,
-            "achievement_index": 50.0,
-            "change_from_neutral": 0.0,
-            "raw_contribution": 0,
-            "positive_contribution": 0,
-            "negative_contribution": 0,
-            "trend": "stable",
-            "level": "balanced",
-            "evidence_count": 0,
-            "top_evidence": [],
-            "evidence": []
+            "achievement_index": 41.0,
+            "change_from_neutral": -9.0,
+            "raw_contribution": -180.0,
+            "positive_contribution": 0.0,
+            "negative_contribution": -180.0,
+            "trend": "deteriorating",
+            "level": "moderately_negative",
+            "evidence_count": 1,
+            "top_evidence": [
+              {
+                "event_id": "iranstrike-2zt15j80sbg00",
+                "date": "2026-07-30",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": -2.0,
+                "interest_weight": 10.0,
+                "raw_contribution": -180.0,
+                "rationale": "US bases and personnel face greater immediate missile risk.",
+                "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/81321"
+              }
+            ],
+            "evidence": [
+              {
+                "event_id": "iranstrike-2zt15j80sbg00",
+                "date": "2026-07-30",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": -2.0,
+                "interest_weight": 10.0,
+                "raw_contribution": -180.0,
+                "rationale": "US bases and personnel face greater immediate missile risk.",
+                "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/81321"
+              }
+            ]
           },
           {
             "id": "freedom_of_navigation",
@@ -168,52 +238,16 @@
             "name": "Prevent Iranian nuclear weapon capability",
             "description": "Limit or delay Iran's military nuclear programme.",
             "weight": 9.0,
-            "achievement_index": 52.7,
-            "change_from_neutral": 2.7,
-            "raw_contribution": 54.0,
-            "positive_contribution": 54.0,
-            "negative_contribution": 0.0,
-            "trend": "improving",
+            "achievement_index": 50.0,
+            "change_from_neutral": 0.0,
+            "raw_contribution": 0,
+            "positive_contribution": 0,
+            "negative_contribution": 0,
+            "trend": "stable",
             "level": "balanced",
-            "evidence_count": 1,
-            "top_evidence": [
-              {
-                "event_id": "INFO-000001",
-                "date": "2026-07-29",
-                "source_actor": "iran",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 1.0,
-                "interest_weight": 9.0,
-                "raw_contribution": 54.0,
-                "rationale": "Diplomatic agreements may constrain or monitor Iran's nuclear programme.",
-                "title": "US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-                "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWGJkRFYyNm95Tjd1T1B5OGc3X0hJRm8ydndRUzBfZjY0dFJETTF1cFR6a0NUblllZVY1c3NfeEJyTnYxZk9QLUNNNnk2YjgyWXNEQXk4UlVmeE5oX09FVVJfWU5abTVQbXQxbmIzMlYzVVNYcDhFYVZFbGRLTVJFdUk4UjJ4TmpsZXk4VjN0RGlNZkdfRXJyejJ4TlpkWjVK?oc=5"
-              }
-            ],
-            "evidence": [
-              {
-                "event_id": "INFO-000001",
-                "date": "2026-07-29",
-                "source_actor": "iran",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 1.0,
-                "interest_weight": 9.0,
-                "raw_contribution": 54.0,
-                "rationale": "Diplomatic agreements may constrain or monitor Iran's nuclear programme.",
-                "title": "US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-                "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWGJkRFYyNm95Tjd1T1B5OGc3X0hJRm8ydndRUzBfZjY0dFJETTF1cFR6a0NUblllZVY1c3NfeEJyTnYxZk9QLUNNNnk2YjgyWXNEQXk4UlVmeE5oX09FVVJfWU5abTVQbXQxbmIzMlYzVVNYcDhFYVZFbGRLTVJFdUk4UjJ4TmpsZXk4VjN0RGlNZkdfRXJyejJ4TlpkWjVK?oc=5"
-              }
-            ]
+            "evidence_count": 0,
+            "top_evidence": [],
+            "evidence": []
           },
           {
             "id": "regional_deterrence",
@@ -230,8 +264,8 @@
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "iranstrike-12pw8fs78dxs0",
-                "date": "2026-07-29",
+                "event_id": "iranstrike-fxw62tpkrw80",
+                "date": "2026-07-30",
                 "source_actor": "iran",
                 "indicator": "missile_test",
                 "pressure_direction": "increase_pressure",
@@ -241,16 +275,16 @@
                 "interest_weight": 8.0,
                 "raw_contribution": -48.0,
                 "rationale": "Improved Iranian missile capability weakens the relative US deterrent advantage.",
-                "title": "Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
-                "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
+                "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
                 "source": "",
-                "link": "https://t.me/OSINTdefender/19630"
+                "link": "https://t.me/OSINTdefender/19640"
               }
             ],
             "evidence": [
               {
-                "event_id": "iranstrike-12pw8fs78dxs0",
-                "date": "2026-07-29",
+                "event_id": "iranstrike-fxw62tpkrw80",
+                "date": "2026-07-30",
                 "source_actor": "iran",
                 "indicator": "missile_test",
                 "pressure_direction": "increase_pressure",
@@ -260,10 +294,10 @@
                 "interest_weight": 8.0,
                 "raw_contribution": -48.0,
                 "rationale": "Improved Iranian missile capability weakens the relative US deterrent advantage.",
-                "title": "Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
-                "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
+                "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
                 "source": "",
-                "link": "https://t.me/OSINTdefender/19630"
+                "link": "https://t.me/OSINTdefender/19640"
               }
             ]
           },
@@ -272,18 +306,35 @@
             "name": "Protection of regional partners",
             "description": "Support Gulf partners and other regional allies.",
             "weight": 8.0,
-            "achievement_index": 47.6,
-            "change_from_neutral": -2.4,
-            "raw_contribution": -48.0,
+            "achievement_index": 44.0,
+            "change_from_neutral": -6.0,
+            "raw_contribution": -120.0,
             "positive_contribution": 0.0,
-            "negative_contribution": -48.0,
+            "negative_contribution": -120.0,
             "trend": "deteriorating",
-            "level": "balanced",
-            "evidence_count": 1,
+            "level": "moderately_negative",
+            "evidence_count": 2,
             "top_evidence": [
               {
-                "event_id": "iranstrike-12pw8fs78dxs0",
-                "date": "2026-07-29",
+                "event_id": "iranstrike-2zt15j80sbg00",
+                "date": "2026-07-30",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": -1.0,
+                "interest_weight": 8.0,
+                "raw_contribution": -72.0,
+                "rationale": "Gulf partners may also become potential missile targets.",
+                "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/81321"
+              },
+              {
+                "event_id": "iranstrike-fxw62tpkrw80",
+                "date": "2026-07-30",
                 "source_actor": "iran",
                 "indicator": "missile_test",
                 "pressure_direction": "increase_pressure",
@@ -293,16 +344,33 @@
                 "interest_weight": 8.0,
                 "raw_contribution": -48.0,
                 "rationale": "Iranian missile advances increase risks to Gulf partners.",
-                "title": "Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
-                "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
+                "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
                 "source": "",
-                "link": "https://t.me/OSINTdefender/19630"
+                "link": "https://t.me/OSINTdefender/19640"
               }
             ],
             "evidence": [
               {
-                "event_id": "iranstrike-12pw8fs78dxs0",
-                "date": "2026-07-29",
+                "event_id": "iranstrike-2zt15j80sbg00",
+                "date": "2026-07-30",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": -1.0,
+                "interest_weight": 8.0,
+                "raw_contribution": -72.0,
+                "rationale": "Gulf partners may also become potential missile targets.",
+                "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/81321"
+              },
+              {
+                "event_id": "iranstrike-fxw62tpkrw80",
+                "date": "2026-07-30",
                 "source_actor": "iran",
                 "indicator": "missile_test",
                 "pressure_direction": "increase_pressure",
@@ -312,10 +380,10 @@
                 "interest_weight": 8.0,
                 "raw_contribution": -48.0,
                 "rationale": "Iranian missile advances increase risks to Gulf partners.",
-                "title": "Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
-                "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
+                "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
                 "source": "",
-                "link": "https://t.me/OSINTdefender/19630"
+                "link": "https://t.me/OSINTdefender/19640"
               }
             ]
           },
@@ -324,151 +392,115 @@
             "name": "Global energy security",
             "description": "Reduce disruption to global energy markets.",
             "weight": 7.0,
-            "achievement_index": 52.1,
-            "change_from_neutral": 2.1,
-            "raw_contribution": 42.0,
-            "positive_contribution": 42.0,
-            "negative_contribution": 0.0,
-            "trend": "improving",
+            "achievement_index": 50.0,
+            "change_from_neutral": 0.0,
+            "raw_contribution": 0,
+            "positive_contribution": 0,
+            "negative_contribution": 0,
+            "trend": "stable",
             "level": "balanced",
-            "evidence_count": 1,
-            "top_evidence": [
-              {
-                "event_id": "INFO-000001",
-                "date": "2026-07-29",
-                "source_actor": "iran",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 1.0,
-                "interest_weight": 7.0,
-                "raw_contribution": 42.0,
-                "rationale": "Lower tension supports energy-market stability.",
-                "title": "US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-                "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWGJkRFYyNm95Tjd1T1B5OGc3X0hJRm8ydndRUzBfZjY0dFJETTF1cFR6a0NUblllZVY1c3NfeEJyTnYxZk9QLUNNNnk2YjgyWXNEQXk4UlVmeE5oX09FVVJfWU5abTVQbXQxbmIzMlYzVVNYcDhFYVZFbGRLTVJFdUk4UjJ4TmpsZXk4VjN0RGlNZkdfRXJyejJ4TlpkWjVK?oc=5"
-              }
-            ],
-            "evidence": [
-              {
-                "event_id": "INFO-000001",
-                "date": "2026-07-29",
-                "source_actor": "iran",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 1.0,
-                "interest_weight": 7.0,
-                "raw_contribution": 42.0,
-                "rationale": "Lower tension supports energy-market stability.",
-                "title": "US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-                "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWGJkRFYyNm95Tjd1T1B5OGc3X0hJRm8ydndRUzBfZjY0dFJETTF1cFR6a0NUblllZVY1c3NfeEJyTnYxZk9QLUNNNnk2YjgyWXNEQXk4UlVmeE5oX09FVVJfWU5abTVQbXQxbmIzMlYzVVNYcDhFYVZFbGRLTVJFdUk4UjJ4TmpsZXk4VjN0RGlNZkdfRXJyejJ4TlpkWjVK?oc=5"
-              }
-            ]
+            "evidence_count": 0,
+            "top_evidence": [],
+            "evidence": []
           },
           {
             "id": "avoid_full_scale_war",
             "name": "Avoid full-scale regional war",
             "description": "Prevent uncontrolled regional escalation.",
             "weight": 10.0,
-            "achievement_index": 56.0,
-            "change_from_neutral": 6.0,
-            "raw_contribution": 120.0,
-            "positive_contribution": 120.0,
-            "negative_contribution": 0.0,
-            "trend": "improving",
-            "level": "moderately_positive",
+            "achievement_index": 41.0,
+            "change_from_neutral": -9.0,
+            "raw_contribution": -180.0,
+            "positive_contribution": 0.0,
+            "negative_contribution": -180.0,
+            "trend": "deteriorating",
+            "level": "moderately_negative",
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000001",
-                "date": "2026-07-29",
+                "event_id": "iranstrike-2zt15j80sbg00",
+                "date": "2026-07-30",
                 "source_actor": "iran",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 2.0,
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": -2.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 120.0,
-                "rationale": "Negotiations support conflict containment.",
-                "title": "US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-                "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWGJkRFYyNm95Tjd1T1B5OGc3X0hJRm8ydndRUzBfZjY0dFJETTF1cFR6a0NUblllZVY1c3NfeEJyTnYxZk9QLUNNNnk2YjgyWXNEQXk4UlVmeE5oX09FVVJfWU5abTVQbXQxbmIzMlYzVVNYcDhFYVZFbGRLTVJFdUk4UjJ4TmpsZXk4VjN0RGlNZkdfRXJyejJ4TlpkWjVK?oc=5"
+                "raw_contribution": -180.0,
+                "rationale": "Missile preparation significantly increases escalation risk.",
+                "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/81321"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000001",
-                "date": "2026-07-29",
+                "event_id": "iranstrike-2zt15j80sbg00",
+                "date": "2026-07-30",
                 "source_actor": "iran",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 2.0,
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": -2.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 120.0,
-                "rationale": "Negotiations support conflict containment.",
-                "title": "US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-                "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWGJkRFYyNm95Tjd1T1B5OGc3X0hJRm8ydndRUzBfZjY0dFJETTF1cFR6a0NUblllZVY1c3NfeEJyTnYxZk9QLUNNNnk2YjgyWXNEQXk4UlVmeE5oX09FVVJfWU5abTVQbXQxbmIzMlYzVVNYcDhFYVZFbGRLTVJFdUk4UjJ4TmpsZXk4VjN0RGlNZkdfRXJyejJ4TlpkWjVK?oc=5"
+                "raw_contribution": -180.0,
+                "rationale": "Missile preparation significantly increases escalation risk.",
+                "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/81321"
               }
             ]
           }
         ]
       },
       "iran": {
-        "achievement_index": 52.68,
-        "change_from_neutral": 2.68,
+        "achievement_index": 53.35,
+        "change_from_neutral": 3.35,
         "trend": "improving",
         "level": "balanced",
-        "raw_contribution": 402.0,
+        "raw_contribution": 510.0,
         "interest_count": 8,
-        "interests_with_evidence": 5,
+        "interests_with_evidence": 4,
         "strongest_interests": [
-          {
-            "id": "avoid_regime_destroying_war",
-            "name": "Avoid regime-destroying war",
-            "achievement_index": 56.0,
-            "change_from_neutral": 6.0
-          },
           {
             "id": "missile_capability",
             "name": "Missile capability",
-            "achievement_index": 55.4,
-            "change_from_neutral": 5.4
+            "achievement_index": 63.5,
+            "change_from_neutral": 13.5
+          },
+          {
+            "id": "strategic_deterrence",
+            "name": "Strategic deterrence",
+            "achievement_index": 62.0,
+            "change_from_neutral": 12.0
           },
           {
             "id": "regime_survival",
             "name": "Regime survival",
-            "achievement_index": 53.0,
-            "change_from_neutral": 3.0
+            "achievement_index": 54.5,
+            "change_from_neutral": 4.5
           }
         ],
         "weakest_interests": [
           {
+            "id": "avoid_regime_destroying_war",
+            "name": "Avoid regime-destroying war",
+            "achievement_index": 45.5,
+            "change_from_neutral": -4.5
+          },
+          {
+            "id": "nuclear_programme",
+            "name": "Preserve nuclear programme",
+            "achievement_index": 50.0,
+            "change_from_neutral": 0.0
+          },
+          {
             "id": "proxy_network",
             "name": "Regional proxy network",
-            "achievement_index": 50.0,
-            "change_from_neutral": 0.0
-          },
-          {
-            "id": "regional_influence",
-            "name": "Regional influence",
-            "achievement_index": 50.0,
-            "change_from_neutral": 0.0
-          },
-          {
-            "id": "hormuz_leverage",
-            "name": "Hormuz leverage",
             "achievement_index": 50.0,
             "change_from_neutral": 0.0
           }
@@ -479,50 +511,50 @@
             "name": "Regime survival",
             "description": "Ensure survival and stability of the Islamic Republic.",
             "weight": 10.0,
-            "achievement_index": 53.0,
-            "change_from_neutral": 3.0,
-            "raw_contribution": 60.0,
-            "positive_contribution": 60.0,
+            "achievement_index": 54.5,
+            "change_from_neutral": 4.5,
+            "raw_contribution": 90.0,
+            "positive_contribution": 90.0,
             "negative_contribution": 0.0,
             "trend": "improving",
             "level": "balanced",
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000001",
-                "date": "2026-07-29",
+                "event_id": "iranstrike-2zt15j80sbg00",
+                "date": "2026-07-30",
                 "source_actor": "iran",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
                 "effect": 1.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 60.0,
-                "rationale": "Negotiations reduce immediate pressure on the Iranian state.",
-                "title": "US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-                "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWGJkRFYyNm95Tjd1T1B5OGc3X0hJRm8ydndRUzBfZjY0dFJETTF1cFR6a0NUblllZVY1c3NfeEJyTnYxZk9QLUNNNnk2YjgyWXNEQXk4UlVmeE5oX09FVVJfWU5abTVQbXQxbmIzMlYzVVNYcDhFYVZFbGRLTVJFdUk4UjJ4TmpsZXk4VjN0RGlNZkdfRXJyejJ4TlpkWjVK?oc=5"
+                "raw_contribution": 90.0,
+                "rationale": "A credible retaliatory capability may discourage attacks on the Iranian state.",
+                "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/81321"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000001",
-                "date": "2026-07-29",
+                "event_id": "iranstrike-2zt15j80sbg00",
+                "date": "2026-07-30",
                 "source_actor": "iran",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
                 "effect": 1.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 60.0,
-                "rationale": "Negotiations reduce immediate pressure on the Iranian state.",
-                "title": "US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-                "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWGJkRFYyNm95Tjd1T1B5OGc3X0hJRm8ydndRUzBfZjY0dFJETTF1cFR6a0NUblllZVY1c3NfeEJyTnYxZk9QLUNNNnk2YjgyWXNEQXk4UlVmeE5oX09FVVJfWU5abTVQbXQxbmIzMlYzVVNYcDhFYVZFbGRLTVJFdUk4UjJ4TmpsZXk4VjN0RGlNZkdfRXJyejJ4TlpkWjVK?oc=5"
+                "raw_contribution": 90.0,
+                "rationale": "A credible retaliatory capability may discourage attacks on the Iranian state.",
+                "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/81321"
               }
             ]
           },
@@ -531,18 +563,35 @@
             "name": "Strategic deterrence",
             "description": "Maintain credible military deterrence against the United States and Israel.",
             "weight": 10.0,
-            "achievement_index": 53.0,
-            "change_from_neutral": 3.0,
-            "raw_contribution": 60.0,
-            "positive_contribution": 60.0,
+            "achievement_index": 62.0,
+            "change_from_neutral": 12.0,
+            "raw_contribution": 240.0,
+            "positive_contribution": 240.0,
             "negative_contribution": 0.0,
             "trend": "improving",
-            "level": "balanced",
-            "evidence_count": 1,
+            "level": "moderately_positive",
+            "evidence_count": 2,
             "top_evidence": [
               {
-                "event_id": "iranstrike-12pw8fs78dxs0",
-                "date": "2026-07-29",
+                "event_id": "iranstrike-2zt15j80sbg00",
+                "date": "2026-07-30",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": 2.0,
+                "interest_weight": 10.0,
+                "raw_contribution": 180.0,
+                "rationale": "Missile readiness increases Iran's ability to threaten retaliation.",
+                "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/81321"
+              },
+              {
+                "event_id": "iranstrike-fxw62tpkrw80",
+                "date": "2026-07-30",
                 "source_actor": "iran",
                 "indicator": "missile_test",
                 "pressure_direction": "increase_pressure",
@@ -552,16 +601,33 @@
                 "interest_weight": 10.0,
                 "raw_contribution": 60.0,
                 "rationale": "Successful tests strengthen perceptions of Iranian retaliatory capability.",
-                "title": "Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
-                "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
+                "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
                 "source": "",
-                "link": "https://t.me/OSINTdefender/19630"
+                "link": "https://t.me/OSINTdefender/19640"
               }
             ],
             "evidence": [
               {
-                "event_id": "iranstrike-12pw8fs78dxs0",
-                "date": "2026-07-29",
+                "event_id": "iranstrike-2zt15j80sbg00",
+                "date": "2026-07-30",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": 2.0,
+                "interest_weight": 10.0,
+                "raw_contribution": 180.0,
+                "rationale": "Missile readiness increases Iran's ability to threaten retaliation.",
+                "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/81321"
+              },
+              {
+                "event_id": "iranstrike-fxw62tpkrw80",
+                "date": "2026-07-30",
                 "source_actor": "iran",
                 "indicator": "missile_test",
                 "pressure_direction": "increase_pressure",
@@ -571,10 +637,10 @@
                 "interest_weight": 10.0,
                 "raw_contribution": 60.0,
                 "rationale": "Successful tests strengthen perceptions of Iranian retaliatory capability.",
-                "title": "Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
-                "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
+                "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
                 "source": "",
-                "link": "https://t.me/OSINTdefender/19630"
+                "link": "https://t.me/OSINTdefender/19640"
               }
             ]
           },
@@ -583,70 +649,51 @@
             "name": "Preserve nuclear programme",
             "description": "Protect strategic nuclear infrastructure and capabilities.",
             "weight": 9.0,
-            "achievement_index": 52.7,
-            "change_from_neutral": 2.7,
-            "raw_contribution": 54.0,
-            "positive_contribution": 54.0,
-            "negative_contribution": 0.0,
-            "trend": "improving",
+            "achievement_index": 50.0,
+            "change_from_neutral": 0.0,
+            "raw_contribution": 0,
+            "positive_contribution": 0,
+            "negative_contribution": 0,
+            "trend": "stable",
             "level": "balanced",
-            "evidence_count": 1,
-            "top_evidence": [
-              {
-                "event_id": "INFO-000001",
-                "date": "2026-07-29",
-                "source_actor": "iran",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 1.0,
-                "interest_weight": 9.0,
-                "raw_contribution": 54.0,
-                "rationale": "Negotiations may allow Iran to preserve controlled nuclear capabilities.",
-                "title": "US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-                "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWGJkRFYyNm95Tjd1T1B5OGc3X0hJRm8ydndRUzBfZjY0dFJETTF1cFR6a0NUblllZVY1c3NfeEJyTnYxZk9QLUNNNnk2YjgyWXNEQXk4UlVmeE5oX09FVVJfWU5abTVQbXQxbmIzMlYzVVNYcDhFYVZFbGRLTVJFdUk4UjJ4TmpsZXk4VjN0RGlNZkdfRXJyejJ4TlpkWjVK?oc=5"
-              }
-            ],
-            "evidence": [
-              {
-                "event_id": "INFO-000001",
-                "date": "2026-07-29",
-                "source_actor": "iran",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 1.0,
-                "interest_weight": 9.0,
-                "raw_contribution": 54.0,
-                "rationale": "Negotiations may allow Iran to preserve controlled nuclear capabilities.",
-                "title": "US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-                "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWGJkRFYyNm95Tjd1T1B5OGc3X0hJRm8ydndRUzBfZjY0dFJETTF1cFR6a0NUblllZVY1c3NfeEJyTnYxZk9QLUNNNnk2YjgyWXNEQXk4UlVmeE5oX09FVVJfWU5abTVQbXQxbmIzMlYzVVNYcDhFYVZFbGRLTVJFdUk4UjJ4TmpsZXk4VjN0RGlNZkdfRXJyejJ4TlpkWjVK?oc=5"
-              }
-            ]
+            "evidence_count": 0,
+            "top_evidence": [],
+            "evidence": []
           },
           {
             "id": "missile_capability",
             "name": "Missile capability",
             "description": "Maintain and develop long-range missile forces.",
             "weight": 9.0,
-            "achievement_index": 55.4,
-            "change_from_neutral": 5.4,
-            "raw_contribution": 108.0,
-            "positive_contribution": 108.0,
+            "achievement_index": 63.5,
+            "change_from_neutral": 13.5,
+            "raw_contribution": 270.0,
+            "positive_contribution": 270.0,
             "negative_contribution": 0.0,
             "trend": "improving",
             "level": "moderately_positive",
-            "evidence_count": 1,
+            "evidence_count": 2,
             "top_evidence": [
               {
-                "event_id": "iranstrike-12pw8fs78dxs0",
-                "date": "2026-07-29",
+                "event_id": "iranstrike-2zt15j80sbg00",
+                "date": "2026-07-30",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": 2.0,
+                "interest_weight": 9.0,
+                "raw_contribution": 162.0,
+                "rationale": "Preparation demonstrates and improves operational missile readiness.",
+                "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/81321"
+              },
+              {
+                "event_id": "iranstrike-fxw62tpkrw80",
+                "date": "2026-07-30",
                 "source_actor": "iran",
                 "indicator": "missile_test",
                 "pressure_direction": "increase_pressure",
@@ -656,16 +703,33 @@
                 "interest_weight": 9.0,
                 "raw_contribution": 108.0,
                 "rationale": "Testing supports technological development and operational credibility.",
-                "title": "Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
-                "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
+                "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
                 "source": "",
-                "link": "https://t.me/OSINTdefender/19630"
+                "link": "https://t.me/OSINTdefender/19640"
               }
             ],
             "evidence": [
               {
-                "event_id": "iranstrike-12pw8fs78dxs0",
-                "date": "2026-07-29",
+                "event_id": "iranstrike-2zt15j80sbg00",
+                "date": "2026-07-30",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": 2.0,
+                "interest_weight": 9.0,
+                "raw_contribution": 162.0,
+                "rationale": "Preparation demonstrates and improves operational missile readiness.",
+                "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/81321"
+              },
+              {
+                "event_id": "iranstrike-fxw62tpkrw80",
+                "date": "2026-07-30",
                 "source_actor": "iran",
                 "indicator": "missile_test",
                 "pressure_direction": "increase_pressure",
@@ -675,10 +739,10 @@
                 "interest_weight": 9.0,
                 "raw_contribution": 108.0,
                 "rationale": "Testing supports technological development and operational credibility.",
-                "title": "Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
-                "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
+                "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
                 "source": "",
-                "link": "https://t.me/OSINTdefender/19630"
+                "link": "https://t.me/OSINTdefender/19640"
               }
             ]
           },
@@ -735,50 +799,50 @@
             "name": "Avoid regime-destroying war",
             "description": "Avoid military escalation threatening state survival.",
             "weight": 10.0,
-            "achievement_index": 56.0,
-            "change_from_neutral": 6.0,
-            "raw_contribution": 120.0,
-            "positive_contribution": 120.0,
-            "negative_contribution": 0.0,
-            "trend": "improving",
-            "level": "moderately_positive",
+            "achievement_index": 45.5,
+            "change_from_neutral": -4.5,
+            "raw_contribution": -90.0,
+            "positive_contribution": 0.0,
+            "negative_contribution": -90.0,
+            "trend": "deteriorating",
+            "level": "balanced",
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000001",
-                "date": "2026-07-29",
+                "event_id": "iranstrike-2zt15j80sbg00",
+                "date": "2026-07-30",
                 "source_actor": "iran",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 2.0,
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": -1.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 120.0,
-                "rationale": "Diplomacy lowers the likelihood of a war threatening regime survival.",
-                "title": "US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-                "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWGJkRFYyNm95Tjd1T1B5OGc3X0hJRm8ydndRUzBfZjY0dFJETTF1cFR6a0NUblllZVY1c3NfeEJyTnYxZk9QLUNNNnk2YjgyWXNEQXk4UlVmeE5oX09FVVJfWU5abTVQbXQxbmIzMlYzVVNYcDhFYVZFbGRLTVJFdUk4UjJ4TmpsZXk4VjN0RGlNZkdfRXJyejJ4TlpkWjVK?oc=5"
+                "raw_contribution": -90.0,
+                "rationale": "Visible missile preparations may trigger pre-emptive action.",
+                "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/81321"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000001",
-                "date": "2026-07-29",
+                "event_id": "iranstrike-2zt15j80sbg00",
+                "date": "2026-07-30",
                 "source_actor": "iran",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 2.0,
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": -1.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 120.0,
-                "rationale": "Diplomacy lowers the likelihood of a war threatening regime survival.",
-                "title": "US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-                "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWGJkRFYyNm95Tjd1T1B5OGc3X0hJRm8ydndRUzBfZjY0dFJETTF1cFR6a0NUblllZVY1c3NfeEJyTnYxZk9QLUNNNnk2YjgyWXNEQXk4UlVmeE5oX09FVVJfWU5abTVQbXQxbmIzMlYzVVNYcDhFYVZFbGRLTVJFdUk4UjJ4TmpsZXk4VjN0RGlNZkdfRXJyejJ4TlpkWjVK?oc=5"
+                "raw_contribution": -90.0,
+                "rationale": "Visible missile preparations may trigger pre-emptive action.",
+                "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/81321"
               }
             ]
           }
@@ -787,89 +851,105 @@
     },
     "processed_evidence": [
       {
-        "event_id": "INFO-000001",
-        "timestamp": "2026-07-29T08:36:39+00:00",
-        "date": "2026-07-29",
+        "event_id": "iranstrike-2zt15j80sbg00",
+        "timestamp": "2026-07-30T02:28:51+00:00",
+        "date": "2026-07-30",
         "source_actor": "iran",
-        "title": "US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-        "event_type": "ceasefire",
-        "event_direction": "de-escalation",
-        "source_layer": "non_kinetic",
-        "final_score": -9.0,
-        "original_final_score": -9.0,
-        "operational_component": -3.0,
-        "strategic_modifier": -6.0,
-        "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
-        "source": "\"iran israel usa war when:7d\" - Google News",
-        "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWGJkRFYyNm95Tjd1T1B5OGc3X0hJRm8ydndRUzBfZjY0dFJETTF1cFR6a0NUblllZVY1c3NfeEJyTnYxZk9QLUNNNnk2YjgyWXNEQXk4UlVmeE5oX09FVVJfWU5abTVQbXQxbmIzMlYzVVNYcDhFYVZFbGRLTVJFdUk4UjJ4TmpsZXk4VjN0RGlNZkdfRXJyejJ4TlpkWjVK?oc=5",
+        "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+        "event_type": "kinetic",
+        "event_direction": "escalation",
+        "source_layer": "kinetic",
+        "final_score": 10.0,
+        "original_final_score": 10.0,
+        "operational_component": 1.0,
+        "strategic_modifier": 9.0,
+        "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+        "source": "",
+        "link": "https://t.me/CIG_telegram/81321",
         "daily_score_suppressed": false,
         "suppression_reason": "",
         "mapped_indicators": [
           {
-            "indicator": "negotiation",
-            "indicator_name": "Negotiation",
-            "pressure_direction": "decrease_pressure",
-            "indicator_score": -6.0,
-            "indicator_strength": 6.0,
+            "indicator": "missile_preparation",
+            "indicator_name": "Missile force preparation",
+            "pressure_direction": "increase_pressure",
+            "indicator_score": 9.0,
+            "indicator_strength": 9.0,
             "mapped_impacts": [
+              {
+                "target_actor": "iran",
+                "interest_id": "strategic_deterrence",
+                "effect": 2.0,
+                "interest_weight": 10.0,
+                "raw_contribution": 180.0,
+                "rationale": "Missile readiness increases Iran's ability to threaten retaliation."
+              },
+              {
+                "target_actor": "iran",
+                "interest_id": "missile_capability",
+                "effect": 2.0,
+                "interest_weight": 9.0,
+                "raw_contribution": 162.0,
+                "rationale": "Preparation demonstrates and improves operational missile readiness."
+              },
               {
                 "target_actor": "iran",
                 "interest_id": "regime_survival",
                 "effect": 1.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 60.0,
-                "rationale": "Negotiations reduce immediate pressure on the Iranian state."
+                "raw_contribution": 90.0,
+                "rationale": "A credible retaliatory capability may discourage attacks on the Iranian state."
               },
               {
                 "target_actor": "iran",
                 "interest_id": "avoid_regime_destroying_war",
-                "effect": 2.0,
+                "effect": -1.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 120.0,
-                "rationale": "Diplomacy lowers the likelihood of a war threatening regime survival."
+                "raw_contribution": -90.0,
+                "rationale": "Visible missile preparations may trigger pre-emptive action."
               },
               {
-                "target_actor": "iran",
-                "interest_id": "nuclear_programme",
-                "effect": 1.0,
-                "interest_weight": 9.0,
-                "raw_contribution": 54.0,
-                "rationale": "Negotiations may allow Iran to preserve controlled nuclear capabilities."
+                "target_actor": "usa",
+                "interest_id": "force_protection",
+                "effect": -2.0,
+                "interest_weight": 10.0,
+                "raw_contribution": -180.0,
+                "rationale": "US bases and personnel face greater immediate missile risk."
+              },
+              {
+                "target_actor": "usa",
+                "interest_id": "israel_security",
+                "effect": -2.0,
+                "interest_weight": 10.0,
+                "raw_contribution": -180.0,
+                "rationale": "Israeli territory and infrastructure may face increased missile threat."
+              },
+              {
+                "target_actor": "usa",
+                "interest_id": "regional_partners",
+                "effect": -1.0,
+                "interest_weight": 8.0,
+                "raw_contribution": -72.0,
+                "rationale": "Gulf partners may also become potential missile targets."
               },
               {
                 "target_actor": "usa",
                 "interest_id": "avoid_full_scale_war",
-                "effect": 2.0,
+                "effect": -2.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 120.0,
-                "rationale": "Negotiations support conflict containment."
-              },
-              {
-                "target_actor": "usa",
-                "interest_id": "nuclear_nonproliferation",
-                "effect": 1.0,
-                "interest_weight": 9.0,
-                "raw_contribution": 54.0,
-                "rationale": "Diplomatic agreements may constrain or monitor Iran's nuclear programme."
-              },
-              {
-                "target_actor": "usa",
-                "interest_id": "energy_security",
-                "effect": 1.0,
-                "interest_weight": 7.0,
-                "raw_contribution": 42.0,
-                "rationale": "Lower tension supports energy-market stability."
+                "raw_contribution": -180.0,
+                "rationale": "Missile preparation significantly increases escalation risk."
               }
             ]
           }
         ]
       },
       {
-        "event_id": "iranstrike-12pw8fs78dxs0",
-        "timestamp": "2026-07-29T18:03:50+00:00",
-        "date": "2026-07-29",
+        "event_id": "iranstrike-fxw62tpkrw80",
+        "timestamp": "2026-07-30T05:28:58+00:00",
+        "date": "2026-07-30",
         "source_actor": "iran",
-        "title": "Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
+        "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
         "event_type": "kinetic",
         "event_direction": "escalation",
         "source_layer": "kinetic",
@@ -877,9 +957,9 @@
         "original_final_score": 7.0,
         "operational_component": 1.0,
         "strategic_modifier": 6.0,
-        "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
+        "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
         "source": "",
-        "link": "https://t.me/OSINTdefender/19630",
+        "link": "https://t.me/OSINTdefender/19640",
         "daily_score_suppressed": false,
         "suppression_reason": "",
         "mapped_indicators": [
@@ -935,7 +1015,30 @@
         ]
       }
     ],
-    "suppressed_evidence": [],
+    "suppressed_evidence": [
+      {
+        "event_id": "iranstrike-2mk28wyb15400",
+        "timestamp": "2026-07-30T04:23:14+00:00",
+        "date": "2026-07-30",
+        "source_actor": "iran",
+        "title": "Iran launches ballistic missiles from Khomein, Tabriz, and Yazd targeting Muwaffaq Salti airbase and U.S. forces in Jordan",
+        "event_type": "kinetic",
+        "event_direction": "escalation",
+        "source_layer": "kinetic",
+        "final_score": 0.0,
+        "original_final_score": 7.0,
+        "operational_component": 1.0,
+        "strategic_modifier": 6.0,
+        "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles from Khomein, Tabriz, and Yazd targeting Muwaffaq Salti airbase and U.S. forces in Jordan",
+        "source": "",
+        "link": "https://t.me/CIG_telegram/81327",
+        "daily_score_suppressed": true,
+        "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+        "indicators": [
+          "missile_test"
+        ]
+      }
+    ],
     "unmapped_evidence": [],
     "calculation": {
       "neutral_score": 50.0,
@@ -103640,13 +103743,1042 @@
         "indicator_strength_cap": 20.0,
         "formula": "raw_contribution = absolute_indicator_score × mapped_interest_effect × interest_weight; interest_index = clamp(50 + raw_contribution / normalisation_divisor, 0, 100); actor_index = interest-weighted mean of the actor's interest indices"
       }
+    },
+    {
+      "date": "2026-07-30",
+      "summary": {
+        "usa_achievement_index": 44.83,
+        "iran_achievement_index": 53.35,
+        "achievement_gap": -8.52,
+        "daily_strategic_advantage": "iran",
+        "interpretation": "The index measures whether the current day's detected developments support or weaken each actor's own weighted strategic interests. It does not directly measure military victory or conflict outcome."
+      },
+      "actors": {
+        "usa": {
+          "achievement_index": 44.83,
+          "change_from_neutral": -5.17,
+          "trend": "deteriorating",
+          "level": "moderately_negative",
+          "raw_contribution": -768.0,
+          "interest_count": 8,
+          "interests_with_evidence": 5,
+          "strongest_interests": [
+            {
+              "id": "freedom_of_navigation",
+              "name": "Freedom of navigation",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "nuclear_nonproliferation",
+              "name": "Prevent Iranian nuclear weapon capability",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "energy_security",
+              "name": "Global energy security",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            }
+          ],
+          "weakest_interests": [
+            {
+              "id": "israel_security",
+              "name": "Israel security",
+              "achievement_index": 38.0,
+              "change_from_neutral": -12.0
+            },
+            {
+              "id": "force_protection",
+              "name": "Protection of US forces",
+              "achievement_index": 41.0,
+              "change_from_neutral": -9.0
+            },
+            {
+              "id": "avoid_full_scale_war",
+              "name": "Avoid full-scale regional war",
+              "achievement_index": 41.0,
+              "change_from_neutral": -9.0
+            }
+          ],
+          "interests": [
+            {
+              "id": "israel_security",
+              "name": "Israel security",
+              "description": "Maintain Israel's security and military superiority.",
+              "weight": 10.0,
+              "achievement_index": 38.0,
+              "change_from_neutral": -12.0,
+              "raw_contribution": -240.0,
+              "positive_contribution": 0.0,
+              "negative_contribution": -240.0,
+              "trend": "deteriorating",
+              "level": "moderately_negative",
+              "evidence_count": 2,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-2zt15j80sbg00",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -180.0,
+                  "rationale": "Israeli territory and infrastructure may face increased missile threat.",
+                  "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/81321"
+                },
+                {
+                  "event_id": "iranstrike-fxw62tpkrw80",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_test",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 6.0,
+                  "indicator_strength": 6.0,
+                  "effect": -1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -60.0,
+                  "rationale": "Longer-range or more accurate missiles increase the threat to Israel.",
+                  "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                  "source": "",
+                  "link": "https://t.me/OSINTdefender/19640"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-2zt15j80sbg00",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -180.0,
+                  "rationale": "Israeli territory and infrastructure may face increased missile threat.",
+                  "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/81321"
+                },
+                {
+                  "event_id": "iranstrike-fxw62tpkrw80",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_test",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 6.0,
+                  "indicator_strength": 6.0,
+                  "effect": -1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -60.0,
+                  "rationale": "Longer-range or more accurate missiles increase the threat to Israel.",
+                  "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                  "source": "",
+                  "link": "https://t.me/OSINTdefender/19640"
+                }
+              ]
+            },
+            {
+              "id": "force_protection",
+              "name": "Protection of US forces",
+              "description": "Protect US military personnel, bases and regional assets.",
+              "weight": 10.0,
+              "achievement_index": 41.0,
+              "change_from_neutral": -9.0,
+              "raw_contribution": -180.0,
+              "positive_contribution": 0.0,
+              "negative_contribution": -180.0,
+              "trend": "deteriorating",
+              "level": "moderately_negative",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-2zt15j80sbg00",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -180.0,
+                  "rationale": "US bases and personnel face greater immediate missile risk.",
+                  "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/81321"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-2zt15j80sbg00",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -180.0,
+                  "rationale": "US bases and personnel face greater immediate missile risk.",
+                  "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/81321"
+                }
+              ]
+            },
+            {
+              "id": "freedom_of_navigation",
+              "name": "Freedom of navigation",
+              "description": "Maintain secure maritime routes including the Strait of Hormuz.",
+              "weight": 9.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "nuclear_nonproliferation",
+              "name": "Prevent Iranian nuclear weapon capability",
+              "description": "Limit or delay Iran's military nuclear programme.",
+              "weight": 9.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "regional_deterrence",
+              "name": "Regional deterrence",
+              "description": "Maintain credible military deterrence against Iran and its proxies.",
+              "weight": 8.0,
+              "achievement_index": 47.6,
+              "change_from_neutral": -2.4,
+              "raw_contribution": -48.0,
+              "positive_contribution": 0.0,
+              "negative_contribution": -48.0,
+              "trend": "deteriorating",
+              "level": "balanced",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-fxw62tpkrw80",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_test",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 6.0,
+                  "indicator_strength": 6.0,
+                  "effect": -1.0,
+                  "interest_weight": 8.0,
+                  "raw_contribution": -48.0,
+                  "rationale": "Improved Iranian missile capability weakens the relative US deterrent advantage.",
+                  "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                  "source": "",
+                  "link": "https://t.me/OSINTdefender/19640"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-fxw62tpkrw80",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_test",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 6.0,
+                  "indicator_strength": 6.0,
+                  "effect": -1.0,
+                  "interest_weight": 8.0,
+                  "raw_contribution": -48.0,
+                  "rationale": "Improved Iranian missile capability weakens the relative US deterrent advantage.",
+                  "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                  "source": "",
+                  "link": "https://t.me/OSINTdefender/19640"
+                }
+              ]
+            },
+            {
+              "id": "regional_partners",
+              "name": "Protection of regional partners",
+              "description": "Support Gulf partners and other regional allies.",
+              "weight": 8.0,
+              "achievement_index": 44.0,
+              "change_from_neutral": -6.0,
+              "raw_contribution": -120.0,
+              "positive_contribution": 0.0,
+              "negative_contribution": -120.0,
+              "trend": "deteriorating",
+              "level": "moderately_negative",
+              "evidence_count": 2,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-2zt15j80sbg00",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": -1.0,
+                  "interest_weight": 8.0,
+                  "raw_contribution": -72.0,
+                  "rationale": "Gulf partners may also become potential missile targets.",
+                  "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/81321"
+                },
+                {
+                  "event_id": "iranstrike-fxw62tpkrw80",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_test",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 6.0,
+                  "indicator_strength": 6.0,
+                  "effect": -1.0,
+                  "interest_weight": 8.0,
+                  "raw_contribution": -48.0,
+                  "rationale": "Iranian missile advances increase risks to Gulf partners.",
+                  "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                  "source": "",
+                  "link": "https://t.me/OSINTdefender/19640"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-2zt15j80sbg00",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": -1.0,
+                  "interest_weight": 8.0,
+                  "raw_contribution": -72.0,
+                  "rationale": "Gulf partners may also become potential missile targets.",
+                  "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/81321"
+                },
+                {
+                  "event_id": "iranstrike-fxw62tpkrw80",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_test",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 6.0,
+                  "indicator_strength": 6.0,
+                  "effect": -1.0,
+                  "interest_weight": 8.0,
+                  "raw_contribution": -48.0,
+                  "rationale": "Iranian missile advances increase risks to Gulf partners.",
+                  "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                  "source": "",
+                  "link": "https://t.me/OSINTdefender/19640"
+                }
+              ]
+            },
+            {
+              "id": "energy_security",
+              "name": "Global energy security",
+              "description": "Reduce disruption to global energy markets.",
+              "weight": 7.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "avoid_full_scale_war",
+              "name": "Avoid full-scale regional war",
+              "description": "Prevent uncontrolled regional escalation.",
+              "weight": 10.0,
+              "achievement_index": 41.0,
+              "change_from_neutral": -9.0,
+              "raw_contribution": -180.0,
+              "positive_contribution": 0.0,
+              "negative_contribution": -180.0,
+              "trend": "deteriorating",
+              "level": "moderately_negative",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-2zt15j80sbg00",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -180.0,
+                  "rationale": "Missile preparation significantly increases escalation risk.",
+                  "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/81321"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-2zt15j80sbg00",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -180.0,
+                  "rationale": "Missile preparation significantly increases escalation risk.",
+                  "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/81321"
+                }
+              ]
+            }
+          ]
+        },
+        "iran": {
+          "achievement_index": 53.35,
+          "change_from_neutral": 3.35,
+          "trend": "improving",
+          "level": "balanced",
+          "raw_contribution": 510.0,
+          "interest_count": 8,
+          "interests_with_evidence": 4,
+          "strongest_interests": [
+            {
+              "id": "missile_capability",
+              "name": "Missile capability",
+              "achievement_index": 63.5,
+              "change_from_neutral": 13.5
+            },
+            {
+              "id": "strategic_deterrence",
+              "name": "Strategic deterrence",
+              "achievement_index": 62.0,
+              "change_from_neutral": 12.0
+            },
+            {
+              "id": "regime_survival",
+              "name": "Regime survival",
+              "achievement_index": 54.5,
+              "change_from_neutral": 4.5
+            }
+          ],
+          "weakest_interests": [
+            {
+              "id": "avoid_regime_destroying_war",
+              "name": "Avoid regime-destroying war",
+              "achievement_index": 45.5,
+              "change_from_neutral": -4.5
+            },
+            {
+              "id": "nuclear_programme",
+              "name": "Preserve nuclear programme",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "proxy_network",
+              "name": "Regional proxy network",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            }
+          ],
+          "interests": [
+            {
+              "id": "regime_survival",
+              "name": "Regime survival",
+              "description": "Ensure survival and stability of the Islamic Republic.",
+              "weight": 10.0,
+              "achievement_index": 54.5,
+              "change_from_neutral": 4.5,
+              "raw_contribution": 90.0,
+              "positive_contribution": 90.0,
+              "negative_contribution": 0.0,
+              "trend": "improving",
+              "level": "balanced",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-2zt15j80sbg00",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": 1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 90.0,
+                  "rationale": "A credible retaliatory capability may discourage attacks on the Iranian state.",
+                  "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/81321"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-2zt15j80sbg00",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": 1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 90.0,
+                  "rationale": "A credible retaliatory capability may discourage attacks on the Iranian state.",
+                  "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/81321"
+                }
+              ]
+            },
+            {
+              "id": "strategic_deterrence",
+              "name": "Strategic deterrence",
+              "description": "Maintain credible military deterrence against the United States and Israel.",
+              "weight": 10.0,
+              "achievement_index": 62.0,
+              "change_from_neutral": 12.0,
+              "raw_contribution": 240.0,
+              "positive_contribution": 240.0,
+              "negative_contribution": 0.0,
+              "trend": "improving",
+              "level": "moderately_positive",
+              "evidence_count": 2,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-2zt15j80sbg00",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": 2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 180.0,
+                  "rationale": "Missile readiness increases Iran's ability to threaten retaliation.",
+                  "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/81321"
+                },
+                {
+                  "event_id": "iranstrike-fxw62tpkrw80",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_test",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 60.0,
+                  "rationale": "Successful tests strengthen perceptions of Iranian retaliatory capability.",
+                  "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                  "source": "",
+                  "link": "https://t.me/OSINTdefender/19640"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-2zt15j80sbg00",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": 2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 180.0,
+                  "rationale": "Missile readiness increases Iran's ability to threaten retaliation.",
+                  "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/81321"
+                },
+                {
+                  "event_id": "iranstrike-fxw62tpkrw80",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_test",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 60.0,
+                  "rationale": "Successful tests strengthen perceptions of Iranian retaliatory capability.",
+                  "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                  "source": "",
+                  "link": "https://t.me/OSINTdefender/19640"
+                }
+              ]
+            },
+            {
+              "id": "nuclear_programme",
+              "name": "Preserve nuclear programme",
+              "description": "Protect strategic nuclear infrastructure and capabilities.",
+              "weight": 9.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "missile_capability",
+              "name": "Missile capability",
+              "description": "Maintain and develop long-range missile forces.",
+              "weight": 9.0,
+              "achievement_index": 63.5,
+              "change_from_neutral": 13.5,
+              "raw_contribution": 270.0,
+              "positive_contribution": 270.0,
+              "negative_contribution": 0.0,
+              "trend": "improving",
+              "level": "moderately_positive",
+              "evidence_count": 2,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-2zt15j80sbg00",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": 2.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 162.0,
+                  "rationale": "Preparation demonstrates and improves operational missile readiness.",
+                  "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/81321"
+                },
+                {
+                  "event_id": "iranstrike-fxw62tpkrw80",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_test",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 2.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 108.0,
+                  "rationale": "Testing supports technological development and operational credibility.",
+                  "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                  "source": "",
+                  "link": "https://t.me/OSINTdefender/19640"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-2zt15j80sbg00",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": 2.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 162.0,
+                  "rationale": "Preparation demonstrates and improves operational missile readiness.",
+                  "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/81321"
+                },
+                {
+                  "event_id": "iranstrike-fxw62tpkrw80",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_test",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 2.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 108.0,
+                  "rationale": "Testing supports technological development and operational credibility.",
+                  "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+                  "source": "",
+                  "link": "https://t.me/OSINTdefender/19640"
+                }
+              ]
+            },
+            {
+              "id": "proxy_network",
+              "name": "Regional proxy network",
+              "description": "Maintain influence through regional partner organisations.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "regional_influence",
+              "name": "Regional influence",
+              "description": "Preserve strategic influence across the Middle East.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "hormuz_leverage",
+              "name": "Hormuz leverage",
+              "description": "Retain the ability to influence maritime traffic through the Strait of Hormuz.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "avoid_regime_destroying_war",
+              "name": "Avoid regime-destroying war",
+              "description": "Avoid military escalation threatening state survival.",
+              "weight": 10.0,
+              "achievement_index": 45.5,
+              "change_from_neutral": -4.5,
+              "raw_contribution": -90.0,
+              "positive_contribution": 0.0,
+              "negative_contribution": -90.0,
+              "trend": "deteriorating",
+              "level": "balanced",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-2zt15j80sbg00",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": -1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -90.0,
+                  "rationale": "Visible missile preparations may trigger pre-emptive action.",
+                  "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/81321"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-2zt15j80sbg00",
+                  "date": "2026-07-30",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": -1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -90.0,
+                  "rationale": "Visible missile preparations may trigger pre-emptive action.",
+                  "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/81321"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "processed_evidence": [
+        {
+          "event_id": "iranstrike-2zt15j80sbg00",
+          "timestamp": "2026-07-30T02:28:51+00:00",
+          "date": "2026-07-30",
+          "source_actor": "iran",
+          "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+          "event_type": "kinetic",
+          "event_direction": "escalation",
+          "source_layer": "kinetic",
+          "final_score": 10.0,
+          "original_final_score": 10.0,
+          "operational_component": 1.0,
+          "strategic_modifier": 9.0,
+          "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+          "source": "",
+          "link": "https://t.me/CIG_telegram/81321",
+          "daily_score_suppressed": false,
+          "suppression_reason": "",
+          "mapped_indicators": [
+            {
+              "indicator": "missile_preparation",
+              "indicator_name": "Missile force preparation",
+              "pressure_direction": "increase_pressure",
+              "indicator_score": 9.0,
+              "indicator_strength": 9.0,
+              "mapped_impacts": [
+                {
+                  "target_actor": "iran",
+                  "interest_id": "strategic_deterrence",
+                  "effect": 2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 180.0,
+                  "rationale": "Missile readiness increases Iran's ability to threaten retaliation."
+                },
+                {
+                  "target_actor": "iran",
+                  "interest_id": "missile_capability",
+                  "effect": 2.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 162.0,
+                  "rationale": "Preparation demonstrates and improves operational missile readiness."
+                },
+                {
+                  "target_actor": "iran",
+                  "interest_id": "regime_survival",
+                  "effect": 1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 90.0,
+                  "rationale": "A credible retaliatory capability may discourage attacks on the Iranian state."
+                },
+                {
+                  "target_actor": "iran",
+                  "interest_id": "avoid_regime_destroying_war",
+                  "effect": -1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -90.0,
+                  "rationale": "Visible missile preparations may trigger pre-emptive action."
+                },
+                {
+                  "target_actor": "usa",
+                  "interest_id": "force_protection",
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -180.0,
+                  "rationale": "US bases and personnel face greater immediate missile risk."
+                },
+                {
+                  "target_actor": "usa",
+                  "interest_id": "israel_security",
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -180.0,
+                  "rationale": "Israeli territory and infrastructure may face increased missile threat."
+                },
+                {
+                  "target_actor": "usa",
+                  "interest_id": "regional_partners",
+                  "effect": -1.0,
+                  "interest_weight": 8.0,
+                  "raw_contribution": -72.0,
+                  "rationale": "Gulf partners may also become potential missile targets."
+                },
+                {
+                  "target_actor": "usa",
+                  "interest_id": "avoid_full_scale_war",
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -180.0,
+                  "rationale": "Missile preparation significantly increases escalation risk."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "event_id": "iranstrike-fxw62tpkrw80",
+          "timestamp": "2026-07-30T05:28:58+00:00",
+          "date": "2026-07-30",
+          "source_actor": "iran",
+          "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+          "event_type": "kinetic",
+          "event_direction": "escalation",
+          "source_layer": "kinetic",
+          "final_score": 7.0,
+          "original_final_score": 7.0,
+          "operational_component": 1.0,
+          "strategic_modifier": 6.0,
+          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+          "source": "",
+          "link": "https://t.me/OSINTdefender/19640",
+          "daily_score_suppressed": false,
+          "suppression_reason": "",
+          "mapped_indicators": [
+            {
+              "indicator": "missile_test",
+              "indicator_name": "Missile test",
+              "pressure_direction": "increase_pressure",
+              "indicator_score": 6.0,
+              "indicator_strength": 6.0,
+              "mapped_impacts": [
+                {
+                  "target_actor": "iran",
+                  "interest_id": "missile_capability",
+                  "effect": 2.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 108.0,
+                  "rationale": "Testing supports technological development and operational credibility."
+                },
+                {
+                  "target_actor": "iran",
+                  "interest_id": "strategic_deterrence",
+                  "effect": 1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 60.0,
+                  "rationale": "Successful tests strengthen perceptions of Iranian retaliatory capability."
+                },
+                {
+                  "target_actor": "usa",
+                  "interest_id": "regional_deterrence",
+                  "effect": -1.0,
+                  "interest_weight": 8.0,
+                  "raw_contribution": -48.0,
+                  "rationale": "Improved Iranian missile capability weakens the relative US deterrent advantage."
+                },
+                {
+                  "target_actor": "usa",
+                  "interest_id": "israel_security",
+                  "effect": -1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -60.0,
+                  "rationale": "Longer-range or more accurate missiles increase the threat to Israel."
+                },
+                {
+                  "target_actor": "usa",
+                  "interest_id": "regional_partners",
+                  "effect": -1.0,
+                  "interest_weight": 8.0,
+                  "raw_contribution": -48.0,
+                  "rationale": "Iranian missile advances increase risks to Gulf partners."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "suppressed_evidence": [
+        {
+          "event_id": "iranstrike-2mk28wyb15400",
+          "timestamp": "2026-07-30T04:23:14+00:00",
+          "date": "2026-07-30",
+          "source_actor": "iran",
+          "title": "Iran launches ballistic missiles from Khomein, Tabriz, and Yazd targeting Muwaffaq Salti airbase and U.S. forces in Jordan",
+          "event_type": "kinetic",
+          "event_direction": "escalation",
+          "source_layer": "kinetic",
+          "final_score": 0.0,
+          "original_final_score": 7.0,
+          "operational_component": 1.0,
+          "strategic_modifier": 6.0,
+          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles from Khomein, Tabriz, and Yazd targeting Muwaffaq Salti airbase and U.S. forces in Jordan",
+          "source": "",
+          "link": "https://t.me/CIG_telegram/81327",
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "indicators": [
+            "missile_test"
+          ]
+        }
+      ],
+      "unmapped_evidence": [],
+      "calculation": {
+        "neutral_score": 50.0,
+        "minimum_score": 0.0,
+        "maximum_score": 100.0,
+        "normalisation_divisor": 20.0,
+        "indicator_strength_cap": 20.0,
+        "formula": "raw_contribution = absolute_indicator_score × mapped_interest_effect × interest_weight; interest_index = clamp(50 + raw_contribution / normalisation_divisor, 0, 100); actor_index = interest-weighted mean of the actor's interest indices"
+      }
     }
   ],
   "history_summary": {
-    "day_count": 142,
+    "day_count": 143,
     "actors": {
       "usa": {
-        "average": 50.65,
+        "average": 50.61,
         "median": 50.43,
         "best_day": {
           "date": "2026-05-16",
@@ -104509,6 +105641,12 @@
               "value": 51.24,
               "window": 7,
               "observations": 7
+            },
+            {
+              "date": "2026-07-30",
+              "value": 50.3,
+              "window": 7,
+              "observations": 7
             }
           ],
           "30_day": [
@@ -105363,19 +106501,25 @@
               "value": 50.08,
               "window": 30,
               "observations": 30
+            },
+            {
+              "date": "2026-07-30",
+              "value": 49.8,
+              "window": 30,
+              "observations": 30
             }
           ]
         },
         "trend": {
           "direction": "stable",
-          "slope": -0.0025
+          "slope": -0.0041
         },
-        "volatility": 1.6479,
-        "latest": 50.43,
-        "change_first_to_latest": -2.78
+        "volatility": 1.7123,
+        "latest": 44.83,
+        "change_first_to_latest": -8.38
       },
       "iran": {
-        "average": 51.26,
+        "average": 51.28,
         "median": 51.59,
         "best_day": {
           "date": "2026-06-01",
@@ -106238,6 +107382,12 @@
               "value": 51.52,
               "window": 7,
               "observations": 7
+            },
+            {
+              "date": "2026-07-30",
+              "value": 51.77,
+              "window": 7,
+              "observations": 7
             }
           ],
           "30_day": [
@@ -107092,16 +108242,22 @@
               "value": 51.51,
               "window": 30,
               "observations": 30
+            },
+            {
+              "date": "2026-07-30",
+              "value": 51.51,
+              "window": 30,
+              "observations": 30
             }
           ]
         },
         "trend": {
           "direction": "stable",
-          "slope": 0.0095
+          "slope": 0.0099
         },
-        "volatility": 1.2584,
-        "latest": 52.68,
-        "change_first_to_latest": -0.49
+        "volatility": 1.266,
+        "latest": 53.35,
+        "change_first_to_latest": 0.18
       }
     }
   },
@@ -109957,6 +111113,29 @@
         "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
         "indicators": [
           "negotiation"
+        ]
+      },
+      {
+        "assessment_date": "2026-07-30",
+        "event_id": "iranstrike-2mk28wyb15400",
+        "timestamp": "2026-07-30T04:23:14+00:00",
+        "date": "2026-07-30",
+        "source_actor": "iran",
+        "title": "Iran launches ballistic missiles from Khomein, Tabriz, and Yazd targeting Muwaffaq Salti airbase and U.S. forces in Jordan",
+        "event_type": "kinetic",
+        "event_direction": "escalation",
+        "source_layer": "kinetic",
+        "final_score": 0.0,
+        "original_final_score": 7.0,
+        "operational_component": 1.0,
+        "strategic_modifier": 6.0,
+        "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles from Khomein, Tabriz, and Yazd targeting Muwaffaq Salti airbase and U.S. forces in Jordan",
+        "source": "",
+        "link": "https://t.me/CIG_telegram/81327",
+        "daily_score_suppressed": true,
+        "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+        "indicators": [
+          "missile_test"
         ]
       }
     ],
@@ -115502,19 +116681,42 @@
       "2026-07-15: Contributor 'iranstrike-2tkm82zt8rc00' has final_score 0 and was skipped."
     ],
     "counts": {
-      "suppressed_evidence": 124,
+      "suppressed_evidence": 125,
       "bilateral_duplicates": 205,
       "unmapped_indicators": 0,
       "warnings": 1
     },
     "current": {
-      "suppressed_evidence": [],
+      "suppressed_evidence": [
+        {
+          "event_id": "iranstrike-2mk28wyb15400",
+          "timestamp": "2026-07-30T04:23:14+00:00",
+          "date": "2026-07-30",
+          "source_actor": "iran",
+          "title": "Iran launches ballistic missiles from Khomein, Tabriz, and Yazd targeting Muwaffaq Salti airbase and U.S. forces in Jordan",
+          "event_type": "kinetic",
+          "event_direction": "escalation",
+          "source_layer": "kinetic",
+          "final_score": 0.0,
+          "original_final_score": 7.0,
+          "operational_component": 1.0,
+          "strategic_modifier": 6.0,
+          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles from Khomein, Tabriz, and Yazd targeting Muwaffaq Salti airbase and U.S. forces in Jordan",
+          "source": "",
+          "link": "https://t.me/CIG_telegram/81327",
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "indicators": [
+            "missile_test"
+          ]
+        }
+      ],
       "bilateral_duplicates": [],
       "unmapped_indicators": [],
       "warnings": [],
       "counts": {
         "processed_evidence": 2,
-        "suppressed_evidence": 0,
+        "suppressed_evidence": 1,
         "bilateral_duplicates": 0,
         "unmapped_indicators": 0,
         "warnings": 0
