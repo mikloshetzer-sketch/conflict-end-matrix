@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-01T08:59:27.744723Z",
-  "source_generated_at": "2026-08-01T07:38:10Z",
+  "generated_at": "2026-08-01T10:47:02.817319Z",
+  "source_generated_at": "2026-08-01T09:44:30Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
@@ -11,12 +11,12 @@
     "max_age_hours": 8.0
   },
   "source_event_count": 10000,
-  "event_count": 1443,
-  "rejected_count": 8553,
+  "event_count": 1446,
+  "rejected_count": 8550,
   "rejection_counts": {
     "no_confirmed_action_language": 5562,
-    "category_not_kinetic": 1827,
-    "outside_window": 1068,
+    "category_not_kinetic": 1825,
+    "outside_window": 1067,
     "context_or_hypothetical": 64,
     "alert_only": 16,
     "retrospective_or_aftermath": 16
@@ -24,24 +24,24 @@
   "category_counts": {
     "missile": 481,
     "strike": 401,
-    "drone": 225,
+    "drone": 228,
     "airstrike": 162,
     "explosion": 106,
     "ground": 61,
     "intercept": 7
   },
   "severity_counts": {
-    "medium": 875,
+    "medium": 878,
     "high": 482,
     "low": 77,
     "critical": 9
   },
   "actor_counts": {
-    "Iran": 460,
+    "Iran": 462,
     "Israel": 387,
     "United States": 269,
     "Lebanon": 155,
-    "Unknown actor": 96,
+    "Unknown actor": 97,
     "Yemen": 47,
     "Saudi Arabia": 14,
     "Iraq": 10,
@@ -49,6 +49,84 @@
     "Kuwait": 2
   },
   "events": [
+    {
+      "event_id": "iranstrike-1x7i00xs6rc00",
+      "timestamp": "2026-08-01T08:26:01Z",
+      "event_type": "kinetic",
+      "subtype": "drone",
+      "category": "drone",
+      "severity": "medium",
+      "actor": "irn",
+      "actor_label": "Iran",
+      "actor_method": "raw_source.origin",
+      "target_country": "Iran",
+      "location": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Iran launches drone attack on U.S. bases in Kuwait, hits government facility in northern Kuwait and civilian vehicles on Boubyan Island, causing property damage but no casualties",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/127706",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-pmjtknxyry80",
+      "timestamp": "2026-08-01T07:38:01Z",
+      "event_type": "kinetic",
+      "subtype": "drone",
+      "category": "drone",
+      "severity": "medium",
+      "actor": "irn",
+      "actor_label": "Iran",
+      "actor_method": "raw_source.origin",
+      "target_country": "Iran",
+      "location": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Iran launches drone attack targeting U.S. military bases in Kuwait",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/127696",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-2jsvpg2oc3y00",
+      "timestamp": "2026-08-01T07:38:01Z",
+      "event_type": "kinetic",
+      "subtype": "drone",
+      "category": "drone",
+      "severity": "medium",
+      "actor": "unknown",
+      "actor_label": "Unknown actor",
+      "actor_method": "normalized.attacker",
+      "target_country": "Iran",
+      "location": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Kuwait activates air defense to intercept incoming Iranian drones",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/127696",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-2s39ubh44qg00",
       "timestamp": "2026-08-01T05:25:08Z",
