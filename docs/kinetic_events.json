@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-03T08:43:07.756700Z",
-  "source_generated_at": "2026-08-03T03:58:11Z",
+  "generated_at": "2026-08-03T12:31:49.811769Z",
+  "source_generated_at": "2026-08-03T11:45:07Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
   "source_event_count": 1000,
@@ -21,24 +21,24 @@
     "alert_only": 5
   },
   "category_counts": {
-    "missile": 179,
+    "missile": 180,
     "strike": 145,
-    "airstrike": 97,
+    "airstrike": 96,
     "explosion": 75,
     "drone": 67,
     "ground": 12
   },
   "severity_counts": {
-    "medium": 279,
-    "high": 263,
+    "medium": 281,
+    "high": 261,
     "low": 30,
     "critical": 3
   },
   "actor_counts": {
     "Iran": 238,
-    "United States": 195,
+    "United States": 193,
     "Unknown actor": 51,
-    "Israel": 38,
+    "Israel": 40,
     "Yemen": 28,
     "Saudi Arabia": 10,
     "Iraq": 9,
@@ -47,6 +47,58 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-1qcph9p2d2f40",
+      "timestamp": "2026-08-03T11:08:14Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "medium",
+      "actor": "israel",
+      "actor_label": "Israel",
+      "actor_method": "normalized.attacker",
+      "target_country": "Iran",
+      "location": "Tehran",
+      "latitude": 35.6892,
+      "longitude": 51.389,
+      "map_visualizable": true,
+      "description": "Satellite imagery shows Iran has resumed tunnelling work at Alborz missile city northwest Tehran after Israeli air force strikes, with all 5 tunnel entrances reopened",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/81595",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-2mvepxoibv800",
+      "timestamp": "2026-08-03T05:51:01Z",
+      "event_type": "kinetic",
+      "subtype": "explosion",
+      "category": "explosion",
+      "severity": "medium",
+      "actor": "isr",
+      "actor_label": "Israel",
+      "actor_method": "raw_source.origin",
+      "target_country": "Lebanon",
+      "location": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "IDF conducts controlled demolitions in southern Lebanon near Majdal Zoun and Almuntiri in western sector of Tyre district, explosions also reported in Hadatha",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/127818",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-2i05o2szgzw00",
       "timestamp": "2026-08-02T12:28:38Z",
@@ -14937,58 +14989,6 @@
       "description": "U.S. renewed airstrikes on Konarak in Sistan and Baluchestan, Iran",
       "source_name": "CIG_telegram",
       "source_url": "https://t.me/CIG_telegram/79089",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-3lv1yr1uzi800",
-      "timestamp": "2026-07-08T20:14:28Z",
-      "event_type": "kinetic",
-      "subtype": "explosion",
-      "category": "explosion",
-      "severity": "high",
-      "actor": "usa",
-      "actor_label": "United States",
-      "actor_method": "raw_source.origin",
-      "target_country": "Iran",
-      "location": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "U.S. military strikes at least 10 targets in southern Iran, explosions reported",
-      "source_name": "idkunim_il",
-      "source_url": "https://t.me/idkunim_il/61295",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-w4cazi7pkqo0",
-      "timestamp": "2026-07-08T20:02:26Z",
-      "event_type": "kinetic",
-      "subtype": "airstrike",
-      "category": "airstrike",
-      "severity": "high",
-      "actor": "usa",
-      "actor_label": "United States",
-      "actor_method": "raw_source.origin",
-      "target_country": "Iran",
-      "location": "Bandar Abbas",
-      "latitude": 27.1832,
-      "longitude": 56.2666,
-      "map_visualizable": true,
-      "description": "U.S. airstrikes reported in Bandar Abbas, Iran with explosions confirmed",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79087",
       "source_repository": "mikloshetzer-sketch/me-security-monitor",
       "source_collection": "events",
       "validation": {
