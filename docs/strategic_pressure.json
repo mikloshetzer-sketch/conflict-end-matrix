@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T10:47:12.487368+00:00",
+  "generated_at": "2026-08-03T07:13:17.644547+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,184 +18,167 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 490,
-    "kinetic_events_loaded": 1450,
-    "unique_events_scanned": 1745,
-    "strategic_evidence_contributions": 300,
+    "non_kinetic_events_loaded": 497,
+    "kinetic_events_loaded": 575,
+    "unique_events_scanned": 1020,
+    "strategic_evidence_contributions": 279,
     "evidence_contributions_by_actor": {
-      "usa": 84,
-      "iran": 216
+      "usa": 87,
+      "iran": 192
     },
     "scored_contributions_by_actor": {
-      "usa": 62,
-      "iran": 113
+      "usa": 64,
+      "iran": 99
     },
     "suppressed_duplicates_by_actor": {
-      "usa": 22,
-      "iran": 103
+      "usa": 23,
+      "iran": 93
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 241,
-      "kinetic": 59
+      "non_kinetic": 245,
+      "kinetic": 34
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 156,
-      "usa:negotiation": 67,
-      "iran:missile_test": 46,
+      "iran:negotiation": 157,
+      "usa:negotiation": 68,
+      "iran:missile_test": 24,
       "usa:presidential_warning": 13,
-      "iran:hormuz_threat": 9,
-      "iran:missile_preparation": 6,
-      "usa:ceasefire_support": 6,
+      "iran:hormuz_threat": 8,
+      "usa:ceasefire_support": 8,
+      "iran:missile_preparation": 4,
       "iran:nuclear_activity": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 76,
-      "usa:negotiation": 48,
-      "iran:missile_test": 23,
+      "iran:negotiation": 77,
+      "usa:negotiation": 49,
       "usa:presidential_warning": 13,
-      "iran:hormuz_threat": 9,
-      "iran:missile_preparation": 6,
-      "usa:ceasefire_support": 3,
+      "iran:missile_test": 11,
+      "iran:hormuz_threat": 8,
+      "iran:missile_preparation": 4,
+      "usa:ceasefire_support": 4,
       "iran:nuclear_activity": 1
     },
     "skipped_without_timestamp": 0,
     "skipped_current_utc_day": 1,
-    "history_day_count": 143
+    "history_day_count": 146
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-07-30",
+  "latest_complete_utc_day": "2026-08-02",
   "current": {
-    "date": "2026-07-30",
+    "date": "2026-08-02",
     "calculation_mode": "live",
     "usa": {
-      "raw_score": 0.0,
+      "raw_score": -16.0,
       "positive_score": 0.0,
-      "negative_score": 0.0,
-      "event_count": 0,
-      "scored_event_count": 0,
-      "evidence_event_count": 0,
-      "suppressed_duplicate_count": 0,
-      "increase_event_count": 0,
-      "decrease_event_count": 0,
-      "contributors": [],
-      "weighted_score_7d": -7.8,
-      "pressure_index_7d": 34.4,
-      "pressure_level": "reduced",
-      "trend": "increase",
-      "strongest_contributors": []
-    },
-    "iran": {
-      "raw_score": 17.0,
-      "positive_score": 17.0,
-      "negative_score": 0.0,
+      "negative_score": -16.0,
       "event_count": 3,
       "scored_event_count": 2,
       "evidence_event_count": 3,
       "suppressed_duplicate_count": 1,
-      "increase_event_count": 2,
-      "decrease_event_count": 0,
+      "increase_event_count": 0,
+      "decrease_event_count": 2,
       "contributors": [
         {
-          "event_id": "iranstrike-2zt15j80sbg00",
-          "timestamp": "2026-07-30T02:28:51+00:00",
-          "date": "2026-07-30",
-          "actor": "iran",
-          "bilateral_event": false,
-          "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
-          "source_layer": "kinetic",
-          "event_type": "kinetic",
-          "event_direction": "escalation",
-          "operational_component": 1.0,
-          "strategic_modifier": 9.0,
+          "event_id": "INFO-000005",
+          "timestamp": "2026-08-02T04:45:00+00:00",
+          "date": "2026-08-02",
+          "actor": "usa",
+          "bilateral_event": true,
+          "title": "Trump backs down on Iran strikes in expectation of ‘rapidly’ reaching a deal - The Guardian",
+          "source_layer": "non_kinetic",
+          "event_type": "ceasefire",
+          "event_direction": "de-escalation",
+          "operational_component": -3.0,
+          "strategic_modifier": -7.0,
           "context_multiplier": 1.0,
-          "original_final_score": 10.0,
-          "final_score": 10.0,
+          "original_final_score": -10.0,
+          "final_score": -10.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
-          "primary_daily_indicator": "missile_preparation",
+          "primary_daily_indicator": "ceasefire_support",
           "indicators": [
             {
-              "id": "missile_preparation",
-              "name": "Missile force preparation",
-              "score": 9.0,
-              "direction": "increase",
+              "id": "ceasefire_support",
+              "name": "Support for ceasefire",
+              "score": -7.0,
+              "direction": "decrease",
               "interest": {
-                "id": "strategic_deterrence",
-                "name": "Strategic deterrence",
+                "id": "avoid_full_scale_war",
+                "name": "Avoid full-scale regional war",
                 "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
-          "source": "",
-          "link": "https://t.me/CIG_telegram/81321",
-          "existing_event_score": 0.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [
-            "missile_preparation"
-          ],
-          "duplicate_daily_indicators": []
-        },
-        {
-          "event_id": "iranstrike-fxw62tpkrw80",
-          "timestamp": "2026-07-30T05:28:58+00:00",
-          "date": "2026-07-30",
-          "actor": "iran",
-          "bilateral_event": false,
-          "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
-          "source_layer": "kinetic",
-          "event_type": "kinetic",
-          "event_direction": "escalation",
-          "operational_component": 1.0,
-          "strategic_modifier": 6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": 7.0,
-          "final_score": 7.0,
-          "duplicate_indicator_evidence": false,
-          "daily_score_suppressed": false,
-          "suppression_reason": null,
-          "primary_daily_indicator": "missile_test",
-          "indicators": [
-            {
-              "id": "missile_test",
-              "name": "Missile test",
-              "score": 6.0,
-              "direction": "increase",
-              "interest": {
-                "id": "missile_capability",
-                "name": "Missile capability",
-                "weight": 9.0
               },
               "recognition_rule_count": 1
             }
           ],
-          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
-          "source": "",
-          "link": "https://t.me/OSINTdefender/19640",
-          "existing_event_score": 0.0,
-          "existing_direction_score": 0.0,
+          "reason": "United States: Support for ceasefire. Operational component: -3.00; strategic modifier: -7.00; final contribution before daily deduplication: -10.00. Event: Trump backs down on Iran strikes in expectation of ‘rapidly’ reaching a deal - The Guardian",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQczZBcUg1UEtfYzNTQm83WWRMZjl1LTlGZXJNNkE3Sk5ydlBDem83Vy1VckRxa19BeUo0eDd2MWVTTFB0VjdZcE1DSnJjeVZXNjJZSFZmTmpydlp1TTctblZWYzNJME9FTC12OGhfdC1RaTliQzd2WmRZQlBZb2hZTTNleHczWVpxVS1IcHBoRlhnOUJMMWNnenpDMW5zYk94aldjNzBDbFAzamxzelZMaUdDbVZBOWFlb3R1Q1pR?oc=5",
+          "existing_event_score": -3.0,
+          "existing_direction_score": 3.0,
           "winning_daily_indicators": [
-            "missile_test"
+            "ceasefire_support"
           ],
           "duplicate_daily_indicators": []
         },
         {
-          "event_id": "iranstrike-2mk28wyb15400",
-          "timestamp": "2026-07-30T04:23:14+00:00",
-          "date": "2026-07-30",
-          "actor": "iran",
-          "bilateral_event": false,
-          "title": "Iran launches ballistic missiles from Khomein, Tabriz, and Yazd targeting Muwaffaq Salti airbase and U.S. forces in Jordan",
-          "source_layer": "kinetic",
-          "event_type": "kinetic",
-          "event_direction": "escalation",
-          "operational_component": 1.0,
-          "strategic_modifier": 6.0,
+          "event_id": "INFO-000002",
+          "timestamp": "2026-08-02T16:27:30+00:00",
+          "date": "2026-08-02",
+          "actor": "usa",
+          "bilateral_event": true,
+          "title": "Saudi Crown Prince MBS urges Trump to ‘prioritise dialogue’ in US-Iran war - Al Jazeera",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": 7.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
+          "duplicate_indicator_evidence": false,
+          "daily_score_suppressed": false,
+          "suppression_reason": null,
+          "primary_daily_indicator": "negotiation",
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_full_scale_war",
+                "name": "Avoid full-scale regional war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 4
+            }
+          ],
+          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Saudi Crown Prince MBS urges Trump to ‘prioritise dialogue’ in US-Iran war - Al Jazeera",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNcWdJZ0hLbTduamRXQktXdkUyLVZJUEJwN053cGMwM295b0dBX18tcjdlRXhSU3pwZjlIZzZQcDd6TmQtVkcwUF9venBYeDF6TjFBZkplVGJfYzJRS0hMVEV5QW9vZ2FOSmpaR0lxc20xVHhteVN1YU8yQ01CUEI4Y19TVEpPTHNGRjFSU3NPcFlBY21qcGtkN2ptN1ZjTnFQM3VraWpNX203VHRBTVcyX0dR0gG3AUFVX3lxTE9VLVlTSTJ5ZXJaREhEZEZXczU4Szd2WmgtVjNnbU1KbmduTjBOT3RvOEZFVWIwRDZCVGR5QnlnaFVDZ0ZjWGpWVFhLMnpZMjhMMVdpLTM1UHJ5Z2FvdGp5dHctaGYwUEVzTlJvZjRObEg3VmlXYWtXWmwyNXg3em9uMXk5Mm5EbGNDSXJoMWJvVmtfdkZDUmRUdElwT21YX3lJakxWN2JPc0Q1MFJfeEdXYzhuZDQ0bw?oc=5",
+          "existing_event_score": 1.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [
+            "negotiation"
+          ],
+          "duplicate_daily_indicators": []
+        },
+        {
+          "event_id": "INFO-000004",
+          "timestamp": "2026-08-02T05:28:11+00:00",
+          "date": "2026-08-02",
+          "actor": "usa",
+          "bilateral_event": true,
+          "title": "Trump holds off on striking Iran, calls for 'rapid' deal to end the conflict - France 24",
+          "source_layer": "non_kinetic",
+          "event_type": "ceasefire",
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -7.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -7.0,
           "final_score": 0.0,
           "duplicate_indicator_evidence": true,
           "daily_score_suppressed": true,
@@ -203,126 +186,231 @@
           "primary_daily_indicator": null,
           "indicators": [
             {
-              "id": "missile_test",
-              "name": "Missile test",
-              "score": 6.0,
-              "direction": "increase",
+              "id": "ceasefire_support",
+              "name": "Support for ceasefire",
+              "score": -7.0,
+              "direction": "decrease",
               "interest": {
-                "id": "missile_capability",
-                "name": "Missile capability",
-                "weight": 9.0
+                "id": "avoid_full_scale_war",
+                "name": "Avoid full-scale regional war",
+                "weight": 10.0
               },
               "recognition_rule_count": 1
             }
           ],
-          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles from Khomein, Tabriz, and Yazd targeting Muwaffaq Salti airbase and U.S. forces in Jordan",
-          "source": "",
-          "link": "https://t.me/CIG_telegram/81327",
-          "existing_event_score": 0.0,
+          "reason": "United States: Support for ceasefire. Operational component: +0.00; strategic modifier: -7.00; final contribution before daily deduplication: -7.00. Event: Trump holds off on striking Iran, calls for 'rapid' deal to end the conflict - France 24",
+          "source": "\"middle east conflict when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOeGE3bDEwSUVZMUhQZlVSQnJybjREVEtHMWJtYVhKaURfTnBNTTR4ZG12Z2o0VDZZelNmd3pHX2xhWC16UzQ5aHl0Tmh0QndfRUJtMGktUFcybFVKSDlkSkMtRERYQTBLaDBXQ3UxZ2dFUDl6eUNpb2dkSVhQYTZPSEpUbVJpdHlJaF9aVmJWaVNXUmwtc2pMODd1aFlYYXNuUDlocUx3S2JaN0Y4cFl2a05GaGpDSHMxazhUWThfazZBckVK?oc=5",
+          "existing_event_score": 1.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [],
           "duplicate_daily_indicators": [
-            "missile_test"
+            "ceasefire_support"
           ]
         }
       ],
-      "weighted_score_7d": 5.0,
-      "pressure_index_7d": 60.0,
-      "pressure_level": "elevated",
-      "trend": "strong_increase",
+      "weighted_score_7d": -18.4,
+      "pressure_index_7d": 13.2,
+      "pressure_level": "low",
+      "trend": "strong_decrease",
       "strongest_contributors": [
         {
-          "event_id": "iranstrike-2zt15j80sbg00",
-          "timestamp": "2026-07-30T02:28:51+00:00",
-          "date": "2026-07-30",
-          "actor": "iran",
-          "bilateral_event": false,
-          "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
-          "source_layer": "kinetic",
-          "event_type": "kinetic",
-          "event_direction": "escalation",
-          "operational_component": 1.0,
-          "strategic_modifier": 9.0,
+          "event_id": "INFO-000005",
+          "timestamp": "2026-08-02T04:45:00+00:00",
+          "date": "2026-08-02",
+          "actor": "usa",
+          "bilateral_event": true,
+          "title": "Trump backs down on Iran strikes in expectation of ‘rapidly’ reaching a deal - The Guardian",
+          "source_layer": "non_kinetic",
+          "event_type": "ceasefire",
+          "event_direction": "de-escalation",
+          "operational_component": -3.0,
+          "strategic_modifier": -7.0,
           "context_multiplier": 1.0,
-          "original_final_score": 10.0,
-          "final_score": 10.0,
+          "original_final_score": -10.0,
+          "final_score": -10.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
-          "primary_daily_indicator": "missile_preparation",
+          "primary_daily_indicator": "ceasefire_support",
           "indicators": [
             {
-              "id": "missile_preparation",
-              "name": "Missile force preparation",
-              "score": 9.0,
-              "direction": "increase",
+              "id": "ceasefire_support",
+              "name": "Support for ceasefire",
+              "score": -7.0,
+              "direction": "decrease",
               "interest": {
-                "id": "strategic_deterrence",
-                "name": "Strategic deterrence",
+                "id": "avoid_full_scale_war",
+                "name": "Avoid full-scale regional war",
                 "weight": 10.0
               },
-              "recognition_rule_count": 2
+              "recognition_rule_count": 1
             }
           ],
-          "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
-          "source": "",
-          "link": "https://t.me/CIG_telegram/81321",
-          "existing_event_score": 0.0,
-          "existing_direction_score": 0.0,
+          "reason": "United States: Support for ceasefire. Operational component: -3.00; strategic modifier: -7.00; final contribution before daily deduplication: -10.00. Event: Trump backs down on Iran strikes in expectation of ‘rapidly’ reaching a deal - The Guardian",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQczZBcUg1UEtfYzNTQm83WWRMZjl1LTlGZXJNNkE3Sk5ydlBDem83Vy1VckRxa19BeUo0eDd2MWVTTFB0VjdZcE1DSnJjeVZXNjJZSFZmTmpydlp1TTctblZWYzNJME9FTC12OGhfdC1RaTliQzd2WmRZQlBZb2hZTTNleHczWVpxVS1IcHBoRlhnOUJMMWNnenpDMW5zYk94aldjNzBDbFAzamxzelZMaUdDbVZBOWFlb3R1Q1pR?oc=5",
+          "existing_event_score": -3.0,
+          "existing_direction_score": 3.0,
           "winning_daily_indicators": [
-            "missile_preparation"
+            "ceasefire_support"
           ],
           "duplicate_daily_indicators": []
         },
         {
-          "event_id": "iranstrike-fxw62tpkrw80",
-          "timestamp": "2026-07-30T05:28:58+00:00",
-          "date": "2026-07-30",
-          "actor": "iran",
-          "bilateral_event": false,
-          "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
-          "source_layer": "kinetic",
-          "event_type": "kinetic",
-          "event_direction": "escalation",
-          "operational_component": 1.0,
-          "strategic_modifier": 6.0,
+          "event_id": "INFO-000002",
+          "timestamp": "2026-08-02T16:27:30+00:00",
+          "date": "2026-08-02",
+          "actor": "usa",
+          "bilateral_event": true,
+          "title": "Saudi Crown Prince MBS urges Trump to ‘prioritise dialogue’ in US-Iran war - Al Jazeera",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": 7.0,
-          "final_score": 7.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
-          "primary_daily_indicator": "missile_test",
+          "primary_daily_indicator": "negotiation",
           "indicators": [
             {
-              "id": "missile_test",
-              "name": "Missile test",
-              "score": 6.0,
-              "direction": "increase",
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
               "interest": {
-                "id": "missile_capability",
-                "name": "Missile capability",
-                "weight": 9.0
+                "id": "avoid_full_scale_war",
+                "name": "Avoid full-scale regional war",
+                "weight": 10.0
               },
-              "recognition_rule_count": 1
+              "recognition_rule_count": 4
             }
           ],
-          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
-          "source": "",
-          "link": "https://t.me/OSINTdefender/19640",
-          "existing_event_score": 0.0,
+          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Saudi Crown Prince MBS urges Trump to ‘prioritise dialogue’ in US-Iran war - Al Jazeera",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNcWdJZ0hLbTduamRXQktXdkUyLVZJUEJwN053cGMwM295b0dBX18tcjdlRXhSU3pwZjlIZzZQcDd6TmQtVkcwUF9venBYeDF6TjFBZkplVGJfYzJRS0hMVEV5QW9vZ2FOSmpaR0lxc20xVHhteVN1YU8yQ01CUEI4Y19TVEpPTHNGRjFSU3NPcFlBY21qcGtkN2ptN1ZjTnFQM3VraWpNX203VHRBTVcyX0dR0gG3AUFVX3lxTE9VLVlTSTJ5ZXJaREhEZEZXczU4Szd2WmgtVjNnbU1KbmduTjBOT3RvOEZFVWIwRDZCVGR5QnlnaFVDZ0ZjWGpWVFhLMnpZMjhMMVdpLTM1UHJ5Z2FvdGp5dHctaGYwUEVzTlJvZjRObEg3VmlXYWtXWmwyNXg3em9uMXk5Mm5EbGNDSXJoMWJvVmtfdkZDUmRUdElwT21YX3lJakxWN2JPc0Q1MFJfeEdXYzhuZDQ0bw?oc=5",
+          "existing_event_score": 1.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
-            "missile_test"
+            "negotiation"
+          ],
+          "duplicate_daily_indicators": []
+        }
+      ]
+    },
+    "iran": {
+      "raw_score": -6.0,
+      "positive_score": 0.0,
+      "negative_score": -6.0,
+      "event_count": 1,
+      "scored_event_count": 1,
+      "evidence_event_count": 1,
+      "suppressed_duplicate_count": 0,
+      "increase_event_count": 0,
+      "decrease_event_count": 1,
+      "contributors": [
+        {
+          "event_id": "INFO-000002",
+          "timestamp": "2026-08-02T16:27:30+00:00",
+          "date": "2026-08-02",
+          "actor": "iran",
+          "bilateral_event": true,
+          "title": "Saudi Crown Prince MBS urges Trump to ‘prioritise dialogue’ in US-Iran war - Al Jazeera",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
+          "duplicate_indicator_evidence": false,
+          "daily_score_suppressed": false,
+          "suppression_reason": null,
+          "primary_daily_indicator": "negotiation",
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_regime_destroying_war",
+                "name": "Avoid regime-destroying war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 4
+            }
+          ],
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Saudi Crown Prince MBS urges Trump to ‘prioritise dialogue’ in US-Iran war - Al Jazeera",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNcWdJZ0hLbTduamRXQktXdkUyLVZJUEJwN053cGMwM295b0dBX18tcjdlRXhSU3pwZjlIZzZQcDd6TmQtVkcwUF9venBYeDF6TjFBZkplVGJfYzJRS0hMVEV5QW9vZ2FOSmpaR0lxc20xVHhteVN1YU8yQ01CUEI4Y19TVEpPTHNGRjFSU3NPcFlBY21qcGtkN2ptN1ZjTnFQM3VraWpNX203VHRBTVcyX0dR0gG3AUFVX3lxTE9VLVlTSTJ5ZXJaREhEZEZXczU4Szd2WmgtVjNnbU1KbmduTjBOT3RvOEZFVWIwRDZCVGR5QnlnaFVDZ0ZjWGpWVFhLMnpZMjhMMVdpLTM1UHJ5Z2FvdGp5dHctaGYwUEVzTlJvZjRObEg3VmlXYWtXWmwyNXg3em9uMXk5Mm5EbGNDSXJoMWJvVmtfdkZDUmRUdElwT21YX3lJakxWN2JPc0Q1MFJfeEdXYzhuZDQ0bw?oc=5",
+          "existing_event_score": 1.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [
+            "negotiation"
+          ],
+          "duplicate_daily_indicators": []
+        }
+      ],
+      "weighted_score_7d": 0.15,
+      "pressure_index_7d": 50.3,
+      "pressure_level": "balanced",
+      "trend": "strong_decrease",
+      "strongest_contributors": [
+        {
+          "event_id": "INFO-000002",
+          "timestamp": "2026-08-02T16:27:30+00:00",
+          "date": "2026-08-02",
+          "actor": "iran",
+          "bilateral_event": true,
+          "title": "Saudi Crown Prince MBS urges Trump to ‘prioritise dialogue’ in US-Iran war - Al Jazeera",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
+          "duplicate_indicator_evidence": false,
+          "daily_score_suppressed": false,
+          "suppression_reason": null,
+          "primary_daily_indicator": "negotiation",
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_regime_destroying_war",
+                "name": "Avoid regime-destroying war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 4
+            }
+          ],
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Saudi Crown Prince MBS urges Trump to ‘prioritise dialogue’ in US-Iran war - Al Jazeera",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNcWdJZ0hLbTduamRXQktXdkUyLVZJUEJwN053cGMwM295b0dBX18tcjdlRXhSU3pwZjlIZzZQcDd6TmQtVkcwUF9venBYeDF6TjFBZkplVGJfYzJRS0hMVEV5QW9vZ2FOSmpaR0lxc20xVHhteVN1YU8yQ01CUEI4Y19TVEpPTHNGRjFSU3NPcFlBY21qcGtkN2ptN1ZjTnFQM3VraWpNX203VHRBTVcyX0dR0gG3AUFVX3lxTE9VLVlTSTJ5ZXJaREhEZEZXczU4Szd2WmgtVjNnbU1KbmduTjBOT3RvOEZFVWIwRDZCVGR5QnlnaFVDZ0ZjWGpWVFhLMnpZMjhMMVdpLTM1UHJ5Z2FvdGp5dHctaGYwUEVzTlJvZjRObEg3VmlXYWtXWmwyNXg3em9uMXk5Mm5EbGNDSXJoMWJvVmtfdkZDUmRUdElwT21YX3lJakxWN2JPc0Q1MFJfeEdXYzhuZDQ0bw?oc=5",
+          "existing_event_score": 1.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [
+            "negotiation"
           ],
           "duplicate_daily_indicators": []
         }
       ]
     },
     "overall": {
-      "pressure_index_7d": 47.2,
-      "pressure_level": "balanced",
-      "trend": "strong_increase",
+      "pressure_index_7d": 31.75,
+      "pressure_level": "reduced",
+      "trend": "strong_decrease",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
   }
