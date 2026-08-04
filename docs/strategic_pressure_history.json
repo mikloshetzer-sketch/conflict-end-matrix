@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T12:31:50.727958+00:00",
+  "generated_at": "2026-08-04T11:30:32.737108+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -19,28 +19,28 @@
   },
   "statistics": {
     "non_kinetic_events_loaded": 497,
-    "kinetic_events_loaded": 575,
-    "unique_events_scanned": 1020,
-    "strategic_evidence_contributions": 279,
+    "kinetic_events_loaded": 576,
+    "unique_events_scanned": 1021,
+    "strategic_evidence_contributions": 281,
     "evidence_contributions_by_actor": {
-      "usa": 87,
-      "iran": 192
+      "usa": 88,
+      "iran": 193
     },
     "scored_contributions_by_actor": {
-      "usa": 64,
-      "iran": 99
+      "usa": 65,
+      "iran": 100
     },
     "suppressed_duplicates_by_actor": {
       "usa": 23,
       "iran": 93
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 245,
+      "non_kinetic": 247,
       "kinetic": 34
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 157,
-      "usa:negotiation": 68,
+      "iran:negotiation": 158,
+      "usa:negotiation": 69,
       "iran:missile_test": 24,
       "usa:presidential_warning": 13,
       "iran:hormuz_threat": 8,
@@ -49,8 +49,8 @@
       "iran:nuclear_activity": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 77,
-      "usa:negotiation": 49,
+      "iran:negotiation": 78,
+      "usa:negotiation": 50,
       "usa:presidential_warning": 13,
       "iran:missile_test": 11,
       "iran:hormuz_threat": 8,
@@ -59,8 +59,8 @@
       "iran:nuclear_activity": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 3,
-    "history_day_count": 146
+    "skipped_current_utc_day": 2,
+    "history_day_count": 147
   },
   "configuration_warnings": [],
   "status": "ok",
@@ -18385,6 +18385,136 @@
       "overall": {
         "pressure_index_7d": 31.75,
         "pressure_level": "reduced",
+        "trend": "strong_decrease",
+        "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
+      }
+    },
+    {
+      "date": "2026-08-03",
+      "calculation_mode": "live",
+      "usa": {
+        "raw_score": -6.0,
+        "positive_score": 0.0,
+        "negative_score": -6.0,
+        "event_count": 1,
+        "scored_event_count": 1,
+        "evidence_event_count": 1,
+        "suppressed_duplicate_count": 0,
+        "increase_event_count": 0,
+        "decrease_event_count": 1,
+        "contributors": [
+          {
+            "event_id": "INFO-000001",
+            "timestamp": "2026-08-03T01:27:00+00:00",
+            "date": "2026-08-03",
+            "actor": "usa",
+            "bilateral_event": true,
+            "title": "Trump says Iran peace talks will restart Monday as U.S. pauses attacks - NBC News",
+            "source_layer": "non_kinetic",
+            "event_type": "ceasefire",
+            "event_direction": "mixed",
+            "operational_component": 0.0,
+            "strategic_modifier": -6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": -6.0,
+            "final_score": -6.0,
+            "duplicate_indicator_evidence": false,
+            "daily_score_suppressed": false,
+            "suppression_reason": null,
+            "primary_daily_indicator": "negotiation",
+            "indicators": [
+              {
+                "id": "negotiation",
+                "name": "Negotiation",
+                "score": -6.0,
+                "direction": "decrease",
+                "interest": {
+                  "id": "avoid_full_scale_war",
+                  "name": "Avoid full-scale regional war",
+                  "weight": 10.0
+                },
+                "recognition_rule_count": 2
+              }
+            ],
+            "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran peace talks will restart Monday as U.S. pauses attacks - NBC News",
+            "source": "\"middle east conflict when:7d\" - Google News",
+            "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQd0FsRGVyTmhKN1lFZHVkMkdsREEzZkVqTWJHMDVkOE9mbXdmNklBQjFXUllKU2t5anpDbGhQdVdRRU9rWWxzSmhvV2ZoS09GRFc4Znk1QXlSMkYzbHFfd0VRb0Vuang0MTUwOE5BUGszb1gwTTVrNnZmVU1KWmxBNjZxZEpkSW9pU0ZRWllOc1pHcm5lOWJmYWIyc1JqT2tsYkdjcW1PTnhDbENlUktjWXJ4eEpnUEVZQTd4SXVR?oc=5",
+            "existing_event_score": 1.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [
+              "negotiation"
+            ],
+            "duplicate_daily_indicators": []
+          }
+        ],
+        "weighted_score_7d": -20.5,
+        "pressure_index_7d": 9.0,
+        "pressure_level": "low",
+        "trend": "decrease"
+      },
+      "iran": {
+        "raw_score": -6.0,
+        "positive_score": 0.0,
+        "negative_score": -6.0,
+        "event_count": 1,
+        "scored_event_count": 1,
+        "evidence_event_count": 1,
+        "suppressed_duplicate_count": 0,
+        "increase_event_count": 0,
+        "decrease_event_count": 1,
+        "contributors": [
+          {
+            "event_id": "INFO-000001",
+            "timestamp": "2026-08-03T01:27:00+00:00",
+            "date": "2026-08-03",
+            "actor": "iran",
+            "bilateral_event": true,
+            "title": "Trump says Iran peace talks will restart Monday as U.S. pauses attacks - NBC News",
+            "source_layer": "non_kinetic",
+            "event_type": "ceasefire",
+            "event_direction": "mixed",
+            "operational_component": 0.0,
+            "strategic_modifier": -6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": -6.0,
+            "final_score": -6.0,
+            "duplicate_indicator_evidence": false,
+            "daily_score_suppressed": false,
+            "suppression_reason": null,
+            "primary_daily_indicator": "negotiation",
+            "indicators": [
+              {
+                "id": "negotiation",
+                "name": "Negotiation",
+                "score": -6.0,
+                "direction": "decrease",
+                "interest": {
+                  "id": "avoid_regime_destroying_war",
+                  "name": "Avoid regime-destroying war",
+                  "weight": 10.0
+                },
+                "recognition_rule_count": 2
+              }
+            ],
+            "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran peace talks will restart Monday as U.S. pauses attacks - NBC News",
+            "source": "\"middle east conflict when:7d\" - Google News",
+            "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQd0FsRGVyTmhKN1lFZHVkMkdsREEzZkVqTWJHMDVkOE9mbXdmNklBQjFXUllKU2t5anpDbGhQdVdRRU9rWWxzSmhvV2ZoS09GRFc4Znk1QXlSMkYzbHFfd0VRb0Vuang0MTUwOE5BUGszb1gwTTVrNnZmVU1KWmxBNjZxZEpkSW9pU0ZRWllOc1pHcm5lOWJmYWIyc1JqT2tsYkdjcW1PTnhDbENlUktjWXJ4eEpnUEVZQTd4SXVR?oc=5",
+            "existing_event_score": 1.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [
+              "negotiation"
+            ],
+            "duplicate_daily_indicators": []
+          }
+        ],
+        "weighted_score_7d": -5.7,
+        "pressure_index_7d": 38.6,
+        "pressure_level": "reduced",
+        "trend": "strong_decrease"
+      },
+      "overall": {
+        "pressure_index_7d": 23.8,
+        "pressure_level": "low",
         "trend": "strong_decrease",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
