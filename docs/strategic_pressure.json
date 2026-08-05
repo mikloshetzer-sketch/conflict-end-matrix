@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T11:30:32.737108+00:00",
+  "generated_at": "2026-08-05T11:25:54.775085+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,29 +18,29 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 497,
-    "kinetic_events_loaded": 576,
+    "non_kinetic_events_loaded": 503,
+    "kinetic_events_loaded": 570,
     "unique_events_scanned": 1021,
-    "strategic_evidence_contributions": 281,
+    "strategic_evidence_contributions": 288,
     "evidence_contributions_by_actor": {
-      "usa": 88,
-      "iran": 193
+      "usa": 91,
+      "iran": 197
     },
     "scored_contributions_by_actor": {
       "usa": 65,
       "iran": 100
     },
     "suppressed_duplicates_by_actor": {
-      "usa": 23,
-      "iran": 93
+      "usa": 26,
+      "iran": 97
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 247,
+      "non_kinetic": 254,
       "kinetic": 34
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 158,
-      "usa:negotiation": 69,
+      "iran:negotiation": 162,
+      "usa:negotiation": 72,
       "iran:missile_test": 24,
       "usa:presidential_warning": 13,
       "iran:hormuz_threat": 8,
@@ -59,7 +59,7 @@
       "iran:nuclear_activity": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 2,
+    "skipped_current_utc_day": 3,
     "history_day_count": 147
   },
   "configuration_warnings": [],
@@ -69,31 +69,31 @@
     "date": "2026-08-03",
     "calculation_mode": "live",
     "usa": {
-      "raw_score": -6.0,
+      "raw_score": -9.0,
       "positive_score": 0.0,
-      "negative_score": -6.0,
-      "event_count": 1,
+      "negative_score": -9.0,
+      "event_count": 4,
       "scored_event_count": 1,
-      "evidence_event_count": 1,
-      "suppressed_duplicate_count": 0,
+      "evidence_event_count": 4,
+      "suppressed_duplicate_count": 3,
       "increase_event_count": 0,
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000001",
-          "timestamp": "2026-08-03T01:27:00+00:00",
+          "event_id": "INFO-000006",
+          "timestamp": "2026-08-03T13:32:18+00:00",
           "date": "2026-08-03",
           "actor": "usa",
           "bilateral_event": true,
-          "title": "Trump says Iran peace talks will restart Monday as U.S. pauses attacks - NBC News",
+          "title": "Trump claims Iran talks will start Monday, and other developments in the Middle East - PBS",
           "source_layer": "non_kinetic",
-          "event_type": "ceasefire",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
+          "event_type": "diplomatic",
+          "event_direction": "de-escalation",
+          "operational_component": -3.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": -6.0,
+          "original_final_score": -9.0,
+          "final_score": -9.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -112,24 +112,18 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran peace talks will restart Monday as U.S. pauses attacks - NBC News",
+          "reason": "United States: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: Trump claims Iran talks will start Monday, and other developments in the Middle East - PBS",
           "source": "\"middle east conflict when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQd0FsRGVyTmhKN1lFZHVkMkdsREEzZkVqTWJHMDVkOE9mbXdmNklBQjFXUllKU2t5anpDbGhQdVdRRU9rWWxzSmhvV2ZoS09GRFc4Znk1QXlSMkYzbHFfd0VRb0Vuang0MTUwOE5BUGszb1gwTTVrNnZmVU1KWmxBNjZxZEpkSW9pU0ZRWllOc1pHcm5lOWJmYWIyc1JqT2tsYkdjcW1PTnhDbENlUktjWXJ4eEpnUEVZQTd4SXVR?oc=5",
-          "existing_event_score": 1.0,
-          "existing_direction_score": 0.0,
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxObERIV2pRdHppVC1MZHQtMFRILUQ4MzhHcmdaU3NOUjRQX1p6QVAtRXM2MEZReUoweEZ3MndyRzdTb1Z6b2ZNRGgtbGFYNUxwMkxpSHN4MmR3VWhSLXNEUmtCLXNJcllsQU9xN0hOcDktXzJyNGI4bTN0NUZzeHRuamZFVUxqbmpoaVY2Tm5UWkprODAxVmUwUV9uNjRLaDVzdTk4amFMcUZyVGltdTNlTlYtWnFzenMtMmt1d9IBwgFBVV95cUxPWUx0aDhLdE1vV01kT3dSRml5ZDFmN3NSc3ZtY3VGQVRJd2lpZHZDYUNJOGxuUEVrdW5xaWNHNDlaeDFKZWVaUkdGVUpzM3pwb0VIOVA0WnVKMUZDUWFYN2ZwLUlOQmQ0U3lDdC1HVVlXeGRXR29Cdm96azg0NE5SbllBU2dBdllwRGFiNlU0N2JrdlFUQzBpRUdJYUhVTnJ3V0ZZX2NUQk05dHhKWnBKNm1RZWdJeFQyLUdBOEZzRGJIZw?oc=5",
+          "existing_event_score": 2.0,
+          "existing_direction_score": 3.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
           "duplicate_daily_indicators": []
-        }
-      ],
-      "weighted_score_7d": -20.5,
-      "pressure_index_7d": 9.0,
-      "pressure_level": "low",
-      "trend": "decrease",
-      "strongest_contributors": [
+        },
         {
-          "event_id": "INFO-000001",
+          "event_id": "INFO-000007",
           "timestamp": "2026-08-03T01:27:00+00:00",
           "date": "2026-08-03",
           "actor": "usa",
@@ -142,11 +136,11 @@
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
           "original_final_score": -6.0,
-          "final_score": -6.0,
-          "duplicate_indicator_evidence": false,
-          "daily_score_suppressed": false,
-          "suppression_reason": null,
-          "primary_daily_indicator": "negotiation",
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": true,
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "primary_daily_indicator": null,
           "indicators": [
             {
               "id": "negotiation",
@@ -166,6 +160,141 @@
           "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQd0FsRGVyTmhKN1lFZHVkMkdsREEzZkVqTWJHMDVkOE9mbXdmNklBQjFXUllKU2t5anpDbGhQdVdRRU9rWWxzSmhvV2ZoS09GRFc4Znk1QXlSMkYzbHFfd0VRb0Vuang0MTUwOE5BUGszb1gwTTVrNnZmVU1KWmxBNjZxZEpkSW9pU0ZRWllOc1pHcm5lOWJmYWIyc1JqT2tsYkdjcW1PTnhDbENlUktjWXJ4eEpnUEVZQTd4SXVR?oc=5",
           "existing_event_score": 1.0,
           "existing_direction_score": 0.0,
+          "winning_daily_indicators": [],
+          "duplicate_daily_indicators": [
+            "negotiation"
+          ]
+        },
+        {
+          "event_id": "INFO-000005",
+          "timestamp": "2026-08-03T18:48:24+00:00",
+          "date": "2026-08-03",
+          "actor": "usa",
+          "bilateral_event": true,
+          "title": "Iran Denies Talks With the U.S. Are Back On. Trump Insists They Are - Time Magazine",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -6.0,
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": true,
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "primary_daily_indicator": null,
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_full_scale_war",
+                "name": "Avoid full-scale regional war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran Denies Talks With the U.S. Are Back On. Trump Insists They Are - Time Magazine",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPMGVSTFoweE40Y2VoYXJKQldReElpY014QXRnbV9ZQlRUb0xUalJMMHRqSlI5MGZiMDFlNHlMeHowcTJoZWxsQ194Wmhqakd6N0NydGJ1NjFDeHBjX3FsRUNMOUdPSjR5OWxYeDdLZ2hIMjVYaU9QLTAzRndjZTVGMFo0OTZZVlZjNzNYWjV2aVhoM0lnUjZDNA?oc=5",
+          "existing_event_score": 2.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [],
+          "duplicate_daily_indicators": [
+            "negotiation"
+          ]
+        },
+        {
+          "event_id": "INFO-000004",
+          "timestamp": "2026-08-03T20:52:31+00:00",
+          "date": "2026-08-03",
+          "actor": "usa",
+          "bilateral_event": true,
+          "title": "Trump says ongoing talks are Iran’s ‘last chance’ - Al Jazeera",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -6.0,
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": true,
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "primary_daily_indicator": null,
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_full_scale_war",
+                "name": "Avoid full-scale regional war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says ongoing talks are Iran’s ‘last chance’ - Al Jazeera",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPWmM3LUpzRC03eDlGaUR6amdueU9WSDdIM0FYNXlpdXJmbEdOZk9ZcTVzLWpUcktsZ3Z5eXd3S0M5Y3RRVGtINFFqUDdFS0JzUkkzY1A1LUo1cnVDc1MzMG43TXU4TGZWcHZQWUFndWd4ei0zdnE4d3dDWDIwM0haMDdWdFJiV0N4TTcxWGMyclpHMlNvaWNhUUZUV04tX1E1NVJpOU1KSUZUNEtBMVlFSENQOGZNcDDSAbwBQVVfeXFMTmhBcW5BNGtIRnNLSWJLY2JCZlA2UERacTZfbnc3STh1TGhrYml6RXdMazBKWjJLNTBZZEIxOExZQk5xbEFnWWRDbF9aX0tvT05VX09rWUlYZFNEU3V5N29oaXh3Q2RmNFpVTHdfQmRQekVGdE9PS1NndWl4TGNZNTR3bjcwUUVLUDVma1NRQVZiZFd6aGdNNUVaZjBzNjJGbVRCdnhuTEptMHRKaThTNm1mdTNqR3JvaUNYV0Q?oc=5",
+          "existing_event_score": 2.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [],
+          "duplicate_daily_indicators": [
+            "negotiation"
+          ]
+        }
+      ],
+      "weighted_score_7d": -23.5,
+      "pressure_index_7d": 3.0,
+      "pressure_level": "low",
+      "trend": "strong_decrease",
+      "strongest_contributors": [
+        {
+          "event_id": "INFO-000006",
+          "timestamp": "2026-08-03T13:32:18+00:00",
+          "date": "2026-08-03",
+          "actor": "usa",
+          "bilateral_event": true,
+          "title": "Trump claims Iran talks will start Monday, and other developments in the Middle East - PBS",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "de-escalation",
+          "operational_component": -3.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -9.0,
+          "final_score": -9.0,
+          "duplicate_indicator_evidence": false,
+          "daily_score_suppressed": false,
+          "suppression_reason": null,
+          "primary_daily_indicator": "negotiation",
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_full_scale_war",
+                "name": "Avoid full-scale regional war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "United States: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: Trump claims Iran talks will start Monday, and other developments in the Middle East - PBS",
+          "source": "\"middle east conflict when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxObERIV2pRdHppVC1MZHQtMFRILUQ4MzhHcmdaU3NOUjRQX1p6QVAtRXM2MEZReUoweEZ3MndyRzdTb1Z6b2ZNRGgtbGFYNUxwMkxpSHN4MmR3VWhSLXNEUmtCLXNJcllsQU9xN0hOcDktXzJyNGI4bTN0NUZzeHRuamZFVUxqbmpoaVY2Tm5UWkprODAxVmUwUV9uNjRLaDVzdTk4amFMcUZyVGltdTNlTlYtWnFzenMtMmt1d9IBwgFBVV95cUxPWUx0aDhLdE1vV01kT3dSRml5ZDFmN3NSc3ZtY3VGQVRJd2lpZHZDYUNJOGxuUEVrdW5xaWNHNDlaeDFKZWVaUkdGVUpzM3pwb0VIOVA0WnVKMUZDUWFYN2ZwLUlOQmQ0U3lDdC1HVVlXeGRXR29Cdm96azg0NE5SbllBU2dBdllwRGFiNlU0N2JrdlFUQzBpRUdJYUhVTnJ3V0ZZX2NUQk05dHhKWnBKNm1RZWdJeFQyLUdBOEZzRGJIZw?oc=5",
+          "existing_event_score": 2.0,
+          "existing_direction_score": 3.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
@@ -174,31 +303,31 @@
       ]
     },
     "iran": {
-      "raw_score": -6.0,
+      "raw_score": -9.0,
       "positive_score": 0.0,
-      "negative_score": -6.0,
-      "event_count": 1,
+      "negative_score": -9.0,
+      "event_count": 4,
       "scored_event_count": 1,
-      "evidence_event_count": 1,
-      "suppressed_duplicate_count": 0,
+      "evidence_event_count": 4,
+      "suppressed_duplicate_count": 3,
       "increase_event_count": 0,
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000001",
-          "timestamp": "2026-08-03T01:27:00+00:00",
+          "event_id": "INFO-000006",
+          "timestamp": "2026-08-03T13:32:18+00:00",
           "date": "2026-08-03",
           "actor": "iran",
           "bilateral_event": true,
-          "title": "Trump says Iran peace talks will restart Monday as U.S. pauses attacks - NBC News",
+          "title": "Trump claims Iran talks will start Monday, and other developments in the Middle East - PBS",
           "source_layer": "non_kinetic",
-          "event_type": "ceasefire",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
+          "event_type": "diplomatic",
+          "event_direction": "de-escalation",
+          "operational_component": -3.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": -6.0,
+          "original_final_score": -9.0,
+          "final_score": -9.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -217,24 +346,18 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran peace talks will restart Monday as U.S. pauses attacks - NBC News",
+          "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: Trump claims Iran talks will start Monday, and other developments in the Middle East - PBS",
           "source": "\"middle east conflict when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQd0FsRGVyTmhKN1lFZHVkMkdsREEzZkVqTWJHMDVkOE9mbXdmNklBQjFXUllKU2t5anpDbGhQdVdRRU9rWWxzSmhvV2ZoS09GRFc4Znk1QXlSMkYzbHFfd0VRb0Vuang0MTUwOE5BUGszb1gwTTVrNnZmVU1KWmxBNjZxZEpkSW9pU0ZRWllOc1pHcm5lOWJmYWIyc1JqT2tsYkdjcW1PTnhDbENlUktjWXJ4eEpnUEVZQTd4SXVR?oc=5",
-          "existing_event_score": 1.0,
-          "existing_direction_score": 0.0,
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxObERIV2pRdHppVC1MZHQtMFRILUQ4MzhHcmdaU3NOUjRQX1p6QVAtRXM2MEZReUoweEZ3MndyRzdTb1Z6b2ZNRGgtbGFYNUxwMkxpSHN4MmR3VWhSLXNEUmtCLXNJcllsQU9xN0hOcDktXzJyNGI4bTN0NUZzeHRuamZFVUxqbmpoaVY2Tm5UWkprODAxVmUwUV9uNjRLaDVzdTk4amFMcUZyVGltdTNlTlYtWnFzenMtMmt1d9IBwgFBVV95cUxPWUx0aDhLdE1vV01kT3dSRml5ZDFmN3NSc3ZtY3VGQVRJd2lpZHZDYUNJOGxuUEVrdW5xaWNHNDlaeDFKZWVaUkdGVUpzM3pwb0VIOVA0WnVKMUZDUWFYN2ZwLUlOQmQ0U3lDdC1HVVlXeGRXR29Cdm96azg0NE5SbllBU2dBdllwRGFiNlU0N2JrdlFUQzBpRUdJYUhVTnJ3V0ZZX2NUQk05dHhKWnBKNm1RZWdJeFQyLUdBOEZzRGJIZw?oc=5",
+          "existing_event_score": 2.0,
+          "existing_direction_score": 3.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
           "duplicate_daily_indicators": []
-        }
-      ],
-      "weighted_score_7d": -5.7,
-      "pressure_index_7d": 38.6,
-      "pressure_level": "reduced",
-      "trend": "strong_decrease",
-      "strongest_contributors": [
+        },
         {
-          "event_id": "INFO-000001",
+          "event_id": "INFO-000007",
           "timestamp": "2026-08-03T01:27:00+00:00",
           "date": "2026-08-03",
           "actor": "iran",
@@ -247,11 +370,11 @@
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
           "original_final_score": -6.0,
-          "final_score": -6.0,
-          "duplicate_indicator_evidence": false,
-          "daily_score_suppressed": false,
-          "suppression_reason": null,
-          "primary_daily_indicator": "negotiation",
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": true,
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "primary_daily_indicator": null,
           "indicators": [
             {
               "id": "negotiation",
@@ -271,6 +394,141 @@
           "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQd0FsRGVyTmhKN1lFZHVkMkdsREEzZkVqTWJHMDVkOE9mbXdmNklBQjFXUllKU2t5anpDbGhQdVdRRU9rWWxzSmhvV2ZoS09GRFc4Znk1QXlSMkYzbHFfd0VRb0Vuang0MTUwOE5BUGszb1gwTTVrNnZmVU1KWmxBNjZxZEpkSW9pU0ZRWllOc1pHcm5lOWJmYWIyc1JqT2tsYkdjcW1PTnhDbENlUktjWXJ4eEpnUEVZQTd4SXVR?oc=5",
           "existing_event_score": 1.0,
           "existing_direction_score": 0.0,
+          "winning_daily_indicators": [],
+          "duplicate_daily_indicators": [
+            "negotiation"
+          ]
+        },
+        {
+          "event_id": "INFO-000005",
+          "timestamp": "2026-08-03T18:48:24+00:00",
+          "date": "2026-08-03",
+          "actor": "iran",
+          "bilateral_event": true,
+          "title": "Iran Denies Talks With the U.S. Are Back On. Trump Insists They Are - Time Magazine",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -6.0,
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": true,
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "primary_daily_indicator": null,
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_regime_destroying_war",
+                "name": "Avoid regime-destroying war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran Denies Talks With the U.S. Are Back On. Trump Insists They Are - Time Magazine",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPMGVSTFoweE40Y2VoYXJKQldReElpY014QXRnbV9ZQlRUb0xUalJMMHRqSlI5MGZiMDFlNHlMeHowcTJoZWxsQ194Wmhqakd6N0NydGJ1NjFDeHBjX3FsRUNMOUdPSjR5OWxYeDdLZ2hIMjVYaU9QLTAzRndjZTVGMFo0OTZZVlZjNzNYWjV2aVhoM0lnUjZDNA?oc=5",
+          "existing_event_score": 2.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [],
+          "duplicate_daily_indicators": [
+            "negotiation"
+          ]
+        },
+        {
+          "event_id": "INFO-000004",
+          "timestamp": "2026-08-03T20:52:31+00:00",
+          "date": "2026-08-03",
+          "actor": "iran",
+          "bilateral_event": true,
+          "title": "Trump says ongoing talks are Iran’s ‘last chance’ - Al Jazeera",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -6.0,
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": true,
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "primary_daily_indicator": null,
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_regime_destroying_war",
+                "name": "Avoid regime-destroying war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says ongoing talks are Iran’s ‘last chance’ - Al Jazeera",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPWmM3LUpzRC03eDlGaUR6amdueU9WSDdIM0FYNXlpdXJmbEdOZk9ZcTVzLWpUcktsZ3Z5eXd3S0M5Y3RRVGtINFFqUDdFS0JzUkkzY1A1LUo1cnVDc1MzMG43TXU4TGZWcHZQWUFndWd4ei0zdnE4d3dDWDIwM0haMDdWdFJiV0N4TTcxWGMyclpHMlNvaWNhUUZUV04tX1E1NVJpOU1KSUZUNEtBMVlFSENQOGZNcDDSAbwBQVVfeXFMTmhBcW5BNGtIRnNLSWJLY2JCZlA2UERacTZfbnc3STh1TGhrYml6RXdMazBKWjJLNTBZZEIxOExZQk5xbEFnWWRDbF9aX0tvT05VX09rWUlYZFNEU3V5N29oaXh3Q2RmNFpVTHdfQmRQekVGdE9PS1NndWl4TGNZNTR3bjcwUUVLUDVma1NRQVZiZFd6aGdNNUVaZjBzNjJGbVRCdnhuTEptMHRKaThTNm1mdTNqR3JvaUNYV0Q?oc=5",
+          "existing_event_score": 2.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [],
+          "duplicate_daily_indicators": [
+            "negotiation"
+          ]
+        }
+      ],
+      "weighted_score_7d": -8.7,
+      "pressure_index_7d": 32.6,
+      "pressure_level": "reduced",
+      "trend": "strong_decrease",
+      "strongest_contributors": [
+        {
+          "event_id": "INFO-000006",
+          "timestamp": "2026-08-03T13:32:18+00:00",
+          "date": "2026-08-03",
+          "actor": "iran",
+          "bilateral_event": true,
+          "title": "Trump claims Iran talks will start Monday, and other developments in the Middle East - PBS",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "de-escalation",
+          "operational_component": -3.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -9.0,
+          "final_score": -9.0,
+          "duplicate_indicator_evidence": false,
+          "daily_score_suppressed": false,
+          "suppression_reason": null,
+          "primary_daily_indicator": "negotiation",
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_regime_destroying_war",
+                "name": "Avoid regime-destroying war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: Trump claims Iran talks will start Monday, and other developments in the Middle East - PBS",
+          "source": "\"middle east conflict when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxObERIV2pRdHppVC1MZHQtMFRILUQ4MzhHcmdaU3NOUjRQX1p6QVAtRXM2MEZReUoweEZ3MndyRzdTb1Z6b2ZNRGgtbGFYNUxwMkxpSHN4MmR3VWhSLXNEUmtCLXNJcllsQU9xN0hOcDktXzJyNGI4bTN0NUZzeHRuamZFVUxqbmpoaVY2Tm5UWkprODAxVmUwUV9uNjRLaDVzdTk4amFMcUZyVGltdTNlTlYtWnFzenMtMmt1d9IBwgFBVV95cUxPWUx0aDhLdE1vV01kT3dSRml5ZDFmN3NSc3ZtY3VGQVRJd2lpZHZDYUNJOGxuUEVrdW5xaWNHNDlaeDFKZWVaUkdGVUpzM3pwb0VIOVA0WnVKMUZDUWFYN2ZwLUlOQmQ0U3lDdC1HVVlXeGRXR29Cdm96azg0NE5SbllBU2dBdllwRGFiNlU0N2JrdlFUQzBpRUdJYUhVTnJ3V0ZZX2NUQk05dHhKWnBKNm1RZWdJeFQyLUdBOEZzRGJIZw?oc=5",
+          "existing_event_score": 2.0,
+          "existing_direction_score": 3.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
@@ -279,7 +537,7 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 23.8,
+      "pressure_index_7d": 17.8,
       "pressure_level": "low",
       "trend": "strong_decrease",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"

@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-08-05T07:50:05.380063Z",
-  "source_generated_at": "2026-08-05T07:25:58Z",
+  "generated_at": "2026-08-05T11:25:53.890146Z",
+  "source_generated_at": "2026-08-05T10:16:33Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
   "source_event_count": 1000,
-  "event_count": 571,
-  "rejected_count": 429,
+  "event_count": 570,
+  "rejected_count": 430,
   "rejection_counts": {
-    "category_not_kinetic": 301,
-    "no_confirmed_action_language": 90,
+    "category_not_kinetic": 303,
+    "no_confirmed_action_language": 89,
     "context_or_hypothetical": 25,
     "retrospective_or_aftermath": 8,
     "alert_only": 5
@@ -23,21 +23,21 @@
   "category_counts": {
     "missile": 180,
     "strike": 147,
-    "airstrike": 91,
-    "explosion": 72,
+    "airstrike": 89,
+    "explosion": 73,
     "drone": 68,
     "ground": 13
   },
   "severity_counts": {
-    "medium": 281,
+    "medium": 280,
     "high": 257,
     "low": 30,
     "critical": 3
   },
   "actor_counts": {
     "Iran": 240,
-    "United States": 183,
-    "Unknown actor": 50,
+    "United States": 180,
+    "Unknown actor": 52,
     "Israel": 42,
     "Yemen": 31,
     "Saudi Arabia": 10,
@@ -47,6 +47,58 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-341w285f9r000",
+      "timestamp": "2026-08-05T09:04:46Z",
+      "event_type": "kinetic",
+      "subtype": "explosion",
+      "category": "explosion",
+      "severity": "medium",
+      "actor": "unknown",
+      "actor_label": "Unknown actor",
+      "actor_method": "normalized.attacker",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Smoke and large fire reported at Jebel Ali Port/Industrial Area in Dubai; UAE arrests two individuals for filming explosion",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/81727",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-2nio0zsqfoi00",
+      "timestamp": "2026-08-05T08:59:26Z",
+      "event_type": "kinetic",
+      "subtype": "explosion",
+      "category": "explosion",
+      "severity": "medium",
+      "actor": "unknown",
+      "actor_label": "Unknown actor",
+      "actor_method": "normalized.attacker",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Initial reports of at least 3 explosions heard in Dubai with smoke column visible, cause unknown",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/81723",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-8oo9fnglh5c0",
       "timestamp": "2026-08-05T06:39:22Z",
@@ -14738,32 +14790,6 @@
       }
     },
     {
-      "event_id": "iranstrike-24ht3wsddda80",
-      "timestamp": "2026-07-08T21:28:26Z",
-      "event_type": "kinetic",
-      "subtype": "airstrike",
-      "category": "airstrike",
-      "severity": "medium",
-      "actor": "usa",
-      "actor_label": "United States",
-      "actor_method": "raw_source.origin",
-      "target_country": "",
-      "location": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Renewed U.S. airstrike on Qeshm Island",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79126",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
       "event_id": "iranstrike-1wdy6scb5peo0",
       "timestamp": "2026-07-08T21:28:26Z",
       "event_type": "kinetic",
@@ -14833,58 +14859,6 @@
       "description": "U.S. airstrike on army ground forces base in Zahedan",
       "source_name": "CIG_telegram",
       "source_url": "https://t.me/CIG_telegram/79128",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-ji3pl4mewds0",
-      "timestamp": "2026-07-08T21:16:11Z",
-      "event_type": "kinetic",
-      "subtype": "airstrike",
-      "category": "airstrike",
-      "severity": "medium",
-      "actor": "usa",
-      "actor_label": "United States",
-      "actor_method": "raw_source.origin",
-      "target_country": "Iran",
-      "location": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Four U.S. airstrikes on Bandar-e Lengeh in southern Iran",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79122",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-1t7oh48iafb40",
-      "timestamp": "2026-07-08T21:15:50Z",
-      "event_type": "kinetic",
-      "subtype": "explosion",
-      "category": "explosion",
-      "severity": "medium",
-      "actor": "usa",
-      "actor_label": "United States",
-      "actor_method": "raw_source.origin",
-      "target_country": "Iran",
-      "location": "Bushehr",
-      "latitude": 28.9234,
-      "longitude": 50.8203,
-      "map_visualizable": true,
-      "description": "Approximately 7 explosions reported in Choghadak area of Bushehr Province, Iran",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79120",
       "source_repository": "mikloshetzer-sketch/me-security-monitor",
       "source_collection": "events",
       "validation": {
