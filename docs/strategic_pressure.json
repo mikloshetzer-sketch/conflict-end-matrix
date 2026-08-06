@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T11:29:06.203334+00:00",
+  "generated_at": "2026-08-06T12:53:09.413261+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,87 +18,99 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 503,
-    "kinetic_events_loaded": 568,
-    "unique_events_scanned": 1019,
-    "strategic_evidence_contributions": 288,
+    "non_kinetic_events_loaded": 511,
+    "kinetic_events_loaded": 570,
+    "unique_events_scanned": 1029,
+    "strategic_evidence_contributions": 298,
     "evidence_contributions_by_actor": {
-      "usa": 91,
-      "iran": 197
+      "usa": 96,
+      "iran": 202
     },
     "scored_contributions_by_actor": {
-      "usa": 65,
-      "iran": 100
+      "usa": 67,
+      "iran": 102
     },
     "suppressed_duplicates_by_actor": {
-      "usa": 26,
-      "iran": 97
+      "usa": 29,
+      "iran": 100
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 254,
+      "non_kinetic": 264,
       "kinetic": 34
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 162,
-      "usa:negotiation": 72,
+      "iran:negotiation": 167,
+      "usa:negotiation": 77,
       "iran:missile_test": 24,
-      "usa:presidential_warning": 13,
-      "iran:hormuz_threat": 8,
+      "usa:presidential_warning": 14,
+      "iran:hormuz_threat": 9,
       "usa:ceasefire_support": 8,
       "iran:missile_preparation": 4,
       "iran:nuclear_activity": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 78,
-      "usa:negotiation": 50,
-      "usa:presidential_warning": 13,
+      "iran:negotiation": 80,
+      "usa:negotiation": 52,
+      "usa:presidential_warning": 14,
       "iran:missile_test": 11,
-      "iran:hormuz_threat": 8,
+      "iran:hormuz_threat": 9,
       "iran:missile_preparation": 4,
       "usa:ceasefire_support": 4,
       "iran:nuclear_activity": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 2,
-    "history_day_count": 147
+    "skipped_current_utc_day": 5,
+    "history_day_count": 149
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-08-03",
+  "latest_complete_utc_day": "2026-08-05",
   "current": {
-    "date": "2026-08-03",
+    "date": "2026-08-05",
     "calculation_mode": "live",
     "usa": {
-      "raw_score": -9.0,
+      "raw_score": -1.0,
       "positive_score": 0.0,
-      "negative_score": -9.0,
-      "event_count": 4,
+      "negative_score": -1.0,
+      "event_count": 1,
       "scored_event_count": 1,
-      "evidence_event_count": 4,
-      "suppressed_duplicate_count": 3,
+      "evidence_event_count": 1,
+      "suppressed_duplicate_count": 0,
       "increase_event_count": 0,
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000006",
-          "timestamp": "2026-08-03T13:32:18+00:00",
-          "date": "2026-08-03",
+          "event_id": "INFO-000003",
+          "timestamp": "2026-08-05T08:40:00+00:00",
+          "date": "2026-08-05",
           "actor": "usa",
           "bilateral_event": true,
-          "title": "Trump claims Iran talks will start Monday, and other developments in the Middle East - PBS",
+          "title": "Rubio says progress made in Strait of Hormuz talks after Trump threatens \"decapitation\" - CBS News",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "de-escalation",
-          "operational_component": -3.0,
-          "strategic_modifier": -6.0,
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -1.0,
           "context_multiplier": 1.0,
-          "original_final_score": -9.0,
-          "final_score": -9.0,
+          "original_final_score": -1.0,
+          "final_score": -1.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
-          "primary_daily_indicator": "negotiation",
+          "primary_daily_indicator": "presidential_warning",
           "indicators": [
+            {
+              "id": "presidential_warning",
+              "name": "Presidential warning",
+              "score": 5.0,
+              "direction": "increase",
+              "interest": {
+                "id": "regional_deterrence",
+                "name": "Regional deterrence",
+                "weight": 8.0
+              },
+              "recognition_rule_count": 1
+            },
             {
               "id": "negotiation",
               "name": "Negotiation",
@@ -112,171 +124,55 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "United States: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: Trump claims Iran talks will start Monday, and other developments in the Middle East - PBS",
-          "source": "\"middle east conflict when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxObERIV2pRdHppVC1MZHQtMFRILUQ4MzhHcmdaU3NOUjRQX1p6QVAtRXM2MEZReUoweEZ3MndyRzdTb1Z6b2ZNRGgtbGFYNUxwMkxpSHN4MmR3VWhSLXNEUmtCLXNJcllsQU9xN0hOcDktXzJyNGI4bTN0NUZzeHRuamZFVUxqbmpoaVY2Tm5UWkprODAxVmUwUV9uNjRLaDVzdTk4amFMcUZyVGltdTNlTlYtWnFzenMtMmt1d9IBwgFBVV95cUxPWUx0aDhLdE1vV01kT3dSRml5ZDFmN3NSc3ZtY3VGQVRJd2lpZHZDYUNJOGxuUEVrdW5xaWNHNDlaeDFKZWVaUkdGVUpzM3pwb0VIOVA0WnVKMUZDUWFYN2ZwLUlOQmQ0U3lDdC1HVVlXeGRXR29Cdm96azg0NE5SbllBU2dBdllwRGFiNlU0N2JrdlFUQzBpRUdJYUhVTnJ3V0ZZX2NUQk05dHhKWnBKNm1RZWdJeFQyLUdBOEZzRGJIZw?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 3.0,
+          "reason": "United States: Presidential warning, Negotiation. Operational component: +0.00; strategic modifier: -1.00; final contribution before daily deduplication: -1.00. Event: Rubio says progress made in Strait of Hormuz talks after Trump threatens \"decapitation\" - CBS News",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOQ1dLLUtEN1BOZURoRGtpQ1JYaDRibllHa25fRHBpNXlrSUdLV1N3NzVETUFZN3FXTFZlUTB2dmJWd1hSWUNRdDdVcUNnTmNfTTgtVXd1eTJ3WmNoRWxrY2FhcFdlX1d4bUxQdzVIcWM5RHNHNDBsOEN0TjFVTGN5ZHMtZkJ2SW5JTVJLWC04YzJmRG9CTlM5MGRVdzFTNVNYcVVOcGlzeFlSamc?oc=5",
+          "existing_event_score": 0.0,
+          "existing_direction_score": -1.0,
           "winning_daily_indicators": [
+            "presidential_warning",
             "negotiation"
           ],
           "duplicate_daily_indicators": []
-        },
-        {
-          "event_id": "INFO-000007",
-          "timestamp": "2026-08-03T01:27:00+00:00",
-          "date": "2026-08-03",
-          "actor": "usa",
-          "bilateral_event": true,
-          "title": "Trump says Iran peace talks will restart Monday as U.S. pauses attacks - NBC News",
-          "source_layer": "non_kinetic",
-          "event_type": "ceasefire",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": 0.0,
-          "duplicate_indicator_evidence": true,
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "primary_daily_indicator": null,
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_full_scale_war",
-                "name": "Avoid full-scale regional war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran peace talks will restart Monday as U.S. pauses attacks - NBC News",
-          "source": "\"middle east conflict when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQd0FsRGVyTmhKN1lFZHVkMkdsREEzZkVqTWJHMDVkOE9mbXdmNklBQjFXUllKU2t5anpDbGhQdVdRRU9rWWxzSmhvV2ZoS09GRFc4Znk1QXlSMkYzbHFfd0VRb0Vuang0MTUwOE5BUGszb1gwTTVrNnZmVU1KWmxBNjZxZEpkSW9pU0ZRWllOc1pHcm5lOWJmYWIyc1JqT2tsYkdjcW1PTnhDbENlUktjWXJ4eEpnUEVZQTd4SXVR?oc=5",
-          "existing_event_score": 1.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [],
-          "duplicate_daily_indicators": [
-            "negotiation"
-          ]
-        },
-        {
-          "event_id": "INFO-000005",
-          "timestamp": "2026-08-03T18:48:24+00:00",
-          "date": "2026-08-03",
-          "actor": "usa",
-          "bilateral_event": true,
-          "title": "Iran Denies Talks With the U.S. Are Back On. Trump Insists They Are - Time Magazine",
-          "source_layer": "non_kinetic",
-          "event_type": "diplomatic",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": 0.0,
-          "duplicate_indicator_evidence": true,
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "primary_daily_indicator": null,
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_full_scale_war",
-                "name": "Avoid full-scale regional war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran Denies Talks With the U.S. Are Back On. Trump Insists They Are - Time Magazine",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPMGVSTFoweE40Y2VoYXJKQldReElpY014QXRnbV9ZQlRUb0xUalJMMHRqSlI5MGZiMDFlNHlMeHowcTJoZWxsQ194Wmhqakd6N0NydGJ1NjFDeHBjX3FsRUNMOUdPSjR5OWxYeDdLZ2hIMjVYaU9QLTAzRndjZTVGMFo0OTZZVlZjNzNYWjV2aVhoM0lnUjZDNA?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [],
-          "duplicate_daily_indicators": [
-            "negotiation"
-          ]
-        },
-        {
-          "event_id": "INFO-000004",
-          "timestamp": "2026-08-03T20:52:31+00:00",
-          "date": "2026-08-03",
-          "actor": "usa",
-          "bilateral_event": true,
-          "title": "Trump says ongoing talks are Iran’s ‘last chance’ - Al Jazeera",
-          "source_layer": "non_kinetic",
-          "event_type": "diplomatic",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": 0.0,
-          "duplicate_indicator_evidence": true,
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "primary_daily_indicator": null,
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_full_scale_war",
-                "name": "Avoid full-scale regional war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says ongoing talks are Iran’s ‘last chance’ - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPWmM3LUpzRC03eDlGaUR6amdueU9WSDdIM0FYNXlpdXJmbEdOZk9ZcTVzLWpUcktsZ3Z5eXd3S0M5Y3RRVGtINFFqUDdFS0JzUkkzY1A1LUo1cnVDc1MzMG43TXU4TGZWcHZQWUFndWd4ei0zdnE4d3dDWDIwM0haMDdWdFJiV0N4TTcxWGMyclpHMlNvaWNhUUZUV04tX1E1NVJpOU1KSUZUNEtBMVlFSENQOGZNcDDSAbwBQVVfeXFMTmhBcW5BNGtIRnNLSWJLY2JCZlA2UERacTZfbnc3STh1TGhrYml6RXdMazBKWjJLNTBZZEIxOExZQk5xbEFnWWRDbF9aX0tvT05VX09rWUlYZFNEU3V5N29oaXh3Q2RmNFpVTHdfQmRQekVGdE9PS1NndWl4TGNZNTR3bjcwUUVLUDVma1NRQVZiZFd6aGdNNUVaZjBzNjJGbVRCdnhuTEptMHRKaThTNm1mdTNqR3JvaUNYV0Q?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [],
-          "duplicate_daily_indicators": [
-            "negotiation"
-          ]
         }
       ],
-      "weighted_score_7d": -23.5,
-      "pressure_index_7d": 3.0,
+      "weighted_score_7d": -26.7,
+      "pressure_index_7d": 0.0,
       "pressure_level": "low",
-      "trend": "strong_decrease",
+      "trend": "stable",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000006",
-          "timestamp": "2026-08-03T13:32:18+00:00",
-          "date": "2026-08-03",
+          "event_id": "INFO-000003",
+          "timestamp": "2026-08-05T08:40:00+00:00",
+          "date": "2026-08-05",
           "actor": "usa",
           "bilateral_event": true,
-          "title": "Trump claims Iran talks will start Monday, and other developments in the Middle East - PBS",
+          "title": "Rubio says progress made in Strait of Hormuz talks after Trump threatens \"decapitation\" - CBS News",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "de-escalation",
-          "operational_component": -3.0,
-          "strategic_modifier": -6.0,
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -1.0,
           "context_multiplier": 1.0,
-          "original_final_score": -9.0,
-          "final_score": -9.0,
+          "original_final_score": -1.0,
+          "final_score": -1.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
-          "primary_daily_indicator": "negotiation",
+          "primary_daily_indicator": "presidential_warning",
           "indicators": [
+            {
+              "id": "presidential_warning",
+              "name": "Presidential warning",
+              "score": 5.0,
+              "direction": "increase",
+              "interest": {
+                "id": "regional_deterrence",
+                "name": "Regional deterrence",
+                "weight": 8.0
+              },
+              "recognition_rule_count": 1
+            },
             {
               "id": "negotiation",
               "name": "Negotiation",
@@ -290,12 +186,13 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "United States: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: Trump claims Iran talks will start Monday, and other developments in the Middle East - PBS",
-          "source": "\"middle east conflict when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxObERIV2pRdHppVC1MZHQtMFRILUQ4MzhHcmdaU3NOUjRQX1p6QVAtRXM2MEZReUoweEZ3MndyRzdTb1Z6b2ZNRGgtbGFYNUxwMkxpSHN4MmR3VWhSLXNEUmtCLXNJcllsQU9xN0hOcDktXzJyNGI4bTN0NUZzeHRuamZFVUxqbmpoaVY2Tm5UWkprODAxVmUwUV9uNjRLaDVzdTk4amFMcUZyVGltdTNlTlYtWnFzenMtMmt1d9IBwgFBVV95cUxPWUx0aDhLdE1vV01kT3dSRml5ZDFmN3NSc3ZtY3VGQVRJd2lpZHZDYUNJOGxuUEVrdW5xaWNHNDlaeDFKZWVaUkdGVUpzM3pwb0VIOVA0WnVKMUZDUWFYN2ZwLUlOQmQ0U3lDdC1HVVlXeGRXR29Cdm96azg0NE5SbllBU2dBdllwRGFiNlU0N2JrdlFUQzBpRUdJYUhVTnJ3V0ZZX2NUQk05dHhKWnBKNm1RZWdJeFQyLUdBOEZzRGJIZw?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 3.0,
+          "reason": "United States: Presidential warning, Negotiation. Operational component: +0.00; strategic modifier: -1.00; final contribution before daily deduplication: -1.00. Event: Rubio says progress made in Strait of Hormuz talks after Trump threatens \"decapitation\" - CBS News",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOQ1dLLUtEN1BOZURoRGtpQ1JYaDRibllHa25fRHBpNXlrSUdLV1N3NzVETUFZN3FXTFZlUTB2dmJWd1hSWUNRdDdVcUNnTmNfTTgtVXd1eTJ3WmNoRWxrY2FhcFdlX1d4bUxQdzVIcWM5RHNHNDBsOEN0TjFVTGN5ZHMtZkJ2SW5JTVJLWC04YzJmRG9CTlM5MGRVdzFTNVNYcVVOcGlzeFlSamc?oc=5",
+          "existing_event_score": 0.0,
+          "existing_direction_score": -1.0,
           "winning_daily_indicators": [
+            "presidential_warning",
             "negotiation"
           ],
           "duplicate_daily_indicators": []
@@ -303,36 +200,48 @@
       ]
     },
     "iran": {
-      "raw_score": -9.0,
-      "positive_score": 0.0,
-      "negative_score": -9.0,
-      "event_count": 4,
+      "raw_score": 1.0,
+      "positive_score": 1.0,
+      "negative_score": 0.0,
+      "event_count": 1,
       "scored_event_count": 1,
-      "evidence_event_count": 4,
-      "suppressed_duplicate_count": 3,
-      "increase_event_count": 0,
-      "decrease_event_count": 1,
+      "evidence_event_count": 1,
+      "suppressed_duplicate_count": 0,
+      "increase_event_count": 1,
+      "decrease_event_count": 0,
       "contributors": [
         {
-          "event_id": "INFO-000006",
-          "timestamp": "2026-08-03T13:32:18+00:00",
-          "date": "2026-08-03",
+          "event_id": "INFO-000003",
+          "timestamp": "2026-08-05T08:40:00+00:00",
+          "date": "2026-08-05",
           "actor": "iran",
           "bilateral_event": true,
-          "title": "Trump claims Iran talks will start Monday, and other developments in the Middle East - PBS",
+          "title": "Rubio says progress made in Strait of Hormuz talks after Trump threatens \"decapitation\" - CBS News",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "de-escalation",
-          "operational_component": -3.0,
-          "strategic_modifier": -6.0,
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": 1.0,
           "context_multiplier": 1.0,
-          "original_final_score": -9.0,
-          "final_score": -9.0,
+          "original_final_score": 1.0,
+          "final_score": 1.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
-          "primary_daily_indicator": "negotiation",
+          "primary_daily_indicator": "hormuz_threat",
           "indicators": [
+            {
+              "id": "hormuz_threat",
+              "name": "Hormuz threat",
+              "score": 7.0,
+              "direction": "increase",
+              "interest": {
+                "id": "hormuz_leverage",
+                "name": "Hormuz leverage",
+                "weight": 8.0
+              },
+              "recognition_rule_count": 1
+            },
             {
               "id": "negotiation",
               "name": "Negotiation",
@@ -346,171 +255,55 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: Trump claims Iran talks will start Monday, and other developments in the Middle East - PBS",
-          "source": "\"middle east conflict when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxObERIV2pRdHppVC1MZHQtMFRILUQ4MzhHcmdaU3NOUjRQX1p6QVAtRXM2MEZReUoweEZ3MndyRzdTb1Z6b2ZNRGgtbGFYNUxwMkxpSHN4MmR3VWhSLXNEUmtCLXNJcllsQU9xN0hOcDktXzJyNGI4bTN0NUZzeHRuamZFVUxqbmpoaVY2Tm5UWkprODAxVmUwUV9uNjRLaDVzdTk4amFMcUZyVGltdTNlTlYtWnFzenMtMmt1d9IBwgFBVV95cUxPWUx0aDhLdE1vV01kT3dSRml5ZDFmN3NSc3ZtY3VGQVRJd2lpZHZDYUNJOGxuUEVrdW5xaWNHNDlaeDFKZWVaUkdGVUpzM3pwb0VIOVA0WnVKMUZDUWFYN2ZwLUlOQmQ0U3lDdC1HVVlXeGRXR29Cdm96azg0NE5SbllBU2dBdllwRGFiNlU0N2JrdlFUQzBpRUdJYUhVTnJ3V0ZZX2NUQk05dHhKWnBKNm1RZWdJeFQyLUdBOEZzRGJIZw?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 3.0,
+          "reason": "Iran: Hormuz threat, Negotiation. Operational component: +0.00; strategic modifier: +1.00; final contribution before daily deduplication: +1.00. Event: Rubio says progress made in Strait of Hormuz talks after Trump threatens \"decapitation\" - CBS News",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOQ1dLLUtEN1BOZURoRGtpQ1JYaDRibllHa25fRHBpNXlrSUdLV1N3NzVETUFZN3FXTFZlUTB2dmJWd1hSWUNRdDdVcUNnTmNfTTgtVXd1eTJ3WmNoRWxrY2FhcFdlX1d4bUxQdzVIcWM5RHNHNDBsOEN0TjFVTGN5ZHMtZkJ2SW5JTVJLWC04YzJmRG9CTlM5MGRVdzFTNVNYcVVOcGlzeFlSamc?oc=5",
+          "existing_event_score": 0.0,
+          "existing_direction_score": -1.0,
           "winning_daily_indicators": [
+            "hormuz_threat",
             "negotiation"
           ],
           "duplicate_daily_indicators": []
-        },
-        {
-          "event_id": "INFO-000007",
-          "timestamp": "2026-08-03T01:27:00+00:00",
-          "date": "2026-08-03",
-          "actor": "iran",
-          "bilateral_event": true,
-          "title": "Trump says Iran peace talks will restart Monday as U.S. pauses attacks - NBC News",
-          "source_layer": "non_kinetic",
-          "event_type": "ceasefire",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": 0.0,
-          "duplicate_indicator_evidence": true,
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "primary_daily_indicator": null,
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_regime_destroying_war",
-                "name": "Avoid regime-destroying war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says Iran peace talks will restart Monday as U.S. pauses attacks - NBC News",
-          "source": "\"middle east conflict when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQd0FsRGVyTmhKN1lFZHVkMkdsREEzZkVqTWJHMDVkOE9mbXdmNklBQjFXUllKU2t5anpDbGhQdVdRRU9rWWxzSmhvV2ZoS09GRFc4Znk1QXlSMkYzbHFfd0VRb0Vuang0MTUwOE5BUGszb1gwTTVrNnZmVU1KWmxBNjZxZEpkSW9pU0ZRWllOc1pHcm5lOWJmYWIyc1JqT2tsYkdjcW1PTnhDbENlUktjWXJ4eEpnUEVZQTd4SXVR?oc=5",
-          "existing_event_score": 1.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [],
-          "duplicate_daily_indicators": [
-            "negotiation"
-          ]
-        },
-        {
-          "event_id": "INFO-000005",
-          "timestamp": "2026-08-03T18:48:24+00:00",
-          "date": "2026-08-03",
-          "actor": "iran",
-          "bilateral_event": true,
-          "title": "Iran Denies Talks With the U.S. Are Back On. Trump Insists They Are - Time Magazine",
-          "source_layer": "non_kinetic",
-          "event_type": "diplomatic",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": 0.0,
-          "duplicate_indicator_evidence": true,
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "primary_daily_indicator": null,
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_regime_destroying_war",
-                "name": "Avoid regime-destroying war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran Denies Talks With the U.S. Are Back On. Trump Insists They Are - Time Magazine",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPMGVSTFoweE40Y2VoYXJKQldReElpY014QXRnbV9ZQlRUb0xUalJMMHRqSlI5MGZiMDFlNHlMeHowcTJoZWxsQ194Wmhqakd6N0NydGJ1NjFDeHBjX3FsRUNMOUdPSjR5OWxYeDdLZ2hIMjVYaU9QLTAzRndjZTVGMFo0OTZZVlZjNzNYWjV2aVhoM0lnUjZDNA?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [],
-          "duplicate_daily_indicators": [
-            "negotiation"
-          ]
-        },
-        {
-          "event_id": "INFO-000004",
-          "timestamp": "2026-08-03T20:52:31+00:00",
-          "date": "2026-08-03",
-          "actor": "iran",
-          "bilateral_event": true,
-          "title": "Trump says ongoing talks are Iran’s ‘last chance’ - Al Jazeera",
-          "source_layer": "non_kinetic",
-          "event_type": "diplomatic",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": 0.0,
-          "duplicate_indicator_evidence": true,
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "primary_daily_indicator": null,
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_regime_destroying_war",
-                "name": "Avoid regime-destroying war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says ongoing talks are Iran’s ‘last chance’ - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPWmM3LUpzRC03eDlGaUR6amdueU9WSDdIM0FYNXlpdXJmbEdOZk9ZcTVzLWpUcktsZ3Z5eXd3S0M5Y3RRVGtINFFqUDdFS0JzUkkzY1A1LUo1cnVDc1MzMG43TXU4TGZWcHZQWUFndWd4ei0zdnE4d3dDWDIwM0haMDdWdFJiV0N4TTcxWGMyclpHMlNvaWNhUUZUV04tX1E1NVJpOU1KSUZUNEtBMVlFSENQOGZNcDDSAbwBQVVfeXFMTmhBcW5BNGtIRnNLSWJLY2JCZlA2UERacTZfbnc3STh1TGhrYml6RXdMazBKWjJLNTBZZEIxOExZQk5xbEFnWWRDbF9aX0tvT05VX09rWUlYZFNEU3V5N29oaXh3Q2RmNFpVTHdfQmRQekVGdE9PS1NndWl4TGNZNTR3bjcwUUVLUDVma1NRQVZiZFd6aGdNNUVaZjBzNjJGbVRCdnhuTEptMHRKaThTNm1mdTNqR3JvaUNYV0Q?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [],
-          "duplicate_daily_indicators": [
-            "negotiation"
-          ]
         }
       ],
-      "weighted_score_7d": -8.7,
-      "pressure_index_7d": 32.6,
-      "pressure_level": "reduced",
-      "trend": "strong_decrease",
+      "weighted_score_7d": -16.65,
+      "pressure_index_7d": 16.7,
+      "pressure_level": "low",
+      "trend": "strong_increase",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000006",
-          "timestamp": "2026-08-03T13:32:18+00:00",
-          "date": "2026-08-03",
+          "event_id": "INFO-000003",
+          "timestamp": "2026-08-05T08:40:00+00:00",
+          "date": "2026-08-05",
           "actor": "iran",
           "bilateral_event": true,
-          "title": "Trump claims Iran talks will start Monday, and other developments in the Middle East - PBS",
+          "title": "Rubio says progress made in Strait of Hormuz talks after Trump threatens \"decapitation\" - CBS News",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "de-escalation",
-          "operational_component": -3.0,
-          "strategic_modifier": -6.0,
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": 1.0,
           "context_multiplier": 1.0,
-          "original_final_score": -9.0,
-          "final_score": -9.0,
+          "original_final_score": 1.0,
+          "final_score": 1.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
-          "primary_daily_indicator": "negotiation",
+          "primary_daily_indicator": "hormuz_threat",
           "indicators": [
+            {
+              "id": "hormuz_threat",
+              "name": "Hormuz threat",
+              "score": 7.0,
+              "direction": "increase",
+              "interest": {
+                "id": "hormuz_leverage",
+                "name": "Hormuz leverage",
+                "weight": 8.0
+              },
+              "recognition_rule_count": 1
+            },
             {
               "id": "negotiation",
               "name": "Negotiation",
@@ -524,12 +317,13 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: Trump claims Iran talks will start Monday, and other developments in the Middle East - PBS",
-          "source": "\"middle east conflict when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxObERIV2pRdHppVC1MZHQtMFRILUQ4MzhHcmdaU3NOUjRQX1p6QVAtRXM2MEZReUoweEZ3MndyRzdTb1Z6b2ZNRGgtbGFYNUxwMkxpSHN4MmR3VWhSLXNEUmtCLXNJcllsQU9xN0hOcDktXzJyNGI4bTN0NUZzeHRuamZFVUxqbmpoaVY2Tm5UWkprODAxVmUwUV9uNjRLaDVzdTk4amFMcUZyVGltdTNlTlYtWnFzenMtMmt1d9IBwgFBVV95cUxPWUx0aDhLdE1vV01kT3dSRml5ZDFmN3NSc3ZtY3VGQVRJd2lpZHZDYUNJOGxuUEVrdW5xaWNHNDlaeDFKZWVaUkdGVUpzM3pwb0VIOVA0WnVKMUZDUWFYN2ZwLUlOQmQ0U3lDdC1HVVlXeGRXR29Cdm96azg0NE5SbllBU2dBdllwRGFiNlU0N2JrdlFUQzBpRUdJYUhVTnJ3V0ZZX2NUQk05dHhKWnBKNm1RZWdJeFQyLUdBOEZzRGJIZw?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 3.0,
+          "reason": "Iran: Hormuz threat, Negotiation. Operational component: +0.00; strategic modifier: +1.00; final contribution before daily deduplication: +1.00. Event: Rubio says progress made in Strait of Hormuz talks after Trump threatens \"decapitation\" - CBS News",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOQ1dLLUtEN1BOZURoRGtpQ1JYaDRibllHa25fRHBpNXlrSUdLV1N3NzVETUFZN3FXTFZlUTB2dmJWd1hSWUNRdDdVcUNnTmNfTTgtVXd1eTJ3WmNoRWxrY2FhcFdlX1d4bUxQdzVIcWM5RHNHNDBsOEN0TjFVTGN5ZHMtZkJ2SW5JTVJLWC04YzJmRG9CTlM5MGRVdzFTNVNYcVVOcGlzeFlSamc?oc=5",
+          "existing_event_score": 0.0,
+          "existing_direction_score": -1.0,
           "winning_daily_indicators": [
+            "hormuz_threat",
             "negotiation"
           ],
           "duplicate_daily_indicators": []
@@ -537,9 +331,9 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 17.8,
+      "pressure_index_7d": 8.35,
       "pressure_level": "low",
-      "trend": "strong_decrease",
+      "trend": "increase",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
   }
