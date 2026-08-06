@@ -1,36 +1,36 @@
 {
-  "generated_at": "2026-08-06T11:29:05.282030Z",
-  "source_generated_at": "2026-08-06T10:17:53Z",
+  "generated_at": "2026-08-06T12:40:51.451115Z",
+  "source_generated_at": "2026-08-06T12:30:08Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": false,
+    "required_today_utc": true,
     "max_age_hours": 8.0
   },
   "source_event_count": 1000,
-  "event_count": 568,
-  "rejected_count": 432,
+  "event_count": 570,
+  "rejected_count": 430,
   "rejection_counts": {
     "category_not_kinetic": 304,
-    "no_confirmed_action_language": 90,
-    "context_or_hypothetical": 25,
+    "no_confirmed_action_language": 89,
+    "context_or_hypothetical": 24,
     "retrospective_or_aftermath": 8,
     "alert_only": 5
   },
   "category_counts": {
-    "missile": 180,
+    "missile": 181,
     "strike": 147,
-    "airstrike": 89,
+    "airstrike": 90,
     "explosion": 71,
     "drone": 68,
     "ground": 13
   },
   "severity_counts": {
-    "medium": 278,
-    "high": 257,
+    "medium": 279,
+    "high": 258,
     "low": 30,
     "critical": 3
   },
@@ -38,8 +38,8 @@
     "Iran": 239,
     "United States": 175,
     "Unknown actor": 53,
-    "Israel": 44,
-    "Yemen": 32,
+    "Israel": 45,
+    "Yemen": 33,
     "Saudi Arabia": 10,
     "Iraq": 9,
     "Lebanon": 4,
@@ -47,6 +47,58 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-vmn84tv0mrk0",
+      "timestamp": "2026-08-06T12:27:04Z",
+      "event_type": "kinetic",
+      "subtype": "airstrike",
+      "category": "airstrike",
+      "severity": "medium",
+      "actor": "isr",
+      "actor_label": "Israel",
+      "actor_method": "raw_source.origin",
+      "target_country": "Lebanon",
+      "location": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "IDF conducts airstrikes on village of Almansouri in western sector of southern Lebanon, Tyre district",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/128027",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-175k7adz1xek0",
+      "timestamp": "2026-08-06T11:54:48Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "high",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Ansarullah missile attack on Hadhramaut Emergency Forces positions in al-Abr, large number of casualties reported",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/81785",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "general_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-1bcixabjq3y80",
       "timestamp": "2026-08-06T10:09:07Z",
