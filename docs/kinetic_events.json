@@ -1,45 +1,45 @@
 {
-  "generated_at": "2026-08-07T10:06:01.410484Z",
-  "source_generated_at": "2026-08-07T09:42:26Z",
+  "generated_at": "2026-08-08T05:58:30.590811Z",
+  "source_generated_at": "2026-08-08T05:57:17Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": false,
+    "required_today_utc": true,
     "max_age_hours": 8.0
   },
   "source_event_count": 1000,
-  "event_count": 567,
-  "rejected_count": 433,
+  "event_count": 568,
+  "rejected_count": 432,
   "rejection_counts": {
-    "category_not_kinetic": 309,
-    "no_confirmed_action_language": 88,
+    "category_not_kinetic": 310,
+    "no_confirmed_action_language": 87,
     "context_or_hypothetical": 24,
     "retrospective_or_aftermath": 8,
-    "alert_only": 4
+    "alert_only": 3
   },
   "category_counts": {
-    "missile": 180,
-    "strike": 147,
-    "airstrike": 89,
+    "missile": 179,
+    "strike": 148,
+    "airstrike": 90,
     "explosion": 70,
     "drone": 68,
     "ground": 13
   },
   "severity_counts": {
     "medium": 276,
-    "high": 258,
-    "low": 30,
+    "high": 257,
+    "low": 32,
     "critical": 3
   },
   "actor_counts": {
-    "Iran": 234,
+    "Iran": 233,
     "United States": 174,
     "Unknown actor": 54,
-    "Israel": 45,
-    "Yemen": 35,
+    "Israel": 46,
+    "Yemen": 36,
     "Saudi Arabia": 10,
     "Iraq": 9,
     "Lebanon": 4,
@@ -47,6 +47,58 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-1jsarvd9anmo0",
+      "timestamp": "2026-08-07T11:52:29Z",
+      "event_type": "kinetic",
+      "subtype": "strike",
+      "category": "strike",
+      "severity": "low",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Houthi forces attack Saudi-backed mercenary positions in Marib, forcing withdrawal",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/81837",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-13agq2wgrmlc0",
+      "timestamp": "2026-08-07T10:08:16Z",
+      "event_type": "kinetic",
+      "subtype": "airstrike",
+      "category": "airstrike",
+      "severity": "low",
+      "actor": "isr",
+      "actor_label": "Israel",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Israeli airstrike on Lebanese Army bulldozer in village of Al-Mansoura injures one soldier lightly during debris clearance operations",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/128080",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-23wsjfsgco8w0",
       "timestamp": "2026-08-06T23:32:15Z",
@@ -14755,32 +14807,6 @@
       "description": "At least one ballistic missile intercepted in Bahrain",
       "source_name": "CIG_telegram",
       "source_url": "https://t.me/CIG_telegram/79191",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-ci1h7fv9ie00",
-      "timestamp": "2026-07-09T01:09:15Z",
-      "event_type": "kinetic",
-      "subtype": "missile",
-      "category": "missile",
-      "severity": "high",
-      "actor": "irn",
-      "actor_label": "Iran",
-      "actor_method": "raw_source.origin",
-      "target_country": "Iran",
-      "location": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "New wave of missile launches from Iran targeting regional targets",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79179",
       "source_repository": "mikloshetzer-sketch/me-security-monitor",
       "source_collection": "events",
       "validation": {
