@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T10:06:02.173589+00:00",
+  "generated_at": "2026-08-08T09:45:01.860623+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,32 +18,32 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 515,
+    "non_kinetic_events_loaded": 522,
     "kinetic_events_loaded": 567,
-    "unique_events_scanned": 1031,
-    "strategic_evidence_contributions": 302,
+    "unique_events_scanned": 1038,
+    "strategic_evidence_contributions": 305,
     "evidence_contributions_by_actor": {
-      "usa": 98,
-      "iran": 204
+      "usa": 99,
+      "iran": 206
     },
     "scored_contributions_by_actor": {
       "usa": 68,
-      "iran": 103
+      "iran": 104
     },
     "suppressed_duplicates_by_actor": {
-      "usa": 30,
-      "iran": 101
+      "usa": 31,
+      "iran": 102
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 268,
+      "non_kinetic": 271,
       "kinetic": 34
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 169,
-      "usa:negotiation": 79,
+      "iran:negotiation": 170,
+      "usa:negotiation": 80,
       "iran:missile_test": 23,
       "usa:presidential_warning": 14,
-      "iran:hormuz_threat": 9,
+      "iran:hormuz_threat": 10,
       "usa:ceasefire_support": 8,
       "iran:missile_preparation": 5,
       "iran:nuclear_activity": 1
@@ -52,21 +52,21 @@
       "iran:negotiation": 81,
       "usa:negotiation": 53,
       "usa:presidential_warning": 14,
+      "iran:hormuz_threat": 10,
       "iran:missile_test": 10,
-      "iran:hormuz_threat": 9,
       "iran:missile_preparation": 5,
       "usa:ceasefire_support": 4,
       "iran:nuclear_activity": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 2,
-    "history_day_count": 150
+    "skipped_current_utc_day": 1,
+    "history_day_count": 151
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-08-06",
+  "latest_complete_utc_day": "2026-08-07",
   "current": {
-    "date": "2026-08-06",
+    "date": "2026-08-07",
     "calculation_mode": "live",
     "usa": {
       "raw_score": 0.0,
@@ -79,15 +79,15 @@
       "increase_event_count": 0,
       "decrease_event_count": 0,
       "contributors": [],
-      "weighted_score_7d": -25.95,
-      "pressure_index_7d": 0.0,
+      "weighted_score_7d": -19.2,
+      "pressure_index_7d": 11.6,
       "pressure_level": "low",
-      "trend": "stable",
+      "trend": "strong_increase",
       "strongest_contributors": []
     },
     "iran": {
-      "raw_score": 10.0,
-      "positive_score": 10.0,
+      "raw_score": 5.0,
+      "positive_score": 5.0,
       "negative_score": 0.0,
       "event_count": 1,
       "scored_event_count": 1,
@@ -97,101 +97,101 @@
       "decrease_event_count": 0,
       "contributors": [
         {
-          "event_id": "iranstrike-23wsjfsgco8w0",
-          "timestamp": "2026-08-06T23:32:15+00:00",
-          "date": "2026-08-06",
+          "event_id": "INFO-000005",
+          "timestamp": "2026-08-07T05:56:00+00:00",
+          "date": "2026-08-07",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "Saudi official tells CNN Saudi Arabia preparing for possible coordinated attacks by Iran-backed Iraqi militias and Houthis; intelligence indicates IRGC coordination with simultaneous drone and missile attacks targeting civilian energy, port and airport infrastructure",
-          "source_layer": "kinetic",
-          "event_type": "kinetic",
-          "event_direction": "escalation",
-          "operational_component": 1.0,
-          "strategic_modifier": 9.0,
+          "title": "Iran, Oman deal on Strait of Hormuz getting close, Tehran says - CBS News",
+          "source_layer": "non_kinetic",
+          "event_type": "ceasefire",
+          "event_direction": "de-escalation",
+          "operational_component": -2.0,
+          "strategic_modifier": 7.0,
           "context_multiplier": 1.0,
-          "original_final_score": 10.0,
-          "final_score": 10.0,
+          "original_final_score": 5.0,
+          "final_score": 5.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
-          "primary_daily_indicator": "missile_preparation",
+          "primary_daily_indicator": "hormuz_threat",
           "indicators": [
             {
-              "id": "missile_preparation",
-              "name": "Missile force preparation",
-              "score": 9.0,
+              "id": "hormuz_threat",
+              "name": "Hormuz threat",
+              "score": 7.0,
               "direction": "increase",
               "interest": {
-                "id": "strategic_deterrence",
-                "name": "Strategic deterrence",
-                "weight": 10.0
+                "id": "hormuz_leverage",
+                "name": "Hormuz leverage",
+                "weight": 8.0
               },
-              "recognition_rule_count": 1
+              "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Saudi official tells CNN Saudi Arabia preparing for possible coordinated attacks by Iran-backed Iraqi militias and Houthis; intelligence indicates IRGC coordination with simultaneous drone and missile attacks targeting civilian energy, port and airport infrastructure",
-          "source": "",
-          "link": "https://t.me/CIG_telegram/81820",
-          "existing_event_score": 0.0,
-          "existing_direction_score": 0.0,
+          "reason": "Iran: Hormuz threat. Operational component: -2.00; strategic modifier: +7.00; final contribution before daily deduplication: +5.00. Event: Iran, Oman deal on Strait of Hormuz getting close, Tehran says - CBS News",
+          "source": "\"middle east conflict when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZ3luLUxvekFtWFdpQU9vSnJ2RzRwdndUZ205VmYwcEl2WDNPSmZ1YUNteThESjB4LW5SdHlXX3pyZkdqNGtQd0JDQU5oeER4U21BY1AtMUpiSEdDWHZacnV5SGdQOXpzdllRU1lTLUtFZlFlU25JWGgtMnRSaE9sdVNOWQ?oc=5",
+          "existing_event_score": 1.0,
+          "existing_direction_score": 2.0,
           "winning_daily_indicators": [
-            "missile_preparation"
+            "hormuz_threat"
           ],
           "duplicate_daily_indicators": []
         }
       ],
-      "weighted_score_7d": -10.25,
-      "pressure_index_7d": 29.5,
-      "pressure_level": "low",
+      "weighted_score_7d": -1.8,
+      "pressure_index_7d": 46.4,
+      "pressure_level": "balanced",
       "trend": "strong_increase",
       "strongest_contributors": [
         {
-          "event_id": "iranstrike-23wsjfsgco8w0",
-          "timestamp": "2026-08-06T23:32:15+00:00",
-          "date": "2026-08-06",
+          "event_id": "INFO-000005",
+          "timestamp": "2026-08-07T05:56:00+00:00",
+          "date": "2026-08-07",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "Saudi official tells CNN Saudi Arabia preparing for possible coordinated attacks by Iran-backed Iraqi militias and Houthis; intelligence indicates IRGC coordination with simultaneous drone and missile attacks targeting civilian energy, port and airport infrastructure",
-          "source_layer": "kinetic",
-          "event_type": "kinetic",
-          "event_direction": "escalation",
-          "operational_component": 1.0,
-          "strategic_modifier": 9.0,
+          "title": "Iran, Oman deal on Strait of Hormuz getting close, Tehran says - CBS News",
+          "source_layer": "non_kinetic",
+          "event_type": "ceasefire",
+          "event_direction": "de-escalation",
+          "operational_component": -2.0,
+          "strategic_modifier": 7.0,
           "context_multiplier": 1.0,
-          "original_final_score": 10.0,
-          "final_score": 10.0,
+          "original_final_score": 5.0,
+          "final_score": 5.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
-          "primary_daily_indicator": "missile_preparation",
+          "primary_daily_indicator": "hormuz_threat",
           "indicators": [
             {
-              "id": "missile_preparation",
-              "name": "Missile force preparation",
-              "score": 9.0,
+              "id": "hormuz_threat",
+              "name": "Hormuz threat",
+              "score": 7.0,
               "direction": "increase",
               "interest": {
-                "id": "strategic_deterrence",
-                "name": "Strategic deterrence",
-                "weight": 10.0
+                "id": "hormuz_leverage",
+                "name": "Hormuz leverage",
+                "weight": 8.0
               },
-              "recognition_rule_count": 1
+              "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Saudi official tells CNN Saudi Arabia preparing for possible coordinated attacks by Iran-backed Iraqi militias and Houthis; intelligence indicates IRGC coordination with simultaneous drone and missile attacks targeting civilian energy, port and airport infrastructure",
-          "source": "",
-          "link": "https://t.me/CIG_telegram/81820",
-          "existing_event_score": 0.0,
-          "existing_direction_score": 0.0,
+          "reason": "Iran: Hormuz threat. Operational component: -2.00; strategic modifier: +7.00; final contribution before daily deduplication: +5.00. Event: Iran, Oman deal on Strait of Hormuz getting close, Tehran says - CBS News",
+          "source": "\"middle east conflict when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZ3luLUxvekFtWFdpQU9vSnJ2RzRwdndUZ205VmYwcEl2WDNPSmZ1YUNteThESjB4LW5SdHlXX3pyZkdqNGtQd0JDQU5oeER4U21BY1AtMUpiSEdDWHZacnV5SGdQOXpzdllRU1lTLUtFZlFlU25JWGgtMnRSaE9sdVNOWQ?oc=5",
+          "existing_event_score": 1.0,
+          "existing_direction_score": 2.0,
           "winning_daily_indicators": [
-            "missile_preparation"
+            "hormuz_threat"
           ],
           "duplicate_daily_indicators": []
         }
       ]
     },
     "overall": {
-      "pressure_index_7d": 14.75,
+      "pressure_index_7d": 29.0,
       "pressure_level": "low",
       "trend": "strong_increase",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"

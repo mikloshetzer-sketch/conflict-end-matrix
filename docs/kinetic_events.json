@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-08-08T05:58:30.590811Z",
-  "source_generated_at": "2026-08-08T05:57:17Z",
+  "generated_at": "2026-08-08T09:45:00.927993Z",
+  "source_generated_at": "2026-08-08T09:01:42Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
   "source_event_count": 1000,
-  "event_count": 568,
-  "rejected_count": 432,
+  "event_count": 567,
+  "rejected_count": 433,
   "rejection_counts": {
-    "category_not_kinetic": 310,
+    "category_not_kinetic": 311,
     "no_confirmed_action_language": 87,
     "context_or_hypothetical": 24,
     "retrospective_or_aftermath": 8,
     "alert_only": 3
   },
   "category_counts": {
-    "missile": 179,
+    "missile": 178,
     "strike": 148,
     "airstrike": 90,
     "explosion": 70,
@@ -29,13 +29,13 @@
     "ground": 13
   },
   "severity_counts": {
-    "medium": 276,
+    "medium": 275,
     "high": 257,
     "low": 32,
     "critical": 3
   },
   "actor_counts": {
-    "Iran": 233,
+    "Iran": 232,
     "United States": 174,
     "Unknown actor": 54,
     "Israel": 46,
@@ -14781,32 +14781,6 @@
       "description": "Iranian ballistic missile impacts in Bahrain, one low-altitude interception by Patriot system",
       "source_name": "CIG_telegram",
       "source_url": "https://t.me/CIG_telegram/79192",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-26y2zy7ar6800",
-      "timestamp": "2026-07-09T01:57:50Z",
-      "event_type": "kinetic",
-      "subtype": "missile",
-      "category": "missile",
-      "severity": "medium",
-      "actor": "irn",
-      "actor_label": "Iran",
-      "actor_method": "raw_source.origin",
-      "target_country": "",
-      "location": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "At least one ballistic missile intercepted in Bahrain",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79191",
       "source_repository": "mikloshetzer-sketch/me-security-monitor",
       "source_collection": "events",
       "validation": {
