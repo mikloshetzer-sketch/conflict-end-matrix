@@ -1,45 +1,45 @@
 {
-  "generated_at": "2026-08-09T05:59:53.829974Z",
-  "source_generated_at": "2026-08-09T05:35:07Z",
+  "generated_at": "2026-08-09T09:47:36.020823Z",
+  "source_generated_at": "2026-08-09T09:23:26Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
   "source_event_count": 1000,
-  "event_count": 563,
-  "rejected_count": 437,
+  "event_count": 561,
+  "rejected_count": 439,
   "rejection_counts": {
-    "category_not_kinetic": 315,
+    "category_not_kinetic": 317,
     "no_confirmed_action_language": 87,
     "context_or_hypothetical": 24,
     "retrospective_or_aftermath": 8,
     "alert_only": 3
   },
   "category_counts": {
-    "missile": 175,
-    "strike": 143,
+    "missile": 173,
+    "strike": 142,
     "airstrike": 90,
-    "drone": 72,
+    "drone": 73,
     "explosion": 70,
     "ground": 13
   },
   "severity_counts": {
-    "medium": 276,
-    "high": 251,
+    "medium": 277,
+    "high": 248,
     "low": 33,
     "critical": 3
   },
   "actor_counts": {
-    "Iran": 225,
-    "United States": 172,
+    "Iran": 223,
+    "United States": 171,
     "Unknown actor": 55,
     "Israel": 48,
-    "Yemen": 37,
+    "Yemen": 38,
     "Saudi Arabia": 10,
     "Iraq": 9,
     "Lebanon": 5,
@@ -47,6 +47,32 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-24ialcz3an280",
+      "timestamp": "2026-08-09T07:36:36Z",
+      "event_type": "kinetic",
+      "subtype": "drone",
+      "category": "drone",
+      "severity": "medium",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Houthis claim responsibility for attack on Aramco facilities in Jizan, Saudi Arabia using UAVs, precision hit on target reported",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/128157",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "general_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-39htyxzbny800",
       "timestamp": "2026-08-09T02:12:07Z",
@@ -14604,84 +14630,6 @@
       "validation": {
         "accepted": true,
         "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-2fayaeyb5r6s0",
-      "timestamp": "2026-07-09T07:15:28Z",
-      "event_type": "kinetic",
-      "subtype": "strike",
-      "category": "strike",
-      "severity": "high",
-      "actor": "usa",
-      "actor_label": "United States",
-      "actor_method": "raw_source.origin",
-      "target_country": "Iran",
-      "location": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "U.S. strikes in Iran over past 48 hours result in 14 killed and 78 wounded according to Iranian Health Ministry",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/126221",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-317bja3m95800",
-      "timestamp": "2026-07-09T05:35:34Z",
-      "event_type": "kinetic",
-      "subtype": "missile",
-      "category": "missile",
-      "severity": "high",
-      "actor": "iran",
-      "actor_label": "Iran",
-      "actor_method": "normalized.attacker",
-      "target_country": "Israel",
-      "location": "Israel",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "U.S. military attacks on Iran prompt Iranian retaliation with drone and missile strikes on Bahrain and Kuwait, raising concerns about escalation and potential further Iranian aggression toward Israel",
-      "source_name": "OSINTdefender",
-      "source_url": "https://t.me/OSINTdefender/19426",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-38wl43gf1wi00",
-      "timestamp": "2026-07-09T05:29:55Z",
-      "event_type": "kinetic",
-      "subtype": "missile",
-      "category": "missile",
-      "severity": "high",
-      "actor": "irn",
-      "actor_label": "Iran",
-      "actor_method": "raw_source.origin",
-      "target_country": "Iran",
-      "location": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "IRGC strikes Camp Arifjan and Ali Al-Salem airbase in Kuwait with missiles and drones targeting critical infrastructure",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/126209",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "general_action_match",
         "mode": "strict_kinetic_v2"
       }
     }
