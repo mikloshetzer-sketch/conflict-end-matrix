@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-09T09:47:36.945942+00:00",
+  "generated_at": "2026-08-10T10:23:41.873094+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,29 +18,29 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 525,
-    "kinetic_events_loaded": 561,
-    "unique_events_scanned": 1038,
-    "strategic_evidence_contributions": 308,
+    "non_kinetic_events_loaded": 527,
+    "kinetic_events_loaded": 562,
+    "unique_events_scanned": 1041,
+    "strategic_evidence_contributions": 310,
     "evidence_contributions_by_actor": {
-      "usa": 100,
-      "iran": 208
+      "usa": 101,
+      "iran": 209
     },
     "scored_contributions_by_actor": {
-      "usa": 68,
-      "iran": 104
+      "usa": 69,
+      "iran": 105
     },
     "suppressed_duplicates_by_actor": {
       "usa": 32,
       "iran": 104
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 274,
+      "non_kinetic": 276,
       "kinetic": 34
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 172,
-      "usa:negotiation": 81,
+      "iran:negotiation": 173,
+      "usa:negotiation": 82,
       "iran:missile_test": 23,
       "usa:presidential_warning": 14,
       "iran:hormuz_threat": 10,
@@ -49,8 +49,8 @@
       "iran:nuclear_activity": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 81,
-      "usa:negotiation": 53,
+      "iran:negotiation": 82,
+      "usa:negotiation": 54,
       "usa:presidential_warning": 14,
       "iran:hormuz_threat": 10,
       "iran:missile_test": 10,
@@ -59,7 +59,7 @@
       "iran:nuclear_activity": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 2,
+    "skipped_current_utc_day": 0,
     "history_day_count": 151
   },
   "configuration_warnings": [],
@@ -69,35 +69,166 @@
     "date": "2026-08-07",
     "calculation_mode": "live",
     "usa": {
-      "raw_score": 0.0,
+      "raw_score": -6.0,
       "positive_score": 0.0,
-      "negative_score": 0.0,
-      "event_count": 0,
-      "scored_event_count": 0,
-      "evidence_event_count": 0,
-      "suppressed_duplicate_count": 0,
-      "increase_event_count": 0,
-      "decrease_event_count": 0,
-      "contributors": [],
-      "weighted_score_7d": -19.2,
-      "pressure_index_7d": 11.6,
-      "pressure_level": "low",
-      "trend": "strong_increase",
-      "strongest_contributors": []
-    },
-    "iran": {
-      "raw_score": 5.0,
-      "positive_score": 5.0,
-      "negative_score": 0.0,
+      "negative_score": -6.0,
       "event_count": 1,
       "scored_event_count": 1,
       "evidence_event_count": 1,
       "suppressed_duplicate_count": 0,
-      "increase_event_count": 1,
-      "decrease_event_count": 0,
+      "increase_event_count": 0,
+      "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000005",
+          "event_id": "INFO-000006",
+          "timestamp": "2026-08-07T11:19:32+00:00",
+          "date": "2026-08-07",
+          "actor": "usa",
+          "bilateral_event": true,
+          "title": "Trump says war ‘can’t go much longer’ – what’s the latest on talks? - Al Jazeera",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
+          "duplicate_indicator_evidence": false,
+          "daily_score_suppressed": false,
+          "suppression_reason": null,
+          "primary_daily_indicator": "negotiation",
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_full_scale_war",
+                "name": "Avoid full-scale regional war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says war ‘can’t go much longer’ – what’s the latest on talks? - Al Jazeera",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNcm5CZUFmeUtIeDNGUXhOckUxSEN4VnhlY3JBQTNkSTBXWUVfekxRMXNhdzMzcTRjMjZydzVIMDI1czc5aHY5VnB1WmJtTkVhOHNlMFI0MkkzTEJqNlBWb1dBTFExdnhnd1pKOVk5anNzNlRZZXpXMGE5b2xJQVZjN3ZjRkVtQW5SYzNWbXlNTnVPVmNsRF92THJR0gGfAUFVX3lxTFBsdWNwdTgtWUdfM0tlaVIzNVJRRGR3Q0lsVExGV2xyQTFsQTNPWmNyME00aTdTT2RZdENaejVTMmthTDJGZi1tQm9BcHlhWFY3SktiVGdQTkxmTlFXOG1xekZrVEFIcjQzbVZibXI5TjhlZEE3WFdaaXJCUUJyRFhFQzVzbmRHc3VJeHA0MmkzY1FYZVdVYzE4NjYzMnhpRQ?oc=5",
+          "existing_event_score": 1.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [
+            "negotiation"
+          ],
+          "duplicate_daily_indicators": []
+        }
+      ],
+      "weighted_score_7d": -25.2,
+      "pressure_index_7d": 0.0,
+      "pressure_level": "low",
+      "trend": "stable",
+      "strongest_contributors": [
+        {
+          "event_id": "INFO-000006",
+          "timestamp": "2026-08-07T11:19:32+00:00",
+          "date": "2026-08-07",
+          "actor": "usa",
+          "bilateral_event": true,
+          "title": "Trump says war ‘can’t go much longer’ – what’s the latest on talks? - Al Jazeera",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
+          "duplicate_indicator_evidence": false,
+          "daily_score_suppressed": false,
+          "suppression_reason": null,
+          "primary_daily_indicator": "negotiation",
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_full_scale_war",
+                "name": "Avoid full-scale regional war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says war ‘can’t go much longer’ – what’s the latest on talks? - Al Jazeera",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNcm5CZUFmeUtIeDNGUXhOckUxSEN4VnhlY3JBQTNkSTBXWUVfekxRMXNhdzMzcTRjMjZydzVIMDI1czc5aHY5VnB1WmJtTkVhOHNlMFI0MkkzTEJqNlBWb1dBTFExdnhnd1pKOVk5anNzNlRZZXpXMGE5b2xJQVZjN3ZjRkVtQW5SYzNWbXlNTnVPVmNsRF92THJR0gGfAUFVX3lxTFBsdWNwdTgtWUdfM0tlaVIzNVJRRGR3Q0lsVExGV2xyQTFsQTNPWmNyME00aTdTT2RZdENaejVTMmthTDJGZi1tQm9BcHlhWFY3SktiVGdQTkxmTlFXOG1xekZrVEFIcjQzbVZibXI5TjhlZEE3WFdaaXJCUUJyRFhFQzVzbmRHc3VJeHA0MmkzY1FYZVdVYzE4NjYzMnhpRQ?oc=5",
+          "existing_event_score": 1.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [
+            "negotiation"
+          ],
+          "duplicate_daily_indicators": []
+        }
+      ]
+    },
+    "iran": {
+      "raw_score": -1.0,
+      "positive_score": 5.0,
+      "negative_score": -6.0,
+      "event_count": 2,
+      "scored_event_count": 2,
+      "evidence_event_count": 2,
+      "suppressed_duplicate_count": 0,
+      "increase_event_count": 1,
+      "decrease_event_count": 1,
+      "contributors": [
+        {
+          "event_id": "INFO-000006",
+          "timestamp": "2026-08-07T11:19:32+00:00",
+          "date": "2026-08-07",
+          "actor": "iran",
+          "bilateral_event": true,
+          "title": "Trump says war ‘can’t go much longer’ – what’s the latest on talks? - Al Jazeera",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
+          "duplicate_indicator_evidence": false,
+          "daily_score_suppressed": false,
+          "suppression_reason": null,
+          "primary_daily_indicator": "negotiation",
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_regime_destroying_war",
+                "name": "Avoid regime-destroying war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says war ‘can’t go much longer’ – what’s the latest on talks? - Al Jazeera",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNcm5CZUFmeUtIeDNGUXhOckUxSEN4VnhlY3JBQTNkSTBXWUVfekxRMXNhdzMzcTRjMjZydzVIMDI1czc5aHY5VnB1WmJtTkVhOHNlMFI0MkkzTEJqNlBWb1dBTFExdnhnd1pKOVk5anNzNlRZZXpXMGE5b2xJQVZjN3ZjRkVtQW5SYzNWbXlNTnVPVmNsRF92THJR0gGfAUFVX3lxTFBsdWNwdTgtWUdfM0tlaVIzNVJRRGR3Q0lsVExGV2xyQTFsQTNPWmNyME00aTdTT2RZdENaejVTMmthTDJGZi1tQm9BcHlhWFY3SktiVGdQTkxmTlFXOG1xekZrVEFIcjQzbVZibXI5TjhlZEE3WFdaaXJCUUJyRFhFQzVzbmRHc3VJeHA0MmkzY1FYZVdVYzE4NjYzMnhpRQ?oc=5",
+          "existing_event_score": 1.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [
+            "negotiation"
+          ],
+          "duplicate_daily_indicators": []
+        },
+        {
+          "event_id": "INFO-000008",
           "timestamp": "2026-08-07T05:56:00+00:00",
           "date": "2026-08-07",
           "actor": "iran",
@@ -140,13 +271,56 @@
           "duplicate_daily_indicators": []
         }
       ],
-      "weighted_score_7d": -1.8,
-      "pressure_index_7d": 46.4,
-      "pressure_level": "balanced",
-      "trend": "strong_increase",
+      "weighted_score_7d": -7.8,
+      "pressure_index_7d": 34.4,
+      "pressure_level": "reduced",
+      "trend": "increase",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000005",
+          "event_id": "INFO-000006",
+          "timestamp": "2026-08-07T11:19:32+00:00",
+          "date": "2026-08-07",
+          "actor": "iran",
+          "bilateral_event": true,
+          "title": "Trump says war ‘can’t go much longer’ – what’s the latest on talks? - Al Jazeera",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
+          "duplicate_indicator_evidence": false,
+          "daily_score_suppressed": false,
+          "suppression_reason": null,
+          "primary_daily_indicator": "negotiation",
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_regime_destroying_war",
+                "name": "Avoid regime-destroying war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says war ‘can’t go much longer’ – what’s the latest on talks? - Al Jazeera",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNcm5CZUFmeUtIeDNGUXhOckUxSEN4VnhlY3JBQTNkSTBXWUVfekxRMXNhdzMzcTRjMjZydzVIMDI1czc5aHY5VnB1WmJtTkVhOHNlMFI0MkkzTEJqNlBWb1dBTFExdnhnd1pKOVk5anNzNlRZZXpXMGE5b2xJQVZjN3ZjRkVtQW5SYzNWbXlNTnVPVmNsRF92THJR0gGfAUFVX3lxTFBsdWNwdTgtWUdfM0tlaVIzNVJRRGR3Q0lsVExGV2xyQTFsQTNPWmNyME00aTdTT2RZdENaejVTMmthTDJGZi1tQm9BcHlhWFY3SktiVGdQTkxmTlFXOG1xekZrVEFIcjQzbVZibXI5TjhlZEE3WFdaaXJCUUJyRFhFQzVzbmRHc3VJeHA0MmkzY1FYZVdVYzE4NjYzMnhpRQ?oc=5",
+          "existing_event_score": 1.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [
+            "negotiation"
+          ],
+          "duplicate_daily_indicators": []
+        },
+        {
+          "event_id": "INFO-000008",
           "timestamp": "2026-08-07T05:56:00+00:00",
           "date": "2026-08-07",
           "actor": "iran",
@@ -191,9 +365,9 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 29.0,
+      "pressure_index_7d": 17.2,
       "pressure_level": "low",
-      "trend": "strong_increase",
+      "trend": "increase",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
   }
