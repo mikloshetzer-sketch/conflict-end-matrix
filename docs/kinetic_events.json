@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-08-10T10:23:40.917653Z",
-  "source_generated_at": "2026-08-10T08:04:58Z",
+  "generated_at": "2026-08-11T06:06:00.219445Z",
+  "source_generated_at": "2026-08-11T05:41:49Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": false,
+    "required_today_utc": true,
     "max_age_hours": 8.0
   },
   "source_event_count": 1000,
-  "event_count": 562,
-  "rejected_count": 438,
+  "event_count": 561,
+  "rejected_count": 439,
   "rejection_counts": {
     "category_not_kinetic": 314,
-    "no_confirmed_action_language": 89,
+    "no_confirmed_action_language": 90,
     "context_or_hypothetical": 24,
     "retrospective_or_aftermath": 8,
     "alert_only": 3
@@ -26,16 +26,16 @@
     "airstrike": 91,
     "drone": 73,
     "explosion": 70,
-    "ground": 13
+    "ground": 12
   },
   "severity_counts": {
     "medium": 278,
-    "high": 247,
-    "low": 34,
+    "high": 245,
+    "low": 35,
     "critical": 3
   },
   "actor_counts": {
-    "Iran": 220,
+    "Iran": 218,
     "United States": 169,
     "Unknown actor": 55,
     "Israel": 50,
@@ -44,9 +44,62 @@
     "Iraq": 10,
     "Lebanon": 5,
     "Kuwait": 1,
+    "Syria": 1,
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-1va8hksyeodc0",
+      "timestamp": "2026-08-11T05:32:26Z",
+      "event_type": "kinetic",
+      "subtype": "strike",
+      "category": "strike",
+      "severity": "medium",
+      "actor": "isr",
+      "actor_label": "Israel",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "IDF demolishes house of Farouk Ramadan, militant linked to weapon theft in Tel village attack on July 24 that killed two soldiers",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/128262",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-1a3aulflhh340",
+      "timestamp": "2026-08-10T08:56:47Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "low",
+      "actor": "syr",
+      "actor_label": "Syria",
+      "actor_method": "raw_source.origin",
+      "target_country": "Syria",
+      "location": "Syria",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Shia faction Uli Al Ba's (Islamic Resistance Front in Syria) fires 107mm unguided rockets at Israeli outpost in Daraa Province",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/81982",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "general_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-1fiswksok44g0",
       "timestamp": "2026-08-09T17:29:00Z",
@@ -14578,84 +14631,6 @@
       "validation": {
         "accepted": true,
         "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-1nuyq3oj4osg0",
-      "timestamp": "2026-07-09T14:15:53Z",
-      "event_type": "kinetic",
-      "subtype": "ground",
-      "category": "ground",
-      "severity": "medium",
-      "actor": "isr",
-      "actor_label": "Israel",
-      "actor_method": "raw_source.origin",
-      "target_country": "Lebanon",
-      "location": "Lebanon",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "IDF destroys additional underground tunnels in Majdal Zoun, southern Lebanon, totaling ~200 meters with dozens of weapons caches discovered",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/126250",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "general_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-prop7b4v4xs0",
-      "timestamp": "2026-07-09T13:14:01Z",
-      "event_type": "kinetic",
-      "subtype": "missile",
-      "category": "missile",
-      "severity": "high",
-      "actor": "irn",
-      "actor_label": "Iran",
-      "actor_method": "raw_source.origin",
-      "target_country": "Iran",
-      "location": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Iran conducts anti-ship missile attacks on U.S. Navy ships in the Gulf of Oman",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79202",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "general_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-1u1p8sz62cow0",
-      "timestamp": "2026-07-09T13:14:01Z",
-      "event_type": "kinetic",
-      "subtype": "strike",
-      "category": "strike",
-      "severity": "high",
-      "actor": "irn",
-      "actor_label": "Iran",
-      "actor_method": "raw_source.origin",
-      "target_country": "Iran",
-      "location": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Iran launches MRBMs targeting Ali AlSalem airbase in Kuwait",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79202",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "general_action_match",
         "mode": "strict_kinetic_v2"
       }
     }
