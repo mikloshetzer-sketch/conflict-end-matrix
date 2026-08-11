@@ -1,62 +1,55 @@
 {
-  "report_date": "2026-08-09",
-  "created_at": "2026-08-09T07:13:38.815025",
+  "report_date": "2026-08-10",
+  "created_at": "2026-08-10T08:01:47.090597",
   "article_count": 50,
   "total_score": -8,
   "conflict_index": -0.16,
   "assessment": "mild escalation",
-  "escalation_pressure": -32,
-  "diplomatic_pressure": 24,
+  "escalation_pressure": -27,
+  "diplomatic_pressure": 19,
   "net_signal": -8,
   "top_drivers": [
     {
       "driver": "war",
       "category": "Military escalation",
-      "count": 15,
+      "count": 16,
       "weight": -1,
-      "impact": -15
-    },
-    {
-      "driver": "talks",
-      "category": "Diplomacy / negotiation",
-      "count": 4,
-      "weight": 2,
-      "impact": 8
+      "impact": -16
     },
     {
       "driver": "deal",
       "category": "Ceasefire / settlement",
-      "count": 7,
+      "count": 8,
       "weight": 1,
-      "impact": 7
+      "impact": 8
     },
     {
-      "driver": "strikes",
-      "category": "Military escalation",
-      "count": 3,
-      "weight": -2,
-      "impact": -6
+      "driver": "talks",
+      "category": "Diplomacy / negotiation",
+      "count": 2,
+      "weight": 2,
+      "impact": 4
     },
     {
-      "driver": "strike",
-      "category": "Military escalation",
-      "count": 3,
-      "weight": -2,
-      "impact": -6
-    },
-    {
-      "driver": "ceasefire",
+      "driver": "de-escalation",
       "category": "Ceasefire / settlement",
       "count": 1,
       "weight": 3,
       "impact": 3
     },
     {
-      "driver": "peace",
-      "category": "Diplomacy / negotiation",
+      "driver": "strikes",
+      "category": "Military escalation",
       "count": 1,
-      "weight": 2,
-      "impact": 2
+      "weight": -2,
+      "impact": -2
+    },
+    {
+      "driver": "strike",
+      "category": "Military escalation",
+      "count": 1,
+      "weight": -2,
+      "impact": -2
     },
     {
       "driver": "negotiation",
@@ -66,15 +59,8 @@
       "impact": 2
     },
     {
-      "driver": "missile",
-      "category": "Military escalation",
-      "count": 1,
-      "weight": -2,
-      "impact": -2
-    },
-    {
-      "driver": "killed",
-      "category": "Casualties",
+      "driver": "escalation",
+      "category": "Threats / retaliation",
       "count": 1,
       "weight": -2,
       "impact": -2
@@ -87,6 +73,20 @@
       "impact": 2
     },
     {
+      "driver": "attacks",
+      "category": "Military escalation",
+      "count": 1,
+      "weight": -2,
+      "impact": -2
+    },
+    {
+      "driver": "attack",
+      "category": "Military escalation",
+      "count": 1,
+      "weight": -2,
+      "impact": -2
+    },
+    {
       "driver": "threat",
       "category": "Threats / retaliation",
       "count": 1,
@@ -97,70 +97,51 @@
   "categories": [
     {
       "category": "Military escalation",
-      "score": -29,
-      "count": 22,
+      "score": -24,
+      "count": 20,
       "keywords": [
-        "missile",
+        "attack",
+        "attacks",
         "strike",
         "strikes",
         "war"
       ]
     },
     {
-      "category": "Diplomacy / negotiation",
-      "score": 14,
-      "count": 7,
-      "keywords": [
-        "diplomacy",
-        "negotiation",
-        "peace",
-        "talks"
-      ]
-    },
-    {
       "category": "Ceasefire / settlement",
-      "score": 10,
-      "count": 8,
+      "score": 11,
+      "count": 9,
       "keywords": [
-        "ceasefire",
+        "de-escalation",
         "deal"
       ]
     },
     {
-      "category": "Casualties",
-      "score": -2,
-      "count": 1,
+      "category": "Diplomacy / negotiation",
+      "score": 8,
+      "count": 4,
       "keywords": [
-        "killed"
+        "diplomacy",
+        "negotiation",
+        "talks"
       ]
     },
     {
       "category": "Threats / retaliation",
-      "score": -1,
-      "count": 1,
+      "score": -3,
+      "count": 2,
       "keywords": [
+        "escalation",
         "threat"
       ]
     }
   ],
   "key_signals": [
     {
-      "title": "Iranian official claims nearly 500 US soldiers killed in Middle East strikes - jpost.com",
-      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBPOHBFOGZFbFh5cFg5QnBfVmFHMXBVTmhPcnpfVUxZMXVVVl9GVTNVdXFKLTZQWG4yRWx2QlhkY2theHc0VG0yS01UbDdVWWxTNElxU1BWclFxTmlYS3pYYzQ0X1R4RVdqTlE?oc=5",
+      "title": "Trump signals shift to economic pressure on Iran over new military strikes - Al Jazeera",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNZUp2OWhnVmxOYkpZTTM5TEktOUY1REswc3Roc04zNDNKbDAwQl9ib2JhZ1QtbHY3UHJXc2JjVkNYam5WNVJPR1lNNnlmS3ZkX253WTJtRE9ESG1BdnVSanQxWk9MR2NDeG15dlpzaEZrTm1Rcnowc1RLRmlaSnNPVmJxRHBUU0M1RWlqNTlSYmtDbW1zRzVDZHNkSk5SR1RWMWFmeVVMUHBCNzlJeVZmXzEyeURfd015SmfSAb8BQVVfeXFMUFFkMFhlblVNbUtKdmNacEI5cHVJRjJJbW44VXFoQzkwNXozeEoxZHFIWHZ2aEllSGpEQkYwVXhQV210LUFsMUloaWFZVXlQdmJjcTBOb2JmdzlaWnVyQkcxSUd1eGFtMzRUaW1BaktraDBxcnJGZjNvSjBJSXpaMzJtLTBPcGgyaWE2ZHE1TkhkY19ZRXdqR1Vubk1JbVJJMDZ6d2w1dmwtVVZPb244OGtYeW1pRC1tN2p1b3BiZlU?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Tue, 04 Aug 2026 08:25:45 GMT",
-      "score": -6,
-      "tags": [
-        "strike",
-        "strikes",
-        "killed"
-      ]
-    },
-    {
-      "title": "Trump frequently announces he's halting strikes in Iran. But they keep happening - PBS",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNMnF0NTlRX1RIMjhPQXYwSmpoYjdQTzFRNU1WVXViWHFmdkVrS2hBbU9sSkItSnhQZUxrRVFfOWd6YzROUVJNMGFVZjhZd0lrT25BSF9vN0xnbElpaEpsdWdQeVNtNmJMQXhlcDhQYjFKME9HVW1LVDZ1ZUZmMWo0Wmg4ejRrTGpnSnE0b2xmVlNSdm1ka3dUeXVNVzVuN2p4LXBGTzE1RGdPWVI5NW9seDNHNV9qWTDSAbwBQVVfeXFMUDd4QUJvR2tLVk9mUmI3NjhibnFJN2x1Q3o4RVlick1ybW5QS0hPTWFpaFFJUHBBQ0ZmUXc2Y0doYXgtQWliQ002WEZ5VHlBU1FJMnVnTDJsY05ZMHdaajVHSHhRdV9VREdramtOMG1hZVRYTXZrUXBSS3p0MWxaQUVNcTBnUElhNjhpM3Fzc0J0Tk01QlVUUm5uVGg1YVRiWS12bmN6X3dRTGduRmJZMDVDbnpYbWpVbGp3TGU?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Sun, 02 Aug 2026 21:29:47 GMT",
+      "published": "Mon, 10 Aug 2026 03:51:36 GMT",
       "score": -4,
       "tags": [
         "strike",
@@ -168,58 +149,14 @@
       ]
     },
     {
-      "title": "Israeli forces meant to participate in US strikes on Iran, officials say - jpost.com",
-      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE80alZpX3VoRWVHekZBd1VZbDVsdUsyeVQxc1hDeVB6SWk1ZHdUNW9XU24tSlRnelZuZGdPZTBQWlJON3MwSlU3aUtZT21ITmhacnZ0ekl4dzM0X0ZYTHJ3aTc3R1p1ZnROdGc?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Sun, 02 Aug 2026 19:28:08 GMT",
+      "title": "Saudi Arabia braces for attacks on ports and airports by Iraqi militias working with Iran-backed Houthis - CNN",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQVURYeHlVRVhHVmZ4VTRrbEh2ZDRsWTZuUkFNbTRHS3ZZZlpsMXhVdUV3NU1LRkdHeFFqWGZmdUVDMEVzWmN3Vlc5aC1TQnpZNGwwSThkYXRGV3BUS3U2LWZ4ZjZvVzhIQmhoT25FQVIxLVU4YWZNanYtNHhIWFJuTXd1b3ZrSVk4T1E?oc=5",
+      "source": "\"middle east conflict when:7d\" - Google News",
+      "published": "Thu, 06 Aug 2026 22:09:49 GMT",
       "score": -4,
       "tags": [
-        "strike",
-        "strikes"
-      ]
-    },
-    {
-      "title": "Israel’s politicians not happy with Iran ceasefire deal — here is why - Euronews.com",
-      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQN0taY1FIRnJaSUQ5Vmw4ZUk5Rm4zOER6SHBWTk13ZXkwcmlKRndkbThFRWM4S3VSYlNuU0dZZE54OC11czVxOUN3VGplZ043dThUbVVwVXF3ZVJzckJxT1lpeEFuR1dLaWRqR0NYa3h3ODBFMFppUnczWUtrR3ZOd1dWVHRLa2tkTFpoOHF0RGVSbVNVeW9YY05lelhaNkFBZWhqMmdHMXdEbTZUTXVqS2VGZGg?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Tue, 04 Aug 2026 11:43:00 GMT",
-      "score": 4,
-      "tags": [
-        "ceasefire",
-        "deal"
-      ]
-    },
-    {
-      "title": "From ‘black rain’ in Tehran to missile damage: the environmental toll of the Israel-US war with Iran - Ynetnews",
-      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE43b2pjYWFyajJWX2FVSlBEM2RlZHplWjd4YlpEdXh2a1NSQk4zczJnRERWXzdIOXd1bk1hOFduVGtCcGJraDluVXhJWDNrVU9VcDgzT2hwZ2tOZVlKWjZydUZyYVRfZw?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Mon, 03 Aug 2026 19:59:00 GMT",
-      "score": -3,
-      "tags": [
-        "missile",
-        "war"
-      ]
-    },
-    {
-      "title": "US says deal on reopening Hormuz close as Iran, Oman hold ‘positive’ talks - Al Jazeera",
-      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOSkg1cXVBVVE5N19MR3h0SjRLR1ljSjZjdXNCS0xvRFpscWU0eWw3cnlSbHo1VlEwRXpZQk9ldVlKRWxoMFRJY2Qwb0I4eGtlSFpabW04UVRkSFV3Q2NUaTR6eHBjbzJnbFU4QUdDV0RBTGhldWdyaDhzV215dHo5Yjh3a0NCd1BIZWtubUFSM2VLbk5hUFFiang1TDJtT29RZVIzaWdfYTR1ZlFKcEg4d9IBtgFBVV95cUxOVGwzZEZRYWt3RHpyaU5ZbWt6SWh1andhaTdwbTBWb0JrOExubUtTM1B2ckhGaGQ1VS1UZXdKbDVPZ0VZZDlsQWg3UVVZeDdWX2RONVpBdWFGRnk4elZ4MWFRWElYTVdFXzVyVkZ2dW5qczMyQ3lLR0JnTU5QR29FOXBYbEJJVmNzYll4VTVGd0JxUGZQNEllSGlmT3lMR2lReUctTTdrdDRiMlZQT3NZblFqcnpPQQ?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Tue, 04 Aug 2026 21:15:18 GMT",
-      "score": 3,
-      "tags": [
-        "talks",
-        "deal"
-      ]
-    },
-    {
-      "title": "Trump says Iran talks set for Monday as Tehran and Oman discuss strait of Hormuz deal - The Guardian",
-      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQV1k1WFRqSXlNSms3cS0xaGx4d3RqbWlMQjNna01vOUVqMHFKM1hCNHlfOW8zV19pUXFOcUw3MTJseWt3YUpGN2toVVVvQmVKVlM0VXBOblc0RThJc0FubW9wUDNZbEVrd3loMERvbmZySHVfb2dfOXZMSVhtYm9NREl3ZkhtdWJhRWs1SlZvc1QxZzd4aWlrdEhJZGxUNWtXQXc?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Mon, 03 Aug 2026 01:31:00 GMT",
-      "score": 3,
-      "tags": [
-        "talks",
-        "deal"
+        "attack",
+        "attacks"
       ]
     },
     {
@@ -253,23 +190,73 @@
       ]
     },
     {
-      "title": "US stocks near record high, oil falls as Trump claims Iran talks under way - Al Jazeera",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQM3lRMnNtREFPd01Dc2NnWXZXclZnUjZsQ3pWNTd5bW12dmFSdDFyNWRxcFBzczF5TGFNZ3pwbzIwU1paUzNZMV9BNTd1c2d4UzBleW1aX1YyMnpIeVVZZ0N6SVB4Q1Q4aThZLW43LVR6OVhuQTNST2VyZGlYaXQ4cm1SaWpLMElIajRaWF9nalQybHI1MVV4Z3dvV3pNYURpMEk3cGVrZDlITEdJbFdnckVEeWo0UdIBuwFBVV95cUxNbjVjcldMX0ljOVNVdEVHajk2alBIaURLeF9Za1Zia1h3aTR6YUNMUDQwdmh5TUZqbmIzZjdGbDcxSHcyeVZjMGRxYWpZYU9hNS1tSHBzQ1RsWWpNMUNjN3BUUjdkVnM3NlgxbnRDR180SnRzbkwyeDdfX3pQRTBHTGU2M3VRVTZnTDVVWTk5dlhPLXBGZXF4MHlUUnpWMTg1emtyb2lrOGdUMnNxVmhsNm5wM2ZKY0txXzFF?oc=5",
+      "title": "What’s Going On In Iran? - War on the Rocks",
+      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE54QU1vWXpFSHdpSG5WR3JkZ1lyMGFvRjVEeExRNFdTSjM3WFQyUG5Gd0o5d2tnMmE4ck4yb1RVZzFTZ2tJZHFZbTFjZFNhclBUcC1hYlI4R3B6dUN5eVE?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Tue, 04 Aug 2026 08:58:03 GMT",
-      "score": 2,
+      "published": "Fri, 07 Aug 2026 07:00:00 GMT",
+      "score": -1,
       "tags": [
-        "talks"
+        "war"
       ]
     },
     {
-      "title": "The rise or fail of middle powers will determine Middle East peace - Responsible Statecraft",
-      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5POXpFLU4wOWtNQlRwQnhoNWNhVDRVWGRQV012dEMxNVhud0hFeTZlY3JWYjQ4T0NPR3FWMzlzWmpXZGtLRDl1SER2RHFhbDdhaU5FWXI4ejY1dk5qTVAzZWd3?oc=5",
-      "source": "\"middle east conflict when:7d\" - Google News",
-      "published": "Fri, 07 Aug 2026 09:44:54 GMT",
-      "score": 2,
+      "title": "Everything depends on Trump: US calls the shots as Israel is sidelined in Iran war - Ynetnews",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFAwcTdMM2VtZ3V1UXJiVlZwUUZseGNkYzBiYkdYVldYVzhBNmp4bjQ1V3VrZXZfNWQzN3h1YlJJVTdlbTFoTnN4LWJMVWlMOWZLVXNsNkVB?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Sat, 08 Aug 2026 12:02:49 GMT",
+      "score": -1,
       "tags": [
-        "peace"
+        "war"
+      ]
+    },
+    {
+      "title": "Trump’s Stop-Start Iran War - الحرة",
+      "link": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE05NUw1SVZoNVpyMDg5WXV1SWlCLVhOSkJpV1ptUVFpRHRELWtsd2pJQ2xDSzlXTUtWa1JROXE3c1MyZw?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Tue, 04 Aug 2026 02:43:00 GMT",
+      "score": -1,
+      "tags": [
+        "war"
+      ]
+    },
+    {
+      "title": "US-Israel war on Iran upends Europe’s summer holiday travel patterns - Al Jazeera",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPQWU1cDFUclhEX3M5dmJWRVNxYTVSRDdfeUJ5Q3FUQWhxdmsyTDdXZVdUd2pIaTR1Z2JYaThzYW9tejdZcldsR2JyeGZIMFkxM3FmMzlaREFYcUkxX0o1SGlpbDVucjR4M0ZGLUdMX0QyV2xrbUhnYy02MmE4N0tObXJmNTFWU1BQLXo1OE9wZjRIU255YTY1V04wZlXSAaIBQVVfeXFMT0xsNUJWYXM1UnNfUHpjUXJaMjZmWGFaMld6U1VHd2NnWGRJdUVDMUE4TElvTk01UFgyYlN6OE1JQ2F0MDhMdDV5TVF0bmozMHhRMXhDWVY4RUUtOEpFWklRRWZRNW5RT2FhTzdjN1ctb2w4NHdmenZacUNCNGNmcWZHcnpaZVBsSndhc0dVeVZwTjA0UVNVRVVSV0RRQU51aVln?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Thu, 06 Aug 2026 09:21:15 GMT",
+      "score": -1,
+      "tags": [
+        "war"
+      ]
+    },
+    {
+      "title": "Five Scenarios: How Washington Sees the Iran War Ending - الحرة",
+      "link": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE5Mb3ZRa05fb2VRWGJTdHpIa3pfeXF5dHNxSjR3VndXOTE0d1A1b1pXSWFkRUJ0cHF0RVF5VE03dy1BZw?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Mon, 03 Aug 2026 20:03:55 GMT",
+      "score": -1,
+      "tags": [
+        "war"
+      ]
+    },
+    {
+      "title": "Trump denies US low on key munitions in war with Iran after reports of shortages - The Guardian",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNNTBtOWxQd244SDhXRjUwWThaa256VTBIQUpwWGJ4MkI5WFNDRXZXUDZhTzJGY3NVVENuSEkzdXlOdVNKN05UQTV3c0M3MXU0X0hlMWI4YlFZa3ktYXNhZ2NWcFB1SjBTa2w3bjF3T2d3cy1IMmJ3eGRWcENuMzhRQ042VDVlUUk?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Thu, 06 Aug 2026 14:51:00 GMT",
+      "score": -1,
+      "tags": [
+        "war"
+      ]
+    },
+    {
+      "title": "As Iran war drags on, Americans are bracing for more chaos in Middle East, Reuters/Ipsos poll finds - Reuters",
+      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQMXI5TE1EUEdoRUpxYzZfdDNOck5jT29pcUNLdnl4TjE2Q1Y1bnlkZS02MmFzY25KUUwxTnZxNTVxWTQybmkxUExnUWN4OXdTT2xCR3RDcmU2eHpZdEhIMWU5QURfWjl5eDNQaGliMUlRYVhYdEgxY1hPbU1zOS1rTXhRX1F2MjRaajl5cmw1Y3ZrSUpBQnNKMFFWV2E1bHN4NXR3cEFwSWJhMjN0bkxkcFV1UmNiNFpKMjdLQ3REbEt3Z1dUbXB2TlU2MA?oc=5",
+      "source": "\"middle east conflict when:7d\" - Google News",
+      "published": "Thu, 06 Aug 2026 10:56:07 GMT",
+      "score": -1,
+      "tags": [
+        "war"
       ]
     }
   ],
