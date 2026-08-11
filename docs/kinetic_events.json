@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-11T06:06:00.219445Z",
-  "source_generated_at": "2026-08-11T05:41:49Z",
+  "generated_at": "2026-08-11T10:04:57.594241Z",
+  "source_generated_at": "2026-08-11T07:57:06Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
   "source_event_count": 1000,
@@ -22,9 +22,9 @@
   },
   "category_counts": {
     "missile": 171,
-    "strike": 144,
+    "strike": 143,
     "airstrike": 91,
-    "drone": 73,
+    "drone": 74,
     "explosion": 70,
     "ground": 12
   },
@@ -48,6 +48,32 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-ruq7pp1ewts0",
+      "timestamp": "2026-08-11T07:03:47Z",
+      "event_type": "kinetic",
+      "subtype": "drone",
+      "category": "drone",
+      "severity": "medium",
+      "actor": "isr",
+      "actor_label": "Israel",
+      "actor_method": "raw_source.origin",
+      "target_country": "Lebanon",
+      "location": "Nabatieh",
+      "latitude": 33.3772,
+      "longitude": 35.4838,
+      "map_visualizable": true,
+      "description": "Israeli drone strikes vehicle in Al-Jama'at neighborhood of Nabatieh in southern Lebanon",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/128276",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-1va8hksyeodc0",
       "timestamp": "2026-08-11T05:32:26Z",
@@ -14600,32 +14626,6 @@
       "description": "U.S. missiles strike fishing boats in Bandar Abbas region, Iran, with local images showing destroyed vessels",
       "source_name": "CIG_telegram",
       "source_url": "https://t.me/CIG_telegram/79223",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-ts7p2l1j8lc0",
-      "timestamp": "2026-07-09T15:23:05Z",
-      "event_type": "kinetic",
-      "subtype": "strike",
-      "category": "strike",
-      "severity": "medium",
-      "actor": "isr",
-      "actor_label": "Israel",
-      "actor_method": "raw_source.origin",
-      "target_country": "Palestinian territories",
-      "location": "Gaza City",
-      "latitude": 31.5017,
-      "longitude": 34.4668,
-      "map_visualizable": true,
-      "description": "IDF targeted strike on vehicle in western Gaza City kills one Hamas official's aide, wounds Hamas spokesman Hazem Qassem severely",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/126256",
       "source_repository": "mikloshetzer-sketch/me-security-monitor",
       "source_collection": "events",
       "validation": {

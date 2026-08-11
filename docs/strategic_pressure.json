@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T10:23:41.873094+00:00",
+  "generated_at": "2026-08-11T10:04:58.547951+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,9 +18,9 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 527,
-    "kinetic_events_loaded": 562,
-    "unique_events_scanned": 1041,
+    "non_kinetic_events_loaded": 533,
+    "kinetic_events_loaded": 561,
+    "unique_events_scanned": 1047,
     "strategic_evidence_contributions": 310,
     "evidence_contributions_by_actor": {
       "usa": 101,
@@ -59,7 +59,7 @@
       "iran:nuclear_activity": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 0,
+    "skipped_current_utc_day": 3,
     "history_day_count": 151
   },
   "configuration_warnings": [],
@@ -80,7 +80,7 @@
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000006",
+          "event_id": "INFO-000012",
           "timestamp": "2026-08-07T11:19:32+00:00",
           "date": "2026-08-07",
           "actor": "usa",
@@ -129,7 +129,7 @@
       "trend": "stable",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000006",
+          "event_id": "INFO-000012",
           "timestamp": "2026-08-07T11:19:32+00:00",
           "date": "2026-08-07",
           "actor": "usa",
@@ -185,7 +185,7 @@
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000006",
+          "event_id": "INFO-000012",
           "timestamp": "2026-08-07T11:19:32+00:00",
           "date": "2026-08-07",
           "actor": "iran",
@@ -228,7 +228,7 @@
           "duplicate_daily_indicators": []
         },
         {
-          "event_id": "INFO-000008",
+          "event_id": "INFO-000014",
           "timestamp": "2026-08-07T05:56:00+00:00",
           "date": "2026-08-07",
           "actor": "iran",
@@ -277,7 +277,7 @@
       "trend": "increase",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000006",
+          "event_id": "INFO-000012",
           "timestamp": "2026-08-07T11:19:32+00:00",
           "date": "2026-08-07",
           "actor": "iran",
@@ -320,7 +320,7 @@
           "duplicate_daily_indicators": []
         },
         {
-          "event_id": "INFO-000008",
+          "event_id": "INFO-000014",
           "timestamp": "2026-08-07T05:56:00+00:00",
           "date": "2026-08-07",
           "actor": "iran",
