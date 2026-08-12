@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-12T06:44:22.846373Z",
-  "source_generated_at": "2026-08-12T06:04:53Z",
+  "generated_at": "2026-08-12T10:13:50.726572Z",
+  "source_generated_at": "2026-08-12T09:31:58Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
   "source_event_count": 1000,
@@ -24,8 +24,8 @@
     "missile": 171,
     "strike": 143,
     "airstrike": 89,
-    "drone": 75,
-    "explosion": 67,
+    "drone": 74,
+    "explosion": 68,
     "ground": 12
   },
   "severity_counts": {
@@ -48,6 +48,58 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-azi4y2yabv40",
+      "timestamp": "2026-08-12T07:26:07Z",
+      "event_type": "kinetic",
+      "subtype": "drone",
+      "category": "drone",
+      "severity": "medium",
+      "actor": "isr",
+      "actor_label": "Israel",
+      "actor_method": "raw_source.origin",
+      "target_country": "Lebanon",
+      "location": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Israeli drone strike on building hosting Shia mourners on Kafra-Alaqsi road, southern Lebanon; structure catches fire with reported casualties",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/128332",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-6urw9yi0eb00",
+      "timestamp": "2026-08-12T07:26:07Z",
+      "event_type": "kinetic",
+      "subtype": "explosion",
+      "category": "explosion",
+      "severity": "medium",
+      "actor": "isr",
+      "actor_label": "Israel",
+      "actor_method": "raw_source.origin",
+      "target_country": "Lebanon",
+      "location": "Nabatieh",
+      "latitude": 33.3772,
+      "longitude": 35.4838,
+      "map_visualizable": true,
+      "description": "IDF strikes village of Zawtar al-Sharqiyah in Nabatieh district, southern Lebanon, causing large explosion",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/128332",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "general_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-3ucjgq7mq1400",
       "timestamp": "2026-08-12T05:23:10Z",
@@ -14470,58 +14522,6 @@
       "description": "IDF conducts multiple strikes in southern Lebanon: fighter jets attack Nabatieh al-Fiqua near Ali al-Taher ridge, drones drop incendiary bombs on forested area near Raman village, eliminates Hezbollah operative near underground infrastructure",
       "source_name": "abualiexpress",
       "source_url": "https://t.me/abualiexpress/126320",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-3108ygbdjl800",
-      "timestamp": "2026-07-10T13:28:06Z",
-      "event_type": "kinetic",
-      "subtype": "drone",
-      "category": "drone",
-      "severity": "medium",
-      "actor": "isr",
-      "actor_label": "Israel",
-      "actor_method": "raw_source.origin",
-      "target_country": "Lebanon",
-      "location": "Nabatieh",
-      "latitude": 33.3772,
-      "longitude": 35.4838,
-      "map_visualizable": true,
-      "description": "Israeli drone strikes in southern Lebanon: 2 strikes on Kafr Raman near Nabatiyeh, 1 strike on Nabatiyeh al-Fawqa, plus strikes on Shokeen, Qaaqaiya al-Jisr, and Sheba; at least 2 killed and 4 wounded",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/126301",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-1d21y1rr3x4w0",
-      "timestamp": "2026-07-10T12:30:36Z",
-      "event_type": "kinetic",
-      "subtype": "drone",
-      "category": "drone",
-      "severity": "medium",
-      "actor": "isr",
-      "actor_label": "Israel",
-      "actor_method": "raw_source.origin",
-      "target_country": "Lebanon",
-      "location": "Nabatieh",
-      "latitude": 33.3772,
-      "longitude": 35.4838,
-      "map_visualizable": true,
-      "description": "Israeli drone strike on vehicle near Kafr Raman in Nabatieh district, southern Lebanon, casualties reported",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/126298",
       "source_repository": "mikloshetzer-sketch/me-security-monitor",
       "source_collection": "events",
       "validation": {
