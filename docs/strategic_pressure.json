@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T10:15:09.529556+00:00",
+  "generated_at": "2026-08-14T10:11:03.382030+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,16 +18,16 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 535,
-    "kinetic_events_loaded": 558,
-    "unique_events_scanned": 1045,
-    "strategic_evidence_contributions": 313,
+    "non_kinetic_events_loaded": 536,
+    "kinetic_events_loaded": 555,
+    "unique_events_scanned": 1043,
+    "strategic_evidence_contributions": 314,
     "evidence_contributions_by_actor": {
-      "usa": 102,
+      "usa": 103,
       "iran": 211
     },
     "scored_contributions_by_actor": {
-      "usa": 70,
+      "usa": 71,
       "iran": 106
     },
     "suppressed_duplicates_by_actor": {
@@ -35,43 +35,43 @@
       "iran": 105
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 279,
-      "kinetic": 34
+      "non_kinetic": 281,
+      "kinetic": 33
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 175,
-      "usa:negotiation": 83,
+      "iran:negotiation": 176,
+      "usa:negotiation": 84,
       "iran:missile_test": 23,
       "usa:presidential_warning": 14,
-      "iran:hormuz_threat": 10,
+      "iran:hormuz_threat": 9,
       "usa:ceasefire_support": 8,
       "iran:missile_preparation": 5,
       "iran:nuclear_activity": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 83,
-      "usa:negotiation": 55,
+      "iran:negotiation": 84,
+      "usa:negotiation": 56,
       "usa:presidential_warning": 14,
-      "iran:hormuz_threat": 10,
       "iran:missile_test": 10,
+      "iran:hormuz_threat": 9,
       "iran:missile_preparation": 5,
       "usa:ceasefire_support": 4,
       "iran:nuclear_activity": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 1,
-    "history_day_count": 155
+    "skipped_current_utc_day": 3,
+    "history_day_count": 157
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-08-11",
+  "latest_complete_utc_day": "2026-08-13",
   "current": {
-    "date": "2026-08-11",
+    "date": "2026-08-13",
     "calculation_mode": "live",
     "usa": {
-      "raw_score": -9.0,
+      "raw_score": -2.0,
       "positive_score": 0.0,
-      "negative_score": -9.0,
+      "negative_score": -2.0,
       "event_count": 1,
       "scored_event_count": 1,
       "evidence_event_count": 1,
@@ -80,20 +80,20 @@
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000003",
-          "timestamp": "2026-08-11T02:45:30+00:00",
-          "date": "2026-08-11",
+          "event_id": "INFO-000001",
+          "timestamp": "2026-08-13T12:06:31+00:00",
+          "date": "2026-08-13",
           "actor": "usa",
           "bilateral_event": true,
-          "title": "Trump demands compensation from Iran as talks on Strait of Hormuz continue - Al Jazeera",
+          "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "de-escalation",
-          "operational_component": -3.0,
+          "event_direction": "escalation",
+          "operational_component": 4.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": -9.0,
-          "final_score": -9.0,
+          "original_final_score": -2.0,
+          "final_score": -2.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -109,40 +109,40 @@
                 "name": "Avoid full-scale regional war",
                 "weight": 10.0
               },
-              "recognition_rule_count": 2
+              "recognition_rule_count": 4
             }
           ],
-          "reason": "United States: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: Trump demands compensation from Iran as talks on Strait of Hormuz continue - Al Jazeera",
+          "reason": "United States: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNY0lyVTFPaXNpRFZZbXdLc3dUcFgtclNId3YtTVl0OFhhdzFENzQ4d0FZMTNPWF9VZWpXNnRpZllXS2I4SlNxY1VMSkl5V1otd1F4RVpoeG82SDhtMHI1ckN5TlkwR3JDTUxGV1M4S2hqRlBDdTNqeGVRcTZCRW10SHlFSUhDTE9ON09kcnRabFhDTDB0M0diNGZOQ0htMjc4dmFYQ2xPUzd2RWdLVEtSVC04dW5VUdIBuwFBVV95cUxQeF92R3l5aEluWUpEWFJsb2NwUy0zOHVzMFdMSDViWXI1OFRUSXk5WF9hUEdnU0RPM2Nxbl9IMkk1T2toZDB4QVJvd3ZfSm5Mb2N1MnFPMVpscDN2UlpjVGhjQkx4QU1YVGxmMVFOUnM0YXU1V2g2SUFRTGVvOUdRVVlGbGZRNFhYMjhyeERhSThyYnFvcWtZUmF4eF96MFZ6Ym1EYTNUYjJXV2gyd2lreUF5VHpNNmJWT2lV?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 3.0,
+          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5",
+          "existing_event_score": 0.0,
+          "existing_direction_score": -4.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
           "duplicate_daily_indicators": []
         }
       ],
-      "weighted_score_7d": -12.45,
-      "pressure_index_7d": 25.1,
-      "pressure_level": "low",
-      "trend": "strong_decrease",
+      "weighted_score_7d": -9.2,
+      "pressure_index_7d": 31.6,
+      "pressure_level": "reduced",
+      "trend": "stable",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000003",
-          "timestamp": "2026-08-11T02:45:30+00:00",
-          "date": "2026-08-11",
+          "event_id": "INFO-000001",
+          "timestamp": "2026-08-13T12:06:31+00:00",
+          "date": "2026-08-13",
           "actor": "usa",
           "bilateral_event": true,
-          "title": "Trump demands compensation from Iran as talks on Strait of Hormuz continue - Al Jazeera",
+          "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "de-escalation",
-          "operational_component": -3.0,
+          "event_direction": "escalation",
+          "operational_component": 4.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": -9.0,
-          "final_score": -9.0,
+          "original_final_score": -2.0,
+          "final_score": -2.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -158,14 +158,14 @@
                 "name": "Avoid full-scale regional war",
                 "weight": 10.0
               },
-              "recognition_rule_count": 2
+              "recognition_rule_count": 4
             }
           ],
-          "reason": "United States: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: Trump demands compensation from Iran as talks on Strait of Hormuz continue - Al Jazeera",
+          "reason": "United States: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNY0lyVTFPaXNpRFZZbXdLc3dUcFgtclNId3YtTVl0OFhhdzFENzQ4d0FZMTNPWF9VZWpXNnRpZllXS2I4SlNxY1VMSkl5V1otd1F4RVpoeG82SDhtMHI1ckN5TlkwR3JDTUxGV1M4S2hqRlBDdTNqeGVRcTZCRW10SHlFSUhDTE9ON09kcnRabFhDTDB0M0diNGZOQ0htMjc4dmFYQ2xPUzd2RWdLVEtSVC04dW5VUdIBuwFBVV95cUxQeF92R3l5aEluWUpEWFJsb2NwUy0zOHVzMFdMSDViWXI1OFRUSXk5WF9hUEdnU0RPM2Nxbl9IMkk1T2toZDB4QVJvd3ZfSm5Mb2N1MnFPMVpscDN2UlpjVGhjQkx4QU1YVGxmMVFOUnM0YXU1V2g2SUFRTGVvOUdRVVlGbGZRNFhYMjhyeERhSThyYnFvcWtZUmF4eF96MFZ6Ym1EYTNUYjJXV2gyd2lreUF5VHpNNmJWT2lV?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 3.0,
+          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5",
+          "existing_event_score": 0.0,
+          "existing_direction_score": -4.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
@@ -174,31 +174,31 @@
       ]
     },
     "iran": {
-      "raw_score": -9.0,
+      "raw_score": -2.0,
       "positive_score": 0.0,
-      "negative_score": -9.0,
-      "event_count": 2,
+      "negative_score": -2.0,
+      "event_count": 1,
       "scored_event_count": 1,
-      "evidence_event_count": 2,
-      "suppressed_duplicate_count": 1,
+      "evidence_event_count": 1,
+      "suppressed_duplicate_count": 0,
       "increase_event_count": 0,
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000003",
-          "timestamp": "2026-08-11T02:45:30+00:00",
-          "date": "2026-08-11",
+          "event_id": "INFO-000001",
+          "timestamp": "2026-08-13T12:06:31+00:00",
+          "date": "2026-08-13",
           "actor": "iran",
           "bilateral_event": true,
-          "title": "Trump demands compensation from Iran as talks on Strait of Hormuz continue - Al Jazeera",
+          "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "de-escalation",
-          "operational_component": -3.0,
+          "event_direction": "escalation",
+          "operational_component": 4.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": -9.0,
-          "final_score": -9.0,
+          "original_final_score": -2.0,
+          "final_score": -2.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -214,83 +214,40 @@
                 "name": "Avoid regime-destroying war",
                 "weight": 10.0
               },
-              "recognition_rule_count": 2
+              "recognition_rule_count": 4
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: Trump demands compensation from Iran as talks on Strait of Hormuz continue - Al Jazeera",
+          "reason": "Iran: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNY0lyVTFPaXNpRFZZbXdLc3dUcFgtclNId3YtTVl0OFhhdzFENzQ4d0FZMTNPWF9VZWpXNnRpZllXS2I4SlNxY1VMSkl5V1otd1F4RVpoeG82SDhtMHI1ckN5TlkwR3JDTUxGV1M4S2hqRlBDdTNqeGVRcTZCRW10SHlFSUhDTE9ON09kcnRabFhDTDB0M0diNGZOQ0htMjc4dmFYQ2xPUzd2RWdLVEtSVC04dW5VUdIBuwFBVV95cUxQeF92R3l5aEluWUpEWFJsb2NwUy0zOHVzMFdMSDViWXI1OFRUSXk5WF9hUEdnU0RPM2Nxbl9IMkk1T2toZDB4QVJvd3ZfSm5Mb2N1MnFPMVpscDN2UlpjVGhjQkx4QU1YVGxmMVFOUnM0YXU1V2g2SUFRTGVvOUdRVVlGbGZRNFhYMjhyeERhSThyYnFvcWtZUmF4eF96MFZ6Ym1EYTNUYjJXV2gyd2lreUF5VHpNNmJWT2lV?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 3.0,
+          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5",
+          "existing_event_score": 0.0,
+          "existing_direction_score": -4.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
           "duplicate_daily_indicators": []
-        },
-        {
-          "event_id": "INFO-000001",
-          "timestamp": "2026-08-11T12:30:05+00:00",
-          "date": "2026-08-11",
-          "actor": "iran",
-          "bilateral_event": false,
-          "title": "Iran, US set new conditions during Hormuz talks: What does this mean? - Al Jazeera",
-          "source_layer": "non_kinetic",
-          "event_type": "diplomatic",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": 0.0,
-          "duplicate_indicator_evidence": true,
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "primary_daily_indicator": null,
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_regime_destroying_war",
-                "name": "Avoid regime-destroying war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran, US set new conditions during Hormuz talks: What does this mean? - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOblBhQ0NhX3I3ejMxZjRSYnhuMFRHZFdTWnNTMzgtNVZyQlNSeFFJTjdJVUQwZEVIX09xRGZGeW1RLUxmVmNFbkd6eU1XRXJaczBKRE9pYXZMZDIxZ3hVdGJlYWMybU5jS1p3Y19SLVR0SG16YnFVX3BhaGhpaG1MR3RDRmlJTFJRcml4QVp1b0ZPX3FZc2tJRnRIYXFCYklXZThPempSLUI1d3fSAbABQVVfeXFMTjZkbWlwbDVkdVRRTUJKSzE5OXRTenNsWVktUFdIVEw5aDE5Q0cxZ0tjclVJZWlFak5pRVIwS3I1dlBEV3F0allUR3NZYjhBclIwWEstdHlRZVZJUXBxME5wanNYaHpnUHBleEpFdlllNHI4MXowSEpMSlVKR05UcktuTmpCRHkyOGRieHR3MEQxMnE0WGxBTjRZbUVGcXR0NHY3WGFBQ0t1MTMyaUQwOEI?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [],
-          "duplicate_daily_indicators": [
-            "negotiation"
-          ]
         }
       ],
-      "weighted_score_7d": -7.65,
-      "pressure_index_7d": 34.7,
+      "weighted_score_7d": -8.45,
+      "pressure_index_7d": 33.1,
       "pressure_level": "reduced",
-      "trend": "strong_decrease",
+      "trend": "decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000003",
-          "timestamp": "2026-08-11T02:45:30+00:00",
-          "date": "2026-08-11",
+          "event_id": "INFO-000001",
+          "timestamp": "2026-08-13T12:06:31+00:00",
+          "date": "2026-08-13",
           "actor": "iran",
           "bilateral_event": true,
-          "title": "Trump demands compensation from Iran as talks on Strait of Hormuz continue - Al Jazeera",
+          "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "de-escalation",
-          "operational_component": -3.0,
+          "event_direction": "escalation",
+          "operational_component": 4.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": -9.0,
-          "final_score": -9.0,
+          "original_final_score": -2.0,
+          "final_score": -2.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -306,14 +263,14 @@
                 "name": "Avoid regime-destroying war",
                 "weight": 10.0
               },
-              "recognition_rule_count": 2
+              "recognition_rule_count": 4
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: Trump demands compensation from Iran as talks on Strait of Hormuz continue - Al Jazeera",
+          "reason": "Iran: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNY0lyVTFPaXNpRFZZbXdLc3dUcFgtclNId3YtTVl0OFhhdzFENzQ4d0FZMTNPWF9VZWpXNnRpZllXS2I4SlNxY1VMSkl5V1otd1F4RVpoeG82SDhtMHI1ckN5TlkwR3JDTUxGV1M4S2hqRlBDdTNqeGVRcTZCRW10SHlFSUhDTE9ON09kcnRabFhDTDB0M0diNGZOQ0htMjc4dmFYQ2xPUzd2RWdLVEtSVC04dW5VUdIBuwFBVV95cUxQeF92R3l5aEluWUpEWFJsb2NwUy0zOHVzMFdMSDViWXI1OFRUSXk5WF9hUEdnU0RPM2Nxbl9IMkk1T2toZDB4QVJvd3ZfSm5Mb2N1MnFPMVpscDN2UlpjVGhjQkx4QU1YVGxmMVFOUnM0YXU1V2g2SUFRTGVvOUdRVVlGbGZRNFhYMjhyeERhSThyYnFvcWtZUmF4eF96MFZ6Ym1EYTNUYjJXV2gyd2lreUF5VHpNNmJWT2lV?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 3.0,
+          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5",
+          "existing_event_score": 0.0,
+          "existing_direction_score": -4.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
@@ -322,9 +279,9 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 29.9,
-      "pressure_level": "low",
-      "trend": "strong_decrease",
+      "pressure_index_7d": 32.35,
+      "pressure_level": "reduced",
+      "trend": "decrease",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
   }
