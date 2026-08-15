@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T10:11:03.382030+00:00",
+  "generated_at": "2026-08-15T09:32:11.606547+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,13 +18,13 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 536,
-    "kinetic_events_loaded": 555,
-    "unique_events_scanned": 1043,
-    "strategic_evidence_contributions": 314,
+    "non_kinetic_events_loaded": 538,
+    "kinetic_events_loaded": 553,
+    "unique_events_scanned": 1042,
+    "strategic_evidence_contributions": 311,
     "evidence_contributions_by_actor": {
       "usa": 103,
-      "iran": 211
+      "iran": 208
     },
     "scored_contributions_by_actor": {
       "usa": 71,
@@ -32,16 +32,16 @@
     },
     "suppressed_duplicates_by_actor": {
       "usa": 32,
-      "iran": 105
+      "iran": 102
     },
     "contributions_by_source_layer": {
       "non_kinetic": 281,
-      "kinetic": 33
+      "kinetic": 30
     },
     "evidence_indicator_counts": {
       "iran:negotiation": 176,
       "usa:negotiation": 84,
-      "iran:missile_test": 23,
+      "iran:missile_test": 20,
       "usa:presidential_warning": 14,
       "iran:hormuz_threat": 9,
       "usa:ceasefire_support": 8,
@@ -59,7 +59,7 @@
       "iran:nuclear_activity": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 3,
+    "skipped_current_utc_day": 2,
     "history_day_count": 157
   },
   "configuration_warnings": [],
@@ -80,7 +80,7 @@
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000001",
+          "event_id": "INFO-000004",
           "timestamp": "2026-08-13T12:06:31+00:00",
           "date": "2026-08-13",
           "actor": "usa",
@@ -129,7 +129,7 @@
       "trend": "stable",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000001",
+          "event_id": "INFO-000004",
           "timestamp": "2026-08-13T12:06:31+00:00",
           "date": "2026-08-13",
           "actor": "usa",
@@ -185,7 +185,7 @@
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000001",
+          "event_id": "INFO-000004",
           "timestamp": "2026-08-13T12:06:31+00:00",
           "date": "2026-08-13",
           "actor": "iran",
@@ -234,7 +234,7 @@
       "trend": "decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000001",
+          "event_id": "INFO-000004",
           "timestamp": "2026-08-13T12:06:31+00:00",
           "date": "2026-08-13",
           "actor": "iran",

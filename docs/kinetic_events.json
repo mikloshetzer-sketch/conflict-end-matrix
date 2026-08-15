@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-08-15T05:43:38.097906Z",
-  "source_generated_at": "2026-08-15T05:42:09Z",
+  "generated_at": "2026-08-15T09:32:10.659725Z",
+  "source_generated_at": "2026-08-15T09:10:32Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
   "source_event_count": 1000,
-  "event_count": 554,
-  "rejected_count": 446,
+  "event_count": 553,
+  "rejected_count": 447,
   "rejection_counts": {
-    "category_not_kinetic": 315,
-    "no_confirmed_action_language": 96,
+    "category_not_kinetic": 317,
+    "no_confirmed_action_language": 95,
     "context_or_hypothetical": 24,
     "retrospective_or_aftermath": 8,
     "alert_only": 3
   },
   "category_counts": {
-    "missile": 170,
+    "missile": 169,
     "strike": 144,
     "airstrike": 87,
     "drone": 81,
@@ -30,14 +30,14 @@
   },
   "severity_counts": {
     "medium": 286,
-    "high": 232,
+    "high": 231,
     "low": 34,
     "critical": 2
   },
   "actor_counts": {
-    "Iran": 217,
-    "United States": 159,
-    "Israel": 52,
+    "Iran": 216,
+    "United States": 158,
+    "Israel": 53,
     "Unknown actor": 50,
     "Yemen": 47,
     "Saudi Arabia": 12,
@@ -48,6 +48,32 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-3ht0lscmbmo00",
+      "timestamp": "2026-08-15T07:23:01Z",
+      "event_type": "kinetic",
+      "subtype": "strike",
+      "category": "strike",
+      "severity": "medium",
+      "actor": "isr",
+      "actor_label": "Israel",
+      "actor_method": "raw_source.origin",
+      "target_country": "Lebanon",
+      "location": "Nabatieh",
+      "latitude": 33.3772,
+      "longitude": 35.4838,
+      "map_visualizable": true,
+      "description": "Israeli fighter jets strike Ali al-Tahr ridge and target in Nabatieh al-Fawqa village, southern Lebanon overnight",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/128514",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-5pkypxiwh840",
       "timestamp": "2026-08-14T19:59:59Z",
@@ -14392,58 +14418,6 @@
       "description": "U.S. strike hits hilltop along Kangan highway in Iran",
       "source_name": "CIG_telegram",
       "source_url": "https://t.me/CIG_telegram/79391",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-uyz8mj6yrb40",
-      "timestamp": "2026-07-12T02:25:04Z",
-      "event_type": "kinetic",
-      "subtype": "strike",
-      "category": "strike",
-      "severity": "medium",
-      "actor": "usa",
-      "actor_label": "United States",
-      "actor_method": "raw_source.origin",
-      "target_country": "Iran",
-      "location": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "U.S. strikes hit Mahshahr and Kangan in Iran",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79389",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-153n3duvh6f40",
-      "timestamp": "2026-07-12T02:15:05Z",
-      "event_type": "kinetic",
-      "subtype": "missile",
-      "category": "missile",
-      "severity": "high",
-      "actor": "irn",
-      "actor_label": "Iran",
-      "actor_method": "raw_source.origin",
-      "target_country": "Jordan",
-      "location": "Jordan",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Iran launches 10+ ballistic missiles toward U.S. bases in Jordan",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79387",
       "source_repository": "mikloshetzer-sketch/me-security-monitor",
       "source_collection": "events",
       "validation": {
