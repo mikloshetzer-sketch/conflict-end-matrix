@@ -1,11 +1,11 @@
 {
   "metadata": {
     "model": "strategic_interest_achievement_v2",
-    "generated_at": "2026-08-15T09:32:40+00:00",
-    "reference_date": "2026-08-13",
+    "generated_at": "2026-08-16T09:33:55+00:00",
+    "reference_date": "2026-08-15",
     "history_start_date": "2026-03-10",
-    "history_end_date": "2026-08-13",
-    "history_day_count": 157,
+    "history_end_date": "2026-08-15",
+    "history_day_count": 159,
     "conflict": "United States-Iran",
     "description": "Historical and current assessment of the degree to which detected developments support or weaken the weighted strategic interests of the United States and Iran.",
     "input_files": {
@@ -21,23 +21,23 @@
     "warning_count": 1
   },
   "current": {
-    "date": "2026-08-13",
+    "date": "2026-08-15",
     "summary": {
-      "usa_achievement_index": 51.82,
+      "usa_achievement_index": 51.39,
       "iran_achievement_index": 51.59,
-      "achievement_gap": 0.23,
+      "achievement_gap": -0.2,
       "daily_strategic_advantage": "balanced",
       "interpretation": "The index measures whether the current day's detected developments support or weaken each actor's own weighted strategic interests. It does not directly measure military victory or conflict outcome."
     },
     "actors": {
       "usa": {
-        "achievement_index": 51.82,
-        "change_from_neutral": 1.82,
+        "achievement_index": 51.39,
+        "change_from_neutral": 1.39,
         "trend": "stable",
         "level": "balanced",
-        "raw_contribution": 276.0,
+        "raw_contribution": 216.0,
         "interest_count": 8,
-        "interests_with_evidence": 4,
+        "interests_with_evidence": 3,
         "strongest_interests": [
           {
             "id": "avoid_full_scale_war",
@@ -46,16 +46,16 @@
             "change_from_neutral": 6.0
           },
           {
-            "id": "force_protection",
-            "name": "Protection of US forces",
-            "achievement_index": 53.0,
-            "change_from_neutral": 3.0
-          },
-          {
             "id": "nuclear_nonproliferation",
             "name": "Prevent Iranian nuclear weapon capability",
             "achievement_index": 52.7,
             "change_from_neutral": 2.7
+          },
+          {
+            "id": "energy_security",
+            "name": "Global energy security",
+            "achievement_index": 52.1,
+            "change_from_neutral": 2.1
           }
         ],
         "weakest_interests": [
@@ -66,14 +66,14 @@
             "change_from_neutral": 0.0
           },
           {
-            "id": "freedom_of_navigation",
-            "name": "Freedom of navigation",
+            "id": "force_protection",
+            "name": "Protection of US forces",
             "achievement_index": 50.0,
             "change_from_neutral": 0.0
           },
           {
-            "id": "regional_deterrence",
-            "name": "Regional deterrence",
+            "id": "freedom_of_navigation",
+            "name": "Freedom of navigation",
             "achievement_index": 50.0,
             "change_from_neutral": 0.0
           }
@@ -100,52 +100,16 @@
             "name": "Protection of US forces",
             "description": "Protect US military personnel, bases and regional assets.",
             "weight": 10.0,
-            "achievement_index": 53.0,
-            "change_from_neutral": 3.0,
-            "raw_contribution": 60.0,
-            "positive_contribution": 60.0,
-            "negative_contribution": 0.0,
-            "trend": "improving",
+            "achievement_index": 50.0,
+            "change_from_neutral": 0.0,
+            "raw_contribution": 0,
+            "positive_contribution": 0,
+            "negative_contribution": 0,
+            "trend": "stable",
             "level": "balanced",
-            "evidence_count": 1,
-            "top_evidence": [
-              {
-                "event_id": "INFO-000004",
-                "date": "2026-08-13",
-                "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 1.0,
-                "interest_weight": 10.0,
-                "raw_contribution": 60.0,
-                "rationale": "Reduced tension lowers the immediate threat to US forces.",
-                "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-                "reason": "United States: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5"
-              }
-            ],
-            "evidence": [
-              {
-                "event_id": "INFO-000004",
-                "date": "2026-08-13",
-                "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 1.0,
-                "interest_weight": 10.0,
-                "raw_contribution": 60.0,
-                "rationale": "Reduced tension lowers the immediate threat to US forces.",
-                "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-                "reason": "United States: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5"
-              }
-            ]
+            "evidence_count": 0,
+            "top_evidence": [],
+            "evidence": []
           },
           {
             "id": "freedom_of_navigation",
@@ -178,9 +142,9 @@
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000004",
-                "date": "2026-08-13",
-                "source_actor": "usa",
+                "event_id": "INFO-000002",
+                "date": "2026-08-15",
+                "source_actor": "iran",
                 "indicator": "negotiation",
                 "pressure_direction": "decrease_pressure",
                 "indicator_score": -6.0,
@@ -188,18 +152,18 @@
                 "effect": 1.0,
                 "interest_weight": 9.0,
                 "raw_contribution": 54.0,
-                "rationale": "Diplomacy may produce limits, inspections or delays affecting Iran's nuclear programme.",
-                "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-                "reason": "United States: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
+                "rationale": "Diplomatic agreements may constrain or monitor Iran's nuclear programme.",
+                "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
                 "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5"
+                "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000004",
-                "date": "2026-08-13",
-                "source_actor": "usa",
+                "event_id": "INFO-000002",
+                "date": "2026-08-15",
+                "source_actor": "iran",
                 "indicator": "negotiation",
                 "pressure_direction": "decrease_pressure",
                 "indicator_score": -6.0,
@@ -207,11 +171,11 @@
                 "effect": 1.0,
                 "interest_weight": 9.0,
                 "raw_contribution": 54.0,
-                "rationale": "Diplomacy may produce limits, inspections or delays affecting Iran's nuclear programme.",
-                "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-                "reason": "United States: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
+                "rationale": "Diplomatic agreements may constrain or monitor Iran's nuclear programme.",
+                "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
                 "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5"
+                "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5"
               }
             ]
           },
@@ -262,9 +226,9 @@
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000004",
-                "date": "2026-08-13",
-                "source_actor": "usa",
+                "event_id": "INFO-000002",
+                "date": "2026-08-15",
+                "source_actor": "iran",
                 "indicator": "negotiation",
                 "pressure_direction": "decrease_pressure",
                 "indicator_score": -6.0,
@@ -272,18 +236,18 @@
                 "effect": 1.0,
                 "interest_weight": 7.0,
                 "raw_contribution": 42.0,
-                "rationale": "Diplomatic engagement reduces the likelihood of major energy disruption.",
-                "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-                "reason": "United States: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
+                "rationale": "Lower tension supports energy-market stability.",
+                "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
                 "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5"
+                "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000004",
-                "date": "2026-08-13",
-                "source_actor": "usa",
+                "event_id": "INFO-000002",
+                "date": "2026-08-15",
+                "source_actor": "iran",
                 "indicator": "negotiation",
                 "pressure_direction": "decrease_pressure",
                 "indicator_score": -6.0,
@@ -291,11 +255,11 @@
                 "effect": 1.0,
                 "interest_weight": 7.0,
                 "raw_contribution": 42.0,
-                "rationale": "Diplomatic engagement reduces the likelihood of major energy disruption.",
-                "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-                "reason": "United States: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
+                "rationale": "Lower tension supports energy-market stability.",
+                "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
                 "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5"
+                "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5"
               }
             ]
           },
@@ -314,9 +278,9 @@
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000004",
-                "date": "2026-08-13",
-                "source_actor": "usa",
+                "event_id": "INFO-000002",
+                "date": "2026-08-15",
+                "source_actor": "iran",
                 "indicator": "negotiation",
                 "pressure_direction": "decrease_pressure",
                 "indicator_score": -6.0,
@@ -324,18 +288,18 @@
                 "effect": 2.0,
                 "interest_weight": 10.0,
                 "raw_contribution": 120.0,
-                "rationale": "Negotiations reduce immediate escalation risk and preserve diplomatic options.",
-                "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-                "reason": "United States: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
+                "rationale": "Negotiations support conflict containment.",
+                "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
                 "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5"
+                "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000004",
-                "date": "2026-08-13",
-                "source_actor": "usa",
+                "event_id": "INFO-000002",
+                "date": "2026-08-15",
+                "source_actor": "iran",
                 "indicator": "negotiation",
                 "pressure_direction": "decrease_pressure",
                 "indicator_score": -6.0,
@@ -343,11 +307,11 @@
                 "effect": 2.0,
                 "interest_weight": 10.0,
                 "raw_contribution": 120.0,
-                "rationale": "Negotiations reduce immediate escalation risk and preserve diplomatic options.",
-                "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-                "reason": "United States: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
+                "rationale": "Negotiations support conflict containment.",
+                "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
                 "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5"
+                "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5"
               }
             ]
           }
@@ -417,9 +381,9 @@
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000004",
-                "date": "2026-08-13",
-                "source_actor": "usa",
+                "event_id": "INFO-000002",
+                "date": "2026-08-15",
+                "source_actor": "iran",
                 "indicator": "negotiation",
                 "pressure_direction": "decrease_pressure",
                 "indicator_score": -6.0,
@@ -427,18 +391,18 @@
                 "effect": 1.0,
                 "interest_weight": 10.0,
                 "raw_contribution": 60.0,
-                "rationale": "Negotiations lower the immediate military threat to the Iranian state.",
-                "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-                "reason": "United States: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
+                "rationale": "Negotiations reduce immediate pressure on the Iranian state.",
+                "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
                 "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5"
+                "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000004",
-                "date": "2026-08-13",
-                "source_actor": "usa",
+                "event_id": "INFO-000002",
+                "date": "2026-08-15",
+                "source_actor": "iran",
                 "indicator": "negotiation",
                 "pressure_direction": "decrease_pressure",
                 "indicator_score": -6.0,
@@ -446,11 +410,11 @@
                 "effect": 1.0,
                 "interest_weight": 10.0,
                 "raw_contribution": 60.0,
-                "rationale": "Negotiations lower the immediate military threat to the Iranian state.",
-                "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-                "reason": "United States: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
+                "rationale": "Negotiations reduce immediate pressure on the Iranian state.",
+                "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
                 "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5"
+                "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5"
               }
             ]
           },
@@ -485,9 +449,9 @@
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000004",
-                "date": "2026-08-13",
-                "source_actor": "usa",
+                "event_id": "INFO-000002",
+                "date": "2026-08-15",
+                "source_actor": "iran",
                 "indicator": "negotiation",
                 "pressure_direction": "decrease_pressure",
                 "indicator_score": -6.0,
@@ -495,18 +459,18 @@
                 "effect": 1.0,
                 "interest_weight": 9.0,
                 "raw_contribution": 54.0,
-                "rationale": "Negotiations may allow Iran to preserve part of its nuclear infrastructure under agreed restrictions.",
-                "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-                "reason": "United States: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
+                "rationale": "Negotiations may allow Iran to preserve controlled nuclear capabilities.",
+                "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
                 "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5"
+                "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000004",
-                "date": "2026-08-13",
-                "source_actor": "usa",
+                "event_id": "INFO-000002",
+                "date": "2026-08-15",
+                "source_actor": "iran",
                 "indicator": "negotiation",
                 "pressure_direction": "decrease_pressure",
                 "indicator_score": -6.0,
@@ -514,11 +478,11 @@
                 "effect": 1.0,
                 "interest_weight": 9.0,
                 "raw_contribution": 54.0,
-                "rationale": "Negotiations may allow Iran to preserve part of its nuclear infrastructure under agreed restrictions.",
-                "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-                "reason": "United States: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
+                "rationale": "Negotiations may allow Iran to preserve controlled nuclear capabilities.",
+                "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
                 "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5"
+                "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5"
               }
             ]
           },
@@ -601,9 +565,9 @@
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000004",
-                "date": "2026-08-13",
-                "source_actor": "usa",
+                "event_id": "INFO-000002",
+                "date": "2026-08-15",
+                "source_actor": "iran",
                 "indicator": "negotiation",
                 "pressure_direction": "decrease_pressure",
                 "indicator_score": -6.0,
@@ -611,18 +575,18 @@
                 "effect": 2.0,
                 "interest_weight": 10.0,
                 "raw_contribution": 120.0,
-                "rationale": "Diplomatic engagement directly reduces the probability of a regime-threatening war.",
-                "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-                "reason": "United States: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
+                "rationale": "Diplomacy lowers the likelihood of a war threatening regime survival.",
+                "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
                 "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5"
+                "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000004",
-                "date": "2026-08-13",
-                "source_actor": "usa",
+                "event_id": "INFO-000002",
+                "date": "2026-08-15",
+                "source_actor": "iran",
                 "indicator": "negotiation",
                 "pressure_direction": "decrease_pressure",
                 "indicator_score": -6.0,
@@ -630,11 +594,11 @@
                 "effect": 2.0,
                 "interest_weight": 10.0,
                 "raw_contribution": 120.0,
-                "rationale": "Diplomatic engagement directly reduces the probability of a regime-threatening war.",
-                "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-                "reason": "United States: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
+                "rationale": "Diplomacy lowers the likelihood of a war threatening regime survival.",
+                "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
                 "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5"
+                "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5"
               }
             ]
           }
@@ -643,107 +607,21 @@
     },
     "processed_evidence": [
       {
-        "event_id": "INFO-000004",
-        "timestamp": "2026-08-13T12:06:31+00:00",
-        "date": "2026-08-13",
-        "source_actor": "usa",
-        "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-        "event_type": "diplomatic",
-        "event_direction": "escalation",
-        "source_layer": "non_kinetic",
-        "final_score": -2.0,
-        "original_final_score": -2.0,
-        "operational_component": 4.0,
-        "strategic_modifier": -6.0,
-        "reason": "United States: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-        "source": "\"iran israel usa war when:7d\" - Google News",
-        "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5",
-        "daily_score_suppressed": false,
-        "suppression_reason": "",
-        "mapped_indicators": [
-          {
-            "indicator": "negotiation",
-            "indicator_name": "Negotiation",
-            "pressure_direction": "decrease_pressure",
-            "indicator_score": -6.0,
-            "indicator_strength": 6.0,
-            "mapped_impacts": [
-              {
-                "target_actor": "usa",
-                "interest_id": "avoid_full_scale_war",
-                "effect": 2.0,
-                "interest_weight": 10.0,
-                "raw_contribution": 120.0,
-                "rationale": "Negotiations reduce immediate escalation risk and preserve diplomatic options."
-              },
-              {
-                "target_actor": "usa",
-                "interest_id": "nuclear_nonproliferation",
-                "effect": 1.0,
-                "interest_weight": 9.0,
-                "raw_contribution": 54.0,
-                "rationale": "Diplomacy may produce limits, inspections or delays affecting Iran's nuclear programme."
-              },
-              {
-                "target_actor": "usa",
-                "interest_id": "force_protection",
-                "effect": 1.0,
-                "interest_weight": 10.0,
-                "raw_contribution": 60.0,
-                "rationale": "Reduced tension lowers the immediate threat to US forces."
-              },
-              {
-                "target_actor": "usa",
-                "interest_id": "energy_security",
-                "effect": 1.0,
-                "interest_weight": 7.0,
-                "raw_contribution": 42.0,
-                "rationale": "Diplomatic engagement reduces the likelihood of major energy disruption."
-              },
-              {
-                "target_actor": "iran",
-                "interest_id": "regime_survival",
-                "effect": 1.0,
-                "interest_weight": 10.0,
-                "raw_contribution": 60.0,
-                "rationale": "Negotiations lower the immediate military threat to the Iranian state."
-              },
-              {
-                "target_actor": "iran",
-                "interest_id": "avoid_regime_destroying_war",
-                "effect": 2.0,
-                "interest_weight": 10.0,
-                "raw_contribution": 120.0,
-                "rationale": "Diplomatic engagement directly reduces the probability of a regime-threatening war."
-              },
-              {
-                "target_actor": "iran",
-                "interest_id": "nuclear_programme",
-                "effect": 1.0,
-                "interest_weight": 9.0,
-                "raw_contribution": 54.0,
-                "rationale": "Negotiations may allow Iran to preserve part of its nuclear infrastructure under agreed restrictions."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "event_id": "INFO-000004",
-        "timestamp": "2026-08-13T12:06:31+00:00",
-        "date": "2026-08-13",
+        "event_id": "INFO-000002",
+        "timestamp": "2026-08-15T04:32:02+00:00",
+        "date": "2026-08-15",
         "source_actor": "iran",
-        "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
+        "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
         "event_type": "diplomatic",
-        "event_direction": "escalation",
+        "event_direction": "mixed",
         "source_layer": "non_kinetic",
-        "final_score": -2.0,
-        "original_final_score": -2.0,
-        "operational_component": 4.0,
+        "final_score": -6.0,
+        "original_final_score": -6.0,
+        "operational_component": 0.0,
         "strategic_modifier": -6.0,
-        "reason": "Iran: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
+        "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
         "source": "\"iran israel usa war when:7d\" - Google News",
-        "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5",
+        "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5",
         "daily_score_suppressed": false,
         "suppression_reason": "",
         "mapped_indicators": [
@@ -759,9 +637,7 @@
                 "interest_id": "regime_survival",
                 "effect": 1.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 0.0,
-                "original_raw_contribution": 60.0,
-                "suppressed": true,
+                "raw_contribution": 60.0,
                 "rationale": "Negotiations reduce immediate pressure on the Iranian state."
               },
               {
@@ -769,9 +645,7 @@
                 "interest_id": "avoid_regime_destroying_war",
                 "effect": 2.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 0.0,
-                "original_raw_contribution": 120.0,
-                "suppressed": true,
+                "raw_contribution": 120.0,
                 "rationale": "Diplomacy lowers the likelihood of a war threatening regime survival."
               },
               {
@@ -779,9 +653,7 @@
                 "interest_id": "nuclear_programme",
                 "effect": 1.0,
                 "interest_weight": 9.0,
-                "raw_contribution": 0.0,
-                "original_raw_contribution": 54.0,
-                "suppressed": true,
+                "raw_contribution": 54.0,
                 "rationale": "Negotiations may allow Iran to preserve controlled nuclear capabilities."
               },
               {
@@ -789,9 +661,7 @@
                 "interest_id": "avoid_full_scale_war",
                 "effect": 2.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 0.0,
-                "original_raw_contribution": 120.0,
-                "suppressed": true,
+                "raw_contribution": 120.0,
                 "rationale": "Negotiations support conflict containment."
               },
               {
@@ -799,9 +669,7 @@
                 "interest_id": "nuclear_nonproliferation",
                 "effect": 1.0,
                 "interest_weight": 9.0,
-                "raw_contribution": 0.0,
-                "original_raw_contribution": 54.0,
-                "suppressed": true,
+                "raw_contribution": 54.0,
                 "rationale": "Diplomatic agreements may constrain or monitor Iran's nuclear programme."
               },
               {
@@ -809,9 +677,7 @@
                 "interest_id": "energy_security",
                 "effect": 1.0,
                 "interest_weight": 7.0,
-                "raw_contribution": 0.0,
-                "original_raw_contribution": 42.0,
-                "suppressed": true,
+                "raw_contribution": 42.0,
                 "rationale": "Lower tension supports energy-market stability."
               }
             ]
@@ -84714,30 +84580,7 @@
           ]
         }
       ],
-      "suppressed_evidence": [
-        {
-          "event_id": "iranstrike-qti6edxhvow0",
-          "timestamp": "2026-07-12T02:48:15+00:00",
-          "date": "2026-07-12",
-          "source_actor": "iran",
-          "title": "Iran launches missile and drone attacks on Jordan",
-          "event_type": "kinetic",
-          "event_direction": "escalation",
-          "source_layer": "kinetic",
-          "final_score": 0.0,
-          "original_final_score": 7.0,
-          "operational_component": 1.0,
-          "strategic_modifier": 6.0,
-          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches missile and drone attacks on Jordan",
-          "source": "",
-          "link": "https://t.me/CIG_telegram/79399",
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "indicators": [
-            "missile_test"
-          ]
-        }
-      ],
+      "suppressed_evidence": [],
       "unmapped_evidence": [],
       "calculation": {
         "neutral_score": 50.0,
@@ -110154,10 +109997,1067 @@
         "indicator_strength_cap": 20.0,
         "formula": "raw_contribution = absolute_indicator_score × mapped_interest_effect × interest_weight; interest_index = clamp(50 + raw_contribution / normalisation_divisor, 0, 100); actor_index = interest-weighted mean of the actor's interest indices"
       }
+    },
+    {
+      "date": "2026-08-14",
+      "summary": {
+        "usa_achievement_index": 50.0,
+        "iran_achievement_index": 50.0,
+        "achievement_gap": 0.0,
+        "daily_strategic_advantage": "balanced",
+        "interpretation": "The index measures whether the current day's detected developments support or weaken each actor's own weighted strategic interests. It does not directly measure military victory or conflict outcome."
+      },
+      "actors": {
+        "usa": {
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0,
+          "trend": "stable",
+          "level": "balanced",
+          "raw_contribution": 0.0,
+          "interest_count": 8,
+          "interests_with_evidence": 0,
+          "strongest_interests": [
+            {
+              "id": "israel_security",
+              "name": "Israel security",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "force_protection",
+              "name": "Protection of US forces",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "freedom_of_navigation",
+              "name": "Freedom of navigation",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            }
+          ],
+          "weakest_interests": [
+            {
+              "id": "israel_security",
+              "name": "Israel security",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "force_protection",
+              "name": "Protection of US forces",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "freedom_of_navigation",
+              "name": "Freedom of navigation",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            }
+          ],
+          "interests": [
+            {
+              "id": "israel_security",
+              "name": "Israel security",
+              "description": "Maintain Israel's security and military superiority.",
+              "weight": 10.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "force_protection",
+              "name": "Protection of US forces",
+              "description": "Protect US military personnel, bases and regional assets.",
+              "weight": 10.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "freedom_of_navigation",
+              "name": "Freedom of navigation",
+              "description": "Maintain secure maritime routes including the Strait of Hormuz.",
+              "weight": 9.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "nuclear_nonproliferation",
+              "name": "Prevent Iranian nuclear weapon capability",
+              "description": "Limit or delay Iran's military nuclear programme.",
+              "weight": 9.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "regional_deterrence",
+              "name": "Regional deterrence",
+              "description": "Maintain credible military deterrence against Iran and its proxies.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "regional_partners",
+              "name": "Protection of regional partners",
+              "description": "Support Gulf partners and other regional allies.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "energy_security",
+              "name": "Global energy security",
+              "description": "Reduce disruption to global energy markets.",
+              "weight": 7.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "avoid_full_scale_war",
+              "name": "Avoid full-scale regional war",
+              "description": "Prevent uncontrolled regional escalation.",
+              "weight": 10.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            }
+          ]
+        },
+        "iran": {
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0,
+          "trend": "stable",
+          "level": "balanced",
+          "raw_contribution": 0.0,
+          "interest_count": 8,
+          "interests_with_evidence": 0,
+          "strongest_interests": [
+            {
+              "id": "regime_survival",
+              "name": "Regime survival",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "strategic_deterrence",
+              "name": "Strategic deterrence",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "nuclear_programme",
+              "name": "Preserve nuclear programme",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            }
+          ],
+          "weakest_interests": [
+            {
+              "id": "regime_survival",
+              "name": "Regime survival",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "strategic_deterrence",
+              "name": "Strategic deterrence",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "nuclear_programme",
+              "name": "Preserve nuclear programme",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            }
+          ],
+          "interests": [
+            {
+              "id": "regime_survival",
+              "name": "Regime survival",
+              "description": "Ensure survival and stability of the Islamic Republic.",
+              "weight": 10.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "strategic_deterrence",
+              "name": "Strategic deterrence",
+              "description": "Maintain credible military deterrence against the United States and Israel.",
+              "weight": 10.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "nuclear_programme",
+              "name": "Preserve nuclear programme",
+              "description": "Protect strategic nuclear infrastructure and capabilities.",
+              "weight": 9.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "missile_capability",
+              "name": "Missile capability",
+              "description": "Maintain and develop long-range missile forces.",
+              "weight": 9.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "proxy_network",
+              "name": "Regional proxy network",
+              "description": "Maintain influence through regional partner organisations.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "regional_influence",
+              "name": "Regional influence",
+              "description": "Preserve strategic influence across the Middle East.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "hormuz_leverage",
+              "name": "Hormuz leverage",
+              "description": "Retain the ability to influence maritime traffic through the Strait of Hormuz.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "avoid_regime_destroying_war",
+              "name": "Avoid regime-destroying war",
+              "description": "Avoid military escalation threatening state survival.",
+              "weight": 10.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            }
+          ]
+        }
+      },
+      "processed_evidence": [],
+      "suppressed_evidence": [],
+      "unmapped_evidence": [],
+      "calculation": {
+        "neutral_score": 50.0,
+        "minimum_score": 0.0,
+        "maximum_score": 100.0,
+        "normalisation_divisor": 20.0,
+        "indicator_strength_cap": 20.0,
+        "formula": "raw_contribution = absolute_indicator_score × mapped_interest_effect × interest_weight; interest_index = clamp(50 + raw_contribution / normalisation_divisor, 0, 100); actor_index = interest-weighted mean of the actor's interest indices"
+      }
+    },
+    {
+      "date": "2026-08-15",
+      "summary": {
+        "usa_achievement_index": 51.39,
+        "iran_achievement_index": 51.59,
+        "achievement_gap": -0.2,
+        "daily_strategic_advantage": "balanced",
+        "interpretation": "The index measures whether the current day's detected developments support or weaken each actor's own weighted strategic interests. It does not directly measure military victory or conflict outcome."
+      },
+      "actors": {
+        "usa": {
+          "achievement_index": 51.39,
+          "change_from_neutral": 1.39,
+          "trend": "stable",
+          "level": "balanced",
+          "raw_contribution": 216.0,
+          "interest_count": 8,
+          "interests_with_evidence": 3,
+          "strongest_interests": [
+            {
+              "id": "avoid_full_scale_war",
+              "name": "Avoid full-scale regional war",
+              "achievement_index": 56.0,
+              "change_from_neutral": 6.0
+            },
+            {
+              "id": "nuclear_nonproliferation",
+              "name": "Prevent Iranian nuclear weapon capability",
+              "achievement_index": 52.7,
+              "change_from_neutral": 2.7
+            },
+            {
+              "id": "energy_security",
+              "name": "Global energy security",
+              "achievement_index": 52.1,
+              "change_from_neutral": 2.1
+            }
+          ],
+          "weakest_interests": [
+            {
+              "id": "israel_security",
+              "name": "Israel security",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "force_protection",
+              "name": "Protection of US forces",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "freedom_of_navigation",
+              "name": "Freedom of navigation",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            }
+          ],
+          "interests": [
+            {
+              "id": "israel_security",
+              "name": "Israel security",
+              "description": "Maintain Israel's security and military superiority.",
+              "weight": 10.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "force_protection",
+              "name": "Protection of US forces",
+              "description": "Protect US military personnel, bases and regional assets.",
+              "weight": 10.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "freedom_of_navigation",
+              "name": "Freedom of navigation",
+              "description": "Maintain secure maritime routes including the Strait of Hormuz.",
+              "weight": 9.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "nuclear_nonproliferation",
+              "name": "Prevent Iranian nuclear weapon capability",
+              "description": "Limit or delay Iran's military nuclear programme.",
+              "weight": 9.0,
+              "achievement_index": 52.7,
+              "change_from_neutral": 2.7,
+              "raw_contribution": 54.0,
+              "positive_contribution": 54.0,
+              "negative_contribution": 0.0,
+              "trend": "improving",
+              "level": "balanced",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-08-15",
+                  "source_actor": "iran",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 1.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 54.0,
+                  "rationale": "Diplomatic agreements may constrain or monitor Iran's nuclear programme.",
+                  "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                  "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-08-15",
+                  "source_actor": "iran",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 1.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 54.0,
+                  "rationale": "Diplomatic agreements may constrain or monitor Iran's nuclear programme.",
+                  "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                  "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5"
+                }
+              ]
+            },
+            {
+              "id": "regional_deterrence",
+              "name": "Regional deterrence",
+              "description": "Maintain credible military deterrence against Iran and its proxies.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "regional_partners",
+              "name": "Protection of regional partners",
+              "description": "Support Gulf partners and other regional allies.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "energy_security",
+              "name": "Global energy security",
+              "description": "Reduce disruption to global energy markets.",
+              "weight": 7.0,
+              "achievement_index": 52.1,
+              "change_from_neutral": 2.1,
+              "raw_contribution": 42.0,
+              "positive_contribution": 42.0,
+              "negative_contribution": 0.0,
+              "trend": "improving",
+              "level": "balanced",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-08-15",
+                  "source_actor": "iran",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 1.0,
+                  "interest_weight": 7.0,
+                  "raw_contribution": 42.0,
+                  "rationale": "Lower tension supports energy-market stability.",
+                  "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                  "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-08-15",
+                  "source_actor": "iran",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 1.0,
+                  "interest_weight": 7.0,
+                  "raw_contribution": 42.0,
+                  "rationale": "Lower tension supports energy-market stability.",
+                  "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                  "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5"
+                }
+              ]
+            },
+            {
+              "id": "avoid_full_scale_war",
+              "name": "Avoid full-scale regional war",
+              "description": "Prevent uncontrolled regional escalation.",
+              "weight": 10.0,
+              "achievement_index": 56.0,
+              "change_from_neutral": 6.0,
+              "raw_contribution": 120.0,
+              "positive_contribution": 120.0,
+              "negative_contribution": 0.0,
+              "trend": "improving",
+              "level": "moderately_positive",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-08-15",
+                  "source_actor": "iran",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 120.0,
+                  "rationale": "Negotiations support conflict containment.",
+                  "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                  "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-08-15",
+                  "source_actor": "iran",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 120.0,
+                  "rationale": "Negotiations support conflict containment.",
+                  "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                  "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5"
+                }
+              ]
+            }
+          ]
+        },
+        "iran": {
+          "achievement_index": 51.59,
+          "change_from_neutral": 1.59,
+          "trend": "stable",
+          "level": "balanced",
+          "raw_contribution": 234.0,
+          "interest_count": 8,
+          "interests_with_evidence": 3,
+          "strongest_interests": [
+            {
+              "id": "avoid_regime_destroying_war",
+              "name": "Avoid regime-destroying war",
+              "achievement_index": 56.0,
+              "change_from_neutral": 6.0
+            },
+            {
+              "id": "regime_survival",
+              "name": "Regime survival",
+              "achievement_index": 53.0,
+              "change_from_neutral": 3.0
+            },
+            {
+              "id": "nuclear_programme",
+              "name": "Preserve nuclear programme",
+              "achievement_index": 52.7,
+              "change_from_neutral": 2.7
+            }
+          ],
+          "weakest_interests": [
+            {
+              "id": "strategic_deterrence",
+              "name": "Strategic deterrence",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "missile_capability",
+              "name": "Missile capability",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "proxy_network",
+              "name": "Regional proxy network",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            }
+          ],
+          "interests": [
+            {
+              "id": "regime_survival",
+              "name": "Regime survival",
+              "description": "Ensure survival and stability of the Islamic Republic.",
+              "weight": 10.0,
+              "achievement_index": 53.0,
+              "change_from_neutral": 3.0,
+              "raw_contribution": 60.0,
+              "positive_contribution": 60.0,
+              "negative_contribution": 0.0,
+              "trend": "improving",
+              "level": "balanced",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-08-15",
+                  "source_actor": "iran",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 60.0,
+                  "rationale": "Negotiations reduce immediate pressure on the Iranian state.",
+                  "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                  "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-08-15",
+                  "source_actor": "iran",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 60.0,
+                  "rationale": "Negotiations reduce immediate pressure on the Iranian state.",
+                  "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                  "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5"
+                }
+              ]
+            },
+            {
+              "id": "strategic_deterrence",
+              "name": "Strategic deterrence",
+              "description": "Maintain credible military deterrence against the United States and Israel.",
+              "weight": 10.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "nuclear_programme",
+              "name": "Preserve nuclear programme",
+              "description": "Protect strategic nuclear infrastructure and capabilities.",
+              "weight": 9.0,
+              "achievement_index": 52.7,
+              "change_from_neutral": 2.7,
+              "raw_contribution": 54.0,
+              "positive_contribution": 54.0,
+              "negative_contribution": 0.0,
+              "trend": "improving",
+              "level": "balanced",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-08-15",
+                  "source_actor": "iran",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 1.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 54.0,
+                  "rationale": "Negotiations may allow Iran to preserve controlled nuclear capabilities.",
+                  "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                  "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-08-15",
+                  "source_actor": "iran",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 1.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 54.0,
+                  "rationale": "Negotiations may allow Iran to preserve controlled nuclear capabilities.",
+                  "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                  "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5"
+                }
+              ]
+            },
+            {
+              "id": "missile_capability",
+              "name": "Missile capability",
+              "description": "Maintain and develop long-range missile forces.",
+              "weight": 9.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "proxy_network",
+              "name": "Regional proxy network",
+              "description": "Maintain influence through regional partner organisations.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "regional_influence",
+              "name": "Regional influence",
+              "description": "Preserve strategic influence across the Middle East.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "hormuz_leverage",
+              "name": "Hormuz leverage",
+              "description": "Retain the ability to influence maritime traffic through the Strait of Hormuz.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "avoid_regime_destroying_war",
+              "name": "Avoid regime-destroying war",
+              "description": "Avoid military escalation threatening state survival.",
+              "weight": 10.0,
+              "achievement_index": 56.0,
+              "change_from_neutral": 6.0,
+              "raw_contribution": 120.0,
+              "positive_contribution": 120.0,
+              "negative_contribution": 0.0,
+              "trend": "improving",
+              "level": "moderately_positive",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-08-15",
+                  "source_actor": "iran",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 120.0,
+                  "rationale": "Diplomacy lowers the likelihood of a war threatening regime survival.",
+                  "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                  "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-08-15",
+                  "source_actor": "iran",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 120.0,
+                  "rationale": "Diplomacy lowers the likelihood of a war threatening regime survival.",
+                  "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                  "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "processed_evidence": [
+        {
+          "event_id": "INFO-000002",
+          "timestamp": "2026-08-15T04:32:02+00:00",
+          "date": "2026-08-15",
+          "source_actor": "iran",
+          "title": "Iran says no decision yet on a return to talks with the US - Al Jazeera",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "source_layer": "non_kinetic",
+          "final_score": -6.0,
+          "original_final_score": -6.0,
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says no decision yet on a return to talks with the US - Al Jazeera",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlJIVHVIa21rYzJhS3M2WVlQMzFGUUt5QzJjMW1hMW1pUW00enZZZ0dzMy1xbGV3Um0tRGdVT1NzV25nWmZhUEFwOFpKYnJUUnVrTVBpc1NCREFncUtkV3l0dmU3Wi1FeUFFOWs2OTZldWQyVlYtUlJ4VnBEa2J5cnFubmp4Z2tCekRwVDdyWmNQSUpsRzVQd1N1elVTWWRh0gGmAUFVX3lxTE0yb0d5Rk4yTGJrdmxwTXhzYWdaNjJMbjEzem9EREV6aFZGdmRaaHFONTdxYWtwcXZQUUwxZnVBdzJ5M0UwWm4weEVsNVpwdHZNejc5UUFSdTdCTFZkbjdCMVctVDBwdGlSRS0zeVN4Z3JZSXlPQU5vbWhuYVRIeHBEZDZkVHpLbW1kSEpfUldpZjYtbDB4LUE3VWZEdnBxRl9SdVZYdEE?oc=5",
+          "daily_score_suppressed": false,
+          "suppression_reason": "",
+          "mapped_indicators": [
+            {
+              "indicator": "negotiation",
+              "indicator_name": "Negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "mapped_impacts": [
+                {
+                  "target_actor": "iran",
+                  "interest_id": "regime_survival",
+                  "effect": 1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 60.0,
+                  "rationale": "Negotiations reduce immediate pressure on the Iranian state."
+                },
+                {
+                  "target_actor": "iran",
+                  "interest_id": "avoid_regime_destroying_war",
+                  "effect": 2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 120.0,
+                  "rationale": "Diplomacy lowers the likelihood of a war threatening regime survival."
+                },
+                {
+                  "target_actor": "iran",
+                  "interest_id": "nuclear_programme",
+                  "effect": 1.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 54.0,
+                  "rationale": "Negotiations may allow Iran to preserve controlled nuclear capabilities."
+                },
+                {
+                  "target_actor": "usa",
+                  "interest_id": "avoid_full_scale_war",
+                  "effect": 2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 120.0,
+                  "rationale": "Negotiations support conflict containment."
+                },
+                {
+                  "target_actor": "usa",
+                  "interest_id": "nuclear_nonproliferation",
+                  "effect": 1.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 54.0,
+                  "rationale": "Diplomatic agreements may constrain or monitor Iran's nuclear programme."
+                },
+                {
+                  "target_actor": "usa",
+                  "interest_id": "energy_security",
+                  "effect": 1.0,
+                  "interest_weight": 7.0,
+                  "raw_contribution": 42.0,
+                  "rationale": "Lower tension supports energy-market stability."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "suppressed_evidence": [],
+      "unmapped_evidence": [],
+      "calculation": {
+        "neutral_score": 50.0,
+        "minimum_score": 0.0,
+        "maximum_score": 100.0,
+        "normalisation_divisor": 20.0,
+        "indicator_strength_cap": 20.0,
+        "formula": "raw_contribution = absolute_indicator_score × mapped_interest_effect × interest_weight; interest_index = clamp(50 + raw_contribution / normalisation_divisor, 0, 100); actor_index = interest-weighted mean of the actor's interest indices"
+      }
     }
   ],
   "history_summary": {
-    "day_count": 157,
+    "day_count": 159,
     "actors": {
       "usa": {
         "average": 50.77,
@@ -111113,6 +112013,18 @@
               "value": 50.48,
               "window": 7,
               "observations": 7
+            },
+            {
+              "date": "2026-08-14",
+              "value": 50.52,
+              "window": 7,
+              "observations": 7
+            },
+            {
+              "date": "2026-08-15",
+              "value": 50.72,
+              "window": 7,
+              "observations": 7
             }
           ],
           "30_day": [
@@ -112057,16 +112969,28 @@
               "value": 50.02,
               "window": 30,
               "observations": 30
+            },
+            {
+              "date": "2026-08-14",
+              "value": 50.14,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-08-15",
+              "value": 50.19,
+              "window": 30,
+              "observations": 30
             }
           ]
         },
         "trend": {
           "direction": "stable",
-          "slope": -0.0022
+          "slope": -0.0021
         },
-        "volatility": 1.557,
-        "latest": 51.82,
-        "change_first_to_latest": -1.39
+        "volatility": 1.5492,
+        "latest": 51.39,
+        "change_first_to_latest": -1.82
       },
       "iran": {
         "average": 51.14,
@@ -113022,6 +113946,18 @@
               "value": 50.81,
               "window": 7,
               "observations": 7
+            },
+            {
+              "date": "2026-08-14",
+              "value": 50.45,
+              "window": 7,
+              "observations": 7
+            },
+            {
+              "date": "2026-08-15",
+              "value": 50.68,
+              "window": 7,
+              "observations": 7
             }
           ],
           "30_day": [
@@ -113966,14 +114902,26 @@
               "value": 51.6,
               "window": 30,
               "observations": 30
+            },
+            {
+              "date": "2026-08-14",
+              "value": 51.43,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-08-15",
+              "value": 51.48,
+              "window": 30,
+              "observations": 30
             }
           ]
         },
         "trend": {
           "direction": "stable",
-          "slope": 0.0068
+          "slope": 0.0064
         },
-        "volatility": 1.1886,
+        "volatility": 1.1851,
         "latest": 51.59,
         "change_first_to_latest": -1.58
       }
@@ -116210,29 +117158,6 @@
         "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
         "indicators": [
           "negotiation"
-        ]
-      },
-      {
-        "assessment_date": "2026-07-12",
-        "event_id": "iranstrike-qti6edxhvow0",
-        "timestamp": "2026-07-12T02:48:15+00:00",
-        "date": "2026-07-12",
-        "source_actor": "iran",
-        "title": "Iran launches missile and drone attacks on Jordan",
-        "event_type": "kinetic",
-        "event_direction": "escalation",
-        "source_layer": "kinetic",
-        "final_score": 0.0,
-        "original_final_score": 7.0,
-        "operational_component": 1.0,
-        "strategic_modifier": 6.0,
-        "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches missile and drone attacks on Jordan",
-        "source": "",
-        "link": "https://t.me/CIG_telegram/79399",
-        "daily_score_suppressed": true,
-        "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-        "indicators": [
-          "missile_test"
         ]
       },
       {
@@ -123686,177 +124611,20 @@
       "2026-07-15: Contributor 'iranstrike-2tkm82zt8rc00' has final_score 0 and was skipped."
     ],
     "counts": {
-      "suppressed_evidence": 134,
+      "suppressed_evidence": 133,
       "bilateral_duplicates": 245,
       "unmapped_indicators": 0,
       "warnings": 1
     },
     "current": {
       "suppressed_evidence": [],
-      "bilateral_duplicates": [
-        {
-          "event_id": "INFO-000004",
-          "date": "2026-08-13",
-          "source_actor": "iran",
-          "indicator": "negotiation",
-          "pressure_direction": "decrease_pressure",
-          "indicator_score": -6.0,
-          "indicator_strength": 6.0,
-          "effect": 1.0,
-          "interest_weight": 10.0,
-          "raw_contribution": 60.0,
-          "rationale": "Negotiations reduce immediate pressure on the Iranian state.",
-          "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-          "reason": "Iran: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5",
-          "target_actor": "iran",
-          "interest_id": "regime_survival",
-          "deduplication_key": {
-            "date": "2026-08-13",
-            "event_id": "INFO-000004",
-            "target_actor": "iran",
-            "interest_id": "regime_survival"
-          },
-          "suppression_reason": "Duplicate event-to-interest evidence within the same day."
-        },
-        {
-          "event_id": "INFO-000004",
-          "date": "2026-08-13",
-          "source_actor": "iran",
-          "indicator": "negotiation",
-          "pressure_direction": "decrease_pressure",
-          "indicator_score": -6.0,
-          "indicator_strength": 6.0,
-          "effect": 2.0,
-          "interest_weight": 10.0,
-          "raw_contribution": 120.0,
-          "rationale": "Diplomacy lowers the likelihood of a war threatening regime survival.",
-          "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-          "reason": "Iran: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5",
-          "target_actor": "iran",
-          "interest_id": "avoid_regime_destroying_war",
-          "deduplication_key": {
-            "date": "2026-08-13",
-            "event_id": "INFO-000004",
-            "target_actor": "iran",
-            "interest_id": "avoid_regime_destroying_war"
-          },
-          "suppression_reason": "Duplicate event-to-interest evidence within the same day."
-        },
-        {
-          "event_id": "INFO-000004",
-          "date": "2026-08-13",
-          "source_actor": "iran",
-          "indicator": "negotiation",
-          "pressure_direction": "decrease_pressure",
-          "indicator_score": -6.0,
-          "indicator_strength": 6.0,
-          "effect": 1.0,
-          "interest_weight": 9.0,
-          "raw_contribution": 54.0,
-          "rationale": "Negotiations may allow Iran to preserve controlled nuclear capabilities.",
-          "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-          "reason": "Iran: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5",
-          "target_actor": "iran",
-          "interest_id": "nuclear_programme",
-          "deduplication_key": {
-            "date": "2026-08-13",
-            "event_id": "INFO-000004",
-            "target_actor": "iran",
-            "interest_id": "nuclear_programme"
-          },
-          "suppression_reason": "Duplicate event-to-interest evidence within the same day."
-        },
-        {
-          "event_id": "INFO-000004",
-          "date": "2026-08-13",
-          "source_actor": "iran",
-          "indicator": "negotiation",
-          "pressure_direction": "decrease_pressure",
-          "indicator_score": -6.0,
-          "indicator_strength": 6.0,
-          "effect": 2.0,
-          "interest_weight": 10.0,
-          "raw_contribution": 120.0,
-          "rationale": "Negotiations support conflict containment.",
-          "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-          "reason": "Iran: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5",
-          "target_actor": "usa",
-          "interest_id": "avoid_full_scale_war",
-          "deduplication_key": {
-            "date": "2026-08-13",
-            "event_id": "INFO-000004",
-            "target_actor": "usa",
-            "interest_id": "avoid_full_scale_war"
-          },
-          "suppression_reason": "Duplicate event-to-interest evidence within the same day."
-        },
-        {
-          "event_id": "INFO-000004",
-          "date": "2026-08-13",
-          "source_actor": "iran",
-          "indicator": "negotiation",
-          "pressure_direction": "decrease_pressure",
-          "indicator_score": -6.0,
-          "indicator_strength": 6.0,
-          "effect": 1.0,
-          "interest_weight": 9.0,
-          "raw_contribution": 54.0,
-          "rationale": "Diplomatic agreements may constrain or monitor Iran's nuclear programme.",
-          "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-          "reason": "Iran: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5",
-          "target_actor": "usa",
-          "interest_id": "nuclear_nonproliferation",
-          "deduplication_key": {
-            "date": "2026-08-13",
-            "event_id": "INFO-000004",
-            "target_actor": "usa",
-            "interest_id": "nuclear_nonproliferation"
-          },
-          "suppression_reason": "Duplicate event-to-interest evidence within the same day."
-        },
-        {
-          "event_id": "INFO-000004",
-          "date": "2026-08-13",
-          "source_actor": "iran",
-          "indicator": "negotiation",
-          "pressure_direction": "decrease_pressure",
-          "indicator_score": -6.0,
-          "indicator_strength": 6.0,
-          "effect": 1.0,
-          "interest_weight": 7.0,
-          "raw_contribution": 42.0,
-          "rationale": "Lower tension supports energy-market stability.",
-          "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-          "reason": "Iran: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZFhQZEU1ckd5MDJTaEtYLTRPYnFLRkNGcllVQklSUm8yNFUwNnlRdnM4MHRuMDAxaEIzSlE4V1c5SmVfOHdKem9LRWtuTFlZaGtKbDdoYW9vbHZnaFJEZWUxc3hGb1Rjb2RtR2ZreEEwT1JEOV9wbDR1TDJqbk14ZF8yNEp3emYxWnAw0gGQAUFVX3lxTE9oRGdQLXdxcUtSNDVMN3RQclJTNzVuM1BLbC1MOHZFU014eXZPV2YzeWdELUxYTnRzaHVWQkZYb1dVRHd3LVRJcF9WakFOeEdMYkZkWWlOUS1oQWhiV3NEZ3JUZ1dXLXNYM1gxbnNmTE9KVjJGYUdzckpyR0ZPUk9NeHIya0duaDFoLWpESWlSNQ?oc=5",
-          "target_actor": "usa",
-          "interest_id": "energy_security",
-          "deduplication_key": {
-            "date": "2026-08-13",
-            "event_id": "INFO-000004",
-            "target_actor": "usa",
-            "interest_id": "energy_security"
-          },
-          "suppression_reason": "Duplicate event-to-interest evidence within the same day."
-        }
-      ],
+      "bilateral_duplicates": [],
       "unmapped_indicators": [],
       "warnings": [],
       "counts": {
-        "processed_evidence": 2,
+        "processed_evidence": 1,
         "suppressed_evidence": 0,
-        "bilateral_duplicates": 6,
+        "bilateral_duplicates": 0,
         "unmapped_indicators": 0,
         "warnings": 0
       }
