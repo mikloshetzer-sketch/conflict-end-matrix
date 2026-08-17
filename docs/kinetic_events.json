@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-17T05:52:16.617707Z",
-  "source_generated_at": "2026-08-17T05:51:14Z",
+  "generated_at": "2026-08-17T09:50:08.087663Z",
+  "source_generated_at": "2026-08-17T09:01:52Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
   "source_event_count": 1000,
@@ -29,15 +29,15 @@
     "ground": 13
   },
   "severity_counts": {
-    "medium": 289,
-    "high": 228,
+    "medium": 290,
+    "high": 227,
     "low": 34,
     "critical": 2
   },
   "actor_counts": {
-    "Iran": 209,
+    "Iran": 208,
     "United States": 155,
-    "Israel": 62,
+    "Israel": 63,
     "Unknown actor": 48,
     "Yemen": 48,
     "Saudi Arabia": 12,
@@ -48,6 +48,32 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-1ejdezchjl400",
+      "timestamp": "2026-08-17T08:15:39Z",
+      "event_type": "kinetic",
+      "subtype": "strike",
+      "category": "strike",
+      "severity": "medium",
+      "actor": "isr",
+      "actor_label": "Israel",
+      "actor_method": "raw_source.origin",
+      "target_country": "Lebanon",
+      "location": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "IDF strikes villa of Dr. Mustafa Hamza in Ramah village, southern Lebanon",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/128643",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-1xu83tyvpixs0",
       "timestamp": "2026-08-17T00:39:07Z",
@@ -14392,32 +14418,6 @@
       "description": "IRGC closes Strait of Hormuz and attacks container ship in the area",
       "source_name": "OSINTdefender",
       "source_url": "https://t.me/OSINTdefender/19459",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-2824i26o5fok0",
-      "timestamp": "2026-07-12T05:42:22Z",
-      "event_type": "kinetic",
-      "subtype": "strike",
-      "category": "strike",
-      "severity": "high",
-      "actor": "irn",
-      "actor_label": "Iran",
-      "actor_method": "raw_source.origin",
-      "target_country": "Jordan",
-      "location": "Jordan",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Iranian Army and IRGC conduct retaliatory strikes against U.S. targets in Jordan including Al-Amir Hassan base",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/126363",
       "source_repository": "mikloshetzer-sketch/me-security-monitor",
       "source_collection": "events",
       "validation": {
