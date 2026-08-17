@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-17T09:50:08.087663Z",
-  "source_generated_at": "2026-08-17T09:01:52Z",
+  "generated_at": "2026-08-17T16:54:41.676064Z",
+  "source_generated_at": "2026-08-17T16:46:28Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": false,
+    "required_today_utc": true,
     "max_age_hours": 8.0
   },
   "source_event_count": 1000,
@@ -22,22 +22,22 @@
   },
   "category_counts": {
     "missile": 165,
-    "strike": 147,
+    "strike": 146,
     "airstrike": 89,
-    "drone": 82,
+    "drone": 83,
     "explosion": 57,
     "ground": 13
   },
   "severity_counts": {
-    "medium": 290,
-    "high": 227,
+    "medium": 292,
+    "high": 225,
     "low": 34,
     "critical": 2
   },
   "actor_counts": {
     "Iran": 208,
-    "United States": 155,
-    "Israel": 63,
+    "United States": 154,
+    "Israel": 64,
     "Unknown actor": 48,
     "Yemen": 48,
     "Saudi Arabia": 12,
@@ -48,6 +48,58 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-wacumtux29s0",
+      "timestamp": "2026-08-17T11:13:42Z",
+      "event_type": "kinetic",
+      "subtype": "strike",
+      "category": "strike",
+      "severity": "medium",
+      "actor": "isr",
+      "actor_label": "Israel",
+      "actor_method": "raw_source.origin",
+      "target_country": "Lebanon",
+      "location": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Israeli fighter jets strike al-Mansoura in Tyre district, western sector of southern Lebanon",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/128652",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-1bt2vsrqd4sg0",
+      "timestamp": "2026-08-17T09:10:20Z",
+      "event_type": "kinetic",
+      "subtype": "drone",
+      "category": "drone",
+      "severity": "medium",
+      "actor": "irn",
+      "actor_label": "Iran",
+      "actor_method": "raw_source.origin",
+      "target_country": "Iran",
+      "location": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Iran strikes office of Kurdistan Region Prime Minister and security chief residence with drones, no casualties reported",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/128646",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-1ejdezchjl400",
       "timestamp": "2026-08-17T08:15:39Z",
@@ -14366,58 +14418,6 @@
       "description": "3 Iranian ballistic missiles fall in Jordanian territory causing minor property damage, no casualties",
       "source_name": "abualiexpress",
       "source_url": "https://t.me/abualiexpress/126374",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-m5hfvysn0j40",
-      "timestamp": "2026-07-12T05:51:31Z",
-      "event_type": "kinetic",
-      "subtype": "strike",
-      "category": "strike",
-      "severity": "high",
-      "actor": "usa",
-      "actor_label": "United States",
-      "actor_method": "raw_source.origin",
-      "target_country": "Persian Gulf",
-      "location": "Persian Gulf",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "U.S. CENTCOM launches third wave of strikes against Iran this week in response to IRGC attack on container ship M/V GFS Galaxy in Strait of Hormuz",
-      "source_name": "idkunim_il",
-      "source_url": "https://t.me/idkunim_il/61375",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-2nsmizuivww00",
-      "timestamp": "2026-07-12T05:43:28Z",
-      "event_type": "kinetic",
-      "subtype": "strike",
-      "category": "strike",
-      "severity": "high",
-      "actor": "irn",
-      "actor_label": "Iran",
-      "actor_method": "raw_source.origin",
-      "target_country": "Persian Gulf",
-      "location": "Persian Gulf",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "IRGC closes Strait of Hormuz and attacks container ship in the area",
-      "source_name": "OSINTdefender",
-      "source_url": "https://t.me/OSINTdefender/19459",
       "source_repository": "mikloshetzer-sketch/me-security-monitor",
       "source_collection": "events",
       "validation": {
