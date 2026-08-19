@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T09:39:51.799877+00:00",
+  "generated_at": "2026-08-19T09:40:11.041938+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,30 +18,30 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 544,
-    "kinetic_events_loaded": 554,
-    "unique_events_scanned": 1051,
-    "strategic_evidence_contributions": 314,
+    "non_kinetic_events_loaded": 547,
+    "kinetic_events_loaded": 550,
+    "unique_events_scanned": 1050,
+    "strategic_evidence_contributions": 317,
     "evidence_contributions_by_actor": {
-      "usa": 104,
-      "iran": 210
+      "usa": 105,
+      "iran": 212
     },
     "scored_contributions_by_actor": {
-      "usa": 71,
-      "iran": 108
+      "usa": 72,
+      "iran": 109
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
-      "iran": 102
+      "iran": 103
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 285,
-      "kinetic": 29
+      "non_kinetic": 287,
+      "kinetic": 30
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 179,
-      "usa:negotiation": 85,
-      "iran:missile_test": 19,
+      "iran:negotiation": 180,
+      "usa:negotiation": 86,
+      "iran:missile_test": 20,
       "usa:presidential_warning": 14,
       "iran:hormuz_threat": 9,
       "usa:ceasefire_support": 8,
@@ -50,8 +50,8 @@
       "iran:strike_preparation": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 86,
-      "usa:negotiation": 56,
+      "iran:negotiation": 87,
+      "usa:negotiation": 57,
       "usa:presidential_warning": 14,
       "iran:missile_test": 10,
       "iran:hormuz_threat": 9,
@@ -62,13 +62,13 @@
     },
     "skipped_without_timestamp": 0,
     "skipped_current_utc_day": 1,
-    "history_day_count": 161
+    "history_day_count": 162
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-08-17",
+  "latest_complete_utc_day": "2026-08-18",
   "current": {
-    "date": "2026-08-17",
+    "date": "2026-08-18",
     "calculation_mode": "live",
     "usa": {
       "raw_score": 0.0,
@@ -81,146 +81,163 @@
       "increase_event_count": 0,
       "decrease_event_count": 0,
       "contributors": [],
-      "weighted_score_7d": -3.75,
-      "pressure_index_7d": 42.5,
-      "pressure_level": "reduced",
+      "weighted_score_7d": -1.8,
+      "pressure_index_7d": 46.4,
+      "pressure_level": "balanced",
       "trend": "increase",
       "strongest_contributors": []
     },
     "iran": {
-      "raw_score": 4.0,
-      "positive_score": 4.0,
+      "raw_score": 7.0,
+      "positive_score": 7.0,
       "negative_score": 0.0,
-      "event_count": 1,
+      "event_count": 2,
       "scored_event_count": 1,
-      "evidence_event_count": 1,
-      "suppressed_duplicate_count": 0,
+      "evidence_event_count": 2,
+      "suppressed_duplicate_count": 1,
       "increase_event_count": 1,
       "decrease_event_count": 0,
       "contributors": [
         {
-          "event_id": "INFO-000002",
-          "timestamp": "2026-08-17T15:03:20+00:00",
-          "date": "2026-08-17",
+          "event_id": "iranstrike-3jc2x5avvwg00",
+          "timestamp": "2026-08-18T17:34:26+00:00",
+          "date": "2026-08-18",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "Iran prepared for larger war, fearing US talks were cover for Israeli attack - report - The Jerusalem Post",
-          "source_layer": "non_kinetic",
-          "event_type": "diplomatic",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": 4.0,
+          "title": "Iran launches 2 missiles toward UAE; one falls in territorial waters, second lands outside state borders",
+          "source_layer": "kinetic",
+          "event_type": "kinetic",
+          "event_direction": "escalation",
+          "operational_component": 1.0,
+          "strategic_modifier": 6.0,
           "context_multiplier": 1.0,
-          "original_final_score": 4.0,
-          "final_score": 4.0,
+          "original_final_score": 7.0,
+          "final_score": 7.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
-          "primary_daily_indicator": "strike_preparation",
+          "primary_daily_indicator": "missile_test",
           "indicators": [
             {
-              "id": "strike_preparation",
-              "name": "Preparation for military strike",
-              "score": 10.0,
+              "id": "missile_test",
+              "name": "Missile test",
+              "score": 6.0,
               "direction": "increase",
               "interest": {
-                "id": "strategic_deterrence",
-                "name": "Strategic deterrence",
-                "weight": 10.0
+                "id": "missile_capability",
+                "name": "Missile capability",
+                "weight": 9.0
               },
               "recognition_rule_count": 1
-            },
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_regime_destroying_war",
-                "name": "Avoid regime-destroying war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Preparation for military strike, Negotiation. Operational component: +0.00; strategic modifier: +4.00; final contribution before daily deduplication: +4.00. Event: Iran prepared for larger war, fearing US talks were cover for Israeli attack - report - The Jerusalem Post",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9mMnFIb0FrTGc0cFgyMmYyRkZPWGd1UTZDVDV0OS1pdzliQjNTeHNqSDNyVU9sSWIxQUhlSkJrdjgtcUVjWUdVV2p6ZlRlRGxpWTBfYnFEME12eHIxY0pkVlJNTGVxRmROT3c?oc=5",
-          "existing_event_score": -1.0,
+          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches 2 missiles toward UAE; one falls in territorial waters, second lands outside state borders",
+          "source": "",
+          "link": "https://t.me/idkunim_il/62609",
+          "existing_event_score": 0.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
-            "strike_preparation",
-            "negotiation"
+            "missile_test"
           ],
           "duplicate_daily_indicators": []
+        },
+        {
+          "event_id": "iranstrike-ee1g3n4ctpc0",
+          "timestamp": "2026-08-18T16:45:23+00:00",
+          "date": "2026-08-18",
+          "actor": "iran",
+          "bilateral_event": false,
+          "title": "Iran launches 2 ballistic missiles at UAE; one intercepted, one falls in Emirati territorial waters",
+          "source_layer": "kinetic",
+          "event_type": "kinetic",
+          "event_direction": "escalation",
+          "operational_component": 1.0,
+          "strategic_modifier": 6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": 7.0,
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": true,
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "primary_daily_indicator": null,
+          "indicators": [
+            {
+              "id": "missile_test",
+              "name": "Missile test",
+              "score": 6.0,
+              "direction": "increase",
+              "interest": {
+                "id": "missile_capability",
+                "name": "Missile capability",
+                "weight": 9.0
+              },
+              "recognition_rule_count": 1
+            }
+          ],
+          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches 2 ballistic missiles at UAE; one intercepted, one falls in Emirati territorial waters",
+          "source": "",
+          "link": "https://t.me/CIG_telegram/82403",
+          "existing_event_score": 0.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [],
+          "duplicate_daily_indicators": [
+            "missile_test"
+          ]
         }
       ],
-      "weighted_score_7d": -3.95,
-      "pressure_index_7d": 42.1,
-      "pressure_level": "reduced",
+      "weighted_score_7d": 5.3,
+      "pressure_index_7d": 60.6,
+      "pressure_level": "elevated",
       "trend": "strong_increase",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000002",
-          "timestamp": "2026-08-17T15:03:20+00:00",
-          "date": "2026-08-17",
+          "event_id": "iranstrike-3jc2x5avvwg00",
+          "timestamp": "2026-08-18T17:34:26+00:00",
+          "date": "2026-08-18",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "Iran prepared for larger war, fearing US talks were cover for Israeli attack - report - The Jerusalem Post",
-          "source_layer": "non_kinetic",
-          "event_type": "diplomatic",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": 4.0,
+          "title": "Iran launches 2 missiles toward UAE; one falls in territorial waters, second lands outside state borders",
+          "source_layer": "kinetic",
+          "event_type": "kinetic",
+          "event_direction": "escalation",
+          "operational_component": 1.0,
+          "strategic_modifier": 6.0,
           "context_multiplier": 1.0,
-          "original_final_score": 4.0,
-          "final_score": 4.0,
+          "original_final_score": 7.0,
+          "final_score": 7.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
-          "primary_daily_indicator": "strike_preparation",
+          "primary_daily_indicator": "missile_test",
           "indicators": [
             {
-              "id": "strike_preparation",
-              "name": "Preparation for military strike",
-              "score": 10.0,
+              "id": "missile_test",
+              "name": "Missile test",
+              "score": 6.0,
               "direction": "increase",
               "interest": {
-                "id": "strategic_deterrence",
-                "name": "Strategic deterrence",
-                "weight": 10.0
+                "id": "missile_capability",
+                "name": "Missile capability",
+                "weight": 9.0
               },
               "recognition_rule_count": 1
-            },
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_regime_destroying_war",
-                "name": "Avoid regime-destroying war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Preparation for military strike, Negotiation. Operational component: +0.00; strategic modifier: +4.00; final contribution before daily deduplication: +4.00. Event: Iran prepared for larger war, fearing US talks were cover for Israeli attack - report - The Jerusalem Post",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9mMnFIb0FrTGc0cFgyMmYyRkZPWGd1UTZDVDV0OS1pdzliQjNTeHNqSDNyVU9sSWIxQUhlSkJrdjgtcUVjWUdVV2p6ZlRlRGxpWTBfYnFEME12eHIxY0pkVlJNTGVxRmROT3c?oc=5",
-          "existing_event_score": -1.0,
+          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches 2 missiles toward UAE; one falls in territorial waters, second lands outside state borders",
+          "source": "",
+          "link": "https://t.me/idkunim_il/62609",
+          "existing_event_score": 0.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
-            "strike_preparation",
-            "negotiation"
+            "missile_test"
           ],
           "duplicate_daily_indicators": []
         }
       ]
     },
     "overall": {
-      "pressure_index_7d": 42.3,
-      "pressure_level": "reduced",
+      "pressure_index_7d": 53.5,
+      "pressure_level": "balanced",
       "trend": "strong_increase",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
