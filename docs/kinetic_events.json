@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-08-19T09:40:10.108587Z",
-  "source_generated_at": "2026-08-19T08:58:02Z",
+  "generated_at": "2026-08-20T05:47:58.541716Z",
+  "source_generated_at": "2026-08-20T05:47:17Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": false,
+    "required_today_utc": true,
     "max_age_hours": 8.0
   },
   "source_event_count": 1000,
-  "event_count": 550,
-  "rejected_count": 450,
+  "event_count": 549,
+  "rejected_count": 451,
   "rejection_counts": {
-    "category_not_kinetic": 325,
-    "no_confirmed_action_language": 94,
+    "category_not_kinetic": 327,
+    "no_confirmed_action_language": 93,
     "context_or_hypothetical": 21,
     "retrospective_or_aftermath": 8,
     "alert_only": 2
@@ -23,21 +23,21 @@
   "category_counts": {
     "missile": 162,
     "strike": 151,
-    "airstrike": 90,
+    "airstrike": 91,
     "drone": 84,
-    "explosion": 50,
+    "explosion": 48,
     "ground": 13
   },
   "severity_counts": {
     "medium": 294,
-    "high": 221,
+    "high": 220,
     "low": 33,
     "critical": 2
   },
   "actor_counts": {
     "Iran": 206,
-    "United States": 152,
-    "Israel": 67,
+    "United States": 150,
+    "Israel": 68,
     "Yemen": 51,
     "Unknown actor": 43,
     "Saudi Arabia": 12,
@@ -47,6 +47,32 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-i43namlhips0",
+      "timestamp": "2026-08-19T16:29:18Z",
+      "event_type": "kinetic",
+      "subtype": "airstrike",
+      "category": "airstrike",
+      "severity": "medium",
+      "actor": "isr",
+      "actor_label": "Israel",
+      "actor_method": "raw_source.origin",
+      "target_country": "Syria",
+      "location": "Syria",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Israeli airstrikes hit Abu al-Duhur Airbase in northwestern Syria, targeting runway and storage facilities",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/82448",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-13qwrysnlaak0",
       "timestamp": "2026-08-19T05:46:01Z",
@@ -14287,58 +14313,6 @@
       "description": "Explosions reported in Khendab",
       "source_name": "CIG_telegram",
       "source_url": "https://t.me/CIG_telegram/79484",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-h9khsb926ug0",
-      "timestamp": "2026-07-12T22:16:44Z",
-      "event_type": "kinetic",
-      "subtype": "explosion",
-      "category": "explosion",
-      "severity": "high",
-      "actor": "usa",
-      "actor_label": "United States",
-      "actor_method": "raw_source.origin",
-      "target_country": "Iran",
-      "location": "Ahvaz",
-      "latitude": 31.3183,
-      "longitude": 48.6706,
-      "map_visualizable": true,
-      "description": "U.S. strikes air-to-ground munition sites at military base in Ahvaz with catastrophic detonation",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79478",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "general_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-1zmkiryy6cio0",
-      "timestamp": "2026-07-12T22:16:44Z",
-      "event_type": "kinetic",
-      "subtype": "explosion",
-      "category": "explosion",
-      "severity": "medium",
-      "actor": "usa",
-      "actor_label": "United States",
-      "actor_method": "raw_source.origin",
-      "target_country": "Iran",
-      "location": "Bandar Abbas",
-      "latitude": 27.1832,
-      "longitude": 56.2666,
-      "map_visualizable": true,
-      "description": "Explosion reported in Bandar Abbas",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79477",
       "source_repository": "mikloshetzer-sketch/me-security-monitor",
       "source_collection": "events",
       "validation": {
