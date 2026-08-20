@@ -1,43 +1,43 @@
 {
-  "generated_at": "2026-08-20T05:47:58.541716Z",
-  "source_generated_at": "2026-08-20T05:47:17Z",
+  "generated_at": "2026-08-20T09:41:09.051071Z",
+  "source_generated_at": "2026-08-20T08:56:56Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
   "source_event_count": 1000,
-  "event_count": 549,
-  "rejected_count": 451,
+  "event_count": 548,
+  "rejected_count": 452,
   "rejection_counts": {
     "category_not_kinetic": 327,
-    "no_confirmed_action_language": 93,
+    "no_confirmed_action_language": 94,
     "context_or_hypothetical": 21,
     "retrospective_or_aftermath": 8,
     "alert_only": 2
   },
   "category_counts": {
     "missile": 162,
-    "strike": 151,
-    "airstrike": 91,
+    "strike": 150,
+    "airstrike": 92,
     "drone": 84,
-    "explosion": 48,
+    "explosion": 47,
     "ground": 13
   },
   "severity_counts": {
-    "medium": 294,
+    "medium": 293,
     "high": 220,
     "low": 33,
     "critical": 2
   },
   "actor_counts": {
     "Iran": 206,
-    "United States": 150,
-    "Israel": 68,
+    "United States": 148,
+    "Israel": 69,
     "Yemen": 51,
     "Unknown actor": 43,
     "Saudi Arabia": 12,
@@ -47,6 +47,32 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-2yi391cnb5600",
+      "timestamp": "2026-08-20T05:47:01Z",
+      "event_type": "kinetic",
+      "subtype": "airstrike",
+      "category": "airstrike",
+      "severity": "high",
+      "actor": "isr",
+      "actor_label": "Israel",
+      "actor_method": "raw_source.origin",
+      "target_country": "Lebanon",
+      "location": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Israeli fighter jets conduct series of approximately 10 airstrikes on Ali al-Tahir ridge and nearby Ramah village in southern Lebanon, reportedly using bunker busters",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/128841",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-i43namlhips0",
       "timestamp": "2026-08-19T16:29:18Z",
@@ -14261,58 +14287,6 @@
       "description": "Explosions reported in Omedah",
       "source_name": "CIG_telegram",
       "source_url": "https://t.me/CIG_telegram/79486",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-2gui8rmqpbk00",
-      "timestamp": "2026-07-12T22:27:15Z",
-      "event_type": "kinetic",
-      "subtype": "strike",
-      "category": "strike",
-      "severity": "high",
-      "actor": "usa",
-      "actor_label": "United States",
-      "actor_method": "raw_source.origin",
-      "target_country": "",
-      "location": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Petrochemical site in Mahshahr attacked",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79485",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-12ctlwbgqdgw0",
-      "timestamp": "2026-07-12T22:22:46Z",
-      "event_type": "kinetic",
-      "subtype": "explosion",
-      "category": "explosion",
-      "severity": "medium",
-      "actor": "usa",
-      "actor_label": "United States",
-      "actor_method": "raw_source.origin",
-      "target_country": "",
-      "location": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Explosions reported in Khendab",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79484",
       "source_repository": "mikloshetzer-sketch/me-security-monitor",
       "source_collection": "events",
       "validation": {
