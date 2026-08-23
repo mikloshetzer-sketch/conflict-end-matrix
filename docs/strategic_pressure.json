@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T09:33:07.687886+00:00",
+  "generated_at": "2026-08-23T09:34:17.388247+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,8 +18,8 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 553,
-    "kinetic_events_loaded": 546,
+    "non_kinetic_events_loaded": 554,
+    "kinetic_events_loaded": 545,
     "unique_events_scanned": 1050,
     "strategic_evidence_contributions": 321,
     "evidence_contributions_by_actor": {
@@ -61,7 +61,7 @@
       "iran:strike_preparation": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 0,
+    "skipped_current_utc_day": 1,
     "history_day_count": 164
   },
   "configuration_warnings": [],
@@ -82,7 +82,7 @@
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000002",
+          "event_id": "INFO-000004",
           "timestamp": "2026-08-20T07:15:00+00:00",
           "date": "2026-08-20",
           "actor": "usa",
@@ -131,7 +131,7 @@
       "trend": "strong_decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000002",
+          "event_id": "INFO-000004",
           "timestamp": "2026-08-20T07:15:00+00:00",
           "date": "2026-08-20",
           "actor": "usa",
@@ -187,7 +187,7 @@
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000002",
+          "event_id": "INFO-000004",
           "timestamp": "2026-08-20T07:15:00+00:00",
           "date": "2026-08-20",
           "actor": "iran",
@@ -236,7 +236,7 @@
       "trend": "strong_decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000002",
+          "event_id": "INFO-000004",
           "timestamp": "2026-08-20T07:15:00+00:00",
           "date": "2026-08-20",
           "actor": "iran",
