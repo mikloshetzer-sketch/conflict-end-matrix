@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-24T05:55:30.762900Z",
-  "source_generated_at": "2026-08-24T05:54:01Z",
+  "generated_at": "2026-08-24T09:54:58.354524Z",
+  "source_generated_at": "2026-08-24T09:30:07Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
   "source_event_count": 1000,
@@ -22,23 +22,23 @@
   },
   "category_counts": {
     "missile": 158,
-    "strike": 153,
+    "strike": 154,
     "airstrike": 92,
     "drone": 89,
-    "explosion": 37,
+    "explosion": 36,
     "ground": 14
   },
   "severity_counts": {
-    "medium": 296,
-    "high": 211,
+    "medium": 297,
+    "high": 210,
     "low": 34,
     "critical": 2
   },
   "actor_counts": {
-    "Iran": 203,
+    "Iran": 202,
     "United States": 133,
     "Israel": 77,
-    "Yemen": 56,
+    "Yemen": 57,
     "Unknown actor": 43,
     "Saudi Arabia": 12,
     "Iraq": 9,
@@ -47,6 +47,32 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-23wdj9c3kdvk0",
+      "timestamp": "2026-08-24T08:29:01Z",
+      "event_type": "kinetic",
+      "subtype": "strike",
+      "category": "strike",
+      "severity": "medium",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Brigadier General Siyad Mukhtar, commander of Houthi supply and logistics operations, eliminated in Yemeni military strikes in Al-Jouf province",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/62785",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-2pd86hyl0uk00",
       "timestamp": "2026-08-23T19:48:45Z",
@@ -14136,32 +14162,6 @@
       "validation": {
         "accepted": true,
         "reason": "general_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-2gk3q3fme1xc0",
-      "timestamp": "2026-07-13T02:03:50Z",
-      "event_type": "kinetic",
-      "subtype": "explosion",
-      "category": "explosion",
-      "severity": "high",
-      "actor": "irn",
-      "actor_label": "Iran",
-      "actor_method": "raw_source.origin",
-      "target_country": "",
-      "location": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Explosions reported near Saudi Arabia",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79532",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
         "mode": "strict_kinetic_v2"
       }
     }
