@@ -1,43 +1,43 @@
 {
-  "generated_at": "2026-08-23T15:28:25.512245Z",
-  "source_generated_at": "2026-08-23T15:01:07Z",
+  "generated_at": "2026-08-24T05:55:30.762900Z",
+  "source_generated_at": "2026-08-24T05:54:01Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": false,
+    "required_today_utc": true,
     "max_age_hours": 8.0
   },
   "source_event_count": 1000,
-  "event_count": 544,
-  "rejected_count": 456,
+  "event_count": 543,
+  "rejected_count": 457,
   "rejection_counts": {
-    "category_not_kinetic": 329,
-    "no_confirmed_action_language": 96,
+    "category_not_kinetic": 331,
+    "no_confirmed_action_language": 95,
     "context_or_hypothetical": 21,
     "retrospective_or_aftermath": 8,
     "alert_only": 2
   },
   "category_counts": {
-    "missile": 159,
+    "missile": 158,
     "strike": 153,
     "airstrike": 92,
-    "drone": 90,
+    "drone": 89,
     "explosion": 37,
-    "ground": 13
+    "ground": 14
   },
   "severity_counts": {
     "medium": 296,
-    "high": 212,
+    "high": 211,
     "low": 34,
     "critical": 2
   },
   "actor_counts": {
-    "Iran": 205,
+    "Iran": 203,
     "United States": 133,
-    "Israel": 76,
+    "Israel": 77,
     "Yemen": 56,
     "Unknown actor": 43,
     "Saudi Arabia": 12,
@@ -47,6 +47,32 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-2pd86hyl0uk00",
+      "timestamp": "2026-08-23T19:48:45Z",
+      "event_type": "kinetic",
+      "subtype": "ground",
+      "category": "ground",
+      "severity": "medium",
+      "actor": "isr",
+      "actor_label": "Israel",
+      "actor_method": "raw_source.origin",
+      "target_country": "Lebanon",
+      "location": "Nabatieh",
+      "latitude": 33.3772,
+      "longitude": 35.4838,
+      "map_visualizable": true,
+      "description": "IDF fighter jets strike Ali al-Tahir ridge and villages of Raman and Nbaityeh in Nabatiyeh district; IDF troops set fire to buildings in Hadatha",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129037",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "general_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-3il8bdnggky0",
       "timestamp": "2026-08-22T18:14:48Z",
@@ -14131,58 +14157,6 @@
       "description": "Explosions reported near Saudi Arabia",
       "source_name": "CIG_telegram",
       "source_url": "https://t.me/CIG_telegram/79532",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-261zt7hdfhq80",
-      "timestamp": "2026-07-13T01:53:29Z",
-      "event_type": "kinetic",
-      "subtype": "drone",
-      "category": "drone",
-      "severity": "medium",
-      "actor": "irn",
-      "actor_label": "Iran",
-      "actor_method": "raw_source.origin",
-      "target_country": "Iran",
-      "location": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Multiple explosions reported in Bahrain from incoming Iranian drones",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79528",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "general_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-2aiutjo5pz6s0",
-      "timestamp": "2026-07-13T01:15:02Z",
-      "event_type": "kinetic",
-      "subtype": "missile",
-      "category": "missile",
-      "severity": "high",
-      "actor": "irn",
-      "actor_label": "Iran",
-      "actor_method": "raw_source.origin",
-      "target_country": "Israel",
-      "location": "Israel",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Revised estimate: first wave of Iranian missile launches toward Israel consisted of at least 12 ballistic missiles",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79526",
       "source_repository": "mikloshetzer-sketch/me-security-monitor",
       "source_collection": "events",
       "validation": {
