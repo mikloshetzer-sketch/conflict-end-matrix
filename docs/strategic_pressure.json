@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T09:50:08.872106+00:00",
+  "generated_at": "2026-08-27T19:45:12.164533+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,29 +18,29 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 560,
-    "kinetic_events_loaded": 548,
-    "unique_events_scanned": 1059,
-    "strategic_evidence_contributions": 321,
+    "non_kinetic_events_loaded": 561,
+    "kinetic_events_loaded": 549,
+    "unique_events_scanned": 1063,
+    "strategic_evidence_contributions": 323,
     "evidence_contributions_by_actor": {
-      "usa": 107,
-      "iran": 214
+      "usa": 108,
+      "iran": 215
     },
     "scored_contributions_by_actor": {
-      "usa": 74,
-      "iran": 111
+      "usa": 75,
+      "iran": 112
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
       "iran": 103
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 292,
+      "non_kinetic": 294,
       "kinetic": 29
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 183,
-      "usa:negotiation": 88,
+      "iran:negotiation": 184,
+      "usa:negotiation": 89,
       "iran:missile_test": 19,
       "usa:presidential_warning": 14,
       "iran:hormuz_threat": 9,
@@ -50,8 +50,8 @@
       "iran:strike_preparation": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 90,
-      "usa:negotiation": 59,
+      "iran:negotiation": 91,
+      "usa:negotiation": 60,
       "usa:presidential_warning": 14,
       "iran:hormuz_threat": 9,
       "iran:missile_test": 9,
@@ -61,36 +61,19 @@
       "iran:strike_preparation": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 0,
-    "history_day_count": 169
+    "skipped_current_utc_day": 7,
+    "history_day_count": 170
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-08-25",
+  "latest_complete_utc_day": "2026-08-26",
   "current": {
-    "date": "2026-08-25",
+    "date": "2026-08-26",
     "calculation_mode": "live",
     "usa": {
-      "raw_score": 0.0,
+      "raw_score": -6.0,
       "positive_score": 0.0,
-      "negative_score": 0.0,
-      "event_count": 0,
-      "scored_event_count": 0,
-      "evidence_event_count": 0,
-      "suppressed_duplicate_count": 0,
-      "increase_event_count": 0,
-      "decrease_event_count": 0,
-      "contributors": [],
-      "weighted_score_7d": -1.5,
-      "pressure_index_7d": 47.0,
-      "pressure_level": "balanced",
-      "trend": "increase",
-      "strongest_contributors": []
-    },
-    "iran": {
-      "raw_score": -8.0,
-      "positive_score": 0.0,
-      "negative_score": -8.0,
+      "negative_score": -6.0,
       "event_count": 1,
       "scored_event_count": 1,
       "evidence_event_count": 1,
@@ -100,19 +83,19 @@
       "contributors": [
         {
           "event_id": "INFO-000002",
-          "timestamp": "2026-08-25T08:42:33+00:00",
-          "date": "2026-08-25",
-          "actor": "iran",
-          "bilateral_event": false,
-          "title": "Pakistan says significant progress made in talks on Iran-US war - Al Jazeera",
+          "timestamp": "2026-08-26T15:43:56+00:00",
+          "date": "2026-08-26",
+          "actor": "usa",
+          "bilateral_event": true,
+          "title": "Trump tells Al Jazeera ‘not in a hurry’ for Iran to return to talks - Al Jazeera",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "de-escalation",
-          "operational_component": -2.0,
+          "event_direction": "mixed",
+          "operational_component": 0.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": -8.0,
-          "final_score": -8.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -124,44 +107,100 @@
               "score": -6.0,
               "direction": "decrease",
               "interest": {
-                "id": "avoid_regime_destroying_war",
-                "name": "Avoid regime-destroying war",
+                "id": "avoid_full_scale_war",
+                "name": "Avoid full-scale regional war",
                 "weight": 10.0
               },
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: -2.00; strategic modifier: -6.00; final contribution before daily deduplication: -8.00. Event: Pakistan says significant progress made in talks on Iran-US war - Al Jazeera",
+          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump tells Al Jazeera ‘not in a hurry’ for Iran to return to talks - Al Jazeera",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNamxoRkRTejIxTkJRT2pURlBTVFVJUjFQemsyYzVLRUdIOXloLXJOMnRVazJUWGJ2Y2FibndmRDVoTjA5TnZtU0xVWGVveDlLUm8xOXJJSjRqelRFZEJZSTdocmcydTNObU96eGU2eDlSWDN3TGhOS0V6cDFQOVk3TFdWTE1Bb0gwTjJfSUtnOVpackwxTG9ScElnSXplQ09HYVZtRjljMNIBrAFBVV95cUxQZ0MwMzBLR05hS1JiOFk4T1UtR2ZuTy1Zc2JibDk3VXFVdTdZenYybXc4MHpfZGdWQ25FRUllTVhpTnlTWGVhTDZPQTRuSUdaWHdsSmJyMjc5QTdqM1VpOTBsOHF5LVp2a1I2WUl6bm1icGtyUFF5YWJVLVBXTWpIcnJrNFk1Z0psYi1yS1NISjl1MmFwUjdTcmFja1g2ZWluVTBHYnBnXzkxS0tm?oc=5",
-          "existing_event_score": 1.0,
-          "existing_direction_score": 2.0,
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNTzEwSDJDOE14SEhhT2xEbXVmVGkzQ3hva3NpQS1xSWk2bjRkRFprNGVDczRSaTVZaW5Ocl9lQXV2REpTSVNQcFhHNmtFY2QyYVNGcEJ4SjhBaG14LXlYNXRmb0lwd0NPR0I4NmZTeUZwSm94bWdacXFobk1Qb1RwdTJySDBGX19KNDV0alZnVUI5QlN1Q1M3Wjg2eEdiQkRfMmpIYzhvb1NaWm9yUHfSAbMBQVVfeXFMT3RoT1B5bXlyTDNYQWRYYXU1OE5pMUxUdGZGMk5pdkpTdEI3aHZueEdPOXRYRWtLZVZ4VGFJdmx5d1lJaXd0NE1BeUVjSkpodl8xQ1dZWmcwRUdiUlh5RkVZLTlGbmZIanhqYW9CM2VJUTk1M0Zyb3VlWTZtZG1DQ2RONWZuQTBTUjA4Q29SRmFzQ1VVcTBFczR0dmZKVGxhNGloREQwdVFMWnI1bmlleU8tX1E?oc=5",
+          "existing_event_score": 2.0,
+          "existing_direction_score": 0.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
           "duplicate_daily_indicators": []
         }
       ],
-      "weighted_score_7d": -9.5,
-      "pressure_index_7d": 31.0,
+      "weighted_score_7d": -6.9,
+      "pressure_index_7d": 36.2,
       "pressure_level": "reduced",
       "trend": "strong_decrease",
       "strongest_contributors": [
         {
           "event_id": "INFO-000002",
-          "timestamp": "2026-08-25T08:42:33+00:00",
-          "date": "2026-08-25",
-          "actor": "iran",
-          "bilateral_event": false,
-          "title": "Pakistan says significant progress made in talks on Iran-US war - Al Jazeera",
+          "timestamp": "2026-08-26T15:43:56+00:00",
+          "date": "2026-08-26",
+          "actor": "usa",
+          "bilateral_event": true,
+          "title": "Trump tells Al Jazeera ‘not in a hurry’ for Iran to return to talks - Al Jazeera",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "de-escalation",
-          "operational_component": -2.0,
+          "event_direction": "mixed",
+          "operational_component": 0.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": -8.0,
-          "final_score": -8.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
+          "duplicate_indicator_evidence": false,
+          "daily_score_suppressed": false,
+          "suppression_reason": null,
+          "primary_daily_indicator": "negotiation",
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_full_scale_war",
+                "name": "Avoid full-scale regional war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump tells Al Jazeera ‘not in a hurry’ for Iran to return to talks - Al Jazeera",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNTzEwSDJDOE14SEhhT2xEbXVmVGkzQ3hva3NpQS1xSWk2bjRkRFprNGVDczRSaTVZaW5Ocl9lQXV2REpTSVNQcFhHNmtFY2QyYVNGcEJ4SjhBaG14LXlYNXRmb0lwd0NPR0I4NmZTeUZwSm94bWdacXFobk1Qb1RwdTJySDBGX19KNDV0alZnVUI5QlN1Q1M3Wjg2eEdiQkRfMmpIYzhvb1NaWm9yUHfSAbMBQVVfeXFMT3RoT1B5bXlyTDNYQWRYYXU1OE5pMUxUdGZGMk5pdkpTdEI3aHZueEdPOXRYRWtLZVZ4VGFJdmx5d1lJaXd0NE1BeUVjSkpodl8xQ1dZWmcwRUdiUlh5RkVZLTlGbmZIanhqYW9CM2VJUTk1M0Zyb3VlWTZtZG1DQ2RONWZuQTBTUjA4Q29SRmFzQ1VVcTBFczR0dmZKVGxhNGloREQwdVFMWnI1bmlleU8tX1E?oc=5",
+          "existing_event_score": 2.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [
+            "negotiation"
+          ],
+          "duplicate_daily_indicators": []
+        }
+      ]
+    },
+    "iran": {
+      "raw_score": -6.0,
+      "positive_score": 0.0,
+      "negative_score": -6.0,
+      "event_count": 1,
+      "scored_event_count": 1,
+      "evidence_event_count": 1,
+      "suppressed_duplicate_count": 0,
+      "increase_event_count": 0,
+      "decrease_event_count": 1,
+      "contributors": [
+        {
+          "event_id": "INFO-000002",
+          "timestamp": "2026-08-26T15:43:56+00:00",
+          "date": "2026-08-26",
+          "actor": "iran",
+          "bilateral_event": true,
+          "title": "Trump tells Al Jazeera ‘not in a hurry’ for Iran to return to talks - Al Jazeera",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -180,11 +219,60 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: -2.00; strategic modifier: -6.00; final contribution before daily deduplication: -8.00. Event: Pakistan says significant progress made in talks on Iran-US war - Al Jazeera",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump tells Al Jazeera ‘not in a hurry’ for Iran to return to talks - Al Jazeera",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNamxoRkRTejIxTkJRT2pURlBTVFVJUjFQemsyYzVLRUdIOXloLXJOMnRVazJUWGJ2Y2FibndmRDVoTjA5TnZtU0xVWGVveDlLUm8xOXJJSjRqelRFZEJZSTdocmcydTNObU96eGU2eDlSWDN3TGhOS0V6cDFQOVk3TFdWTE1Bb0gwTjJfSUtnOVpackwxTG9ScElnSXplQ09HYVZtRjljMNIBrAFBVV95cUxQZ0MwMzBLR05hS1JiOFk4T1UtR2ZuTy1Zc2JibDk3VXFVdTdZenYybXc4MHpfZGdWQ25FRUllTVhpTnlTWGVhTDZPQTRuSUdaWHdsSmJyMjc5QTdqM1VpOTBsOHF5LVp2a1I2WUl6bm1icGtyUFF5YWJVLVBXTWpIcnJrNFk1Z0psYi1yS1NISjl1MmFwUjdTcmFja1g2ZWluVTBHYnBnXzkxS0tm?oc=5",
-          "existing_event_score": 1.0,
-          "existing_direction_score": 2.0,
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNTzEwSDJDOE14SEhhT2xEbXVmVGkzQ3hva3NpQS1xSWk2bjRkRFprNGVDczRSaTVZaW5Ocl9lQXV2REpTSVNQcFhHNmtFY2QyYVNGcEJ4SjhBaG14LXlYNXRmb0lwd0NPR0I4NmZTeUZwSm94bWdacXFobk1Qb1RwdTJySDBGX19KNDV0alZnVUI5QlN1Q1M3Wjg2eEdiQkRfMmpIYzhvb1NaWm9yUHfSAbMBQVVfeXFMT3RoT1B5bXlyTDNYQWRYYXU1OE5pMUxUdGZGMk5pdkpTdEI3aHZueEdPOXRYRWtLZVZ4VGFJdmx5d1lJaXd0NE1BeUVjSkpodl8xQ1dZWmcwRUdiUlh5RkVZLTlGbmZIanhqYW9CM2VJUTk1M0Zyb3VlWTZtZG1DQ2RONWZuQTBTUjA4Q29SRmFzQ1VVcTBFczR0dmZKVGxhNGloREQwdVFMWnI1bmlleU8tX1E?oc=5",
+          "existing_event_score": 2.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [
+            "negotiation"
+          ],
+          "duplicate_daily_indicators": []
+        }
+      ],
+      "weighted_score_7d": -13.7,
+      "pressure_index_7d": 22.6,
+      "pressure_level": "low",
+      "trend": "strong_decrease",
+      "strongest_contributors": [
+        {
+          "event_id": "INFO-000002",
+          "timestamp": "2026-08-26T15:43:56+00:00",
+          "date": "2026-08-26",
+          "actor": "iran",
+          "bilateral_event": true,
+          "title": "Trump tells Al Jazeera ‘not in a hurry’ for Iran to return to talks - Al Jazeera",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
+          "duplicate_indicator_evidence": false,
+          "daily_score_suppressed": false,
+          "suppression_reason": null,
+          "primary_daily_indicator": "negotiation",
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_regime_destroying_war",
+                "name": "Avoid regime-destroying war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump tells Al Jazeera ‘not in a hurry’ for Iran to return to talks - Al Jazeera",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNTzEwSDJDOE14SEhhT2xEbXVmVGkzQ3hva3NpQS1xSWk2bjRkRFprNGVDczRSaTVZaW5Ocl9lQXV2REpTSVNQcFhHNmtFY2QyYVNGcEJ4SjhBaG14LXlYNXRmb0lwd0NPR0I4NmZTeUZwSm94bWdacXFobk1Qb1RwdTJySDBGX19KNDV0alZnVUI5QlN1Q1M3Wjg2eEdiQkRfMmpIYzhvb1NaWm9yUHfSAbMBQVVfeXFMT3RoT1B5bXlyTDNYQWRYYXU1OE5pMUxUdGZGMk5pdkpTdEI3aHZueEdPOXRYRWtLZVZ4VGFJdmx5d1lJaXd0NE1BeUVjSkpodl8xQ1dZWmcwRUdiUlh5RkVZLTlGbmZIanhqYW9CM2VJUTk1M0Zyb3VlWTZtZG1DQ2RONWZuQTBTUjA4Q29SRmFzQ1VVcTBFczR0dmZKVGxhNGloREQwdVFMWnI1bmlleU8tX1E?oc=5",
+          "existing_event_score": 2.0,
+          "existing_direction_score": 0.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
@@ -193,8 +281,8 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 39.0,
-      "pressure_level": "reduced",
+      "pressure_index_7d": 29.4,
+      "pressure_level": "low",
       "trend": "strong_decrease",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
