@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29T14:20:22.890228+00:00",
+  "generated_at": "2026-08-30T14:22:01.013206+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,44 +18,39 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 566,
-    "kinetic_events_loaded": 552,
-    "unique_events_scanned": 1071,
-    "strategic_evidence_contributions": 325,
+    "non_kinetic_events_loaded": 567,
+    "kinetic_events_loaded": 1,
+    "unique_events_scanned": 568,
+    "strategic_evidence_contributions": 296,
     "evidence_contributions_by_actor": {
-      "usa": 108,
-      "iran": 217
+      "usa": 105,
+      "iran": 191
     },
     "scored_contributions_by_actor": {
-      "usa": 75,
-      "iran": 113
+      "usa": 72,
+      "iran": 98
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
-      "iran": 104
+      "iran": 93
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 296,
-      "kinetic": 29
+      "non_kinetic": 296
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 186,
-      "usa:negotiation": 89,
-      "iran:missile_test": 19,
-      "usa:presidential_warning": 14,
+      "iran:negotiation": 184,
+      "usa:negotiation": 87,
+      "usa:presidential_warning": 12,
       "iran:hormuz_threat": 9,
       "usa:ceasefire_support": 8,
-      "iran:missile_preparation": 5,
       "iran:nuclear_activity": 1,
       "iran:strike_preparation": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 92,
-      "usa:negotiation": 60,
-      "usa:presidential_warning": 14,
+      "iran:negotiation": 91,
+      "usa:negotiation": 58,
+      "usa:presidential_warning": 12,
       "iran:hormuz_threat": 9,
-      "iran:missile_test": 9,
-      "iran:missile_preparation": 5,
       "usa:ceasefire_support": 4,
       "iran:nuclear_activity": 1,
       "iran:strike_preparation": 1
@@ -99,7 +94,7 @@
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000003",
+          "event_id": "INFO-000005",
           "timestamp": "2026-08-27T21:12:18+00:00",
           "date": "2026-08-27",
           "actor": "iran",
@@ -148,7 +143,7 @@
       "trend": "strong_decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000003",
+          "event_id": "INFO-000005",
           "timestamp": "2026-08-27T21:12:18+00:00",
           "date": "2026-08-27",
           "actor": "iran",
