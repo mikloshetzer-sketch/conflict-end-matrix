@@ -1,40 +1,66 @@
 {
-  "generated_at": "2026-08-31T11:37:45.264918Z",
-  "source_generated_at": "2026-08-31T07:02:48Z",
+  "generated_at": "2026-08-31T16:58:47.722436Z",
+  "source_generated_at": "2026-08-31T15:06:53Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
-  "source_event_count": 28,
-  "event_count": 22,
-  "rejected_count": 6,
+  "source_event_count": 31,
+  "event_count": 23,
+  "rejected_count": 8,
   "rejection_counts": {
-    "category_not_kinetic": 3,
-    "no_confirmed_action_language": 3
+    "category_not_kinetic": 4,
+    "no_confirmed_action_language": 4
   },
   "category_counts": {
     "missile": 15,
-    "drone": 3,
+    "drone": 4,
     "strike": 3,
     "explosion": 1
   },
   "severity_counts": {
     "high": 12,
-    "medium": 10
+    "medium": 11
   },
   "actor_counts": {
-    "Iran": 16,
+    "Iran": 17,
     "United States": 3,
     "Israel": 1,
     "Unknown actor": 1,
     "Yemen": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-2yiny3l2p6s00",
+      "timestamp": "2026-08-31T14:24:25Z",
+      "event_type": "kinetic",
+      "subtype": "drone",
+      "category": "drone",
+      "severity": "medium",
+      "actor": "irn",
+      "actor_label": "Iran",
+      "actor_method": "raw_source.origin",
+      "target_country": "Persian Gulf",
+      "location": "Persian Gulf",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "IRGC claims large oil tanker hit two naval mines in Strait of Hormuz and disabled; also claims downing of U.S. MQ-9 drone",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129448",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-3tkv03e2pje00",
       "timestamp": "2026-08-31T06:59:01Z",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T14:22:01.013206+00:00",
+  "generated_at": "2026-08-31T16:58:48.441788+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,24 +18,25 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 567,
-    "kinetic_events_loaded": 1,
-    "unique_events_scanned": 568,
-    "strategic_evidence_contributions": 296,
+    "non_kinetic_events_loaded": 569,
+    "kinetic_events_loaded": 23,
+    "unique_events_scanned": 588,
+    "strategic_evidence_contributions": 299,
     "evidence_contributions_by_actor": {
       "usa": 105,
-      "iran": 191
+      "iran": 194
     },
     "scored_contributions_by_actor": {
       "usa": 72,
-      "iran": 98
+      "iran": 99
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
-      "iran": 93
+      "iran": 95
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 296
+      "non_kinetic": 296,
+      "kinetic": 3
     },
     "evidence_indicator_counts": {
       "iran:negotiation": 184,
@@ -43,6 +44,7 @@
       "usa:presidential_warning": 12,
       "iran:hormuz_threat": 9,
       "usa:ceasefire_support": 8,
+      "iran:missile_test": 3,
       "iran:nuclear_activity": 1,
       "iran:strike_preparation": 1
     },
@@ -52,18 +54,19 @@
       "usa:presidential_warning": 12,
       "iran:hormuz_threat": 9,
       "usa:ceasefire_support": 4,
+      "iran:missile_test": 1,
       "iran:nuclear_activity": 1,
       "iran:strike_preparation": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 0,
-    "history_day_count": 171
+    "skipped_current_utc_day": 6,
+    "history_day_count": 174
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-08-27",
+  "latest_complete_utc_day": "2026-08-30",
   "current": {
-    "date": "2026-08-27",
+    "date": "2026-08-30",
     "calculation_mode": "live",
     "usa": {
       "raw_score": 0.0,
@@ -76,121 +79,207 @@
       "increase_event_count": 0,
       "decrease_event_count": 0,
       "contributors": [],
-      "weighted_score_7d": -5.1,
-      "pressure_index_7d": 39.8,
-      "pressure_level": "reduced",
+      "weighted_score_7d": -2.4,
+      "pressure_index_7d": 45.2,
+      "pressure_level": "balanced",
       "trend": "increase",
       "strongest_contributors": []
     },
     "iran": {
-      "raw_score": -10.0,
-      "positive_score": 0.0,
-      "negative_score": -10.0,
-      "event_count": 1,
+      "raw_score": 7.0,
+      "positive_score": 7.0,
+      "negative_score": 0.0,
+      "event_count": 3,
       "scored_event_count": 1,
-      "evidence_event_count": 1,
-      "suppressed_duplicate_count": 0,
-      "increase_event_count": 0,
-      "decrease_event_count": 1,
+      "evidence_event_count": 3,
+      "suppressed_duplicate_count": 2,
+      "increase_event_count": 1,
+      "decrease_event_count": 0,
       "contributors": [
         {
-          "event_id": "INFO-000005",
-          "timestamp": "2026-08-27T21:12:18+00:00",
-          "date": "2026-08-27",
+          "event_id": "iranstrike-vczxczz2bls0",
+          "timestamp": "2026-08-30T21:44:40+00:00",
+          "date": "2026-08-30",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "Iran, Qatar hold Hormuz talks amid int’l hopes dialogue with US will resume - Al Jazeera",
-          "source_layer": "non_kinetic",
-          "event_type": "diplomatic",
-          "event_direction": "de-escalation",
-          "operational_component": -4.0,
-          "strategic_modifier": -6.0,
+          "title": "Iranian missile launches from East Azerbaijan Province targeting Jordan, Jordanian air defenses activated",
+          "source_layer": "kinetic",
+          "event_type": "kinetic",
+          "event_direction": "escalation",
+          "operational_component": 1.0,
+          "strategic_modifier": 6.0,
           "context_multiplier": 1.0,
-          "original_final_score": -10.0,
-          "final_score": -10.0,
+          "original_final_score": 7.0,
+          "final_score": 7.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
-          "primary_daily_indicator": "negotiation",
+          "primary_daily_indicator": "missile_test",
           "indicators": [
             {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
+              "id": "missile_test",
+              "name": "Missile test",
+              "score": 6.0,
+              "direction": "increase",
               "interest": {
-                "id": "avoid_regime_destroying_war",
-                "name": "Avoid regime-destroying war",
-                "weight": 10.0
+                "id": "missile_capability",
+                "name": "Missile capability",
+                "weight": 9.0
               },
-              "recognition_rule_count": 2
+              "recognition_rule_count": 1
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: -4.00; strategic modifier: -6.00; final contribution before daily deduplication: -10.00. Event: Iran, Qatar hold Hormuz talks amid int’l hopes dialogue with US will resume - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPYks0N05xNi1PVGpRbDRhcVRzMHB2VHpGa2pTR1N3U1draUc2dkplTkVuTHhxb2pFUWRwNU5nbG9MMDAyX0JTTlhuc0pPTjNxSXUxRGo0SHkyMWZxaW5JQnVWTkRtODluRWhEN29TeDBDai1yU2IxVnRNU2RSRnVVZ3F1MzQzRjY5NGNtMGlOMG1GU1drSVBaZWNmeHg1U0tHWi1ZbGw0eHk2VURZS2JBVVJ0emXSAboBQVVfeXFMTmR0eWhVSVZWc1c4U0JIUFJ2YnczdFFMLUlRSUJPRzJhRmdYbmlrNzRJUHQ0R3BkbTJUSXBTa1NXcGFpdlJYOEhSOFNtcG1BLTlXMFZsZGFvM0hFSHRtNnM3Uk9FdmFxSW9OQzE0Tl9TLXBibWxWNnk0SVcxWmRYcVRUa01yd0l4OXNqbFYzc2lmaW1meWJ2NFJvcnZISXZGVFNZMjJMWDJmZGdZWmthMmI2ZmdOZENoaVFB?oc=5",
-          "existing_event_score": 4.0,
-          "existing_direction_score": 4.0,
+          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iranian missile launches from East Azerbaijan Province targeting Jordan, Jordanian air defenses activated",
+          "source": "",
+          "link": "https://t.me/CIG_telegram/82994",
+          "existing_event_score": 0.0,
+          "existing_direction_score": 0.0,
           "winning_daily_indicators": [
-            "negotiation"
+            "missile_test"
           ],
           "duplicate_daily_indicators": []
-        }
-      ],
-      "weighted_score_7d": -20.7,
-      "pressure_index_7d": 8.6,
-      "pressure_level": "low",
-      "trend": "strong_decrease",
-      "strongest_contributors": [
+        },
         {
-          "event_id": "INFO-000005",
-          "timestamp": "2026-08-27T21:12:18+00:00",
-          "date": "2026-08-27",
+          "event_id": "iranstrike-8nxo31t4jkk0",
+          "timestamp": "2026-08-30T21:25:07+00:00",
+          "date": "2026-08-30",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "Iran, Qatar hold Hormuz talks amid int’l hopes dialogue with US will resume - Al Jazeera",
-          "source_layer": "non_kinetic",
-          "event_type": "diplomatic",
-          "event_direction": "de-escalation",
-          "operational_component": -4.0,
-          "strategic_modifier": -6.0,
+          "title": "Iranian media reports missile launches targeting U.S. military vessels in the Strait of Hormuz",
+          "source_layer": "kinetic",
+          "event_type": "kinetic",
+          "event_direction": "escalation",
+          "operational_component": 1.0,
+          "strategic_modifier": 6.0,
           "context_multiplier": 1.0,
-          "original_final_score": -10.0,
-          "final_score": -10.0,
+          "original_final_score": 7.0,
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": true,
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "primary_daily_indicator": null,
+          "indicators": [
+            {
+              "id": "missile_test",
+              "name": "Missile test",
+              "score": 6.0,
+              "direction": "increase",
+              "interest": {
+                "id": "missile_capability",
+                "name": "Missile capability",
+                "weight": 9.0
+              },
+              "recognition_rule_count": 1
+            }
+          ],
+          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iranian media reports missile launches targeting U.S. military vessels in the Strait of Hormuz",
+          "source": "",
+          "link": "https://t.me/idkunim_il/62994",
+          "existing_event_score": 0.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [],
+          "duplicate_daily_indicators": [
+            "missile_test"
+          ]
+        },
+        {
+          "event_id": "iranstrike-mn049xyu6dc0",
+          "timestamp": "2026-08-30T21:42:38+00:00",
+          "date": "2026-08-30",
+          "actor": "iran",
+          "bilateral_event": false,
+          "title": "Iranian missile launches from Zanjan targeting Jordan",
+          "source_layer": "kinetic",
+          "event_type": "kinetic",
+          "event_direction": "escalation",
+          "operational_component": 1.0,
+          "strategic_modifier": 6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": 7.0,
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": true,
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "primary_daily_indicator": null,
+          "indicators": [
+            {
+              "id": "missile_test",
+              "name": "Missile test",
+              "score": 6.0,
+              "direction": "increase",
+              "interest": {
+                "id": "missile_capability",
+                "name": "Missile capability",
+                "weight": 9.0
+              },
+              "recognition_rule_count": 1
+            }
+          ],
+          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iranian missile launches from Zanjan targeting Jordan",
+          "source": "",
+          "link": "https://t.me/CIG_telegram/82993",
+          "existing_event_score": 0.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [],
+          "duplicate_daily_indicators": [
+            "missile_test"
+          ]
+        }
+      ],
+      "weighted_score_7d": -2.9,
+      "pressure_index_7d": 44.2,
+      "pressure_level": "reduced",
+      "trend": "strong_increase",
+      "strongest_contributors": [
+        {
+          "event_id": "iranstrike-vczxczz2bls0",
+          "timestamp": "2026-08-30T21:44:40+00:00",
+          "date": "2026-08-30",
+          "actor": "iran",
+          "bilateral_event": false,
+          "title": "Iranian missile launches from East Azerbaijan Province targeting Jordan, Jordanian air defenses activated",
+          "source_layer": "kinetic",
+          "event_type": "kinetic",
+          "event_direction": "escalation",
+          "operational_component": 1.0,
+          "strategic_modifier": 6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": 7.0,
+          "final_score": 7.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
-          "primary_daily_indicator": "negotiation",
+          "primary_daily_indicator": "missile_test",
           "indicators": [
             {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
+              "id": "missile_test",
+              "name": "Missile test",
+              "score": 6.0,
+              "direction": "increase",
               "interest": {
-                "id": "avoid_regime_destroying_war",
-                "name": "Avoid regime-destroying war",
-                "weight": 10.0
+                "id": "missile_capability",
+                "name": "Missile capability",
+                "weight": 9.0
               },
-              "recognition_rule_count": 2
+              "recognition_rule_count": 1
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: -4.00; strategic modifier: -6.00; final contribution before daily deduplication: -10.00. Event: Iran, Qatar hold Hormuz talks amid int’l hopes dialogue with US will resume - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPYks0N05xNi1PVGpRbDRhcVRzMHB2VHpGa2pTR1N3U1draUc2dkplTkVuTHhxb2pFUWRwNU5nbG9MMDAyX0JTTlhuc0pPTjNxSXUxRGo0SHkyMWZxaW5JQnVWTkRtODluRWhEN29TeDBDai1yU2IxVnRNU2RSRnVVZ3F1MzQzRjY5NGNtMGlOMG1GU1drSVBaZWNmeHg1U0tHWi1ZbGw0eHk2VURZS2JBVVJ0emXSAboBQVVfeXFMTmR0eWhVSVZWc1c4U0JIUFJ2YnczdFFMLUlRSUJPRzJhRmdYbmlrNzRJUHQ0R3BkbTJUSXBTa1NXcGFpdlJYOEhSOFNtcG1BLTlXMFZsZGFvM0hFSHRtNnM3Uk9FdmFxSW9OQzE0Tl9TLXBibWxWNnk0SVcxWmRYcVRUa01yd0l4OXNqbFYzc2lmaW1meWJ2NFJvcnZISXZGVFNZMjJMWDJmZGdZWmthMmI2ZmdOZENoaVFB?oc=5",
-          "existing_event_score": 4.0,
-          "existing_direction_score": 4.0,
+          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iranian missile launches from East Azerbaijan Province targeting Jordan, Jordanian air defenses activated",
+          "source": "",
+          "link": "https://t.me/CIG_telegram/82994",
+          "existing_event_score": 0.0,
+          "existing_direction_score": 0.0,
           "winning_daily_indicators": [
-            "negotiation"
+            "missile_test"
           ],
           "duplicate_daily_indicators": []
         }
       ]
     },
     "overall": {
-      "pressure_index_7d": 24.2,
-      "pressure_level": "low",
-      "trend": "strong_decrease",
+      "pressure_index_7d": 44.7,
+      "pressure_level": "reduced",
+      "trend": "strong_increase",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
   }
