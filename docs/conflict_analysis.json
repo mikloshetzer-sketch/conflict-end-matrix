@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-08-31T13:35:09.918939+00:00",
+  "generated_at": "2026-08-31T19:29:47.092324+00:00",
   "analysis_model": "conflict_analysis_v1_2",
   "analysis_period": {
     "raw_common_start": "2026-08-29T18:26:40Z",
     "daily_analysis_start": "2026-08-30T00:00:00Z",
-    "end": "2026-08-31T06:59:01Z",
+    "end": "2026-08-31T14:24:25Z",
     "raw_common_start_date": "2026-08-29",
     "daily_analysis_start_date": "2026-08-30",
     "end_date": "2026-08-31",
     "basis": "Lag analysis starts at the first valid kinetic event. Daily MAI/DDI/Gap starts at the first complete UTC day."
   },
   "inputs": {
-    "event_timeline_generated_at": "2026-08-31T11:05:15.544092+00:00",
+    "event_timeline_generated_at": "2026-08-31T19:15:17.066841+00:00",
     "event_timeline_direction_model": "context_direction_v3_2",
-    "kinetic_generated_at": "2026-08-31T11:37:45.264918Z",
+    "kinetic_generated_at": "2026-08-31T19:16:28.001490Z",
     "kinetic_cleaning_mode": "strict_kinetic_v2",
-    "diplomatic_events_total_history": 567,
-    "diplomatic_events_in_common_period": 0,
-    "diplomatic_events_in_daily_period": 0,
-    "military_events_total_history": 22,
-    "military_events_in_common_period": 22,
-    "military_events_in_daily_period": 21
+    "diplomatic_events_total_history": 569,
+    "diplomatic_events_in_common_period": 1,
+    "diplomatic_events_in_daily_period": 1,
+    "military_events_total_history": 23,
+    "military_events_in_common_period": 23,
+    "military_events_in_daily_period": 22
   },
   "methodology": {
     "military_activity_index": {
@@ -61,11 +61,11 @@
   "latest": {
     "date": "2026-08-31",
     "military_activity_index": 50.0,
-    "military_change_vs_7d_pct": -49.4,
+    "military_change_vs_7d_pct": -45.3,
     "diplomatic_direction_index": 0.0,
     "diplomacy_military_gap": {
-      "divergence_score": -49.4,
-      "strength": 49.4,
+      "divergence_score": -45.3,
+      "strength": 45.3,
       "level": "MODERATE",
       "pattern": "MIXED / LIMITED DIVERGENCE"
     },
@@ -80,12 +80,12 @@
     {
       "date": "2026-08-30",
       "diplomatic": {
-        "event_count": 0,
-        "direction_index": 0.0,
-        "mean_direction_score": 0.0,
-        "positive_signal_score": 0,
-        "negative_signal_score": 0,
-        "escalation_count": 0,
+        "event_count": 1,
+        "direction_index": -66.7,
+        "mean_direction_score": -4.0,
+        "positive_signal_score": 0.0,
+        "negative_signal_score": -3.0,
+        "escalation_count": 1,
         "deescalation_count": 0,
         "mixed_count": 0
       },
@@ -98,9 +98,9 @@
         "pressure_score": 0.0
       },
       "gap": {
-        "divergence_score": 0.0,
-        "strength": 0.0,
-        "level": "LOW",
+        "divergence_score": -66.7,
+        "strength": 66.7,
+        "level": "HIGH",
         "pattern": "MIXED / LIMITED DIVERGENCE"
       }
     },
@@ -117,16 +117,16 @@
         "mixed_count": 0
       },
       "military": {
-        "event_count": 8,
-        "weighted_score": 29.55,
+        "event_count": 9,
+        "weighted_score": 31.95,
         "activity_index": 50.0,
         "previous_7d_average_weighted_score": 58.45,
-        "change_vs_previous_7d_pct": -49.4,
-        "pressure_score": -49.4
+        "change_vs_previous_7d_pct": -45.3,
+        "pressure_score": -45.3
       },
       "gap": {
-        "divergence_score": -49.4,
-        "strength": 49.4,
+        "divergence_score": -45.3,
+        "strength": 45.3,
         "level": "MODERATE",
         "pattern": "MIXED / LIMITED DIVERGENCE"
       }
@@ -144,26 +144,26 @@
     "aggregate": {
       "escalation": {
         "6h": {
-          "signal_count": 0,
+          "signal_count": 1,
           "excluded_edge_signals": 0,
-          "median_delta_weighted_activity": null,
-          "mean_delta_weighted_activity": null,
-          "median_change_pct": null,
-          "share_followed_by_activity_increase_pct": null,
-          "share_followed_by_activity_decrease_pct": null
+          "median_delta_weighted_activity": 34.55,
+          "mean_delta_weighted_activity": 34.55,
+          "median_change_pct": 256.9,
+          "share_followed_by_activity_increase_pct": 100.0,
+          "share_followed_by_activity_decrease_pct": 0.0
         },
         "12h": {
-          "signal_count": 0,
+          "signal_count": 1,
           "excluded_edge_signals": 0,
-          "median_delta_weighted_activity": null,
-          "mean_delta_weighted_activity": null,
-          "median_change_pct": null,
-          "share_followed_by_activity_increase_pct": null,
-          "share_followed_by_activity_decrease_pct": null
+          "median_delta_weighted_activity": 61.1,
+          "mean_delta_weighted_activity": 61.1,
+          "median_change_pct": 454.3,
+          "share_followed_by_activity_increase_pct": 100.0,
+          "share_followed_by_activity_decrease_pct": 0.0
         },
         "24h": {
           "signal_count": 0,
-          "excluded_edge_signals": 0,
+          "excluded_edge_signals": 1,
           "median_delta_weighted_activity": null,
           "mean_delta_weighted_activity": null,
           "median_change_pct": null,
@@ -172,7 +172,7 @@
         },
         "48h": {
           "signal_count": 0,
-          "excluded_edge_signals": 0,
+          "excluded_edge_signals": 1,
           "median_delta_weighted_activity": null,
           "mean_delta_weighted_activity": null,
           "median_change_pct": null,
@@ -181,7 +181,7 @@
         },
         "72h": {
           "signal_count": 0,
-          "excluded_edge_signals": 0,
+          "excluded_edge_signals": 1,
           "median_delta_weighted_activity": null,
           "mean_delta_weighted_activity": null,
           "median_change_pct": null,
@@ -237,6 +237,72 @@
         }
       }
     },
-    "signals": []
+    "signals": [
+      {
+        "event_id": "INFO-000001",
+        "timestamp": "2026-08-30T21:05:00Z",
+        "title": "First US military attacks on Iran in a month prompt retaliation - The Guardian",
+        "direction": "escalation",
+        "direction_score": -4,
+        "positive_signal_score": 0,
+        "negative_signal_score": -3,
+        "event_type": "threat",
+        "subtype": "retaliation",
+        "source": "\"iran israel usa war when:7d\" - Google News",
+        "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPTm1OakU0ZTQxTmQ0YkVOWWVoMHZJQmJSQkhiV3ZTMXJ6TWNRZzYzblpoYnh2cUFCVTUzdkNRQUhBamhWY0I2MzFZZHBxWlpObmVyd3VXZkt4Y1FCNWVfZmR0U3VuRU16ODB3S1NJcHI4SHdhM1RwbnZnRkNSejdzZTB3N3FKM3ZEZmU0cGhfUHhoZFZPQ3E0cG1pelZlVFlpc05CQTZLdGdhV2ZYOXF3X2I5MmhLa21jS2t5SVVB?oc=5",
+        "windows": {
+          "6h": {
+            "available": true,
+            "before_event_count": 4,
+            "after_event_count": 10,
+            "delta_event_count": 6,
+            "before_weighted_activity": 13.45,
+            "after_weighted_activity": 48.0,
+            "delta_weighted_activity": 34.55,
+            "weighted_activity_change_pct": 256.9
+          },
+          "12h": {
+            "available": true,
+            "before_event_count": 4,
+            "after_event_count": 17,
+            "delta_event_count": 13,
+            "before_weighted_activity": 13.45,
+            "after_weighted_activity": 74.55,
+            "delta_weighted_activity": 61.1,
+            "weighted_activity_change_pct": 454.3
+          },
+          "24h": {
+            "available": false,
+            "before_event_count": null,
+            "after_event_count": null,
+            "delta_event_count": null,
+            "before_weighted_activity": null,
+            "after_weighted_activity": null,
+            "delta_weighted_activity": null,
+            "weighted_activity_change_pct": null
+          },
+          "48h": {
+            "available": false,
+            "before_event_count": null,
+            "after_event_count": null,
+            "delta_event_count": null,
+            "before_weighted_activity": null,
+            "after_weighted_activity": null,
+            "delta_weighted_activity": null,
+            "weighted_activity_change_pct": null
+          },
+          "72h": {
+            "available": false,
+            "before_event_count": null,
+            "after_event_count": null,
+            "delta_event_count": null,
+            "before_weighted_activity": null,
+            "after_weighted_activity": null,
+            "delta_weighted_activity": null,
+            "weighted_activity_change_pct": null
+          }
+        }
+      }
+    ]
   }
 }
