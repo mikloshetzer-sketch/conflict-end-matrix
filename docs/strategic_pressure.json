@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T19:35:02.753331+00:00",
+  "generated_at": "2026-09-01T14:04:30.505145+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -19,54 +19,56 @@
   },
   "statistics": {
     "non_kinetic_events_loaded": 569,
-    "kinetic_events_loaded": 23,
-    "unique_events_scanned": 588,
-    "strategic_evidence_contributions": 299,
+    "kinetic_events_loaded": 576,
+    "unique_events_scanned": 1092,
+    "strategic_evidence_contributions": 330,
     "evidence_contributions_by_actor": {
-      "usa": 105,
-      "iran": 194
+      "usa": 108,
+      "iran": 222
     },
     "scored_contributions_by_actor": {
-      "usa": 72,
-      "iran": 99
+      "usa": 75,
+      "iran": 116
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
-      "iran": 95
+      "iran": 106
     },
     "contributions_by_source_layer": {
       "non_kinetic": 296,
-      "kinetic": 3
+      "kinetic": 34
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 184,
-      "usa:negotiation": 87,
-      "usa:presidential_warning": 12,
+      "iran:negotiation": 186,
+      "usa:negotiation": 89,
+      "iran:missile_test": 23,
+      "usa:presidential_warning": 14,
       "iran:hormuz_threat": 9,
       "usa:ceasefire_support": 8,
-      "iran:missile_test": 3,
-      "iran:nuclear_activity": 1,
-      "iran:strike_preparation": 1
+      "iran:missile_preparation": 5,
+      "iran:strike_preparation": 2,
+      "iran:nuclear_activity": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 91,
-      "usa:negotiation": 58,
-      "usa:presidential_warning": 12,
+      "iran:negotiation": 92,
+      "usa:negotiation": 60,
+      "usa:presidential_warning": 14,
+      "iran:missile_test": 11,
       "iran:hormuz_threat": 9,
+      "iran:missile_preparation": 5,
       "usa:ceasefire_support": 4,
-      "iran:missile_test": 1,
-      "iran:nuclear_activity": 1,
-      "iran:strike_preparation": 1
+      "iran:strike_preparation": 2,
+      "iran:nuclear_activity": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 7,
-    "history_day_count": 174
+    "skipped_current_utc_day": 1,
+    "history_day_count": 175
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-08-30",
+  "latest_complete_utc_day": "2026-08-31",
   "current": {
-    "date": "2026-08-30",
+    "date": "2026-08-31",
     "calculation_mode": "live",
     "usa": {
       "raw_score": 0.0,
@@ -79,30 +81,73 @@
       "increase_event_count": 0,
       "decrease_event_count": 0,
       "contributors": [],
-      "weighted_score_7d": -2.4,
-      "pressure_index_7d": 45.2,
+      "weighted_score_7d": -1.5,
+      "pressure_index_7d": 47.0,
       "pressure_level": "balanced",
       "trend": "increase",
       "strongest_contributors": []
     },
     "iran": {
-      "raw_score": 7.0,
-      "positive_score": 7.0,
+      "raw_score": 18.0,
+      "positive_score": 18.0,
       "negative_score": 0.0,
-      "event_count": 3,
-      "scored_event_count": 1,
-      "evidence_event_count": 3,
-      "suppressed_duplicate_count": 2,
-      "increase_event_count": 1,
+      "event_count": 2,
+      "scored_event_count": 2,
+      "evidence_event_count": 2,
+      "suppressed_duplicate_count": 0,
+      "increase_event_count": 2,
       "decrease_event_count": 0,
       "contributors": [
         {
-          "event_id": "iranstrike-vczxczz2bls0",
-          "timestamp": "2026-08-30T21:44:40+00:00",
-          "date": "2026-08-30",
+          "event_id": "iranstrike-1eivtmfey3cw0",
+          "timestamp": "2026-08-31T18:31:09+00:00",
+          "date": "2026-08-31",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "Iranian missile launches from East Azerbaijan Province targeting Jordan, Jordanian air defenses activated",
+          "title": "U.S. military strikes two Iranian rocket launchers on Larak Island in Strait of Hormuz after IRGC prepares sea mine attack",
+          "source_layer": "kinetic",
+          "event_type": "kinetic",
+          "event_direction": "escalation",
+          "operational_component": 1.0,
+          "strategic_modifier": 10.0,
+          "context_multiplier": 1.0,
+          "original_final_score": 11.0,
+          "final_score": 11.0,
+          "duplicate_indicator_evidence": false,
+          "daily_score_suppressed": false,
+          "suppression_reason": null,
+          "primary_daily_indicator": "strike_preparation",
+          "indicators": [
+            {
+              "id": "strike_preparation",
+              "name": "Preparation for military strike",
+              "score": 10.0,
+              "direction": "increase",
+              "interest": {
+                "id": "strategic_deterrence",
+                "name": "Strategic deterrence",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "Iran: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: U.S. military strikes two Iranian rocket launchers on Larak Island in Strait of Hormuz after IRGC prepares sea mine attack",
+          "source": "",
+          "link": "https://t.me/OSINTdefender/20084",
+          "existing_event_score": 0.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [
+            "strike_preparation"
+          ],
+          "duplicate_daily_indicators": []
+        },
+        {
+          "event_id": "iranstrike-5489dchz7qs0",
+          "timestamp": "2026-08-31T05:20:44+00:00",
+          "date": "2026-08-31",
+          "actor": "iran",
+          "bilateral_event": false,
+          "title": "Iran launches ballistic missiles and drones at U.S. military bases in Jordan (King Hussein Air Base and Al-Zarak), official IRGC and Iranian military announcements",
           "source_layer": "kinetic",
           "event_type": "kinetic",
           "event_direction": "escalation",
@@ -129,115 +174,72 @@
               "recognition_rule_count": 1
             }
           ],
-          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iranian missile launches from East Azerbaijan Province targeting Jordan, Jordanian air defenses activated",
+          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles and drones at U.S. military bases in Jordan (King Hussein Air Base and Al-Zarak), official IRGC and Iranian military announcements",
           "source": "",
-          "link": "https://t.me/CIG_telegram/82994",
+          "link": "https://t.me/abualiexpress/129408",
           "existing_event_score": 0.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
             "missile_test"
           ],
           "duplicate_daily_indicators": []
-        },
-        {
-          "event_id": "iranstrike-8nxo31t4jkk0",
-          "timestamp": "2026-08-30T21:25:07+00:00",
-          "date": "2026-08-30",
-          "actor": "iran",
-          "bilateral_event": false,
-          "title": "Iranian media reports missile launches targeting U.S. military vessels in the Strait of Hormuz",
-          "source_layer": "kinetic",
-          "event_type": "kinetic",
-          "event_direction": "escalation",
-          "operational_component": 1.0,
-          "strategic_modifier": 6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": 7.0,
-          "final_score": 0.0,
-          "duplicate_indicator_evidence": true,
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "primary_daily_indicator": null,
-          "indicators": [
-            {
-              "id": "missile_test",
-              "name": "Missile test",
-              "score": 6.0,
-              "direction": "increase",
-              "interest": {
-                "id": "missile_capability",
-                "name": "Missile capability",
-                "weight": 9.0
-              },
-              "recognition_rule_count": 1
-            }
-          ],
-          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iranian media reports missile launches targeting U.S. military vessels in the Strait of Hormuz",
-          "source": "",
-          "link": "https://t.me/idkunim_il/62994",
-          "existing_event_score": 0.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [],
-          "duplicate_daily_indicators": [
-            "missile_test"
-          ]
-        },
-        {
-          "event_id": "iranstrike-mn049xyu6dc0",
-          "timestamp": "2026-08-30T21:42:38+00:00",
-          "date": "2026-08-30",
-          "actor": "iran",
-          "bilateral_event": false,
-          "title": "Iranian missile launches from Zanjan targeting Jordan",
-          "source_layer": "kinetic",
-          "event_type": "kinetic",
-          "event_direction": "escalation",
-          "operational_component": 1.0,
-          "strategic_modifier": 6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": 7.0,
-          "final_score": 0.0,
-          "duplicate_indicator_evidence": true,
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "primary_daily_indicator": null,
-          "indicators": [
-            {
-              "id": "missile_test",
-              "name": "Missile test",
-              "score": 6.0,
-              "direction": "increase",
-              "interest": {
-                "id": "missile_capability",
-                "name": "Missile capability",
-                "weight": 9.0
-              },
-              "recognition_rule_count": 1
-            }
-          ],
-          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iranian missile launches from Zanjan targeting Jordan",
-          "source": "",
-          "link": "https://t.me/CIG_telegram/82993",
-          "existing_event_score": 0.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [],
-          "duplicate_daily_indicators": [
-            "missile_test"
-          ]
         }
       ],
-      "weighted_score_7d": -2.9,
-      "pressure_index_7d": 44.2,
-      "pressure_level": "reduced",
+      "weighted_score_7d": 17.25,
+      "pressure_index_7d": 84.5,
+      "pressure_level": "critical",
       "trend": "strong_increase",
       "strongest_contributors": [
         {
-          "event_id": "iranstrike-vczxczz2bls0",
-          "timestamp": "2026-08-30T21:44:40+00:00",
-          "date": "2026-08-30",
+          "event_id": "iranstrike-1eivtmfey3cw0",
+          "timestamp": "2026-08-31T18:31:09+00:00",
+          "date": "2026-08-31",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "Iranian missile launches from East Azerbaijan Province targeting Jordan, Jordanian air defenses activated",
+          "title": "U.S. military strikes two Iranian rocket launchers on Larak Island in Strait of Hormuz after IRGC prepares sea mine attack",
+          "source_layer": "kinetic",
+          "event_type": "kinetic",
+          "event_direction": "escalation",
+          "operational_component": 1.0,
+          "strategic_modifier": 10.0,
+          "context_multiplier": 1.0,
+          "original_final_score": 11.0,
+          "final_score": 11.0,
+          "duplicate_indicator_evidence": false,
+          "daily_score_suppressed": false,
+          "suppression_reason": null,
+          "primary_daily_indicator": "strike_preparation",
+          "indicators": [
+            {
+              "id": "strike_preparation",
+              "name": "Preparation for military strike",
+              "score": 10.0,
+              "direction": "increase",
+              "interest": {
+                "id": "strategic_deterrence",
+                "name": "Strategic deterrence",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "Iran: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: U.S. military strikes two Iranian rocket launchers on Larak Island in Strait of Hormuz after IRGC prepares sea mine attack",
+          "source": "",
+          "link": "https://t.me/OSINTdefender/20084",
+          "existing_event_score": 0.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [
+            "strike_preparation"
+          ],
+          "duplicate_daily_indicators": []
+        },
+        {
+          "event_id": "iranstrike-5489dchz7qs0",
+          "timestamp": "2026-08-31T05:20:44+00:00",
+          "date": "2026-08-31",
+          "actor": "iran",
+          "bilateral_event": false,
+          "title": "Iran launches ballistic missiles and drones at U.S. military bases in Jordan (King Hussein Air Base and Al-Zarak), official IRGC and Iranian military announcements",
           "source_layer": "kinetic",
           "event_type": "kinetic",
           "event_direction": "escalation",
@@ -264,9 +266,9 @@
               "recognition_rule_count": 1
             }
           ],
-          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iranian missile launches from East Azerbaijan Province targeting Jordan, Jordanian air defenses activated",
+          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles and drones at U.S. military bases in Jordan (King Hussein Air Base and Al-Zarak), official IRGC and Iranian military announcements",
           "source": "",
-          "link": "https://t.me/CIG_telegram/82994",
+          "link": "https://t.me/abualiexpress/129408",
           "existing_event_score": 0.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
@@ -277,8 +279,8 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 44.7,
-      "pressure_level": "reduced",
+      "pressure_index_7d": 65.75,
+      "pressure_level": "high",
       "trend": "strong_increase",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }

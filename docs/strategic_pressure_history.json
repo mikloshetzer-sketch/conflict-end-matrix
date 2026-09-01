@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T19:35:02.753331+00:00",
+  "generated_at": "2026-09-01T14:04:30.505145+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -19,48 +19,50 @@
   },
   "statistics": {
     "non_kinetic_events_loaded": 569,
-    "kinetic_events_loaded": 23,
-    "unique_events_scanned": 588,
-    "strategic_evidence_contributions": 299,
+    "kinetic_events_loaded": 576,
+    "unique_events_scanned": 1092,
+    "strategic_evidence_contributions": 330,
     "evidence_contributions_by_actor": {
-      "usa": 105,
-      "iran": 194
+      "usa": 108,
+      "iran": 222
     },
     "scored_contributions_by_actor": {
-      "usa": 72,
-      "iran": 99
+      "usa": 75,
+      "iran": 116
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
-      "iran": 95
+      "iran": 106
     },
     "contributions_by_source_layer": {
       "non_kinetic": 296,
-      "kinetic": 3
+      "kinetic": 34
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 184,
-      "usa:negotiation": 87,
-      "usa:presidential_warning": 12,
+      "iran:negotiation": 186,
+      "usa:negotiation": 89,
+      "iran:missile_test": 23,
+      "usa:presidential_warning": 14,
       "iran:hormuz_threat": 9,
       "usa:ceasefire_support": 8,
-      "iran:missile_test": 3,
-      "iran:nuclear_activity": 1,
-      "iran:strike_preparation": 1
+      "iran:missile_preparation": 5,
+      "iran:strike_preparation": 2,
+      "iran:nuclear_activity": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 91,
-      "usa:negotiation": 58,
-      "usa:presidential_warning": 12,
+      "iran:negotiation": 92,
+      "usa:negotiation": 60,
+      "usa:presidential_warning": 14,
+      "iran:missile_test": 11,
       "iran:hormuz_threat": 9,
+      "iran:missile_preparation": 5,
       "usa:ceasefire_support": 4,
-      "iran:missile_test": 1,
-      "iran:nuclear_activity": 1,
-      "iran:strike_preparation": 1
+      "iran:strike_preparation": 2,
+      "iran:nuclear_activity": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 7,
-    "history_day_count": 174
+    "skipped_current_utc_day": 1,
+    "history_day_count": 175
   },
   "configuration_warnings": [],
   "status": "ok",
@@ -15208,14 +15210,14 @@
         "trend": "increase"
       },
       "iran": {
-        "raw_score": 12.0,
-        "positive_score": 12.0,
+        "raw_score": 19.0,
+        "positive_score": 19.0,
         "negative_score": 0.0,
-        "event_count": 1,
-        "scored_event_count": 1,
-        "evidence_event_count": 1,
-        "suppressed_duplicate_count": 0,
-        "increase_event_count": 1,
+        "event_count": 3,
+        "scored_event_count": 2,
+        "evidence_event_count": 3,
+        "suppressed_duplicate_count": 1,
+        "increase_event_count": 2,
         "decrease_event_count": 0,
         "contributors": [
           {
@@ -15260,16 +15262,102 @@
               "hormuz_threat"
             ],
             "duplicate_daily_indicators": []
+          },
+          {
+            "event_id": "iranstrike-2hpk483u48q00",
+            "timestamp": "2026-07-14T23:38:20+00:00",
+            "date": "2026-07-14",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Iran launches ballistic missiles at Jordan",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 7.0,
+            "final_score": 7.0,
+            "duplicate_indicator_evidence": false,
+            "daily_score_suppressed": false,
+            "suppression_reason": null,
+            "primary_daily_indicator": "missile_test",
+            "indicators": [
+              {
+                "id": "missile_test",
+                "name": "Missile test",
+                "score": 6.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "missile_capability",
+                  "name": "Missile capability",
+                  "weight": 9.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles at Jordan",
+            "source": "",
+            "link": "https://t.me/CIG_telegram/79773",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [
+              "missile_test"
+            ],
+            "duplicate_daily_indicators": []
+          },
+          {
+            "event_id": "iranstrike-14mxfwnhoqio0",
+            "timestamp": "2026-07-14T15:35:07+00:00",
+            "date": "2026-07-14",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Iran launches renewed missile attacks on Kuwait with multiple confirmed impacts reported by Fars News Agency; explosions heard from Iraqi territory",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 7.0,
+            "final_score": 0.0,
+            "duplicate_indicator_evidence": true,
+            "daily_score_suppressed": true,
+            "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+            "primary_daily_indicator": null,
+            "indicators": [
+              {
+                "id": "missile_test",
+                "name": "Missile test",
+                "score": 6.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "missile_capability",
+                  "name": "Missile capability",
+                  "weight": 9.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches renewed missile attacks on Kuwait with multiple confirmed impacts reported by Fars News Agency; explosions heard from Iraqi territory",
+            "source": "",
+            "link": "https://t.me/CIG_telegram/79714",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [],
+            "duplicate_daily_indicators": [
+              "missile_test"
+            ]
           }
         ],
-        "weighted_score_7d": 7.5,
-        "pressure_index_7d": 65.0,
+        "weighted_score_7d": 14.5,
+        "pressure_index_7d": 79.0,
         "pressure_level": "high",
         "trend": "strong_increase"
       },
       "overall": {
-        "pressure_index_7d": 54.8,
-        "pressure_level": "balanced",
+        "pressure_index_7d": 61.8,
+        "pressure_level": "elevated",
         "trend": "strong_increase",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
@@ -15281,29 +15369,172 @@
         "raw_score": 0.0,
         "positive_score": 0.0,
         "negative_score": 0.0,
-        "event_count": 0,
-        "scored_event_count": 0,
-        "evidence_event_count": 0,
+        "event_count": 1,
+        "scored_event_count": 1,
+        "evidence_event_count": 1,
         "suppressed_duplicate_count": 0,
         "increase_event_count": 0,
         "decrease_event_count": 0,
-        "contributors": [],
+        "contributors": [
+          {
+            "event_id": "iranstrike-2tkm82zt8rc00",
+            "timestamp": "2026-07-15T17:54:45+00:00",
+            "date": "2026-07-15",
+            "actor": "usa",
+            "bilateral_event": true,
+            "title": "President Trump warns of intensifying U.S. airstrikes on Iran targeting energy infrastructure and power plants unless regime agrees to negotiations",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": -1.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 0.0,
+            "final_score": 0.0,
+            "duplicate_indicator_evidence": false,
+            "daily_score_suppressed": false,
+            "suppression_reason": null,
+            "primary_daily_indicator": "presidential_warning",
+            "indicators": [
+              {
+                "id": "presidential_warning",
+                "name": "Presidential warning",
+                "score": 5.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "regional_deterrence",
+                  "name": "Regional deterrence",
+                  "weight": 8.0
+                },
+                "recognition_rule_count": 1
+              },
+              {
+                "id": "negotiation",
+                "name": "Negotiation",
+                "score": -6.0,
+                "direction": "decrease",
+                "interest": {
+                  "id": "avoid_full_scale_war",
+                  "name": "Avoid full-scale regional war",
+                  "weight": 10.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "United States: Presidential warning, Negotiation. Operational component: +1.00; strategic modifier: -1.00; final contribution before daily deduplication: +0.00. Event: President Trump warns of intensifying U.S. airstrikes on Iran targeting energy infrastructure and power plants unless regime agrees to negotiations",
+            "source": "",
+            "link": "https://t.me/OSINTdefender/19489",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [
+              "presidential_warning",
+              "negotiation"
+            ],
+            "duplicate_daily_indicators": []
+          }
+        ],
         "weighted_score_7d": -2.25,
         "pressure_index_7d": 45.5,
         "pressure_level": "balanced",
         "trend": "stable"
       },
       "iran": {
-        "raw_score": -6.0,
-        "positive_score": 0.0,
+        "raw_score": 11.0,
+        "positive_score": 17.0,
         "negative_score": -6.0,
-        "event_count": 1,
-        "scored_event_count": 1,
-        "evidence_event_count": 1,
-        "suppressed_duplicate_count": 0,
-        "increase_event_count": 0,
+        "event_count": 4,
+        "scored_event_count": 3,
+        "evidence_event_count": 4,
+        "suppressed_duplicate_count": 1,
+        "increase_event_count": 2,
         "decrease_event_count": 1,
         "contributors": [
+          {
+            "event_id": "iranstrike-20eoqwlit2kg0",
+            "timestamp": "2026-07-15T05:35:43+00:00",
+            "date": "2026-07-15",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Iran launches missiles targeting U.S. positions in Jordan",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 9.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 10.0,
+            "final_score": 10.0,
+            "duplicate_indicator_evidence": false,
+            "daily_score_suppressed": false,
+            "suppression_reason": null,
+            "primary_daily_indicator": "missile_preparation",
+            "indicators": [
+              {
+                "id": "missile_preparation",
+                "name": "Missile force preparation",
+                "score": 9.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "strategic_deterrence",
+                  "name": "Strategic deterrence",
+                  "weight": 10.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Iran launches missiles targeting U.S. positions in Jordan",
+            "source": "",
+            "link": "https://t.me/idkunim_il/61467",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [
+              "missile_preparation"
+            ],
+            "duplicate_daily_indicators": []
+          },
+          {
+            "event_id": "iranstrike-20ox86l9sctc0",
+            "timestamp": "2026-07-15T03:32:08+00:00",
+            "date": "2026-07-15",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Iran launches ballistic missiles at Jordan; 3 intercepted by Jordanian forces, remainder impact Muwaffaq Salti Air Base",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 7.0,
+            "final_score": 7.0,
+            "duplicate_indicator_evidence": false,
+            "daily_score_suppressed": false,
+            "suppression_reason": null,
+            "primary_daily_indicator": "missile_test",
+            "indicators": [
+              {
+                "id": "missile_test",
+                "name": "Missile test",
+                "score": 6.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "missile_capability",
+                  "name": "Missile capability",
+                  "weight": 9.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles at Jordan; 3 intercepted by Jordanian forces, remainder impact Muwaffaq Salti Air Base",
+            "source": "",
+            "link": "https://t.me/CIG_telegram/79796",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [
+              "missile_test"
+            ],
+            "duplicate_daily_indicators": []
+          },
           {
             "event_id": "INFO-000114",
             "timestamp": "2026-07-15T01:08:15+00:00",
@@ -15346,17 +15577,60 @@
               "negotiation"
             ],
             "duplicate_daily_indicators": []
+          },
+          {
+            "event_id": "iranstrike-2tkm82zt8rc00",
+            "timestamp": "2026-07-15T17:54:45+00:00",
+            "date": "2026-07-15",
+            "actor": "iran",
+            "bilateral_event": true,
+            "title": "President Trump warns of intensifying U.S. airstrikes on Iran targeting energy infrastructure and power plants unless regime agrees to negotiations",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": -6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": -5.0,
+            "final_score": 0.0,
+            "duplicate_indicator_evidence": true,
+            "daily_score_suppressed": true,
+            "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+            "primary_daily_indicator": null,
+            "indicators": [
+              {
+                "id": "negotiation",
+                "name": "Negotiation",
+                "score": -6.0,
+                "direction": "decrease",
+                "interest": {
+                  "id": "avoid_regime_destroying_war",
+                  "name": "Avoid regime-destroying war",
+                  "weight": 10.0
+                },
+                "recognition_rule_count": 2
+              }
+            ],
+            "reason": "Iran: Negotiation. Operational component: +1.00; strategic modifier: -6.00; final contribution before daily deduplication: -5.00. Event: President Trump warns of intensifying U.S. airstrikes on Iran targeting energy infrastructure and power plants unless regime agrees to negotiations",
+            "source": "",
+            "link": "https://t.me/OSINTdefender/19489",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [],
+            "duplicate_daily_indicators": [
+              "negotiation"
+            ]
           }
         ],
-        "weighted_score_7d": 1.95,
-        "pressure_index_7d": 53.9,
-        "pressure_level": "balanced",
-        "trend": "strong_decrease"
+        "weighted_score_7d": 24.9,
+        "pressure_index_7d": 99.8,
+        "pressure_level": "critical",
+        "trend": "strong_increase"
       },
       "overall": {
-        "pressure_index_7d": 49.7,
-        "pressure_level": "balanced",
-        "trend": "strong_decrease",
+        "pressure_index_7d": 72.65,
+        "pressure_level": "high",
+        "trend": "strong_increase",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
     },
@@ -15390,15 +15664,15 @@
         "increase_event_count": 0,
         "decrease_event_count": 0,
         "contributors": [],
-        "weighted_score_7d": 1.95,
-        "pressure_index_7d": 53.9,
-        "pressure_level": "balanced",
-        "trend": "stable"
+        "weighted_score_7d": 21.3,
+        "pressure_index_7d": 92.6,
+        "pressure_level": "critical",
+        "trend": "strong_decrease"
       },
       "overall": {
-        "pressure_index_7d": 50.6,
-        "pressure_level": "balanced",
-        "trend": "stable",
+        "pressure_index_7d": 69.95,
+        "pressure_level": "high",
+        "trend": "decrease",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
     },
@@ -15406,41 +15680,129 @@
       "date": "2026-07-17",
       "calculation_mode": "historical_backfill",
       "usa": {
-        "raw_score": 0.0,
+        "raw_score": -5.0,
         "positive_score": 0.0,
-        "negative_score": 0.0,
-        "event_count": 0,
-        "scored_event_count": 0,
-        "evidence_event_count": 0,
+        "negative_score": -5.0,
+        "event_count": 1,
+        "scored_event_count": 1,
+        "evidence_event_count": 1,
         "suppressed_duplicate_count": 0,
         "increase_event_count": 0,
-        "decrease_event_count": 0,
-        "contributors": [],
-        "weighted_score_7d": 0.0,
-        "pressure_index_7d": 50.0,
-        "pressure_level": "balanced",
-        "trend": "increase"
+        "decrease_event_count": 1,
+        "contributors": [
+          {
+            "event_id": "iranstrike-2zm6mq81gre00",
+            "timestamp": "2026-07-17T05:19:53+00:00",
+            "date": "2026-07-17",
+            "actor": "usa",
+            "bilateral_event": true,
+            "title": "United States conducts six consecutive days of airstrikes against Iran targeting military facilities, simultaneously expressing openness to ceasefire negotiations",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": -6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": -5.0,
+            "final_score": -5.0,
+            "duplicate_indicator_evidence": false,
+            "daily_score_suppressed": false,
+            "suppression_reason": null,
+            "primary_daily_indicator": "negotiation",
+            "indicators": [
+              {
+                "id": "negotiation",
+                "name": "Negotiation",
+                "score": -6.0,
+                "direction": "decrease",
+                "interest": {
+                  "id": "avoid_full_scale_war",
+                  "name": "Avoid full-scale regional war",
+                  "weight": 10.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "United States: Negotiation. Operational component: +1.00; strategic modifier: -6.00; final contribution before daily deduplication: -5.00. Event: United States conducts six consecutive days of airstrikes against Iran targeting military facilities, simultaneously expressing openness to ceasefire negotiations",
+            "source": "",
+            "link": "https://t.me/OSINTdefender/19499",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [
+              "negotiation"
+            ],
+            "duplicate_daily_indicators": []
+          }
+        ],
+        "weighted_score_7d": -5.0,
+        "pressure_index_7d": 40.0,
+        "pressure_level": "reduced",
+        "trend": "strong_decrease"
       },
       "iran": {
-        "raw_score": 0.0,
+        "raw_score": -5.0,
         "positive_score": 0.0,
-        "negative_score": 0.0,
-        "event_count": 0,
-        "scored_event_count": 0,
-        "evidence_event_count": 0,
+        "negative_score": -5.0,
+        "event_count": 1,
+        "scored_event_count": 1,
+        "evidence_event_count": 1,
         "suppressed_duplicate_count": 0,
         "increase_event_count": 0,
-        "decrease_event_count": 0,
-        "contributors": [],
-        "weighted_score_7d": 2.4,
-        "pressure_index_7d": 54.8,
-        "pressure_level": "balanced",
-        "trend": "stable"
+        "decrease_event_count": 1,
+        "contributors": [
+          {
+            "event_id": "iranstrike-2zm6mq81gre00",
+            "timestamp": "2026-07-17T05:19:53+00:00",
+            "date": "2026-07-17",
+            "actor": "iran",
+            "bilateral_event": true,
+            "title": "United States conducts six consecutive days of airstrikes against Iran targeting military facilities, simultaneously expressing openness to ceasefire negotiations",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": -6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": -5.0,
+            "final_score": -5.0,
+            "duplicate_indicator_evidence": false,
+            "daily_score_suppressed": false,
+            "suppression_reason": null,
+            "primary_daily_indicator": "negotiation",
+            "indicators": [
+              {
+                "id": "negotiation",
+                "name": "Negotiation",
+                "score": -6.0,
+                "direction": "decrease",
+                "interest": {
+                  "id": "avoid_regime_destroying_war",
+                  "name": "Avoid regime-destroying war",
+                  "weight": 10.0
+                },
+                "recognition_rule_count": 2
+              }
+            ],
+            "reason": "Iran: Negotiation. Operational component: +1.00; strategic modifier: -6.00; final contribution before daily deduplication: -5.00. Event: United States conducts six consecutive days of airstrikes against Iran targeting military facilities, simultaneously expressing openness to ceasefire negotiations",
+            "source": "",
+            "link": "https://t.me/OSINTdefender/19499",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [
+              "negotiation"
+            ],
+            "duplicate_daily_indicators": []
+          }
+        ],
+        "weighted_score_7d": 13.15,
+        "pressure_index_7d": 76.3,
+        "pressure_level": "high",
+        "trend": "strong_decrease"
       },
       "overall": {
-        "pressure_index_7d": 52.4,
-        "pressure_level": "balanced",
-        "trend": "increase",
+        "pressure_index_7d": 58.15,
+        "pressure_level": "elevated",
+        "trend": "strong_decrease",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
     },
@@ -15458,31 +15820,118 @@
         "increase_event_count": 0,
         "decrease_event_count": 0,
         "contributors": [],
-        "weighted_score_7d": 0.0,
-        "pressure_index_7d": 50.0,
-        "pressure_level": "balanced",
-        "trend": "stable"
+        "weighted_score_7d": -4.25,
+        "pressure_index_7d": 41.5,
+        "pressure_level": "reduced",
+        "trend": "increase"
       },
       "iran": {
-        "raw_score": 0.0,
-        "positive_score": 0.0,
+        "raw_score": 7.0,
+        "positive_score": 7.0,
         "negative_score": 0.0,
-        "event_count": 0,
-        "scored_event_count": 0,
-        "evidence_event_count": 0,
-        "suppressed_duplicate_count": 0,
-        "increase_event_count": 0,
+        "event_count": 2,
+        "scored_event_count": 1,
+        "evidence_event_count": 2,
+        "suppressed_duplicate_count": 1,
+        "increase_event_count": 1,
         "decrease_event_count": 0,
-        "contributors": [],
-        "weighted_score_7d": 1.5,
-        "pressure_index_7d": 53.0,
-        "pressure_level": "balanced",
-        "trend": "decrease"
+        "contributors": [
+          {
+            "event_id": "iranstrike-2zsgvt6frps00",
+            "timestamp": "2026-07-18T10:12:08+00:00",
+            "date": "2026-07-18",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Iran launches ballistic missiles from Khomeyn targeting Muwaffaq Salti Air Base in Jordan",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 7.0,
+            "final_score": 7.0,
+            "duplicate_indicator_evidence": false,
+            "daily_score_suppressed": false,
+            "suppression_reason": null,
+            "primary_daily_indicator": "missile_test",
+            "indicators": [
+              {
+                "id": "missile_test",
+                "name": "Missile test",
+                "score": 6.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "missile_capability",
+                  "name": "Missile capability",
+                  "weight": 9.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles from Khomeyn targeting Muwaffaq Salti Air Base in Jordan",
+            "source": "",
+            "link": "https://t.me/CIG_telegram/80107",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [
+              "missile_test"
+            ],
+            "duplicate_daily_indicators": []
+          },
+          {
+            "event_id": "iranstrike-2nndotjbmdg00",
+            "timestamp": "2026-07-18T07:23:01+00:00",
+            "date": "2026-07-18",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Missile alerts activated twice overnight in Saudi Arabia at Al-Khafji island and Yanbu port area, Iran reportedly launches missiles at Saudi Arabia for first time in current escalation",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 7.0,
+            "final_score": 0.0,
+            "duplicate_indicator_evidence": true,
+            "daily_score_suppressed": true,
+            "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+            "primary_daily_indicator": null,
+            "indicators": [
+              {
+                "id": "missile_test",
+                "name": "Missile test",
+                "score": 6.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "missile_capability",
+                  "name": "Missile capability",
+                  "weight": 9.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Missile alerts activated twice overnight in Saudi Arabia at Al-Khafji island and Yanbu port area, Iran reportedly launches missiles at Saudi Arabia for first time in current escalation",
+            "source": "",
+            "link": "https://t.me/abualiexpress/126742",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [],
+            "duplicate_daily_indicators": [
+              "missile_test"
+            ]
+          }
+        ],
+        "weighted_score_7d": 16.4,
+        "pressure_index_7d": 82.8,
+        "pressure_level": "critical",
+        "trend": "strong_increase"
       },
       "overall": {
-        "pressure_index_7d": 51.5,
-        "pressure_level": "balanced",
-        "trend": "stable",
+        "pressure_index_7d": 62.15,
+        "pressure_level": "elevated",
+        "trend": "increase",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
     },
@@ -15500,10 +15949,10 @@
         "increase_event_count": 0,
         "decrease_event_count": 0,
         "contributors": [],
-        "weighted_score_7d": 0.0,
-        "pressure_index_7d": 50.0,
-        "pressure_level": "balanced",
-        "trend": "stable"
+        "weighted_score_7d": -3.5,
+        "pressure_index_7d": 43.0,
+        "pressure_level": "reduced",
+        "trend": "increase"
       },
       "iran": {
         "raw_score": 0.0,
@@ -15516,15 +15965,15 @@
         "increase_event_count": 0,
         "decrease_event_count": 0,
         "contributors": [],
-        "weighted_score_7d": 0.6,
-        "pressure_index_7d": 51.2,
-        "pressure_level": "balanced",
-        "trend": "decrease"
+        "weighted_score_7d": 11.6,
+        "pressure_index_7d": 73.2,
+        "pressure_level": "high",
+        "trend": "strong_decrease"
       },
       "overall": {
-        "pressure_index_7d": 50.6,
-        "pressure_level": "balanced",
-        "trend": "stable",
+        "pressure_index_7d": 58.1,
+        "pressure_level": "elevated",
+        "trend": "decrease",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
     },
@@ -15542,31 +15991,204 @@
         "increase_event_count": 0,
         "decrease_event_count": 0,
         "contributors": [],
-        "weighted_score_7d": 0.0,
-        "pressure_index_7d": 50.0,
-        "pressure_level": "balanced",
-        "trend": "stable"
+        "weighted_score_7d": -2.75,
+        "pressure_index_7d": 44.5,
+        "pressure_level": "reduced",
+        "trend": "increase"
       },
       "iran": {
-        "raw_score": 0.0,
-        "positive_score": 0.0,
+        "raw_score": 17.0,
+        "positive_score": 17.0,
         "negative_score": 0.0,
-        "event_count": 0,
-        "scored_event_count": 0,
-        "evidence_event_count": 0,
-        "suppressed_duplicate_count": 0,
-        "increase_event_count": 0,
+        "event_count": 4,
+        "scored_event_count": 2,
+        "evidence_event_count": 4,
+        "suppressed_duplicate_count": 2,
+        "increase_event_count": 2,
         "decrease_event_count": 0,
-        "contributors": [],
-        "weighted_score_7d": 0.3,
-        "pressure_index_7d": 50.6,
-        "pressure_level": "balanced",
-        "trend": "stable"
+        "contributors": [
+          {
+            "event_id": "iranstrike-30s2abdp8to00",
+            "timestamp": "2026-07-20T04:51:45+00:00",
+            "date": "2026-07-20",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Iran launches missiles and drones targeting U.S. positions in Bahrain and Kuwait",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 9.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 10.0,
+            "final_score": 10.0,
+            "duplicate_indicator_evidence": false,
+            "daily_score_suppressed": false,
+            "suppression_reason": null,
+            "primary_daily_indicator": "missile_preparation",
+            "indicators": [
+              {
+                "id": "missile_preparation",
+                "name": "Missile force preparation",
+                "score": 9.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "strategic_deterrence",
+                  "name": "Strategic deterrence",
+                  "weight": 10.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Iran launches missiles and drones targeting U.S. positions in Bahrain and Kuwait",
+            "source": "",
+            "link": "https://t.me/idkunim_il/61651",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [
+              "missile_preparation"
+            ],
+            "duplicate_daily_indicators": []
+          },
+          {
+            "event_id": "iranstrike-2euc0mv0gaqs0",
+            "timestamp": "2026-07-20T18:17:18+00:00",
+            "date": "2026-07-20",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Iran launches ballistic missiles from Tabriz in northwestern Iran targeting Jordan; alerts activated in Jordan",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 7.0,
+            "final_score": 7.0,
+            "duplicate_indicator_evidence": false,
+            "daily_score_suppressed": false,
+            "suppression_reason": null,
+            "primary_daily_indicator": "missile_test",
+            "indicators": [
+              {
+                "id": "missile_test",
+                "name": "Missile test",
+                "score": 6.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "missile_capability",
+                  "name": "Missile capability",
+                  "weight": 9.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles from Tabriz in northwestern Iran targeting Jordan; alerts activated in Jordan",
+            "source": "",
+            "link": "https://t.me/abualiexpress/126934",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [
+              "missile_test"
+            ],
+            "duplicate_daily_indicators": []
+          },
+          {
+            "event_id": "iranstrike-oeo69s17kkg0",
+            "timestamp": "2026-07-20T15:48:46+00:00",
+            "date": "2026-07-20",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Iran launches missile from Lar region (Fars Province) toward Bahrain",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 7.0,
+            "final_score": 0.0,
+            "duplicate_indicator_evidence": true,
+            "daily_score_suppressed": true,
+            "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+            "primary_daily_indicator": null,
+            "indicators": [
+              {
+                "id": "missile_test",
+                "name": "Missile test",
+                "score": 6.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "missile_capability",
+                  "name": "Missile capability",
+                  "weight": 9.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches missile from Lar region (Fars Province) toward Bahrain",
+            "source": "",
+            "link": "https://t.me/abualiexpress/126920",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [],
+            "duplicate_daily_indicators": [
+              "missile_test"
+            ]
+          },
+          {
+            "event_id": "iranstrike-icui4rv3ep40",
+            "timestamp": "2026-07-20T18:05:43+00:00",
+            "date": "2026-07-20",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Iran launches two ballistic missiles from Tabriz targeting King Hussein International Airport in Aqaba, western Jordan; explosions reported in Eilat, Israel",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 7.0,
+            "final_score": 0.0,
+            "duplicate_indicator_evidence": true,
+            "daily_score_suppressed": true,
+            "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+            "primary_daily_indicator": null,
+            "indicators": [
+              {
+                "id": "missile_test",
+                "name": "Missile test",
+                "score": 6.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "missile_capability",
+                  "name": "Missile capability",
+                  "weight": 9.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches two ballistic missiles from Tabriz targeting King Hussein International Airport in Aqaba, western Jordan; explosions reported in Eilat, Israel",
+            "source": "",
+            "link": "https://t.me/CIG_telegram/80356",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [],
+            "duplicate_daily_indicators": [
+              "missile_test"
+            ]
+          }
+        ],
+        "weighted_score_7d": 24.75,
+        "pressure_index_7d": 99.5,
+        "pressure_level": "critical",
+        "trend": "strong_increase"
       },
       "overall": {
-        "pressure_index_7d": 50.3,
-        "pressure_level": "balanced",
-        "trend": "stable",
+        "pressure_index_7d": 72.0,
+        "pressure_level": "high",
+        "trend": "strong_increase",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
     },
@@ -15574,41 +16196,301 @@
       "date": "2026-07-21",
       "calculation_mode": "historical_backfill",
       "usa": {
-        "raw_score": 0.0,
-        "positive_score": 0.0,
+        "raw_score": 6.0,
+        "positive_score": 6.0,
         "negative_score": 0.0,
-        "event_count": 0,
-        "scored_event_count": 0,
-        "evidence_event_count": 0,
+        "event_count": 1,
+        "scored_event_count": 1,
+        "evidence_event_count": 1,
         "suppressed_duplicate_count": 0,
-        "increase_event_count": 0,
+        "increase_event_count": 1,
         "decrease_event_count": 0,
-        "contributors": [],
-        "weighted_score_7d": 0.0,
-        "pressure_index_7d": 50.0,
-        "pressure_level": "balanced",
-        "trend": "stable"
+        "contributors": [
+          {
+            "event_id": "iranstrike-1p9hscg7dcxs0",
+            "timestamp": "2026-07-21T16:40:00+00:00",
+            "date": "2026-07-21",
+            "actor": "usa",
+            "bilateral_event": false,
+            "title": "Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 5.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 6.0,
+            "final_score": 6.0,
+            "duplicate_indicator_evidence": false,
+            "daily_score_suppressed": false,
+            "suppression_reason": null,
+            "primary_daily_indicator": "presidential_warning",
+            "indicators": [
+              {
+                "id": "presidential_warning",
+                "name": "Presidential warning",
+                "score": 5.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "regional_deterrence",
+                  "name": "Regional deterrence",
+                  "weight": 8.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "United States: Presidential warning. Operational component: +1.00; strategic modifier: +5.00; final contribution before daily deduplication: +6.00. Event: Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
+            "source": "",
+            "link": "https://t.me/CIG_telegram/80426",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [
+              "presidential_warning"
+            ],
+            "duplicate_daily_indicators": []
+          }
+        ],
+        "weighted_score_7d": 4.0,
+        "pressure_index_7d": 58.0,
+        "pressure_level": "elevated",
+        "trend": "strong_increase"
       },
       "iran": {
-        "raw_score": 0.0,
-        "positive_score": 0.0,
+        "raw_score": 17.0,
+        "positive_score": 17.0,
         "negative_score": 0.0,
-        "event_count": 0,
-        "scored_event_count": 0,
-        "evidence_event_count": 0,
-        "suppressed_duplicate_count": 0,
-        "increase_event_count": 0,
+        "event_count": 5,
+        "scored_event_count": 2,
+        "evidence_event_count": 5,
+        "suppressed_duplicate_count": 3,
+        "increase_event_count": 2,
         "decrease_event_count": 0,
-        "contributors": [],
-        "weighted_score_7d": -0.9,
-        "pressure_index_7d": 48.2,
-        "pressure_level": "balanced",
-        "trend": "decrease"
+        "contributors": [
+          {
+            "event_id": "iranstrike-1gluh8mn0ejk0",
+            "timestamp": "2026-07-21T09:50:52+00:00",
+            "date": "2026-07-21",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Iran launches missiles targeting U.S. positions in Jordan, Qatar and Bahrain",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 9.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 10.0,
+            "final_score": 10.0,
+            "duplicate_indicator_evidence": false,
+            "daily_score_suppressed": false,
+            "suppression_reason": null,
+            "primary_daily_indicator": "missile_preparation",
+            "indicators": [
+              {
+                "id": "missile_preparation",
+                "name": "Missile force preparation",
+                "score": 9.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "strategic_deterrence",
+                  "name": "Strategic deterrence",
+                  "weight": 10.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Iran launches missiles targeting U.S. positions in Jordan, Qatar and Bahrain",
+            "source": "",
+            "link": "https://t.me/idkunim_il/61720",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [
+              "missile_preparation"
+            ],
+            "duplicate_daily_indicators": []
+          },
+          {
+            "event_id": "iranstrike-hpzfl48xwnk0",
+            "timestamp": "2026-07-21T10:59:00+00:00",
+            "date": "2026-07-21",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Iran launches multiple ballistic missile salvos targeting Al-Udeid airbase and U.S. naval vessels off Qatar coast",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 7.0,
+            "final_score": 7.0,
+            "duplicate_indicator_evidence": false,
+            "daily_score_suppressed": false,
+            "suppression_reason": null,
+            "primary_daily_indicator": "missile_test",
+            "indicators": [
+              {
+                "id": "missile_test",
+                "name": "Missile test",
+                "score": 6.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "missile_capability",
+                  "name": "Missile capability",
+                  "weight": 9.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches multiple ballistic missile salvos targeting Al-Udeid airbase and U.S. naval vessels off Qatar coast",
+            "source": "",
+            "link": "https://t.me/abualiexpress/126977",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [
+              "missile_test"
+            ],
+            "duplicate_daily_indicators": []
+          },
+          {
+            "event_id": "iranstrike-zgqgyypzdmo0",
+            "timestamp": "2026-07-21T05:24:05+00:00",
+            "date": "2026-07-21",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Iran launches 4 ballistic missiles from Urmia targeting Aqaba in southern Jordan",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 7.0,
+            "final_score": 0.0,
+            "duplicate_indicator_evidence": true,
+            "daily_score_suppressed": true,
+            "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+            "primary_daily_indicator": null,
+            "indicators": [
+              {
+                "id": "missile_test",
+                "name": "Missile test",
+                "score": 6.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "missile_capability",
+                  "name": "Missile capability",
+                  "weight": 9.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches 4 ballistic missiles from Urmia targeting Aqaba in southern Jordan",
+            "source": "",
+            "link": "https://t.me/OSINTdefender/19549",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [],
+            "duplicate_daily_indicators": [
+              "missile_test"
+            ]
+          },
+          {
+            "event_id": "iranstrike-1uwnem367ops0",
+            "timestamp": "2026-07-21T09:03:57+00:00",
+            "date": "2026-07-21",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Iran launches projectiles toward Jordan from Kermanshah region in western Iran, alerts activated in Jordan",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 7.0,
+            "final_score": 0.0,
+            "duplicate_indicator_evidence": true,
+            "daily_score_suppressed": true,
+            "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+            "primary_daily_indicator": null,
+            "indicators": [
+              {
+                "id": "missile_test",
+                "name": "Missile test",
+                "score": 6.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "missile_capability",
+                  "name": "Missile capability",
+                  "weight": 9.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches projectiles toward Jordan from Kermanshah region in western Iran, alerts activated in Jordan",
+            "source": "",
+            "link": "https://t.me/abualiexpress/126969",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [],
+            "duplicate_daily_indicators": [
+              "missile_test"
+            ]
+          },
+          {
+            "event_id": "iranstrike-2uliqlhy2fm00",
+            "timestamp": "2026-07-21T09:52:01+00:00",
+            "date": "2026-07-21",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Iran launches missile salvo targeting Jordan",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 7.0,
+            "final_score": 0.0,
+            "duplicate_indicator_evidence": true,
+            "daily_score_suppressed": true,
+            "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+            "primary_daily_indicator": null,
+            "indicators": [
+              {
+                "id": "missile_test",
+                "name": "Missile test",
+                "score": 6.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "missile_capability",
+                  "name": "Missile capability",
+                  "weight": 9.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches missile salvo targeting Jordan",
+            "source": "",
+            "link": "https://t.me/abualiexpress/126975",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [],
+            "duplicate_daily_indicators": [
+              "missile_test"
+            ]
+          }
+        ],
+        "weighted_score_7d": 34.95,
+        "pressure_index_7d": 100.0,
+        "pressure_level": "critical",
+        "trend": "stable"
       },
       "overall": {
-        "pressure_index_7d": 49.1,
-        "pressure_level": "balanced",
-        "trend": "decrease",
+        "pressure_index_7d": 79.0,
+        "pressure_level": "high",
+        "trend": "strong_increase",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
     },
@@ -15626,22 +16508,65 @@
         "increase_event_count": 0,
         "decrease_event_count": 0,
         "contributors": [],
-        "weighted_score_7d": 0.0,
-        "pressure_index_7d": 50.0,
-        "pressure_level": "balanced",
+        "weighted_score_7d": 3.85,
+        "pressure_index_7d": 57.7,
+        "pressure_level": "elevated",
         "trend": "stable"
       },
       "iran": {
-        "raw_score": -6.0,
-        "positive_score": 0.0,
+        "raw_score": 1.0,
+        "positive_score": 7.0,
         "negative_score": -6.0,
-        "event_count": 2,
-        "scored_event_count": 1,
-        "evidence_event_count": 2,
-        "suppressed_duplicate_count": 1,
-        "increase_event_count": 0,
+        "event_count": 4,
+        "scored_event_count": 2,
+        "evidence_event_count": 4,
+        "suppressed_duplicate_count": 2,
+        "increase_event_count": 1,
         "decrease_event_count": 1,
         "contributors": [
+          {
+            "event_id": "iranstrike-v7o1zvf2ty80",
+            "timestamp": "2026-07-22T09:58:18+00:00",
+            "date": "2026-07-22",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Iran launches 6 ballistic missiles at Aqaba, Jordan; Jordanian military intercepts 4, 2 impact in unpopulated areas",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 7.0,
+            "final_score": 7.0,
+            "duplicate_indicator_evidence": false,
+            "daily_score_suppressed": false,
+            "suppression_reason": null,
+            "primary_daily_indicator": "missile_test",
+            "indicators": [
+              {
+                "id": "missile_test",
+                "name": "Missile test",
+                "score": 6.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "missile_capability",
+                  "name": "Missile capability",
+                  "weight": 9.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches 6 ballistic missiles at Aqaba, Jordan; Jordanian military intercepts 4, 2 impact in unpopulated areas",
+            "source": "",
+            "link": "https://t.me/abualiexpress/127041",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [
+              "missile_test"
+            ],
+            "duplicate_daily_indicators": []
+          },
           {
             "event_id": "INFO-000102",
             "timestamp": "2026-07-22T07:42:29+00:00",
@@ -15727,17 +16652,60 @@
             "duplicate_daily_indicators": [
               "negotiation"
             ]
+          },
+          {
+            "event_id": "iranstrike-2z139ofwv3o00",
+            "timestamp": "2026-07-22T07:40:59+00:00",
+            "date": "2026-07-22",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Iran launches missiles targeting Jordan",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 7.0,
+            "final_score": 0.0,
+            "duplicate_indicator_evidence": true,
+            "daily_score_suppressed": true,
+            "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+            "primary_daily_indicator": null,
+            "indicators": [
+              {
+                "id": "missile_test",
+                "name": "Missile test",
+                "score": 6.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "missile_capability",
+                  "name": "Missile capability",
+                  "weight": 9.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches missiles targeting Jordan",
+            "source": "",
+            "link": "https://t.me/idkunim_il/61752",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [],
+            "duplicate_daily_indicators": [
+              "missile_test"
+            ]
           }
         ],
-        "weighted_score_7d": -6.0,
-        "pressure_index_7d": 38.0,
-        "pressure_level": "reduced",
-        "trend": "strong_decrease"
+        "weighted_score_7d": 28.9,
+        "pressure_index_7d": 100.0,
+        "pressure_level": "critical",
+        "trend": "stable"
       },
       "overall": {
-        "pressure_index_7d": 44.0,
-        "pressure_level": "reduced",
-        "trend": "strong_decrease",
+        "pressure_index_7d": 78.85,
+        "pressure_level": "high",
+        "trend": "stable",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
     },
@@ -15755,9 +16723,9 @@
         "increase_event_count": 0,
         "decrease_event_count": 0,
         "contributors": [],
-        "weighted_score_7d": 0.0,
-        "pressure_index_7d": 50.0,
-        "pressure_level": "balanced",
+        "weighted_score_7d": 3.45,
+        "pressure_index_7d": 56.9,
+        "pressure_level": "elevated",
         "trend": "stable"
       },
       "iran": {
@@ -15815,14 +16783,14 @@
             "duplicate_daily_indicators": []
           }
         ],
-        "weighted_score_7d": -11.1,
-        "pressure_index_7d": 27.8,
-        "pressure_level": "low",
+        "weighted_score_7d": 17.1,
+        "pressure_index_7d": 84.2,
+        "pressure_level": "critical",
         "trend": "strong_decrease"
       },
       "overall": {
-        "pressure_index_7d": 38.9,
-        "pressure_level": "reduced",
+        "pressure_index_7d": 70.55,
+        "pressure_level": "high",
         "trend": "strong_decrease",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
@@ -15885,8 +16853,8 @@
             "duplicate_daily_indicators": []
           }
         ],
-        "weighted_score_7d": -2.0,
-        "pressure_index_7d": 46.0,
+        "weighted_score_7d": 1.3,
+        "pressure_index_7d": 52.6,
         "pressure_level": "balanced",
         "trend": "decrease"
       },
@@ -15945,15 +16913,15 @@
             "duplicate_daily_indicators": []
           }
         ],
-        "weighted_score_7d": -11.3,
-        "pressure_index_7d": 27.4,
-        "pressure_level": "low",
-        "trend": "stable"
+        "weighted_score_7d": 10.8,
+        "pressure_index_7d": 71.6,
+        "pressure_level": "high",
+        "trend": "strong_decrease"
       },
       "overall": {
-        "pressure_index_7d": 36.7,
-        "pressure_level": "reduced",
-        "trend": "decrease",
+        "pressure_index_7d": 62.1,
+        "pressure_level": "elevated",
+        "trend": "strong_decrease",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
     },
@@ -15971,10 +16939,10 @@
         "increase_event_count": 0,
         "decrease_event_count": 0,
         "contributors": [],
-        "weighted_score_7d": -1.7,
-        "pressure_index_7d": 46.6,
+        "weighted_score_7d": 0.7,
+        "pressure_index_7d": 51.4,
         "pressure_level": "balanced",
-        "trend": "stable"
+        "trend": "decrease"
       },
       "iran": {
         "raw_score": -10.0,
@@ -16031,14 +16999,14 @@
             "duplicate_daily_indicators": []
           }
         ],
-        "weighted_score_7d": -19.2,
-        "pressure_index_7d": 11.6,
-        "pressure_level": "low",
+        "weighted_score_7d": -4.3,
+        "pressure_index_7d": 41.4,
+        "pressure_level": "reduced",
         "trend": "strong_decrease"
       },
       "overall": {
-        "pressure_index_7d": 29.1,
-        "pressure_level": "low",
+        "pressure_index_7d": 46.4,
+        "pressure_level": "balanced",
         "trend": "strong_decrease",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
@@ -16057,10 +17025,10 @@
         "increase_event_count": 0,
         "decrease_event_count": 0,
         "contributors": [],
-        "weighted_score_7d": -1.4,
-        "pressure_index_7d": 47.2,
+        "weighted_score_7d": 0.1,
+        "pressure_index_7d": 50.2,
         "pressure_level": "balanced",
-        "trend": "stable"
+        "trend": "decrease"
       },
       "iran": {
         "raw_score": 0.0,
@@ -16073,15 +17041,15 @@
         "increase_event_count": 0,
         "decrease_event_count": 0,
         "contributors": [],
-        "weighted_score_7d": -15.6,
-        "pressure_index_7d": 18.8,
-        "pressure_level": "low",
-        "trend": "strong_increase"
+        "weighted_score_7d": -6.0,
+        "pressure_index_7d": 38.0,
+        "pressure_level": "reduced",
+        "trend": "decrease"
       },
       "overall": {
-        "pressure_index_7d": 33.0,
+        "pressure_index_7d": 44.1,
         "pressure_level": "reduced",
-        "trend": "increase",
+        "trend": "decrease",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
     },
@@ -16186,8 +17154,8 @@
             ]
           }
         ],
-        "weighted_score_7d": -7.1,
-        "pressure_index_7d": 35.8,
+        "weighted_score_7d": -6.2,
+        "pressure_index_7d": 37.6,
         "pressure_level": "reduced",
         "trend": "strong_decrease"
       },
@@ -16332,14 +17300,14 @@
             ]
           }
         ],
-        "weighted_score_7d": -18.0,
-        "pressure_index_7d": 14.0,
+        "weighted_score_7d": -13.7,
+        "pressure_index_7d": 22.6,
         "pressure_level": "low",
-        "trend": "decrease"
+        "trend": "strong_decrease"
       },
       "overall": {
-        "pressure_index_7d": 24.9,
-        "pressure_level": "low",
+        "pressure_index_7d": 30.1,
+        "pressure_level": "reduced",
         "trend": "strong_decrease",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
@@ -16462,13 +17430,13 @@
             "duplicate_daily_indicators": []
           }
         ],
-        "weighted_score_7d": -19.8,
-        "pressure_index_7d": 10.4,
+        "weighted_score_7d": -18.75,
+        "pressure_index_7d": 12.5,
         "pressure_level": "low",
-        "trend": "decrease"
+        "trend": "strong_decrease"
       },
       "overall": {
-        "pressure_index_7d": 18.3,
+        "pressure_index_7d": 19.35,
         "pressure_level": "low",
         "trend": "strong_decrease",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
@@ -16494,14 +17462,14 @@
         "trend": "increase"
       },
       "iran": {
-        "raw_score": -9.0,
-        "positive_score": 0.0,
+        "raw_score": -2.0,
+        "positive_score": 7.0,
         "negative_score": -9.0,
-        "event_count": 1,
-        "scored_event_count": 1,
-        "evidence_event_count": 1,
+        "event_count": 2,
+        "scored_event_count": 2,
+        "evidence_event_count": 2,
         "suppressed_duplicate_count": 0,
-        "increase_event_count": 0,
+        "increase_event_count": 1,
         "decrease_event_count": 1,
         "contributors": [
           {
@@ -16546,17 +17514,60 @@
               "negotiation"
             ],
             "duplicate_daily_indicators": []
+          },
+          {
+            "event_id": "iranstrike-12pw8fs78dxs0",
+            "timestamp": "2026-07-29T18:03:50+00:00",
+            "date": "2026-07-29",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 7.0,
+            "final_score": 7.0,
+            "duplicate_indicator_evidence": false,
+            "daily_score_suppressed": false,
+            "suppression_reason": null,
+            "primary_daily_indicator": "missile_test",
+            "indicators": [
+              {
+                "id": "missile_test",
+                "name": "Missile test",
+                "score": 6.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "missile_capability",
+                  "name": "Missile capability",
+                  "weight": 9.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches multiple ballistic missiles toward U.S. military base in Jordan",
+            "source": "",
+            "link": "https://t.me/OSINTdefender/19630",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [
+              "missile_test"
+            ],
+            "duplicate_daily_indicators": []
           }
         ],
-        "weighted_score_7d": -23.7,
-        "pressure_index_7d": 2.6,
+        "weighted_score_7d": -16.7,
+        "pressure_index_7d": 16.6,
         "pressure_level": "low",
-        "trend": "strong_decrease"
+        "trend": "increase"
       },
       "overall": {
-        "pressure_index_7d": 16.5,
+        "pressure_index_7d": 23.5,
         "pressure_level": "low",
-        "trend": "decrease",
+        "trend": "increase",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
     },
@@ -16580,24 +17591,154 @@
         "trend": "increase"
       },
       "iran": {
-        "raw_score": 0.0,
-        "positive_score": 0.0,
+        "raw_score": 17.0,
+        "positive_score": 17.0,
         "negative_score": 0.0,
-        "event_count": 0,
-        "scored_event_count": 0,
-        "evidence_event_count": 0,
-        "suppressed_duplicate_count": 0,
-        "increase_event_count": 0,
+        "event_count": 3,
+        "scored_event_count": 2,
+        "evidence_event_count": 3,
+        "suppressed_duplicate_count": 1,
+        "increase_event_count": 2,
         "decrease_event_count": 0,
-        "contributors": [],
-        "weighted_score_7d": -17.95,
-        "pressure_index_7d": 14.1,
-        "pressure_level": "low",
+        "contributors": [
+          {
+            "event_id": "iranstrike-2zt15j80sbg00",
+            "timestamp": "2026-07-30T02:28:51+00:00",
+            "date": "2026-07-30",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 9.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 10.0,
+            "final_score": 10.0,
+            "duplicate_indicator_evidence": false,
+            "daily_score_suppressed": false,
+            "suppression_reason": null,
+            "primary_daily_indicator": "missile_preparation",
+            "indicators": [
+              {
+                "id": "missile_preparation",
+                "name": "Missile force preparation",
+                "score": 9.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "strategic_deterrence",
+                  "name": "Strategic deterrence",
+                  "weight": 10.0
+                },
+                "recognition_rule_count": 2
+              }
+            ],
+            "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: U.S. Central Command carries out major wave of strikes across Iran targeting dozens of IRGC sites including military command centers, missile and drone facilities, coastal surveillance and air defense positions, and maritime assets in response to Iranian missile attacks on U.S. forces in Jordan",
+            "source": "",
+            "link": "https://t.me/CIG_telegram/81321",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [
+              "missile_preparation"
+            ],
+            "duplicate_daily_indicators": []
+          },
+          {
+            "event_id": "iranstrike-fxw62tpkrw80",
+            "timestamp": "2026-07-30T05:28:58+00:00",
+            "date": "2026-07-30",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 7.0,
+            "final_score": 7.0,
+            "duplicate_indicator_evidence": false,
+            "daily_score_suppressed": false,
+            "suppression_reason": null,
+            "primary_daily_indicator": "missile_test",
+            "indicators": [
+              {
+                "id": "missile_test",
+                "name": "Missile test",
+                "score": 6.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "missile_capability",
+                  "name": "Missile capability",
+                  "weight": 9.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+            "source": "",
+            "link": "https://t.me/OSINTdefender/19640",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [
+              "missile_test"
+            ],
+            "duplicate_daily_indicators": []
+          },
+          {
+            "event_id": "iranstrike-2mk28wyb15400",
+            "timestamp": "2026-07-30T04:23:14+00:00",
+            "date": "2026-07-30",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Iran launches ballistic missiles from Khomein, Tabriz, and Yazd targeting Muwaffaq Salti airbase and U.S. forces in Jordan",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 7.0,
+            "final_score": 0.0,
+            "duplicate_indicator_evidence": true,
+            "daily_score_suppressed": true,
+            "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+            "primary_daily_indicator": null,
+            "indicators": [
+              {
+                "id": "missile_test",
+                "name": "Missile test",
+                "score": 6.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "missile_capability",
+                  "name": "Missile capability",
+                  "weight": 9.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles from Khomein, Tabriz, and Yazd targeting Muwaffaq Salti airbase and U.S. forces in Jordan",
+            "source": "",
+            "link": "https://t.me/CIG_telegram/81327",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [],
+            "duplicate_daily_indicators": [
+              "missile_test"
+            ]
+          }
+        ],
+        "weighted_score_7d": 5.0,
+        "pressure_index_7d": 60.0,
+        "pressure_level": "elevated",
         "trend": "strong_increase"
       },
       "overall": {
-        "pressure_index_7d": 24.25,
-        "pressure_level": "low",
+        "pressure_index_7d": 47.2,
+        "pressure_level": "balanced",
         "trend": "strong_increase",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
@@ -16632,15 +17773,15 @@
         "increase_event_count": 0,
         "decrease_event_count": 0,
         "contributors": [],
-        "weighted_score_7d": -13.5,
-        "pressure_index_7d": 23.0,
-        "pressure_level": "low",
-        "trend": "strong_increase"
+        "weighted_score_7d": 5.85,
+        "pressure_index_7d": 61.7,
+        "pressure_level": "elevated",
+        "trend": "increase"
       },
       "overall": {
-        "pressure_index_7d": 30.8,
-        "pressure_level": "reduced",
-        "trend": "strong_increase",
+        "pressure_index_7d": 50.15,
+        "pressure_level": "balanced",
+        "trend": "increase",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
     },
@@ -16674,15 +17815,15 @@
         "increase_event_count": 0,
         "decrease_event_count": 0,
         "contributors": [],
-        "weighted_score_7d": -8.85,
-        "pressure_index_7d": 32.3,
-        "pressure_level": "reduced",
-        "trend": "strong_increase"
+        "weighted_score_7d": 6.9,
+        "pressure_index_7d": 63.8,
+        "pressure_level": "elevated",
+        "trend": "increase"
       },
       "overall": {
-        "pressure_index_7d": 37.25,
-        "pressure_level": "reduced",
-        "trend": "strong_increase",
+        "pressure_index_7d": 53.0,
+        "pressure_level": "balanced",
+        "trend": "increase",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
     },
@@ -16933,14 +18074,14 @@
             ]
           }
         ],
-        "weighted_score_7d": -12.0,
-        "pressure_index_7d": 26.0,
-        "pressure_level": "low",
+        "weighted_score_7d": 0.15,
+        "pressure_index_7d": 50.3,
+        "pressure_level": "balanced",
         "trend": "strong_decrease"
       },
       "overall": {
-        "pressure_index_7d": 19.6,
-        "pressure_level": "low",
+        "pressure_index_7d": 31.75,
+        "pressure_level": "reduced",
         "trend": "strong_decrease",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
@@ -17665,13 +18806,13 @@
             ]
           }
         ],
-        "weighted_score_7d": -20.25,
-        "pressure_index_7d": 9.5,
+        "weighted_score_7d": -11.7,
+        "pressure_index_7d": 26.6,
         "pressure_level": "low",
         "trend": "strong_decrease"
       },
       "overall": {
-        "pressure_index_7d": 4.75,
+        "pressure_index_7d": 13.3,
         "pressure_level": "low",
         "trend": "strong_decrease",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
@@ -18010,15 +19151,15 @@
             ]
           }
         ],
-        "weighted_score_7d": -25.75,
-        "pressure_index_7d": 0.0,
+        "weighted_score_7d": -20.45,
+        "pressure_index_7d": 9.1,
         "pressure_level": "low",
         "trend": "strong_decrease"
       },
       "overall": {
-        "pressure_index_7d": 0.0,
+        "pressure_index_7d": 4.55,
         "pressure_level": "low",
-        "trend": "decrease",
+        "trend": "strong_decrease",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
     },
@@ -18254,15 +19395,15 @@
             ]
           }
         ],
-        "weighted_score_7d": -25.2,
-        "pressure_index_7d": 0.0,
+        "weighted_score_7d": -22.65,
+        "pressure_index_7d": 4.7,
         "pressure_level": "low",
-        "trend": "stable"
+        "trend": "decrease"
       },
       "overall": {
-        "pressure_index_7d": 0.0,
+        "pressure_index_7d": 2.35,
         "pressure_level": "low",
-        "trend": "stable",
+        "trend": "decrease",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
     },
@@ -18286,25 +19427,69 @@
         "trend": "stable"
       },
       "iran": {
-        "raw_score": 0.0,
-        "positive_score": 0.0,
+        "raw_score": 10.0,
+        "positive_score": 10.0,
         "negative_score": 0.0,
-        "event_count": 0,
-        "scored_event_count": 0,
-        "evidence_event_count": 0,
+        "event_count": 1,
+        "scored_event_count": 1,
+        "evidence_event_count": 1,
         "suppressed_duplicate_count": 0,
-        "increase_event_count": 0,
+        "increase_event_count": 1,
         "decrease_event_count": 0,
-        "contributors": [],
-        "weighted_score_7d": -20.25,
-        "pressure_index_7d": 9.5,
+        "contributors": [
+          {
+            "event_id": "iranstrike-23wsjfsgco8w0",
+            "timestamp": "2026-08-06T23:32:15+00:00",
+            "date": "2026-08-06",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Saudi official tells CNN Saudi Arabia preparing for possible coordinated attacks by Iran-backed Iraqi militias and Houthis; intelligence indicates IRGC coordination with simultaneous drone and missile attacks targeting civilian energy, port and airport infrastructure",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 9.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 10.0,
+            "final_score": 10.0,
+            "duplicate_indicator_evidence": false,
+            "daily_score_suppressed": false,
+            "suppression_reason": null,
+            "primary_daily_indicator": "missile_preparation",
+            "indicators": [
+              {
+                "id": "missile_preparation",
+                "name": "Missile force preparation",
+                "score": 9.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "strategic_deterrence",
+                  "name": "Strategic deterrence",
+                  "weight": 10.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Saudi official tells CNN Saudi Arabia preparing for possible coordinated attacks by Iran-backed Iraqi militias and Houthis; intelligence indicates IRGC coordination with simultaneous drone and missile attacks targeting civilian energy, port and airport infrastructure",
+            "source": "",
+            "link": "https://t.me/CIG_telegram/81820",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [
+              "missile_preparation"
+            ],
+            "duplicate_daily_indicators": []
+          }
+        ],
+        "weighted_score_7d": -10.25,
+        "pressure_index_7d": 29.5,
         "pressure_level": "low",
         "trend": "strong_increase"
       },
       "overall": {
-        "pressure_index_7d": 4.75,
+        "pressure_index_7d": 14.75,
         "pressure_level": "low",
-        "trend": "increase",
+        "trend": "strong_increase",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
     },
@@ -18469,13 +19654,13 @@
             "duplicate_daily_indicators": []
           }
         ],
-        "weighted_score_7d": -16.3,
-        "pressure_index_7d": 17.4,
-        "pressure_level": "low",
-        "trend": "strong_increase"
+        "weighted_score_7d": -7.8,
+        "pressure_index_7d": 34.4,
+        "pressure_level": "reduced",
+        "trend": "increase"
       },
       "overall": {
-        "pressure_index_7d": 8.7,
+        "pressure_index_7d": 17.2,
         "pressure_level": "low",
         "trend": "increase",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
@@ -18511,13 +19696,13 @@
         "increase_event_count": 0,
         "decrease_event_count": 0,
         "contributors": [],
-        "weighted_score_7d": -11.5,
-        "pressure_index_7d": 27.0,
-        "pressure_level": "low",
+        "weighted_score_7d": -4.5,
+        "pressure_index_7d": 41.0,
+        "pressure_level": "reduced",
         "trend": "strong_increase"
       },
       "overall": {
-        "pressure_index_7d": 20.15,
+        "pressure_index_7d": 27.15,
         "pressure_level": "low",
         "trend": "strong_increase",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
@@ -18553,13 +19738,13 @@
         "increase_event_count": 0,
         "decrease_event_count": 0,
         "contributors": [],
-        "weighted_score_7d": -7.0,
-        "pressure_index_7d": 36.0,
-        "pressure_level": "reduced",
+        "weighted_score_7d": -1.5,
+        "pressure_index_7d": 47.0,
+        "pressure_level": "balanced",
         "trend": "strong_increase"
       },
       "overall": {
-        "pressure_index_7d": 31.7,
+        "pressure_index_7d": 37.2,
         "pressure_level": "reduced",
         "trend": "strong_increase",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
@@ -18595,13 +19780,13 @@
         "increase_event_count": 0,
         "decrease_event_count": 0,
         "contributors": [],
-        "weighted_score_7d": -3.3,
-        "pressure_index_7d": 43.4,
-        "pressure_level": "reduced",
-        "trend": "strong_increase"
+        "weighted_score_7d": 0.7,
+        "pressure_index_7d": 51.4,
+        "pressure_level": "balanced",
+        "trend": "increase"
       },
       "overall": {
-        "pressure_index_7d": 40.15,
+        "pressure_index_7d": 44.15,
         "pressure_level": "reduced",
         "trend": "strong_increase",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
@@ -18768,13 +19953,13 @@
             ]
           }
         ],
-        "weighted_score_7d": -10.15,
-        "pressure_index_7d": 29.7,
-        "pressure_level": "low",
+        "weighted_score_7d": -7.65,
+        "pressure_index_7d": 34.7,
+        "pressure_level": "reduced",
         "trend": "strong_decrease"
       },
       "overall": {
-        "pressure_index_7d": 27.4,
+        "pressure_index_7d": 29.9,
         "pressure_level": "low",
         "trend": "strong_decrease",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
@@ -18898,15 +20083,15 @@
             "duplicate_daily_indicators": []
           }
         ],
-        "weighted_score_7d": -9.9,
-        "pressure_index_7d": 30.2,
+        "weighted_score_7d": -8.4,
+        "pressure_index_7d": 33.2,
         "pressure_level": "reduced",
-        "trend": "stable"
+        "trend": "decrease"
       },
       "overall": {
-        "pressure_index_7d": 28.95,
-        "pressure_level": "low",
-        "trend": "increase",
+        "pressure_index_7d": 30.45,
+        "pressure_level": "reduced",
+        "trend": "stable",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
     },
@@ -19459,16 +20644,59 @@
         "trend": "strong_decrease"
       },
       "iran": {
-        "raw_score": -6.0,
-        "positive_score": 0.0,
+        "raw_score": 1.0,
+        "positive_score": 7.0,
         "negative_score": -6.0,
-        "event_count": 1,
-        "scored_event_count": 1,
-        "evidence_event_count": 1,
-        "suppressed_duplicate_count": 0,
-        "increase_event_count": 0,
+        "event_count": 3,
+        "scored_event_count": 2,
+        "evidence_event_count": 3,
+        "suppressed_duplicate_count": 1,
+        "increase_event_count": 1,
         "decrease_event_count": 1,
         "contributors": [
+          {
+            "event_id": "iranstrike-3jc2x5avvwg00",
+            "timestamp": "2026-08-18T17:34:26+00:00",
+            "date": "2026-08-18",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Iran launches 2 missiles toward UAE; one falls in territorial waters, second lands outside state borders",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 7.0,
+            "final_score": 7.0,
+            "duplicate_indicator_evidence": false,
+            "daily_score_suppressed": false,
+            "suppression_reason": null,
+            "primary_daily_indicator": "missile_test",
+            "indicators": [
+              {
+                "id": "missile_test",
+                "name": "Missile test",
+                "score": 6.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "missile_capability",
+                  "name": "Missile capability",
+                  "weight": 9.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches 2 missiles toward UAE; one falls in territorial waters, second lands outside state borders",
+            "source": "",
+            "link": "https://t.me/idkunim_il/62609",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [
+              "missile_test"
+            ],
+            "duplicate_daily_indicators": []
+          },
           {
             "event_id": "INFO-000023",
             "timestamp": "2026-08-18T21:18:29+00:00",
@@ -19511,17 +20739,60 @@
               "negotiation"
             ],
             "duplicate_daily_indicators": []
+          },
+          {
+            "event_id": "iranstrike-ee1g3n4ctpc0",
+            "timestamp": "2026-08-18T16:45:23+00:00",
+            "date": "2026-08-18",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Iran launches 2 ballistic missiles at UAE; one intercepted, one falls in Emirati territorial waters",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 7.0,
+            "final_score": 0.0,
+            "duplicate_indicator_evidence": true,
+            "daily_score_suppressed": true,
+            "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+            "primary_daily_indicator": null,
+            "indicators": [
+              {
+                "id": "missile_test",
+                "name": "Missile test",
+                "score": 6.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "missile_capability",
+                  "name": "Missile capability",
+                  "weight": 9.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches 2 ballistic missiles at UAE; one intercepted, one falls in Emirati territorial waters",
+            "source": "",
+            "link": "https://t.me/CIG_telegram/82403",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [],
+            "duplicate_daily_indicators": [
+              "missile_test"
+            ]
           }
         ],
-        "weighted_score_7d": -7.7,
-        "pressure_index_7d": 34.6,
-        "pressure_level": "reduced",
-        "trend": "strong_decrease"
+        "weighted_score_7d": -0.7,
+        "pressure_index_7d": 48.6,
+        "pressure_level": "balanced",
+        "trend": "strong_increase"
       },
       "overall": {
-        "pressure_index_7d": 34.5,
+        "pressure_index_7d": 41.5,
         "pressure_level": "reduced",
-        "trend": "strong_decrease",
+        "trend": "stable",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
     },
@@ -19555,13 +20826,13 @@
         "increase_event_count": 0,
         "decrease_event_count": 0,
         "contributors": [],
-        "weighted_score_7d": -5.6,
-        "pressure_index_7d": 38.8,
-        "pressure_level": "reduced",
+        "weighted_score_7d": 0.35,
+        "pressure_index_7d": 50.7,
+        "pressure_level": "balanced",
         "trend": "increase"
       },
       "overall": {
-        "pressure_index_7d": 38.4,
+        "pressure_index_7d": 44.35,
         "pressure_level": "reduced",
         "trend": "increase",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
@@ -19685,13 +20956,13 @@
             "duplicate_daily_indicators": []
           }
         ],
-        "weighted_score_7d": -9.5,
-        "pressure_index_7d": 31.0,
+        "weighted_score_7d": -4.6,
+        "pressure_index_7d": 40.8,
         "pressure_level": "reduced",
         "trend": "strong_decrease"
       },
       "overall": {
-        "pressure_index_7d": 30.3,
+        "pressure_index_7d": 35.2,
         "pressure_level": "reduced",
         "trend": "strong_decrease",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
@@ -19727,13 +20998,13 @@
         "increase_event_count": 0,
         "decrease_event_count": 0,
         "contributors": [],
-        "weighted_score_7d": -7.7,
-        "pressure_index_7d": 34.6,
+        "weighted_score_7d": -3.85,
+        "pressure_index_7d": 42.3,
         "pressure_level": "reduced",
         "trend": "increase"
       },
       "overall": {
-        "pressure_index_7d": 33.9,
+        "pressure_index_7d": 37.75,
         "pressure_level": "reduced",
         "trend": "increase",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
@@ -19769,13 +21040,13 @@
         "increase_event_count": 0,
         "decrease_event_count": 0,
         "contributors": [],
-        "weighted_score_7d": -5.6,
-        "pressure_index_7d": 38.8,
+        "weighted_score_7d": -2.8,
+        "pressure_index_7d": 44.4,
         "pressure_level": "reduced",
         "trend": "increase"
       },
       "overall": {
-        "pressure_index_7d": 37.8,
+        "pressure_index_7d": 40.6,
         "pressure_level": "reduced",
         "trend": "increase",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
@@ -19811,13 +21082,13 @@
         "increase_event_count": 0,
         "decrease_event_count": 0,
         "contributors": [],
-        "weighted_score_7d": -4.2,
-        "pressure_index_7d": 41.6,
-        "pressure_level": "reduced",
-        "trend": "increase"
+        "weighted_score_7d": -2.45,
+        "pressure_index_7d": 45.1,
+        "pressure_level": "balanced",
+        "trend": "stable"
       },
       "overall": {
-        "pressure_index_7d": 41.0,
+        "pressure_index_7d": 42.75,
         "pressure_level": "reduced",
         "trend": "increase",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
@@ -19853,13 +21124,13 @@
         "increase_event_count": 0,
         "decrease_event_count": 0,
         "contributors": [],
-        "weighted_score_7d": -3.3,
-        "pressure_index_7d": 43.4,
-        "pressure_level": "reduced",
-        "trend": "increase"
+        "weighted_score_7d": -2.25,
+        "pressure_index_7d": 45.5,
+        "pressure_level": "balanced",
+        "trend": "stable"
       },
       "overall": {
-        "pressure_index_7d": 43.4,
+        "pressure_index_7d": 44.45,
         "pressure_level": "reduced",
         "trend": "increase",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
@@ -19947,7 +21218,7 @@
       "overall": {
         "pressure_index_7d": 39.0,
         "pressure_level": "reduced",
-        "trend": "decrease",
+        "trend": "strong_decrease",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
     },
@@ -20462,6 +21733,135 @@
       "overall": {
         "pressure_index_7d": 44.7,
         "pressure_level": "reduced",
+        "trend": "strong_increase",
+        "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
+      }
+    },
+    {
+      "date": "2026-08-31",
+      "calculation_mode": "live",
+      "usa": {
+        "raw_score": 0.0,
+        "positive_score": 0.0,
+        "negative_score": 0.0,
+        "event_count": 0,
+        "scored_event_count": 0,
+        "evidence_event_count": 0,
+        "suppressed_duplicate_count": 0,
+        "increase_event_count": 0,
+        "decrease_event_count": 0,
+        "contributors": [],
+        "weighted_score_7d": -1.5,
+        "pressure_index_7d": 47.0,
+        "pressure_level": "balanced",
+        "trend": "increase"
+      },
+      "iran": {
+        "raw_score": 18.0,
+        "positive_score": 18.0,
+        "negative_score": 0.0,
+        "event_count": 2,
+        "scored_event_count": 2,
+        "evidence_event_count": 2,
+        "suppressed_duplicate_count": 0,
+        "increase_event_count": 2,
+        "decrease_event_count": 0,
+        "contributors": [
+          {
+            "event_id": "iranstrike-1eivtmfey3cw0",
+            "timestamp": "2026-08-31T18:31:09+00:00",
+            "date": "2026-08-31",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "U.S. military strikes two Iranian rocket launchers on Larak Island in Strait of Hormuz after IRGC prepares sea mine attack",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 10.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 11.0,
+            "final_score": 11.0,
+            "duplicate_indicator_evidence": false,
+            "daily_score_suppressed": false,
+            "suppression_reason": null,
+            "primary_daily_indicator": "strike_preparation",
+            "indicators": [
+              {
+                "id": "strike_preparation",
+                "name": "Preparation for military strike",
+                "score": 10.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "strategic_deterrence",
+                  "name": "Strategic deterrence",
+                  "weight": 10.0
+                },
+                "recognition_rule_count": 2
+              }
+            ],
+            "reason": "Iran: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: U.S. military strikes two Iranian rocket launchers on Larak Island in Strait of Hormuz after IRGC prepares sea mine attack",
+            "source": "",
+            "link": "https://t.me/OSINTdefender/20084",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [
+              "strike_preparation"
+            ],
+            "duplicate_daily_indicators": []
+          },
+          {
+            "event_id": "iranstrike-5489dchz7qs0",
+            "timestamp": "2026-08-31T05:20:44+00:00",
+            "date": "2026-08-31",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Iran launches ballistic missiles and drones at U.S. military bases in Jordan (King Hussein Air Base and Al-Zarak), official IRGC and Iranian military announcements",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 7.0,
+            "final_score": 7.0,
+            "duplicate_indicator_evidence": false,
+            "daily_score_suppressed": false,
+            "suppression_reason": null,
+            "primary_daily_indicator": "missile_test",
+            "indicators": [
+              {
+                "id": "missile_test",
+                "name": "Missile test",
+                "score": 6.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "missile_capability",
+                  "name": "Missile capability",
+                  "weight": 9.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles and drones at U.S. military bases in Jordan (King Hussein Air Base and Al-Zarak), official IRGC and Iranian military announcements",
+            "source": "",
+            "link": "https://t.me/abualiexpress/129408",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [
+              "missile_test"
+            ],
+            "duplicate_daily_indicators": []
+          }
+        ],
+        "weighted_score_7d": 17.25,
+        "pressure_index_7d": 84.5,
+        "pressure_level": "critical",
+        "trend": "strong_increase"
+      },
+      "overall": {
+        "pressure_index_7d": 65.75,
+        "pressure_level": "high",
         "trend": "strong_increase",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
