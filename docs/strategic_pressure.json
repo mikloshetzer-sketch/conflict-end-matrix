@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T14:04:30.505145+00:00",
+  "generated_at": "2026-09-02T13:30:26.211961+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,31 +18,31 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 569,
-    "kinetic_events_loaded": 576,
-    "unique_events_scanned": 1092,
-    "strategic_evidence_contributions": 330,
+    "non_kinetic_events_loaded": 572,
+    "kinetic_events_loaded": 613,
+    "unique_events_scanned": 1128,
+    "strategic_evidence_contributions": 335,
     "evidence_contributions_by_actor": {
-      "usa": 108,
-      "iran": 222
+      "usa": 109,
+      "iran": 226
     },
     "scored_contributions_by_actor": {
-      "usa": 75,
-      "iran": 116
+      "usa": 76,
+      "iran": 117
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
-      "iran": 106
+      "iran": 109
     },
     "contributions_by_source_layer": {
       "non_kinetic": 296,
-      "kinetic": 34
+      "kinetic": 39
     },
     "evidence_indicator_counts": {
       "iran:negotiation": 186,
       "usa:negotiation": 89,
-      "iran:missile_test": 23,
-      "usa:presidential_warning": 14,
+      "iran:missile_test": 27,
+      "usa:presidential_warning": 15,
       "iran:hormuz_threat": 9,
       "usa:ceasefire_support": 8,
       "iran:missile_preparation": 5,
@@ -52,8 +52,8 @@
     "scored_indicator_counts": {
       "iran:negotiation": 92,
       "usa:negotiation": 60,
-      "usa:presidential_warning": 14,
-      "iran:missile_test": 11,
+      "usa:presidential_warning": 15,
+      "iran:missile_test": 12,
       "iran:hormuz_threat": 9,
       "iran:missile_preparation": 5,
       "usa:ceasefire_support": 4,
@@ -61,93 +61,138 @@
       "iran:nuclear_activity": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 1,
-    "history_day_count": 175
+    "skipped_current_utc_day": 14,
+    "history_day_count": 176
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-08-31",
+  "latest_complete_utc_day": "2026-09-01",
   "current": {
-    "date": "2026-08-31",
+    "date": "2026-09-01",
     "calculation_mode": "live",
     "usa": {
-      "raw_score": 0.0,
-      "positive_score": 0.0,
+      "raw_score": 6.0,
+      "positive_score": 6.0,
       "negative_score": 0.0,
-      "event_count": 0,
-      "scored_event_count": 0,
-      "evidence_event_count": 0,
+      "event_count": 1,
+      "scored_event_count": 1,
+      "evidence_event_count": 1,
       "suppressed_duplicate_count": 0,
-      "increase_event_count": 0,
-      "decrease_event_count": 0,
-      "contributors": [],
-      "weighted_score_7d": -1.5,
-      "pressure_index_7d": 47.0,
-      "pressure_level": "balanced",
-      "trend": "increase",
-      "strongest_contributors": []
-    },
-    "iran": {
-      "raw_score": 18.0,
-      "positive_score": 18.0,
-      "negative_score": 0.0,
-      "event_count": 2,
-      "scored_event_count": 2,
-      "evidence_event_count": 2,
-      "suppressed_duplicate_count": 0,
-      "increase_event_count": 2,
+      "increase_event_count": 1,
       "decrease_event_count": 0,
       "contributors": [
         {
-          "event_id": "iranstrike-1eivtmfey3cw0",
-          "timestamp": "2026-08-31T18:31:09+00:00",
-          "date": "2026-08-31",
-          "actor": "iran",
+          "event_id": "iranstrike-8givlz9bmrg0",
+          "timestamp": "2026-09-01T20:01:29+00:00",
+          "date": "2026-09-01",
+          "actor": "usa",
           "bilateral_event": false,
-          "title": "U.S. military strikes two Iranian rocket launchers on Larak Island in Strait of Hormuz after IRGC prepares sea mine attack",
+          "title": "U.S. strikes Iranian radar systems; President Trump tells Fox News 'if Iran retaliates, it will be obliterated'",
           "source_layer": "kinetic",
           "event_type": "kinetic",
           "event_direction": "escalation",
           "operational_component": 1.0,
-          "strategic_modifier": 10.0,
+          "strategic_modifier": 5.0,
           "context_multiplier": 1.0,
-          "original_final_score": 11.0,
-          "final_score": 11.0,
+          "original_final_score": 6.0,
+          "final_score": 6.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
-          "primary_daily_indicator": "strike_preparation",
+          "primary_daily_indicator": "presidential_warning",
           "indicators": [
             {
-              "id": "strike_preparation",
-              "name": "Preparation for military strike",
-              "score": 10.0,
+              "id": "presidential_warning",
+              "name": "Presidential warning",
+              "score": 5.0,
               "direction": "increase",
               "interest": {
-                "id": "strategic_deterrence",
-                "name": "Strategic deterrence",
-                "weight": 10.0
+                "id": "regional_deterrence",
+                "name": "Regional deterrence",
+                "weight": 8.0
               },
-              "recognition_rule_count": 2
+              "recognition_rule_count": 1
             }
           ],
-          "reason": "Iran: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: U.S. military strikes two Iranian rocket launchers on Larak Island in Strait of Hormuz after IRGC prepares sea mine attack",
+          "reason": "United States: Presidential warning. Operational component: +1.00; strategic modifier: +5.00; final contribution before daily deduplication: +6.00. Event: U.S. strikes Iranian radar systems; President Trump tells Fox News 'if Iran retaliates, it will be obliterated'",
           "source": "",
-          "link": "https://t.me/OSINTdefender/20084",
+          "link": "https://t.me/idkunim_il/63054",
           "existing_event_score": 0.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
-            "strike_preparation"
+            "presidential_warning"
           ],
           "duplicate_daily_indicators": []
-        },
+        }
+      ],
+      "weighted_score_7d": 5.1,
+      "pressure_index_7d": 60.2,
+      "pressure_level": "elevated",
+      "trend": "strong_increase",
+      "strongest_contributors": [
         {
-          "event_id": "iranstrike-5489dchz7qs0",
-          "timestamp": "2026-08-31T05:20:44+00:00",
-          "date": "2026-08-31",
+          "event_id": "iranstrike-8givlz9bmrg0",
+          "timestamp": "2026-09-01T20:01:29+00:00",
+          "date": "2026-09-01",
+          "actor": "usa",
+          "bilateral_event": false,
+          "title": "U.S. strikes Iranian radar systems; President Trump tells Fox News 'if Iran retaliates, it will be obliterated'",
+          "source_layer": "kinetic",
+          "event_type": "kinetic",
+          "event_direction": "escalation",
+          "operational_component": 1.0,
+          "strategic_modifier": 5.0,
+          "context_multiplier": 1.0,
+          "original_final_score": 6.0,
+          "final_score": 6.0,
+          "duplicate_indicator_evidence": false,
+          "daily_score_suppressed": false,
+          "suppression_reason": null,
+          "primary_daily_indicator": "presidential_warning",
+          "indicators": [
+            {
+              "id": "presidential_warning",
+              "name": "Presidential warning",
+              "score": 5.0,
+              "direction": "increase",
+              "interest": {
+                "id": "regional_deterrence",
+                "name": "Regional deterrence",
+                "weight": 8.0
+              },
+              "recognition_rule_count": 1
+            }
+          ],
+          "reason": "United States: Presidential warning. Operational component: +1.00; strategic modifier: +5.00; final contribution before daily deduplication: +6.00. Event: U.S. strikes Iranian radar systems; President Trump tells Fox News 'if Iran retaliates, it will be obliterated'",
+          "source": "",
+          "link": "https://t.me/idkunim_il/63054",
+          "existing_event_score": 0.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [
+            "presidential_warning"
+          ],
+          "duplicate_daily_indicators": []
+        }
+      ]
+    },
+    "iran": {
+      "raw_score": 7.0,
+      "positive_score": 7.0,
+      "negative_score": 0.0,
+      "event_count": 4,
+      "scored_event_count": 1,
+      "evidence_event_count": 4,
+      "suppressed_duplicate_count": 3,
+      "increase_event_count": 1,
+      "decrease_event_count": 0,
+      "contributors": [
+        {
+          "event_id": "iranstrike-12ximaiq0bi80",
+          "timestamp": "2026-09-01T20:13:23+00:00",
+          "date": "2026-09-01",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "Iran launches ballistic missiles and drones at U.S. military bases in Jordan (King Hussein Air Base and Al-Zarak), official IRGC and Iranian military announcements",
+          "title": "Iranian launches reported from Khorasan, Yazd and Kermanshah regions; interception attempts ongoing in eastern Jordan",
           "source_layer": "kinetic",
           "event_type": "kinetic",
           "event_direction": "escalation",
@@ -174,72 +219,158 @@
               "recognition_rule_count": 1
             }
           ],
-          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles and drones at U.S. military bases in Jordan (King Hussein Air Base and Al-Zarak), official IRGC and Iranian military announcements",
+          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iranian launches reported from Khorasan, Yazd and Kermanshah regions; interception attempts ongoing in eastern Jordan",
           "source": "",
-          "link": "https://t.me/abualiexpress/129408",
+          "link": "https://t.me/abualiexpress/129556",
           "existing_event_score": 0.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
             "missile_test"
           ],
           "duplicate_daily_indicators": []
-        }
-      ],
-      "weighted_score_7d": 17.25,
-      "pressure_index_7d": 84.5,
-      "pressure_level": "critical",
-      "trend": "strong_increase",
-      "strongest_contributors": [
+        },
         {
-          "event_id": "iranstrike-1eivtmfey3cw0",
-          "timestamp": "2026-08-31T18:31:09+00:00",
-          "date": "2026-08-31",
+          "event_id": "iranstrike-6sbh78bd4mo0",
+          "timestamp": "2026-09-01T16:25:06+00:00",
+          "date": "2026-09-01",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "U.S. military strikes two Iranian rocket launchers on Larak Island in Strait of Hormuz after IRGC prepares sea mine attack",
+          "title": "U.S. fires Tomahawk cruise missiles from warships at Iranian targets; reports of HIMARS launches from Bahrain",
           "source_layer": "kinetic",
           "event_type": "kinetic",
           "event_direction": "escalation",
           "operational_component": 1.0,
-          "strategic_modifier": 10.0,
+          "strategic_modifier": 6.0,
           "context_multiplier": 1.0,
-          "original_final_score": 11.0,
-          "final_score": 11.0,
-          "duplicate_indicator_evidence": false,
-          "daily_score_suppressed": false,
-          "suppression_reason": null,
-          "primary_daily_indicator": "strike_preparation",
+          "original_final_score": 7.0,
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": true,
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "primary_daily_indicator": null,
           "indicators": [
             {
-              "id": "strike_preparation",
-              "name": "Preparation for military strike",
-              "score": 10.0,
+              "id": "missile_test",
+              "name": "Missile test",
+              "score": 6.0,
               "direction": "increase",
               "interest": {
-                "id": "strategic_deterrence",
-                "name": "Strategic deterrence",
-                "weight": 10.0
+                "id": "missile_capability",
+                "name": "Missile capability",
+                "weight": 9.0
               },
-              "recognition_rule_count": 2
+              "recognition_rule_count": 1
             }
           ],
-          "reason": "Iran: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: U.S. military strikes two Iranian rocket launchers on Larak Island in Strait of Hormuz after IRGC prepares sea mine attack",
+          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: U.S. fires Tomahawk cruise missiles from warships at Iranian targets; reports of HIMARS launches from Bahrain",
           "source": "",
-          "link": "https://t.me/OSINTdefender/20084",
+          "link": "https://t.me/CIG_telegram/83102",
           "existing_event_score": 0.0,
           "existing_direction_score": 0.0,
-          "winning_daily_indicators": [
-            "strike_preparation"
-          ],
-          "duplicate_daily_indicators": []
+          "winning_daily_indicators": [],
+          "duplicate_daily_indicators": [
+            "missile_test"
+          ]
         },
         {
-          "event_id": "iranstrike-5489dchz7qs0",
-          "timestamp": "2026-08-31T05:20:44+00:00",
-          "date": "2026-08-31",
+          "event_id": "iranstrike-htfz05s0kig0",
+          "timestamp": "2026-09-01T16:34:04+00:00",
+          "date": "2026-09-01",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "Iran launches ballistic missiles and drones at U.S. military bases in Jordan (King Hussein Air Base and Al-Zarak), official IRGC and Iranian military announcements",
+          "title": "Iran launches anti-ship missiles toward U.S. warships in Gulf of Oman",
+          "source_layer": "kinetic",
+          "event_type": "kinetic",
+          "event_direction": "escalation",
+          "operational_component": 1.0,
+          "strategic_modifier": 6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": 7.0,
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": true,
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "primary_daily_indicator": null,
+          "indicators": [
+            {
+              "id": "missile_test",
+              "name": "Missile test",
+              "score": 6.0,
+              "direction": "increase",
+              "interest": {
+                "id": "missile_capability",
+                "name": "Missile capability",
+                "weight": 9.0
+              },
+              "recognition_rule_count": 1
+            }
+          ],
+          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches anti-ship missiles toward U.S. warships in Gulf of Oman",
+          "source": "",
+          "link": "https://t.me/CIG_telegram/83105",
+          "existing_event_score": 0.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [],
+          "duplicate_daily_indicators": [
+            "missile_test"
+          ]
+        },
+        {
+          "event_id": "iranstrike-cq7hzoyqtdk0",
+          "timestamp": "2026-09-01T19:38:04+00:00",
+          "date": "2026-09-01",
+          "actor": "iran",
+          "bilateral_event": false,
+          "title": "Iran conducts ballistic missile launches, additional footage released",
+          "source_layer": "kinetic",
+          "event_type": "kinetic",
+          "event_direction": "escalation",
+          "operational_component": 1.0,
+          "strategic_modifier": 6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": 7.0,
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": true,
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "primary_daily_indicator": null,
+          "indicators": [
+            {
+              "id": "missile_test",
+              "name": "Missile test",
+              "score": 6.0,
+              "direction": "increase",
+              "interest": {
+                "id": "missile_capability",
+                "name": "Missile capability",
+                "weight": 9.0
+              },
+              "recognition_rule_count": 1
+            }
+          ],
+          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran conducts ballistic missile launches, additional footage released",
+          "source": "",
+          "link": "https://t.me/CIG_telegram/83122",
+          "existing_event_score": 0.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [],
+          "duplicate_daily_indicators": [
+            "missile_test"
+          ]
+        }
+      ],
+      "weighted_score_7d": 23.8,
+      "pressure_index_7d": 97.6,
+      "pressure_level": "critical",
+      "trend": "strong_increase",
+      "strongest_contributors": [
+        {
+          "event_id": "iranstrike-12ximaiq0bi80",
+          "timestamp": "2026-09-01T20:13:23+00:00",
+          "date": "2026-09-01",
+          "actor": "iran",
+          "bilateral_event": false,
+          "title": "Iranian launches reported from Khorasan, Yazd and Kermanshah regions; interception attempts ongoing in eastern Jordan",
           "source_layer": "kinetic",
           "event_type": "kinetic",
           "event_direction": "escalation",
@@ -266,9 +397,9 @@
               "recognition_rule_count": 1
             }
           ],
-          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles and drones at U.S. military bases in Jordan (King Hussein Air Base and Al-Zarak), official IRGC and Iranian military announcements",
+          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iranian launches reported from Khorasan, Yazd and Kermanshah regions; interception attempts ongoing in eastern Jordan",
           "source": "",
-          "link": "https://t.me/abualiexpress/129408",
+          "link": "https://t.me/abualiexpress/129556",
           "existing_event_score": 0.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
@@ -279,7 +410,7 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 65.75,
+      "pressure_index_7d": 78.9,
       "pressure_level": "high",
       "trend": "strong_increase",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
