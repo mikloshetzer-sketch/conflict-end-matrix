@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T13:30:26.211961+00:00",
+  "generated_at": "2026-09-03T13:28:43.647065+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,401 +18,358 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 572,
-    "kinetic_events_loaded": 613,
-    "unique_events_scanned": 1128,
-    "strategic_evidence_contributions": 335,
+    "non_kinetic_events_loaded": 575,
+    "kinetic_events_loaded": 620,
+    "unique_events_scanned": 1138,
+    "strategic_evidence_contributions": 338,
     "evidence_contributions_by_actor": {
-      "usa": 109,
-      "iran": 226
+      "usa": 110,
+      "iran": 228
     },
     "scored_contributions_by_actor": {
-      "usa": 76,
-      "iran": 117
+      "usa": 77,
+      "iran": 119
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
       "iran": 109
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 296,
-      "kinetic": 39
+      "non_kinetic": 298,
+      "kinetic": 40
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 186,
-      "usa:negotiation": 89,
+      "iran:negotiation": 187,
+      "usa:negotiation": 90,
       "iran:missile_test": 27,
       "usa:presidential_warning": 15,
       "iran:hormuz_threat": 9,
       "usa:ceasefire_support": 8,
-      "iran:missile_preparation": 5,
+      "iran:missile_preparation": 6,
       "iran:strike_preparation": 2,
       "iran:nuclear_activity": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 92,
-      "usa:negotiation": 60,
+      "iran:negotiation": 93,
+      "usa:negotiation": 61,
       "usa:presidential_warning": 15,
       "iran:missile_test": 12,
       "iran:hormuz_threat": 9,
-      "iran:missile_preparation": 5,
+      "iran:missile_preparation": 6,
       "usa:ceasefire_support": 4,
       "iran:strike_preparation": 2,
       "iran:nuclear_activity": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 14,
-    "history_day_count": 176
+    "skipped_current_utc_day": 2,
+    "history_day_count": 177
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-09-01",
+  "latest_complete_utc_day": "2026-09-02",
   "current": {
-    "date": "2026-09-01",
+    "date": "2026-09-02",
     "calculation_mode": "live",
     "usa": {
-      "raw_score": 6.0,
-      "positive_score": 6.0,
-      "negative_score": 0.0,
+      "raw_score": -2.0,
+      "positive_score": 0.0,
+      "negative_score": -2.0,
       "event_count": 1,
       "scored_event_count": 1,
       "evidence_event_count": 1,
       "suppressed_duplicate_count": 0,
-      "increase_event_count": 1,
-      "decrease_event_count": 0,
+      "increase_event_count": 0,
+      "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "iranstrike-8givlz9bmrg0",
-          "timestamp": "2026-09-01T20:01:29+00:00",
-          "date": "2026-09-01",
+          "event_id": "INFO-000002",
+          "timestamp": "2026-09-02T04:10:55+00:00",
+          "date": "2026-09-02",
           "actor": "usa",
-          "bilateral_event": false,
-          "title": "U.S. strikes Iranian radar systems; President Trump tells Fox News 'if Iran retaliates, it will be obliterated'",
-          "source_layer": "kinetic",
-          "event_type": "kinetic",
+          "bilateral_event": true,
+          "title": "US-Israel-Iran War Latest Live News: Trump Rejects Iran Talks, Claims ‘Total Control’ Of Strait Of Hormuz After US Strikes - The Sunday Guardian",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
           "event_direction": "escalation",
-          "operational_component": 1.0,
-          "strategic_modifier": 5.0,
+          "operational_component": 4.0,
+          "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": 6.0,
-          "final_score": 6.0,
+          "original_final_score": -2.0,
+          "final_score": -2.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
-          "primary_daily_indicator": "presidential_warning",
+          "primary_daily_indicator": "negotiation",
           "indicators": [
             {
-              "id": "presidential_warning",
-              "name": "Presidential warning",
-              "score": 5.0,
-              "direction": "increase",
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
               "interest": {
-                "id": "regional_deterrence",
-                "name": "Regional deterrence",
-                "weight": 8.0
+                "id": "avoid_full_scale_war",
+                "name": "Avoid full-scale regional war",
+                "weight": 10.0
               },
-              "recognition_rule_count": 1
+              "recognition_rule_count": 2
             }
           ],
-          "reason": "United States: Presidential warning. Operational component: +1.00; strategic modifier: +5.00; final contribution before daily deduplication: +6.00. Event: U.S. strikes Iranian radar systems; President Trump tells Fox News 'if Iran retaliates, it will be obliterated'",
-          "source": "",
-          "link": "https://t.me/idkunim_il/63054",
-          "existing_event_score": 0.0,
-          "existing_direction_score": 0.0,
+          "reason": "United States: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Israel-Iran War Latest Live News: Trump Rejects Iran Talks, Claims ‘Total Control’ Of Strait Of Hormuz After US Strikes - The Sunday Guardian",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNZHljeXFrQ0JBaWZsMDZJNWZkUllCeXZfSVBHOUZTeGJET2ZNdkl5dHNUUDBWWnZCVXJQbi1KcHc5Yy1UcnIyOFU4YWZ2RmhOY1ZJODRkQm1HWWpLeVJnMWo1NHBKSHB4U0JtN2RKbWxrNFdTanBld1Y3MWZ2anNyYmRPQ3VkenlURjlaTWswMGhVN3JpUnZLQUwyRU1CRWRwbFFoeng0Zk5hWkJSSXlQSVpBMGZIbTRDbkNYZHotYmZNaXpoM0FfVDlDUnVIMHpZdnlUUmNLRjVOZi1ObWhYMi1VTWFBam9JQWxBX1dLY1hXT1UxOUHSAfsBQVVfeXFMT2RvR1RmVnVieDJQZmF4NEdjSXVIdHdXZDhDNldPaEFVOUlSOGs2UmhJY0twSFo4V0VBeG1QdlE0SldMQXI4T0ZPNmZHdHdFb0twZi1SZTdMY2VZRG9sY3lYVERrQ29TWXJ3b0ktQl9FV1kyM2NiSExRbE5kUVFmM21FSEV0NTdOakZCZ25NZGJZVVM4U1c0eHBaRTM3T2Y0T1BTbzB3RkRlSlpzeF9aSnEyUmNPU3ExdnNacGFLay13ejJ6RHZ2Y3lVdDZZVlRxV3RYUjZIMFFVaDdqOThSYi1UeThoQkdLME1FSzZSeWV1YU54Q01ZdWpJMVk?oc=5",
+          "existing_event_score": -3.0,
+          "existing_direction_score": -4.0,
           "winning_daily_indicators": [
-            "presidential_warning"
+            "negotiation"
           ],
           "duplicate_daily_indicators": []
         }
       ],
-      "weighted_score_7d": 5.1,
-      "pressure_index_7d": 60.2,
+      "weighted_score_7d": 3.1,
+      "pressure_index_7d": 56.2,
       "pressure_level": "elevated",
-      "trend": "strong_increase",
+      "trend": "decrease",
       "strongest_contributors": [
         {
-          "event_id": "iranstrike-8givlz9bmrg0",
-          "timestamp": "2026-09-01T20:01:29+00:00",
-          "date": "2026-09-01",
+          "event_id": "INFO-000002",
+          "timestamp": "2026-09-02T04:10:55+00:00",
+          "date": "2026-09-02",
           "actor": "usa",
-          "bilateral_event": false,
-          "title": "U.S. strikes Iranian radar systems; President Trump tells Fox News 'if Iran retaliates, it will be obliterated'",
-          "source_layer": "kinetic",
-          "event_type": "kinetic",
+          "bilateral_event": true,
+          "title": "US-Israel-Iran War Latest Live News: Trump Rejects Iran Talks, Claims ‘Total Control’ Of Strait Of Hormuz After US Strikes - The Sunday Guardian",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
           "event_direction": "escalation",
-          "operational_component": 1.0,
-          "strategic_modifier": 5.0,
+          "operational_component": 4.0,
+          "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": 6.0,
-          "final_score": 6.0,
+          "original_final_score": -2.0,
+          "final_score": -2.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
-          "primary_daily_indicator": "presidential_warning",
+          "primary_daily_indicator": "negotiation",
           "indicators": [
             {
-              "id": "presidential_warning",
-              "name": "Presidential warning",
-              "score": 5.0,
-              "direction": "increase",
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
               "interest": {
-                "id": "regional_deterrence",
-                "name": "Regional deterrence",
-                "weight": 8.0
+                "id": "avoid_full_scale_war",
+                "name": "Avoid full-scale regional war",
+                "weight": 10.0
               },
-              "recognition_rule_count": 1
+              "recognition_rule_count": 2
             }
           ],
-          "reason": "United States: Presidential warning. Operational component: +1.00; strategic modifier: +5.00; final contribution before daily deduplication: +6.00. Event: U.S. strikes Iranian radar systems; President Trump tells Fox News 'if Iran retaliates, it will be obliterated'",
-          "source": "",
-          "link": "https://t.me/idkunim_il/63054",
-          "existing_event_score": 0.0,
-          "existing_direction_score": 0.0,
+          "reason": "United States: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Israel-Iran War Latest Live News: Trump Rejects Iran Talks, Claims ‘Total Control’ Of Strait Of Hormuz After US Strikes - The Sunday Guardian",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNZHljeXFrQ0JBaWZsMDZJNWZkUllCeXZfSVBHOUZTeGJET2ZNdkl5dHNUUDBWWnZCVXJQbi1KcHc5Yy1UcnIyOFU4YWZ2RmhOY1ZJODRkQm1HWWpLeVJnMWo1NHBKSHB4U0JtN2RKbWxrNFdTanBld1Y3MWZ2anNyYmRPQ3VkenlURjlaTWswMGhVN3JpUnZLQUwyRU1CRWRwbFFoeng0Zk5hWkJSSXlQSVpBMGZIbTRDbkNYZHotYmZNaXpoM0FfVDlDUnVIMHpZdnlUUmNLRjVOZi1ObWhYMi1VTWFBam9JQWxBX1dLY1hXT1UxOUHSAfsBQVVfeXFMT2RvR1RmVnVieDJQZmF4NEdjSXVIdHdXZDhDNldPaEFVOUlSOGs2UmhJY0twSFo4V0VBeG1QdlE0SldMQXI4T0ZPNmZHdHdFb0twZi1SZTdMY2VZRG9sY3lYVERrQ29TWXJ3b0ktQl9FV1kyM2NiSExRbE5kUVFmM21FSEV0NTdOakZCZ25NZGJZVVM4U1c0eHBaRTM3T2Y0T1BTbzB3RkRlSlpzeF9aSnEyUmNPU3ExdnNacGFLay13ejJ6RHZ2Y3lVdDZZVlRxV3RYUjZIMFFVaDdqOThSYi1UeThoQkdLME1FSzZSeWV1YU54Q01ZdWpJMVk?oc=5",
+          "existing_event_score": -3.0,
+          "existing_direction_score": -4.0,
           "winning_daily_indicators": [
-            "presidential_warning"
+            "negotiation"
           ],
           "duplicate_daily_indicators": []
         }
       ]
     },
     "iran": {
-      "raw_score": 7.0,
-      "positive_score": 7.0,
-      "negative_score": 0.0,
-      "event_count": 4,
-      "scored_event_count": 1,
-      "evidence_event_count": 4,
-      "suppressed_duplicate_count": 3,
+      "raw_score": 8.0,
+      "positive_score": 10.0,
+      "negative_score": -2.0,
+      "event_count": 2,
+      "scored_event_count": 2,
+      "evidence_event_count": 2,
+      "suppressed_duplicate_count": 0,
       "increase_event_count": 1,
-      "decrease_event_count": 0,
+      "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "iranstrike-12ximaiq0bi80",
-          "timestamp": "2026-09-01T20:13:23+00:00",
-          "date": "2026-09-01",
+          "event_id": "iranstrike-r7jzgu3v128",
+          "timestamp": "2026-09-02T04:42:49+00:00",
+          "date": "2026-09-02",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "Iranian launches reported from Khorasan, Yazd and Kermanshah regions; interception attempts ongoing in eastern Jordan",
+          "title": "Iran conducts missile and drone strikes on US military positions in Iraq",
           "source_layer": "kinetic",
           "event_type": "kinetic",
           "event_direction": "escalation",
           "operational_component": 1.0,
-          "strategic_modifier": 6.0,
+          "strategic_modifier": 9.0,
           "context_multiplier": 1.0,
-          "original_final_score": 7.0,
-          "final_score": 7.0,
+          "original_final_score": 10.0,
+          "final_score": 10.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
-          "primary_daily_indicator": "missile_test",
+          "primary_daily_indicator": "missile_preparation",
           "indicators": [
             {
-              "id": "missile_test",
-              "name": "Missile test",
-              "score": 6.0,
+              "id": "missile_preparation",
+              "name": "Missile force preparation",
+              "score": 9.0,
               "direction": "increase",
               "interest": {
-                "id": "missile_capability",
-                "name": "Missile capability",
-                "weight": 9.0
+                "id": "strategic_deterrence",
+                "name": "Strategic deterrence",
+                "weight": 10.0
               },
               "recognition_rule_count": 1
             }
           ],
-          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iranian launches reported from Khorasan, Yazd and Kermanshah regions; interception attempts ongoing in eastern Jordan",
+          "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Iran conducts missile and drone strikes on US military positions in Iraq",
           "source": "",
-          "link": "https://t.me/abualiexpress/129556",
+          "link": "https://t.me/OSINTdefender/20101",
           "existing_event_score": 0.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
-            "missile_test"
+            "missile_preparation"
           ],
           "duplicate_daily_indicators": []
         },
         {
-          "event_id": "iranstrike-6sbh78bd4mo0",
-          "timestamp": "2026-09-01T16:25:06+00:00",
-          "date": "2026-09-01",
+          "event_id": "INFO-000002",
+          "timestamp": "2026-09-02T04:10:55+00:00",
+          "date": "2026-09-02",
           "actor": "iran",
-          "bilateral_event": false,
-          "title": "U.S. fires Tomahawk cruise missiles from warships at Iranian targets; reports of HIMARS launches from Bahrain",
-          "source_layer": "kinetic",
-          "event_type": "kinetic",
+          "bilateral_event": true,
+          "title": "US-Israel-Iran War Latest Live News: Trump Rejects Iran Talks, Claims ‘Total Control’ Of Strait Of Hormuz After US Strikes - The Sunday Guardian",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
           "event_direction": "escalation",
-          "operational_component": 1.0,
-          "strategic_modifier": 6.0,
+          "operational_component": 4.0,
+          "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": 7.0,
-          "final_score": 0.0,
-          "duplicate_indicator_evidence": true,
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "primary_daily_indicator": null,
-          "indicators": [
-            {
-              "id": "missile_test",
-              "name": "Missile test",
-              "score": 6.0,
-              "direction": "increase",
-              "interest": {
-                "id": "missile_capability",
-                "name": "Missile capability",
-                "weight": 9.0
-              },
-              "recognition_rule_count": 1
-            }
-          ],
-          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: U.S. fires Tomahawk cruise missiles from warships at Iranian targets; reports of HIMARS launches from Bahrain",
-          "source": "",
-          "link": "https://t.me/CIG_telegram/83102",
-          "existing_event_score": 0.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [],
-          "duplicate_daily_indicators": [
-            "missile_test"
-          ]
-        },
-        {
-          "event_id": "iranstrike-htfz05s0kig0",
-          "timestamp": "2026-09-01T16:34:04+00:00",
-          "date": "2026-09-01",
-          "actor": "iran",
-          "bilateral_event": false,
-          "title": "Iran launches anti-ship missiles toward U.S. warships in Gulf of Oman",
-          "source_layer": "kinetic",
-          "event_type": "kinetic",
-          "event_direction": "escalation",
-          "operational_component": 1.0,
-          "strategic_modifier": 6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": 7.0,
-          "final_score": 0.0,
-          "duplicate_indicator_evidence": true,
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "primary_daily_indicator": null,
-          "indicators": [
-            {
-              "id": "missile_test",
-              "name": "Missile test",
-              "score": 6.0,
-              "direction": "increase",
-              "interest": {
-                "id": "missile_capability",
-                "name": "Missile capability",
-                "weight": 9.0
-              },
-              "recognition_rule_count": 1
-            }
-          ],
-          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches anti-ship missiles toward U.S. warships in Gulf of Oman",
-          "source": "",
-          "link": "https://t.me/CIG_telegram/83105",
-          "existing_event_score": 0.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [],
-          "duplicate_daily_indicators": [
-            "missile_test"
-          ]
-        },
-        {
-          "event_id": "iranstrike-cq7hzoyqtdk0",
-          "timestamp": "2026-09-01T19:38:04+00:00",
-          "date": "2026-09-01",
-          "actor": "iran",
-          "bilateral_event": false,
-          "title": "Iran conducts ballistic missile launches, additional footage released",
-          "source_layer": "kinetic",
-          "event_type": "kinetic",
-          "event_direction": "escalation",
-          "operational_component": 1.0,
-          "strategic_modifier": 6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": 7.0,
-          "final_score": 0.0,
-          "duplicate_indicator_evidence": true,
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "primary_daily_indicator": null,
-          "indicators": [
-            {
-              "id": "missile_test",
-              "name": "Missile test",
-              "score": 6.0,
-              "direction": "increase",
-              "interest": {
-                "id": "missile_capability",
-                "name": "Missile capability",
-                "weight": 9.0
-              },
-              "recognition_rule_count": 1
-            }
-          ],
-          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran conducts ballistic missile launches, additional footage released",
-          "source": "",
-          "link": "https://t.me/CIG_telegram/83122",
-          "existing_event_score": 0.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [],
-          "duplicate_daily_indicators": [
-            "missile_test"
-          ]
-        }
-      ],
-      "weighted_score_7d": 23.8,
-      "pressure_index_7d": 97.6,
-      "pressure_level": "critical",
-      "trend": "strong_increase",
-      "strongest_contributors": [
-        {
-          "event_id": "iranstrike-12ximaiq0bi80",
-          "timestamp": "2026-09-01T20:13:23+00:00",
-          "date": "2026-09-01",
-          "actor": "iran",
-          "bilateral_event": false,
-          "title": "Iranian launches reported from Khorasan, Yazd and Kermanshah regions; interception attempts ongoing in eastern Jordan",
-          "source_layer": "kinetic",
-          "event_type": "kinetic",
-          "event_direction": "escalation",
-          "operational_component": 1.0,
-          "strategic_modifier": 6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": 7.0,
-          "final_score": 7.0,
+          "original_final_score": -2.0,
+          "final_score": -2.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
-          "primary_daily_indicator": "missile_test",
+          "primary_daily_indicator": "negotiation",
           "indicators": [
             {
-              "id": "missile_test",
-              "name": "Missile test",
-              "score": 6.0,
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_regime_destroying_war",
+                "name": "Avoid regime-destroying war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "Iran: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Israel-Iran War Latest Live News: Trump Rejects Iran Talks, Claims ‘Total Control’ Of Strait Of Hormuz After US Strikes - The Sunday Guardian",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNZHljeXFrQ0JBaWZsMDZJNWZkUllCeXZfSVBHOUZTeGJET2ZNdkl5dHNUUDBWWnZCVXJQbi1KcHc5Yy1UcnIyOFU4YWZ2RmhOY1ZJODRkQm1HWWpLeVJnMWo1NHBKSHB4U0JtN2RKbWxrNFdTanBld1Y3MWZ2anNyYmRPQ3VkenlURjlaTWswMGhVN3JpUnZLQUwyRU1CRWRwbFFoeng0Zk5hWkJSSXlQSVpBMGZIbTRDbkNYZHotYmZNaXpoM0FfVDlDUnVIMHpZdnlUUmNLRjVOZi1ObWhYMi1VTWFBam9JQWxBX1dLY1hXT1UxOUHSAfsBQVVfeXFMT2RvR1RmVnVieDJQZmF4NEdjSXVIdHdXZDhDNldPaEFVOUlSOGs2UmhJY0twSFo4V0VBeG1QdlE0SldMQXI4T0ZPNmZHdHdFb0twZi1SZTdMY2VZRG9sY3lYVERrQ29TWXJ3b0ktQl9FV1kyM2NiSExRbE5kUVFmM21FSEV0NTdOakZCZ25NZGJZVVM4U1c0eHBaRTM3T2Y0T1BTbzB3RkRlSlpzeF9aSnEyUmNPU3ExdnNacGFLay13ejJ6RHZ2Y3lVdDZZVlRxV3RYUjZIMFFVaDdqOThSYi1UeThoQkdLME1FSzZSeWV1YU54Q01ZdWpJMVk?oc=5",
+          "existing_event_score": -3.0,
+          "existing_direction_score": -4.0,
+          "winning_daily_indicators": [
+            "negotiation"
+          ],
+          "duplicate_daily_indicators": []
+        }
+      ],
+      "weighted_score_7d": 28.9,
+      "pressure_index_7d": 100.0,
+      "pressure_level": "critical",
+      "trend": "increase",
+      "strongest_contributors": [
+        {
+          "event_id": "iranstrike-r7jzgu3v128",
+          "timestamp": "2026-09-02T04:42:49+00:00",
+          "date": "2026-09-02",
+          "actor": "iran",
+          "bilateral_event": false,
+          "title": "Iran conducts missile and drone strikes on US military positions in Iraq",
+          "source_layer": "kinetic",
+          "event_type": "kinetic",
+          "event_direction": "escalation",
+          "operational_component": 1.0,
+          "strategic_modifier": 9.0,
+          "context_multiplier": 1.0,
+          "original_final_score": 10.0,
+          "final_score": 10.0,
+          "duplicate_indicator_evidence": false,
+          "daily_score_suppressed": false,
+          "suppression_reason": null,
+          "primary_daily_indicator": "missile_preparation",
+          "indicators": [
+            {
+              "id": "missile_preparation",
+              "name": "Missile force preparation",
+              "score": 9.0,
               "direction": "increase",
               "interest": {
-                "id": "missile_capability",
-                "name": "Missile capability",
-                "weight": 9.0
+                "id": "strategic_deterrence",
+                "name": "Strategic deterrence",
+                "weight": 10.0
               },
               "recognition_rule_count": 1
             }
           ],
-          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iranian launches reported from Khorasan, Yazd and Kermanshah regions; interception attempts ongoing in eastern Jordan",
+          "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Iran conducts missile and drone strikes on US military positions in Iraq",
           "source": "",
-          "link": "https://t.me/abualiexpress/129556",
+          "link": "https://t.me/OSINTdefender/20101",
           "existing_event_score": 0.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
-            "missile_test"
+            "missile_preparation"
+          ],
+          "duplicate_daily_indicators": []
+        },
+        {
+          "event_id": "INFO-000002",
+          "timestamp": "2026-09-02T04:10:55+00:00",
+          "date": "2026-09-02",
+          "actor": "iran",
+          "bilateral_event": true,
+          "title": "US-Israel-Iran War Latest Live News: Trump Rejects Iran Talks, Claims ‘Total Control’ Of Strait Of Hormuz After US Strikes - The Sunday Guardian",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "escalation",
+          "operational_component": 4.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -2.0,
+          "final_score": -2.0,
+          "duplicate_indicator_evidence": false,
+          "daily_score_suppressed": false,
+          "suppression_reason": null,
+          "primary_daily_indicator": "negotiation",
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_regime_destroying_war",
+                "name": "Avoid regime-destroying war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "Iran: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: US-Israel-Iran War Latest Live News: Trump Rejects Iran Talks, Claims ‘Total Control’ Of Strait Of Hormuz After US Strikes - The Sunday Guardian",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNZHljeXFrQ0JBaWZsMDZJNWZkUllCeXZfSVBHOUZTeGJET2ZNdkl5dHNUUDBWWnZCVXJQbi1KcHc5Yy1UcnIyOFU4YWZ2RmhOY1ZJODRkQm1HWWpLeVJnMWo1NHBKSHB4U0JtN2RKbWxrNFdTanBld1Y3MWZ2anNyYmRPQ3VkenlURjlaTWswMGhVN3JpUnZLQUwyRU1CRWRwbFFoeng0Zk5hWkJSSXlQSVpBMGZIbTRDbkNYZHotYmZNaXpoM0FfVDlDUnVIMHpZdnlUUmNLRjVOZi1ObWhYMi1VTWFBam9JQWxBX1dLY1hXT1UxOUHSAfsBQVVfeXFMT2RvR1RmVnVieDJQZmF4NEdjSXVIdHdXZDhDNldPaEFVOUlSOGs2UmhJY0twSFo4V0VBeG1QdlE0SldMQXI4T0ZPNmZHdHdFb0twZi1SZTdMY2VZRG9sY3lYVERrQ29TWXJ3b0ktQl9FV1kyM2NiSExRbE5kUVFmM21FSEV0NTdOakZCZ25NZGJZVVM4U1c0eHBaRTM3T2Y0T1BTbzB3RkRlSlpzeF9aSnEyUmNPU3ExdnNacGFLay13ejJ6RHZ2Y3lVdDZZVlRxV3RYUjZIMFFVaDdqOThSYi1UeThoQkdLME1FSzZSeWV1YU54Q01ZdWpJMVk?oc=5",
+          "existing_event_score": -3.0,
+          "existing_direction_score": -4.0,
+          "winning_daily_indicators": [
+            "negotiation"
           ],
           "duplicate_daily_indicators": []
         }
       ]
     },
     "overall": {
-      "pressure_index_7d": 78.9,
+      "pressure_index_7d": 78.1,
       "pressure_level": "high",
-      "trend": "strong_increase",
+      "trend": "stable",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
   }
