@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-03T13:28:43.647065+00:00",
+  "generated_at": "2026-09-04T13:23:15.133545+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -19,16 +19,16 @@
   },
   "statistics": {
     "non_kinetic_events_loaded": 575,
-    "kinetic_events_loaded": 620,
-    "unique_events_scanned": 1138,
-    "strategic_evidence_contributions": 338,
+    "kinetic_events_loaded": 629,
+    "unique_events_scanned": 1143,
+    "strategic_evidence_contributions": 339,
     "evidence_contributions_by_actor": {
       "usa": 110,
-      "iran": 228
+      "iran": 229
     },
     "scored_contributions_by_actor": {
       "usa": 77,
-      "iran": 119
+      "iran": 120
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
@@ -36,12 +36,12 @@
     },
     "contributions_by_source_layer": {
       "non_kinetic": 298,
-      "kinetic": 40
+      "kinetic": 41
     },
     "evidence_indicator_counts": {
       "iran:negotiation": 187,
       "usa:negotiation": 90,
-      "iran:missile_test": 27,
+      "iran:missile_test": 28,
       "usa:presidential_warning": 15,
       "iran:hormuz_threat": 9,
       "usa:ceasefire_support": 8,
@@ -53,7 +53,7 @@
       "iran:negotiation": 93,
       "usa:negotiation": 61,
       "usa:presidential_warning": 15,
-      "iran:missile_test": 12,
+      "iran:missile_test": 13,
       "iran:hormuz_threat": 9,
       "iran:missile_preparation": 6,
       "usa:ceasefire_support": 4,
@@ -61,8 +61,8 @@
       "iran:nuclear_activity": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 2,
-    "history_day_count": 177
+    "skipped_current_utc_day": 0,
+    "history_day_count": 178
   },
   "configuration_warnings": [],
   "status": "ok",
@@ -22140,7 +22140,7 @@
         "decrease_event_count": 1,
         "contributors": [
           {
-            "event_id": "INFO-000002",
+            "event_id": "INFO-000003",
             "timestamp": "2026-09-02T04:10:55+00:00",
             "date": "2026-09-02",
             "actor": "usa",
@@ -22243,7 +22243,7 @@
             "duplicate_daily_indicators": []
           },
           {
-            "event_id": "INFO-000002",
+            "event_id": "INFO-000003",
             "timestamp": "2026-09-02T04:10:55+00:00",
             "date": "2026-09-02",
             "actor": "iran",
@@ -22293,6 +22293,92 @@
       },
       "overall": {
         "pressure_index_7d": 78.1,
+        "pressure_level": "high",
+        "trend": "stable",
+        "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
+      }
+    },
+    {
+      "date": "2026-09-03",
+      "calculation_mode": "live",
+      "usa": {
+        "raw_score": 0.0,
+        "positive_score": 0.0,
+        "negative_score": 0.0,
+        "event_count": 0,
+        "scored_event_count": 0,
+        "evidence_event_count": 0,
+        "suppressed_duplicate_count": 0,
+        "increase_event_count": 0,
+        "decrease_event_count": 0,
+        "contributors": [],
+        "weighted_score_7d": 2.5,
+        "pressure_index_7d": 55.0,
+        "pressure_level": "elevated",
+        "trend": "decrease"
+      },
+      "iran": {
+        "raw_score": 7.0,
+        "positive_score": 7.0,
+        "negative_score": 0.0,
+        "event_count": 1,
+        "scored_event_count": 1,
+        "evidence_event_count": 1,
+        "suppressed_duplicate_count": 0,
+        "increase_event_count": 1,
+        "decrease_event_count": 0,
+        "contributors": [
+          {
+            "event_id": "iranstrike-3udt0f8zk3w00",
+            "timestamp": "2026-09-03T05:30:01+00:00",
+            "date": "2026-09-03",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Iran launches salvo of missiles and drones targeting Kuwait, Kuwaiti air defense systems activated to intercept",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 6.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 7.0,
+            "final_score": 7.0,
+            "duplicate_indicator_evidence": false,
+            "daily_score_suppressed": false,
+            "suppression_reason": null,
+            "primary_daily_indicator": "missile_test",
+            "indicators": [
+              {
+                "id": "missile_test",
+                "name": "Missile test",
+                "score": 6.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "missile_capability",
+                  "name": "Missile capability",
+                  "weight": 9.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches salvo of missiles and drones targeting Kuwait, Kuwaiti air defense systems activated to intercept",
+            "source": "",
+            "link": "https://t.me/abualiexpress/129623",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [
+              "missile_test"
+            ],
+            "duplicate_daily_indicators": []
+          }
+        ],
+        "weighted_score_7d": 31.4,
+        "pressure_index_7d": 100.0,
+        "pressure_level": "critical",
+        "trend": "stable"
+      },
+      "overall": {
+        "pressure_index_7d": 77.5,
         "pressure_level": "high",
         "trend": "stable",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
