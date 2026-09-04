@@ -1,45 +1,59 @@
 {
-  "report_date": "2026-09-02",
-  "created_at": "2026-09-02T11:13:20.646507",
-  "article_count": 50,
-  "total_score": -58,
-  "conflict_index": -1.16,
+  "report_date": "2026-09-03",
+  "created_at": "2026-09-03T11:09:17.748125",
+  "article_count": 49,
+  "total_score": -81,
+  "conflict_index": -1.65,
   "assessment": "moderate escalation",
-  "escalation_pressure": -64,
-  "diplomatic_pressure": 6,
-  "net_signal": -58,
+  "escalation_pressure": -90,
+  "diplomatic_pressure": 9,
+  "net_signal": -81,
   "top_drivers": [
+    {
+      "driver": "strike",
+      "category": "Military escalation",
+      "count": 10,
+      "weight": -2,
+      "impact": -20
+    },
     {
       "driver": "war",
       "category": "Military escalation",
-      "count": 27,
+      "count": 19,
       "weight": -1,
-      "impact": -27
+      "impact": -19
     },
     {
       "driver": "strikes",
       "category": "Military escalation",
-      "count": 6,
+      "count": 9,
       "weight": -2,
-      "impact": -12
+      "impact": -18
     },
     {
-      "driver": "strike",
+      "driver": "attack",
       "category": "Military escalation",
-      "count": 6,
+      "count": 5,
       "weight": -2,
-      "impact": -12
+      "impact": -10
     },
     {
       "driver": "attacks",
+      "category": "Military escalation",
+      "count": 4,
+      "weight": -2,
+      "impact": -8
+    },
+    {
+      "driver": "missile",
       "category": "Military escalation",
       "count": 2,
       "weight": -2,
       "impact": -4
     },
     {
-      "driver": "attack",
-      "category": "Military escalation",
+      "driver": "escalation",
+      "category": "Threats / retaliation",
       "count": 2,
       "weight": -2,
       "impact": -4
@@ -52,6 +66,20 @@
       "impact": 3
     },
     {
+      "driver": "deal",
+      "category": "Ceasefire / settlement",
+      "count": 2,
+      "weight": 1,
+      "impact": 2
+    },
+    {
+      "driver": "talks",
+      "category": "Diplomacy / negotiation",
+      "count": 1,
+      "weight": 2,
+      "impact": 2
+    },
+    {
       "driver": "peace",
       "category": "Diplomacy / negotiation",
       "count": 1,
@@ -59,71 +87,83 @@
       "impact": 2
     },
     {
-      "driver": "escalation",
-      "category": "Threats / retaliation",
-      "count": 1,
-      "weight": -2,
-      "impact": -2
-    },
-    {
-      "driver": "dead",
+      "driver": "killed",
       "category": "Casualties",
       "count": 1,
       "weight": -2,
       "impact": -2
     },
     {
-      "driver": "threat",
+      "driver": "bombing",
+      "category": "Military escalation",
+      "count": 1,
+      "weight": -2,
+      "impact": -2
+    },
+    {
+      "driver": "retaliation",
       "category": "Threats / retaliation",
       "count": 1,
       "weight": -1,
       "impact": -1
     },
     {
-      "driver": "deal",
-      "category": "Ceasefire / settlement",
+      "driver": "clashes",
+      "category": "Military escalation",
       "count": 1,
-      "weight": 1,
-      "impact": 1
+      "weight": -1,
+      "impact": -1
+    },
+    {
+      "driver": "clash",
+      "category": "Military escalation",
+      "count": 1,
+      "weight": -1,
+      "impact": -1
     }
   ],
   "categories": [
     {
       "category": "Military escalation",
-      "score": -59,
-      "count": 43,
+      "score": -83,
+      "count": 52,
       "keywords": [
         "attack",
         "attacks",
+        "bombing",
+        "clash",
+        "clashes",
+        "missile",
         "strike",
         "strikes",
         "war"
       ]
     },
     {
+      "category": "Threats / retaliation",
+      "score": -5,
+      "count": 3,
+      "keywords": [
+        "escalation",
+        "retaliation"
+      ]
+    },
+    {
       "category": "Ceasefire / settlement",
-      "score": 4,
-      "count": 2,
+      "score": 5,
+      "count": 3,
       "keywords": [
         "de-escalation",
         "deal"
       ]
     },
     {
-      "category": "Threats / retaliation",
-      "score": -3,
+      "category": "Diplomacy / negotiation",
+      "score": 4,
       "count": 2,
       "keywords": [
-        "escalation",
-        "threat"
-      ]
-    },
-    {
-      "category": "Diplomacy / negotiation",
-      "score": 2,
-      "count": 1,
-      "keywords": [
-        "peace"
+        "peace",
+        "talks"
       ]
     },
     {
@@ -131,29 +171,28 @@
       "score": -2,
       "count": 1,
       "keywords": [
-        "dead"
+        "killed"
       ]
     }
   ],
   "key_signals": [
     {
-      "title": "Iran claims attacks on Bahrain, Jordan, Iraq after US strikes kill 11 - Al Jazeera",
-      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQY1VIcWhXU2JEN0F2MFR6UHNxbHQ4WG02cWVRVzVEaW5lS3lveTJaMUc4c2RIWEhOeEl3QUF3NnUtQzN2Q2VUQTczcmdGNmU5Y3I1XzJTSTRwU1RBQTFvSDBfSjlZMHRxMlM5TDhlcE1XNVlUclB5VUdNQlZmYWExbWlaUEZmWkFrQ2tyTy1pY9IBlAFBVV95cUxNbVdoa0dFUldPbnNjTlNaZUJGVHprRGpUOWNieWtoQ1QtQTBoZktQUnlMbkFpT2sycnAyV2VYYVo0dE51Q3VVWUxsUU5sRnhCcHIxVnB1US1haS1Xck9LVUZfV2JqM3NfWVVpa0hGdXh6OFNrd1J5b2hsWjJZTU54cDBlLTBnMXZjYURyeVltVGJINVB1?oc=5",
+      "title": "Oil prices jump as US, Iranian attacks stoke fears of escalation - Al Jazeera",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPTzBVakF1VXpKSWdkbXZsNXJOYS0wRnV2bWstenBpNnhlNXBzTVVxVEFPUW5HeS14Rjh6UnM3b0RpWG5NWjdWdW5NdWNHdlJLV3psWHlhOVd2Y1FySF9MRlVmRGZab3RTcTd5Rmt2QkFONEVFWmJHVmZzMGxid2g0MjR0UzJXdmRZcVdEaGhlT1Z5RTAyT1VFVndXWU52ZGNlRENGaHNBVXF1YzTSAbABQVVfeXFMT2dkcDBqS3R3WmtGZmhqcl9RTzNSc0xObFNYam1fQTllaFdkamxnZnZ2OW11SXc3d1hNWER5WGxQclV4aDhYbnZxNE5tRGNWQllxQ3F0eXViSmZoTFNwamJTLXQ4cUxXS0tldkc1ODE0NGZMXzRFbFBfYkhSdFMtMnZfVkIySkRVMlBtLUxhaEpMZ2NxZUFRUEtMTFRlWDFjY25FaWtqMDNVT25hSWpJZ0E?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Wed, 02 Sep 2026 05:33:27 GMT",
-      "score": -8,
+      "published": "Tue, 01 Sep 2026 09:32:51 GMT",
+      "score": -6,
       "tags": [
-        "strike",
-        "strikes",
         "attack",
-        "attacks"
+        "attacks",
+        "escalation"
       ]
     },
     {
-      "title": "Mapping Iran war’s strikes on Gulf energy and its impact on future of oil - Al Jazeera",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOalprVVJWeE5qUlBuYWFRMzA4YUdzckllZnJYZE5WLUFDOTBGTFJzcVNDd0Q5RFJPTUs3ZG9ldF96MkhsZ05XVTR0dHV3eTV2TFlVd3ZuendWRFJLRFNvdi1SOHFXMHJGSm9BSHVlTjd5Z0NmbkdFZVFFNjhwbFhpQ3dnVXI0cEd6UXl2TmZncWMyR3Ywd3FKNXBWeTRKUFJ2WnVmd185ei15WmloLXV0Vnpmb9IBuAFBVV95cUxNaEFGcGwxNzJ3RFEyTG04T1d6ZWl3cEpZWmF0dXljcGdOUWc2dm05RDFwYURjVU5aZkFaVnlvb3did2JuYWxtVjI3MDYzRFN6MlpRTm1SenJQeDdUcnB0aU45V2VlYk5SU3E2dEpwajRWajhqT19TaFZlSW5OVFF2ME5aRml6cHVVenY1MXBqVG45YTljLUNyMXBtVVM0eGthUXhQVk9YTEc4em1ITEYxMjZ4d193MFJ2?oc=5",
+      "title": "US-Iran strikes raise fears of renewed war across the Middle East - Reuters",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxORjZ4d3JRTk1WcXR6eThpVm1wcVpzQV8wMm42eDB4bDJRMVhxelJpdmZTYXVPQ0JTUmtiNXFVWEZyb1NBTTZibmZJTkk4bjlRNGwtWTU1OF8zXzhENVZhWDN4TUwzekdfVG8xWUpmY3hmcHBDQk5TUzBLSERGbFJ0c05nekFpclo3cFdMcm93dHlEUXctVTY2MjJIMkkxSTRGWnc?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Sun, 30 Aug 2026 05:21:59 GMT",
+      "published": "Wed, 02 Sep 2026 02:41:00 GMT",
       "score": -5,
       "tags": [
         "strike",
@@ -162,10 +201,22 @@
       ]
     },
     {
-      "title": "The war with Iran will not be won through airstrikes, so what's left? - opinion - The Jerusalem Post",
-      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE12dUljWnMzdTVIcWprLUhCWTV1TC1DMTZwck1uYV92T2tEN3VUQlFTS1ItbFhNRkhJbVNJdHpjWkl0Mjh0QnV6MjNWaVJwTUp0a01mems2XzV3M3loOVZuYi12aw?oc=5",
+      "title": "First US military attacks on Iran in a month prompt retaliation - The Guardian",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPTm1OakU0ZTQxTmQ0YkVOWWVoMHZJQmJSQkhiV3ZTMXJ6TWNRZzYzblpoYnh2cUFCVTUzdkNRQUhBamhWY0I2MzFZZHBxWlpObmVyd3VXZkt4Y1FCNWVfZmR0U3VuRU16ODB3S1NJcHI4SHdhM1RwbnZnRkNSejdzZTB3N3FKM3ZEZmU0cGhfUHhoZFZPQ3E0cG1pelZlVFlpc05CQTZLdGdhV2ZYOXF3X2I5MmhLa21jS2t5SVVB?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Sun, 30 Aug 2026 08:59:54 GMT",
+      "published": "Sun, 30 Aug 2026 21:05:00 GMT",
+      "score": -5,
+      "tags": [
+        "attack",
+        "attacks",
+        "retaliation"
+      ]
+    },
+    {
+      "title": "US escalates Iran war with fresh strikes in Iran’s southern cities - Muslim Network TV",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOeUNpckNMS0ExTUppMm9jQW5KZkl6NDUybVAwbzB6MVlCTUlPSWd6VkNlQUVPS2MxUEhRRzZCUjNBek9GcWROQzVNX3pUN2ZiUVZuS2FVSlJYd1kyV3JRZ3pPSklpNmYyLUNYcUNLcDNGYVdrZVE4VF9nWURfRU8tLWtsN1kya0Rpb1M2YzUwTWotb2dhUF8wRGIxVQ?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Tue, 01 Sep 2026 22:45:59 GMT",
       "score": -5,
       "tags": [
         "strike",
@@ -174,10 +225,57 @@
       ]
     },
     {
-      "title": "U.S. strikes Iranian rocket launchers on the Strait of Hormuz in first military action in weeks - pbs.org",
-      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNOGhwcUVGWm1hTHB5UWs3blpsTXlDc1gtZWJxUUNUakF6Y1FPMGc3U0MyYVlmYkJvX25LWnJjUS1fOHlfOEJ4TDlmcjdOcThhYnRVenNGSlhQUzNXSUV2R1pzQUNRM3k2TGxVMjd0Q1pFY2J2SDYwbXU3cVJxZ3ZVSV9OZnFaNzFFT3E2c3hkSjM0T1MxaUFaWnF0MG93RDBWaVdWRDBTZkROdlJtTzBGd1VObGxPTGt6NjNOQkM1UUVBRU9oRFQ4SlZibkxrV3JhV1RLTHNHV2ZGaFVhTEHSAeMBQVVfeXFMTXdQZm9CQ2R5N0hjeV9tX1M3R2RJazR6UWs3NUcwb204MDlZOEs4RmRjMTgxbzVtRkxzTWtyZTFsMVVPQ1lwaEtSMFlpbEVfVW0wYjdGX29EYkFlckFkRUhJX243a3ZCaUc1d0EyMEhqTGZiMXlBSU16ZndoTHc5cUM4LTNqTU5kVDRGNFpjV3hVZ0tCUXY4NndzUk5wMGhpdTNOWGtISlRlRGhoa3VuQUhzYzZpZVlvbUc5V2JVeWYwaEN5TmR4Y2xhUjJWVkxKSWR3ZER3T0VWb0t2RElvbThiYTg?oc=5",
+      "title": "Iran Activates Secret Missile Tunnels To Strike U.S. & Israel Amid Iran-Israel-U.S. War Brett Kulak (PZnuNaSyJx) - Mshale",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9fZ01LUHgyRktsYzUxN0ZTQWM1dldvOXFUcWtHUDFNTjkxVnlNV3h5Vk16cG5PMXlpdlJGZVdQZ1VDcG1Jc2NnT1VxeXNWVlpnQnNMQTJXdDZULU0?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Sun, 30 Aug 2026 21:25:40 GMT",
+      "published": "Sat, 29 Aug 2026 11:44:41 GMT",
+      "score": -5,
+      "tags": [
+        "strike",
+        "missile",
+        "war"
+      ]
+    },
+    {
+      "title": "US-Iran strikes raise fears of renewed war across the Middle East - Reuters",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxORjZ4d3JRTk1WcXR6eThpVm1wcVpzQV8wMm42eDB4bDJRMVhxelJpdmZTYXVPQ0JTUmtiNXFVWEZyb1NBTTZibmZJTkk4bjlRNGwtWTU1OF8zXzhENVZhWDN4TUwzekdfVG8xWUpmY3hmcHBDQk5TUzBLSERGbFJ0c05nekFpclo3cFdMcm93dHlEUXctVTY2MjJIMkkxSTRGWnc?oc=5",
+      "source": "\"middle east conflict when:7d\" - Google News",
+      "published": "Wed, 02 Sep 2026 02:41:00 GMT",
+      "score": -5,
+      "tags": [
+        "strike",
+        "strikes",
+        "war"
+      ]
+    },
+    {
+      "title": "Trump aides seek 'quiet' in Iran war but say attacks may intensify after November elections - Reuters",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNMDJDS3ZmaHY1S0hTTlJiUUVPQ081YTU5bWV3NmJJLTRTNDdNQUhKNWdFTXd4TzVVRkRiRXd6SV9xZ1hmbHVxMFVGOUhXMkJLTkdaN0VWa3g3aEZ1aWZDbnlNTkRoUk5zY2ltOW9PNVk1SlFJVU1mNzZFSE9GTGpGbmhwdW1sMFNuTFhwcTVmSlFUNUIwM3lOV3ZpQ0NCX3B2TmMwbXZB?oc=5",
+      "source": "\"middle east conflict when:7d\" - Google News",
+      "published": "Wed, 02 Sep 2026 10:04:00 GMT",
+      "score": -5,
+      "tags": [
+        "attack",
+        "attacks",
+        "war"
+      ]
+    },
+    {
+      "title": "Iran fires on its Gulf neighbors, retaliating for U.S. strikes after a monthlong lull - NPR",
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1uTFZRWTBDZ2kydEpnd3g4bWdheHJTYlF5TkFkdFBYWkM1VEE2U0tSaVhZX0RULTBuQ3JnOE9LNW0xbW8xdEF0cmVBUGx1RE91TG5ReUxoenNvMmExbGZXYWhhMmV3RkZJVHVmQzBQRVN5ZlQyMFVET1Z1aw?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Wed, 02 Sep 2026 15:18:09 GMT",
+      "score": -4,
+      "tags": [
+        "strike",
+        "strikes"
+      ]
+    },
+    {
+      "title": "Trump Vows to Hit Iran ‘Hard’ After First Fresh Strikes in a Month - Time Magazine",
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE92VkxITnNfUmdXUy1vMC1XUy1wd2hRQnQ2OVVRYUFKZ0VOMmdLR19oQndqNTVSQVhueDAyQVJ3anJKVVJRYVVJcXhRV2Zad3dXeVcyMHpyN19CV0xzTlBtWDRQenk5cVhSTVd6ZEtoZ1dNSE0?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Mon, 31 Aug 2026 19:43:06 GMT",
       "score": -4,
       "tags": [
         "strike",
@@ -199,6 +297,17 @@
       ]
     },
     {
+      "title": "Iran fires on its Gulf neighbors, retaliating for U.S. strikes after a monthlong lull - NPR",
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1uTFZRWTBDZ2kydEpnd3g4bWdheHJTYlF5TkFkdFBYWkM1VEE2U0tSaVhZX0RULTBuQ3JnOE9LNW0xbW8xdEF0cmVBUGx1RE91TG5ReUxoenNvMmExbGZXYWhhMmV3RkZJVHVmQzBQRVN5ZlQyMFVET1Z1aw?oc=5",
+      "source": "\"middle east conflict when:7d\" - Google News",
+      "published": "Wed, 02 Sep 2026 15:18:09 GMT",
+      "score": -4,
+      "tags": [
+        "strike",
+        "strikes"
+      ]
+    },
+    {
       "title": "US launches new strikes on Iran and Tehran hits back in widening conflict - Reuters",
       "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOYWVYQlZISm1jT2ZUaUZ4bDJ2ZE10ZEpaeXo5MnBPQTJYS0ZJNDFjNmdBNGlPQjdyRTIxMVJWeDYzTlFEZi1wVm55eUJTUjkxSjB2WnVVU3NLaEtjTWlMTFFXZlZuTDYyNzREc3hxWnpxRzdUV2MtRUdhei12TE9TQ0Rrc1hTMEN4alFnS1VFcVRzSEM1dmVxR2FYbzZXb1B2a254Y2FlVXlNMFBhQVlFRTAyNzdoaE1FN2Q5dFF0LS1PZDR3bm1PS2JR?oc=5",
       "source": "\"middle east conflict when:7d\" - Google News",
@@ -208,74 +317,11 @@
         "strike",
         "strikes"
       ]
-    },
-    {
-      "title": "US pounds Iran, Tehran strikes back at bases in biggest exchange since July - Reuters",
-      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxORjZ4d3JRTk1WcXR6eThpVm1wcVpzQV8wMm42eDB4bDJRMVhxelJpdmZTYXVPQ0JTUmtiNXFVWEZyb1NBTTZibmZJTkk4bjlRNGwtWTU1OF8zXzhENVZhWDN4TUwzekdfVG8xWUpmY3hmcHBDQk5TUzBLSERGbFJ0c05nekFpclo3cFdMcm93dHlEUXctVTY2MjJIMkkxSTRGWnc?oc=5",
-      "source": "\"middle east conflict when:7d\" - Google News",
-      "published": "Wed, 02 Sep 2026 02:41:00 GMT",
-      "score": -4,
-      "tags": [
-        "strike",
-        "strikes"
-      ]
-    },
-    {
-      "title": "Disaster of Trump’s war in Iran laid bare six months on: Thousands dead, economic chaos and a region in flames - The Independent",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNcmYyMFNTbFAwaURDaVc5a0laRzF0OUxtUlUtYUJEUmpmZ1R5cy1sVHNGLVo1Q2g2bERQdTFVQnFFLV9lN0ZaWGlpbGZFOFRfWl9uVENHblZnOGgtZUhaTk9sU2lBdG1KWVRMaHZqbHpONHBPV0dEaUNNME05S3VGajNqT3FWS1VheWNjazY1UG1nVE1NdlV6LVBQWVlRbl9jbHM0Y1FZcFQ4dHps?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Fri, 28 Aug 2026 10:52:00 GMT",
-      "score": -3,
-      "tags": [
-        "war",
-        "dead"
-      ]
-    },
-    {
-      "title": "Dire Strait: Why Economic Threats Might Escalate the War in Iran - Time Magazine",
-      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE15cTc3c1lzMjByS0pZNlB6RlZrblhpZDdYMkY2dUkzOVFXUjI2VEdqaXpPZUFQcFVtalZaODE2TXM1NWl1N1dVV2NqQzdpRUdyYmZWOVZSUGpjeTloWktCQUh6Yk5YN3dwanZIbVl5QktSLUpuUkF3cjFrcw?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Sat, 29 Aug 2026 10:00:00 GMT",
-      "score": -2,
-      "tags": [
-        "war",
-        "threat"
-      ]
-    },
-    {
-      "title": "Six months into the Iran war: Markets become accustomed to stalemate with no end in sight - CNBC",
-      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBOLW9UZGdUX1NfNWlWdWpHY1NfLTJVRk1fT2dlMk1KckJxVlBLczBwUWwwZUNTRzRubFJBbWoyR1hWUWhxZkN3M0dCa0ptbWdYSVNDdi13SFBGSmNUOUFrdkN2UkxJVzZHR2xjNTlKZW9wQ1XSAXhBVV95cUxNY2lNNGhFa1ZSTUJ5N0VEeExVQmNraUhXQmxMT0RQU1lkOXppeERINGJKREI2RUJ0ejFjS0Etbk9oeDFYaW1ySlBBSVBoaW0zR1I5azR5Z2pRVGJ0NmFUWDM3cGF1bjk3dGlqcmJVdUQ5ZmYzYWxUTm4?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Fri, 28 Aug 2026 05:02:16 GMT",
-      "score": -1,
-      "tags": [
-        "war"
-      ]
-    },
-    {
-      "title": "What has the US achieved in Iran war? A report card after 6 months. - The Christian Science Monitor",
-      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPVzVQeFFydjVOUXZORHhONFVDeXgweHVFMFVkZ3ZraEZ1QnU4RFZPOXdnemZiUERveXZkRm1iV3hoZWpidGJMQUI0U1JTOVNSZEJiUmM0YUR3bVVMc2FPLUlKOEsta0ZELWNMWWp0LVZ1d293UVhOMzl0MVZ3cnZFWjhraHRfdFRtd0l5bHJ30gGnAUFVX3lxTE1UN044cXRHeEhibDVCOFFISjlLYnd3dTZrbWtqQm1MRDJIMU0zN25XNlVlZGhXMEp6N3BZb1V6VThjc2FwSDh4cnpCdGZ3QXUtdFRtTjJGZXNvX2xCYl81Z0xaX3RkYVFZU09oNXhRdFRLSVBKWklJc0pnNnRiTG9pS01KT0FoMlBiSXNseXJHTkdYbDVBUjZyaHo2Q1JTQjZ6OTlBbzhB?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Fri, 28 Aug 2026 09:00:09 GMT",
-      "score": -1,
-      "tags": [
-        "war"
-      ]
-    },
-    {
-      "title": "Watch: Six months into the Iran war: What has Trump accomplished? - BBC",
-      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFAzeTFiUktuaDBnUUdPRmU1bmN4WlZjbm9MZU9qRUtRU09nUnpObG9LeVQ1aVdPNmhOZkxFUl9ybW5QNzBzY2dlYW1qTmlxVmZrWWljWjVtOA?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Fri, 28 Aug 2026 06:34:48 GMT",
-      "score": -1,
-      "tags": [
-        "war"
-      ]
     }
   ],
   "integrity": {
     "driver_net_equals_total_score": true,
-    "driver_net": -58,
-    "source_total_score": -58
+    "driver_net": -81,
+    "source_total_score": -81
   }
 }
