@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-09-05T09:07:27.179013Z",
-  "source_generated_at": "2026-09-05T05:46:28Z",
+  "generated_at": "2026-09-05T12:31:53.694462Z",
+  "source_generated_at": "2026-09-05T09:27:51Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1136,
-  "event_count": 635,
-  "rejected_count": 501,
+  "source_event_count": 1138,
+  "event_count": 636,
+  "rejected_count": 502,
   "rejection_counts": {
-    "category_not_kinetic": 349,
+    "category_not_kinetic": 350,
     "no_confirmed_action_language": 117,
     "context_or_hypothetical": 21,
     "retrospective_or_aftermath": 10,
@@ -26,18 +26,18 @@
     "strike": 174,
     "drone": 106,
     "airstrike": 99,
-    "explosion": 40,
+    "explosion": 41,
     "ground": 15
   },
   "severity_counts": {
     "medium": 346,
-    "high": 252,
+    "high": 253,
     "low": 35,
     "critical": 2
   },
   "actor_counts": {
     "Iran": 239,
-    "United States": 151,
+    "United States": 152,
     "Israel": 97,
     "Yemen": 66,
     "Unknown actor": 48,
@@ -48,6 +48,32 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-m5hivmywyk0",
+      "timestamp": "2026-09-05T07:36:53Z",
+      "event_type": "kinetic",
+      "subtype": "explosion",
+      "category": "explosion",
+      "severity": "high",
+      "actor": "usa",
+      "actor_label": "United States",
+      "actor_method": "raw_source.origin",
+      "target_country": "Iran",
+      "location": "Kharg Island",
+      "latitude": 29.2447,
+      "longitude": 50.3129,
+      "map_visualizable": true,
+      "description": "U.S. attack on Iranian oil tanker near Kharg Island reported by Iranian media, explosions heard in region",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129733",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-hicbgzctbtc0",
       "timestamp": "2026-09-04T20:23:36Z",
