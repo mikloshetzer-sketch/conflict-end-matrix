@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-09-08T09:44:42.958824Z",
-  "source_generated_at": "2026-09-08T06:32:58Z",
+  "generated_at": "2026-09-08T13:27:36.861032Z",
+  "source_generated_at": "2026-09-08T11:45:42Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1181,
-  "event_count": 658,
+  "source_event_count": 1183,
+  "event_count": 660,
   "rejected_count": 523,
   "rejection_counts": {
     "category_not_kinetic": 367,
@@ -22,7 +22,7 @@
     "outside_window": 2
   },
   "category_counts": {
-    "missile": 210,
+    "missile": 212,
     "strike": 178,
     "drone": 110,
     "airstrike": 102,
@@ -31,7 +31,7 @@
   },
   "severity_counts": {
     "medium": 358,
-    "high": 262,
+    "high": 264,
     "low": 36,
     "critical": 2
   },
@@ -39,7 +39,7 @@
     "Iran": 240,
     "United States": 154,
     "Israel": 108,
-    "Yemen": 72,
+    "Yemen": 74,
     "Unknown actor": 49,
     "Lebanon": 12,
     "Saudi Arabia": 12,
@@ -48,6 +48,58 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-1bbkyue149c00",
+      "timestamp": "2026-09-08T08:15:10Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "high",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Houthi forces conduct large-scale military operation striking Aramco facilities in Abha, Najran, Jizan and Khamis Mushait airbase with dozens of ballistic missiles and drones, claiming direct hits and heavy damage",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129914",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-2qctphzi48a00",
+      "timestamp": "2026-09-08T07:43:50Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "high",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Houthis launch significant attack on Saudi Arabia using ballistic missiles and drones targeting King Khalid Air Base in Khamis Mushait and other objectives",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129913",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-o4z378he6tc0",
       "timestamp": "2026-09-07T16:23:46Z",
