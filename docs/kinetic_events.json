@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-09-10T09:47:50.294051Z",
-  "source_generated_at": "2026-09-10T05:59:30Z",
+  "generated_at": "2026-09-10T13:29:18.445011Z",
+  "source_generated_at": "2026-09-10T11:22:09Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1242,
-  "event_count": 687,
+  "source_event_count": 1243,
+  "event_count": 688,
   "rejected_count": 555,
   "rejection_counts": {
     "category_not_kinetic": 378,
@@ -24,13 +24,13 @@
   "category_counts": {
     "missile": 225,
     "strike": 184,
-    "drone": 113,
+    "drone": 114,
     "airstrike": 104,
     "explosion": 44,
     "ground": 17
   },
   "severity_counts": {
-    "medium": 374,
+    "medium": 375,
     "high": 274,
     "low": 37,
     "critical": 2
@@ -38,7 +38,7 @@
   "actor_counts": {
     "Iran": 251,
     "United States": 160,
-    "Israel": 111,
+    "Israel": 112,
     "Yemen": 79,
     "Unknown actor": 50,
     "Saudi Arabia": 13,
@@ -48,6 +48,32 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-1aaijoug7d6o0",
+      "timestamp": "2026-09-10T07:42:10Z",
+      "event_type": "kinetic",
+      "subtype": "drone",
+      "category": "drone",
+      "severity": "medium",
+      "actor": "isr",
+      "actor_label": "Israel",
+      "actor_method": "raw_source.origin",
+      "target_country": "Lebanon",
+      "location": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "IDF drone strikes house in Bani Hayyan village, southern Lebanon with explosive payload, detonation occurs shortly after drone departure",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/130034",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-3v5d5z3dg2000",
       "timestamp": "2026-09-10T05:52:22Z",

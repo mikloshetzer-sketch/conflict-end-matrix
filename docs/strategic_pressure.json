@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T13:38:02.818175+00:00",
+  "generated_at": "2026-09-10T13:29:19.505174+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,30 +18,30 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 577,
-    "kinetic_events_loaded": 671,
-    "unique_events_scanned": 1185,
-    "strategic_evidence_contributions": 341,
+    "non_kinetic_events_loaded": 580,
+    "kinetic_events_loaded": 688,
+    "unique_events_scanned": 1205,
+    "strategic_evidence_contributions": 343,
     "evidence_contributions_by_actor": {
       "usa": 111,
-      "iran": 230
+      "iran": 232
     },
     "scored_contributions_by_actor": {
       "usa": 78,
-      "iran": 121
+      "iran": 122
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
-      "iran": 109
+      "iran": 110
     },
     "contributions_by_source_layer": {
       "non_kinetic": 298,
-      "kinetic": 43
+      "kinetic": 45
     },
     "evidence_indicator_counts": {
       "iran:negotiation": 187,
       "usa:negotiation": 90,
-      "iran:missile_test": 29,
+      "iran:missile_test": 31,
       "usa:presidential_warning": 15,
       "iran:hormuz_threat": 9,
       "usa:ceasefire_support": 8,
@@ -53,8 +53,8 @@
     "scored_indicator_counts": {
       "iran:negotiation": 93,
       "usa:negotiation": 61,
+      "iran:missile_test": 15,
       "usa:presidential_warning": 15,
-      "iran:missile_test": 14,
       "iran:hormuz_threat": 9,
       "iran:missile_preparation": 6,
       "usa:ceasefire_support": 4,
@@ -63,138 +63,50 @@
       "usa:carrier_deployment": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 3,
-    "history_day_count": 180
+    "skipped_current_utc_day": 7,
+    "history_day_count": 184
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-09-05",
+  "latest_complete_utc_day": "2026-09-09",
   "current": {
-    "date": "2026-09-05",
+    "date": "2026-09-09",
     "calculation_mode": "live",
     "usa": {
-      "raw_score": 9.0,
-      "positive_score": 9.0,
+      "raw_score": 0.0,
+      "positive_score": 0.0,
       "negative_score": 0.0,
-      "event_count": 1,
-      "scored_event_count": 1,
-      "evidence_event_count": 1,
+      "event_count": 0,
+      "scored_event_count": 0,
+      "evidence_event_count": 0,
       "suppressed_duplicate_count": 0,
-      "increase_event_count": 1,
+      "increase_event_count": 0,
       "decrease_event_count": 0,
-      "contributors": [
-        {
-          "event_id": "iranstrike-3ebaysdo5yw00",
-          "timestamp": "2026-09-05T17:11:52+00:00",
-          "date": "2026-09-05",
-          "actor": "usa",
-          "bilateral_event": false,
-          "title": "Iran launches anti-ship ballistic missiles (likely Khalije Fars) at USS George Washington carrier, no direct hits recorded but carrier forced to perform evasive maneuvers",
-          "source_layer": "kinetic",
-          "event_type": "kinetic",
-          "event_direction": "escalation",
-          "operational_component": 1.0,
-          "strategic_modifier": 8.0,
-          "context_multiplier": 1.0,
-          "original_final_score": 9.0,
-          "final_score": 9.0,
-          "duplicate_indicator_evidence": false,
-          "daily_score_suppressed": false,
-          "suppression_reason": null,
-          "primary_daily_indicator": "carrier_deployment",
-          "indicators": [
-            {
-              "id": "carrier_deployment",
-              "name": "Carrier Strike Group deployment",
-              "score": 8.0,
-              "direction": "increase",
-              "interest": {
-                "id": "regional_deterrence",
-                "name": "Regional deterrence",
-                "weight": 8.0
-              },
-              "recognition_rule_count": 1
-            }
-          ],
-          "reason": "United States: Carrier Strike Group deployment. Operational component: +1.00; strategic modifier: +8.00; final contribution before daily deduplication: +9.00. Event: Iran launches anti-ship ballistic missiles (likely Khalije Fars) at USS George Washington carrier, no direct hits recorded but carrier forced to perform evasive maneuvers",
-          "source": "",
-          "link": "https://t.me/CIG_telegram/83358",
-          "existing_event_score": 0.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [
-            "carrier_deployment"
-          ],
-          "duplicate_daily_indicators": []
-        }
-      ],
-      "weighted_score_7d": 10.3,
-      "pressure_index_7d": 70.6,
-      "pressure_level": "high",
-      "trend": "strong_increase",
-      "strongest_contributors": [
-        {
-          "event_id": "iranstrike-3ebaysdo5yw00",
-          "timestamp": "2026-09-05T17:11:52+00:00",
-          "date": "2026-09-05",
-          "actor": "usa",
-          "bilateral_event": false,
-          "title": "Iran launches anti-ship ballistic missiles (likely Khalije Fars) at USS George Washington carrier, no direct hits recorded but carrier forced to perform evasive maneuvers",
-          "source_layer": "kinetic",
-          "event_type": "kinetic",
-          "event_direction": "escalation",
-          "operational_component": 1.0,
-          "strategic_modifier": 8.0,
-          "context_multiplier": 1.0,
-          "original_final_score": 9.0,
-          "final_score": 9.0,
-          "duplicate_indicator_evidence": false,
-          "daily_score_suppressed": false,
-          "suppression_reason": null,
-          "primary_daily_indicator": "carrier_deployment",
-          "indicators": [
-            {
-              "id": "carrier_deployment",
-              "name": "Carrier Strike Group deployment",
-              "score": 8.0,
-              "direction": "increase",
-              "interest": {
-                "id": "regional_deterrence",
-                "name": "Regional deterrence",
-                "weight": 8.0
-              },
-              "recognition_rule_count": 1
-            }
-          ],
-          "reason": "United States: Carrier Strike Group deployment. Operational component: +1.00; strategic modifier: +8.00; final contribution before daily deduplication: +9.00. Event: Iran launches anti-ship ballistic missiles (likely Khalije Fars) at USS George Washington carrier, no direct hits recorded but carrier forced to perform evasive maneuvers",
-          "source": "",
-          "link": "https://t.me/CIG_telegram/83358",
-          "existing_event_score": 0.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [
-            "carrier_deployment"
-          ],
-          "duplicate_daily_indicators": []
-        }
-      ]
+      "contributors": [],
+      "weighted_score_7d": 3.6,
+      "pressure_index_7d": 57.2,
+      "pressure_level": "elevated",
+      "trend": "decrease",
+      "strongest_contributors": []
     },
     "iran": {
       "raw_score": 7.0,
       "positive_score": 7.0,
       "negative_score": 0.0,
-      "event_count": 1,
+      "event_count": 2,
       "scored_event_count": 1,
-      "evidence_event_count": 1,
-      "suppressed_duplicate_count": 0,
+      "evidence_event_count": 2,
+      "suppressed_duplicate_count": 1,
       "increase_event_count": 1,
       "decrease_event_count": 0,
       "contributors": [
         {
-          "event_id": "iranstrike-3ebaysdo5yw00",
-          "timestamp": "2026-09-05T17:11:52+00:00",
-          "date": "2026-09-05",
+          "event_id": "iranstrike-2y2wej829eo00",
+          "timestamp": "2026-09-09T18:17:35+00:00",
+          "date": "2026-09-09",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "Iran launches anti-ship ballistic missiles (likely Khalije Fars) at USS George Washington carrier, no direct hits recorded but carrier forced to perform evasive maneuvers",
+          "title": "Iran launches 20 missiles at U.S. military bases in Jordan, Jordanian air defenses intercept all projectiles",
           "source_layer": "kinetic",
           "event_type": "kinetic",
           "event_direction": "escalation",
@@ -221,29 +133,72 @@
               "recognition_rule_count": 1
             }
           ],
-          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches anti-ship ballistic missiles (likely Khalije Fars) at USS George Washington carrier, no direct hits recorded but carrier forced to perform evasive maneuvers",
+          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches 20 missiles at U.S. military bases in Jordan, Jordanian air defenses intercept all projectiles",
           "source": "",
-          "link": "https://t.me/CIG_telegram/83358",
+          "link": "https://t.me/OSINTdefender/20187",
           "existing_event_score": 0.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
             "missile_test"
           ],
           "duplicate_daily_indicators": []
-        }
-      ],
-      "weighted_score_7d": 24.65,
-      "pressure_index_7d": 99.3,
-      "pressure_level": "critical",
-      "trend": "stable",
-      "strongest_contributors": [
+        },
         {
-          "event_id": "iranstrike-3ebaysdo5yw00",
-          "timestamp": "2026-09-05T17:11:52+00:00",
-          "date": "2026-09-05",
+          "event_id": "iranstrike-27geoc4nztc00",
+          "timestamp": "2026-09-09T05:14:56+00:00",
+          "date": "2026-09-09",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "Iran launches anti-ship ballistic missiles (likely Khalije Fars) at USS George Washington carrier, no direct hits recorded but carrier forced to perform evasive maneuvers",
+          "title": "Iran launches widespread missile attack on bases in Jordan hosting U.S. forces in retaliation for U.S. attack on Iranian tankers; 20 missiles fired, 18 intercepted, 2 impact",
+          "source_layer": "kinetic",
+          "event_type": "kinetic",
+          "event_direction": "escalation",
+          "operational_component": 1.0,
+          "strategic_modifier": 6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": 7.0,
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": true,
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "primary_daily_indicator": null,
+          "indicators": [
+            {
+              "id": "missile_test",
+              "name": "Missile test",
+              "score": 6.0,
+              "direction": "increase",
+              "interest": {
+                "id": "missile_capability",
+                "name": "Missile capability",
+                "weight": 9.0
+              },
+              "recognition_rule_count": 1
+            }
+          ],
+          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches widespread missile attack on bases in Jordan hosting U.S. forces in retaliation for U.S. attack on Iranian tankers; 20 missiles fired, 18 intercepted, 2 impact",
+          "source": "",
+          "link": "https://t.me/abualiexpress/129967",
+          "existing_event_score": 0.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [],
+          "duplicate_daily_indicators": [
+            "missile_test"
+          ]
+        }
+      ],
+      "weighted_score_7d": 10.85,
+      "pressure_index_7d": 71.7,
+      "pressure_level": "high",
+      "trend": "strong_increase",
+      "strongest_contributors": [
+        {
+          "event_id": "iranstrike-2y2wej829eo00",
+          "timestamp": "2026-09-09T18:17:35+00:00",
+          "date": "2026-09-09",
+          "actor": "iran",
+          "bilateral_event": false,
+          "title": "Iran launches 20 missiles at U.S. military bases in Jordan, Jordanian air defenses intercept all projectiles",
           "source_layer": "kinetic",
           "event_type": "kinetic",
           "event_direction": "escalation",
@@ -270,9 +225,9 @@
               "recognition_rule_count": 1
             }
           ],
-          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches anti-ship ballistic missiles (likely Khalije Fars) at USS George Washington carrier, no direct hits recorded but carrier forced to perform evasive maneuvers",
+          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches 20 missiles at U.S. military bases in Jordan, Jordanian air defenses intercept all projectiles",
           "source": "",
-          "link": "https://t.me/CIG_telegram/83358",
+          "link": "https://t.me/OSINTdefender/20187",
           "existing_event_score": 0.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
@@ -283,9 +238,9 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 84.95,
-      "pressure_level": "critical",
-      "trend": "strong_increase",
+      "pressure_index_7d": 64.45,
+      "pressure_level": "elevated",
+      "trend": "increase",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
   }
