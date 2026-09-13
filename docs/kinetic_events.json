@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-09-13T10:19:34.783106Z",
-  "source_generated_at": "2026-09-13T06:47:27Z",
+  "generated_at": "2026-09-13T13:45:17.713220Z",
+  "source_generated_at": "2026-09-13T12:44:06Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1314,
-  "event_count": 715,
-  "rejected_count": 599,
+  "source_event_count": 1316,
+  "event_count": 716,
+  "rejected_count": 600,
   "rejection_counts": {
-    "category_not_kinetic": 414,
+    "category_not_kinetic": 415,
     "no_confirmed_action_language": 146,
     "context_or_hypothetical": 21,
     "retrospective_or_aftermath": 12,
@@ -22,7 +22,7 @@
     "alert_only": 2
   },
   "category_counts": {
-    "missile": 233,
+    "missile": 234,
     "strike": 190,
     "drone": 119,
     "airstrike": 106,
@@ -31,12 +31,12 @@
   },
   "severity_counts": {
     "medium": 392,
-    "high": 283,
+    "high": 284,
     "low": 38,
     "critical": 2
   },
   "actor_counts": {
-    "Iran": 254,
+    "Iran": 255,
     "United States": 160,
     "Israel": 118,
     "Yemen": 91,
@@ -48,6 +48,32 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-3nwhq747g2o00",
+      "timestamp": "2026-09-13T10:31:43Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "high",
+      "actor": "irn",
+      "actor_label": "Iran",
+      "actor_method": "raw_source.origin",
+      "target_country": "Jordan",
+      "location": "Jordan",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Iranian ballistic missile strikes damage Muwaffaq al-Salti Air Base in Jordan, destroying two drone/aircraft shelters and damaging fighter-jet shelter",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83832",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-2773qui8gusk0",
       "timestamp": "2026-09-12T19:05:59Z",
