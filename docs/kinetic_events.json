@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-09-12T12:47:15.734371Z",
-  "source_generated_at": "2026-09-12T11:16:37Z",
+  "generated_at": "2026-09-13T10:19:34.783106Z",
+  "source_generated_at": "2026-09-13T06:47:27Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": false,
+    "required_today_utc": true,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1308,
-  "event_count": 712,
-  "rejected_count": 596,
+  "source_event_count": 1314,
+  "event_count": 715,
+  "rejected_count": 599,
   "rejection_counts": {
-    "category_not_kinetic": 411,
+    "category_not_kinetic": 414,
     "no_confirmed_action_language": 146,
     "context_or_hypothetical": 21,
     "retrospective_or_aftermath": 12,
@@ -22,15 +22,15 @@
     "alert_only": 2
   },
   "category_counts": {
-    "missile": 232,
-    "strike": 188,
+    "missile": 233,
+    "strike": 190,
     "drone": 119,
     "airstrike": 106,
     "explosion": 44,
     "ground": 23
   },
   "severity_counts": {
-    "medium": 389,
+    "medium": 392,
     "high": 283,
     "low": 38,
     "critical": 2
@@ -38,8 +38,8 @@
   "actor_counts": {
     "Iran": 254,
     "United States": 160,
-    "Israel": 117,
-    "Yemen": 89,
+    "Israel": 118,
+    "Yemen": 91,
     "Unknown actor": 52,
     "Saudi Arabia": 14,
     "Iraq": 12,
@@ -48,6 +48,84 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-2773qui8gusk0",
+      "timestamp": "2026-09-12T19:05:59Z",
+      "event_type": "kinetic",
+      "subtype": "strike",
+      "category": "strike",
+      "severity": "medium",
+      "actor": "isr",
+      "actor_label": "Israel",
+      "actor_method": "raw_source.origin",
+      "target_country": "Lebanon",
+      "location": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Israeli fighter jets conduct 6 strikes in southern Lebanon: 3 in Almantouri, 1 between Kharij and Hadatha, 1 in Wadi al-Slouki, 1 in Zbaqin",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/130138",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-jl2ro87puu00",
+      "timestamp": "2026-09-12T18:10:50Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "medium",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Yemeni ballistic missile and drone attacks targeting Khamis Mushait and Abha in Saudi Arabia",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83817",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-2rvj9ku279o00",
+      "timestamp": "2026-09-12T16:53:48Z",
+      "event_type": "kinetic",
+      "subtype": "strike",
+      "category": "strike",
+      "severity": "medium",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Houthi strike on military base in Sharurah, Najran Province, southern Saudi Arabia, with burn scars visible on hardstand parking area hosting APCs and pickups",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83808",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-3h8s3nxw30o00",
       "timestamp": "2026-09-12T07:30:50Z",
