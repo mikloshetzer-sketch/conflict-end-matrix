@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-09-15T10:08:01.110951Z",
-  "source_generated_at": "2026-09-15T06:10:56Z",
+  "generated_at": "2026-09-15T14:16:13.444832Z",
+  "source_generated_at": "2026-09-15T11:46:04Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1346,
-  "event_count": 733,
-  "rejected_count": 613,
+  "source_event_count": 1349,
+  "event_count": 735,
+  "rejected_count": 614,
   "rejection_counts": {
     "category_not_kinetic": 424,
-    "no_confirmed_action_language": 149,
+    "no_confirmed_action_language": 150,
     "context_or_hypothetical": 21,
     "retrospective_or_aftermath": 13,
     "outside_window": 4,
     "alert_only": 2
   },
   "category_counts": {
-    "missile": 243,
+    "missile": 245,
     "strike": 194,
     "drone": 120,
     "airstrike": 108,
@@ -31,15 +31,15 @@
   },
   "severity_counts": {
     "medium": 400,
-    "high": 293,
+    "high": 295,
     "low": 38,
     "critical": 2
   },
   "actor_counts": {
     "Iran": 257,
     "United States": 161,
-    "Israel": 120,
-    "Yemen": 98,
+    "Israel": 121,
+    "Yemen": 99,
     "Unknown actor": 53,
     "Saudi Arabia": 17,
     "Iraq": 13,
@@ -48,6 +48,58 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-i9fpwzixha00",
+      "timestamp": "2026-09-15T09:57:20Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "high",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Houthi missile attack triggers alerts in Mecca, Taif, and Jeddah for first time in 7+ years",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/130260",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "general_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-1y1tr62yab0g0",
+      "timestamp": "2026-09-15T07:27:39Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "high",
+      "actor": "isr",
+      "actor_label": "Israel",
+      "actor_method": "raw_source.origin",
+      "target_country": "Lebanon",
+      "location": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "IDF destroys Hezbollah position in southern Lebanon with command center and ready-to-use launchers containing 32 rockets aimed at Israeli territory",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/130251",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "general_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-271k1x8ptw4k0",
       "timestamp": "2026-09-14T23:48:11Z",
