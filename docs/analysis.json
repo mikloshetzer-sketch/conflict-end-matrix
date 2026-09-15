@@ -1,13 +1,13 @@
 {
-  "report_date": "2026-09-13",
-  "created_at": "2026-09-13T11:46:14.904333",
+  "report_date": "2026-09-14",
+  "created_at": "2026-09-14T12:39:40.125944",
   "article_count": 50,
-  "total_score": -40,
-  "conflict_index": -0.8,
+  "total_score": -45,
+  "conflict_index": -0.9,
   "assessment": "mild escalation",
-  "escalation_pressure": -45,
-  "diplomatic_pressure": 5,
-  "net_signal": -40,
+  "escalation_pressure": -46,
+  "diplomatic_pressure": 1,
+  "net_signal": -45,
   "top_drivers": [
     {
       "driver": "war",
@@ -19,30 +19,44 @@
     {
       "driver": "strike",
       "category": "Military escalation",
-      "count": 5,
-      "weight": -2,
-      "impact": -10
-    },
-    {
-      "driver": "strikes",
-      "category": "Military escalation",
       "count": 4,
       "weight": -2,
       "impact": -8
     },
     {
-      "driver": "escalation",
-      "category": "Threats / retaliation",
+      "driver": "strikes",
+      "category": "Military escalation",
+      "count": 3,
+      "weight": -2,
+      "impact": -6
+    },
+    {
+      "driver": "attack",
+      "category": "Military escalation",
       "count": 2,
       "weight": -2,
       "impact": -4
     },
     {
-      "driver": "agreement",
-      "category": "Ceasefire / settlement",
+      "driver": "threat",
+      "category": "Threats / retaliation",
+      "count": 3,
+      "weight": -1,
+      "impact": -3
+    },
+    {
+      "driver": "drone",
+      "category": "Military escalation",
+      "count": 3,
+      "weight": -1,
+      "impact": -3
+    },
+    {
+      "driver": "drones",
+      "category": "Military escalation",
       "count": 2,
-      "weight": 2,
-      "impact": 4
+      "weight": -1,
+      "impact": -2
     },
     {
       "driver": "attacks",
@@ -52,14 +66,14 @@
       "impact": -2
     },
     {
-      "driver": "attack",
-      "category": "Military escalation",
+      "driver": "threatens",
+      "category": "Threats / retaliation",
       "count": 1,
-      "weight": -2,
-      "impact": -2
+      "weight": -1,
+      "impact": -1
     },
     {
-      "driver": "threat",
+      "driver": "retaliation",
       "category": "Threats / retaliation",
       "count": 1,
       "weight": -1,
@@ -71,32 +85,18 @@
       "count": 1,
       "weight": 1,
       "impact": 1
-    },
-    {
-      "driver": "clashes",
-      "category": "Military escalation",
-      "count": 1,
-      "weight": -1,
-      "impact": -1
-    },
-    {
-      "driver": "clash",
-      "category": "Military escalation",
-      "count": 1,
-      "weight": -1,
-      "impact": -1
     }
   ],
   "categories": [
     {
       "category": "Military escalation",
-      "score": -40,
-      "count": 29,
+      "score": -41,
+      "count": 31,
       "keywords": [
         "attack",
         "attacks",
-        "clash",
-        "clashes",
+        "drone",
+        "drones",
         "strike",
         "strikes",
         "war"
@@ -105,39 +105,25 @@
     {
       "category": "Threats / retaliation",
       "score": -5,
-      "count": 3,
+      "count": 5,
       "keywords": [
-        "escalation",
-        "threat"
+        "retaliation",
+        "threat",
+        "threatens"
       ]
     },
     {
       "category": "Ceasefire / settlement",
-      "score": 5,
-      "count": 3,
+      "score": 1,
+      "count": 1,
       "keywords": [
-        "agreement",
         "deal"
       ]
     }
   ],
   "key_signals": [
     {
-      "title": "Israel-Hezbollah clashes kill 11 as Mideast conflict escalation gathers pace after U.S.-Iran strikes - CNBC",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxObk5EbElublhva1o0aEYxbmpnTFB1aEU1dTNvenR2eHJndXFvYjVTTFJmYk5EQWpSVXdlaXhiM2lFeks5aFh6M1hQd2hJSDgwRXB1b3ducmllX19mam9CRFRjN0dlQVp5ak1QaEphcE8wUXpkYW4xUS1JYWpiTDJvcS1EOHduTjN5OWJWNy11anpKMlVoYlgtM2dwNGnSAaIBQVVfeXFMT0FyOVVHZVpXUUtqTWpKZ0hYdnVEZ1FhWTRWNk44bnZlS2Y2dkV5VTVGZjVYbm94MXcwMzN4TUY5YXBPX05qUUM2Q09sM3BYYl9uWlVFcmZsbmFCMjhCZE11bEN3bmt5VFpVdmdybHFfSExucWpXSVpZNVZjQTVOOFZIdXI3VWVvdjdsV1o2b1doQk9ZT0NxUldDTEdaRmZ3Mjh3?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Mon, 07 Sep 2026 05:15:44 GMT",
-      "score": -8,
-      "tags": [
-        "strike",
-        "strikes",
-        "escalation",
-        "clash",
-        "clashes"
-      ]
-    },
-    {
-      "title": "US strikes five Iranian oil tankers, as Iran attacks 10 ships, Jordan base - aljazeera.com",
+      "title": "US strikes five Iranian oil tankers, as Iran attacks 10 ships, Jordan base - Al Jazeera",
       "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQSVZkSGpmVEVQUWxwTVJzMktrLWQ1R0RESXZqbktnZlo3SmJGM0prNEs3dVg0UUp3WWlzQVdZaUdONHQwOWFwVFU0R19hbm1zZGIyVVFqWkJ3S2c2dEpQQUJ4SHd4VE52UXBwa2pHSGZjWFd3U0xQeTFLQVIzZFBQdS11Y1VoY3NzVGlsTF9WYTduYVVZaUhlV05ob3c0RWFWY3M2Q19zSnlYdkpOTW13LUZrdFpKclnSAbwBQVVfeXFMT3pFYTcwbEJBMkxXWEEya3hZRFhRbzV0dTg4SkFIay1nWkthZFlEY3pFTUNVMnhuRnpTdTZkSzcwT0tmNjBncmpaNzk1akNsUldnWEZkVXNrejB6UEUtMXRpTXhQbHVQYkRiSDZxclQ0S1BUdVc0d1lUT0FmNGdfdzVLLU80czBXSHIwSXJCT3lqTXBCc29qaE9KZk5xM3JjSXBCSm1XX0JEd0VqNjNnY19DMHo3S2M0aWZQWU8?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
       "published": "Wed, 09 Sep 2026 11:46:40 GMT",
@@ -150,14 +136,29 @@
       ]
     },
     {
-      "title": "Trump says war to end \"immediately\" after midterms as Iran damages U.S. jets in strikes - CBS News",
-      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQUVJuX1liNlV4OVBFUUZrMUQ4QWNZV0R3enp2b0pzN0gwVVVKeW9xUmdKejFueWVCM3Z3RXI2TldvbVYzWXNPRlRNNmFSd3ZxVERxem0wX3R6YjFwcERxa1ZjUDhKbU93RGFPVG5rU3dqUVZkS2dlQU1qcmhsM21HY29Ea1MxdmNDYWVFZThvcGx0M0ZuUUFGdVl4Qmd4QUpaLWc?oc=5",
+      "title": "Iran Threatens to Target U.S. Energy Assets in Gulf If U.S. Strikes Again - Time Magazine",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNeXhIQVBWWU5xMlNqV3hlRVpxYXR1djRYaEJraDk0NGJwdGxMOUpTeVktVGNycWo3ZG5WOTZhUnA2WnNiY2dRbHc0VkdsaDdrcDlBVnBBeU1VREtJckYwYWhfd09KZDVPMmJuZkZhcnNWRzY3aExZZ2JwLWdNWHBIeEdjYy0?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Fri, 11 Sep 2026 10:43:19 GMT",
-      "score": -5,
+      "published": "Tue, 08 Sep 2026 15:12:20 GMT",
+      "score": -6,
       "tags": [
         "strike",
         "strikes",
+        "threat",
+        "threatens"
+      ]
+    },
+    {
+      "title": "FBI warns Iran aspired to attack California with drones in retaliation for war: Alert - abcnews.com",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOQ2hlRlY5RFh4YWgtOFBHaFNnc1dKRXh6Q243VXU0bUFUWk5TeThyVFM2Yk1jWUpnYWRUQkV6eGhZM3YzNzBzY296NXNwRlRXbWl1eFFVb0dvckZ4aUhsVHctOERRMkJJRTNZbVo1ZjVqejViYWxuaDRIY2Q0STZ2al9EVHlXVlgtbE9lSVhQbjZCSzZwTmtpM01uUWdxS2tPLWRj0gGoAUFVX3lxTE1wUUM0QkFNelExVzUzcVBxdnM2c1l4bklTdndFT3pzcEZVQXZkOVA0VHFRYXREZjAtcVhXcktBVi12VEZ6dVFRcEpVSEJZb0thLUs3NGY1d2pBV3BJOXdBS2NkWnJ1T0RrTWpzNm8yS2R5Q3ZnaDYyYmRMejdKYm5kd2RNZmhZOE9BdHRrU1NfdmlicXJUR3hZMDVTQldmN3lCWUFFYWIxdw?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Sun, 13 Sep 2026 06:19:52 GMT",
+      "score": -6,
+      "tags": [
+        "attack",
+        "drone",
+        "drones",
+        "retaliation",
         "war"
       ]
     },
@@ -173,7 +174,19 @@
       ]
     },
     {
-      "title": "Houthis strike Saudi Arabian cities in significant expansion of Middle East war - theguardian.com",
+      "title": "New Russia-developed drones requested by Tehran during war with Israel, US - The Jerusalem Post",
+      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1NeDRJTVBjcmNXR0pPdUluRDZfNUpjMTVSV2x6bWR6bDNjOVV6NUd1eVVSc3hnbXBsaVdtZ0JYdmpQZUVvTzgweGg4aExaZk92NmlSbWliNTRzakJsYVFWWEJILThWSVplaXc?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Sun, 13 Sep 2026 14:27:15 GMT",
+      "score": -3,
+      "tags": [
+        "drone",
+        "drones",
+        "war"
+      ]
+    },
+    {
+      "title": "Houthis strike Saudi Arabian cities in significant expansion of Middle East war - The Guardian",
       "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQYXNxakJXeG11enBnMEtHVzl6UFBpemVCWlJ1TlJBUEpKUmFuYldxaVhZMDM1cFh3cHhnUGNNVklpVkhMUDRpOExlcnJvM3l0S0lfNFB0UFRUZkMzUFNSR0NoRVpIMUlYNl9Bc3RTUWNydEI5UERpVnpjQi1yclkyV2ZHdXo5ZE9DcGFTUEN4NW9QWkFiX2NpOFVpZFptZVp3bGQ5RENob3hoU1Jp?oc=5",
       "source": "\"middle east conflict when:7d\" - Google News",
       "published": "Tue, 08 Sep 2026 11:48:00 GMT",
@@ -184,18 +197,7 @@
       ]
     },
     {
-      "title": "Iran Finds Escalation Is Fruitful Path to Leverage in War With U.S. - The New York Times",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNeGt3bmM5Z3hRbkRTZlVJbUhxRnY2YmdMNUVJVHRaNTNJeXlYYzNNdFNZcW9qdjBta0Q5cDNTUWxfZjZVUzdNRUV1U0VVNERzeERvUE5VS3p0VTk3V3JkN3JjV01tOU1va2Z1djJxbU1LbHlPVkFBZzRsb054Z1dhOXcwOGV4LWVBaElIa1U2bnE0akJJZTlwMms5MUU?oc=5",
-      "source": "\"middle east conflict when:7d\" - Google News",
-      "published": "Sat, 12 Sep 2026 15:23:04 GMT",
-      "score": -3,
-      "tags": [
-        "escalation",
-        "war"
-      ]
-    },
-    {
-      "title": "IRGC says war can end if US halts threats, meets demands, Israel exits Lebanon - The Times of Israel",
+      "title": "IRGC says war can end if US halts threats, meets demands, Israel exits Lebanon - timesofisrael.com",
       "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPYXBVb29QMU5ncUJWVmcwam1fZlZ3LU9oX2tVaUxGdkY3WjhRR2JReHBqQTRkUlkwQmNCV1hkYmtZcDNYUTJ5MjVvZHQxZDdZSlVQaTFISllZb2R2a21aWXR0TWZRdjBRa2N0emI1bXFKUlExVkdJVWZ6ejYwYUFzZEx2ZHdkWFNWNm5JaHFFS0NPUFcwWjV0cE9QSEFMYkxvbkN1cTY3dGVYdWVhZzU3ZGZhSkNkUHEza1NQeFhqVQ?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
       "published": "Wed, 09 Sep 2026 13:18:39 GMT",
@@ -206,23 +208,13 @@
       ]
     },
     {
-      "title": "Trump official says ‘there may not be a nuclear agreement’ with Iran - aljazeera.com",
-      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPVHhKc1NXcE9lZkMxZFVjQjJvZDc3TER6MnNiM1o0X05YVE44TW40TkVTZmo1RVdLZDQxdHpVUmlMRGZWVlhXZlBFMmpvQXJBNUotWE84d3NETlpENUVycnlMSHE0dzNIVnp5TUc5UVE5MzlLTk1Mal8yZ2dObHhlUVBWRzFtX2Vhak5TcFdtanZ3N0hkZDhZMkJWWi1QSnplbW1nRzVjaTNqZ9IBrwFBVV95cUxNMmVOZjFjeVpXUEQ4MmNMeVBRQVFrbENiOXFVXzRXek95V1g1cGo2czVSWW1Nd2RnU2ZLSHRsNTJEd2pRclFzT0RCbWIyd1pERHF6RS11TDc2ejF6UkMyMHgxT2Z4NE5VclV5VXozanFaMUwyd1VuNDdpVWlkOVpjNlRSZWZxaC1Wb0FGOGd0RGlSQzc0QnFZTDhpTXViNG9EY2pDRWRmblFNVXZ6VzdB?oc=5",
+      "title": "2026 Iran war | Oil, Explained, United States, Israel, Strait of Hormuz, Map, & Conflict - Britannica",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5nTzlhOGZTS180cWNtVG91c2VWRVJFYlk0cW5Ba1RHUEFOSEtldU15QktQT0EzRVY1ZVdZZ0VTRHVWTVhyN1IzeU1wbmlDMUhrQ3Roc1YxcmdMUQ?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Sun, 06 Sep 2026 17:03:14 GMT",
-      "score": 2,
+      "published": "Sun, 13 Sep 2026 05:00:00 GMT",
+      "score": -1,
       "tags": [
-        "agreement"
-      ]
-    },
-    {
-      "title": "Energy secretary says US might not reach nuclear agreement with Iran - theguardian.com",
-      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQLWlzT3lDY3g1NVBzNF9yQkdCSzN0enRDSUFNQnBNcU1FN1d3SmZNdzl5cWc0OG5NeDJqRHNwTnhnd0lxZWZnNmRabmFiUnRWdm9fLXFLTFZZakVTdHNxOVhvekwtZm5BVnVhWVpDNmk1YmRWZWFpVC1LZUFKeU1FS1I0WnpQTGhEMWFFQw?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Sun, 06 Sep 2026 17:39:00 GMT",
-      "score": 2,
-      "tags": [
-        "agreement"
+        "war"
       ]
     },
     {
@@ -230,16 +222,6 @@
       "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPVFowaUI1M1lFY0RPVk9JMjY0XzdTdkVoV0JxZzZjcEZlZHM2eWpCZXE2N3JMajhqWUl5RlpCOGlsYjlqeHlvczN5ZHAtUVVVVnE4djF2LVFqUkxYbnNSVmRtQ3N2Z1pDbFZYM0s0N213RkU2Zjh4elFjZVpiUFEwc0FXNFRyd1RYTXlFV1ZLc01WbXpVSkxHMmk2UFp6aWM1Tk4tMThWX1I1YUlyU0FzSGJvU2FyMGMyYUhrRE01MVVuanRZdTJr0gHMAUFVX3lxTE5DMm15WVlJdkwwYXVLcy1KdS1mdlVGMmRST2tNSldPOFZWNGRaQmNHREFJWWVIWkVfdnFoSXJTVDU4WEZuWVFGenV5SzRxNXRrYTQ3cFVTTEtBdlphaC1KdzdORG5UUndqOU5Cb21IY2s0Wm11eTIwaGg3YlpUN09RQlpSMFhVRnZfR2dEWGZoNDVLc18tblg3R3pBRjAycWRtYURiTnlZOERPWWRVTUx5ZmlYSFNtOHU1NkVSODJIdzVRZGRBMi1aZmFscg?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
       "published": "Fri, 11 Sep 2026 16:37:35 GMT",
-      "score": -1,
-      "tags": [
-        "war"
-      ]
-    },
-    {
-      "title": "Iran war won't end until after US midterm elections, says Trump - BBC",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1OM3F6X1RpZkkzWm1UMFFfVXlQLWFLSG5PNHZwVFN6ZnNNQzYwazlBamZzRkhoNmo3OEFNT25acm9PTWd3Y0pCLUdjWGxhZVAycnVtWEJ0UnFxQQ?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Thu, 10 Sep 2026 10:43:53 GMT",
       "score": -1,
       "tags": [
         "war"
@@ -254,11 +236,31 @@
       "tags": [
         "war"
       ]
+    },
+    {
+      "title": "Saudi Arabia has few options as it faces mounting threats from Iran and its allies - PBS",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOcUpIWkpQMzZtOVdJcGY3eUJ6NVBOMHI2OGZOU3k1V2kwMjFYeFZHY0dwTVpMQUM0SEttb2otVHExNDNPaTFWTm5tcnkxeDU0WnNjbXBuSk1aVW1YcVpDeTBYMEViMDFXV3hxd0R3N0JmYTBhdG5VQjBDNDVlWVhnTUp2ZjRJQ0lUelc1d2d4eTJ3eVdDU0dzR3BJWS01MWVRRXEwUC1VS0lqNnZjVjVIdkFPTjJfZ05W0gG-AUFVX3lxTE9FVzlqN0dyMHlJVGlRdUc5RjVVOVNyMHpmWEt3MnMtY2l6a3pRbERLOGxCOUE3UTAyczE5MXB4T2o1aW5tcU9LcDFBOUctcE81RGZLWDFPVHdPZ1ZXNW9vbi15S0hTa1A5Yi05UW1lT3ROdHZ0eHJMNGNYSWh5b242cEEwZG1RODF4T2h6ZU1SckNxWUFjOXM1V2RuWmVsbE44Zlc2Ty1wLVNVYVIwcnNRaHRyNTB0c3ZVTnB4aFE?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Sat, 12 Sep 2026 16:52:06 GMT",
+      "score": -1,
+      "tags": [
+        "threat"
+      ]
+    },
+    {
+      "title": "How South Korea finds itself trapped in the US-Iran war - Al Jazeera",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNeHBsY3Zuc19xSDZ3dHMyVHk4M2VER1k2OXhhVXE3Y0ttQVotQndHNXQ3SHViRHNtak81cXp3UE1XUU50ZTBTUWU5MTdmUUoyQlVnYXh6N3h0ejFMR0FodVRmVWwtMDVCM29aYjJxeVlLc2prSThEUzVESXRYcjNZTWNBNF8wUmxmUVNhWnplUnZZVUFwZW5oZzBkWdIBoAFBVV95cUxPSGdjSkh2ZG1QWklWS013QTQwSXlQWHR0OEZRS1BGdlFzaGVPWTNadW0wSTFZWVpGQ1Z3MWxqMUdFUXF4ZkJJTWYzay1zQWNvbWxyWl8xUVhVVk40U2loNl9yM1gzbXpBOTFwbEhQal9uNjByeUsxNTk0N3Z5Wjk5WUZBb3NVSU50VHRRUGxOSUlWT0gxdjNWS0RmUDRRTndt?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Tue, 08 Sep 2026 10:04:45 GMT",
+      "score": -1,
+      "tags": [
+        "war"
+      ]
     }
   ],
   "integrity": {
     "driver_net_equals_total_score": true,
-    "driver_net": -40,
-    "source_total_score": -40
+    "driver_net": -45,
+    "source_total_score": -45
   }
 }
