@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-09-16T09:59:40.364971Z",
-  "source_generated_at": "2026-09-16T06:03:46Z",
+  "generated_at": "2026-09-16T14:08:33.495252Z",
+  "source_generated_at": "2026-09-16T11:37:36Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1363,
-  "event_count": 742,
+  "source_event_count": 1365,
+  "event_count": 744,
   "rejected_count": 621,
   "rejection_counts": {
     "category_not_kinetic": 427,
@@ -22,7 +22,7 @@
     "alert_only": 2
   },
   "category_counts": {
-    "missile": 247,
+    "missile": 249,
     "strike": 194,
     "drone": 120,
     "airstrike": 113,
@@ -30,16 +30,16 @@
     "ground": 23
   },
   "severity_counts": {
-    "medium": 406,
-    "high": 296,
+    "medium": 407,
+    "high": 297,
     "low": 38,
     "critical": 2
   },
   "actor_counts": {
     "Iran": 257,
-    "United States": 161,
+    "United States": 162,
     "Israel": 122,
-    "Yemen": 100,
+    "Yemen": 101,
     "Unknown actor": 54,
     "Saudi Arabia": 21,
     "Iraq": 13,
@@ -48,6 +48,58 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-1mg8234ftmyo0",
+      "timestamp": "2026-09-16T11:27:08Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "high",
+      "actor": "usa",
+      "actor_label": "United States",
+      "actor_method": "raw_source.origin",
+      "target_country": "Jordan",
+      "location": "Jordan",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "U.S. forces launch 60-70 Patriot PAC-3 and dozen THAAD interceptors from Muwaffaq Salti Airbase to defend against Iranian ballistic missile attack, some Iranian missiles score hits on U.S. bases in Jordan",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83993",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-uc845kqqbgg0",
+      "timestamp": "2026-09-16T06:11:06Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "medium",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Saudi Arabia intercepts Houthi drone attempting to enter airspace over Mecca, second attack attempt on holy city since 2017 ballistic missile strike",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/63532",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-36fyctnolec00",
       "timestamp": "2026-09-15T22:44:59Z",
