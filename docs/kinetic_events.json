@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-09-16T14:08:33.495252Z",
-  "source_generated_at": "2026-09-16T11:37:36Z",
+  "generated_at": "2026-09-17T10:01:58.857735Z",
+  "source_generated_at": "2026-09-17T05:28:05Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": false,
+    "required_today_utc": true,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1365,
-  "event_count": 744,
-  "rejected_count": 621,
+  "source_event_count": 1381,
+  "event_count": 746,
+  "rejected_count": 635,
   "rejection_counts": {
-    "category_not_kinetic": 427,
-    "no_confirmed_action_language": 152,
+    "category_not_kinetic": 428,
+    "no_confirmed_action_language": 165,
     "context_or_hypothetical": 21,
     "retrospective_or_aftermath": 13,
     "outside_window": 6,
     "alert_only": 2
   },
   "category_counts": {
-    "missile": 249,
+    "missile": 251,
     "strike": 194,
     "drone": 120,
     "airstrike": 113,
@@ -30,16 +30,16 @@
     "ground": 23
   },
   "severity_counts": {
-    "medium": 407,
-    "high": 297,
+    "medium": 408,
+    "high": 298,
     "low": 38,
     "critical": 2
   },
   "actor_counts": {
-    "Iran": 257,
+    "Iran": 258,
     "United States": 162,
     "Israel": 122,
-    "Yemen": 101,
+    "Yemen": 102,
     "Unknown actor": 54,
     "Saudi Arabia": 21,
     "Iraq": 13,
@@ -48,6 +48,58 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-2r2end1ocqa00",
+      "timestamp": "2026-09-16T14:11:04Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "medium",
+      "actor": "irn",
+      "actor_label": "Iran",
+      "actor_method": "raw_source.origin",
+      "target_country": "Persian Gulf",
+      "location": "Persian Gulf",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Iranian attack with 4 drones and at least 1 missile strikes U.S.-contracted vessel near Strait of Hormuz, causing minor injuries including smoke inhalation",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/84004",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-3vxz32d7f8w00",
+      "timestamp": "2026-09-16T13:56:48Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "high",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "Red Sea",
+      "location": "Red Sea",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Houthi missile and drone strikes on East-West Yanbu-Abqaiq crude oil pipeline pumping stations; strong heat signatures detected at Yanbu Red Sea oil export terminal",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/84003",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-1mg8234ftmyo0",
       "timestamp": "2026-09-16T11:27:08Z",
