@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T14:08:34.354287+00:00",
+  "generated_at": "2026-09-17T14:14:02.643474+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,29 +18,29 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 586,
-    "kinetic_events_loaded": 744,
-    "unique_events_scanned": 1265,
-    "strategic_evidence_contributions": 344,
+    "non_kinetic_events_loaded": 588,
+    "kinetic_events_loaded": 746,
+    "unique_events_scanned": 1269,
+    "strategic_evidence_contributions": 347,
     "evidence_contributions_by_actor": {
-      "usa": 111,
-      "iran": 233
+      "usa": 112,
+      "iran": 235
     },
     "scored_contributions_by_actor": {
-      "usa": 78,
-      "iran": 123
+      "usa": 79,
+      "iran": 125
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
       "iran": 110
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 298,
+      "non_kinetic": 301,
       "kinetic": 46
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 187,
-      "usa:negotiation": 90,
+      "iran:negotiation": 189,
+      "usa:negotiation": 91,
       "iran:missile_test": 32,
       "usa:presidential_warning": 15,
       "iran:hormuz_threat": 9,
@@ -51,8 +51,8 @@
       "usa:carrier_deployment": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 93,
-      "usa:negotiation": 61,
+      "iran:negotiation": 95,
+      "usa:negotiation": 62,
       "iran:missile_test": 16,
       "usa:presidential_warning": 15,
       "iran:hormuz_threat": 9,
@@ -63,141 +63,229 @@
       "usa:carrier_deployment": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 2,
-    "history_day_count": 185
+    "skipped_current_utc_day": 0,
+    "history_day_count": 190
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-09-10",
+  "latest_complete_utc_day": "2026-09-15",
   "current": {
-    "date": "2026-09-10",
+    "date": "2026-09-15",
     "calculation_mode": "live",
     "usa": {
       "raw_score": 0.0,
       "positive_score": 0.0,
       "negative_score": 0.0,
-      "event_count": 0,
-      "scored_event_count": 0,
-      "evidence_event_count": 0,
+      "event_count": 1,
+      "scored_event_count": 1,
+      "evidence_event_count": 1,
       "suppressed_duplicate_count": 0,
       "increase_event_count": 0,
       "decrease_event_count": 0,
-      "contributors": [],
-      "weighted_score_7d": 2.25,
-      "pressure_index_7d": 54.5,
+      "contributors": [
+        {
+          "event_id": "INFO-000001",
+          "timestamp": "2026-09-15T11:21:00+00:00",
+          "date": "2026-09-15",
+          "actor": "usa",
+          "bilateral_event": true,
+          "title": "After Trump floats talks, Iran security chief rejects negotiations until ‘conditions’ met - The Times of Israel",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "escalation",
+          "operational_component": 6.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": 0.0,
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": false,
+          "daily_score_suppressed": false,
+          "suppression_reason": null,
+          "primary_daily_indicator": "negotiation",
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_full_scale_war",
+                "name": "Avoid full-scale regional war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "United States: Negotiation. Operational component: +6.00; strategic modifier: -6.00; final contribution before daily deduplication: +0.00. Event: After Trump floats talks, Iran security chief rejects negotiations until ‘conditions’ met - The Times of Israel",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSC1ISVZMWm5kTGg3eTVKTDBPc1lJeXVuVmlMWFhzYnhHVjhCM3o2cmFuWldiYjU4SVJlR09ZMWVTWmN6VzBiMDV5WmlpVWdBRkI3aUdBWkNKc2lXSjh6ejVieHk5ZWRBNkZpY2V1YTZOZC1zZXZ1RGgxb1FPUkp2QXBDY0QtOTUxMjZjRkdVT1RucTZLV2hMRDNmeTBWZzBLRVViRURENmFZT0pOV3RKcFlReElsOHBp0gG-AUFVX3lxTE15a2RyZ0FJb3R1eXpKclFQSE9jM3N4TWVZQjl1ZTRuS2xLVU1VR2F6MlZJcWc4N0c3YU1xVGRwMDFEOUppNEhwUDJBbll4NzdOazBFdW1MUDBsclk0SjEyYUVBR2lCbG9MMW9rRGswS3ZfWjlSbkhZS2I3b2l4cS1HbU9oTE5sblF4UXJDcnd6UVM4VmRrUkhQNk9MRkdHbGRHZjlsVHhqczd0N1dRVHpOTVVOaGl5bS1YRzh0T1E?oc=5",
+          "existing_event_score": 6.0,
+          "existing_direction_score": -3.0,
+          "winning_daily_indicators": [
+            "negotiation"
+          ],
+          "duplicate_daily_indicators": []
+        }
+      ],
+      "weighted_score_7d": 0.0,
+      "pressure_index_7d": 50.0,
       "pressure_level": "balanced",
-      "trend": "decrease",
-      "strongest_contributors": []
+      "trend": "stable",
+      "strongest_contributors": [
+        {
+          "event_id": "INFO-000001",
+          "timestamp": "2026-09-15T11:21:00+00:00",
+          "date": "2026-09-15",
+          "actor": "usa",
+          "bilateral_event": true,
+          "title": "After Trump floats talks, Iran security chief rejects negotiations until ‘conditions’ met - The Times of Israel",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "escalation",
+          "operational_component": 6.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": 0.0,
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": false,
+          "daily_score_suppressed": false,
+          "suppression_reason": null,
+          "primary_daily_indicator": "negotiation",
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_full_scale_war",
+                "name": "Avoid full-scale regional war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "United States: Negotiation. Operational component: +6.00; strategic modifier: -6.00; final contribution before daily deduplication: +0.00. Event: After Trump floats talks, Iran security chief rejects negotiations until ‘conditions’ met - The Times of Israel",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSC1ISVZMWm5kTGg3eTVKTDBPc1lJeXVuVmlMWFhzYnhHVjhCM3o2cmFuWldiYjU4SVJlR09ZMWVTWmN6VzBiMDV5WmlpVWdBRkI3aUdBWkNKc2lXSjh6ejVieHk5ZWRBNkZpY2V1YTZOZC1zZXZ1RGgxb1FPUkp2QXBDY0QtOTUxMjZjRkdVT1RucTZLV2hMRDNmeTBWZzBLRVViRURENmFZT0pOV3RKcFlReElsOHBp0gG-AUFVX3lxTE15a2RyZ0FJb3R1eXpKclFQSE9jM3N4TWVZQjl1ZTRuS2xLVU1VR2F6MlZJcWc4N0c3YU1xVGRwMDFEOUppNEhwUDJBbll4NzdOazBFdW1MUDBsclk0SjEyYUVBR2lCbG9MMW9rRGswS3ZfWjlSbkhZS2I3b2l4cS1HbU9oTE5sblF4UXJDcnd6UVM4VmRrUkhQNk9MRkdHbGRHZjlsVHhqczd0N1dRVHpOTVVOaGl5bS1YRzh0T1E?oc=5",
+          "existing_event_score": 6.0,
+          "existing_direction_score": -3.0,
+          "winning_daily_indicators": [
+            "negotiation"
+          ],
+          "duplicate_daily_indicators": []
+        }
+      ]
     },
     "iran": {
-      "raw_score": 7.0,
-      "positive_score": 7.0,
+      "raw_score": 0.0,
+      "positive_score": 0.0,
       "negative_score": 0.0,
       "event_count": 1,
       "scored_event_count": 1,
       "evidence_event_count": 1,
       "suppressed_duplicate_count": 0,
-      "increase_event_count": 1,
+      "increase_event_count": 0,
       "decrease_event_count": 0,
       "contributors": [
         {
-          "event_id": "iranstrike-l7cyihl6b1c0",
-          "timestamp": "2026-09-10T05:42:40+00:00",
-          "date": "2026-09-10",
+          "event_id": "INFO-000001",
+          "timestamp": "2026-09-15T11:21:00+00:00",
+          "date": "2026-09-15",
           "actor": "iran",
-          "bilateral_event": false,
-          "title": "Iran launches widespread ballistic missile attack on Jordanian airbases hosting U.S. forces, 20 missiles fired with 18 intercepted and 2 striking ground targets",
-          "source_layer": "kinetic",
-          "event_type": "kinetic",
+          "bilateral_event": true,
+          "title": "After Trump floats talks, Iran security chief rejects negotiations until ‘conditions’ met - The Times of Israel",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
           "event_direction": "escalation",
-          "operational_component": 1.0,
-          "strategic_modifier": 6.0,
+          "operational_component": 6.0,
+          "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": 7.0,
-          "final_score": 7.0,
+          "original_final_score": 0.0,
+          "final_score": 0.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
-          "primary_daily_indicator": "missile_test",
+          "primary_daily_indicator": "negotiation",
           "indicators": [
             {
-              "id": "missile_test",
-              "name": "Missile test",
-              "score": 6.0,
-              "direction": "increase",
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
               "interest": {
-                "id": "missile_capability",
-                "name": "Missile capability",
-                "weight": 9.0
+                "id": "avoid_regime_destroying_war",
+                "name": "Avoid regime-destroying war",
+                "weight": 10.0
               },
-              "recognition_rule_count": 1
+              "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches widespread ballistic missile attack on Jordanian airbases hosting U.S. forces, 20 missiles fired with 18 intercepted and 2 striking ground targets",
-          "source": "",
-          "link": "https://t.me/abualiexpress/130026",
-          "existing_event_score": 0.0,
-          "existing_direction_score": 0.0,
+          "reason": "Iran: Negotiation. Operational component: +6.00; strategic modifier: -6.00; final contribution before daily deduplication: +0.00. Event: After Trump floats talks, Iran security chief rejects negotiations until ‘conditions’ met - The Times of Israel",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSC1ISVZMWm5kTGg3eTVKTDBPc1lJeXVuVmlMWFhzYnhHVjhCM3o2cmFuWldiYjU4SVJlR09ZMWVTWmN6VzBiMDV5WmlpVWdBRkI3aUdBWkNKc2lXSjh6ejVieHk5ZWRBNkZpY2V1YTZOZC1zZXZ1RGgxb1FPUkp2QXBDY0QtOTUxMjZjRkdVT1RucTZLV2hMRDNmeTBWZzBLRVViRURENmFZT0pOV3RKcFlReElsOHBp0gG-AUFVX3lxTE15a2RyZ0FJb3R1eXpKclFQSE9jM3N4TWVZQjl1ZTRuS2xLVU1VR2F6MlZJcWc4N0c3YU1xVGRwMDFEOUppNEhwUDJBbll4NzdOazBFdW1MUDBsclk0SjEyYUVBR2lCbG9MMW9rRGswS3ZfWjlSbkhZS2I3b2l4cS1HbU9oTE5sblF4UXJDcnd6UVM4VmRrUkhQNk9MRkdHbGRHZjlsVHhqczd0N1dRVHpOTVVOaGl5bS1YRzh0T1E?oc=5",
+          "existing_event_score": 6.0,
+          "existing_direction_score": -3.0,
           "winning_daily_indicators": [
-            "missile_test"
+            "negotiation"
           ],
           "duplicate_daily_indicators": []
         }
       ],
-      "weighted_score_7d": 14.7,
-      "pressure_index_7d": 79.4,
-      "pressure_level": "high",
-      "trend": "strong_increase",
+      "weighted_score_7d": -0.5,
+      "pressure_index_7d": 49.0,
+      "pressure_level": "balanced",
+      "trend": "decrease",
       "strongest_contributors": [
         {
-          "event_id": "iranstrike-l7cyihl6b1c0",
-          "timestamp": "2026-09-10T05:42:40+00:00",
-          "date": "2026-09-10",
+          "event_id": "INFO-000001",
+          "timestamp": "2026-09-15T11:21:00+00:00",
+          "date": "2026-09-15",
           "actor": "iran",
-          "bilateral_event": false,
-          "title": "Iran launches widespread ballistic missile attack on Jordanian airbases hosting U.S. forces, 20 missiles fired with 18 intercepted and 2 striking ground targets",
-          "source_layer": "kinetic",
-          "event_type": "kinetic",
+          "bilateral_event": true,
+          "title": "After Trump floats talks, Iran security chief rejects negotiations until ‘conditions’ met - The Times of Israel",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
           "event_direction": "escalation",
-          "operational_component": 1.0,
-          "strategic_modifier": 6.0,
+          "operational_component": 6.0,
+          "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": 7.0,
-          "final_score": 7.0,
+          "original_final_score": 0.0,
+          "final_score": 0.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
-          "primary_daily_indicator": "missile_test",
+          "primary_daily_indicator": "negotiation",
           "indicators": [
             {
-              "id": "missile_test",
-              "name": "Missile test",
-              "score": 6.0,
-              "direction": "increase",
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
               "interest": {
-                "id": "missile_capability",
-                "name": "Missile capability",
-                "weight": 9.0
+                "id": "avoid_regime_destroying_war",
+                "name": "Avoid regime-destroying war",
+                "weight": 10.0
               },
-              "recognition_rule_count": 1
+              "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches widespread ballistic missile attack on Jordanian airbases hosting U.S. forces, 20 missiles fired with 18 intercepted and 2 striking ground targets",
-          "source": "",
-          "link": "https://t.me/abualiexpress/130026",
-          "existing_event_score": 0.0,
-          "existing_direction_score": 0.0,
+          "reason": "Iran: Negotiation. Operational component: +6.00; strategic modifier: -6.00; final contribution before daily deduplication: +0.00. Event: After Trump floats talks, Iran security chief rejects negotiations until ‘conditions’ met - The Times of Israel",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSC1ISVZMWm5kTGg3eTVKTDBPc1lJeXVuVmlMWFhzYnhHVjhCM3o2cmFuWldiYjU4SVJlR09ZMWVTWmN6VzBiMDV5WmlpVWdBRkI3aUdBWkNKc2lXSjh6ejVieHk5ZWRBNkZpY2V1YTZOZC1zZXZ1RGgxb1FPUkp2QXBDY0QtOTUxMjZjRkdVT1RucTZLV2hMRDNmeTBWZzBLRVViRURENmFZT0pOV3RKcFlReElsOHBp0gG-AUFVX3lxTE15a2RyZ0FJb3R1eXpKclFQSE9jM3N4TWVZQjl1ZTRuS2xLVU1VR2F6MlZJcWc4N0c3YU1xVGRwMDFEOUppNEhwUDJBbll4NzdOazBFdW1MUDBsclk0SjEyYUVBR2lCbG9MMW9rRGswS3ZfWjlSbkhZS2I3b2l4cS1HbU9oTE5sblF4UXJDcnd6UVM4VmRrUkhQNk9MRkdHbGRHZjlsVHhqczd0N1dRVHpOTVVOaGl5bS1YRzh0T1E?oc=5",
+          "existing_event_score": 6.0,
+          "existing_direction_score": -3.0,
           "winning_daily_indicators": [
-            "missile_test"
+            "negotiation"
           ],
           "duplicate_daily_indicators": []
         }
       ]
     },
     "overall": {
-      "pressure_index_7d": 66.95,
-      "pressure_level": "high",
-      "trend": "increase",
+      "pressure_index_7d": 49.5,
+      "pressure_level": "balanced",
+      "trend": "stable",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
   }
