@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-17T14:14:02.643474+00:00",
+  "generated_at": "2026-09-18T13:32:09.442671+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,29 +18,29 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 588,
-    "kinetic_events_loaded": 746,
-    "unique_events_scanned": 1269,
-    "strategic_evidence_contributions": 347,
+    "non_kinetic_events_loaded": 590,
+    "kinetic_events_loaded": 748,
+    "unique_events_scanned": 1273,
+    "strategic_evidence_contributions": 349,
     "evidence_contributions_by_actor": {
-      "usa": 112,
-      "iran": 235
+      "usa": 113,
+      "iran": 236
     },
     "scored_contributions_by_actor": {
-      "usa": 79,
-      "iran": 125
+      "usa": 80,
+      "iran": 126
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
       "iran": 110
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 301,
+      "non_kinetic": 303,
       "kinetic": 46
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 189,
-      "usa:negotiation": 91,
+      "iran:negotiation": 190,
+      "usa:negotiation": 92,
       "iran:missile_test": 32,
       "usa:presidential_warning": 15,
       "iran:hormuz_threat": 9,
@@ -51,8 +51,8 @@
       "usa:carrier_deployment": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 95,
-      "usa:negotiation": 62,
+      "iran:negotiation": 96,
+      "usa:negotiation": 63,
       "iran:missile_test": 16,
       "usa:presidential_warning": 15,
       "iran:hormuz_threat": 9,
@@ -64,40 +64,40 @@
     },
     "skipped_without_timestamp": 0,
     "skipped_current_utc_day": 0,
-    "history_day_count": 190
+    "history_day_count": 192
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-09-15",
+  "latest_complete_utc_day": "2026-09-17",
   "current": {
-    "date": "2026-09-15",
+    "date": "2026-09-17",
     "calculation_mode": "live",
     "usa": {
-      "raw_score": 0.0,
+      "raw_score": -6.0,
       "positive_score": 0.0,
-      "negative_score": 0.0,
+      "negative_score": -6.0,
       "event_count": 1,
       "scored_event_count": 1,
       "evidence_event_count": 1,
       "suppressed_duplicate_count": 0,
       "increase_event_count": 0,
-      "decrease_event_count": 0,
+      "decrease_event_count": 1,
       "contributors": [
         {
           "event_id": "INFO-000001",
-          "timestamp": "2026-09-15T11:21:00+00:00",
-          "date": "2026-09-15",
+          "timestamp": "2026-09-17T10:35:15+00:00",
+          "date": "2026-09-17",
           "actor": "usa",
           "bilateral_event": true,
-          "title": "After Trump floats talks, Iran security chief rejects negotiations until ‘conditions’ met - The Times of Israel",
+          "title": "Trump claims direct talks with Iran: Is diplomacy picking up again? - Al Jazeera",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "escalation",
-          "operational_component": 6.0,
+          "event_direction": "mixed",
+          "operational_component": 0.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": 0.0,
-          "final_score": 0.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -116,37 +116,37 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "United States: Negotiation. Operational component: +6.00; strategic modifier: -6.00; final contribution before daily deduplication: +0.00. Event: After Trump floats talks, Iran security chief rejects negotiations until ‘conditions’ met - The Times of Israel",
+          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump claims direct talks with Iran: Is diplomacy picking up again? - Al Jazeera",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSC1ISVZMWm5kTGg3eTVKTDBPc1lJeXVuVmlMWFhzYnhHVjhCM3o2cmFuWldiYjU4SVJlR09ZMWVTWmN6VzBiMDV5WmlpVWdBRkI3aUdBWkNKc2lXSjh6ejVieHk5ZWRBNkZpY2V1YTZOZC1zZXZ1RGgxb1FPUkp2QXBDY0QtOTUxMjZjRkdVT1RucTZLV2hMRDNmeTBWZzBLRVViRURENmFZT0pOV3RKcFlReElsOHBp0gG-AUFVX3lxTE15a2RyZ0FJb3R1eXpKclFQSE9jM3N4TWVZQjl1ZTRuS2xLVU1VR2F6MlZJcWc4N0c3YU1xVGRwMDFEOUppNEhwUDJBbll4NzdOazBFdW1MUDBsclk0SjEyYUVBR2lCbG9MMW9rRGswS3ZfWjlSbkhZS2I3b2l4cS1HbU9oTE5sblF4UXJDcnd6UVM4VmRrUkhQNk9MRkdHbGRHZjlsVHhqczd0N1dRVHpOTVVOaGl5bS1YRzh0T1E?oc=5",
-          "existing_event_score": 6.0,
-          "existing_direction_score": -3.0,
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPLV9vSTI4ZmRERXd3V2tWbnlwVlA4dzhneHdpY0FJZzVfcXFETUVLVFdob1pfbVlKOFJxVi1vSERMTHNpWmRnUlloQTVMTnhlZlAyc1lUck5Zc2RZSDVBSXJqclI2a01DeE1JNHZVNlV3VzQzVzdqYVBUeWRHYmFnLVNhXzhXcmFBV2JzUUJwSUhhTWJ4LUNjempNNE9aeG84YzYzdlA1MVpZZ9IBrwFBVV95cUxOc05rMUNncTg2ai01TkRneHVsY2YtTUQxR2E3NXV3Y0J5ZDVmU0xjSmplYWV0a1g2VTFNeXBNT3JYZ1RYRTdmb01XZzk5OWVjQmVWWkJZbkY2S3dHcG1TbkUzR0JVd2VTNmYxQVVESm9feTZocEY3dXdxMGJZVEpRYlZKZzRpZ0V2M2JXakltRmU0MFc4R3VHUTE4WEdnYXNnQk13SlNCZkNYb253UFNZ?oc=5",
+          "existing_event_score": 4.0,
+          "existing_direction_score": 1.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
           "duplicate_daily_indicators": []
         }
       ],
-      "weighted_score_7d": 0.0,
-      "pressure_index_7d": 50.0,
-      "pressure_level": "balanced",
-      "trend": "stable",
+      "weighted_score_7d": -6.0,
+      "pressure_index_7d": 38.0,
+      "pressure_level": "reduced",
+      "trend": "strong_decrease",
       "strongest_contributors": [
         {
           "event_id": "INFO-000001",
-          "timestamp": "2026-09-15T11:21:00+00:00",
-          "date": "2026-09-15",
+          "timestamp": "2026-09-17T10:35:15+00:00",
+          "date": "2026-09-17",
           "actor": "usa",
           "bilateral_event": true,
-          "title": "After Trump floats talks, Iran security chief rejects negotiations until ‘conditions’ met - The Times of Israel",
+          "title": "Trump claims direct talks with Iran: Is diplomacy picking up again? - Al Jazeera",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "escalation",
-          "operational_component": 6.0,
+          "event_direction": "mixed",
+          "operational_component": 0.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": 0.0,
-          "final_score": 0.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -165,11 +165,11 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "United States: Negotiation. Operational component: +6.00; strategic modifier: -6.00; final contribution before daily deduplication: +0.00. Event: After Trump floats talks, Iran security chief rejects negotiations until ‘conditions’ met - The Times of Israel",
+          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump claims direct talks with Iran: Is diplomacy picking up again? - Al Jazeera",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSC1ISVZMWm5kTGg3eTVKTDBPc1lJeXVuVmlMWFhzYnhHVjhCM3o2cmFuWldiYjU4SVJlR09ZMWVTWmN6VzBiMDV5WmlpVWdBRkI3aUdBWkNKc2lXSjh6ejVieHk5ZWRBNkZpY2V1YTZOZC1zZXZ1RGgxb1FPUkp2QXBDY0QtOTUxMjZjRkdVT1RucTZLV2hMRDNmeTBWZzBLRVViRURENmFZT0pOV3RKcFlReElsOHBp0gG-AUFVX3lxTE15a2RyZ0FJb3R1eXpKclFQSE9jM3N4TWVZQjl1ZTRuS2xLVU1VR2F6MlZJcWc4N0c3YU1xVGRwMDFEOUppNEhwUDJBbll4NzdOazBFdW1MUDBsclk0SjEyYUVBR2lCbG9MMW9rRGswS3ZfWjlSbkhZS2I3b2l4cS1HbU9oTE5sblF4UXJDcnd6UVM4VmRrUkhQNk9MRkdHbGRHZjlsVHhqczd0N1dRVHpOTVVOaGl5bS1YRzh0T1E?oc=5",
-          "existing_event_score": 6.0,
-          "existing_direction_score": -3.0,
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPLV9vSTI4ZmRERXd3V2tWbnlwVlA4dzhneHdpY0FJZzVfcXFETUVLVFdob1pfbVlKOFJxVi1vSERMTHNpWmRnUlloQTVMTnhlZlAyc1lUck5Zc2RZSDVBSXJqclI2a01DeE1JNHZVNlV3VzQzVzdqYVBUeWRHYmFnLVNhXzhXcmFBV2JzUUJwSUhhTWJ4LUNjempNNE9aeG84YzYzdlA1MVpZZ9IBrwFBVV95cUxOc05rMUNncTg2ai01TkRneHVsY2YtTUQxR2E3NXV3Y0J5ZDVmU0xjSmplYWV0a1g2VTFNeXBNT3JYZ1RYRTdmb01XZzk5OWVjQmVWWkJZbkY2S3dHcG1TbkUzR0JVd2VTNmYxQVVESm9feTZocEY3dXdxMGJZVEpRYlZKZzRpZ0V2M2JXakltRmU0MFc4R3VHUTE4WEdnYXNnQk13SlNCZkNYb253UFNZ?oc=5",
+          "existing_event_score": 4.0,
+          "existing_direction_score": 1.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
@@ -178,31 +178,31 @@
       ]
     },
     "iran": {
-      "raw_score": 0.0,
+      "raw_score": -6.0,
       "positive_score": 0.0,
-      "negative_score": 0.0,
+      "negative_score": -6.0,
       "event_count": 1,
       "scored_event_count": 1,
       "evidence_event_count": 1,
       "suppressed_duplicate_count": 0,
       "increase_event_count": 0,
-      "decrease_event_count": 0,
+      "decrease_event_count": 1,
       "contributors": [
         {
           "event_id": "INFO-000001",
-          "timestamp": "2026-09-15T11:21:00+00:00",
-          "date": "2026-09-15",
+          "timestamp": "2026-09-17T10:35:15+00:00",
+          "date": "2026-09-17",
           "actor": "iran",
           "bilateral_event": true,
-          "title": "After Trump floats talks, Iran security chief rejects negotiations until ‘conditions’ met - The Times of Israel",
+          "title": "Trump claims direct talks with Iran: Is diplomacy picking up again? - Al Jazeera",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "escalation",
-          "operational_component": 6.0,
+          "event_direction": "mixed",
+          "operational_component": 0.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": 0.0,
-          "final_score": 0.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -221,37 +221,37 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +6.00; strategic modifier: -6.00; final contribution before daily deduplication: +0.00. Event: After Trump floats talks, Iran security chief rejects negotiations until ‘conditions’ met - The Times of Israel",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump claims direct talks with Iran: Is diplomacy picking up again? - Al Jazeera",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSC1ISVZMWm5kTGg3eTVKTDBPc1lJeXVuVmlMWFhzYnhHVjhCM3o2cmFuWldiYjU4SVJlR09ZMWVTWmN6VzBiMDV5WmlpVWdBRkI3aUdBWkNKc2lXSjh6ejVieHk5ZWRBNkZpY2V1YTZOZC1zZXZ1RGgxb1FPUkp2QXBDY0QtOTUxMjZjRkdVT1RucTZLV2hMRDNmeTBWZzBLRVViRURENmFZT0pOV3RKcFlReElsOHBp0gG-AUFVX3lxTE15a2RyZ0FJb3R1eXpKclFQSE9jM3N4TWVZQjl1ZTRuS2xLVU1VR2F6MlZJcWc4N0c3YU1xVGRwMDFEOUppNEhwUDJBbll4NzdOazBFdW1MUDBsclk0SjEyYUVBR2lCbG9MMW9rRGswS3ZfWjlSbkhZS2I3b2l4cS1HbU9oTE5sblF4UXJDcnd6UVM4VmRrUkhQNk9MRkdHbGRHZjlsVHhqczd0N1dRVHpOTVVOaGl5bS1YRzh0T1E?oc=5",
-          "existing_event_score": 6.0,
-          "existing_direction_score": -3.0,
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPLV9vSTI4ZmRERXd3V2tWbnlwVlA4dzhneHdpY0FJZzVfcXFETUVLVFdob1pfbVlKOFJxVi1vSERMTHNpWmRnUlloQTVMTnhlZlAyc1lUck5Zc2RZSDVBSXJqclI2a01DeE1JNHZVNlV3VzQzVzdqYVBUeWRHYmFnLVNhXzhXcmFBV2JzUUJwSUhhTWJ4LUNjempNNE9aeG84YzYzdlA1MVpZZ9IBrwFBVV95cUxOc05rMUNncTg2ai01TkRneHVsY2YtTUQxR2E3NXV3Y0J5ZDVmU0xjSmplYWV0a1g2VTFNeXBNT3JYZ1RYRTdmb01XZzk5OWVjQmVWWkJZbkY2S3dHcG1TbkUzR0JVd2VTNmYxQVVESm9feTZocEY3dXdxMGJZVEpRYlZKZzRpZ0V2M2JXakltRmU0MFc4R3VHUTE4WEdnYXNnQk13SlNCZkNYb253UFNZ?oc=5",
+          "existing_event_score": 4.0,
+          "existing_direction_score": 1.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
           "duplicate_daily_indicators": []
         }
       ],
-      "weighted_score_7d": -0.5,
-      "pressure_index_7d": 49.0,
-      "pressure_level": "balanced",
-      "trend": "decrease",
+      "weighted_score_7d": -7.5,
+      "pressure_index_7d": 35.0,
+      "pressure_level": "reduced",
+      "trend": "strong_decrease",
       "strongest_contributors": [
         {
           "event_id": "INFO-000001",
-          "timestamp": "2026-09-15T11:21:00+00:00",
-          "date": "2026-09-15",
+          "timestamp": "2026-09-17T10:35:15+00:00",
+          "date": "2026-09-17",
           "actor": "iran",
           "bilateral_event": true,
-          "title": "After Trump floats talks, Iran security chief rejects negotiations until ‘conditions’ met - The Times of Israel",
+          "title": "Trump claims direct talks with Iran: Is diplomacy picking up again? - Al Jazeera",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "escalation",
-          "operational_component": 6.0,
+          "event_direction": "mixed",
+          "operational_component": 0.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": 0.0,
-          "final_score": 0.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -270,11 +270,11 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +6.00; strategic modifier: -6.00; final contribution before daily deduplication: +0.00. Event: After Trump floats talks, Iran security chief rejects negotiations until ‘conditions’ met - The Times of Israel",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump claims direct talks with Iran: Is diplomacy picking up again? - Al Jazeera",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSC1ISVZMWm5kTGg3eTVKTDBPc1lJeXVuVmlMWFhzYnhHVjhCM3o2cmFuWldiYjU4SVJlR09ZMWVTWmN6VzBiMDV5WmlpVWdBRkI3aUdBWkNKc2lXSjh6ejVieHk5ZWRBNkZpY2V1YTZOZC1zZXZ1RGgxb1FPUkp2QXBDY0QtOTUxMjZjRkdVT1RucTZLV2hMRDNmeTBWZzBLRVViRURENmFZT0pOV3RKcFlReElsOHBp0gG-AUFVX3lxTE15a2RyZ0FJb3R1eXpKclFQSE9jM3N4TWVZQjl1ZTRuS2xLVU1VR2F6MlZJcWc4N0c3YU1xVGRwMDFEOUppNEhwUDJBbll4NzdOazBFdW1MUDBsclk0SjEyYUVBR2lCbG9MMW9rRGswS3ZfWjlSbkhZS2I3b2l4cS1HbU9oTE5sblF4UXJDcnd6UVM4VmRrUkhQNk9MRkdHbGRHZjlsVHhqczd0N1dRVHpOTVVOaGl5bS1YRzh0T1E?oc=5",
-          "existing_event_score": 6.0,
-          "existing_direction_score": -3.0,
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPLV9vSTI4ZmRERXd3V2tWbnlwVlA4dzhneHdpY0FJZzVfcXFETUVLVFdob1pfbVlKOFJxVi1vSERMTHNpWmRnUlloQTVMTnhlZlAyc1lUck5Zc2RZSDVBSXJqclI2a01DeE1JNHZVNlV3VzQzVzdqYVBUeWRHYmFnLVNhXzhXcmFBV2JzUUJwSUhhTWJ4LUNjempNNE9aeG84YzYzdlA1MVpZZ9IBrwFBVV95cUxOc05rMUNncTg2ai01TkRneHVsY2YtTUQxR2E3NXV3Y0J5ZDVmU0xjSmplYWV0a1g2VTFNeXBNT3JYZ1RYRTdmb01XZzk5OWVjQmVWWkJZbkY2S3dHcG1TbkUzR0JVd2VTNmYxQVVESm9feTZocEY3dXdxMGJZVEpRYlZKZzRpZ0V2M2JXakltRmU0MFc4R3VHUTE4WEdnYXNnQk13SlNCZkNYb253UFNZ?oc=5",
+          "existing_event_score": 4.0,
+          "existing_direction_score": 1.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
@@ -283,9 +283,9 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 49.5,
-      "pressure_level": "balanced",
-      "trend": "stable",
+      "pressure_index_7d": 36.5,
+      "pressure_level": "reduced",
+      "trend": "strong_decrease",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
   }
