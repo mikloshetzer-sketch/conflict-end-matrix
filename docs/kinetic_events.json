@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-09-18T13:32:08.718341Z",
-  "source_generated_at": "2026-09-18T11:17:40Z",
+  "generated_at": "2026-09-19T09:34:00.782664Z",
+  "source_generated_at": "2026-09-19T06:40:03Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": false,
+    "required_today_utc": true,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1390,
-  "event_count": 748,
-  "rejected_count": 642,
+  "source_event_count": 1395,
+  "event_count": 751,
+  "rejected_count": 644,
   "rejection_counts": {
-    "category_not_kinetic": 432,
+    "category_not_kinetic": 434,
     "no_confirmed_action_language": 168,
     "context_or_hypothetical": 21,
     "retrospective_or_aftermath": 13,
@@ -22,24 +22,24 @@
     "alert_only": 2
   },
   "category_counts": {
-    "missile": 252,
+    "missile": 254,
     "strike": 194,
     "drone": 120,
-    "airstrike": 114,
+    "airstrike": 115,
     "explosion": 45,
     "ground": 23
   },
   "severity_counts": {
     "medium": 410,
-    "high": 298,
+    "high": 301,
     "low": 38,
     "critical": 2
   },
   "actor_counts": {
-    "Iran": 258,
+    "Iran": 259,
     "United States": 162,
     "Israel": 122,
-    "Yemen": 103,
+    "Yemen": 105,
     "Unknown actor": 54,
     "Saudi Arabia": 22,
     "Iraq": 13,
@@ -48,6 +48,84 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-3pngaparwuq00",
+      "timestamp": "2026-09-19T00:22:30Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "high",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Ansarallah launches 5 ballistic missiles targeting Riyadh and Prince Sultan Air Base in eastern Saudi Arabia",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/84149",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-2bwyjnp585340",
+      "timestamp": "2026-09-18T21:14:42Z",
+      "event_type": "kinetic",
+      "subtype": "airstrike",
+      "category": "airstrike",
+      "severity": "high",
+      "actor": "irn",
+      "actor_label": "Iran",
+      "actor_method": "raw_source.origin",
+      "target_country": "Iran",
+      "location": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Iranian missiles strike unnamed U.S. base in Kuwait, destroying air raid bunker, airfield, administrative buildings and troop accommodations",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/84139",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "general_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-1az9ox77ue800",
+      "timestamp": "2026-09-18T14:35:46Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "high",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Houthi missile and drone strikes damage East-West Yanbu-Abqaiq crude oil pipeline, forcing Saudi Arabia to halt oil shipments to Europe",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/84115",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-3bkb1rjh1h800",
       "timestamp": "2026-09-17T20:59:44Z",
