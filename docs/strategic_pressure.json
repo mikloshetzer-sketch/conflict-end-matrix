@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T13:32:09.442671+00:00",
+  "generated_at": "2026-09-19T13:01:17.378004+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,13 +18,13 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 590,
-    "kinetic_events_loaded": 748,
-    "unique_events_scanned": 1273,
-    "strategic_evidence_contributions": 349,
+    "non_kinetic_events_loaded": 592,
+    "kinetic_events_loaded": 753,
+    "unique_events_scanned": 1280,
+    "strategic_evidence_contributions": 350,
     "evidence_contributions_by_actor": {
       "usa": 113,
-      "iran": 236
+      "iran": 237
     },
     "scored_contributions_by_actor": {
       "usa": 80,
@@ -32,14 +32,14 @@
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
-      "iran": 110
+      "iran": 111
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 303,
+      "non_kinetic": 304,
       "kinetic": 46
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 190,
+      "iran:negotiation": 191,
       "usa:negotiation": 92,
       "iran:missile_test": 32,
       "usa:presidential_warning": 15,
@@ -63,7 +63,7 @@
       "usa:carrier_deployment": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 0,
+    "skipped_current_utc_day": 3,
     "history_day_count": 192
   },
   "configuration_warnings": [],
@@ -84,7 +84,7 @@
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000001",
+          "event_id": "INFO-000003",
           "timestamp": "2026-09-17T10:35:15+00:00",
           "date": "2026-09-17",
           "actor": "usa",
@@ -133,7 +133,7 @@
       "trend": "strong_decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000001",
+          "event_id": "INFO-000003",
           "timestamp": "2026-09-17T10:35:15+00:00",
           "date": "2026-09-17",
           "actor": "usa",
@@ -181,20 +181,20 @@
       "raw_score": -6.0,
       "positive_score": 0.0,
       "negative_score": -6.0,
-      "event_count": 1,
+      "event_count": 2,
       "scored_event_count": 1,
-      "evidence_event_count": 1,
-      "suppressed_duplicate_count": 0,
+      "evidence_event_count": 2,
+      "suppressed_duplicate_count": 1,
       "increase_event_count": 0,
       "decrease_event_count": 1,
       "contributors": [
         {
           "event_id": "INFO-000001",
-          "timestamp": "2026-09-17T10:35:15+00:00",
+          "timestamp": "2026-09-17T22:30:10+00:00",
           "date": "2026-09-17",
           "actor": "iran",
           "bilateral_event": true,
-          "title": "Trump claims direct talks with Iran: Is diplomacy picking up again? - Al Jazeera",
+          "title": "Qatari spokesman on regional war and the path back to U.S.-Iran talks - PBS",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
           "event_direction": "mixed",
@@ -221,15 +221,58 @@
               "recognition_rule_count": 2
             }
           ],
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Qatari spokesman on regional war and the path back to U.S.-Iran talks - PBS",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPWGMtM2tMalhQaUwwQk43M0RzREhsbEJWeTJLQ0dRUHN1dGJQVDdUT3NxOWxvajVLeXl5aXdEUmVCemhlX05IUnlzTmVTMEVRY3N2bWdIVkUtdWtCLWVJejloTnBTejlnNklhVWpZQUR4WG8yYUN5QUhjUkxWdW1tbTBPZ0NUZktoT2V1cUpCaEc0ckYyOHFFU3RtZkJ2dnFwc052UQ?oc=5",
+          "existing_event_score": 1.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [
+            "negotiation"
+          ],
+          "duplicate_daily_indicators": []
+        },
+        {
+          "event_id": "INFO-000003",
+          "timestamp": "2026-09-17T10:35:15+00:00",
+          "date": "2026-09-17",
+          "actor": "iran",
+          "bilateral_event": true,
+          "title": "Trump claims direct talks with Iran: Is diplomacy picking up again? - Al Jazeera",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -6.0,
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": true,
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "primary_daily_indicator": null,
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_regime_destroying_war",
+                "name": "Avoid regime-destroying war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
           "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump claims direct talks with Iran: Is diplomacy picking up again? - Al Jazeera",
           "source": "\"iran israel usa war when:7d\" - Google News",
           "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPLV9vSTI4ZmRERXd3V2tWbnlwVlA4dzhneHdpY0FJZzVfcXFETUVLVFdob1pfbVlKOFJxVi1vSERMTHNpWmRnUlloQTVMTnhlZlAyc1lUck5Zc2RZSDVBSXJqclI2a01DeE1JNHZVNlV3VzQzVzdqYVBUeWRHYmFnLVNhXzhXcmFBV2JzUUJwSUhhTWJ4LUNjempNNE9aeG84YzYzdlA1MVpZZ9IBrwFBVV95cUxOc05rMUNncTg2ai01TkRneHVsY2YtTUQxR2E3NXV3Y0J5ZDVmU0xjSmplYWV0a1g2VTFNeXBNT3JYZ1RYRTdmb01XZzk5OWVjQmVWWkJZbkY2S3dHcG1TbkUzR0JVd2VTNmYxQVVESm9feTZocEY3dXdxMGJZVEpRYlZKZzRpZ0V2M2JXakltRmU0MFc4R3VHUTE4WEdnYXNnQk13SlNCZkNYb253UFNZ?oc=5",
           "existing_event_score": 4.0,
           "existing_direction_score": 1.0,
-          "winning_daily_indicators": [
+          "winning_daily_indicators": [],
+          "duplicate_daily_indicators": [
             "negotiation"
-          ],
-          "duplicate_daily_indicators": []
+          ]
         }
       ],
       "weighted_score_7d": -7.5,
@@ -239,11 +282,11 @@
       "strongest_contributors": [
         {
           "event_id": "INFO-000001",
-          "timestamp": "2026-09-17T10:35:15+00:00",
+          "timestamp": "2026-09-17T22:30:10+00:00",
           "date": "2026-09-17",
           "actor": "iran",
           "bilateral_event": true,
-          "title": "Trump claims direct talks with Iran: Is diplomacy picking up again? - Al Jazeera",
+          "title": "Qatari spokesman on regional war and the path back to U.S.-Iran talks - PBS",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
           "event_direction": "mixed",
@@ -270,11 +313,11 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump claims direct talks with Iran: Is diplomacy picking up again? - Al Jazeera",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Qatari spokesman on regional war and the path back to U.S.-Iran talks - PBS",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPLV9vSTI4ZmRERXd3V2tWbnlwVlA4dzhneHdpY0FJZzVfcXFETUVLVFdob1pfbVlKOFJxVi1vSERMTHNpWmRnUlloQTVMTnhlZlAyc1lUck5Zc2RZSDVBSXJqclI2a01DeE1JNHZVNlV3VzQzVzdqYVBUeWRHYmFnLVNhXzhXcmFBV2JzUUJwSUhhTWJ4LUNjempNNE9aeG84YzYzdlA1MVpZZ9IBrwFBVV95cUxOc05rMUNncTg2ai01TkRneHVsY2YtTUQxR2E3NXV3Y0J5ZDVmU0xjSmplYWV0a1g2VTFNeXBNT3JYZ1RYRTdmb01XZzk5OWVjQmVWWkJZbkY2S3dHcG1TbkUzR0JVd2VTNmYxQVVESm9feTZocEY3dXdxMGJZVEpRYlZKZzRpZ0V2M2JXakltRmU0MFc4R3VHUTE4WEdnYXNnQk13SlNCZkNYb253UFNZ?oc=5",
-          "existing_event_score": 4.0,
-          "existing_direction_score": 1.0,
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPWGMtM2tMalhQaUwwQk43M0RzREhsbEJWeTJLQ0dRUHN1dGJQVDdUT3NxOWxvajVLeXl5aXdEUmVCemhlX05IUnlzTmVTMEVRY3N2bWdIVkUtdWtCLWVJejloTnBTejlnNklhVWpZQUR4WG8yYUN5QUhjUkxWdW1tbTBPZ0NUZktoT2V1cUpCaEc0ckYyOHFFU3RtZkJ2dnFwc052UQ?oc=5",
+          "existing_event_score": 1.0,
+          "existing_direction_score": 0.0,
           "winning_daily_indicators": [
             "negotiation"
           ],

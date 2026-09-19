@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-09-19T09:34:00.782664Z",
-  "source_generated_at": "2026-09-19T06:40:03Z",
+  "generated_at": "2026-09-19T13:01:16.215139Z",
+  "source_generated_at": "2026-09-19T11:35:26Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1395,
-  "event_count": 751,
-  "rejected_count": 644,
+  "source_event_count": 1399,
+  "event_count": 753,
+  "rejected_count": 646,
   "rejection_counts": {
-    "category_not_kinetic": 434,
-    "no_confirmed_action_language": 168,
+    "category_not_kinetic": 435,
+    "no_confirmed_action_language": 169,
     "context_or_hypothetical": 21,
     "retrospective_or_aftermath": 13,
     "outside_window": 6,
@@ -24,13 +24,13 @@
   "category_counts": {
     "missile": 254,
     "strike": 194,
-    "drone": 120,
+    "drone": 121,
     "airstrike": 115,
     "explosion": 45,
-    "ground": 23
+    "ground": 24
   },
   "severity_counts": {
-    "medium": 410,
+    "medium": 412,
     "high": 301,
     "low": 38,
     "critical": 2
@@ -38,9 +38,9 @@
   "actor_counts": {
     "Iran": 259,
     "United States": 162,
-    "Israel": 122,
+    "Israel": 123,
     "Yemen": 105,
-    "Unknown actor": 54,
+    "Unknown actor": 55,
     "Saudi Arabia": 22,
     "Iraq": 13,
     "Lebanon": 12,
@@ -48,6 +48,58 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-267t0ud7tnvk0",
+      "timestamp": "2026-09-19T11:06:54Z",
+      "event_type": "kinetic",
+      "subtype": "drone",
+      "category": "drone",
+      "severity": "medium",
+      "actor": "unknown",
+      "actor_label": "Unknown actor",
+      "actor_method": "normalized.attacker",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "King Khalid International Airport in Riyadh reports smoke from drone attack, flight operations suspended",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/130480",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-1t84vg73y5i8",
+      "timestamp": "2026-09-19T07:41:11Z",
+      "event_type": "kinetic",
+      "subtype": "ground",
+      "category": "ground",
+      "severity": "medium",
+      "actor": "isr",
+      "actor_label": "Israel",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "IDF conducts massive underground strike in northern Gaza, residents report earthquake-like tremor",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/130455",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "general_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-3pngaparwuq00",
       "timestamp": "2026-09-19T00:22:30Z",
