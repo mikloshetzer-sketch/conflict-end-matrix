@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-09-20T09:50:12.085016Z",
-  "source_generated_at": "2026-09-20T05:26:24Z",
+  "generated_at": "2026-09-20T13:32:08.552685Z",
+  "source_generated_at": "2026-09-20T10:07:02Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1419,
-  "event_count": 758,
-  "rejected_count": 661,
+  "source_event_count": 1424,
+  "event_count": 759,
+  "rejected_count": 665,
   "rejection_counts": {
-    "category_not_kinetic": 449,
+    "category_not_kinetic": 453,
     "no_confirmed_action_language": 170,
     "context_or_hypothetical": 21,
     "retrospective_or_aftermath": 13,
@@ -23,7 +23,7 @@
   },
   "category_counts": {
     "missile": 257,
-    "strike": 196,
+    "strike": 197,
     "drone": 121,
     "airstrike": 115,
     "explosion": 45,
@@ -32,13 +32,13 @@
   "severity_counts": {
     "medium": 413,
     "high": 304,
-    "low": 39,
+    "low": 40,
     "critical": 2
   },
   "actor_counts": {
     "Iran": 259,
     "United States": 162,
-    "Israel": 124,
+    "Israel": 125,
     "Yemen": 109,
     "Unknown actor": 55,
     "Saudi Arabia": 22,
@@ -48,6 +48,32 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-kpwtaddn4j40",
+      "timestamp": "2026-09-20T09:48:55Z",
+      "event_type": "kinetic",
+      "subtype": "strike",
+      "category": "strike",
+      "severity": "low",
+      "actor": "israel",
+      "actor_label": "Israel",
+      "actor_method": "normalized.attacker",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "IDF forces neutralize suspected attacker attempting vehicular attack near Ganei Checkpoint in northern Samaria, second suspect arrested",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/63624",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-3oq7wshxpz400",
       "timestamp": "2026-09-19T17:15:23Z",

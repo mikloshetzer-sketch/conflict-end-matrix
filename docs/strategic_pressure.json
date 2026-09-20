@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T13:01:17.378004+00:00",
+  "generated_at": "2026-09-20T13:32:09.708546+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,28 +18,28 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 592,
-    "kinetic_events_loaded": 753,
-    "unique_events_scanned": 1280,
-    "strategic_evidence_contributions": 350,
+    "non_kinetic_events_loaded": 594,
+    "kinetic_events_loaded": 759,
+    "unique_events_scanned": 1288,
+    "strategic_evidence_contributions": 352,
     "evidence_contributions_by_actor": {
       "usa": 113,
-      "iran": 237
+      "iran": 239
     },
     "scored_contributions_by_actor": {
       "usa": 80,
-      "iran": 126
+      "iran": 127
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
-      "iran": 111
+      "iran": 112
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 304,
+      "non_kinetic": 306,
       "kinetic": 46
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 191,
+      "iran:negotiation": 193,
       "usa:negotiation": 92,
       "iran:missile_test": 32,
       "usa:presidential_warning": 15,
@@ -51,7 +51,7 @@
       "usa:carrier_deployment": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 96,
+      "iran:negotiation": 97,
       "usa:negotiation": 63,
       "iran:missile_test": 16,
       "usa:presidential_warning": 15,
@@ -63,119 +63,31 @@
       "usa:carrier_deployment": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 3,
-    "history_day_count": 192
+    "skipped_current_utc_day": 1,
+    "history_day_count": 194
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-09-17",
+  "latest_complete_utc_day": "2026-09-19",
   "current": {
-    "date": "2026-09-17",
+    "date": "2026-09-19",
     "calculation_mode": "live",
     "usa": {
-      "raw_score": -6.0,
+      "raw_score": 0.0,
       "positive_score": 0.0,
-      "negative_score": -6.0,
-      "event_count": 1,
-      "scored_event_count": 1,
-      "evidence_event_count": 1,
+      "negative_score": 0.0,
+      "event_count": 0,
+      "scored_event_count": 0,
+      "evidence_event_count": 0,
       "suppressed_duplicate_count": 0,
       "increase_event_count": 0,
-      "decrease_event_count": 1,
-      "contributors": [
-        {
-          "event_id": "INFO-000003",
-          "timestamp": "2026-09-17T10:35:15+00:00",
-          "date": "2026-09-17",
-          "actor": "usa",
-          "bilateral_event": true,
-          "title": "Trump claims direct talks with Iran: Is diplomacy picking up again? - Al Jazeera",
-          "source_layer": "non_kinetic",
-          "event_type": "diplomatic",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": -6.0,
-          "duplicate_indicator_evidence": false,
-          "daily_score_suppressed": false,
-          "suppression_reason": null,
-          "primary_daily_indicator": "negotiation",
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_full_scale_war",
-                "name": "Avoid full-scale regional war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump claims direct talks with Iran: Is diplomacy picking up again? - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPLV9vSTI4ZmRERXd3V2tWbnlwVlA4dzhneHdpY0FJZzVfcXFETUVLVFdob1pfbVlKOFJxVi1vSERMTHNpWmRnUlloQTVMTnhlZlAyc1lUck5Zc2RZSDVBSXJqclI2a01DeE1JNHZVNlV3VzQzVzdqYVBUeWRHYmFnLVNhXzhXcmFBV2JzUUJwSUhhTWJ4LUNjempNNE9aeG84YzYzdlA1MVpZZ9IBrwFBVV95cUxOc05rMUNncTg2ai01TkRneHVsY2YtTUQxR2E3NXV3Y0J5ZDVmU0xjSmplYWV0a1g2VTFNeXBNT3JYZ1RYRTdmb01XZzk5OWVjQmVWWkJZbkY2S3dHcG1TbkUzR0JVd2VTNmYxQVVESm9feTZocEY3dXdxMGJZVEpRYlZKZzRpZ0V2M2JXakltRmU0MFc4R3VHUTE4WEdnYXNnQk13SlNCZkNYb253UFNZ?oc=5",
-          "existing_event_score": 4.0,
-          "existing_direction_score": 1.0,
-          "winning_daily_indicators": [
-            "negotiation"
-          ],
-          "duplicate_daily_indicators": []
-        }
-      ],
-      "weighted_score_7d": -6.0,
-      "pressure_index_7d": 38.0,
+      "decrease_event_count": 0,
+      "contributors": [],
+      "weighted_score_7d": -4.2,
+      "pressure_index_7d": 41.6,
       "pressure_level": "reduced",
-      "trend": "strong_decrease",
-      "strongest_contributors": [
-        {
-          "event_id": "INFO-000003",
-          "timestamp": "2026-09-17T10:35:15+00:00",
-          "date": "2026-09-17",
-          "actor": "usa",
-          "bilateral_event": true,
-          "title": "Trump claims direct talks with Iran: Is diplomacy picking up again? - Al Jazeera",
-          "source_layer": "non_kinetic",
-          "event_type": "diplomatic",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": -6.0,
-          "duplicate_indicator_evidence": false,
-          "daily_score_suppressed": false,
-          "suppression_reason": null,
-          "primary_daily_indicator": "negotiation",
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_full_scale_war",
-                "name": "Avoid full-scale regional war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump claims direct talks with Iran: Is diplomacy picking up again? - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPLV9vSTI4ZmRERXd3V2tWbnlwVlA4dzhneHdpY0FJZzVfcXFETUVLVFdob1pfbVlKOFJxVi1vSERMTHNpWmRnUlloQTVMTnhlZlAyc1lUck5Zc2RZSDVBSXJqclI2a01DeE1JNHZVNlV3VzQzVzdqYVBUeWRHYmFnLVNhXzhXcmFBV2JzUUJwSUhhTWJ4LUNjempNNE9aeG84YzYzdlA1MVpZZ9IBrwFBVV95cUxOc05rMUNncTg2ai01TkRneHVsY2YtTUQxR2E3NXV3Y0J5ZDVmU0xjSmplYWV0a1g2VTFNeXBNT3JYZ1RYRTdmb01XZzk5OWVjQmVWWkJZbkY2S3dHcG1TbkUzR0JVd2VTNmYxQVVESm9feTZocEY3dXdxMGJZVEpRYlZKZzRpZ0V2M2JXakltRmU0MFc4R3VHUTE4WEdnYXNnQk13SlNCZkNYb253UFNZ?oc=5",
-          "existing_event_score": 4.0,
-          "existing_direction_score": 1.0,
-          "winning_daily_indicators": [
-            "negotiation"
-          ],
-          "duplicate_daily_indicators": []
-        }
-      ]
+      "trend": "increase",
+      "strongest_contributors": []
     },
     "iran": {
       "raw_score": -6.0,
@@ -190,11 +102,11 @@
       "contributors": [
         {
           "event_id": "INFO-000001",
-          "timestamp": "2026-09-17T22:30:10+00:00",
-          "date": "2026-09-17",
+          "timestamp": "2026-09-19T18:48:52+00:00",
+          "date": "2026-09-19",
           "actor": "iran",
-          "bilateral_event": true,
-          "title": "Qatari spokesman on regional war and the path back to U.S.-Iran talks - PBS",
+          "bilateral_event": false,
+          "title": "Iran reiterates conditions for talks with US, end of war - The Jerusalem Post",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
           "event_direction": "mixed",
@@ -221,9 +133,9 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Qatari spokesman on regional war and the path back to U.S.-Iran talks - PBS",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran reiterates conditions for talks with US, end of war - The Jerusalem Post",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPWGMtM2tMalhQaUwwQk43M0RzREhsbEJWeTJLQ0dRUHN1dGJQVDdUT3NxOWxvajVLeXl5aXdEUmVCemhlX05IUnlzTmVTMEVRY3N2bWdIVkUtdWtCLWVJejloTnBTejlnNklhVWpZQUR4WG8yYUN5QUhjUkxWdW1tbTBPZ0NUZktoT2V1cUpCaEc0ckYyOHFFU3RtZkJ2dnFwc052UQ?oc=5",
+          "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBHdGZtOGozUmJMSmVHbGY5WlppeElvOV9HanM5OXh2V1FZNUx2UGw1SG9jY0VHUU1iaFNDT0Z1LUpOT01LdmZlSWl1TFZjUlNtTnZRaWEzMW5GS2t1?oc=5",
           "existing_event_score": 1.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
@@ -232,12 +144,12 @@
           "duplicate_daily_indicators": []
         },
         {
-          "event_id": "INFO-000003",
-          "timestamp": "2026-09-17T10:35:15+00:00",
-          "date": "2026-09-17",
+          "event_id": "INFO-000002",
+          "timestamp": "2026-09-19T18:34:55+00:00",
+          "date": "2026-09-19",
           "actor": "iran",
-          "bilateral_event": true,
-          "title": "Trump claims direct talks with Iran: Is diplomacy picking up again? - Al Jazeera",
+          "bilateral_event": false,
+          "title": "Iran says conditions to re-engage in talks, end war sent to US via Qatar - Al Jazeera",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
           "event_direction": "mixed",
@@ -264,29 +176,29 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump claims direct talks with Iran: Is diplomacy picking up again? - Al Jazeera",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran says conditions to re-engage in talks, end war sent to US via Qatar - Al Jazeera",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPLV9vSTI4ZmRERXd3V2tWbnlwVlA4dzhneHdpY0FJZzVfcXFETUVLVFdob1pfbVlKOFJxVi1vSERMTHNpWmRnUlloQTVMTnhlZlAyc1lUck5Zc2RZSDVBSXJqclI2a01DeE1JNHZVNlV3VzQzVzdqYVBUeWRHYmFnLVNhXzhXcmFBV2JzUUJwSUhhTWJ4LUNjempNNE9aeG84YzYzdlA1MVpZZ9IBrwFBVV95cUxOc05rMUNncTg2ai01TkRneHVsY2YtTUQxR2E3NXV3Y0J5ZDVmU0xjSmplYWV0a1g2VTFNeXBNT3JYZ1RYRTdmb01XZzk5OWVjQmVWWkJZbkY2S3dHcG1TbkUzR0JVd2VTNmYxQVVESm9feTZocEY3dXdxMGJZVEpRYlZKZzRpZ0V2M2JXakltRmU0MFc4R3VHUTE4WEdnYXNnQk13SlNCZkNYb253UFNZ?oc=5",
-          "existing_event_score": 4.0,
-          "existing_direction_score": 1.0,
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOZ1JPc2xzcDhQMWhGREtsMUlPTnpUNDJ6dDRGZ0dNb0NYYUlMVnVJcnoyb1ZKSUFMdmdrQTVELTdaR2huNVdkQU9KRkVZRUdUcTREU25LSTJoeGt1WG1EZzZfV1pOREZhVmtmT0I2NkZKaE9uZUhMekpvSmN2MWZuWjc4cTEzZ2JUd1RoandXSG9fMUZickh4Y25TVzV3UEVQcmduVWd1cXhOaDJkVjBraUVR0gG3AUFVX3lxTFAwY3hyelpiTHdEV000Vm1PXzJ5YVpIUldCZnRnWEJLelBBQmVUMDFVTkluRlcxemVBOWVVXzdoQURGNnhDTU5PWjFUSFcxcHIwMTVIOS1QWG50TjIxbDhFdG1yWFdRS3JQeTNQRWVMUEpMcDdRNGJzSVZILTZ3MjZVQS1FQ0tyVFRQV3R1MG5qTkVwY3E1Sk5kdDk0ZGk1bHRZemVobm53Q1pRWTktRUhLMnZ4M0s2WQ?oc=5",
+          "existing_event_score": 1.0,
+          "existing_direction_score": 0.0,
           "winning_daily_indicators": [],
           "duplicate_daily_indicators": [
             "negotiation"
           ]
         }
       ],
-      "weighted_score_7d": -7.5,
-      "pressure_index_7d": 35.0,
-      "pressure_level": "reduced",
+      "weighted_score_7d": -10.2,
+      "pressure_index_7d": 29.6,
+      "pressure_level": "low",
       "trend": "strong_decrease",
       "strongest_contributors": [
         {
           "event_id": "INFO-000001",
-          "timestamp": "2026-09-17T22:30:10+00:00",
-          "date": "2026-09-17",
+          "timestamp": "2026-09-19T18:48:52+00:00",
+          "date": "2026-09-19",
           "actor": "iran",
-          "bilateral_event": true,
-          "title": "Qatari spokesman on regional war and the path back to U.S.-Iran talks - PBS",
+          "bilateral_event": false,
+          "title": "Iran reiterates conditions for talks with US, end of war - The Jerusalem Post",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
           "event_direction": "mixed",
@@ -313,9 +225,9 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Qatari spokesman on regional war and the path back to U.S.-Iran talks - PBS",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran reiterates conditions for talks with US, end of war - The Jerusalem Post",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPWGMtM2tMalhQaUwwQk43M0RzREhsbEJWeTJLQ0dRUHN1dGJQVDdUT3NxOWxvajVLeXl5aXdEUmVCemhlX05IUnlzTmVTMEVRY3N2bWdIVkUtdWtCLWVJejloTnBTejlnNklhVWpZQUR4WG8yYUN5QUhjUkxWdW1tbTBPZ0NUZktoT2V1cUpCaEc0ckYyOHFFU3RtZkJ2dnFwc052UQ?oc=5",
+          "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBHdGZtOGozUmJMSmVHbGY5WlppeElvOV9HanM5OXh2V1FZNUx2UGw1SG9jY0VHUU1iaFNDT0Z1LUpOT01LdmZlSWl1TFZjUlNtTnZRaWEzMW5GS2t1?oc=5",
           "existing_event_score": 1.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
@@ -326,9 +238,9 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 36.5,
+      "pressure_index_7d": 35.6,
       "pressure_level": "reduced",
-      "trend": "strong_decrease",
+      "trend": "decrease",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
   }
