@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T13:32:09.708546+00:00",
+  "generated_at": "2026-09-21T15:49:25.805838+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,9 +18,9 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 594,
-    "kinetic_events_loaded": 759,
-    "unique_events_scanned": 1288,
+    "non_kinetic_events_loaded": 595,
+    "kinetic_events_loaded": 763,
+    "unique_events_scanned": 1293,
     "strategic_evidence_contributions": 352,
     "evidence_contributions_by_actor": {
       "usa": 113,
@@ -63,7 +63,7 @@
       "usa:carrier_deployment": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 1,
+    "skipped_current_utc_day": 0,
     "history_day_count": 194
   },
   "configuration_warnings": [],
@@ -101,7 +101,7 @@
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000001",
+          "event_id": "INFO-000002",
           "timestamp": "2026-09-19T18:48:52+00:00",
           "date": "2026-09-19",
           "actor": "iran",
@@ -144,8 +144,8 @@
           "duplicate_daily_indicators": []
         },
         {
-          "event_id": "INFO-000002",
-          "timestamp": "2026-09-19T18:34:55+00:00",
+          "event_id": "INFO-000003",
+          "timestamp": "2026-09-19T18:32:45+00:00",
           "date": "2026-09-19",
           "actor": "iran",
           "bilateral_event": false,
@@ -193,7 +193,7 @@
       "trend": "strong_decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000001",
+          "event_id": "INFO-000002",
           "timestamp": "2026-09-19T18:48:52+00:00",
           "date": "2026-09-19",
           "actor": "iran",
