@@ -1,20 +1,34 @@
 {
-  "report_date": "2026-09-19",
-  "created_at": "2026-09-19T10:53:48.154713",
+  "report_date": "2026-09-20",
+  "created_at": "2026-09-20T11:17:39.057586",
   "article_count": 50,
-  "total_score": -40,
-  "conflict_index": -0.8,
+  "total_score": -35,
+  "conflict_index": -0.7,
   "assessment": "mild escalation",
-  "escalation_pressure": -51,
-  "diplomatic_pressure": 11,
-  "net_signal": -40,
+  "escalation_pressure": -57,
+  "diplomatic_pressure": 22,
+  "net_signal": -35,
   "top_drivers": [
     {
       "driver": "war",
       "category": "Military escalation",
-      "count": 29,
+      "count": 27,
       "weight": -1,
-      "impact": -29
+      "impact": -27
+    },
+    {
+      "driver": "talks",
+      "category": "Diplomacy / negotiation",
+      "count": 5,
+      "weight": 2,
+      "impact": 10
+    },
+    {
+      "driver": "attack",
+      "category": "Military escalation",
+      "count": 4,
+      "weight": -2,
+      "impact": -8
     },
     {
       "driver": "strike",
@@ -24,13 +38,6 @@
       "impact": -6
     },
     {
-      "driver": "talks",
-      "category": "Diplomacy / negotiation",
-      "count": 2,
-      "weight": 2,
-      "impact": 4
-    },
-    {
       "driver": "strikes",
       "category": "Military escalation",
       "count": 2,
@@ -38,18 +45,18 @@
       "impact": -4
     },
     {
-      "driver": "attack",
+      "driver": "diplomacy",
+      "category": "Diplomacy / negotiation",
+      "count": 2,
+      "weight": 2,
+      "impact": 4
+    },
+    {
+      "driver": "attacks",
       "category": "Military escalation",
       "count": 2,
       "weight": -2,
       "impact": -4
-    },
-    {
-      "driver": "deal",
-      "category": "Ceasefire / settlement",
-      "count": 3,
-      "weight": 1,
-      "impact": 3
     },
     {
       "driver": "threat",
@@ -59,7 +66,35 @@
       "impact": -2
     },
     {
+      "driver": "drone",
+      "category": "Military escalation",
+      "count": 2,
+      "weight": -1,
+      "impact": -2
+    },
+    {
+      "driver": "deal",
+      "category": "Ceasefire / settlement",
+      "count": 2,
+      "weight": 1,
+      "impact": 2
+    },
+    {
       "driver": "peace",
+      "category": "Diplomacy / negotiation",
+      "count": 1,
+      "weight": 2,
+      "impact": 2
+    },
+    {
+      "driver": "negotiations",
+      "category": "Diplomacy / negotiation",
+      "count": 1,
+      "weight": 2,
+      "impact": 2
+    },
+    {
+      "driver": "negotiation",
       "category": "Diplomacy / negotiation",
       "count": 1,
       "weight": 2,
@@ -73,20 +108,6 @@
       "impact": -2
     },
     {
-      "driver": "diplomacy",
-      "category": "Diplomacy / negotiation",
-      "count": 1,
-      "weight": 2,
-      "impact": 2
-    },
-    {
-      "driver": "attacks",
-      "category": "Military escalation",
-      "count": 1,
-      "weight": -2,
-      "impact": -2
-    },
-    {
       "driver": "threatens",
       "category": "Threats / retaliation",
       "count": 1,
@@ -94,7 +115,7 @@
       "impact": -1
     },
     {
-      "driver": "drone",
+      "driver": "drones",
       "category": "Military escalation",
       "count": 1,
       "weight": -1,
@@ -104,12 +125,13 @@
   "categories": [
     {
       "category": "Military escalation",
-      "score": -46,
-      "count": 38,
+      "score": -52,
+      "count": 41,
       "keywords": [
         "attack",
         "attacks",
         "drone",
+        "drones",
         "strike",
         "strikes",
         "war"
@@ -117,20 +139,14 @@
     },
     {
       "category": "Diplomacy / negotiation",
-      "score": 8,
-      "count": 4,
+      "score": 20,
+      "count": 10,
       "keywords": [
         "diplomacy",
+        "negotiation",
+        "negotiations",
         "peace",
         "talks"
-      ]
-    },
-    {
-      "category": "Ceasefire / settlement",
-      "score": 3,
-      "count": 3,
-      "keywords": [
-        "deal"
       ]
     },
     {
@@ -140,6 +156,14 @@
       "keywords": [
         "threat",
         "threatens"
+      ]
+    },
+    {
+      "category": "Ceasefire / settlement",
+      "score": 2,
+      "count": 2,
+      "keywords": [
+        "deal"
       ]
     },
     {
@@ -153,15 +177,29 @@
   ],
   "key_signals": [
     {
-      "title": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPdUdfN2t1cTlMdHJXa1FQN0ZiU1M1dklpd2llNGtrTW1ndEEwSjZqc2VNcjY0VkFOQXFmLVUzNXFYUHdQTUU1Tm1leURSclhSajZPS29nZng3Sl83eUs2clpyMS1XbW0tNXpnbDdDc25SMVB6cHYtMWY2aFdYRzZsSEtPS1FBSHpQSGp6dFF6NV9mSkJBbXM4UnNWSDYyRzJjc0RtMkZod3l0Q0ZYSzljc3JPYmVFMlVZUGc?oc=5",
+      "title": "Saudi strikes and Houthi attacks widen Middle East war - Reuters",
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQNWlDb0szQnNKQUdZZUJXWVN1LW1XODNJeEpLc1F3RFhEZ2pwc085M2NvRWNhMEV4MFhVa1BNWVZUQ3FpTE5pc0EwdVNrcXFMS0tWMF9kVXJfdlZKSFNfQjhkNjAteWVMVHVXR0lnV2hNbkNJX2g3RlJxYmphZDFOZTNQWWpHa2VycGo3VnQ5anhucVpNTmxkZ0hjWC1mNVVxTVZQNV9EUlh6TVlC?oc=5",
       "source": "\"middle east conflict when:7d\" - Google News",
-      "published": "Fri, 18 Sep 2026 04:46:22 GMT",
-      "score": -5,
+      "published": "Wed, 16 Sep 2026 02:08:41 GMT",
+      "score": -9,
       "tags": [
         "strike",
         "strikes",
+        "attack",
+        "attacks",
         "war"
+      ]
+    },
+    {
+      "title": "After Trump floats talks, Iran security chief rejects negotiations until ‘conditions’ met - The Times of Israel",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSC1ISVZMWm5kTGg3eTVKTDBPc1lJeXVuVmlMWFhzYnhHVjhCM3o2cmFuWldiYjU4SVJlR09ZMWVTWmN6VzBiMDV5WmlpVWdBRkI3aUdBWkNKc2lXSjh6ejVieHk5ZWRBNkZpY2V1YTZOZC1zZXZ1RGgxb1FPUkp2QXBDY0QtOTUxMjZjRkdVT1RucTZLV2hMRDNmeTBWZzBLRVViRURENmFZT0pOV3RKcFlReElsOHBp0gG-AUFVX3lxTE15a2RyZ0FJb3R1eXpKclFQSE9jM3N4TWVZQjl1ZTRuS2xLVU1VR2F6MlZJcWc4N0c3YU1xVGRwMDFEOUppNEhwUDJBbll4NzdOazBFdW1MUDBsclk0SjEyYUVBR2lCbG9MMW9rRGswS3ZfWjlSbkhZS2I3b2l4cS1HbU9oTE5sblF4UXJDcnd6UVM4VmRrUkhQNk9MRkdHbGRHZjlsVHhqczd0N1dRVHpOTVVOaGl5bS1YRzh0T1E?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Tue, 15 Sep 2026 11:21:00 GMT",
+      "score": 6,
+      "tags": [
+        "talks",
+        "negotiation",
+        "negotiations"
       ]
     },
     {
@@ -201,7 +239,7 @@
       "title": "More US troops killed in Iran war than Pentagon has acknowledged — report - The Times of Israel",
       "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPZ1BORmJleGpvVlJHUWVlOWpmbGZ5a01GMU9MeU9STk9PcFM1QnpvN1psdmFBZG4tMnB1NkVvUGMyNTZWQ0NKSDByaXZQc3RIeVJZQ0FyTmwwTEItOVJkYk9VY29wUU9KSWdsQ0twQUdLNzNRXzRXbTJNZFp5bjV0QVcyUDNvNE1wSVBXTUhBNkhyTVhUcDdzZGdzZ0RsNE9pdndwMtIBqgFBVV95cUxQajA2Z2MxWk5oamg1S2xNRkRkcEhwQXBEcFJJNVQwZFpMNlVYVzc0ekVCSDM0eEg0ZDBqU0Z6VVg4bjdjQUFTeEZrRzZGY2haRjZWMTlCdVBDZThUUWxTUmN4dmIwcDdiaGlQTVJzSlhOQ05xUWZGaEVJM29PNTkxdXluMmI3ZGNlZ3BaVEtEQWNvX1lfd2ttczlFNHRiVHNDSHRrOFFma0hFUQ?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Sat, 19 Sep 2026 03:58:56 GMT",
+      "published": "Fri, 18 Sep 2026 23:45:00 GMT",
       "score": -3,
       "tags": [
         "war",
@@ -216,6 +254,18 @@
       "score": -3,
       "tags": [
         "strike",
+        "war"
+      ]
+    },
+    {
+      "title": "New Russia-developed drones requested by Tehran during war with Israel, US - The Jerusalem Post",
+      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1NeDRJTVBjcmNXR0pPdUluRDZfNUpjMTVSV2x6bWR6bDNjOVV6NUd1eVVSc3hnbXBsaVdtZ0JYdmpQZUVvTzgweGg4aExaZk92NmlSbWliNTRzakJsYVFWWEJILThWSVplaXc?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Sun, 13 Sep 2026 14:27:15 GMT",
+      "score": -3,
+      "tags": [
+        "drone",
+        "drones",
         "war"
       ]
     },
@@ -261,31 +311,11 @@
       "tags": [
         "peace"
       ]
-    },
-    {
-      "title": "Iran war increasing inflation, straining US munitions: congressional report - Al Jazeera",
-      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPQkxVbTZwTHBPc3ZaTFhWcTduWVZ0U2hjQ3hHek8yQkVhazl5dXdCS1p6WGJnb0JnclJlU0d0MkJ4OHJIc3dOWVZIR3dTZWRma2taSGlsVDYzT0xqaElvZ29EMzlYcC15SEYwMXlFMF84TkRMVE84MW16c3JnWVM3WlpHVHZVXzJtVlVUZ1M2enpOQ0NvdXd6RHVWUzdITE1Sc2xQVlF4cWNINFZMMTNYQURnT0rSAboBQVVfeXFMUDBUU2RHREliYVljZjNCU3FVcW1md212MF9hV0xOVGdhYXU5blB3OUlJUFNKSVpQVFBTS0p4am4tUkhvamVERjctZzZfdlJzZFJ5TkZ0LW16SkFKX2NzQURfd3RpUDBEbUptbHpIYUJiNVo1MGRkX1hyTm5VRW1vOEQ3OFc1UDFmdnM3M09EYWdwWFdkWkVhSk1GX2hwMGMzc0dvM3pjd3ZJRzZSREJhZUdmeFRORTFZWXp3?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Wed, 16 Sep 2026 00:57:22 GMT",
-      "score": -1,
-      "tags": [
-        "war"
-      ]
-    },
-    {
-      "title": "2026 Iran war | Oil, Explained, United States, Israel, Strait of Hormuz, Map, & Conflict - Britannica",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5nTzlhOGZTS180cWNtVG91c2VWRVJFYlk0cW5Ba1RHUEFOSEtldU15QktQT0EzRVY1ZVdZZ0VTRHVWTVhyN1IzeU1wbmlDMUhrQ3Roc1YxcmdMUQ?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Fri, 18 Sep 2026 05:00:00 GMT",
-      "score": -1,
-      "tags": [
-        "war"
-      ]
     }
   ],
   "integrity": {
     "driver_net_equals_total_score": true,
-    "driver_net": -40,
-    "source_total_score": -40
+    "driver_net": -35,
+    "source_total_score": -35
   }
 }
