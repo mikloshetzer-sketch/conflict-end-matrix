@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T15:49:25.805838+00:00",
+  "generated_at": "2026-09-22T13:59:01.457499+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,28 +18,28 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 595,
-    "kinetic_events_loaded": 763,
-    "unique_events_scanned": 1293,
-    "strategic_evidence_contributions": 352,
+    "non_kinetic_events_loaded": 597,
+    "kinetic_events_loaded": 765,
+    "unique_events_scanned": 1297,
+    "strategic_evidence_contributions": 353,
     "evidence_contributions_by_actor": {
       "usa": 113,
-      "iran": 239
+      "iran": 240
     },
     "scored_contributions_by_actor": {
       "usa": 80,
-      "iran": 127
+      "iran": 128
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
       "iran": 112
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 306,
+      "non_kinetic": 307,
       "kinetic": 46
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 193,
+      "iran:negotiation": 194,
       "usa:negotiation": 92,
       "iran:missile_test": 32,
       "usa:presidential_warning": 15,
@@ -51,7 +51,7 @@
       "usa:carrier_deployment": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 97,
+      "iran:negotiation": 98,
       "usa:negotiation": 63,
       "iran:missile_test": 16,
       "usa:presidential_warning": 15,
@@ -101,12 +101,12 @@
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000002",
+          "event_id": "INFO-000003",
           "timestamp": "2026-09-19T18:48:52+00:00",
           "date": "2026-09-19",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "Iran reiterates conditions for talks with US, end of war - The Jerusalem Post",
+          "title": "Iran reiterates conditions for talks with US, end of war - jpost.com",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
           "event_direction": "mixed",
@@ -133,7 +133,7 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran reiterates conditions for talks with US, end of war - The Jerusalem Post",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran reiterates conditions for talks with US, end of war - jpost.com",
           "source": "\"iran israel usa war when:7d\" - Google News",
           "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBHdGZtOGozUmJMSmVHbGY5WlppeElvOV9HanM5OXh2V1FZNUx2UGw1SG9jY0VHUU1iaFNDT0Z1LUpOT01LdmZlSWl1TFZjUlNtTnZRaWEzMW5GS2t1?oc=5",
           "existing_event_score": 1.0,
@@ -144,7 +144,7 @@
           "duplicate_daily_indicators": []
         },
         {
-          "event_id": "INFO-000003",
+          "event_id": "INFO-000004",
           "timestamp": "2026-09-19T18:32:45+00:00",
           "date": "2026-09-19",
           "actor": "iran",
@@ -187,18 +187,18 @@
           ]
         }
       ],
-      "weighted_score_7d": -10.2,
-      "pressure_index_7d": 29.6,
+      "weighted_score_7d": -15.3,
+      "pressure_index_7d": 19.4,
       "pressure_level": "low",
       "trend": "strong_decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000002",
+          "event_id": "INFO-000003",
           "timestamp": "2026-09-19T18:48:52+00:00",
           "date": "2026-09-19",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "Iran reiterates conditions for talks with US, end of war - The Jerusalem Post",
+          "title": "Iran reiterates conditions for talks with US, end of war - jpost.com",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
           "event_direction": "mixed",
@@ -225,7 +225,7 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran reiterates conditions for talks with US, end of war - The Jerusalem Post",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran reiterates conditions for talks with US, end of war - jpost.com",
           "source": "\"iran israel usa war when:7d\" - Google News",
           "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBHdGZtOGozUmJMSmVHbGY5WlppeElvOV9HanM5OXh2V1FZNUx2UGw1SG9jY0VHUU1iaFNDT0Z1LUpOT01LdmZlSWl1TFZjUlNtTnZRaWEzMW5GS2t1?oc=5",
           "existing_event_score": 1.0,
@@ -238,7 +238,7 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 35.6,
+      "pressure_index_7d": 30.5,
       "pressure_level": "reduced",
       "trend": "decrease",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
