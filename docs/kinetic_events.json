@@ -1,44 +1,44 @@
 {
-  "generated_at": "2026-09-21T15:49:24.640323Z",
-  "source_generated_at": "2026-09-21T11:07:44Z",
+  "generated_at": "2026-09-22T10:01:09.806201Z",
+  "source_generated_at": "2026-09-22T09:59:10Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": false,
+    "required_today_utc": true,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1430,
-  "event_count": 763,
-  "rejected_count": 667,
+  "source_event_count": 1437,
+  "event_count": 765,
+  "rejected_count": 672,
   "rejection_counts": {
-    "category_not_kinetic": 455,
-    "no_confirmed_action_language": 170,
+    "category_not_kinetic": 459,
+    "no_confirmed_action_language": 171,
     "context_or_hypothetical": 21,
     "retrospective_or_aftermath": 13,
     "outside_window": 6,
     "alert_only": 2
   },
   "category_counts": {
-    "missile": 257,
-    "strike": 200,
+    "missile": 258,
+    "strike": 201,
     "drone": 122,
     "airstrike": 115,
     "explosion": 45,
     "ground": 24
   },
   "severity_counts": {
-    "medium": 415,
-    "high": 305,
+    "medium": 416,
+    "high": 306,
     "low": 41,
     "critical": 2
   },
   "actor_counts": {
     "Iran": 259,
     "United States": 162,
-    "Israel": 127,
+    "Israel": 129,
     "Yemen": 109,
     "Unknown actor": 57,
     "Saudi Arabia": 22,
@@ -48,6 +48,58 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-2h5p1roiw2w00",
+      "timestamp": "2026-09-21T18:01:01Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "medium",
+      "actor": "isr",
+      "actor_label": "Israel",
+      "actor_method": "raw_source.origin",
+      "target_country": "Syria",
+      "location": "Aleppo",
+      "latitude": 36.2021,
+      "longitude": 37.1343,
+      "map_visualizable": true,
+      "description": "Israeli strike on Syrian army weapons depot in Aleppo region causes secondary explosions and missiles fire into surrounding areas",
+      "source_name": "abualiexpress",
+      "source_url": "",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-pbrt7jocu1c0",
+      "timestamp": "2026-09-21T17:41:39Z",
+      "event_type": "kinetic",
+      "subtype": "strike",
+      "category": "strike",
+      "severity": "high",
+      "actor": "isr",
+      "actor_label": "Israel",
+      "actor_method": "raw_source.origin",
+      "target_country": "Lebanon",
+      "location": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "IDF fighter jets strike multiple villages in southern Lebanon on Yom Kippur evening and throughout the day including Almuntouri, Nabbatieh, Alfuqa, Baraashit, Ali al-Tahir, Kafr Tabnit, Wadi al-Hajjar, Slouqi, Deir Sirian, Zoutar, and al-Sharkiyah",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/130567",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-146afbieekxs0",
       "timestamp": "2026-09-20T15:41:37Z",
