@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T11:27:59.964153+00:00",
+  "generated_at": "2026-09-23T11:26:04.216115+00:00",
   "analysis_model": "conflict_analysis_v1_2",
   "analysis_period": {
     "raw_common_start": "2026-07-13T03:32:57Z",
@@ -11,13 +11,13 @@
     "basis": "Lag analysis starts at the first valid kinetic event. Daily MAI/DDI/Gap starts at the first complete UTC day."
   },
   "inputs": {
-    "event_timeline_generated_at": "2026-09-22T09:26:44.786772+00:00",
+    "event_timeline_generated_at": "2026-09-23T09:29:02.120996+00:00",
     "event_timeline_direction_model": "context_direction_v3_2",
-    "kinetic_generated_at": "2026-09-22T10:01:09.806201Z",
+    "kinetic_generated_at": "2026-09-23T10:01:47.703502Z",
     "kinetic_cleaning_mode": "strict_kinetic_v2",
-    "diplomatic_events_total_history": 595,
-    "diplomatic_events_in_common_period": 143,
-    "diplomatic_events_in_daily_period": 143,
+    "diplomatic_events_total_history": 597,
+    "diplomatic_events_in_common_period": 145,
+    "diplomatic_events_in_daily_period": 145,
     "military_events_total_history": 765,
     "military_events_in_common_period": 765,
     "military_events_in_daily_period": 746
@@ -1862,14 +1862,14 @@
     {
       "date": "2026-09-18",
       "diplomatic": {
-        "event_count": 0,
+        "event_count": 1,
         "direction_index": 0.0,
         "mean_direction_score": 0.0,
-        "positive_signal_score": 0,
-        "negative_signal_score": 0,
+        "positive_signal_score": 0.0,
+        "negative_signal_score": 0.0,
         "escalation_count": 0,
         "deescalation_count": 0,
-        "mixed_count": 0
+        "mixed_count": 1
       },
       "military": {
         "event_count": 2,
@@ -1916,12 +1916,12 @@
     {
       "date": "2026-09-20",
       "diplomatic": {
-        "event_count": 1,
-        "direction_index": -16.7,
-        "mean_direction_score": -1.0,
+        "event_count": 2,
+        "direction_index": -25.0,
+        "mean_direction_score": -1.5,
         "positive_signal_score": 0.0,
-        "negative_signal_score": 0.0,
-        "escalation_count": 0,
+        "negative_signal_score": -2.0,
+        "escalation_count": 1,
         "deescalation_count": 0,
         "mixed_count": 1
       },
@@ -1934,10 +1934,10 @@
         "pressure_score": -45.6
       },
       "gap": {
-        "divergence_score": -62.3,
-        "strength": 62.3,
+        "divergence_score": -70.6,
+        "strength": 70.6,
         "level": "HIGH",
-        "pattern": "MIXED / LIMITED DIVERGENCE"
+        "pattern": "ESCALATORY SIGNALS / LOW MILITARY ACTIVITY"
       }
     },
     {
@@ -1980,26 +1980,26 @@
     "aggregate": {
       "escalation": {
         "6h": {
-          "signal_count": 32,
+          "signal_count": 33,
           "excluded_edge_signals": 0,
           "median_delta_weighted_activity": 0.0,
-          "mean_delta_weighted_activity": 2.88,
+          "mean_delta_weighted_activity": 2.8,
           "median_change_pct": -14.3,
-          "share_followed_by_activity_increase_pct": 43.8,
-          "share_followed_by_activity_decrease_pct": 46.9
+          "share_followed_by_activity_increase_pct": 42.4,
+          "share_followed_by_activity_decrease_pct": 45.5
         },
         "12h": {
-          "signal_count": 32,
+          "signal_count": 33,
           "excluded_edge_signals": 0,
           "median_delta_weighted_activity": 0.0,
-          "mean_delta_weighted_activity": -0.9,
-          "median_change_pct": 0.0,
-          "share_followed_by_activity_increase_pct": 46.9,
-          "share_followed_by_activity_decrease_pct": 46.9
+          "mean_delta_weighted_activity": -1.24,
+          "median_change_pct": -1.2,
+          "share_followed_by_activity_increase_pct": 45.5,
+          "share_followed_by_activity_decrease_pct": 48.5
         },
         "24h": {
           "signal_count": 32,
-          "excluded_edge_signals": 0,
+          "excluded_edge_signals": 1,
           "median_delta_weighted_activity": -3.7,
           "mean_delta_weighted_activity": 1.04,
           "median_change_pct": -7.6,
@@ -2008,7 +2008,7 @@
         },
         "48h": {
           "signal_count": 29,
-          "excluded_edge_signals": 3,
+          "excluded_edge_signals": 4,
           "median_delta_weighted_activity": -11.35,
           "mean_delta_weighted_activity": -6.69,
           "median_change_pct": -18.8,
@@ -2017,7 +2017,7 @@
         },
         "72h": {
           "signal_count": 29,
-          "excluded_edge_signals": 3,
+          "excluded_edge_signals": 4,
           "median_delta_weighted_activity": -11.65,
           "mean_delta_weighted_activity": -17.73,
           "median_change_pct": -21.9,
@@ -2075,7 +2075,72 @@
     },
     "signals": [
       {
-        "event_id": "INFO-000008",
+        "event_id": "INFO-000001",
+        "timestamp": "2026-09-20T22:05:00Z",
+        "title": "U.S. warns of rapid escalation in Middle East war - The Japan Times",
+        "direction": "escalation",
+        "direction_score": -2,
+        "positive_signal_score": 0,
+        "negative_signal_score": -2,
+        "event_type": "threat",
+        "subtype": "escalation",
+        "source": "\"middle east conflict when:7d\" - Google News",
+        "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPUm9iTFh1RUMyZjBiSnlYcHZ1REVuaFMycWpTaHRDaV9GOWh5d3hDZmdYQ05qRTlueURxbG1ZYnc0UTVyNEpqVkhSRVdlTGgzMC0wMkUta0JHSjZtamx1U090Q25KajktcnQwQmdZeGVIZXdLS1hiVGo1SmRUSnAtUjM0Rk5OWmNn?oc=5",
+        "windows": {
+          "6h": {
+            "available": true,
+            "before_event_count": 0,
+            "after_event_count": 0,
+            "delta_event_count": 0,
+            "before_weighted_activity": 0,
+            "after_weighted_activity": 0,
+            "delta_weighted_activity": 0,
+            "weighted_activity_change_pct": null
+          },
+          "12h": {
+            "available": true,
+            "before_event_count": 4,
+            "after_event_count": 0,
+            "delta_event_count": -4,
+            "before_weighted_activity": 12.15,
+            "after_weighted_activity": 0,
+            "delta_weighted_activity": -12.15,
+            "weighted_activity_change_pct": -100.0
+          },
+          "24h": {
+            "available": false,
+            "before_event_count": null,
+            "after_event_count": null,
+            "delta_event_count": null,
+            "before_weighted_activity": null,
+            "after_weighted_activity": null,
+            "delta_weighted_activity": null,
+            "weighted_activity_change_pct": null
+          },
+          "48h": {
+            "available": false,
+            "before_event_count": null,
+            "after_event_count": null,
+            "delta_event_count": null,
+            "before_weighted_activity": null,
+            "after_weighted_activity": null,
+            "delta_weighted_activity": null,
+            "weighted_activity_change_pct": null
+          },
+          "72h": {
+            "available": false,
+            "before_event_count": null,
+            "after_event_count": null,
+            "delta_event_count": null,
+            "before_weighted_activity": null,
+            "after_weighted_activity": null,
+            "delta_weighted_activity": null,
+            "weighted_activity_change_pct": null
+          }
+        }
+      },
+      {
+        "event_id": "INFO-000010",
         "timestamp": "2026-09-15T11:21:00Z",
         "title": "After Trump floats talks, Iran security chief rejects negotiations until ‘conditions’ met - The Times of Israel",
         "direction": "escalation",
@@ -2140,7 +2205,7 @@
         }
       },
       {
-        "event_id": "INFO-000011",
+        "event_id": "INFO-000013",
         "timestamp": "2026-09-13T06:19:52Z",
         "title": "FBI warns Iran aspired to attack California with drones in retaliation for war: Alert - abcnews.com",
         "direction": "escalation",
@@ -2205,7 +2270,7 @@
         }
       },
       {
-        "event_id": "INFO-000012",
+        "event_id": "INFO-000014",
         "timestamp": "2026-09-12T15:23:04Z",
         "title": "Iran Finds Escalation Is Fruitful Path to Leverage in War With U.S. - The New York Times",
         "direction": "escalation",
@@ -2270,7 +2335,7 @@
         }
       },
       {
-        "event_id": "INFO-000014",
+        "event_id": "INFO-000016",
         "timestamp": "2026-09-11T12:16:58Z",
         "title": "Iran war: Saudi-Houthi escalation intensifies Yemen conflict - dw.com",
         "direction": "escalation",
@@ -2335,7 +2400,7 @@
         }
       },
       {
-        "event_id": "INFO-000016",
+        "event_id": "INFO-000018",
         "timestamp": "2026-09-09T07:20:42Z",
         "title": "Medicine shortages grow in Iran as US tightens sanctions, blockade - Al Jazeera",
         "direction": "escalation",
@@ -2400,7 +2465,7 @@
         }
       },
       {
-        "event_id": "INFO-000017",
+        "event_id": "INFO-000019",
         "timestamp": "2026-09-08T15:12:20Z",
         "title": "Iran Threatens to Target U.S. Energy Assets in Gulf If U.S. Strikes Again - Time Magazine",
         "direction": "escalation",
@@ -2465,7 +2530,7 @@
         }
       },
       {
-        "event_id": "INFO-000018",
+        "event_id": "INFO-000020",
         "timestamp": "2026-09-07T09:22:43Z",
         "title": "Iran threatens \"more painful\" retaliation to U.S. strikes on Iranian oil tankers - CBS News",
         "direction": "escalation",
@@ -2530,7 +2595,7 @@
         }
       },
       {
-        "event_id": "INFO-000019",
+        "event_id": "INFO-000021",
         "timestamp": "2026-09-06T17:39:00Z",
         "title": "Energy secretary says US might not reach nuclear agreement with Iran - theguardian.com",
         "direction": "de-escalation",
@@ -2595,7 +2660,7 @@
         }
       },
       {
-        "event_id": "INFO-000022",
+        "event_id": "INFO-000024",
         "timestamp": "2026-09-02T09:06:13Z",
         "title": "US-Israel-Iran War Latest Updates: Trump Says ‘Not Trying To Force Iran To The Bargaining Table’, Dismisses Peace Deal As Fresh Strikes Escalate War - The Sunday Guardian",
         "direction": "escalation",
@@ -2660,7 +2725,7 @@
         }
       },
       {
-        "event_id": "INFO-000023",
+        "event_id": "INFO-000025",
         "timestamp": "2026-09-02T04:10:55Z",
         "title": "US-Israel-Iran War Latest Live News: Trump Rejects Iran Talks, Claims ‘Total Control’ Of Strait Of Hormuz After US Strikes - The Sunday Guardian",
         "direction": "escalation",
@@ -2725,7 +2790,7 @@
         }
       },
       {
-        "event_id": "INFO-000027",
+        "event_id": "INFO-000029",
         "timestamp": "2026-08-30T21:05:00Z",
         "title": "First US military attacks on Iran in a month prompt retaliation - theguardian.com",
         "direction": "escalation",
@@ -2790,7 +2855,7 @@
         }
       },
       {
-        "event_id": "INFO-000030",
+        "event_id": "INFO-000032",
         "timestamp": "2026-08-29T10:00:00Z",
         "title": "Dire Strait: Why Economic Threats Might Escalate the War in Iran - Time Magazine",
         "direction": "escalation",
@@ -2855,7 +2920,7 @@
         }
       },
       {
-        "event_id": "INFO-000033",
+        "event_id": "INFO-000035",
         "timestamp": "2026-08-27T21:12:18Z",
         "title": "Iran, Qatar hold Hormuz talks amid int’l hopes dialogue with US will resume - Al Jazeera",
         "direction": "de-escalation",
@@ -2920,7 +2985,7 @@
         }
       },
       {
-        "event_id": "INFO-000038",
+        "event_id": "INFO-000040",
         "timestamp": "2026-08-25T08:42:33Z",
         "title": "Pakistan says significant progress made in talks on Iran-US war - Al Jazeera",
         "direction": "de-escalation",
@@ -2985,7 +3050,7 @@
         }
       },
       {
-        "event_id": "INFO-000042",
+        "event_id": "INFO-000044",
         "timestamp": "2026-08-23T05:44:03Z",
         "title": "Iran warns of retaliation against countries joining US ‘economic war’ - Al Jazeera",
         "direction": "escalation",
@@ -3050,7 +3115,7 @@
         }
       },
       {
-        "event_id": "INFO-000043",
+        "event_id": "INFO-000045",
         "timestamp": "2026-08-22T01:14:53Z",
         "title": "Iran condemns US plans to announce new sanctions - Reuters",
         "direction": "escalation",
@@ -3115,7 +3180,7 @@
         }
       },
       {
-        "event_id": "INFO-000044",
+        "event_id": "INFO-000046",
         "timestamp": "2026-08-20T23:53:38Z",
         "title": "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
         "direction": "de-escalation",
@@ -3180,7 +3245,7 @@
         }
       },
       {
-        "event_id": "INFO-000046",
+        "event_id": "INFO-000048",
         "timestamp": "2026-08-19T04:01:19Z",
         "title": "Iran eyes military targets in Europe if Donald Trump escalates war, insiders say - Financial Times",
         "direction": "escalation",
@@ -3245,7 +3310,7 @@
         }
       },
       {
-        "event_id": "INFO-000047",
+        "event_id": "INFO-000049",
         "timestamp": "2026-08-19T03:39:26Z",
         "title": "UAE imposes indefinite trade embargo on Iran over alleged missile attacks - Al Jazeera",
         "direction": "escalation",
@@ -3310,7 +3375,7 @@
         }
       },
       {
-        "event_id": "INFO-000052",
+        "event_id": "INFO-000054",
         "timestamp": "2026-08-17T13:45:00Z",
         "title": "Iran threatens new offensive while US rules out extending ceasefire deal - Reuters",
         "direction": "escalation",
@@ -3375,7 +3440,7 @@
         }
       },
       {
-        "event_id": "INFO-000053",
+        "event_id": "INFO-000055",
         "timestamp": "2026-08-17T09:41:09Z",
         "title": "The Wall Street Journal: Iranian authorities have developed a secret plan to escalate the war with the USA and Israel - Informat.ro",
         "direction": "escalation",
@@ -3440,7 +3505,7 @@
         }
       },
       {
-        "event_id": "INFO-000057",
+        "event_id": "INFO-000059",
         "timestamp": "2026-08-17T01:00:00Z",
         "title": "Iran’s Secret Plan to Escalate the War - WSJ",
         "direction": "escalation",
@@ -3505,7 +3570,7 @@
         }
       },
       {
-        "event_id": "INFO-000060",
+        "event_id": "INFO-000062",
         "timestamp": "2026-08-13T12:06:31Z",
         "title": "US-Iran talks in deadlock – what’s the latest? - Al Jazeera",
         "direction": "escalation",
@@ -3570,7 +3635,7 @@
         }
       },
       {
-        "event_id": "INFO-000062",
+        "event_id": "INFO-000064",
         "timestamp": "2026-08-12T10:39:25Z",
         "title": "Iran rejects Trump’s claim to ‘control’ Hormuz: What’s the latest in talks? - Al Jazeera",
         "direction": "escalation",
@@ -3635,7 +3700,7 @@
         }
       },
       {
-        "event_id": "INFO-000064",
+        "event_id": "INFO-000066",
         "timestamp": "2026-08-11T02:45:30Z",
         "title": "Trump demands compensation from Iran as talks on Strait of Hormuz continue - Al Jazeera",
         "direction": "de-escalation",
@@ -3700,7 +3765,7 @@
         }
       },
       {
-        "event_id": "INFO-000067",
+        "event_id": "INFO-000069",
         "timestamp": "2026-08-09T18:35:00Z",
         "title": "Netanyahu rejects US-led 15-point Gaza peace plan in rare public break with Trump - The Guardian",
         "direction": "escalation",
@@ -3765,7 +3830,7 @@
         }
       },
       {
-        "event_id": "INFO-000077",
+        "event_id": "INFO-000079",
         "timestamp": "2026-08-07T05:56:00Z",
         "title": "Iran, Oman deal on Strait of Hormuz getting close, Tehran says - CBS News",
         "direction": "de-escalation",
@@ -3830,7 +3895,7 @@
         }
       },
       {
-        "event_id": "INFO-000080",
+        "event_id": "INFO-000082",
         "timestamp": "2026-08-06T10:30:43Z",
         "title": "Hormuz deal ‘close’: What’s the latest on each side’s positions? - Al Jazeera",
         "direction": "de-escalation",
@@ -3895,7 +3960,7 @@
         }
       },
       {
-        "event_id": "INFO-000084",
+        "event_id": "INFO-000086",
         "timestamp": "2026-08-04T21:15:18Z",
         "title": "US says deal on reopening Hormuz close as Iran, Oman hold ‘positive’ talks - Al Jazeera",
         "direction": "de-escalation",
@@ -3960,7 +4025,7 @@
         }
       },
       {
-        "event_id": "INFO-000087",
+        "event_id": "INFO-000089",
         "timestamp": "2026-08-04T15:11:51Z",
         "title": "Qatar says US-Iran mediation efforts continuing but no direct talks planned - BBC",
         "direction": "de-escalation",
@@ -4025,7 +4090,7 @@
         }
       },
       {
-        "event_id": "INFO-000089",
+        "event_id": "INFO-000091",
         "timestamp": "2026-08-04T10:56:21Z",
         "title": "‘One last chance’: The times Trump threatened Iran, said deal imminent - Al Jazeera",
         "direction": "de-escalation",
@@ -4090,7 +4155,7 @@
         }
       },
       {
-        "event_id": "INFO-000095",
+        "event_id": "INFO-000097",
         "timestamp": "2026-08-03T19:42:55Z",
         "title": "Iran says it is in talks with Oman but not the US after Trump says negotiations to resume - BBC",
         "direction": "de-escalation",
@@ -4155,7 +4220,7 @@
         }
       },
       {
-        "event_id": "INFO-000097",
+        "event_id": "INFO-000099",
         "timestamp": "2026-08-03T13:32:18Z",
         "title": "Trump claims Iran talks will start Monday, and other developments in the Middle East - PBS",
         "direction": "de-escalation",
@@ -4220,7 +4285,7 @@
         }
       },
       {
-        "event_id": "INFO-000105",
+        "event_id": "INFO-000107",
         "timestamp": "2026-08-02T04:45:00Z",
         "title": "Trump backs down on Iran strikes in expectation of ‘rapidly’ reaching a deal - The Guardian",
         "direction": "de-escalation",
@@ -4285,7 +4350,7 @@
         }
       },
       {
-        "event_id": "INFO-000106",
+        "event_id": "INFO-000108",
         "timestamp": "2026-08-02T03:56:00Z",
         "title": "Trump Calls Off Planned Attack on Iran, Citing Diplomatic Progress - wsj.com",
         "direction": "de-escalation",
@@ -4350,7 +4415,7 @@
         }
       },
       {
-        "event_id": "INFO-000107",
+        "event_id": "INFO-000109",
         "timestamp": "2026-08-01T20:00:00Z",
         "title": "Israel raises alert: Iran conflict risks renewed escalation - jpost.com",
         "direction": "escalation",
@@ -4415,7 +4480,7 @@
         }
       },
       {
-        "event_id": "INFO-000108",
+        "event_id": "INFO-000110",
         "timestamp": "2026-08-01T12:52:54Z",
         "title": "Iran warns against ‘flames of war’ amid US strike threats on energy sites - Al Jazeera",
         "direction": "escalation",
@@ -4480,7 +4545,7 @@
         }
       },
       {
-        "event_id": "INFO-000109",
+        "event_id": "INFO-000111",
         "timestamp": "2026-07-30T09:52:55Z",
         "title": "US hits multiple targets in Iran as IRGC pledges retaliation: What we know - Al Jazeera",
         "direction": "escalation",
@@ -4545,7 +4610,7 @@
         }
       },
       {
-        "event_id": "INFO-000111",
+        "event_id": "INFO-000113",
         "timestamp": "2026-07-29T08:36:39Z",
         "title": "US says Iran trying to 'derail ongoing ceasefire talks' as strikes resume - France 24",
         "direction": "de-escalation",
@@ -4610,7 +4675,7 @@
         }
       },
       {
-        "event_id": "INFO-000118",
+        "event_id": "INFO-000120",
         "timestamp": "2026-07-27T06:23:43Z",
         "title": "Iran warns Ukraine of retaliation after deadly Caspian Sea strike - Al Jazeera",
         "direction": "escalation",
@@ -4675,7 +4740,7 @@
         }
       },
       {
-        "event_id": "INFO-000122",
+        "event_id": "INFO-000124",
         "timestamp": "2026-07-25T16:42:54Z",
         "title": "Iran’s government spars with state TV as mediators push talks with US - Al Jazeera",
         "direction": "de-escalation",
@@ -4740,7 +4805,7 @@
         }
       },
       {
-        "event_id": "INFO-000123",
+        "event_id": "INFO-000125",
         "timestamp": "2026-07-24T07:54:30Z",
         "title": "Trump considers ‘massive attack’ on Iran; Pakistan reportedly seeks to restart stalled peace talks - CNBC",
         "direction": "escalation",
@@ -4805,7 +4870,7 @@
         }
       },
       {
-        "event_id": "INFO-000134",
+        "event_id": "INFO-000136",
         "timestamp": "2026-07-20T16:13:00Z",
         "title": "U.S. war with Iran risks spiraling as attacks intensify and diplomatic efforts stall, experts warn - NBC News",
         "direction": "escalation",
@@ -4870,7 +4935,7 @@
         }
       },
       {
-        "event_id": "INFO-000138",
+        "event_id": "INFO-000140",
         "timestamp": "2026-07-16T10:55:26Z",
         "title": "'Red line': US and Iran trade blows in rekindled Middle East conflict - newseu.cgtn.com",
         "direction": "escalation",
@@ -4935,7 +5000,7 @@
         }
       },
       {
-        "event_id": "INFO-000139",
+        "event_id": "INFO-000141",
         "timestamp": "2026-07-16T06:42:20Z",
         "title": "Iran says peace deal voided, fighting ‘existential war’ after US attacks - Al Jazeera",
         "direction": "escalation",
@@ -5000,7 +5065,7 @@
         }
       },
       {
-        "event_id": "INFO-000141",
+        "event_id": "INFO-000143",
         "timestamp": "2026-07-14T22:47:08Z",
         "title": "Middle East experts assess latest escalation in U.S.-Iran conflict - PBS",
         "direction": "escalation",
@@ -5065,7 +5130,7 @@
         }
       },
       {
-        "event_id": "INFO-000142",
+        "event_id": "INFO-000144",
         "timestamp": "2026-07-14T13:19:13Z",
         "title": "Iran-US war news: Trump backs away from plan to charge fees in the Strait of Hormuz as attacks intensify - ABC7 Los Angeles",
         "direction": "escalation",
@@ -5130,7 +5195,7 @@
         }
       },
       {
-        "event_id": "INFO-000143",
+        "event_id": "INFO-000145",
         "timestamp": "2026-07-14T09:53:56Z",
         "title": "US Attacks Iran and Tehran Retaliates Across the Middle East, Threatening a Return to All-Out War - Military.com",
         "direction": "escalation",
