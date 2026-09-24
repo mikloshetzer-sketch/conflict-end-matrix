@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-09-23T14:10:48.411219Z",
-  "source_generated_at": "2026-09-23T10:02:12Z",
+  "generated_at": "2026-09-24T10:04:59.635185Z",
+  "source_generated_at": "2026-09-24T06:11:43Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": false,
+    "required_today_utc": true,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1442,
-  "event_count": 765,
+  "source_event_count": 1444,
+  "event_count": 767,
   "rejected_count": 677,
   "rejection_counts": {
     "category_not_kinetic": 461,
@@ -23,24 +23,24 @@
   },
   "category_counts": {
     "missile": 258,
-    "strike": 201,
+    "strike": 203,
     "drone": 122,
     "airstrike": 115,
     "explosion": 45,
     "ground": 24
   },
   "severity_counts": {
-    "medium": 416,
+    "medium": 418,
     "high": 306,
     "low": 41,
     "critical": 2
   },
   "actor_counts": {
-    "Iran": 259,
+    "Iran": 260,
     "United States": 162,
     "Israel": 129,
     "Yemen": 109,
-    "Unknown actor": 57,
+    "Unknown actor": 58,
     "Saudi Arabia": 22,
     "Iraq": 13,
     "Lebanon": 12,
@@ -48,6 +48,58 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-2umlddmema600",
+      "timestamp": "2026-09-23T15:45:05Z",
+      "event_type": "kinetic",
+      "subtype": "strike",
+      "category": "strike",
+      "severity": "medium",
+      "actor": "irn",
+      "actor_label": "Iran",
+      "actor_method": "raw_source.origin",
+      "target_country": "Iran",
+      "location": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Iran attacks Emirati-owned cargo vessel MV Cape Dao, at least one crewmember killed and another injured",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/84382",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-2me6wv7ws5600",
+      "timestamp": "2026-09-23T14:07:00Z",
+      "event_type": "kinetic",
+      "subtype": "strike",
+      "category": "strike",
+      "severity": "medium",
+      "actor": "unknown",
+      "actor_label": "Unknown actor",
+      "actor_method": "normalized.attacker",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Vehicular attack at Maccabim checkpoint in Benjamin district, attacker neutralized, one seriously injured",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/130674",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-2h5p1roiw2w00",
       "timestamp": "2026-09-21T18:01:01Z",
