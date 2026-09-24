@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T14:10:49.564333+00:00",
+  "generated_at": "2026-09-24T14:08:59.652077+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,28 +18,28 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 602,
-    "kinetic_events_loaded": 765,
-    "unique_events_scanned": 1302,
-    "strategic_evidence_contributions": 356,
+    "non_kinetic_events_loaded": 606,
+    "kinetic_events_loaded": 767,
+    "unique_events_scanned": 1308,
+    "strategic_evidence_contributions": 358,
     "evidence_contributions_by_actor": {
       "usa": 115,
-      "iran": 241
+      "iran": 243
     },
     "scored_contributions_by_actor": {
       "usa": 82,
-      "iran": 129
+      "iran": 130
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
-      "iran": 112
+      "iran": 113
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 310,
+      "non_kinetic": 312,
       "kinetic": 46
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 195,
+      "iran:negotiation": 197,
       "usa:negotiation": 93,
       "iran:missile_test": 32,
       "usa:presidential_warning": 16,
@@ -51,7 +51,7 @@
       "usa:carrier_deployment": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 99,
+      "iran:negotiation": 100,
       "usa:negotiation": 64,
       "iran:missile_test": 16,
       "usa:presidential_warning": 16,
@@ -63,146 +63,58 @@
       "usa:carrier_deployment": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 1,
-    "history_day_count": 197
+    "skipped_current_utc_day": 0,
+    "history_day_count": 198
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-09-22",
+  "latest_complete_utc_day": "2026-09-23",
   "current": {
-    "date": "2026-09-22",
+    "date": "2026-09-23",
     "calculation_mode": "live",
     "usa": {
-      "raw_score": -6.0,
+      "raw_score": 0.0,
       "positive_score": 0.0,
-      "negative_score": -6.0,
-      "event_count": 1,
-      "scored_event_count": 1,
-      "evidence_event_count": 1,
+      "negative_score": 0.0,
+      "event_count": 0,
+      "scored_event_count": 0,
+      "evidence_event_count": 0,
       "suppressed_duplicate_count": 0,
       "increase_event_count": 0,
-      "decrease_event_count": 1,
-      "contributors": [
-        {
-          "event_id": "INFO-000003",
-          "timestamp": "2026-09-22T21:21:00+00:00",
-          "date": "2026-09-22",
-          "actor": "usa",
-          "bilateral_event": true,
-          "title": "Iran and US have held talks on sidelines of UN summit, says Donald Trump - The Guardian",
-          "source_layer": "non_kinetic",
-          "event_type": "diplomatic",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": -6.0,
-          "duplicate_indicator_evidence": false,
-          "daily_score_suppressed": false,
-          "suppression_reason": null,
-          "primary_daily_indicator": "negotiation",
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_full_scale_war",
-                "name": "Avoid full-scale regional war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran and US have held talks on sidelines of UN summit, says Donald Trump - The Guardian",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxONGFfZEE0Rng3UkZzZDh2b0E4X3RWbGRDUEo3VWg0Z1BPaXFTMmYzcGhOOVlROFpiM0x4dTJBVWR6bzBxMTlhNVNidXprT09iZ2NSVzdXaTF5UF84aThrQ2I0Zk8tMVU0NHB0LV9CWm5RR2dfTjMxcVF3VEJremo0ajlaZWVGV3RaWjlPVDhnU3B3YW1sWlFzVlAxcw?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [
-            "negotiation"
-          ],
-          "duplicate_daily_indicators": []
-        }
-      ],
-      "weighted_score_7d": -0.7,
-      "pressure_index_7d": 48.6,
+      "decrease_event_count": 0,
+      "contributors": [],
+      "weighted_score_7d": -0.4,
+      "pressure_index_7d": 49.2,
       "pressure_level": "balanced",
-      "trend": "strong_decrease",
-      "strongest_contributors": [
-        {
-          "event_id": "INFO-000003",
-          "timestamp": "2026-09-22T21:21:00+00:00",
-          "date": "2026-09-22",
-          "actor": "usa",
-          "bilateral_event": true,
-          "title": "Iran and US have held talks on sidelines of UN summit, says Donald Trump - The Guardian",
-          "source_layer": "non_kinetic",
-          "event_type": "diplomatic",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": -6.0,
-          "duplicate_indicator_evidence": false,
-          "daily_score_suppressed": false,
-          "suppression_reason": null,
-          "primary_daily_indicator": "negotiation",
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_full_scale_war",
-                "name": "Avoid full-scale regional war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran and US have held talks on sidelines of UN summit, says Donald Trump - The Guardian",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxONGFfZEE0Rng3UkZzZDh2b0E4X3RWbGRDUEo3VWg0Z1BPaXFTMmYzcGhOOVlROFpiM0x4dTJBVWR6bzBxMTlhNVNidXprT09iZ2NSVzdXaTF5UF84aThrQ2I0Zk8tMVU0NHB0LV9CWm5RR2dfTjMxcVF3VEJremo0ajlaZWVGV3RaWjlPVDhnU3B3YW1sWlFzVlAxcw?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [
-            "negotiation"
-          ],
-          "duplicate_daily_indicators": []
-        }
-      ]
+      "trend": "stable",
+      "strongest_contributors": []
     },
     "iran": {
-      "raw_score": -6.0,
+      "raw_score": -8.0,
       "positive_score": 0.0,
-      "negative_score": -6.0,
-      "event_count": 1,
+      "negative_score": -8.0,
+      "event_count": 2,
       "scored_event_count": 1,
-      "evidence_event_count": 1,
-      "suppressed_duplicate_count": 0,
+      "evidence_event_count": 2,
+      "suppressed_duplicate_count": 1,
       "increase_event_count": 0,
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000003",
-          "timestamp": "2026-09-22T21:21:00+00:00",
-          "date": "2026-09-22",
+          "event_id": "INFO-000002",
+          "timestamp": "2026-09-23T10:40:00+00:00",
+          "date": "2026-09-23",
           "actor": "iran",
-          "bilateral_event": true,
-          "title": "Iran and US have held talks on sidelines of UN summit, says Donald Trump - The Guardian",
+          "bilateral_event": false,
+          "title": "Iran denies dropping preconditions amid ‘very productive’ three-hour UN talks in New York - The Guardian",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
+          "event_direction": "de-escalation",
+          "operational_component": -2.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": -6.0,
+          "original_final_score": -8.0,
+          "final_score": -8.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -221,37 +133,80 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran and US have held talks on sidelines of UN summit, says Donald Trump - The Guardian",
+          "reason": "Iran: Negotiation. Operational component: -2.00; strategic modifier: -6.00; final contribution before daily deduplication: -8.00. Event: Iran denies dropping preconditions amid ‘very productive’ three-hour UN talks in New York - The Guardian",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxONGFfZEE0Rng3UkZzZDh2b0E4X3RWbGRDUEo3VWg0Z1BPaXFTMmYzcGhOOVlROFpiM0x4dTJBVWR6bzBxMTlhNVNidXprT09iZ2NSVzdXaTF5UF84aThrQ2I0Zk8tMVU0NHB0LV9CWm5RR2dfTjMxcVF3VEJremo0ajlaZWVGV3RaWjlPVDhnU3B3YW1sWlFzVlAxcw?oc=5",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQa3FFVEtERF9lUEJSdEtfQTgxVHY0SHR5M1pjc3M2V1pRQXVQSmlVczNHN19Eb24yVWQ0anI3TVppUDJ4WENSZ3Z3TW1kUkhPRGdRVUI1RWRyMVd5ZGJXMVYwUFRGb0tUcGxrNG1FZFU5S1JPanJodWRiSlBXUVpXSWF5Z0k4Mm9DMXBudXN4MXlZX2lVa0kzTGlIY0pSY1dNSkJGU1ZSM3hZNld1RzhlRGNrTGhSaWRsbW9DSnBPaUNnbnM?oc=5",
           "existing_event_score": 2.0,
-          "existing_direction_score": 0.0,
+          "existing_direction_score": 2.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
           "duplicate_daily_indicators": []
+        },
+        {
+          "event_id": "INFO-000004",
+          "timestamp": "2026-09-23T04:47:52+00:00",
+          "date": "2026-09-23",
+          "actor": "iran",
+          "bilateral_event": false,
+          "title": "US, Iran hold mediated UNGA talks on ending war, opening Strait of Hormuz - Al Jazeera",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -6.0,
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": true,
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "primary_daily_indicator": null,
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_regime_destroying_war",
+                "name": "Avoid regime-destroying war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: US, Iran hold mediated UNGA talks on ending war, opening Strait of Hormuz - Al Jazeera",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNLXRPQTVqXzVzVmR1V3YtSUptb2pyejlHYzRaOWFQR2dhdmNrdnBkTUpVUU9ETy1kRTJhRkE1SlpidGF5UU1KZ0ZOSlJ2WjU4bWlkMUQ3WVZGdGlNS2ZiQWU3Q3pqdHVHV211TGpnVzloZG9LcDlXeEliY01ueTg1dmc5RzZUZEwzamJnZlZZYlRpc1ZLcWZQQXNkQzhqdzFBM00xdzZRZnJEbDlpOE4yVWRR0gG3AUFVX3lxTE02elBuektCcFRIeV9GcFF0TS0zNEhPR2hLM0NoYVNiZzRFcUIyd0NmVlgyTFV3OUFqbGRuVHVVVWRwVUlOMDlSRkJ2VGZxc0Y5WEt4NWpycC1MLVFhaHVUM3drd2xTWUhVdW8xYnBERXBvZnJMMmFFZFBNZno5WjRqTVJzWlBOQUdrT2E5YTdiQ0c5em9abmdBQ0tUUnM1dDlfODk3dGcweE1PZmtaemt1bjZIakMwYw?oc=5",
+          "existing_event_score": 1.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [],
+          "duplicate_daily_indicators": [
+            "negotiation"
+          ]
         }
       ],
-      "weighted_score_7d": -13.2,
-      "pressure_index_7d": 23.6,
+      "weighted_score_7d": -17.9,
+      "pressure_index_7d": 14.2,
       "pressure_level": "low",
       "trend": "strong_decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000003",
-          "timestamp": "2026-09-22T21:21:00+00:00",
-          "date": "2026-09-22",
+          "event_id": "INFO-000002",
+          "timestamp": "2026-09-23T10:40:00+00:00",
+          "date": "2026-09-23",
           "actor": "iran",
-          "bilateral_event": true,
-          "title": "Iran and US have held talks on sidelines of UN summit, says Donald Trump - The Guardian",
+          "bilateral_event": false,
+          "title": "Iran denies dropping preconditions amid ‘very productive’ three-hour UN talks in New York - The Guardian",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
+          "event_direction": "de-escalation",
+          "operational_component": -2.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": -6.0,
+          "original_final_score": -8.0,
+          "final_score": -8.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -270,11 +225,11 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran and US have held talks on sidelines of UN summit, says Donald Trump - The Guardian",
+          "reason": "Iran: Negotiation. Operational component: -2.00; strategic modifier: -6.00; final contribution before daily deduplication: -8.00. Event: Iran denies dropping preconditions amid ‘very productive’ three-hour UN talks in New York - The Guardian",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxONGFfZEE0Rng3UkZzZDh2b0E4X3RWbGRDUEo3VWg0Z1BPaXFTMmYzcGhOOVlROFpiM0x4dTJBVWR6bzBxMTlhNVNidXprT09iZ2NSVzdXaTF5UF84aThrQ2I0Zk8tMVU0NHB0LV9CWm5RR2dfTjMxcVF3VEJremo0ajlaZWVGV3RaWjlPVDhnU3B3YW1sWlFzVlAxcw?oc=5",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQa3FFVEtERF9lUEJSdEtfQTgxVHY0SHR5M1pjc3M2V1pRQXVQSmlVczNHN19Eb24yVWQ0anI3TVppUDJ4WENSZ3Z3TW1kUkhPRGdRVUI1RWRyMVd5ZGJXMVYwUFRGb0tUcGxrNG1FZFU5S1JPanJodWRiSlBXUVpXSWF5Z0k4Mm9DMXBudXN4MXlZX2lVa0kzTGlIY0pSY1dNSkJGU1ZSM3hZNld1RzhlRGNrTGhSaWRsbW9DSnBPaUNnbnM?oc=5",
           "existing_event_score": 2.0,
-          "existing_direction_score": 0.0,
+          "existing_direction_score": 2.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
@@ -283,9 +238,9 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 36.1,
+      "pressure_index_7d": 31.7,
       "pressure_level": "reduced",
-      "trend": "strong_decrease",
+      "trend": "decrease",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
   }
