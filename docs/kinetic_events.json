@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-09-24T14:08:58.464275Z",
-  "source_generated_at": "2026-09-24T11:48:32Z",
+  "generated_at": "2026-09-25T10:13:56.204385Z",
+  "source_generated_at": "2026-09-25T07:51:03Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": false,
+    "required_today_utc": true,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1444,
-  "event_count": 767,
-  "rejected_count": 677,
+  "source_event_count": 1446,
+  "event_count": 768,
+  "rejected_count": 678,
   "rejection_counts": {
-    "category_not_kinetic": 461,
+    "category_not_kinetic": 462,
     "no_confirmed_action_language": 174,
     "context_or_hypothetical": 21,
     "retrospective_or_aftermath": 13,
@@ -27,11 +27,11 @@
     "drone": 122,
     "airstrike": 115,
     "explosion": 45,
-    "ground": 24
+    "ground": 25
   },
   "severity_counts": {
     "medium": 418,
-    "high": 306,
+    "high": 307,
     "low": 41,
     "critical": 2
   },
@@ -39,7 +39,7 @@
     "Iran": 260,
     "United States": 162,
     "Israel": 129,
-    "Yemen": 109,
+    "Yemen": 110,
     "Unknown actor": 58,
     "Saudi Arabia": 22,
     "Iraq": 13,
@@ -48,6 +48,32 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-3kwte8r80q000",
+      "timestamp": "2026-09-24T21:11:22Z",
+      "event_type": "kinetic",
+      "subtype": "ground",
+      "category": "ground",
+      "severity": "high",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Houthi attack damages Yanbu oil terminal in Saudi Arabia; France announces deployment of troops, radars, and air defense systems to protect the facility",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/84449",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "general_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-2umlddmema600",
       "timestamp": "2026-09-23T15:45:05Z",
