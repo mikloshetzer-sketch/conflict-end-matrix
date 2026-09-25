@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-09-25T10:13:56.204385Z",
-  "source_generated_at": "2026-09-25T07:51:03Z",
+  "generated_at": "2026-09-25T14:32:23.083439Z",
+  "source_generated_at": "2026-09-25T13:49:34Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1446,
-  "event_count": 768,
+  "source_event_count": 1448,
+  "event_count": 770,
   "rejected_count": 678,
   "rejection_counts": {
     "category_not_kinetic": 462,
@@ -24,13 +24,14 @@
   "category_counts": {
     "missile": 258,
     "strike": 203,
-    "drone": 122,
+    "drone": 123,
     "airstrike": 115,
     "explosion": 45,
-    "ground": 25
+    "ground": 25,
+    "intercept": 1
   },
   "severity_counts": {
-    "medium": 418,
+    "medium": 420,
     "high": 307,
     "low": 41,
     "critical": 2
@@ -38,7 +39,7 @@
   "actor_counts": {
     "Iran": 260,
     "United States": 162,
-    "Israel": 129,
+    "Israel": 131,
     "Yemen": 110,
     "Unknown actor": 58,
     "Saudi Arabia": 22,
@@ -48,6 +49,58 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-wc5ru6j2k3k0",
+      "timestamp": "2026-09-25T11:38:32Z",
+      "event_type": "kinetic",
+      "subtype": "intercept",
+      "category": "intercept",
+      "severity": "medium",
+      "actor": "isr",
+      "actor_label": "Israel",
+      "actor_method": "raw_source.origin",
+      "target_country": "Lebanon",
+      "location": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "IDF intercepts suspected aerial target identified in southern Lebanon where IDF forces operate",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/63811",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-11id3m5m49nk0",
+      "timestamp": "2026-09-25T11:34:01Z",
+      "event_type": "kinetic",
+      "subtype": "drone",
+      "category": "drone",
+      "severity": "medium",
+      "actor": "isr",
+      "actor_label": "Israel",
+      "actor_method": "raw_source.origin",
+      "target_country": "Palestinian territories",
+      "location": "Khan Younis",
+      "latitude": 31.3462,
+      "longitude": 34.3063,
+      "map_visualizable": true,
+      "description": "Israeli drone strike in Khan Younis kills one Palestinian, body arrived in fragments to hospital",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/130790",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-3kwte8r80q000",
       "timestamp": "2026-09-24T21:11:22Z",
