@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-09-25T14:32:23.083439Z",
-  "source_generated_at": "2026-09-25T13:49:34Z",
+  "generated_at": "2026-09-26T09:54:54.632629Z",
+  "source_generated_at": "2026-09-26T05:32:26Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": false,
+    "required_today_utc": true,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1448,
-  "event_count": 770,
-  "rejected_count": 678,
+  "source_event_count": 1451,
+  "event_count": 772,
+  "rejected_count": 679,
   "rejection_counts": {
-    "category_not_kinetic": 462,
+    "category_not_kinetic": 463,
     "no_confirmed_action_language": 174,
     "context_or_hypothetical": 21,
     "retrospective_or_aftermath": 13,
@@ -22,7 +22,7 @@
     "alert_only": 2
   },
   "category_counts": {
-    "missile": 258,
+    "missile": 260,
     "strike": 203,
     "drone": 123,
     "airstrike": 115,
@@ -31,8 +31,8 @@
     "intercept": 1
   },
   "severity_counts": {
-    "medium": 420,
-    "high": 307,
+    "medium": 421,
+    "high": 308,
     "low": 41,
     "critical": 2
   },
@@ -40,7 +40,7 @@
     "Iran": 260,
     "United States": 162,
     "Israel": 131,
-    "Yemen": 110,
+    "Yemen": 112,
     "Unknown actor": 58,
     "Saudi Arabia": 22,
     "Iraq": 13,
@@ -49,6 +49,58 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-1o1fo36lzp8g0",
+      "timestamp": "2026-09-26T00:27:17Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "medium",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Planes diverting to Riyadh due to potential ballistic missile/drone threats from Yemen, no early warning alert issued",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/84542",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-32ij6jsytjy00",
+      "timestamp": "2026-09-25T19:11:23Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "high",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Houthi missile strikes target Riyadh and energy sites in Yanbu, Saudi Arabia",
+      "source_name": "OSINTdefender",
+      "source_url": "https://t.me/OSINTdefender/20330",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-wc5ru6j2k3k0",
       "timestamp": "2026-09-25T11:38:32Z",
