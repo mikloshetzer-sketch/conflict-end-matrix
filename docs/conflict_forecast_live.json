@@ -1,112 +1,112 @@
 {
-  "generated_at": "2026-09-26T11:42:31.163266+00:00",
+  "generated_at": "2026-09-27T12:21:38.621247+00:00",
   "model_version": "conflict_forecast_live_v1",
-  "forecast_reference_date": "2026-09-25",
+  "forecast_reference_date": "2026-09-26",
   "source_analysis_period": {
     "raw_common_start": "2026-07-13T03:32:57Z",
     "daily_analysis_start": "2026-07-14T00:00:00Z",
-    "end": "2026-09-26T00:27:17Z",
+    "end": "2026-09-27T07:36:01Z",
     "raw_common_start_date": "2026-07-13",
     "daily_analysis_start_date": "2026-07-14",
-    "end_date": "2026-09-26",
+    "end_date": "2026-09-27",
     "basis": "Lag analysis starts at the first valid kinetic event. Daily MAI/DDI/Gap starts at the first complete UTC day."
   },
   "day_completeness": {
     "partial_day_excluded": true,
-    "excluded_date": "2026-09-26",
-    "analysis_end_utc": "2026-09-26T00:27:17+00:00",
-    "forecast_anchor_date": "2026-09-25"
+    "excluded_date": "2026-09-27",
+    "analysis_end_utc": "2026-09-27T07:36:01+00:00",
+    "forecast_anchor_date": "2026-09-26"
   },
   "learning": {
-    "analogue_library_days": 74,
-    "newly_evaluated_forecasts_this_run": 3,
+    "analogue_library_days": 75,
+    "newly_evaluated_forecasts_this_run": 1,
     "mechanism": "New completed days enter the analogue library automatically. Archived forecasts are scored after maturity. The NO SIGNAL gate can recalibrate only after sufficient live outcomes."
   },
   "horizons": {
     "48h": {
       "horizon": "48h",
-      "target_date": "2026-09-27",
+      "target_date": "2026-09-28",
       "configuration": {
         "feature_set": "full",
         "stable_threshold_pct": 25.0,
         "k_neighbors": 10
       },
       "raw_prediction": {
-        "direction": "decrease",
-        "direction_hu": "csökkenő katonai aktivitás",
-        "top_probability": 0.6028,
-        "confidence_score": 0.5627,
+        "direction": "increase",
+        "direction_hu": "növekvő katonai aktivitás",
+        "top_probability": 0.5307,
+        "confidence_score": 0.4584,
         "probabilities": {
-          "increase": 0.1973,
-          "stable": 0.2,
-          "decrease": 0.6028
+          "increase": 0.5307,
+          "stable": 0.1048,
+          "decrease": 0.3645
         },
         "nearest_analogues": [
           {
-            "date": "2026-08-21",
-            "distance": 0.487,
-            "observed_direction": "decrease",
-            "observed_direction_hu": "csökkenő katonai aktivitás"
-          },
-          {
-            "date": "2026-09-18",
-            "distance": 0.582,
-            "observed_direction": "stable",
-            "observed_direction_hu": "lényegében változatlan katonai aktivitás"
-          },
-          {
-            "date": "2026-09-19",
-            "distance": 0.618,
-            "observed_direction": "decrease",
-            "observed_direction_hu": "csökkenő katonai aktivitás"
-          },
-          {
-            "date": "2026-07-28",
-            "distance": 0.635,
+            "date": "2026-08-12",
+            "distance": 0.505,
             "observed_direction": "increase",
             "observed_direction_hu": "növekvő katonai aktivitás"
           },
           {
-            "date": "2026-08-18",
-            "distance": 0.679,
-            "observed_direction": "decrease",
-            "observed_direction_hu": "csökkenő katonai aktivitás"
-          },
-          {
-            "date": "2026-08-08",
-            "distance": 0.68,
-            "observed_direction": "decrease",
-            "observed_direction_hu": "csökkenő katonai aktivitás"
-          },
-          {
-            "date": "2026-09-06",
-            "distance": 0.702,
+            "date": "2026-09-08",
+            "distance": 0.753,
             "observed_direction": "increase",
             "observed_direction_hu": "növekvő katonai aktivitás"
           },
           {
-            "date": "2026-08-24",
-            "distance": 0.724,
-            "observed_direction": "decrease",
-            "observed_direction_hu": "csökkenő katonai aktivitás"
-          },
-          {
-            "date": "2026-08-20",
-            "distance": 0.737,
+            "date": "2026-08-09",
+            "distance": 0.794,
             "observed_direction": "stable",
             "observed_direction_hu": "lényegében változatlan katonai aktivitás"
           },
           {
-            "date": "2026-08-06",
-            "distance": 0.755,
+            "date": "2026-09-07",
+            "distance": 0.905,
+            "observed_direction": "increase",
+            "observed_direction_hu": "növekvő katonai aktivitás"
+          },
+          {
+            "date": "2026-09-13",
+            "distance": 0.917,
+            "observed_direction": "increase",
+            "observed_direction_hu": "növekvő katonai aktivitás"
+          },
+          {
+            "date": "2026-07-30",
+            "distance": 0.943,
+            "observed_direction": "decrease",
+            "observed_direction_hu": "csökkenő katonai aktivitás"
+          },
+          {
+            "date": "2026-09-11",
+            "distance": 0.954,
+            "observed_direction": "decrease",
+            "observed_direction_hu": "csökkenő katonai aktivitás"
+          },
+          {
+            "date": "2026-09-02",
+            "distance": 0.956,
+            "observed_direction": "decrease",
+            "observed_direction_hu": "csökkenő katonai aktivitás"
+          },
+          {
+            "date": "2026-07-20",
+            "distance": 0.965,
+            "observed_direction": "increase",
+            "observed_direction_hu": "növekvő katonai aktivitás"
+          },
+          {
+            "date": "2026-09-15",
+            "distance": 1.016,
             "observed_direction": "decrease",
             "observed_direction_hu": "csökkenő katonai aktivitás"
           }
         ]
       },
       "public_signal": {
-        "direction": "decrease",
-        "direction_hu": "csökkenő katonai aktivitás",
+        "direction": "increase",
+        "direction_hu": "növekvő katonai aktivitás",
         "has_signal": true,
         "gate_used": {
           "confidence_threshold": 0.45,
@@ -131,7 +131,7 @@
     },
     "72h": {
       "horizon": "72h",
-      "target_date": "2026-09-28",
+      "target_date": "2026-09-29",
       "configuration": {
         "feature_set": "mai_ddi",
         "stable_threshold_pct": 10.0,
@@ -140,50 +140,50 @@
       "raw_prediction": {
         "direction": "decrease",
         "direction_hu": "csökkenő katonai aktivitás",
-        "top_probability": 0.8223,
-        "confidence_score": 0.7616,
+        "top_probability": 0.526,
+        "confidence_score": 0.4409,
         "probabilities": {
-          "increase": 0.1777,
+          "increase": 0.474,
           "stable": 0.0,
-          "decrease": 0.8223
+          "decrease": 0.526
         },
         "nearest_analogues": [
           {
-            "date": "2026-08-04",
-            "distance": 0.376,
-            "observed_direction": "decrease",
-            "observed_direction_hu": "csökkenő katonai aktivitás"
-          },
-          {
-            "date": "2026-08-25",
-            "distance": 0.433,
-            "observed_direction": "decrease",
-            "observed_direction_hu": "csökkenő katonai aktivitás"
-          },
-          {
-            "date": "2026-08-21",
-            "distance": 0.579,
-            "observed_direction": "decrease",
-            "observed_direction_hu": "csökkenő katonai aktivitás"
-          },
-          {
-            "date": "2026-08-03",
-            "distance": 0.623,
+            "date": "2026-08-12",
+            "distance": 0.377,
             "observed_direction": "increase",
             "observed_direction_hu": "növekvő katonai aktivitás"
           },
           {
-            "date": "2026-09-18",
-            "distance": 0.628,
+            "date": "2026-09-07",
+            "distance": 0.68,
+            "observed_direction": "increase",
+            "observed_direction_hu": "növekvő katonai aktivitás"
+          },
+          {
+            "date": "2026-07-30",
+            "distance": 0.791,
+            "observed_direction": "decrease",
+            "observed_direction_hu": "csökkenő katonai aktivitás"
+          },
+          {
+            "date": "2026-09-08",
+            "distance": 0.806,
+            "observed_direction": "decrease",
+            "observed_direction_hu": "csökkenő katonai aktivitás"
+          },
+          {
+            "date": "2026-09-13",
+            "distance": 0.811,
             "observed_direction": "decrease",
             "observed_direction_hu": "csökkenő katonai aktivitás"
           }
         ]
       },
       "public_signal": {
-        "direction": "decrease",
-        "direction_hu": "csökkenő katonai aktivitás",
-        "has_signal": true,
+        "direction": "no_signal",
+        "direction_hu": "nincs egyértelmű jelzés",
+        "has_signal": false,
         "gate_used": {
           "confidence_threshold": 0.4,
           "probability_threshold": 0.77
@@ -192,12 +192,12 @@
       "gate_calibration": {
         "mode": "adaptive_live_gate",
         "adaptive": true,
-        "evaluated_live_forecasts": 49,
+        "evaluated_live_forecasts": 50,
         "selected_from_live_results": {
           "confidence_threshold": 0.4,
           "probability_threshold": 0.77,
           "signal_sample": 16,
-          "coverage_pct": 32.7,
+          "coverage_pct": 32.0,
           "signal_accuracy_pct": 75.0
         }
       },
@@ -206,10 +206,10 @@
         "coverage_pct": 48.3
       },
       "live_out_of_sample_performance": {
-        "evaluated_forecasts": 49,
+        "evaluated_forecasts": 50,
         "issued_signals": 15,
         "issued_signal_accuracy_pct": 73.3,
-        "raw_direction_accuracy_pct": 42.9
+        "raw_direction_accuracy_pct": 42.0
       }
     }
   },
