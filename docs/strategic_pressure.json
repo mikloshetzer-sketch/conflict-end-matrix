@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T14:32:24.098842+00:00",
+  "generated_at": "2026-09-27T14:38:44.458669+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,31 +18,31 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 608,
-    "kinetic_events_loaded": 770,
-    "unique_events_scanned": 1313,
-    "strategic_evidence_contributions": 360,
+    "non_kinetic_events_loaded": 614,
+    "kinetic_events_loaded": 779,
+    "unique_events_scanned": 1328,
+    "strategic_evidence_contributions": 364,
     "evidence_contributions_by_actor": {
-      "usa": 116,
-      "iran": 244
+      "usa": 118,
+      "iran": 246
     },
     "scored_contributions_by_actor": {
-      "usa": 83,
-      "iran": 130
+      "usa": 85,
+      "iran": 132
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
       "iran": 114
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 314,
+      "non_kinetic": 318,
       "kinetic": 46
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 198,
-      "usa:negotiation": 94,
+      "iran:negotiation": 200,
+      "usa:negotiation": 95,
       "iran:missile_test": 32,
-      "usa:presidential_warning": 16,
+      "usa:presidential_warning": 17,
       "iran:hormuz_threat": 9,
       "usa:ceasefire_support": 8,
       "iran:missile_preparation": 6,
@@ -51,10 +51,10 @@
       "usa:carrier_deployment": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 100,
-      "usa:negotiation": 65,
+      "iran:negotiation": 102,
+      "usa:negotiation": 66,
+      "usa:presidential_warning": 17,
       "iran:missile_test": 16,
-      "usa:presidential_warning": 16,
       "iran:hormuz_threat": 9,
       "iran:missile_preparation": 6,
       "usa:ceasefire_support": 4,
@@ -64,13 +64,13 @@
     },
     "skipped_without_timestamp": 0,
     "skipped_current_utc_day": 3,
-    "history_day_count": 198
+    "history_day_count": 201
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-09-23",
+  "latest_complete_utc_day": "2026-09-26",
   "current": {
-    "date": "2026-09-23",
+    "date": "2026-09-26",
     "calculation_mode": "live",
     "usa": {
       "raw_score": -6.0,
@@ -84,12 +84,12 @@
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000002",
-          "timestamp": "2026-09-23T20:59:43+00:00",
-          "date": "2026-09-23",
+          "event_id": "INFO-000003",
+          "timestamp": "2026-09-26T11:12:52+00:00",
+          "date": "2026-09-26",
           "actor": "usa",
           "bilateral_event": true,
-          "title": "Iran, US still far apart in peace talks, Iranian official says; Pezeshkian vows no surrender - Reuters",
+          "title": "Pezeshkian says Iran ‘no longer trusts talks with Washington’ - Al Jazeera",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
           "event_direction": "mixed",
@@ -116,29 +116,29 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran, US still far apart in peace talks, Iranian official says; Pezeshkian vows no surrender - Reuters",
+          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Pezeshkian says Iran ‘no longer trusts talks with Washington’ - Al Jazeera",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPWjBhV01rbEcwcTJwZjdTbjF1ekxtTnZiRzc2b3p3d1NRVjZZWEUyM0gtQlFPeXBWX0hRdlVpMS11d01GVHpiQmdVY1FlN3dIZUQ4eDRTcTZBRFJxYjRMeVp3eWg5M0Q1YWw5a2N3cEhOUHlhOWRxNmZQTjVLenl2MjRrSENSaUYyTkFhc0ZNdnNoNnN0VXZOM2NhRGRLOWcyUEtXUk9wbThsdXBzc1ZYQW5iRQ?oc=5",
-          "existing_event_score": 4.0,
-          "existing_direction_score": 1.0,
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNSkF5NC1SODlDdVpxazhVLXItbmNtUEg4ZjVVaXZpYUJLbjNHWE1QVWJ5Z1RNR29GRjU3UmdqOUhzY2FJVHIzcUxNV3E1cE40SlpmTHJnZGwxRXJpVmVQS2VlNzV2Vm1nNTRKUmVfOTdqM09WV0tsNDVMQWRiR0JRV2taOUxkZUEzY1RUcjN5Qm1veGhGaGx6Y2F3MTlWQ3M3MkHSAacBQVVfeXFMTzFiTG1MS0M5bFg3Um1BWmRwR0xYa19ON094c2ZPUVhtaUNjZjlHaHlnbVhzbW9FZDlzSWJDbXZWS1I2QVBYVzU3cVZDN3pGR3c1dUZka2NLRVZMR2JucGtTOXlqWEVzcGFsclJ6WkNLdzlWSC1YOFhpaFE3LThaNFlrYm81MXd2V0xFLWdFT216MFVZaDBOZGszSGFIUTRsams1QXJzbUU?oc=5",
+          "existing_event_score": 2.0,
+          "existing_direction_score": 0.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
           "duplicate_daily_indicators": []
         }
       ],
-      "weighted_score_7d": -6.4,
-      "pressure_index_7d": 37.2,
+      "weighted_score_7d": -5.3,
+      "pressure_index_7d": 39.4,
       "pressure_level": "reduced",
       "trend": "strong_decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000002",
-          "timestamp": "2026-09-23T20:59:43+00:00",
-          "date": "2026-09-23",
+          "event_id": "INFO-000003",
+          "timestamp": "2026-09-26T11:12:52+00:00",
+          "date": "2026-09-26",
           "actor": "usa",
           "bilateral_event": true,
-          "title": "Iran, US still far apart in peace talks, Iranian official says; Pezeshkian vows no surrender - Reuters",
+          "title": "Pezeshkian says Iran ‘no longer trusts talks with Washington’ - Al Jazeera",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
           "event_direction": "mixed",
@@ -165,11 +165,11 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran, US still far apart in peace talks, Iranian official says; Pezeshkian vows no surrender - Reuters",
+          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Pezeshkian says Iran ‘no longer trusts talks with Washington’ - Al Jazeera",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPWjBhV01rbEcwcTJwZjdTbjF1ekxtTnZiRzc2b3p3d1NRVjZZWEUyM0gtQlFPeXBWX0hRdlVpMS11d01GVHpiQmdVY1FlN3dIZUQ4eDRTcTZBRFJxYjRMeVp3eWg5M0Q1YWw5a2N3cEhOUHlhOWRxNmZQTjVLenl2MjRrSENSaUYyTkFhc0ZNdnNoNnN0VXZOM2NhRGRLOWcyUEtXUk9wbThsdXBzc1ZYQW5iRQ?oc=5",
-          "existing_event_score": 4.0,
-          "existing_direction_score": 1.0,
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNSkF5NC1SODlDdVpxazhVLXItbmNtUEg4ZjVVaXZpYUJLbjNHWE1QVWJ5Z1RNR29GRjU3UmdqOUhzY2FJVHIzcUxNV3E1cE40SlpmTHJnZGwxRXJpVmVQS2VlNzV2Vm1nNTRKUmVfOTdqM09WV0tsNDVMQWRiR0JRV2taOUxkZUEzY1RUcjN5Qm1veGhGaGx6Y2F3MTlWQ3M3MkHSAacBQVVfeXFMTzFiTG1MS0M5bFg3Um1BWmRwR0xYa19ON094c2ZPUVhtaUNjZjlHaHlnbVhzbW9FZDlzSWJDbXZWS1I2QVBYVzU3cVZDN3pGR3c1dUZka2NLRVZMR2JucGtTOXlqWEVzcGFsclJ6WkNLdzlWSC1YOFhpaFE3LThaNFlrYm81MXd2V0xFLWdFT216MFVZaDBOZGszSGFIUTRsams1QXJzbUU?oc=5",
+          "existing_event_score": 2.0,
+          "existing_direction_score": 0.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
@@ -178,31 +178,31 @@
       ]
     },
     "iran": {
-      "raw_score": -8.0,
+      "raw_score": -6.0,
       "positive_score": 0.0,
-      "negative_score": -8.0,
-      "event_count": 3,
+      "negative_score": -6.0,
+      "event_count": 1,
       "scored_event_count": 1,
-      "evidence_event_count": 3,
-      "suppressed_duplicate_count": 2,
+      "evidence_event_count": 1,
+      "suppressed_duplicate_count": 0,
       "increase_event_count": 0,
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000004",
-          "timestamp": "2026-09-23T10:40:00+00:00",
-          "date": "2026-09-23",
+          "event_id": "INFO-000003",
+          "timestamp": "2026-09-26T11:12:52+00:00",
+          "date": "2026-09-26",
           "actor": "iran",
-          "bilateral_event": false,
-          "title": "Iran denies dropping preconditions amid ‘very productive’ three-hour UN talks in New York - The Guardian",
+          "bilateral_event": true,
+          "title": "Pezeshkian says Iran ‘no longer trusts talks with Washington’ - Al Jazeera",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "de-escalation",
-          "operational_component": -2.0,
+          "event_direction": "mixed",
+          "operational_component": 0.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": -8.0,
-          "final_score": -8.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -221,123 +221,37 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: -2.00; strategic modifier: -6.00; final contribution before daily deduplication: -8.00. Event: Iran denies dropping preconditions amid ‘very productive’ three-hour UN talks in New York - The Guardian",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Pezeshkian says Iran ‘no longer trusts talks with Washington’ - Al Jazeera",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQa3FFVEtERF9lUEJSdEtfQTgxVHY0SHR5M1pjc3M2V1pRQXVQSmlVczNHN19Eb24yVWQ0anI3TVppUDJ4WENSZ3Z3TW1kUkhPRGdRVUI1RWRyMVd5ZGJXMVYwUFRGb0tUcGxrNG1FZFU5S1JPanJodWRiSlBXUVpXSWF5Z0k4Mm9DMXBudXN4MXlZX2lVa0kzTGlIY0pSY1dNSkJGU1ZSM3hZNld1RzhlRGNrTGhSaWRsbW9DSnBPaUNnbnM?oc=5",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNSkF5NC1SODlDdVpxazhVLXItbmNtUEg4ZjVVaXZpYUJLbjNHWE1QVWJ5Z1RNR29GRjU3UmdqOUhzY2FJVHIzcUxNV3E1cE40SlpmTHJnZGwxRXJpVmVQS2VlNzV2Vm1nNTRKUmVfOTdqM09WV0tsNDVMQWRiR0JRV2taOUxkZUEzY1RUcjN5Qm1veGhGaGx6Y2F3MTlWQ3M3MkHSAacBQVVfeXFMTzFiTG1MS0M5bFg3Um1BWmRwR0xYa19ON094c2ZPUVhtaUNjZjlHaHlnbVhzbW9FZDlzSWJDbXZWS1I2QVBYVzU3cVZDN3pGR3c1dUZka2NLRVZMR2JucGtTOXlqWEVzcGFsclJ6WkNLdzlWSC1YOFhpaFE3LThaNFlrYm81MXd2V0xFLWdFT216MFVZaDBOZGszSGFIUTRsams1QXJzbUU?oc=5",
           "existing_event_score": 2.0,
-          "existing_direction_score": 2.0,
+          "existing_direction_score": 0.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
           "duplicate_daily_indicators": []
-        },
-        {
-          "event_id": "INFO-000006",
-          "timestamp": "2026-09-23T04:47:52+00:00",
-          "date": "2026-09-23",
-          "actor": "iran",
-          "bilateral_event": false,
-          "title": "US, Iran hold mediated UNGA talks on ending war, opening Strait of Hormuz - Al Jazeera",
-          "source_layer": "non_kinetic",
-          "event_type": "diplomatic",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": 0.0,
-          "duplicate_indicator_evidence": true,
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "primary_daily_indicator": null,
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_regime_destroying_war",
-                "name": "Avoid regime-destroying war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: US, Iran hold mediated UNGA talks on ending war, opening Strait of Hormuz - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNLXRPQTVqXzVzVmR1V3YtSUptb2pyejlHYzRaOWFQR2dhdmNrdnBkTUpVUU9ETy1kRTJhRkE1SlpidGF5UU1KZ0ZOSlJ2WjU4bWlkMUQ3WVZGdGlNS2ZiQWU3Q3pqdHVHV211TGpnVzloZG9LcDlXeEliY01ueTg1dmc5RzZUZEwzamJnZlZZYlRpc1ZLcWZQQXNkQzhqdzFBM00xdzZRZnJEbDlpOE4yVWRR0gG3AUFVX3lxTE02elBuektCcFRIeV9GcFF0TS0zNEhPR2hLM0NoYVNiZzRFcUIyd0NmVlgyTFV3OUFqbGRuVHVVVWRwVUlOMDlSRkJ2VGZxc0Y5WEt4NWpycC1MLVFhaHVUM3drd2xTWUhVdW8xYnBERXBvZnJMMmFFZFBNZno5WjRqTVJzWlBOQUdrT2E5YTdiQ0c5em9abmdBQ0tUUnM1dDlfODk3dGcweE1PZmtaemt1bjZIakMwYw?oc=5",
-          "existing_event_score": 1.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [],
-          "duplicate_daily_indicators": [
-            "negotiation"
-          ]
-        },
-        {
-          "event_id": "INFO-000002",
-          "timestamp": "2026-09-23T20:59:43+00:00",
-          "date": "2026-09-23",
-          "actor": "iran",
-          "bilateral_event": true,
-          "title": "Iran, US still far apart in peace talks, Iranian official says; Pezeshkian vows no surrender - Reuters",
-          "source_layer": "non_kinetic",
-          "event_type": "diplomatic",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": 0.0,
-          "duplicate_indicator_evidence": true,
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "primary_daily_indicator": null,
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_regime_destroying_war",
-                "name": "Avoid regime-destroying war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran, US still far apart in peace talks, Iranian official says; Pezeshkian vows no surrender - Reuters",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPWjBhV01rbEcwcTJwZjdTbjF1ekxtTnZiRzc2b3p3d1NRVjZZWEUyM0gtQlFPeXBWX0hRdlVpMS11d01GVHpiQmdVY1FlN3dIZUQ4eDRTcTZBRFJxYjRMeVp3eWg5M0Q1YWw5a2N3cEhOUHlhOWRxNmZQTjVLenl2MjRrSENSaUYyTkFhc0ZNdnNoNnN0VXZOM2NhRGRLOWcyUEtXUk9wbThsdXBzc1ZYQW5iRQ?oc=5",
-          "existing_event_score": 4.0,
-          "existing_direction_score": 1.0,
-          "winning_daily_indicators": [],
-          "duplicate_daily_indicators": [
-            "negotiation"
-          ]
         }
       ],
       "weighted_score_7d": -17.9,
       "pressure_index_7d": 14.2,
       "pressure_level": "low",
-      "trend": "strong_decrease",
+      "trend": "decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000004",
-          "timestamp": "2026-09-23T10:40:00+00:00",
-          "date": "2026-09-23",
+          "event_id": "INFO-000003",
+          "timestamp": "2026-09-26T11:12:52+00:00",
+          "date": "2026-09-26",
           "actor": "iran",
-          "bilateral_event": false,
-          "title": "Iran denies dropping preconditions amid ‘very productive’ three-hour UN talks in New York - The Guardian",
+          "bilateral_event": true,
+          "title": "Pezeshkian says Iran ‘no longer trusts talks with Washington’ - Al Jazeera",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "de-escalation",
-          "operational_component": -2.0,
+          "event_direction": "mixed",
+          "operational_component": 0.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": -8.0,
-          "final_score": -8.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -356,11 +270,11 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: -2.00; strategic modifier: -6.00; final contribution before daily deduplication: -8.00. Event: Iran denies dropping preconditions amid ‘very productive’ three-hour UN talks in New York - The Guardian",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Pezeshkian says Iran ‘no longer trusts talks with Washington’ - Al Jazeera",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQa3FFVEtERF9lUEJSdEtfQTgxVHY0SHR5M1pjc3M2V1pRQXVQSmlVczNHN19Eb24yVWQ0anI3TVppUDJ4WENSZ3Z3TW1kUkhPRGdRVUI1RWRyMVd5ZGJXMVYwUFRGb0tUcGxrNG1FZFU5S1JPanJodWRiSlBXUVpXSWF5Z0k4Mm9DMXBudXN4MXlZX2lVa0kzTGlIY0pSY1dNSkJGU1ZSM3hZNld1RzhlRGNrTGhSaWRsbW9DSnBPaUNnbnM?oc=5",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNSkF5NC1SODlDdVpxazhVLXItbmNtUEg4ZjVVaXZpYUJLbjNHWE1QVWJ5Z1RNR29GRjU3UmdqOUhzY2FJVHIzcUxNV3E1cE40SlpmTHJnZGwxRXJpVmVQS2VlNzV2Vm1nNTRKUmVfOTdqM09WV0tsNDVMQWRiR0JRV2taOUxkZUEzY1RUcjN5Qm1veGhGaGx6Y2F3MTlWQ3M3MkHSAacBQVVfeXFMTzFiTG1MS0M5bFg3Um1BWmRwR0xYa19ON094c2ZPUVhtaUNjZjlHaHlnbVhzbW9FZDlzSWJDbXZWS1I2QVBYVzU3cVZDN3pGR3c1dUZka2NLRVZMR2JucGtTOXlqWEVzcGFsclJ6WkNLdzlWSC1YOFhpaFE3LThaNFlrYm81MXd2V0xFLWdFT216MFVZaDBOZGszSGFIUTRsams1QXJzbUU?oc=5",
           "existing_event_score": 2.0,
-          "existing_direction_score": 2.0,
+          "existing_direction_score": 0.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
@@ -369,7 +283,7 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 25.7,
+      "pressure_index_7d": 26.8,
       "pressure_level": "low",
       "trend": "strong_decrease",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
