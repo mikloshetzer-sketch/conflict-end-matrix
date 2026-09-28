@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-09-28T11:43:55.303729Z",
-  "source_generated_at": "2026-09-28T05:26:27Z",
+  "generated_at": "2026-09-28T17:32:27.826651Z",
+  "source_generated_at": "2026-09-28T12:00:20Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1461,
-  "event_count": 779,
-  "rejected_count": 682,
+  "source_event_count": 1464,
+  "event_count": 781,
+  "rejected_count": 683,
   "rejection_counts": {
-    "category_not_kinetic": 465,
+    "category_not_kinetic": 466,
     "no_confirmed_action_language": 175,
     "context_or_hypothetical": 21,
     "retrospective_or_aftermath": 13,
@@ -22,8 +22,8 @@
     "alert_only": 2
   },
   "category_counts": {
-    "missile": 262,
-    "strike": 207,
+    "missile": 263,
+    "strike": 208,
     "drone": 123,
     "airstrike": 116,
     "explosion": 45,
@@ -31,15 +31,15 @@
     "intercept": 1
   },
   "severity_counts": {
-    "medium": 427,
+    "medium": 429,
     "high": 309,
     "low": 41,
     "critical": 2
   },
   "actor_counts": {
-    "Iran": 261,
+    "Iran": 262,
     "United States": 162,
-    "Israel": 135,
+    "Israel": 136,
     "Yemen": 112,
     "Unknown actor": 59,
     "Saudi Arabia": 23,
@@ -49,6 +49,58 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-2jyt54ag90q00",
+      "timestamp": "2026-09-28T10:08:01Z",
+      "event_type": "kinetic",
+      "subtype": "strike",
+      "category": "strike",
+      "severity": "medium",
+      "actor": "isr",
+      "actor_label": "Israel",
+      "actor_method": "raw_source.origin",
+      "target_country": "Lebanon",
+      "location": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Israeli strike in Kantara village area, southern Lebanon",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/130948",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-116oycqwhx2o0",
+      "timestamp": "2026-09-28T05:52:47Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "medium",
+      "actor": "irn",
+      "actor_label": "Iran",
+      "actor_method": "raw_source.origin",
+      "target_country": "Persian Gulf",
+      "location": "Persian Gulf",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Iranian cruise missile strikes U.S. vessel in Strait of Hormuz on September 14, wounding 8 American Marines with smoke inhalation and concussion symptoms",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/130921",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-2hnmsi4qll400",
       "timestamp": "2026-09-27T09:15:12Z",
