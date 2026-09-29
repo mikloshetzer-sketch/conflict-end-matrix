@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T17:32:29.027325+00:00",
+  "generated_at": "2026-09-29T15:37:15.436561+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,28 +18,28 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 618,
-    "kinetic_events_loaded": 781,
-    "unique_events_scanned": 1334,
-    "strategic_evidence_contributions": 366,
+    "non_kinetic_events_loaded": 625,
+    "kinetic_events_loaded": 783,
+    "unique_events_scanned": 1343,
+    "strategic_evidence_contributions": 368,
     "evidence_contributions_by_actor": {
       "usa": 119,
-      "iran": 247
+      "iran": 249
     },
     "scored_contributions_by_actor": {
       "usa": 86,
-      "iran": 133
+      "iran": 134
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
-      "iran": 114
+      "iran": 115
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 320,
+      "non_kinetic": 322,
       "kinetic": 46
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 201,
+      "iran:negotiation": 203,
       "usa:negotiation": 96,
       "iran:missile_test": 32,
       "usa:presidential_warning": 17,
@@ -51,7 +51,7 @@
       "usa:carrier_deployment": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 103,
+      "iran:negotiation": 104,
       "usa:negotiation": 67,
       "usa:presidential_warning": 17,
       "iran:missile_test": 16,
@@ -63,146 +63,58 @@
       "usa:carrier_deployment": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 2,
-    "history_day_count": 202
+    "skipped_current_utc_day": 1,
+    "history_day_count": 203
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-09-27",
+  "latest_complete_utc_day": "2026-09-28",
   "current": {
-    "date": "2026-09-27",
+    "date": "2026-09-28",
     "calculation_mode": "live",
     "usa": {
-      "raw_score": -9.0,
+      "raw_score": 0.0,
       "positive_score": 0.0,
-      "negative_score": -9.0,
-      "event_count": 1,
-      "scored_event_count": 1,
-      "evidence_event_count": 1,
+      "negative_score": 0.0,
+      "event_count": 0,
+      "scored_event_count": 0,
+      "evidence_event_count": 0,
       "suppressed_duplicate_count": 0,
       "increase_event_count": 0,
-      "decrease_event_count": 1,
-      "contributors": [
-        {
-          "event_id": "INFO-000001",
-          "timestamp": "2026-09-27T21:21:00+00:00",
-          "date": "2026-09-27",
-          "actor": "usa",
-          "bilateral_event": true,
-          "title": "Trump expects talks with Iran to resume this week after rejecting proposal - CBS News",
-          "source_layer": "non_kinetic",
-          "event_type": "diplomatic",
-          "event_direction": "de-escalation",
-          "operational_component": -3.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -9.0,
-          "final_score": -9.0,
-          "duplicate_indicator_evidence": false,
-          "daily_score_suppressed": false,
-          "suppression_reason": null,
-          "primary_daily_indicator": "negotiation",
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_full_scale_war",
-                "name": "Avoid full-scale regional war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "United States: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: Trump expects talks with Iran to resume this week after rejecting proposal - CBS News",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNMkdfOTQxTjRqN04xZFVPX21CZDlGNTFDREhiZjV5RmZWQ090V0RtV3dZamlyQnMxTFVRU29OV2xyLUM0Q2RKTDMwR2hjVjRaaE96SU5HQzN3VHREbE04ZzhHYXNiamw1R0d5ZEozY1J3d2ZfazZoM3J5S2VlYUkxaUpyU3piczhjWkw3M09MQVI?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 3.0,
-          "winning_daily_indicators": [
-            "negotiation"
-          ],
-          "duplicate_daily_indicators": []
-        }
-      ],
-      "weighted_score_7d": -13.6,
-      "pressure_index_7d": 22.8,
+      "decrease_event_count": 0,
+      "contributors": [],
+      "weighted_score_7d": -12.25,
+      "pressure_index_7d": 25.5,
       "pressure_level": "low",
-      "trend": "strong_decrease",
-      "strongest_contributors": [
-        {
-          "event_id": "INFO-000001",
-          "timestamp": "2026-09-27T21:21:00+00:00",
-          "date": "2026-09-27",
-          "actor": "usa",
-          "bilateral_event": true,
-          "title": "Trump expects talks with Iran to resume this week after rejecting proposal - CBS News",
-          "source_layer": "non_kinetic",
-          "event_type": "diplomatic",
-          "event_direction": "de-escalation",
-          "operational_component": -3.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -9.0,
-          "final_score": -9.0,
-          "duplicate_indicator_evidence": false,
-          "daily_score_suppressed": false,
-          "suppression_reason": null,
-          "primary_daily_indicator": "negotiation",
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_full_scale_war",
-                "name": "Avoid full-scale regional war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "United States: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: Trump expects talks with Iran to resume this week after rejecting proposal - CBS News",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNMkdfOTQxTjRqN04xZFVPX21CZDlGNTFDREhiZjV5RmZWQ090V0RtV3dZamlyQnMxTFVRU29OV2xyLUM0Q2RKTDMwR2hjVjRaaE96SU5HQzN3VHREbE04ZzhHYXNiamw1R0d5ZEozY1J3d2ZfazZoM3J5S2VlYUkxaUpyU3piczhjWkw3M09MQVI?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 3.0,
-          "winning_daily_indicators": [
-            "negotiation"
-          ],
-          "duplicate_daily_indicators": []
-        }
-      ]
+      "trend": "increase",
+      "strongest_contributors": []
     },
     "iran": {
-      "raw_score": -9.0,
+      "raw_score": -6.0,
       "positive_score": 0.0,
-      "negative_score": -9.0,
-      "event_count": 1,
+      "negative_score": -6.0,
+      "event_count": 2,
       "scored_event_count": 1,
-      "evidence_event_count": 1,
-      "suppressed_duplicate_count": 0,
+      "evidence_event_count": 2,
+      "suppressed_duplicate_count": 1,
       "increase_event_count": 0,
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000001",
-          "timestamp": "2026-09-27T21:21:00+00:00",
-          "date": "2026-09-27",
+          "event_id": "INFO-000002",
+          "timestamp": "2026-09-28T13:42:00+00:00",
+          "date": "2026-09-28",
           "actor": "iran",
-          "bilateral_event": true,
-          "title": "Trump expects talks with Iran to resume this week after rejecting proposal - CBS News",
+          "bilateral_event": false,
+          "title": "US, Iran expected to hold separate talks with mediators as pressure ramps on Tehran - The Times of Israel",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "de-escalation",
-          "operational_component": -3.0,
+          "event_direction": "mixed",
+          "operational_component": 0.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": -9.0,
-          "final_score": -9.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -221,37 +133,80 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: Trump expects talks with Iran to resume this week after rejecting proposal - CBS News",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: US, Iran expected to hold separate talks with mediators as pressure ramps on Tehran - The Times of Israel",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNMkdfOTQxTjRqN04xZFVPX21CZDlGNTFDREhiZjV5RmZWQ090V0RtV3dZamlyQnMxTFVRU29OV2xyLUM0Q2RKTDMwR2hjVjRaaE96SU5HQzN3VHREbE04ZzhHYXNiamw1R0d5ZEozY1J3d2ZfazZoM3J5S2VlYUkxaUpyU3piczhjWkw3M09MQVI?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 3.0,
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQdjJPMUp3cHljQl96dXY3MmVGck5Zb0JJT1pjdHgwVGNZRHcxcS10ZTYyTUM0YnJQcFZMUEZxRW9ZUXJCbGJqOGxOQVdTUHRSUDdUMjRjaHBvTUNxYnUwR0Nubk05OWg1VlVtN2dQTkxCcE0xZXE1WVhnZkNVTHhKekhOUmh3T0hsR2VOeGhwNWxRS1hManBrVzVDUlh0Mm9aSGVlei01Y01senkxTk1yZEtIRdIBuAFBVV95cUxOSFBFY0FCdHU2VzY3bFNkV1MtbjlBSXlzY3k0TjdNLVZlbVBqQmE2TjRLXzdoTW4xQU1RNThZNkVJVFhMenlTWHRfMnlVZTg1QS1RSHdxWVdfNnBqY0dUS084ZkQyc2wtRE54eG0zRnhDcVdCVElIUDhFZzJyUnhWd21Fa09TZkNNYlBuQUhFczFiNWFQdld0LXNFOE9XRFJfbmcyY1Fadi05SEtPS1FCdEVRcktfTlBk?oc=5",
+          "existing_event_score": 4.0,
+          "existing_direction_score": 1.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
           "duplicate_daily_indicators": []
-        }
-      ],
-      "weighted_score_7d": -23.0,
-      "pressure_index_7d": 4.0,
-      "pressure_level": "low",
-      "trend": "strong_decrease",
-      "strongest_contributors": [
+        },
         {
-          "event_id": "INFO-000001",
-          "timestamp": "2026-09-27T21:21:00+00:00",
-          "date": "2026-09-27",
+          "event_id": "INFO-000003",
+          "timestamp": "2026-09-28T13:39:00+00:00",
+          "date": "2026-09-28",
           "actor": "iran",
-          "bilateral_event": true,
-          "title": "Trump expects talks with Iran to resume this week after rejecting proposal - CBS News",
+          "bilateral_event": false,
+          "title": "US, Iran separately talk with mediators in latest bid to end war - Reuters",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "de-escalation",
-          "operational_component": -3.0,
+          "event_direction": "mixed",
+          "operational_component": 0.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": -9.0,
-          "final_score": -9.0,
+          "original_final_score": -6.0,
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": true,
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "primary_daily_indicator": null,
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_regime_destroying_war",
+                "name": "Avoid regime-destroying war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: US, Iran separately talk with mediators in latest bid to end war - Reuters",
+          "source": "\"middle east conflict when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQMmZHcTFrcTNwTDVHTi1veU9KdXk1SC11X1NDWHB3VnBhbUQyOXh6Y002MFJaN1cyb0pfLVRIZnE4RUgwR1pieG0zY05NajZrNmFIbl9CTmpGbENaa01VOGEwZVZURnphdVdmUHJ2cWxGMURSNXNrRzdGanlKdWhqc0NiMWlHRnhTWlN4dlZIMjlNSEhxVlpkNFI4N1VTWHZfYWZsNi1lcE9GYjFsWDVmRW1QbFk2WjBhTWpfUS1aSTBNc3dBYW90RDVadjg?oc=5",
+          "existing_event_score": 1.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [],
+          "duplicate_daily_indicators": [
+            "negotiation"
+          ]
+        }
+      ],
+      "weighted_score_7d": -24.05,
+      "pressure_index_7d": 1.9,
+      "pressure_level": "low",
+      "trend": "decrease",
+      "strongest_contributors": [
+        {
+          "event_id": "INFO-000002",
+          "timestamp": "2026-09-28T13:42:00+00:00",
+          "date": "2026-09-28",
+          "actor": "iran",
+          "bilateral_event": false,
+          "title": "US, Iran expected to hold separate talks with mediators as pressure ramps on Tehran - The Times of Israel",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -270,11 +225,11 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: Trump expects talks with Iran to resume this week after rejecting proposal - CBS News",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: US, Iran expected to hold separate talks with mediators as pressure ramps on Tehran - The Times of Israel",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNMkdfOTQxTjRqN04xZFVPX21CZDlGNTFDREhiZjV5RmZWQ090V0RtV3dZamlyQnMxTFVRU29OV2xyLUM0Q2RKTDMwR2hjVjRaaE96SU5HQzN3VHREbE04ZzhHYXNiamw1R0d5ZEozY1J3d2ZfazZoM3J5S2VlYUkxaUpyU3piczhjWkw3M09MQVI?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 3.0,
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQdjJPMUp3cHljQl96dXY3MmVGck5Zb0JJT1pjdHgwVGNZRHcxcS10ZTYyTUM0YnJQcFZMUEZxRW9ZUXJCbGJqOGxOQVdTUHRSUDdUMjRjaHBvTUNxYnUwR0Nubk05OWg1VlVtN2dQTkxCcE0xZXE1WVhnZkNVTHhKekhOUmh3T0hsR2VOeGhwNWxRS1hManBrVzVDUlh0Mm9aSGVlei01Y01senkxTk1yZEtIRdIBuAFBVV95cUxOSFBFY0FCdHU2VzY3bFNkV1MtbjlBSXlzY3k0TjdNLVZlbVBqQmE2TjRLXzdoTW4xQU1RNThZNkVJVFhMenlTWHRfMnlVZTg1QS1RSHdxWVdfNnBqY0dUS084ZkQyc2wtRE54eG0zRnhDcVdCVElIUDhFZzJyUnhWd21Fa09TZkNNYlBuQUhFczFiNWFQdld0LXNFOE9XRFJfbmcyY1Fadi05SEtPS1FCdEVRcktfTlBk?oc=5",
+          "existing_event_score": 4.0,
+          "existing_direction_score": 1.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
@@ -283,9 +238,9 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 13.4,
+      "pressure_index_7d": 13.7,
       "pressure_level": "low",
-      "trend": "strong_decrease",
+      "trend": "stable",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
   }
