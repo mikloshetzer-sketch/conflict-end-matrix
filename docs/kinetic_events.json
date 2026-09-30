@@ -1,38 +1,38 @@
 {
-  "generated_at": "2026-09-29T15:37:14.238779Z",
-  "source_generated_at": "2026-09-29T11:36:22Z",
+  "generated_at": "2026-09-30T11:11:29.358456Z",
+  "source_generated_at": "2026-09-30T06:01:57Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": false,
+    "required_today_utc": true,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1479,
-  "event_count": 783,
-  "rejected_count": 696,
+  "source_event_count": 1484,
+  "event_count": 784,
+  "rejected_count": 700,
   "rejection_counts": {
-    "category_not_kinetic": 466,
-    "no_confirmed_action_language": 186,
+    "category_not_kinetic": 468,
+    "no_confirmed_action_language": 187,
     "context_or_hypothetical": 23,
     "retrospective_or_aftermath": 13,
-    "outside_window": 6,
+    "outside_window": 7,
     "alert_only": 2
   },
   "category_counts": {
     "missile": 264,
     "strike": 208,
     "drone": 124,
-    "airstrike": 116,
+    "airstrike": 117,
     "explosion": 45,
     "ground": 25,
     "intercept": 1
   },
   "severity_counts": {
     "medium": 430,
-    "high": 309,
+    "high": 310,
     "low": 42,
     "critical": 2
   },
@@ -42,7 +42,7 @@
     "Israel": 136,
     "Yemen": 112,
     "Unknown actor": 59,
-    "Saudi Arabia": 23,
+    "Saudi Arabia": 24,
     "Iraq": 13,
     "Lebanon": 12,
     "Jordan": 1,
@@ -50,6 +50,32 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-1xewj73v7ke80",
+      "timestamp": "2026-09-29T18:00:53Z",
+      "event_type": "kinetic",
+      "subtype": "airstrike",
+      "category": "airstrike",
+      "severity": "high",
+      "actor": "sau",
+      "actor_label": "Saudi Arabia",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Saudi Air Force conducts at least 17 airstrikes in Yemen; previous airstrike on Taiz market and warehouse kills 8 civilians, injures 40",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/84719",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-2wl2hd8gwwc00",
       "timestamp": "2026-09-28T20:32:16Z",
