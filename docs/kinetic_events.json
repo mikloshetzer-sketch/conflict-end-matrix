@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-09-30T15:47:12.314000Z",
-  "source_generated_at": "2026-09-30T12:37:31Z",
+  "generated_at": "2026-10-01T11:38:55.684271Z",
+  "source_generated_at": "2026-10-01T07:49:27Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": false,
+    "required_today_utc": true,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1492,
-  "event_count": 784,
-  "rejected_count": 708,
+  "source_event_count": 1501,
+  "event_count": 786,
+  "rejected_count": 715,
   "rejection_counts": {
-    "category_not_kinetic": 476,
-    "no_confirmed_action_language": 187,
+    "category_not_kinetic": 482,
+    "no_confirmed_action_language": 188,
     "context_or_hypothetical": 23,
     "retrospective_or_aftermath": 13,
     "outside_window": 7,
     "alert_only": 2
   },
   "category_counts": {
-    "missile": 264,
+    "missile": 266,
     "strike": 208,
     "drone": 124,
     "airstrike": 117,
@@ -31,8 +31,8 @@
     "intercept": 1
   },
   "severity_counts": {
-    "medium": 430,
-    "high": 310,
+    "medium": 431,
+    "high": 311,
     "low": 42,
     "critical": 2
   },
@@ -40,7 +40,7 @@
     "Iran": 263,
     "United States": 162,
     "Israel": 136,
-    "Yemen": 112,
+    "Yemen": 114,
     "Unknown actor": 59,
     "Saudi Arabia": 24,
     "Iraq": 13,
@@ -50,6 +50,58 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-3actoxj0lzy00",
+      "timestamp": "2026-09-30T17:32:34Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "high",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Yemeni ballistic missiles strike Saudi Aramco's North Ghawar production facility in eastern Saudi Arabia, causing fires and damage to world's largest oilfield",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/84762",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-1rpddxxi2xuo0",
+      "timestamp": "2026-09-30T15:51:32Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "medium",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Yemeni ballistic missiles target Saudi Arabia, smoke seen rising from East-West Pipeline or nearby facility",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/84758",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-1xewj73v7ke80",
       "timestamp": "2026-09-29T18:00:53Z",
