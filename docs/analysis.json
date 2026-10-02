@@ -1,20 +1,20 @@
 {
-  "report_date": "2026-09-30",
-  "created_at": "2026-09-30T12:29:00.231414",
+  "report_date": "2026-10-01",
+  "created_at": "2026-10-01T13:07:20.631017",
   "article_count": 50,
-  "total_score": 6,
-  "conflict_index": 0.12,
-  "assessment": "neutral",
-  "escalation_pressure": -27,
-  "diplomatic_pressure": 33,
-  "net_signal": 6,
+  "total_score": -6,
+  "conflict_index": -0.12,
+  "assessment": "mild escalation",
+  "escalation_pressure": -32,
+  "diplomatic_pressure": 26,
+  "net_signal": -6,
   "top_drivers": [
     {
       "driver": "war",
       "category": "Military escalation",
-      "count": 23,
+      "count": 21,
       "weight": -1,
-      "impact": -23
+      "impact": -21
     },
     {
       "driver": "ceasefire",
@@ -24,13 +24,6 @@
       "impact": 9
     },
     {
-      "driver": "talks",
-      "category": "Diplomacy / negotiation",
-      "count": 4,
-      "weight": 2,
-      "impact": 8
-    },
-    {
       "driver": "deal",
       "category": "Ceasefire / settlement",
       "count": 4,
@@ -38,18 +31,25 @@
       "impact": 4
     },
     {
-      "driver": "peace",
+      "driver": "talks",
       "category": "Diplomacy / negotiation",
       "count": 2,
       "weight": 2,
       "impact": 4
     },
     {
-      "driver": "mediator",
-      "category": "Diplomacy / negotiation",
+      "driver": "attack",
+      "category": "Military escalation",
       "count": 2,
-      "weight": 2,
-      "impact": 4
+      "weight": -2,
+      "impact": -4
+    },
+    {
+      "driver": "truce",
+      "category": "Ceasefire / settlement",
+      "count": 1,
+      "weight": 3,
+      "impact": 3
     },
     {
       "driver": "strikes",
@@ -66,6 +66,13 @@
       "impact": -2
     },
     {
+      "driver": "mediator",
+      "category": "Diplomacy / negotiation",
+      "count": 1,
+      "weight": 2,
+      "impact": 2
+    },
+    {
       "driver": "diplomacy",
       "category": "Diplomacy / negotiation",
       "count": 1,
@@ -78,38 +85,62 @@
       "count": 1,
       "weight": 2,
       "impact": 2
+    },
+    {
+      "driver": "attacks",
+      "category": "Military escalation",
+      "count": 1,
+      "weight": -2,
+      "impact": -2
+    },
+    {
+      "driver": "threat",
+      "category": "Threats / retaliation",
+      "count": 1,
+      "weight": -1,
+      "impact": -1
     }
   ],
   "categories": [
     {
       "category": "Military escalation",
-      "score": -27,
-      "count": 25,
+      "score": -31,
+      "count": 26,
       "keywords": [
+        "attack",
+        "attacks",
         "strike",
         "strikes",
         "war"
       ]
     },
     {
+      "category": "Ceasefire / settlement",
+      "score": 16,
+      "count": 8,
+      "keywords": [
+        "ceasefire",
+        "deal",
+        "truce"
+      ]
+    },
+    {
       "category": "Diplomacy / negotiation",
-      "score": 20,
-      "count": 10,
+      "score": 10,
+      "count": 5,
       "keywords": [
         "dialogue",
         "diplomacy",
         "mediator",
-        "peace",
         "talks"
       ]
     },
     {
-      "category": "Ceasefire / settlement",
-      "score": 13,
-      "count": 7,
+      "category": "Threats / retaliation",
+      "score": -1,
+      "count": 1,
       "keywords": [
-        "ceasefire",
-        "deal"
+        "threat"
       ]
     }
   ],
@@ -126,14 +157,25 @@
       ]
     },
     {
-      "title": "Iran, US still far apart in peace talks, Iranian official says; Pezeshkian vows no surrender - Reuters",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPWjBhV01rbEcwcTJwZjdTbjF1ekxtTnZiRzc2b3p3d1NRVjZZWEUyM0gtQlFPeXBWX0hRdlVpMS11d01GVHpiQmdVY1FlN3dIZUQ4eDRTcTZBRFJxYjRMeVp3eWg5M0Q1YWw5a2N3cEhOUHlhOWRxNmZQTjVLenl2MjRrSENSaUYyTkFhc0ZNdnNoNnN0VXZOM2NhRGRLOWcyUEtXUk9wbThsdXBzc1ZYQW5iRQ?oc=5",
+      "title": "Iran touts Hormuz attacks as oil flows increase despite tensions - Al Jazeera",
+      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNcHFndWVQUVpiSnAwM0EtTUdVSVZvSERZZnZkQUswTVRETVpIdWJtU1VrRFpzdUxWNUplbUI3Z2F6UEFZdk43NWN4R1llRVJOMjNDV1oxNTF3dTJOOUdEQVVDT0JLdVpwa1J2UU9mMm5iczcwaEpubnR1WEIzdnBUWE9xVlJtdlIwZTc2YXpGWW5RU1RWdnUxa1B4ODB1RFNUd2lXdlZVazbSAa4BQVVfeXFMT3hIUnlIQUNRSU9pbnFSNTh4cnc0LXRiV3M2OE9VeFNab2FneWpIMUVoaTJvd1dpYnhfUkRRODJRcDNmcmZrRHpFcVhKWHlzTUYtdk0yaGc4YWxOQzVRQlhDOUJXLXdmQjNiMkhyaWZMM0lKZzY0QlRWeGlsMUFtQUt3T0lPNk42bmxnNFhjNWRmc3NUYTI0VGs2N2RjanVvNVZUek5uV0Y1c2dOdDhB?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Wed, 23 Sep 2026 20:59:43 GMT",
+      "published": "Mon, 28 Sep 2026 17:46:06 GMT",
+      "score": -4,
+      "tags": [
+        "attack",
+        "attacks"
+      ]
+    },
+    {
+      "title": "‘Better deal’: What’s behind Trump’s rejection of Iran’s truce offer? - Al Jazeera",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQY0hQaDkwNFIzbjI0YWI2MjhoSUVOM1Rlc3pyNms1UFhyTC1JRlpwdWZUUElGNXBsMEgwV0hhWDlGNnNJVkJGUk05SU15a2haSjYydlhDX2hjbndfdjlmWXNUajQzMHhuSDR2cmJfclJ3djFHSHlZWnlhNy1YOFlfaXhJLWJGYUd5WWdpT0g1enJGMkhIS0tFN1dpQjJrN1hOM2JFa0F30gGrAUFVX3lxTFBLY0J2cXR1UEFyR0hRMEZjNS1xUUJTaVA4YkRpSkppdUdjdXhEZi00Y012cXVjejBUMEdoMkFQS3M5clhUR3pmT0tQNE40UGxtSkVDUlBuTEZKNnByRWdHaWoyTG95TndIOVFDZk1Bd0g4ZzRuNVZTeVRaVkFNWGNjVFVoSFd5VmIxUWZMam53S3lEMURYcE9FZ0E4TnQ5TXNCQjFPekxFUVBySQ?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Sun, 27 Sep 2026 19:39:35 GMT",
       "score": 4,
       "tags": [
-        "talks",
-        "peace"
+        "truce",
+        "deal"
       ]
     },
     {
@@ -145,6 +187,17 @@
       "tags": [
         "talks",
         "mediator"
+      ]
+    },
+    {
+      "title": "Mounting pressure on Iran could lead to attack on Israel, ex-national security council head warns - The Jerusalem Post",
+      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBpaHNGNEpLdFFJTXMyQ3NWSXVwTG8zZkVtY1EyanpoREFIRTdhdGRGZ3UyMTBkbTlQd1VWaGctc2lQdVo5SUlzVDdQZHdGQllCdnZWMzQzRExja040YlNsbjZqTmdjV2M1Wnc?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Wed, 30 Sep 2026 14:52:18 GMT",
+      "score": -3,
+      "tags": [
+        "attack",
+        "war"
       ]
     },
     {
@@ -168,18 +221,6 @@
       ]
     },
     {
-      "title": "U.S., Iran hold separate mediator talks as Mideast oil exports hit war-time high - CNBC",
-      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9fZUZGTl9lMzZmQlQ0ZzBhUS1aRmpVdlR0UzNPN0pmd0c4SnZlSndJUUVzRlY3YUJhUzhENVRFN0dCYmg3c29faGI1S3RrMFM3VTgyWG9XczNjVDU4Zk1qY2ZTbjJFNm1xYjhzbVIwWdIBdEFVX3lxTE1HX2NHR3JaYklIYkhGeHd2aGRiX0M5LXpERmdqdnRCUW5LdllQUEtVdU5Jcnc1VS1TLUxibXN5VGJCcTdNWlpDNUJ0cVhUOUtFRmR5SG15NlRNMzlfSHllcTBqNmtzMWk1ODhKWTBwUkFmY1JU?oc=5",
-      "source": "\"middle east conflict when:7d\" - Google News",
-      "published": "Tue, 29 Sep 2026 04:02:47 GMT",
-      "score": 3,
-      "tags": [
-        "war",
-        "talks",
-        "mediator"
-      ]
-    },
-    {
       "title": "Trump rejected Iran's ceasefire proposal. What it means for U.S. allies in the Gulf - NPR",
       "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOQTFqVDhHN3o5ZWg3U2Z0a1FSVFlxXzRfUmJrVnhoOGxIajM0cmZsV3FtTXlzUEFhbm9DbllvMDR1VFZEd1UzQXc3MnFPanhnM2lTazNsU3ZDeERldFh2eGtNenNpd2VrV1FwM014c04zOVZ0dDRxVHdaOUliaF8zYXNTVUZEaHNhdE5sQUo4VllQRkw1Vm9GdkFMQ093bEVtM2xuenZFYUVMcmVfQTc4N3NNQ3VpQUxCaTV4cUVpUDF1Z00?oc=5",
       "source": "\"middle east conflict when:7d\" - Google News",
@@ -190,7 +231,7 @@
       ]
     },
     {
-      "title": "Iran offers to reopen Strait of Hormuz within 7 days and restart nuclear talks - CNBC",
+      "title": "Iran offers to reopen Strait of Hormuz within 7 days and restart nuclear talks - cnbc.com",
       "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5aZ0hqeDJKZlFWZTE2eWwxei1Cd21MaFNkZFZPRWxzNllJdmUzUXVGMFZ6THlXempxQmo1NzhRV1FuNG1sd3hTSW9NT1hvSVdEMVhfVDI5bFBlYWk0T3pvTGd3ZXpjcDJIbEHSAW9BVV95cUxQbGRDUzktQ3JVU3VVcnpXSk5LN20tZEVPbEZ1d3NjSDJKa0xleWt4V054NFNtYU54WElPeWE5ZXk4VnlDVUg4TUIxaExtbGZBS2xkZEdXeVpPd0Z4VFk1cWo1QnRQSFBOUXNUUE5nbW8?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
       "published": "Fri, 25 Sep 2026 05:37:21 GMT",
@@ -210,6 +251,16 @@
       ]
     },
     {
+      "title": "2026 Iran war | Oil, Explained, United States, Israel, Strait of Hormuz, Map, & Conflict - Britannica",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5nTzlhOGZTS180cWNtVG91c2VWRVJFYlk0cW5Ba1RHUEFOSEtldU15QktQT0EzRVY1ZVdZZ0VTRHVWTVhyN1IzeU1wbmlDMUhrQ3Roc1YxcmdMUQ?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Wed, 30 Sep 2026 05:00:00 GMT",
+      "score": -1,
+      "tags": [
+        "war"
+      ]
+    },
+    {
       "title": "What’s Going On In Iran? - War on the Rocks",
       "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE54QU1vWXpFSHdpSG5WR3JkZ1lyMGFvRjVEeExRNFdTSjM3WFQyUG5Gd0o5d2tnMmE4ck4yb1RVZzFTZ2tJZHFZbTFjZFNhclBUcC1hYlI4R3B6dUN5eVE?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
@@ -218,31 +269,11 @@
       "tags": [
         "war"
       ]
-    },
-    {
-      "title": "Iran Warns Of 'Dangerous Consequences' Of Netanyahu Trip To UAE - Radio Free Europe/Radio Liberty",
-      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9OeTc1VE5lcEx0QzNhVlh6TnBVZUhfdi1MR0xZQnJOLWo2U3dHb09ucVhPNXctSTFXNTF6R3EwZEJXSl96SF9zS2FPUWFwcHpHeFVMaGtUckZiaGIydHc1SFMwT3U1R1h5WnMtY2RGUkdtYm1jV2VUMWFB?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Wed, 30 Sep 2026 00:23:38 GMT",
-      "score": -1,
-      "tags": [
-        "war"
-      ]
-    },
-    {
-      "title": "How much is the war with Iran costing the US? - ABC News - Breaking News, Latest News and Videos",
-      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9IdUNEd0tTanFlNnlJTkJxbFZUNF9iVHZJQ3BVVlFLSTVaZ2Q3d0Z3U01SdGM1WHFnUDJiajB0LXJ1T0M0Z28wcTZscV85VjN1LUd6T2xZU0ZQQ1haTzhzbUFWcnlVSmt4WXk2TTUyUlJfRU15ZWfSAXtBVV95cUxNYXV6SHZKUS1PcVlLdEQ4dmdzNUdKck1JLTg0V0F1TzFEc1g2UzBHUXdUdUd0MkdOSzg0MlNhVXVZakVUTDdBWmI2QnRKVWQ3SG95djhkbUo2S0NmbEZ3bENMamdiVF92XzBzdlcyUDVSTEpWcWVUeEIyb0U?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Tue, 29 Sep 2026 16:25:49 GMT",
-      "score": -1,
-      "tags": [
-        "war"
-      ]
     }
   ],
   "integrity": {
     "driver_net_equals_total_score": true,
-    "driver_net": 6,
-    "source_total_score": 6
+    "driver_net": -6,
+    "source_total_score": -6
   }
 }
