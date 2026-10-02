@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T16:14:17.148269+00:00",
+  "generated_at": "2026-10-02T15:38:50.671489+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,29 +18,29 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 628,
-    "kinetic_events_loaded": 786,
-    "unique_events_scanned": 1349,
-    "strategic_evidence_contributions": 370,
+    "non_kinetic_events_loaded": 633,
+    "kinetic_events_loaded": 788,
+    "unique_events_scanned": 1356,
+    "strategic_evidence_contributions": 374,
     "evidence_contributions_by_actor": {
-      "usa": 119,
-      "iran": 251
+      "usa": 121,
+      "iran": 253
     },
     "scored_contributions_by_actor": {
-      "usa": 86,
-      "iran": 135
+      "usa": 88,
+      "iran": 136
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
-      "iran": 116
+      "iran": 117
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 324,
+      "non_kinetic": 328,
       "kinetic": 46
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 205,
-      "usa:negotiation": 96,
+      "iran:negotiation": 207,
+      "usa:negotiation": 98,
       "iran:missile_test": 32,
       "usa:presidential_warning": 17,
       "iran:hormuz_threat": 9,
@@ -51,8 +51,8 @@
       "usa:carrier_deployment": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 105,
-      "usa:negotiation": 67,
+      "iran:negotiation": 106,
+      "usa:negotiation": 69,
       "usa:presidential_warning": 17,
       "iran:missile_test": 16,
       "iran:hormuz_threat": 9,
@@ -63,58 +63,41 @@
       "usa:carrier_deployment": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 0,
-    "history_day_count": 204
+    "skipped_current_utc_day": 3,
+    "history_day_count": 205
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-09-29",
+  "latest_complete_utc_day": "2026-09-30",
   "current": {
-    "date": "2026-09-29",
+    "date": "2026-09-30",
     "calculation_mode": "live",
     "usa": {
-      "raw_score": 0.0,
+      "raw_score": -6.0,
       "positive_score": 0.0,
-      "negative_score": 0.0,
-      "event_count": 0,
-      "scored_event_count": 0,
-      "evidence_event_count": 0,
-      "suppressed_duplicate_count": 0,
-      "increase_event_count": 0,
-      "decrease_event_count": 0,
-      "contributors": [],
-      "weighted_score_7d": -9.3,
-      "pressure_index_7d": 31.4,
-      "pressure_level": "reduced",
-      "trend": "strong_increase",
-      "strongest_contributors": []
-    },
-    "iran": {
-      "raw_score": -10.0,
-      "positive_score": 0.0,
-      "negative_score": -10.0,
-      "event_count": 2,
+      "negative_score": -6.0,
+      "event_count": 1,
       "scored_event_count": 1,
-      "evidence_event_count": 2,
-      "suppressed_duplicate_count": 1,
+      "evidence_event_count": 1,
+      "suppressed_duplicate_count": 0,
       "increase_event_count": 0,
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000003",
-          "timestamp": "2026-09-29T02:39:46+00:00",
-          "date": "2026-09-29",
-          "actor": "iran",
-          "bilateral_event": false,
-          "title": "Iran’s Araghchi meets Qatari mediators as US calls for nuclear talks - Al Jazeera",
+          "event_id": "INFO-000004",
+          "timestamp": "2026-09-30T17:11:44+00:00",
+          "date": "2026-09-30",
+          "actor": "usa",
+          "bilateral_event": true,
+          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - abcnews.com",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "de-escalation",
-          "operational_component": -4.0,
+          "event_direction": "mixed",
+          "operational_component": 0.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": -10.0,
-          "final_score": -10.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -126,42 +109,48 @@
               "score": -6.0,
               "direction": "decrease",
               "interest": {
-                "id": "avoid_regime_destroying_war",
-                "name": "Avoid regime-destroying war",
+                "id": "avoid_full_scale_war",
+                "name": "Avoid full-scale regional war",
                 "weight": 10.0
               },
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: -4.00; strategic modifier: -6.00; final contribution before daily deduplication: -10.00. Event: Iran’s Araghchi meets Qatari mediators as US calls for nuclear talks - Al Jazeera",
+          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - abcnews.com",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPcE44alQta2RFLXNvU0JiaFZSbUxkcExUYzBMeEhRX0dWeUZMNVNUYUdybHhQOXpnZnRLT1BhV1RIVVIyTHBhUjdpNC0xN3huVl9fcVpxSExGZ213MGJobkl6b2Jvc0lRRWVUekNSWUVrQmM4eVZxQ1k2R3N3MDlqeWVSdFlxVE5NRVpzbmQ1LTFOanp6YU5SSHpzeWhuNkNoMVAzUk1hd0NvQVJmN3fSAbMBQVVfeXFMUGpqdDdjQnVuTmxIUWZxQWRlLUF3NTR1c2JjYlVWaUFJT0ZPMVF4MV9yN2x2RlZIWUs5Y0dyLTRfWG9TdTBqZjBibjl0ajB2Q0thcV9ZZnljMWVvcFRVTGh1aV9qX3MweE1ZNzdGWUJkbGhQeHZlUmdQWjB3eVJpdVp6Wks2OWh6cUZFeE9lWTVIb0RCRk5rOWJsQlphYzE3VlYzWGp1N2ZVdHVQYUJkUjlwNmM?oc=5",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
           "existing_event_score": 4.0,
-          "existing_direction_score": 3.0,
+          "existing_direction_score": 1.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
           "duplicate_daily_indicators": []
-        },
+        }
+      ],
+      "weighted_score_7d": -18.45,
+      "pressure_index_7d": 13.1,
+      "pressure_level": "low",
+      "trend": "strong_decrease",
+      "strongest_contributors": [
         {
-          "event_id": "INFO-000002",
-          "timestamp": "2026-09-29T04:02:47+00:00",
-          "date": "2026-09-29",
-          "actor": "iran",
+          "event_id": "INFO-000004",
+          "timestamp": "2026-09-30T17:11:44+00:00",
+          "date": "2026-09-30",
+          "actor": "usa",
           "bilateral_event": true,
-          "title": "U.S., Iran hold separate mediator talks as Mideast oil exports hit war-time high - CNBC",
+          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - abcnews.com",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "de-escalation",
-          "operational_component": -3.0,
+          "event_direction": "mixed",
+          "operational_component": 0.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": -9.0,
-          "final_score": 0.0,
-          "duplicate_indicator_evidence": true,
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "primary_daily_indicator": null,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
+          "duplicate_indicator_evidence": false,
+          "daily_score_suppressed": false,
+          "suppression_reason": null,
+          "primary_daily_indicator": "negotiation",
           "indicators": [
             {
               "id": "negotiation",
@@ -169,44 +158,51 @@
               "score": -6.0,
               "direction": "decrease",
               "interest": {
-                "id": "avoid_regime_destroying_war",
-                "name": "Avoid regime-destroying war",
+                "id": "avoid_full_scale_war",
+                "name": "Avoid full-scale regional war",
                 "weight": 10.0
               },
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: U.S., Iran hold separate mediator talks as Mideast oil exports hit war-time high - CNBC",
-          "source": "\"middle east conflict when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9fZUZGTl9lMzZmQlQ0ZzBhUS1aRmpVdlR0UzNPN0pmd0c4SnZlSndJUUVzRlY3YUJhUzhENVRFN0dCYmg3c29faGI1S3RrMFM3VTgyWG9XczNjVDU4Zk1qY2ZTbjJFNm1xYjhzbVIwWdIBdEFVX3lxTE1HX2NHR3JaYklIYkhGeHd2aGRiX0M5LXpERmdqdnRCUW5LdllQUEtVdU5Jcnc1VS1TLUxibXN5VGJCcTdNWlpDNUJ0cVhUOUtFRmR5SG15NlRNMzlfSHllcTBqNmtzMWk1ODhKWTBwUkFmY1JU?oc=5",
-          "existing_event_score": 3.0,
-          "existing_direction_score": 2.0,
-          "winning_daily_indicators": [],
-          "duplicate_daily_indicators": [
+          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - abcnews.com",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
+          "existing_event_score": 4.0,
+          "existing_direction_score": 1.0,
+          "winning_daily_indicators": [
             "negotiation"
-          ]
+          ],
+          "duplicate_daily_indicators": []
         }
-      ],
-      "weighted_score_7d": -28.3,
-      "pressure_index_7d": 0.0,
-      "pressure_level": "low",
-      "trend": "decrease",
-      "strongest_contributors": [
+      ]
+    },
+    "iran": {
+      "raw_score": -6.0,
+      "positive_score": 0.0,
+      "negative_score": -6.0,
+      "event_count": 1,
+      "scored_event_count": 1,
+      "evidence_event_count": 1,
+      "suppressed_duplicate_count": 0,
+      "increase_event_count": 0,
+      "decrease_event_count": 1,
+      "contributors": [
         {
-          "event_id": "INFO-000003",
-          "timestamp": "2026-09-29T02:39:46+00:00",
-          "date": "2026-09-29",
+          "event_id": "INFO-000004",
+          "timestamp": "2026-09-30T17:11:44+00:00",
+          "date": "2026-09-30",
           "actor": "iran",
-          "bilateral_event": false,
-          "title": "Iran’s Araghchi meets Qatari mediators as US calls for nuclear talks - Al Jazeera",
+          "bilateral_event": true,
+          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - abcnews.com",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "de-escalation",
-          "operational_component": -4.0,
+          "event_direction": "mixed",
+          "operational_component": 0.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": -10.0,
-          "final_score": -10.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -225,11 +221,60 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: -4.00; strategic modifier: -6.00; final contribution before daily deduplication: -10.00. Event: Iran’s Araghchi meets Qatari mediators as US calls for nuclear talks - Al Jazeera",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - abcnews.com",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPcE44alQta2RFLXNvU0JiaFZSbUxkcExUYzBMeEhRX0dWeUZMNVNUYUdybHhQOXpnZnRLT1BhV1RIVVIyTHBhUjdpNC0xN3huVl9fcVpxSExGZ213MGJobkl6b2Jvc0lRRWVUekNSWUVrQmM4eVZxQ1k2R3N3MDlqeWVSdFlxVE5NRVpzbmQ1LTFOanp6YU5SSHpzeWhuNkNoMVAzUk1hd0NvQVJmN3fSAbMBQVVfeXFMUGpqdDdjQnVuTmxIUWZxQWRlLUF3NTR1c2JjYlVWaUFJT0ZPMVF4MV9yN2x2RlZIWUs5Y0dyLTRfWG9TdTBqZjBibjl0ajB2Q0thcV9ZZnljMWVvcFRVTGh1aV9qX3MweE1ZNzdGWUJkbGhQeHZlUmdQWjB3eVJpdVp6Wks2OWh6cUZFeE9lWTVIb0RCRk5rOWJsQlphYzE3VlYzWGp1N2ZVdHVQYUJkUjlwNmM?oc=5",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
           "existing_event_score": 4.0,
-          "existing_direction_score": 3.0,
+          "existing_direction_score": 1.0,
+          "winning_daily_indicators": [
+            "negotiation"
+          ],
+          "duplicate_daily_indicators": []
+        }
+      ],
+      "weighted_score_7d": -27.55,
+      "pressure_index_7d": 0.0,
+      "pressure_level": "low",
+      "trend": "stable",
+      "strongest_contributors": [
+        {
+          "event_id": "INFO-000004",
+          "timestamp": "2026-09-30T17:11:44+00:00",
+          "date": "2026-09-30",
+          "actor": "iran",
+          "bilateral_event": true,
+          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - abcnews.com",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
+          "duplicate_indicator_evidence": false,
+          "daily_score_suppressed": false,
+          "suppression_reason": null,
+          "primary_daily_indicator": "negotiation",
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_regime_destroying_war",
+                "name": "Avoid regime-destroying war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - abcnews.com",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
+          "existing_event_score": 4.0,
+          "existing_direction_score": 1.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
@@ -238,9 +283,9 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 15.7,
+      "pressure_index_7d": 6.55,
       "pressure_level": "low",
-      "trend": "increase",
+      "trend": "decrease",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
   }

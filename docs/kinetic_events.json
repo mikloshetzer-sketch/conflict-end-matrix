@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-10-02T11:08:32.589120Z",
-  "source_generated_at": "2026-10-02T05:48:15Z",
+  "generated_at": "2026-10-02T15:38:49.961286Z",
+  "source_generated_at": "2026-10-02T12:38:17Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1510,
-  "event_count": 787,
+  "source_event_count": 1511,
+  "event_count": 788,
   "rejected_count": 723,
   "rejection_counts": {
     "category_not_kinetic": 487,
@@ -22,7 +22,7 @@
     "alert_only": 2
   },
   "category_counts": {
-    "missile": 266,
+    "missile": 267,
     "strike": 208,
     "drone": 124,
     "airstrike": 117,
@@ -31,7 +31,7 @@
     "intercept": 1
   },
   "severity_counts": {
-    "medium": 431,
+    "medium": 432,
     "high": 312,
     "low": 42,
     "critical": 2
@@ -40,7 +40,7 @@
     "Iran": 263,
     "United States": 162,
     "Israel": 136,
-    "Yemen": 115,
+    "Yemen": 116,
     "Unknown actor": 59,
     "Saudi Arabia": 24,
     "Iraq": 13,
@@ -50,6 +50,32 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-jkwlpfp4zig0",
+      "timestamp": "2026-10-02T12:26:42Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "medium",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Houthi drone and missile strikes against Saudi-led coalition military facility in Aden, explosions reported in city",
+      "source_name": "OSINTdefender",
+      "source_url": "https://t.me/OSINTdefender/20388",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-114idpu5qoyo0",
       "timestamp": "2026-10-01T20:26:27Z",
