@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T15:38:50.671489+00:00",
+  "generated_at": "2026-10-03T14:14:02.764835+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,29 +18,29 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 633,
-    "kinetic_events_loaded": 788,
-    "unique_events_scanned": 1356,
-    "strategic_evidence_contributions": 374,
+    "non_kinetic_events_loaded": 634,
+    "kinetic_events_loaded": 792,
+    "unique_events_scanned": 1361,
+    "strategic_evidence_contributions": 376,
     "evidence_contributions_by_actor": {
-      "usa": 121,
-      "iran": 253
+      "usa": 122,
+      "iran": 254
     },
     "scored_contributions_by_actor": {
       "usa": 88,
       "iran": 136
     },
     "suppressed_duplicates_by_actor": {
-      "usa": 33,
-      "iran": 117
+      "usa": 34,
+      "iran": 118
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 328,
+      "non_kinetic": 330,
       "kinetic": 46
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 207,
-      "usa:negotiation": 98,
+      "iran:negotiation": 208,
+      "usa:negotiation": 99,
       "iran:missile_test": 32,
       "usa:presidential_warning": 17,
       "iran:hormuz_threat": 9,
@@ -63,7 +63,7 @@
       "usa:carrier_deployment": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 3,
+    "skipped_current_utc_day": 1,
     "history_day_count": 205
   },
   "configuration_warnings": [],
@@ -76,15 +76,15 @@
       "raw_score": -6.0,
       "positive_score": 0.0,
       "negative_score": -6.0,
-      "event_count": 1,
+      "event_count": 2,
       "scored_event_count": 1,
-      "evidence_event_count": 1,
-      "suppressed_duplicate_count": 0,
+      "evidence_event_count": 2,
+      "suppressed_duplicate_count": 1,
       "increase_event_count": 0,
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000004",
+          "event_id": "INFO-000005",
           "timestamp": "2026-09-30T17:11:44+00:00",
           "date": "2026-09-30",
           "actor": "usa",
@@ -125,6 +125,49 @@
             "negotiation"
           ],
           "duplicate_daily_indicators": []
+        },
+        {
+          "event_id": "INFO-000006",
+          "timestamp": "2026-09-30T14:52:18+00:00",
+          "date": "2026-09-30",
+          "actor": "usa",
+          "bilateral_event": true,
+          "title": "Mounting pressure on Iran could lead to attack on Israel despite US peace talks - The Jerusalem Post",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -6.0,
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": true,
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "primary_daily_indicator": null,
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_full_scale_war",
+                "name": "Avoid full-scale regional war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Mounting pressure on Iran could lead to attack on Israel despite US peace talks - The Jerusalem Post",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBpaHNGNEpLdFFJTXMyQ3NWSXVwTG8zZkVtY1EyanpoREFIRTdhdGRGZ3UyMTBkbTlQd1VWaGctc2lQdVo5SUlzVDdQZHdGQllCdnZWMzQzRExja040YlNsbjZqTmdjV2M1Wnc?oc=5",
+          "existing_event_score": 2.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [],
+          "duplicate_daily_indicators": [
+            "negotiation"
+          ]
         }
       ],
       "weighted_score_7d": -18.45,
@@ -133,7 +176,7 @@
       "trend": "strong_decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000004",
+          "event_id": "INFO-000005",
           "timestamp": "2026-09-30T17:11:44+00:00",
           "date": "2026-09-30",
           "actor": "usa",
@@ -181,15 +224,15 @@
       "raw_score": -6.0,
       "positive_score": 0.0,
       "negative_score": -6.0,
-      "event_count": 1,
+      "event_count": 2,
       "scored_event_count": 1,
-      "evidence_event_count": 1,
-      "suppressed_duplicate_count": 0,
+      "evidence_event_count": 2,
+      "suppressed_duplicate_count": 1,
       "increase_event_count": 0,
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000004",
+          "event_id": "INFO-000005",
           "timestamp": "2026-09-30T17:11:44+00:00",
           "date": "2026-09-30",
           "actor": "iran",
@@ -230,6 +273,49 @@
             "negotiation"
           ],
           "duplicate_daily_indicators": []
+        },
+        {
+          "event_id": "INFO-000006",
+          "timestamp": "2026-09-30T14:52:18+00:00",
+          "date": "2026-09-30",
+          "actor": "iran",
+          "bilateral_event": true,
+          "title": "Mounting pressure on Iran could lead to attack on Israel despite US peace talks - The Jerusalem Post",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -6.0,
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": true,
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "primary_daily_indicator": null,
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_regime_destroying_war",
+                "name": "Avoid regime-destroying war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Mounting pressure on Iran could lead to attack on Israel despite US peace talks - The Jerusalem Post",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBpaHNGNEpLdFFJTXMyQ3NWSXVwTG8zZkVtY1EyanpoREFIRTdhdGRGZ3UyMTBkbTlQd1VWaGctc2lQdVo5SUlzVDdQZHdGQllCdnZWMzQzRExja040YlNsbjZqTmdjV2M1Wnc?oc=5",
+          "existing_event_score": 2.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [],
+          "duplicate_daily_indicators": [
+            "negotiation"
+          ]
         }
       ],
       "weighted_score_7d": -27.55,
@@ -238,7 +324,7 @@
       "trend": "stable",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000004",
+          "event_id": "INFO-000005",
           "timestamp": "2026-09-30T17:11:44+00:00",
           "date": "2026-09-30",
           "actor": "iran",

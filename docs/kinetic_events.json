@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-10-03T10:26:32.005527Z",
-  "source_generated_at": "2026-10-03T06:35:58Z",
+  "generated_at": "2026-10-03T14:14:01.849357Z",
+  "source_generated_at": "2026-10-03T12:03:37Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1517,
-  "event_count": 791,
-  "rejected_count": 726,
+  "source_event_count": 1520,
+  "event_count": 792,
+  "rejected_count": 728,
   "rejection_counts": {
-    "category_not_kinetic": 487,
+    "category_not_kinetic": 489,
     "no_confirmed_action_language": 194,
     "context_or_hypothetical": 23,
     "retrospective_or_aftermath": 13,
@@ -22,7 +22,7 @@
     "alert_only": 2
   },
   "category_counts": {
-    "missile": 269,
+    "missile": 270,
     "strike": 208,
     "drone": 124,
     "airstrike": 118,
@@ -32,7 +32,7 @@
   },
   "severity_counts": {
     "medium": 434,
-    "high": 313,
+    "high": 314,
     "low": 42,
     "critical": 2
   },
@@ -40,7 +40,7 @@
     "Iran": 264,
     "United States": 162,
     "Israel": 136,
-    "Yemen": 118,
+    "Yemen": 119,
     "Unknown actor": 59,
     "Saudi Arabia": 24,
     "Iraq": 13,
@@ -50,6 +50,32 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-26wegeb9gexw0",
+      "timestamp": "2026-10-03T11:45:55Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "high",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Houthi missiles strike ARAMCO refinery in Riyadh",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/84989",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-2vq2l40jbre00",
       "timestamp": "2026-10-02T16:15:54Z",
