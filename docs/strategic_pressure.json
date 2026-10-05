@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T14:43:49.631114+00:00",
+  "generated_at": "2026-10-05T18:13:57.694217+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,13 +18,13 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 635,
-    "kinetic_events_loaded": 796,
-    "unique_events_scanned": 1366,
-    "strategic_evidence_contributions": 376,
+    "non_kinetic_events_loaded": 636,
+    "kinetic_events_loaded": 805,
+    "unique_events_scanned": 1375,
+    "strategic_evidence_contributions": 377,
     "evidence_contributions_by_actor": {
       "usa": 122,
-      "iran": 254
+      "iran": 255
     },
     "scored_contributions_by_actor": {
       "usa": 88,
@@ -32,14 +32,14 @@
     },
     "suppressed_duplicates_by_actor": {
       "usa": 34,
-      "iran": 118
+      "iran": 119
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 330,
+      "non_kinetic": 331,
       "kinetic": 46
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 208,
+      "iran:negotiation": 209,
       "usa:negotiation": 99,
       "iran:missile_test": 32,
       "usa:presidential_warning": 17,
@@ -63,7 +63,7 @@
       "usa:carrier_deployment": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 1,
+    "skipped_current_utc_day": 5,
     "history_day_count": 205
   },
   "configuration_warnings": [],
@@ -84,7 +84,7 @@
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000006",
+          "event_id": "INFO-000007",
           "timestamp": "2026-09-30T17:11:44+00:00",
           "date": "2026-09-30",
           "actor": "usa",
@@ -127,7 +127,7 @@
           "duplicate_daily_indicators": []
         },
         {
-          "event_id": "INFO-000007",
+          "event_id": "INFO-000008",
           "timestamp": "2026-09-30T14:52:18+00:00",
           "date": "2026-09-30",
           "actor": "usa",
@@ -176,7 +176,7 @@
       "trend": "strong_decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000006",
+          "event_id": "INFO-000007",
           "timestamp": "2026-09-30T17:11:44+00:00",
           "date": "2026-09-30",
           "actor": "usa",
@@ -232,7 +232,7 @@
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000006",
+          "event_id": "INFO-000007",
           "timestamp": "2026-09-30T17:11:44+00:00",
           "date": "2026-09-30",
           "actor": "iran",
@@ -275,7 +275,7 @@
           "duplicate_daily_indicators": []
         },
         {
-          "event_id": "INFO-000007",
+          "event_id": "INFO-000008",
           "timestamp": "2026-09-30T14:52:18+00:00",
           "date": "2026-09-30",
           "actor": "iran",
@@ -324,7 +324,7 @@
       "trend": "stable",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000006",
+          "event_id": "INFO-000007",
           "timestamp": "2026-09-30T17:11:44+00:00",
           "date": "2026-09-30",
           "actor": "iran",
