@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-10-05T18:13:56.447726Z",
-  "source_generated_at": "2026-10-05T16:02:37Z",
+  "generated_at": "2026-10-06T12:03:28.468343Z",
+  "source_generated_at": "2026-10-06T09:26:21Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": false,
+    "required_today_utc": true,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1547,
-  "event_count": 805,
-  "rejected_count": 742,
+  "source_event_count": 1555,
+  "event_count": 808,
+  "rejected_count": 747,
   "rejection_counts": {
-    "category_not_kinetic": 501,
+    "category_not_kinetic": 506,
     "no_confirmed_action_language": 196,
     "context_or_hypothetical": 23,
     "retrospective_or_aftermath": 13,
@@ -22,7 +22,7 @@
     "alert_only": 2
   },
   "category_counts": {
-    "missile": 273,
+    "missile": 276,
     "strike": 212,
     "drone": 124,
     "airstrike": 123,
@@ -31,7 +31,7 @@
     "intercept": 1
   },
   "severity_counts": {
-    "medium": 441,
+    "medium": 444,
     "high": 318,
     "low": 44,
     "critical": 2
@@ -40,7 +40,7 @@
     "Iran": 264,
     "United States": 162,
     "Israel": 138,
-    "Yemen": 123,
+    "Yemen": 126,
     "Unknown actor": 61,
     "Saudi Arabia": 29,
     "Iraq": 13,
@@ -50,6 +50,58 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-33cusuwrn4k00",
+      "timestamp": "2026-10-06T05:41:13Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "medium",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Houthis fire multiple missiles and drones at Riyadh international airport, air traffic temporarily halted",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/131435",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-u4rpjc5sau80",
+      "timestamp": "2026-10-06T05:19:47Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "medium",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Houthi missile attacks target Riyadh and other Saudi cities, Saudi-led coalition confirms interceptions",
+      "source_name": "OSINTdefender",
+      "source_url": "https://t.me/OSINTdefender/20423",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "general_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-26mj528j1yqo0",
       "timestamp": "2026-10-05T14:50:50Z",
@@ -2803,6 +2855,32 @@
       "validation": {
         "accepted": true,
         "reason": "general_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-15bpfb5tp0e80",
+      "timestamp": "2026-09-11T00:00:00Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "medium",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Houthi forces release ISR footage of ballistic missile strike on large PLC technical gathering in Ras AlArah",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/85091",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
         "mode": "strict_kinetic_v2"
       }
     },
