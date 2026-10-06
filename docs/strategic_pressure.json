@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T18:13:57.694217+00:00",
+  "generated_at": "2026-10-06T15:48:44.624499+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,29 +18,29 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 636,
-    "kinetic_events_loaded": 805,
-    "unique_events_scanned": 1375,
-    "strategic_evidence_contributions": 377,
+    "non_kinetic_events_loaded": 638,
+    "kinetic_events_loaded": 808,
+    "unique_events_scanned": 1380,
+    "strategic_evidence_contributions": 379,
     "evidence_contributions_by_actor": {
-      "usa": 122,
-      "iran": 255
+      "usa": 123,
+      "iran": 256
     },
     "scored_contributions_by_actor": {
-      "usa": 88,
-      "iran": 136
+      "usa": 89,
+      "iran": 137
     },
     "suppressed_duplicates_by_actor": {
       "usa": 34,
       "iran": 119
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 331,
+      "non_kinetic": 333,
       "kinetic": 46
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 209,
-      "usa:negotiation": 99,
+      "iran:negotiation": 210,
+      "usa:negotiation": 100,
       "iran:missile_test": 32,
       "usa:presidential_warning": 17,
       "iran:hormuz_threat": 9,
@@ -51,8 +51,8 @@
       "usa:carrier_deployment": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 106,
-      "usa:negotiation": 69,
+      "iran:negotiation": 107,
+      "usa:negotiation": 70,
       "usa:presidential_warning": 17,
       "iran:missile_test": 16,
       "iran:hormuz_threat": 9,
@@ -63,41 +63,41 @@
       "usa:carrier_deployment": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 5,
-    "history_day_count": 205
+    "skipped_current_utc_day": 2,
+    "history_day_count": 209
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-09-30",
+  "latest_complete_utc_day": "2026-10-04",
   "current": {
-    "date": "2026-09-30",
+    "date": "2026-10-04",
     "calculation_mode": "live",
     "usa": {
-      "raw_score": -6.0,
+      "raw_score": -2.0,
       "positive_score": 0.0,
-      "negative_score": -6.0,
-      "event_count": 2,
+      "negative_score": -2.0,
+      "event_count": 1,
       "scored_event_count": 1,
-      "evidence_event_count": 2,
-      "suppressed_duplicate_count": 1,
+      "evidence_event_count": 1,
+      "suppressed_duplicate_count": 0,
       "increase_event_count": 0,
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000007",
-          "timestamp": "2026-09-30T17:11:44+00:00",
-          "date": "2026-09-30",
+          "event_id": "INFO-000002",
+          "timestamp": "2026-10-04T21:41:47+00:00",
+          "date": "2026-10-04",
           "actor": "usa",
           "bilateral_event": true,
-          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - abcnews.com",
+          "title": "Iran says no military solution to war as peace talks with US stall - France 24",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
+          "event_direction": "escalation",
+          "operational_component": 4.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": -6.0,
+          "original_final_score": -2.0,
+          "final_score": -2.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -116,80 +116,37 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - abcnews.com",
+          "reason": "United States: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: Iran says no military solution to war as peace talks with US stall - France 24",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
-          "existing_event_score": 4.0,
-          "existing_direction_score": 1.0,
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOYkdGTmxyRWNXbGxHTklnUzRHbmk0OHJYNVQ2NUFpZHZ0NnB4V0xXa1ZMLWN0UmY0TlFxMHJtbHpwY0lvOFEyak90eVZJSlZHbjl3MTl1ZDFYY2FWQkJfOExRNkxCNXNuX1B2bUYxdnNLRzBYbkcyMjF4RHpoRzdRaUZmRm9JNjlkdmZTWWxLOFNpdjdJV3ZhVA?oc=5",
+          "existing_event_score": 3.0,
+          "existing_direction_score": -4.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
           "duplicate_daily_indicators": []
-        },
-        {
-          "event_id": "INFO-000008",
-          "timestamp": "2026-09-30T14:52:18+00:00",
-          "date": "2026-09-30",
-          "actor": "usa",
-          "bilateral_event": true,
-          "title": "Mounting pressure on Iran could lead to attack on Israel despite US peace talks - The Jerusalem Post",
-          "source_layer": "non_kinetic",
-          "event_type": "diplomatic",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": 0.0,
-          "duplicate_indicator_evidence": true,
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "primary_daily_indicator": null,
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_full_scale_war",
-                "name": "Avoid full-scale regional war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Mounting pressure on Iran could lead to attack on Israel despite US peace talks - The Jerusalem Post",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBpaHNGNEpLdFFJTXMyQ3NWSXVwTG8zZkVtY1EyanpoREFIRTdhdGRGZ3UyMTBkbTlQd1VWaGctc2lQdVo5SUlzVDdQZHdGQllCdnZWMzQzRExja040YlNsbjZqTmdjV2M1Wnc?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [],
-          "duplicate_daily_indicators": [
-            "negotiation"
-          ]
         }
       ],
-      "weighted_score_7d": -18.45,
-      "pressure_index_7d": 13.1,
-      "pressure_level": "low",
-      "trend": "strong_decrease",
+      "weighted_score_7d": -5.9,
+      "pressure_index_7d": 38.2,
+      "pressure_level": "reduced",
+      "trend": "increase",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000007",
-          "timestamp": "2026-09-30T17:11:44+00:00",
-          "date": "2026-09-30",
+          "event_id": "INFO-000002",
+          "timestamp": "2026-10-04T21:41:47+00:00",
+          "date": "2026-10-04",
           "actor": "usa",
           "bilateral_event": true,
-          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - abcnews.com",
+          "title": "Iran says no military solution to war as peace talks with US stall - France 24",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
+          "event_direction": "escalation",
+          "operational_component": 4.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": -6.0,
+          "original_final_score": -2.0,
+          "final_score": -2.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -208,11 +165,11 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - abcnews.com",
+          "reason": "United States: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: Iran says no military solution to war as peace talks with US stall - France 24",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
-          "existing_event_score": 4.0,
-          "existing_direction_score": 1.0,
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOYkdGTmxyRWNXbGxHTklnUzRHbmk0OHJYNVQ2NUFpZHZ0NnB4V0xXa1ZMLWN0UmY0TlFxMHJtbHpwY0lvOFEyak90eVZJSlZHbjl3MTl1ZDFYY2FWQkJfOExRNkxCNXNuX1B2bUYxdnNLRzBYbkcyMjF4RHpoRzdRaUZmRm9JNjlkdmZTWWxLOFNpdjdJV3ZhVA?oc=5",
+          "existing_event_score": 3.0,
+          "existing_direction_score": -4.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
@@ -221,31 +178,31 @@
       ]
     },
     "iran": {
-      "raw_score": -6.0,
+      "raw_score": -2.0,
       "positive_score": 0.0,
-      "negative_score": -6.0,
-      "event_count": 2,
+      "negative_score": -2.0,
+      "event_count": 1,
       "scored_event_count": 1,
-      "evidence_event_count": 2,
-      "suppressed_duplicate_count": 1,
+      "evidence_event_count": 1,
+      "suppressed_duplicate_count": 0,
       "increase_event_count": 0,
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000007",
-          "timestamp": "2026-09-30T17:11:44+00:00",
-          "date": "2026-09-30",
+          "event_id": "INFO-000002",
+          "timestamp": "2026-10-04T21:41:47+00:00",
+          "date": "2026-10-04",
           "actor": "iran",
           "bilateral_event": true,
-          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - abcnews.com",
+          "title": "Iran says no military solution to war as peace talks with US stall - France 24",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
+          "event_direction": "escalation",
+          "operational_component": 4.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": -6.0,
+          "original_final_score": -2.0,
+          "final_score": -2.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -264,80 +221,37 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - abcnews.com",
+          "reason": "Iran: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: Iran says no military solution to war as peace talks with US stall - France 24",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
-          "existing_event_score": 4.0,
-          "existing_direction_score": 1.0,
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOYkdGTmxyRWNXbGxHTklnUzRHbmk0OHJYNVQ2NUFpZHZ0NnB4V0xXa1ZMLWN0UmY0TlFxMHJtbHpwY0lvOFEyak90eVZJSlZHbjl3MTl1ZDFYY2FWQkJfOExRNkxCNXNuX1B2bUYxdnNLRzBYbkcyMjF4RHpoRzdRaUZmRm9JNjlkdmZTWWxLOFNpdjdJV3ZhVA?oc=5",
+          "existing_event_score": 3.0,
+          "existing_direction_score": -4.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
           "duplicate_daily_indicators": []
-        },
-        {
-          "event_id": "INFO-000008",
-          "timestamp": "2026-09-30T14:52:18+00:00",
-          "date": "2026-09-30",
-          "actor": "iran",
-          "bilateral_event": true,
-          "title": "Mounting pressure on Iran could lead to attack on Israel despite US peace talks - The Jerusalem Post",
-          "source_layer": "non_kinetic",
-          "event_type": "diplomatic",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": 0.0,
-          "duplicate_indicator_evidence": true,
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "primary_daily_indicator": null,
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_regime_destroying_war",
-                "name": "Avoid regime-destroying war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Mounting pressure on Iran could lead to attack on Israel despite US peace talks - The Jerusalem Post",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBpaHNGNEpLdFFJTXMyQ3NWSXVwTG8zZkVtY1EyanpoREFIRTdhdGRGZ3UyMTBkbTlQd1VWaGctc2lQdVo5SUlzVDdQZHdGQllCdnZWMzQzRExja040YlNsbjZqTmdjV2M1Wnc?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [],
-          "duplicate_daily_indicators": [
-            "negotiation"
-          ]
         }
       ],
-      "weighted_score_7d": -27.55,
-      "pressure_index_7d": 0.0,
-      "pressure_level": "low",
-      "trend": "stable",
+      "weighted_score_7d": -7.8,
+      "pressure_index_7d": 34.4,
+      "pressure_level": "reduced",
+      "trend": "increase",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000007",
-          "timestamp": "2026-09-30T17:11:44+00:00",
-          "date": "2026-09-30",
+          "event_id": "INFO-000002",
+          "timestamp": "2026-10-04T21:41:47+00:00",
+          "date": "2026-10-04",
           "actor": "iran",
           "bilateral_event": true,
-          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - abcnews.com",
+          "title": "Iran says no military solution to war as peace talks with US stall - France 24",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
+          "event_direction": "escalation",
+          "operational_component": 4.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": -6.0,
+          "original_final_score": -2.0,
+          "final_score": -2.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -356,11 +270,11 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - abcnews.com",
+          "reason": "Iran: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: Iran says no military solution to war as peace talks with US stall - France 24",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
-          "existing_event_score": 4.0,
-          "existing_direction_score": 1.0,
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOYkdGTmxyRWNXbGxHTklnUzRHbmk0OHJYNVQ2NUFpZHZ0NnB4V0xXa1ZMLWN0UmY0TlFxMHJtbHpwY0lvOFEyak90eVZJSlZHbjl3MTl1ZDFYY2FWQkJfOExRNkxCNXNuX1B2bUYxdnNLRzBYbkcyMjF4RHpoRzdRaUZmRm9JNjlkdmZTWWxLOFNpdjdJV3ZhVA?oc=5",
+          "existing_event_score": 3.0,
+          "existing_direction_score": -4.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
@@ -369,9 +283,9 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 6.55,
-      "pressure_level": "low",
-      "trend": "decrease",
+      "pressure_index_7d": 36.3,
+      "pressure_level": "reduced",
+      "trend": "increase",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
   }
