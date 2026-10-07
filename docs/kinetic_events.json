@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-10-07T11:48:55.715325Z",
-  "source_generated_at": "2026-10-07T06:33:02Z",
+  "generated_at": "2026-10-07T16:17:01.111727Z",
+  "source_generated_at": "2026-10-07T13:58:30Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1576,
-  "event_count": 814,
+  "source_event_count": 1578,
+  "event_count": 816,
   "rejected_count": 762,
   "rejection_counts": {
     "category_not_kinetic": 509,
@@ -27,19 +27,19 @@
     "drone": 125,
     "airstrike": 123,
     "explosion": 45,
-    "ground": 28,
+    "ground": 30,
     "intercept": 1
   },
   "severity_counts": {
     "medium": 447,
     "high": 320,
-    "low": 45,
+    "low": 47,
     "critical": 2
   },
   "actor_counts": {
     "Iran": 264,
     "United States": 162,
-    "Israel": 138,
+    "Israel": 140,
     "Yemen": 130,
     "Unknown actor": 62,
     "Saudi Arabia": 29,
@@ -50,6 +50,58 @@
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-2kbdrdl30xe00",
+      "timestamp": "2026-10-07T10:19:47Z",
+      "event_type": "kinetic",
+      "subtype": "ground",
+      "category": "ground",
+      "severity": "low",
+      "actor": "isr",
+      "actor_label": "Israel",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Palestinian security official Ali al-Bazari killed in clash with IDF and settlers near olive grove in Burqa village northwest of Nablus",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/131506",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "general_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-2ercrpy481es0",
+      "timestamp": "2026-10-07T07:47:50Z",
+      "event_type": "kinetic",
+      "subtype": "ground",
+      "category": "ground",
+      "severity": "low",
+      "actor": "isr",
+      "actor_label": "Israel",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "IDF forces raid home of shooter Qadri Samara who carried out fatal shooting attack in Neve Tzuf (Halamish) this morning, mapping house in Budrus village for demolition",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/131499",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "general_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-22gx4uatwk1s0",
       "timestamp": "2026-10-07T02:53:32Z",

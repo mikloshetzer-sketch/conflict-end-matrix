@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T15:48:44.624499+00:00",
+  "generated_at": "2026-10-07T16:17:02.277473+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,13 +18,13 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 638,
-    "kinetic_events_loaded": 808,
-    "unique_events_scanned": 1380,
-    "strategic_evidence_contributions": 379,
+    "non_kinetic_events_loaded": 641,
+    "kinetic_events_loaded": 816,
+    "unique_events_scanned": 1391,
+    "strategic_evidence_contributions": 381,
     "evidence_contributions_by_actor": {
       "usa": 123,
-      "iran": 256
+      "iran": 258
     },
     "scored_contributions_by_actor": {
       "usa": 89,
@@ -32,14 +32,14 @@
     },
     "suppressed_duplicates_by_actor": {
       "usa": 34,
-      "iran": 119
+      "iran": 121
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 333,
+      "non_kinetic": 335,
       "kinetic": 46
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 210,
+      "iran:negotiation": 212,
       "usa:negotiation": 100,
       "iran:missile_test": 32,
       "usa:presidential_warning": 17,
@@ -63,7 +63,7 @@
       "usa:carrier_deployment": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 2,
+    "skipped_current_utc_day": 4,
     "history_day_count": 209
   },
   "configuration_warnings": [],
@@ -84,7 +84,7 @@
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000002",
+          "event_id": "INFO-000003",
           "timestamp": "2026-10-04T21:41:47+00:00",
           "date": "2026-10-04",
           "actor": "usa",
@@ -133,7 +133,7 @@
       "trend": "increase",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000002",
+          "event_id": "INFO-000003",
           "timestamp": "2026-10-04T21:41:47+00:00",
           "date": "2026-10-04",
           "actor": "usa",
@@ -178,31 +178,31 @@
       ]
     },
     "iran": {
-      "raw_score": -2.0,
+      "raw_score": -6.0,
       "positive_score": 0.0,
-      "negative_score": -2.0,
-      "event_count": 1,
+      "negative_score": -6.0,
+      "event_count": 2,
       "scored_event_count": 1,
-      "evidence_event_count": 1,
-      "suppressed_duplicate_count": 0,
+      "evidence_event_count": 2,
+      "suppressed_duplicate_count": 1,
       "increase_event_count": 0,
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000002",
-          "timestamp": "2026-10-04T21:41:47+00:00",
+          "event_id": "INFO-000004",
+          "timestamp": "2026-10-04T19:44:29+00:00",
           "date": "2026-10-04",
           "actor": "iran",
-          "bilateral_event": true,
-          "title": "Iran says no military solution to war as peace talks with US stall - France 24",
+          "bilateral_event": false,
+          "title": "Iran tells US there is no military solution to war as talks hit impasse - South China Morning Post",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
-          "event_direction": "escalation",
-          "operational_component": 4.0,
+          "event_direction": "mixed",
+          "operational_component": 0.0,
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": -2.0,
-          "final_score": -2.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -221,24 +221,18 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: Iran says no military solution to war as peace talks with US stall - France 24",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOYkdGTmxyRWNXbGxHTklnUzRHbmk0OHJYNVQ2NUFpZHZ0NnB4V0xXa1ZMLWN0UmY0TlFxMHJtbHpwY0lvOFEyak90eVZJSlZHbjl3MTl1ZDFYY2FWQkJfOExRNkxCNXNuX1B2bUYxdnNLRzBYbkcyMjF4RHpoRzdRaUZmRm9JNjlkdmZTWWxLOFNpdjdJV3ZhVA?oc=5",
-          "existing_event_score": 3.0,
-          "existing_direction_score": -4.0,
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran tells US there is no military solution to war as talks hit impasse - South China Morning Post",
+          "source": "\"middle east conflict when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNYS1HUGZDV3AtOFh6ankyZWUwZkVjSEtOc1dOempVbUV4ODFveGtpNTh6T2E1TDBjN3d0QjlSZFpYbGFTNFROWjMzQ1pnSU1XbGRIOHhMOWhUYkE4SENiTkNWTjhYTUc3NHB0cjcwNTdZTmJGbXZrMkRsZjBoSWFuQlZuSE1RcVFoRlZsWDh5anQ0SjdoOTlUd3RUNmNVTnJ1blZkUndrd2ZkNXdPOUFXNGZOZHgwS2_SAbcBQVVfeXFMT3dZZl9MZUsyYzhtZFp0TE9ydTIwcHktN3Fkbk1jTV9xR095d01lVkFteXJpNWZLdXlwUlhpcXhjeC1PRkZ6aS1zcVBjLWZJeVd4U2RzeFdaWVNwUGhOWjc4N2VVVWppRmNxVngwdDltMU5iN0tSQzE1akRUZnQ2MC0wWnh0SXh6NEVuZXdUODY2cWJmNzNaSXBpS0F4dlJKOVBpWk5oTVl0NVJEZ2pxNnM2eE1hdEdz?oc=5",
+          "existing_event_score": 1.0,
+          "existing_direction_score": 0.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
           "duplicate_daily_indicators": []
-        }
-      ],
-      "weighted_score_7d": -7.8,
-      "pressure_index_7d": 34.4,
-      "pressure_level": "reduced",
-      "trend": "increase",
-      "strongest_contributors": [
+        },
         {
-          "event_id": "INFO-000002",
+          "event_id": "INFO-000003",
           "timestamp": "2026-10-04T21:41:47+00:00",
           "date": "2026-10-04",
           "actor": "iran",
@@ -251,11 +245,11 @@
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
           "original_final_score": -2.0,
-          "final_score": -2.0,
-          "duplicate_indicator_evidence": false,
-          "daily_score_suppressed": false,
-          "suppression_reason": null,
-          "primary_daily_indicator": "negotiation",
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": true,
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "primary_daily_indicator": null,
           "indicators": [
             {
               "id": "negotiation",
@@ -275,6 +269,55 @@
           "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOYkdGTmxyRWNXbGxHTklnUzRHbmk0OHJYNVQ2NUFpZHZ0NnB4V0xXa1ZMLWN0UmY0TlFxMHJtbHpwY0lvOFEyak90eVZJSlZHbjl3MTl1ZDFYY2FWQkJfOExRNkxCNXNuX1B2bUYxdnNLRzBYbkcyMjF4RHpoRzdRaUZmRm9JNjlkdmZTWWxLOFNpdjdJV3ZhVA?oc=5",
           "existing_event_score": 3.0,
           "existing_direction_score": -4.0,
+          "winning_daily_indicators": [],
+          "duplicate_daily_indicators": [
+            "negotiation"
+          ]
+        }
+      ],
+      "weighted_score_7d": -11.8,
+      "pressure_index_7d": 26.4,
+      "pressure_level": "low",
+      "trend": "decrease",
+      "strongest_contributors": [
+        {
+          "event_id": "INFO-000004",
+          "timestamp": "2026-10-04T19:44:29+00:00",
+          "date": "2026-10-04",
+          "actor": "iran",
+          "bilateral_event": false,
+          "title": "Iran tells US there is no military solution to war as talks hit impasse - South China Morning Post",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
+          "duplicate_indicator_evidence": false,
+          "daily_score_suppressed": false,
+          "suppression_reason": null,
+          "primary_daily_indicator": "negotiation",
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_regime_destroying_war",
+                "name": "Avoid regime-destroying war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran tells US there is no military solution to war as talks hit impasse - South China Morning Post",
+          "source": "\"middle east conflict when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNYS1HUGZDV3AtOFh6ankyZWUwZkVjSEtOc1dOempVbUV4ODFveGtpNTh6T2E1TDBjN3d0QjlSZFpYbGFTNFROWjMzQ1pnSU1XbGRIOHhMOWhUYkE4SENiTkNWTjhYTUc3NHB0cjcwNTdZTmJGbXZrMkRsZjBoSWFuQlZuSE1RcVFoRlZsWDh5anQ0SjdoOTlUd3RUNmNVTnJ1blZkUndrd2ZkNXdPOUFXNGZOZHgwS2_SAbcBQVVfeXFMT3dZZl9MZUsyYzhtZFp0TE9ydTIwcHktN3Fkbk1jTV9xR095d01lVkFteXJpNWZLdXlwUlhpcXhjeC1PRkZ6aS1zcVBjLWZJeVd4U2RzeFdaWVNwUGhOWjc4N2VVVWppRmNxVngwdDltMU5iN0tSQzE1akRUZnQ2MC0wWnh0SXh6NEVuZXdUODY2cWJmNzNaSXBpS0F4dlJKOVBpWk5oTVl0NVJEZ2pxNnM2eE1hdEdz?oc=5",
+          "existing_event_score": 1.0,
+          "existing_direction_score": 0.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
@@ -283,9 +326,9 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 36.3,
+      "pressure_index_7d": 32.3,
       "pressure_level": "reduced",
-      "trend": "increase",
+      "trend": "stable",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
   }
