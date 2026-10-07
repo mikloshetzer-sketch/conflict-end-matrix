@@ -1,13 +1,13 @@
 {
-  "report_date": "2026-10-05",
-  "created_at": "2026-10-05T14:29:27.403645",
+  "report_date": "2026-10-06",
+  "created_at": "2026-10-06T13:14:53.512265",
   "article_count": 50,
-  "total_score": -46,
-  "conflict_index": -0.92,
+  "total_score": -39,
+  "conflict_index": -0.78,
   "assessment": "mild escalation",
-  "escalation_pressure": -54,
-  "diplomatic_pressure": 8,
-  "net_signal": -46,
+  "escalation_pressure": -49,
+  "diplomatic_pressure": 10,
+  "net_signal": -39,
   "top_drivers": [
     {
       "driver": "war",
@@ -19,9 +19,23 @@
     {
       "driver": "attack",
       "category": "Military escalation",
-      "count": 4,
+      "count": 3,
       "weight": -2,
-      "impact": -8
+      "impact": -6
+    },
+    {
+      "driver": "talks",
+      "category": "Diplomacy / negotiation",
+      "count": 2,
+      "weight": 2,
+      "impact": 4
+    },
+    {
+      "driver": "peace",
+      "category": "Diplomacy / negotiation",
+      "count": 2,
+      "weight": 2,
+      "impact": 4
     },
     {
       "driver": "attacks",
@@ -29,13 +43,6 @@
       "count": 2,
       "weight": -2,
       "impact": -4
-    },
-    {
-      "driver": "talks",
-      "category": "Diplomacy / negotiation",
-      "count": 1,
-      "weight": 2,
-      "impact": 2
     },
     {
       "driver": "strikes",
@@ -50,20 +57,6 @@
       "count": 1,
       "weight": -2,
       "impact": -2
-    },
-    {
-      "driver": "peace",
-      "category": "Diplomacy / negotiation",
-      "count": 1,
-      "weight": 2,
-      "impact": 2
-    },
-    {
-      "driver": "mediator",
-      "category": "Diplomacy / negotiation",
-      "count": 1,
-      "weight": 2,
-      "impact": 2
     },
     {
       "driver": "diplomacy",
@@ -85,39 +78,16 @@
       "count": 1,
       "weight": -1,
       "impact": -1
-    },
-    {
-      "driver": "retaliation",
-      "category": "Threats / retaliation",
-      "count": 1,
-      "weight": -1,
-      "impact": -1
-    },
-    {
-      "driver": "drones",
-      "category": "Military escalation",
-      "count": 1,
-      "weight": -1,
-      "impact": -1
-    },
-    {
-      "driver": "drone",
-      "category": "Military escalation",
-      "count": 1,
-      "weight": -1,
-      "impact": -1
     }
   ],
   "categories": [
     {
       "category": "Military escalation",
-      "score": -51,
-      "count": 43,
+      "score": -47,
+      "count": 40,
       "keywords": [
         "attack",
         "attacks",
-        "drone",
-        "drones",
         "strike",
         "strikes",
         "war"
@@ -125,21 +95,19 @@
     },
     {
       "category": "Diplomacy / negotiation",
-      "score": 8,
-      "count": 4,
+      "score": 10,
+      "count": 5,
       "keywords": [
         "diplomacy",
-        "mediator",
         "peace",
         "talks"
       ]
     },
     {
       "category": "Threats / retaliation",
-      "score": -3,
-      "count": 3,
+      "score": -2,
+      "count": 2,
       "keywords": [
-        "retaliation",
         "threat",
         "threatens"
       ]
@@ -147,16 +115,14 @@
   ],
   "key_signals": [
     {
-      "title": "FBI warns Iran aspired to attack California with drones in retaliation for war: Alert - abcnews.com",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOQ2hlRlY5RFh4YWgtOFBHaFNnc1dKRXh6Q243VXU0bUFUWk5TeThyVFM2Yk1jWUpnYWRUQkV6eGhZM3YzNzBzY296NXNwRlRXbWl1eFFVb0dvckZ4aUhsVHctOERRMkJJRTNZbVo1ZjVqejViYWxuaDRIY2Q0STZ2al9EVHlXVlgtbE9lSVhQbjZCSzZwTmtpM01uUWdxS2tPLWRj0gGoAUFVX3lxTE1wUUM0QkFNelExVzUzcVBxdnM2c1l4bklTdndFT3pzcEZVQXZkOVA0VHFRYXREZjAtcVhXcktBVi12VEZ6dVFRcEpVSEJZb0thLUs3NGY1d2pBV3BJOXdBS2NkWnJ1T0RrTWpzNm8yS2R5Q3ZnaDYyYmRMejdKYm5kd2RNZmhZOE9BdHRrU1NfdmlicXJUR3hZMDVTQldmN3lCWUFFYWIxdw?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Sun, 04 Oct 2026 11:02:18 GMT",
-      "score": -6,
+      "title": "Middle East oil exports recover to pre-Iran war levels despite Hormuz attacks - DW.com",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPRDhKSHVGN2g3eUkyRUNPMnBxV1cyZlR6X3VnZG9xS3R0WDJXTHBoMmtRY0JvMzd2OWpKTXppU1VaZHlfQ3dCR3Z3MHRaZlNVOHEyYXZuUzREUG9IOFRIX3ZSOUVlTDViOVVMenRxZl8zUHl1dDRtWkQwdUt4NFZnM2tDdk1Zejdqak0tOURVUFg3SjVmZ2pYQkxBTHFBR29tRGpMRV9ucFl5YXR5SV9N0gGvAUFVX3lxTFBZR3F6Y2ozRXM1TE54c3QzajhjWWZhV0kzTTFNcVhTODR2RTNZVll0QlNoUS1zQTJMMkt0RmRJNTNJaURVNUpKZmZMWXBJblk2ODUzSnRGN3pBazNyOEdGeTE4djhiUWh6ZVhwTzZqVHQ5UVNkLU1iTlpPczlITU50eTZLU3c1SnZ5NHRpTTBhX1pGUkhXOWFkLV95MEZ5eXY4ZlR6RWxLNExIdmtTbmM?oc=5",
+      "source": "\"middle east conflict when:7d\" - Google News",
+      "published": "Mon, 05 Oct 2026 06:14:20 GMT",
+      "score": -5,
       "tags": [
         "attack",
-        "drone",
-        "drones",
-        "retaliation",
+        "attacks",
         "war"
       ]
     },
@@ -173,19 +139,7 @@
       ]
     },
     {
-      "title": "Middle East oil exports recover to pre-Iran war levels despite Hormuz attacks - dw.com",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPRDhKSHVGN2g3eUkyRUNPMnBxV1cyZlR6X3VnZG9xS3R0WDJXTHBoMmtRY0JvMzd2OWpKTXppU1VaZHlfQ3dCR3Z3MHRaZlNVOHEyYXZuUzREUG9IOFRIX3ZSOUVlTDViOVVMenRxZl8zUHl1dDRtWkQwdUt4NFZnM2tDdk1Zejdqak0tOURVUFg3SjVmZ2pYQkxBTHFBR29tRGpMRV9ucFl5YXR5SV9N0gGvAUFVX3lxTFBZR3F6Y2ozRXM1TE54c3QzajhjWWZhV0kzTTFNcVhTODR2RTNZVll0QlNoUS1zQTJMMkt0RmRJNTNJaURVNUpKZmZMWXBJblk2ODUzSnRGN3pBazNyOEdGeTE4djhiUWh6ZVhwTzZqVHQ5UVNkLU1iTlpPczlITU50eTZLU3c1SnZ5NHRpTTBhX1pGUkhXOWFkLV95MEZ5eXY4ZlR6RWxLNExIdmtTbmM?oc=5",
-      "source": "\"middle east conflict when:7d\" - Google News",
-      "published": "Mon, 05 Oct 2026 06:06:24 GMT",
-      "score": -5,
-      "tags": [
-        "attack",
-        "attacks",
-        "war"
-      ]
-    },
-    {
-      "title": "As Iran is 'pummeled' by US-Israeli strikes, observers say Tehran's determination appears unwavering - abcnews.com",
+      "title": "As Iran is 'pummeled' by US-Israeli strikes, observers say Tehran's determination appears unwavering - ABC News - Breaking News, Latest News and Videos",
       "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdk9EMVdMbEltSk80SVFOb05sT3JBdUVqQ0RqWjc2NnVfYm5BbE9CS2JDTzRiZEw1YVpYaHlJcFlFQjk5SVdKNWY1NFh1RXdJSGtrNGUyWC16a3d2cTgyQkNvdTBWdDVRVFBZdlM5X1Jkb0hyaG9tWDMzM0RCR1JnemVKM1dkV1Jva1ZlSnFoSDl0TXY0LWJqUFZzOVhjZTVBaGVFUkRQZ2ttQmRnSTEzdEtPY1NVMVFh0gG-AUFVX3lxTE85dUVPTVI4RmZSTGdrQ0tvVXJxUXZzMWx0VTExZzhwdUtFSEdYM085eTRGT0piS1FFdm9mU1R0OUEyei1DYXllY054YXZINDUybFZMTHJiZFJkRURCMmN3cmhOMWJPUGYxdlBrWnJucEFwa3p4cjItS0NhU0N1TDdteW9BN0JzN001MVBqblZQMVcxNkd6Vm95NzRNUTZDRGJfZHdCeHR3dC0zZWZERHphelpOS3Fobi1WenRSaWc?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
       "published": "Sat, 03 Oct 2026 12:48:45 GMT",
@@ -193,6 +147,18 @@
       "tags": [
         "strike",
         "strikes"
+      ]
+    },
+    {
+      "title": "Iran says no military solution to war as peace talks with US stall - France 24",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOYkdGTmxyRWNXbGxHTklnUzRHbmk0OHJYNVQ2NUFpZHZ0NnB4V0xXa1ZMLWN0UmY0TlFxMHJtbHpwY0lvOFEyak90eVZJSlZHbjl3MTl1ZDFYY2FWQkJfOExRNkxCNXNuX1B2bUYxdnNLRzBYbkcyMjF4RHpoRzdRaUZmRm9JNjlkdmZTWWxLOFNpdjdJV3ZhVA?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Sun, 04 Oct 2026 21:41:47 GMT",
+      "score": 3,
+      "tags": [
+        "war",
+        "talks",
+        "peace"
       ]
     },
     {
@@ -207,7 +173,7 @@
       ]
     },
     {
-      "title": "Mounting pressure on Iran could lead to attack on Israel despite US peace talks - The Jerusalem Post",
+      "title": "Mounting pressure on Iran could lead to attack on Israel despite US peace talks - jpost.com",
       "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBpaHNGNEpLdFFJTXMyQ3NWSXVwTG8zZkVtY1EyanpoREFIRTdhdGRGZ3UyMTBkbTlQd1VWaGctc2lQdVo5SUlzVDdQZHdGQllCdnZWMzQzRExja040YlNsbjZqTmdjV2M1Wnc?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
       "published": "Wed, 30 Sep 2026 14:52:18 GMT",
@@ -219,10 +185,20 @@
       ]
     },
     {
-      "title": "2026 Iran war | Oil, Explained, United States, Israel, Strait of Hormuz, Map, & Conflict - britannica.com",
+      "title": "Senior Trump administration officials met to discuss Iran war at Camp David - CBS News",
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQUk1PTUxFTU5QZFBNQ2xQZEhqUkVEaHN0VUNLaVVfd3kxUVZUdG1TSnVYYVp2X19yTWphUnFUSlhaNENkcFd1WWR4UjJwUVE5bDhxRzU5V3RJekdWRTN5cmNuenRoRHFZbndnVGNSbnphRHI3Ml84T2pwdkFwYlFJR2FhOGIwX0RtT2w4bTR5amNldm1CcWc?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Mon, 05 Oct 2026 06:40:00 GMT",
+      "score": -1,
+      "tags": [
+        "war"
+      ]
+    },
+    {
+      "title": "2026 Iran war | Oil, Explained, United States, Israel, Strait of Hormuz, Map, & Conflict - Britannica",
       "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5nTzlhOGZTS180cWNtVG91c2VWRVJFYlk0cW5Ba1RHUEFOSEtldU15QktQT0EzRVY1ZVdZZ0VTRHVWTVhyN1IzeU1wbmlDMUhrQ3Roc1YxcmdMUQ?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Thu, 01 Oct 2026 05:00:00 GMT",
+      "published": "Mon, 05 Oct 2026 05:00:00 GMT",
       "score": -1,
       "tags": [
         "war"
@@ -233,16 +209,6 @@
       "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPMlpEWFg0N2tsR1ROY1duSXdGTTJsdGtVUzVBVC02QzZPYm5vZk02VEFESFp4eVFOcklZb0JTV1lLUm9nZmE1TkNYcjlFbS1xUnZHQUYzMkphS0k2X2t0Q3JleWI1YlVmckhvLVZVc2UwYmNlTUlTMVh2Z3h1bnlnOEVZdHpCYnEtMnNGcVNFamRqb0VOQ3g0RzZPY0hKQdIBowFBVV95cUxNUG9xbHZJN0dzb3lOcUNyaG15M2VWUmxHNkk5OE5md0VudnJUdDNfSW01OXdlcnM3OXB0Q1l6bHh6NE5oS1VyV3hzcUdmWkdCeHhxQmMyMVN6WjZJOEhjM3YxNUY1ZEZMUlFLVEVOVm5DVkZ3ZFNpejQzQ2pIcExrTmgyZTJjbHRNbC1nWWlOZUhxVHNoMzMtejlJNmctOXRKUndB?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
       "published": "Fri, 02 Oct 2026 17:39:10 GMT",
-      "score": -1,
-      "tags": [
-        "war"
-      ]
-    },
-    {
-      "title": "How the War is Changing the Geography of Iran’s Influence - Time Magazine",
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNaG5feFRjbGZTNGxyMS1VTEF3NHJUdkowdHlOQVA4NHp2VTg5WEpmRmZlaDRFTmFZdHhGRzVCZUprUEFqUjJiU1NxR3dmLXJMS3ZubzRMc3BqNVpFaUZTQlFJajBRaEMxVktrLVpraGxxY1NTb0dRdzFTdW55cDVTYnhtX1hMU1Vhc19tNHRES1hrV3B1ajFB?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Tue, 29 Sep 2026 15:55:00 GMT",
       "score": -1,
       "tags": [
         "war"
@@ -262,17 +228,17 @@
       "title": "US sends third aircraft carrier to Middle East amid stalemate in Iran war - The Guardian",
       "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOeG1vM25faW5LcklvY082VWw2bHJ2MFdzR1NRekV1TzI2SzloOTFrZGhPTEVyWlY4bGpiRXprNWVhTUxqbF8zc3pxNGFFZzJIalNteWs5UV9oWkI3V1dBX2hjckVwejBiZmtSVnFTUUVVeFdGS19nZE9kOVB4OTUwUUcxOWZzY25FWXJPNXg3WGprdw?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Fri, 02 Oct 2026 14:39:00 GMT",
+      "published": "Fri, 02 Oct 2026 01:17:00 GMT",
       "score": -1,
       "tags": [
         "war"
       ]
     },
     {
-      "title": "Iran tells US there is no military solution to Middle East war - france24.com",
-      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOS0tvTnZmUDlteWF0YWVrdlFQVmprVFZ6cUZza0dlV1lyMEFCLVp1WTYybUhnY1ZZZ3pJQzVQOUVkbEtLbElSRGJ0RGZfNDRNU1lManZXdHJJR1k0Vl9SaU4tbGViTEhFdW5nZ1lFbW9ONUlGVGhzd1lJVVFEZDNsLUxjRVpVcmNLUDVLVzl4cE8zMUIwdGVvZGdwLW5fV1VHZG1SWFhxeXJyRG91SkE?oc=5",
+      "title": "How the War is Changing the Geography of Iran’s Influence - Time Magazine",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNaG5feFRjbGZTNGxyMS1VTEF3NHJUdkowdHlOQVA4NHp2VTg5WEpmRmZlaDRFTmFZdHhGRzVCZUprUEFqUjJiU1NxR3dmLXJMS3ZubzRMc3BqNVpFaUZTQlFJajBRaEMxVktrLVpraGxxY1NTb0dRdzFTdW55cDVTYnhtX1hMU1Vhc19tNHRES1hrV3B1ajFB?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Sun, 04 Oct 2026 09:48:44 GMT",
+      "published": "Tue, 29 Sep 2026 15:55:00 GMT",
       "score": -1,
       "tags": [
         "war"
@@ -281,7 +247,7 @@
   ],
   "integrity": {
     "driver_net_equals_total_score": true,
-    "driver_net": -46,
-    "source_total_score": -46
+    "driver_net": -39,
+    "source_total_score": -39
   }
 }
