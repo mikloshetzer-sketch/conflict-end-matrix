@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-10-07T16:17:01.111727Z",
-  "source_generated_at": "2026-10-07T13:58:30Z",
+  "generated_at": "2026-10-08T12:04:08.698977Z",
+  "source_generated_at": "2026-10-08T06:09:53Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": false,
+    "required_today_utc": true,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1578,
-  "event_count": 816,
+  "source_event_count": 1580,
+  "event_count": 818,
   "rejected_count": 762,
   "rejection_counts": {
     "category_not_kinetic": 509,
@@ -22,9 +22,9 @@
     "alert_only": 2
   },
   "category_counts": {
-    "missile": 279,
+    "missile": 280,
     "strike": 213,
-    "drone": 125,
+    "drone": 126,
     "airstrike": 123,
     "explosion": 45,
     "ground": 30,
@@ -32,24 +32,76 @@
   },
   "severity_counts": {
     "medium": 447,
-    "high": 320,
-    "low": 47,
+    "high": 321,
+    "low": 48,
     "critical": 2
   },
   "actor_counts": {
-    "Iran": 264,
+    "Iran": 265,
     "United States": 162,
     "Israel": 140,
     "Yemen": 130,
     "Unknown actor": 62,
     "Saudi Arabia": 29,
     "Iraq": 14,
-    "Lebanon": 12,
+    "Lebanon": 13,
     "Jordan": 1,
     "Syria": 1,
     "United Arab Emirates": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-31tmui01uag00",
+      "timestamp": "2026-10-08T00:16:54Z",
+      "event_type": "kinetic",
+      "subtype": "drone",
+      "category": "drone",
+      "severity": "high",
+      "actor": "irn",
+      "actor_label": "Iran",
+      "actor_method": "raw_source.origin",
+      "target_country": "Iran",
+      "location": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Iranian drones and possibly jets strike Camp Buehring US military installation in Kuwait, base reportedly heavily damaged",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/85194",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-bb59xoyu5ww0",
+      "timestamp": "2026-10-07T18:49:20Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "low",
+      "actor": "lbn",
+      "actor_label": "Lebanon",
+      "actor_method": "raw_source.origin",
+      "target_country": "Lebanon",
+      "location": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Hezbollah fires missile at decoy target in area of IDF operations in southern Lebanon, no sirens activated",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/64186",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-2kbdrdl30xe00",
       "timestamp": "2026-10-07T10:19:47Z",
