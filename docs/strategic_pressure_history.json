@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T16:18:21.078384+00:00",
+  "generated_at": "2026-10-09T16:02:43.815797+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -19,16 +19,16 @@
   },
   "statistics": {
     "non_kinetic_events_loaded": 642,
-    "kinetic_events_loaded": 821,
-    "unique_events_scanned": 1397,
-    "strategic_evidence_contributions": 381,
+    "kinetic_events_loaded": 829,
+    "unique_events_scanned": 1403,
+    "strategic_evidence_contributions": 382,
     "evidence_contributions_by_actor": {
       "usa": 123,
-      "iran": 258
+      "iran": 259
     },
     "scored_contributions_by_actor": {
       "usa": 90,
-      "iran": 138
+      "iran": 139
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
@@ -36,7 +36,7 @@
     },
     "contributions_by_source_layer": {
       "non_kinetic": 335,
-      "kinetic": 46
+      "kinetic": 47
     },
     "evidence_indicator_counts": {
       "iran:negotiation": 212,
@@ -45,7 +45,7 @@
       "usa:presidential_warning": 17,
       "iran:hormuz_threat": 9,
       "usa:ceasefire_support": 8,
-      "iran:missile_preparation": 6,
+      "iran:missile_preparation": 7,
       "iran:strike_preparation": 2,
       "iran:nuclear_activity": 1,
       "usa:carrier_deployment": 1
@@ -56,15 +56,15 @@
       "usa:presidential_warning": 17,
       "iran:missile_test": 16,
       "iran:hormuz_threat": 9,
-      "iran:missile_preparation": 6,
+      "iran:missile_preparation": 7,
       "usa:ceasefire_support": 4,
       "iran:strike_preparation": 2,
       "iran:nuclear_activity": 1,
       "usa:carrier_deployment": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 4,
-    "history_day_count": 211
+    "skipped_current_utc_day": 2,
+    "history_day_count": 213
   },
   "configuration_warnings": [],
   "status": "ok",
@@ -25278,7 +25278,7 @@
         "decrease_event_count": 1,
         "contributors": [
           {
-            "event_id": "INFO-000004",
+            "event_id": "INFO-000006",
             "timestamp": "2026-10-04T21:41:47+00:00",
             "date": "2026-10-04",
             "actor": "usa",
@@ -25338,7 +25338,7 @@
         "decrease_event_count": 1,
         "contributors": [
           {
-            "event_id": "INFO-000005",
+            "event_id": "INFO-000007",
             "timestamp": "2026-10-04T19:44:29+00:00",
             "date": "2026-10-04",
             "actor": "iran",
@@ -25381,7 +25381,7 @@
             "duplicate_daily_indicators": []
           },
           {
-            "event_id": "INFO-000004",
+            "event_id": "INFO-000006",
             "timestamp": "2026-10-04T21:41:47+00:00",
             "date": "2026-10-04",
             "actor": "iran",
@@ -25493,7 +25493,7 @@
         "decrease_event_count": 1,
         "contributors": [
           {
-            "event_id": "INFO-000002",
+            "event_id": "INFO-000004",
             "timestamp": "2026-10-06T23:55:59+00:00",
             "date": "2026-10-06",
             "actor": "usa",
@@ -25553,7 +25553,7 @@
         "decrease_event_count": 1,
         "contributors": [
           {
-            "event_id": "INFO-000002",
+            "event_id": "INFO-000004",
             "timestamp": "2026-10-06T23:55:59+00:00",
             "date": "2026-10-06",
             "actor": "iran",
@@ -25605,6 +25605,134 @@
         "pressure_index_7d": 30.6,
         "pressure_level": "reduced",
         "trend": "strong_decrease",
+        "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "calculation_mode": "historical_backfill",
+      "usa": {
+        "raw_score": 0.0,
+        "positive_score": 0.0,
+        "negative_score": 0.0,
+        "event_count": 0,
+        "scored_event_count": 0,
+        "evidence_event_count": 0,
+        "suppressed_duplicate_count": 0,
+        "increase_event_count": 0,
+        "decrease_event_count": 0,
+        "contributors": [],
+        "weighted_score_7d": -6.2,
+        "pressure_index_7d": 37.6,
+        "pressure_level": "reduced",
+        "trend": "increase"
+      },
+      "iran": {
+        "raw_score": 0.0,
+        "positive_score": 0.0,
+        "negative_score": 0.0,
+        "event_count": 0,
+        "scored_event_count": 0,
+        "evidence_event_count": 0,
+        "suppressed_duplicate_count": 0,
+        "increase_event_count": 0,
+        "decrease_event_count": 0,
+        "contributors": [],
+        "weighted_score_7d": -8.4,
+        "pressure_index_7d": 33.2,
+        "pressure_level": "reduced",
+        "trend": "strong_increase"
+      },
+      "overall": {
+        "pressure_index_7d": 35.4,
+        "pressure_level": "reduced",
+        "trend": "increase",
+        "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "calculation_mode": "live",
+      "usa": {
+        "raw_score": 0.0,
+        "positive_score": 0.0,
+        "negative_score": 0.0,
+        "event_count": 0,
+        "scored_event_count": 0,
+        "evidence_event_count": 0,
+        "suppressed_duplicate_count": 0,
+        "increase_event_count": 0,
+        "decrease_event_count": 0,
+        "contributors": [],
+        "weighted_score_7d": -5.0,
+        "pressure_index_7d": 40.0,
+        "pressure_level": "reduced",
+        "trend": "increase"
+      },
+      "iran": {
+        "raw_score": 10.0,
+        "positive_score": 10.0,
+        "negative_score": 0.0,
+        "event_count": 1,
+        "scored_event_count": 1,
+        "evidence_event_count": 1,
+        "suppressed_duplicate_count": 0,
+        "increase_event_count": 1,
+        "decrease_event_count": 0,
+        "contributors": [
+          {
+            "event_id": "iranstrike-2lkvq32f6ru00",
+            "timestamp": "2026-10-08T20:58:36+00:00",
+            "date": "2026-10-08",
+            "actor": "iran",
+            "bilateral_event": false,
+            "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+            "source_layer": "kinetic",
+            "event_type": "kinetic",
+            "event_direction": "escalation",
+            "operational_component": 1.0,
+            "strategic_modifier": 9.0,
+            "context_multiplier": 1.0,
+            "original_final_score": 10.0,
+            "final_score": 10.0,
+            "duplicate_indicator_evidence": false,
+            "daily_score_suppressed": false,
+            "suppression_reason": null,
+            "primary_daily_indicator": "missile_preparation",
+            "indicators": [
+              {
+                "id": "missile_preparation",
+                "name": "Missile force preparation",
+                "score": 9.0,
+                "direction": "increase",
+                "interest": {
+                  "id": "strategic_deterrence",
+                  "name": "Strategic deterrence",
+                  "weight": 10.0
+                },
+                "recognition_rule_count": 1
+              }
+            ],
+            "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+            "source": "",
+            "link": "https://t.me/CIG_telegram/85239",
+            "existing_event_score": 0.0,
+            "existing_direction_score": 0.0,
+            "winning_daily_indicators": [
+              "missile_preparation"
+            ],
+            "duplicate_daily_indicators": []
+          }
+        ],
+        "weighted_score_7d": 3.4,
+        "pressure_index_7d": 56.8,
+        "pressure_level": "elevated",
+        "trend": "strong_increase"
+      },
+      "overall": {
+        "pressure_index_7d": 48.4,
+        "pressure_level": "balanced",
+        "trend": "strong_increase",
         "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
       }
     }
