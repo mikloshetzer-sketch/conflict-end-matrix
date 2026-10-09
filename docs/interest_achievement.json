@@ -1,11 +1,11 @@
 {
   "metadata": {
     "model": "strategic_interest_achievement_v2",
-    "generated_at": "2026-10-08T16:18:53+00:00",
-    "reference_date": "2026-10-06",
+    "generated_at": "2026-10-09T16:03:15+00:00",
+    "reference_date": "2026-10-08",
     "history_start_date": "2026-03-10",
-    "history_end_date": "2026-10-06",
-    "history_day_count": 211,
+    "history_end_date": "2026-10-08",
+    "history_day_count": 213,
     "conflict": "United States-Iran",
     "description": "Historical and current assessment of the degree to which detected developments support or weaken the weighted strategic interests of the United States and Iran.",
     "input_files": {
@@ -21,53 +21,33 @@
     "warning_count": 2
   },
   "current": {
-    "date": "2026-10-06",
+    "date": "2026-10-08",
     "summary": {
-      "usa_achievement_index": 51.82,
-      "iran_achievement_index": 51.59,
-      "achievement_gap": 0.23,
-      "daily_strategic_advantage": "balanced",
+      "usa_achievement_index": 45.79,
+      "iran_achievement_index": 52.26,
+      "achievement_gap": -6.47,
+      "daily_strategic_advantage": "iran",
       "interpretation": "The index measures whether the current day's detected developments support or weaken each actor's own weighted strategic interests. It does not directly measure military victory or conflict outcome."
     },
     "actors": {
       "usa": {
-        "achievement_index": 51.82,
-        "change_from_neutral": 1.82,
-        "trend": "stable",
+        "achievement_index": 45.79,
+        "change_from_neutral": -4.21,
+        "trend": "deteriorating",
         "level": "balanced",
-        "raw_contribution": 276.0,
+        "raw_contribution": -612.0,
         "interest_count": 8,
         "interests_with_evidence": 4,
         "strongest_interests": [
           {
-            "id": "avoid_full_scale_war",
-            "name": "Avoid full-scale regional war",
-            "achievement_index": 56.0,
-            "change_from_neutral": 6.0
-          },
-          {
-            "id": "force_protection",
-            "name": "Protection of US forces",
-            "achievement_index": 53.0,
-            "change_from_neutral": 3.0
-          },
-          {
-            "id": "nuclear_nonproliferation",
-            "name": "Prevent Iranian nuclear weapon capability",
-            "achievement_index": 52.7,
-            "change_from_neutral": 2.7
-          }
-        ],
-        "weakest_interests": [
-          {
-            "id": "israel_security",
-            "name": "Israel security",
+            "id": "freedom_of_navigation",
+            "name": "Freedom of navigation",
             "achievement_index": 50.0,
             "change_from_neutral": 0.0
           },
           {
-            "id": "freedom_of_navigation",
-            "name": "Freedom of navigation",
+            "id": "nuclear_nonproliferation",
+            "name": "Prevent Iranian nuclear weapon capability",
             "achievement_index": 50.0,
             "change_from_neutral": 0.0
           },
@@ -78,72 +58,128 @@
             "change_from_neutral": 0.0
           }
         ],
+        "weakest_interests": [
+          {
+            "id": "israel_security",
+            "name": "Israel security",
+            "achievement_index": 41.0,
+            "change_from_neutral": -9.0
+          },
+          {
+            "id": "force_protection",
+            "name": "Protection of US forces",
+            "achievement_index": 41.0,
+            "change_from_neutral": -9.0
+          },
+          {
+            "id": "avoid_full_scale_war",
+            "name": "Avoid full-scale regional war",
+            "achievement_index": 41.0,
+            "change_from_neutral": -9.0
+          }
+        ],
         "interests": [
           {
             "id": "israel_security",
             "name": "Israel security",
             "description": "Maintain Israel's security and military superiority.",
             "weight": 10.0,
-            "achievement_index": 50.0,
-            "change_from_neutral": 0.0,
-            "raw_contribution": 0,
-            "positive_contribution": 0,
-            "negative_contribution": 0,
-            "trend": "stable",
-            "level": "balanced",
-            "evidence_count": 0,
-            "top_evidence": [],
-            "evidence": []
+            "achievement_index": 41.0,
+            "change_from_neutral": -9.0,
+            "raw_contribution": -180.0,
+            "positive_contribution": 0.0,
+            "negative_contribution": -180.0,
+            "trend": "deteriorating",
+            "level": "moderately_negative",
+            "evidence_count": 1,
+            "top_evidence": [
+              {
+                "event_id": "iranstrike-2lkvq32f6ru00",
+                "date": "2026-10-08",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": -2.0,
+                "interest_weight": 10.0,
+                "raw_contribution": -180.0,
+                "rationale": "Israeli territory and infrastructure may face increased missile threat.",
+                "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/85239"
+              }
+            ],
+            "evidence": [
+              {
+                "event_id": "iranstrike-2lkvq32f6ru00",
+                "date": "2026-10-08",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": -2.0,
+                "interest_weight": 10.0,
+                "raw_contribution": -180.0,
+                "rationale": "Israeli territory and infrastructure may face increased missile threat.",
+                "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/85239"
+              }
+            ]
           },
           {
             "id": "force_protection",
             "name": "Protection of US forces",
             "description": "Protect US military personnel, bases and regional assets.",
             "weight": 10.0,
-            "achievement_index": 53.0,
-            "change_from_neutral": 3.0,
-            "raw_contribution": 60.0,
-            "positive_contribution": 60.0,
-            "negative_contribution": 0.0,
-            "trend": "improving",
-            "level": "balanced",
+            "achievement_index": 41.0,
+            "change_from_neutral": -9.0,
+            "raw_contribution": -180.0,
+            "positive_contribution": 0.0,
+            "negative_contribution": -180.0,
+            "trend": "deteriorating",
+            "level": "moderately_negative",
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000002",
-                "date": "2026-10-06",
-                "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 1.0,
+                "event_id": "iranstrike-2lkvq32f6ru00",
+                "date": "2026-10-08",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": -2.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 60.0,
-                "rationale": "Reduced tension lowers the immediate threat to US forces.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                "raw_contribution": -180.0,
+                "rationale": "US bases and personnel face greater immediate missile risk.",
+                "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/85239"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000002",
-                "date": "2026-10-06",
-                "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 1.0,
+                "event_id": "iranstrike-2lkvq32f6ru00",
+                "date": "2026-10-08",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": -2.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 60.0,
-                "rationale": "Reduced tension lowers the immediate threat to US forces.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                "raw_contribution": -180.0,
+                "rationale": "US bases and personnel face greater immediate missile risk.",
+                "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/85239"
               }
             ]
           },
@@ -168,52 +204,16 @@
             "name": "Prevent Iranian nuclear weapon capability",
             "description": "Limit or delay Iran's military nuclear programme.",
             "weight": 9.0,
-            "achievement_index": 52.7,
-            "change_from_neutral": 2.7,
-            "raw_contribution": 54.0,
-            "positive_contribution": 54.0,
-            "negative_contribution": 0.0,
-            "trend": "improving",
+            "achievement_index": 50.0,
+            "change_from_neutral": 0.0,
+            "raw_contribution": 0,
+            "positive_contribution": 0,
+            "negative_contribution": 0,
+            "trend": "stable",
             "level": "balanced",
-            "evidence_count": 1,
-            "top_evidence": [
-              {
-                "event_id": "INFO-000002",
-                "date": "2026-10-06",
-                "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 1.0,
-                "interest_weight": 9.0,
-                "raw_contribution": 54.0,
-                "rationale": "Diplomacy may produce limits, inspections or delays affecting Iran's nuclear programme.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
-              }
-            ],
-            "evidence": [
-              {
-                "event_id": "INFO-000002",
-                "date": "2026-10-06",
-                "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 1.0,
-                "interest_weight": 9.0,
-                "raw_contribution": 54.0,
-                "rationale": "Diplomacy may produce limits, inspections or delays affecting Iran's nuclear programme.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
-              }
-            ]
+            "evidence_count": 0,
+            "top_evidence": [],
+            "evidence": []
           },
           {
             "id": "regional_deterrence",
@@ -236,6 +236,58 @@
             "name": "Protection of regional partners",
             "description": "Support Gulf partners and other regional allies.",
             "weight": 8.0,
+            "achievement_index": 46.4,
+            "change_from_neutral": -3.6,
+            "raw_contribution": -72.0,
+            "positive_contribution": 0.0,
+            "negative_contribution": -72.0,
+            "trend": "deteriorating",
+            "level": "balanced",
+            "evidence_count": 1,
+            "top_evidence": [
+              {
+                "event_id": "iranstrike-2lkvq32f6ru00",
+                "date": "2026-10-08",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": -1.0,
+                "interest_weight": 8.0,
+                "raw_contribution": -72.0,
+                "rationale": "Gulf partners may also become potential missile targets.",
+                "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/85239"
+              }
+            ],
+            "evidence": [
+              {
+                "event_id": "iranstrike-2lkvq32f6ru00",
+                "date": "2026-10-08",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": -1.0,
+                "interest_weight": 8.0,
+                "raw_contribution": -72.0,
+                "rationale": "Gulf partners may also become potential missile targets.",
+                "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/85239"
+              }
+            ]
+          },
+          {
+            "id": "energy_security",
+            "name": "Global energy security",
+            "description": "Reduce disruption to global energy markets.",
+            "weight": 7.0,
             "achievement_index": 50.0,
             "change_from_neutral": 0.0,
             "raw_contribution": 0,
@@ -248,149 +300,97 @@
             "evidence": []
           },
           {
-            "id": "energy_security",
-            "name": "Global energy security",
-            "description": "Reduce disruption to global energy markets.",
-            "weight": 7.0,
-            "achievement_index": 52.1,
-            "change_from_neutral": 2.1,
-            "raw_contribution": 42.0,
-            "positive_contribution": 42.0,
-            "negative_contribution": 0.0,
-            "trend": "improving",
-            "level": "balanced",
-            "evidence_count": 1,
-            "top_evidence": [
-              {
-                "event_id": "INFO-000002",
-                "date": "2026-10-06",
-                "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 1.0,
-                "interest_weight": 7.0,
-                "raw_contribution": 42.0,
-                "rationale": "Diplomatic engagement reduces the likelihood of major energy disruption.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
-              }
-            ],
-            "evidence": [
-              {
-                "event_id": "INFO-000002",
-                "date": "2026-10-06",
-                "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 1.0,
-                "interest_weight": 7.0,
-                "raw_contribution": 42.0,
-                "rationale": "Diplomatic engagement reduces the likelihood of major energy disruption.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
-              }
-            ]
-          },
-          {
             "id": "avoid_full_scale_war",
             "name": "Avoid full-scale regional war",
             "description": "Prevent uncontrolled regional escalation.",
             "weight": 10.0,
-            "achievement_index": 56.0,
-            "change_from_neutral": 6.0,
-            "raw_contribution": 120.0,
-            "positive_contribution": 120.0,
-            "negative_contribution": 0.0,
-            "trend": "improving",
-            "level": "moderately_positive",
+            "achievement_index": 41.0,
+            "change_from_neutral": -9.0,
+            "raw_contribution": -180.0,
+            "positive_contribution": 0.0,
+            "negative_contribution": -180.0,
+            "trend": "deteriorating",
+            "level": "moderately_negative",
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000002",
-                "date": "2026-10-06",
-                "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 2.0,
+                "event_id": "iranstrike-2lkvq32f6ru00",
+                "date": "2026-10-08",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": -2.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 120.0,
-                "rationale": "Negotiations reduce immediate escalation risk and preserve diplomatic options.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                "raw_contribution": -180.0,
+                "rationale": "Missile preparation significantly increases escalation risk.",
+                "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/85239"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000002",
-                "date": "2026-10-06",
-                "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 2.0,
+                "event_id": "iranstrike-2lkvq32f6ru00",
+                "date": "2026-10-08",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": -2.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 120.0,
-                "rationale": "Negotiations reduce immediate escalation risk and preserve diplomatic options.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                "raw_contribution": -180.0,
+                "rationale": "Missile preparation significantly increases escalation risk.",
+                "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/85239"
               }
             ]
           }
         ]
       },
       "iran": {
-        "achievement_index": 51.59,
-        "change_from_neutral": 1.59,
-        "trend": "stable",
+        "achievement_index": 52.26,
+        "change_from_neutral": 2.26,
+        "trend": "improving",
         "level": "balanced",
-        "raw_contribution": 234.0,
+        "raw_contribution": 342.0,
         "interest_count": 8,
-        "interests_with_evidence": 3,
+        "interests_with_evidence": 4,
         "strongest_interests": [
-          {
-            "id": "avoid_regime_destroying_war",
-            "name": "Avoid regime-destroying war",
-            "achievement_index": 56.0,
-            "change_from_neutral": 6.0
-          },
-          {
-            "id": "regime_survival",
-            "name": "Regime survival",
-            "achievement_index": 53.0,
-            "change_from_neutral": 3.0
-          },
-          {
-            "id": "nuclear_programme",
-            "name": "Preserve nuclear programme",
-            "achievement_index": 52.7,
-            "change_from_neutral": 2.7
-          }
-        ],
-        "weakest_interests": [
           {
             "id": "strategic_deterrence",
             "name": "Strategic deterrence",
-            "achievement_index": 50.0,
-            "change_from_neutral": 0.0
+            "achievement_index": 59.0,
+            "change_from_neutral": 9.0
           },
           {
             "id": "missile_capability",
             "name": "Missile capability",
+            "achievement_index": 58.1,
+            "change_from_neutral": 8.1
+          },
+          {
+            "id": "regime_survival",
+            "name": "Regime survival",
+            "achievement_index": 54.5,
+            "change_from_neutral": 4.5
+          }
+        ],
+        "weakest_interests": [
+          {
+            "id": "avoid_regime_destroying_war",
+            "name": "Avoid regime-destroying war",
+            "achievement_index": 45.5,
+            "change_from_neutral": -4.5
+          },
+          {
+            "id": "nuclear_programme",
+            "name": "Preserve nuclear programme",
             "achievement_index": 50.0,
             "change_from_neutral": 0.0
           },
@@ -407,50 +407,50 @@
             "name": "Regime survival",
             "description": "Ensure survival and stability of the Islamic Republic.",
             "weight": 10.0,
-            "achievement_index": 53.0,
-            "change_from_neutral": 3.0,
-            "raw_contribution": 60.0,
-            "positive_contribution": 60.0,
+            "achievement_index": 54.5,
+            "change_from_neutral": 4.5,
+            "raw_contribution": 90.0,
+            "positive_contribution": 90.0,
             "negative_contribution": 0.0,
             "trend": "improving",
             "level": "balanced",
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000002",
-                "date": "2026-10-06",
-                "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
+                "event_id": "iranstrike-2lkvq32f6ru00",
+                "date": "2026-10-08",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
                 "effect": 1.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 60.0,
-                "rationale": "Negotiations lower the immediate military threat to the Iranian state.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                "raw_contribution": 90.0,
+                "rationale": "A credible retaliatory capability may discourage attacks on the Iranian state.",
+                "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/85239"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000002",
-                "date": "2026-10-06",
-                "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
+                "event_id": "iranstrike-2lkvq32f6ru00",
+                "date": "2026-10-08",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
                 "effect": 1.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 60.0,
-                "rationale": "Negotiations lower the immediate military threat to the Iranian state.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                "raw_contribution": 90.0,
+                "rationale": "A credible retaliatory capability may discourage attacks on the Iranian state.",
+                "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/85239"
               }
             ]
           },
@@ -459,74 +459,58 @@
             "name": "Strategic deterrence",
             "description": "Maintain credible military deterrence against the United States and Israel.",
             "weight": 10.0,
-            "achievement_index": 50.0,
-            "change_from_neutral": 0.0,
-            "raw_contribution": 0,
-            "positive_contribution": 0,
-            "negative_contribution": 0,
-            "trend": "stable",
-            "level": "balanced",
-            "evidence_count": 0,
-            "top_evidence": [],
-            "evidence": []
+            "achievement_index": 59.0,
+            "change_from_neutral": 9.0,
+            "raw_contribution": 180.0,
+            "positive_contribution": 180.0,
+            "negative_contribution": 0.0,
+            "trend": "improving",
+            "level": "moderately_positive",
+            "evidence_count": 1,
+            "top_evidence": [
+              {
+                "event_id": "iranstrike-2lkvq32f6ru00",
+                "date": "2026-10-08",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": 2.0,
+                "interest_weight": 10.0,
+                "raw_contribution": 180.0,
+                "rationale": "Missile readiness increases Iran's ability to threaten retaliation.",
+                "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/85239"
+              }
+            ],
+            "evidence": [
+              {
+                "event_id": "iranstrike-2lkvq32f6ru00",
+                "date": "2026-10-08",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": 2.0,
+                "interest_weight": 10.0,
+                "raw_contribution": 180.0,
+                "rationale": "Missile readiness increases Iran's ability to threaten retaliation.",
+                "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/85239"
+              }
+            ]
           },
           {
             "id": "nuclear_programme",
             "name": "Preserve nuclear programme",
             "description": "Protect strategic nuclear infrastructure and capabilities.",
             "weight": 9.0,
-            "achievement_index": 52.7,
-            "change_from_neutral": 2.7,
-            "raw_contribution": 54.0,
-            "positive_contribution": 54.0,
-            "negative_contribution": 0.0,
-            "trend": "improving",
-            "level": "balanced",
-            "evidence_count": 1,
-            "top_evidence": [
-              {
-                "event_id": "INFO-000002",
-                "date": "2026-10-06",
-                "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 1.0,
-                "interest_weight": 9.0,
-                "raw_contribution": 54.0,
-                "rationale": "Negotiations may allow Iran to preserve part of its nuclear infrastructure under agreed restrictions.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
-              }
-            ],
-            "evidence": [
-              {
-                "event_id": "INFO-000002",
-                "date": "2026-10-06",
-                "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 1.0,
-                "interest_weight": 9.0,
-                "raw_contribution": 54.0,
-                "rationale": "Negotiations may allow Iran to preserve part of its nuclear infrastructure under agreed restrictions.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
-              }
-            ]
-          },
-          {
-            "id": "missile_capability",
-            "name": "Missile capability",
-            "description": "Maintain and develop long-range missile forces.",
-            "weight": 9.0,
             "achievement_index": 50.0,
             "change_from_neutral": 0.0,
             "raw_contribution": 0,
@@ -537,6 +521,58 @@
             "evidence_count": 0,
             "top_evidence": [],
             "evidence": []
+          },
+          {
+            "id": "missile_capability",
+            "name": "Missile capability",
+            "description": "Maintain and develop long-range missile forces.",
+            "weight": 9.0,
+            "achievement_index": 58.1,
+            "change_from_neutral": 8.1,
+            "raw_contribution": 162.0,
+            "positive_contribution": 162.0,
+            "negative_contribution": 0.0,
+            "trend": "improving",
+            "level": "moderately_positive",
+            "evidence_count": 1,
+            "top_evidence": [
+              {
+                "event_id": "iranstrike-2lkvq32f6ru00",
+                "date": "2026-10-08",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": 2.0,
+                "interest_weight": 9.0,
+                "raw_contribution": 162.0,
+                "rationale": "Preparation demonstrates and improves operational missile readiness.",
+                "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/85239"
+              }
+            ],
+            "evidence": [
+              {
+                "event_id": "iranstrike-2lkvq32f6ru00",
+                "date": "2026-10-08",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": 2.0,
+                "interest_weight": 9.0,
+                "raw_contribution": 162.0,
+                "rationale": "Preparation demonstrates and improves operational missile readiness.",
+                "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/85239"
+              }
+            ]
           },
           {
             "id": "proxy_network",
@@ -591,50 +627,50 @@
             "name": "Avoid regime-destroying war",
             "description": "Avoid military escalation threatening state survival.",
             "weight": 10.0,
-            "achievement_index": 56.0,
-            "change_from_neutral": 6.0,
-            "raw_contribution": 120.0,
-            "positive_contribution": 120.0,
-            "negative_contribution": 0.0,
-            "trend": "improving",
-            "level": "moderately_positive",
+            "achievement_index": 45.5,
+            "change_from_neutral": -4.5,
+            "raw_contribution": -90.0,
+            "positive_contribution": 0.0,
+            "negative_contribution": -90.0,
+            "trend": "deteriorating",
+            "level": "balanced",
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000002",
-                "date": "2026-10-06",
-                "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 2.0,
+                "event_id": "iranstrike-2lkvq32f6ru00",
+                "date": "2026-10-08",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": -1.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 120.0,
-                "rationale": "Diplomatic engagement directly reduces the probability of a regime-threatening war.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                "raw_contribution": -90.0,
+                "rationale": "Visible missile preparations may trigger pre-emptive action.",
+                "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/85239"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000002",
-                "date": "2026-10-06",
-                "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 2.0,
+                "event_id": "iranstrike-2lkvq32f6ru00",
+                "date": "2026-10-08",
+                "source_actor": "iran",
+                "indicator": "missile_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 9.0,
+                "indicator_strength": 9.0,
+                "effect": -1.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 120.0,
-                "rationale": "Diplomatic engagement directly reduces the probability of a regime-threatening war.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                "raw_contribution": -90.0,
+                "rationale": "Visible missile preparations may trigger pre-emptive action.",
+                "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                "source": "",
+                "link": "https://t.me/CIG_telegram/85239"
               }
             ]
           }
@@ -643,176 +679,94 @@
     },
     "processed_evidence": [
       {
-        "event_id": "INFO-000002",
-        "timestamp": "2026-10-06T23:55:59+00:00",
-        "date": "2026-10-06",
-        "source_actor": "usa",
-        "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-        "event_type": "diplomatic",
-        "event_direction": "mixed",
-        "source_layer": "non_kinetic",
-        "final_score": -6.0,
-        "original_final_score": -6.0,
-        "operational_component": 0.0,
-        "strategic_modifier": -6.0,
-        "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-        "source": "\"iran israel usa war when:7d\" - Google News",
-        "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
+        "event_id": "iranstrike-2lkvq32f6ru00",
+        "timestamp": "2026-10-08T20:58:36+00:00",
+        "date": "2026-10-08",
+        "source_actor": "iran",
+        "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+        "event_type": "kinetic",
+        "event_direction": "escalation",
+        "source_layer": "kinetic",
+        "final_score": 10.0,
+        "original_final_score": 10.0,
+        "operational_component": 1.0,
+        "strategic_modifier": 9.0,
+        "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+        "source": "",
+        "link": "https://t.me/CIG_telegram/85239",
         "daily_score_suppressed": false,
         "suppression_reason": "",
         "mapped_indicators": [
           {
-            "indicator": "negotiation",
-            "indicator_name": "Negotiation",
-            "pressure_direction": "decrease_pressure",
-            "indicator_score": -6.0,
-            "indicator_strength": 6.0,
+            "indicator": "missile_preparation",
+            "indicator_name": "Missile force preparation",
+            "pressure_direction": "increase_pressure",
+            "indicator_score": 9.0,
+            "indicator_strength": 9.0,
             "mapped_impacts": [
               {
-                "target_actor": "usa",
-                "interest_id": "avoid_full_scale_war",
+                "target_actor": "iran",
+                "interest_id": "strategic_deterrence",
                 "effect": 2.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 120.0,
-                "rationale": "Negotiations reduce immediate escalation risk and preserve diplomatic options."
+                "raw_contribution": 180.0,
+                "rationale": "Missile readiness increases Iran's ability to threaten retaliation."
               },
               {
-                "target_actor": "usa",
-                "interest_id": "nuclear_nonproliferation",
-                "effect": 1.0,
+                "target_actor": "iran",
+                "interest_id": "missile_capability",
+                "effect": 2.0,
                 "interest_weight": 9.0,
-                "raw_contribution": 54.0,
-                "rationale": "Diplomacy may produce limits, inspections or delays affecting Iran's nuclear programme."
+                "raw_contribution": 162.0,
+                "rationale": "Preparation demonstrates and improves operational missile readiness."
+              },
+              {
+                "target_actor": "iran",
+                "interest_id": "regime_survival",
+                "effect": 1.0,
+                "interest_weight": 10.0,
+                "raw_contribution": 90.0,
+                "rationale": "A credible retaliatory capability may discourage attacks on the Iranian state."
+              },
+              {
+                "target_actor": "iran",
+                "interest_id": "avoid_regime_destroying_war",
+                "effect": -1.0,
+                "interest_weight": 10.0,
+                "raw_contribution": -90.0,
+                "rationale": "Visible missile preparations may trigger pre-emptive action."
               },
               {
                 "target_actor": "usa",
                 "interest_id": "force_protection",
-                "effect": 1.0,
+                "effect": -2.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 60.0,
-                "rationale": "Reduced tension lowers the immediate threat to US forces."
+                "raw_contribution": -180.0,
+                "rationale": "US bases and personnel face greater immediate missile risk."
               },
               {
                 "target_actor": "usa",
-                "interest_id": "energy_security",
-                "effect": 1.0,
-                "interest_weight": 7.0,
-                "raw_contribution": 42.0,
-                "rationale": "Diplomatic engagement reduces the likelihood of major energy disruption."
-              },
-              {
-                "target_actor": "iran",
-                "interest_id": "regime_survival",
-                "effect": 1.0,
+                "interest_id": "israel_security",
+                "effect": -2.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 60.0,
-                "rationale": "Negotiations lower the immediate military threat to the Iranian state."
+                "raw_contribution": -180.0,
+                "rationale": "Israeli territory and infrastructure may face increased missile threat."
               },
               {
-                "target_actor": "iran",
-                "interest_id": "avoid_regime_destroying_war",
-                "effect": 2.0,
-                "interest_weight": 10.0,
-                "raw_contribution": 120.0,
-                "rationale": "Diplomatic engagement directly reduces the probability of a regime-threatening war."
-              },
-              {
-                "target_actor": "iran",
-                "interest_id": "nuclear_programme",
-                "effect": 1.0,
-                "interest_weight": 9.0,
-                "raw_contribution": 54.0,
-                "rationale": "Negotiations may allow Iran to preserve part of its nuclear infrastructure under agreed restrictions."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "event_id": "INFO-000002",
-        "timestamp": "2026-10-06T23:55:59+00:00",
-        "date": "2026-10-06",
-        "source_actor": "iran",
-        "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-        "event_type": "diplomatic",
-        "event_direction": "mixed",
-        "source_layer": "non_kinetic",
-        "final_score": -6.0,
-        "original_final_score": -6.0,
-        "operational_component": 0.0,
-        "strategic_modifier": -6.0,
-        "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-        "source": "\"iran israel usa war when:7d\" - Google News",
-        "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
-        "daily_score_suppressed": false,
-        "suppression_reason": "",
-        "mapped_indicators": [
-          {
-            "indicator": "negotiation",
-            "indicator_name": "Negotiation",
-            "pressure_direction": "decrease_pressure",
-            "indicator_score": -6.0,
-            "indicator_strength": 6.0,
-            "mapped_impacts": [
-              {
-                "target_actor": "iran",
-                "interest_id": "regime_survival",
-                "effect": 1.0,
-                "interest_weight": 10.0,
-                "raw_contribution": 0.0,
-                "original_raw_contribution": 60.0,
-                "suppressed": true,
-                "rationale": "Negotiations reduce immediate pressure on the Iranian state."
-              },
-              {
-                "target_actor": "iran",
-                "interest_id": "avoid_regime_destroying_war",
-                "effect": 2.0,
-                "interest_weight": 10.0,
-                "raw_contribution": 0.0,
-                "original_raw_contribution": 120.0,
-                "suppressed": true,
-                "rationale": "Diplomacy lowers the likelihood of a war threatening regime survival."
-              },
-              {
-                "target_actor": "iran",
-                "interest_id": "nuclear_programme",
-                "effect": 1.0,
-                "interest_weight": 9.0,
-                "raw_contribution": 0.0,
-                "original_raw_contribution": 54.0,
-                "suppressed": true,
-                "rationale": "Negotiations may allow Iran to preserve controlled nuclear capabilities."
+                "target_actor": "usa",
+                "interest_id": "regional_partners",
+                "effect": -1.0,
+                "interest_weight": 8.0,
+                "raw_contribution": -72.0,
+                "rationale": "Gulf partners may also become potential missile targets."
               },
               {
                 "target_actor": "usa",
                 "interest_id": "avoid_full_scale_war",
-                "effect": 2.0,
+                "effect": -2.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 0.0,
-                "original_raw_contribution": 120.0,
-                "suppressed": true,
-                "rationale": "Negotiations support conflict containment."
-              },
-              {
-                "target_actor": "usa",
-                "interest_id": "nuclear_nonproliferation",
-                "effect": 1.0,
-                "interest_weight": 9.0,
-                "raw_contribution": 0.0,
-                "original_raw_contribution": 54.0,
-                "suppressed": true,
-                "rationale": "Diplomatic agreements may constrain or monitor Iran's nuclear programme."
-              },
-              {
-                "target_actor": "usa",
-                "interest_id": "energy_security",
-                "effect": 1.0,
-                "interest_weight": 7.0,
-                "raw_contribution": 0.0,
-                "original_raw_contribution": 42.0,
-                "suppressed": true,
-                "rationale": "Lower tension supports energy-market stability."
+                "raw_contribution": -180.0,
+                "rationale": "Missile preparation significantly increases escalation risk."
               }
             ]
           }
@@ -142553,7 +142507,7 @@
               "evidence_count": 1,
               "top_evidence": [
                 {
-                  "event_id": "INFO-000004",
+                  "event_id": "INFO-000006",
                   "date": "2026-10-04",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -142572,7 +142526,7 @@
               ],
               "evidence": [
                 {
-                  "event_id": "INFO-000004",
+                  "event_id": "INFO-000006",
                   "date": "2026-10-04",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -142621,7 +142575,7 @@
               "evidence_count": 2,
               "top_evidence": [
                 {
-                  "event_id": "INFO-000004",
+                  "event_id": "INFO-000006",
                   "date": "2026-10-04",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -142638,7 +142592,7 @@
                   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOYkdGTmxyRWNXbGxHTklnUzRHbmk0OHJYNVQ2NUFpZHZ0NnB4V0xXa1ZMLWN0UmY0TlFxMHJtbHpwY0lvOFEyak90eVZJSlZHbjl3MTl1ZDFYY2FWQkJfOExRNkxCNXNuX1B2bUYxdnNLRzBYbkcyMjF4RHpoRzdRaUZmRm9JNjlkdmZTWWxLOFNpdjdJV3ZhVA?oc=5"
                 },
                 {
-                  "event_id": "INFO-000005",
+                  "event_id": "INFO-000007",
                   "date": "2026-10-04",
                   "source_actor": "iran",
                   "indicator": "negotiation",
@@ -142657,7 +142611,7 @@
               ],
               "evidence": [
                 {
-                  "event_id": "INFO-000004",
+                  "event_id": "INFO-000006",
                   "date": "2026-10-04",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -142674,7 +142628,7 @@
                   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOYkdGTmxyRWNXbGxHTklnUzRHbmk0OHJYNVQ2NUFpZHZ0NnB4V0xXa1ZMLWN0UmY0TlFxMHJtbHpwY0lvOFEyak90eVZJSlZHbjl3MTl1ZDFYY2FWQkJfOExRNkxCNXNuX1B2bUYxdnNLRzBYbkcyMjF4RHpoRzdRaUZmRm9JNjlkdmZTWWxLOFNpdjdJV3ZhVA?oc=5"
                 },
                 {
-                  "event_id": "INFO-000005",
+                  "event_id": "INFO-000007",
                   "date": "2026-10-04",
                   "source_actor": "iran",
                   "indicator": "negotiation",
@@ -142739,7 +142693,7 @@
               "evidence_count": 2,
               "top_evidence": [
                 {
-                  "event_id": "INFO-000004",
+                  "event_id": "INFO-000006",
                   "date": "2026-10-04",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -142756,7 +142710,7 @@
                   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOYkdGTmxyRWNXbGxHTklnUzRHbmk0OHJYNVQ2NUFpZHZ0NnB4V0xXa1ZMLWN0UmY0TlFxMHJtbHpwY0lvOFEyak90eVZJSlZHbjl3MTl1ZDFYY2FWQkJfOExRNkxCNXNuX1B2bUYxdnNLRzBYbkcyMjF4RHpoRzdRaUZmRm9JNjlkdmZTWWxLOFNpdjdJV3ZhVA?oc=5"
                 },
                 {
-                  "event_id": "INFO-000005",
+                  "event_id": "INFO-000007",
                   "date": "2026-10-04",
                   "source_actor": "iran",
                   "indicator": "negotiation",
@@ -142775,7 +142729,7 @@
               ],
               "evidence": [
                 {
-                  "event_id": "INFO-000004",
+                  "event_id": "INFO-000006",
                   "date": "2026-10-04",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -142792,7 +142746,7 @@
                   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOYkdGTmxyRWNXbGxHTklnUzRHbmk0OHJYNVQ2NUFpZHZ0NnB4V0xXa1ZMLWN0UmY0TlFxMHJtbHpwY0lvOFEyak90eVZJSlZHbjl3MTl1ZDFYY2FWQkJfOExRNkxCNXNuX1B2bUYxdnNLRzBYbkcyMjF4RHpoRzdRaUZmRm9JNjlkdmZTWWxLOFNpdjdJV3ZhVA?oc=5"
                 },
                 {
-                  "event_id": "INFO-000005",
+                  "event_id": "INFO-000007",
                   "date": "2026-10-04",
                   "source_actor": "iran",
                   "indicator": "negotiation",
@@ -142825,7 +142779,7 @@
               "evidence_count": 2,
               "top_evidence": [
                 {
-                  "event_id": "INFO-000004",
+                  "event_id": "INFO-000006",
                   "date": "2026-10-04",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -142842,7 +142796,7 @@
                   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOYkdGTmxyRWNXbGxHTklnUzRHbmk0OHJYNVQ2NUFpZHZ0NnB4V0xXa1ZMLWN0UmY0TlFxMHJtbHpwY0lvOFEyak90eVZJSlZHbjl3MTl1ZDFYY2FWQkJfOExRNkxCNXNuX1B2bUYxdnNLRzBYbkcyMjF4RHpoRzdRaUZmRm9JNjlkdmZTWWxLOFNpdjdJV3ZhVA?oc=5"
                 },
                 {
-                  "event_id": "INFO-000005",
+                  "event_id": "INFO-000007",
                   "date": "2026-10-04",
                   "source_actor": "iran",
                   "indicator": "negotiation",
@@ -142861,7 +142815,7 @@
               ],
               "evidence": [
                 {
-                  "event_id": "INFO-000004",
+                  "event_id": "INFO-000006",
                   "date": "2026-10-04",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -142878,7 +142832,7 @@
                   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOYkdGTmxyRWNXbGxHTklnUzRHbmk0OHJYNVQ2NUFpZHZ0NnB4V0xXa1ZMLWN0UmY0TlFxMHJtbHpwY0lvOFEyak90eVZJSlZHbjl3MTl1ZDFYY2FWQkJfOExRNkxCNXNuX1B2bUYxdnNLRzBYbkcyMjF4RHpoRzdRaUZmRm9JNjlkdmZTWWxLOFNpdjdJV3ZhVA?oc=5"
                 },
                 {
-                  "event_id": "INFO-000005",
+                  "event_id": "INFO-000007",
                   "date": "2026-10-04",
                   "source_actor": "iran",
                   "indicator": "negotiation",
@@ -142962,7 +142916,7 @@
               "evidence_count": 2,
               "top_evidence": [
                 {
-                  "event_id": "INFO-000004",
+                  "event_id": "INFO-000006",
                   "date": "2026-10-04",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -142979,7 +142933,7 @@
                   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOYkdGTmxyRWNXbGxHTklnUzRHbmk0OHJYNVQ2NUFpZHZ0NnB4V0xXa1ZMLWN0UmY0TlFxMHJtbHpwY0lvOFEyak90eVZJSlZHbjl3MTl1ZDFYY2FWQkJfOExRNkxCNXNuX1B2bUYxdnNLRzBYbkcyMjF4RHpoRzdRaUZmRm9JNjlkdmZTWWxLOFNpdjdJV3ZhVA?oc=5"
                 },
                 {
-                  "event_id": "INFO-000005",
+                  "event_id": "INFO-000007",
                   "date": "2026-10-04",
                   "source_actor": "iran",
                   "indicator": "negotiation",
@@ -142998,7 +142952,7 @@
               ],
               "evidence": [
                 {
-                  "event_id": "INFO-000004",
+                  "event_id": "INFO-000006",
                   "date": "2026-10-04",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -143015,7 +142969,7 @@
                   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOYkdGTmxyRWNXbGxHTklnUzRHbmk0OHJYNVQ2NUFpZHZ0NnB4V0xXa1ZMLWN0UmY0TlFxMHJtbHpwY0lvOFEyak90eVZJSlZHbjl3MTl1ZDFYY2FWQkJfOExRNkxCNXNuX1B2bUYxdnNLRzBYbkcyMjF4RHpoRzdRaUZmRm9JNjlkdmZTWWxLOFNpdjdJV3ZhVA?oc=5"
                 },
                 {
-                  "event_id": "INFO-000005",
+                  "event_id": "INFO-000007",
                   "date": "2026-10-04",
                   "source_actor": "iran",
                   "indicator": "negotiation",
@@ -143064,7 +143018,7 @@
               "evidence_count": 2,
               "top_evidence": [
                 {
-                  "event_id": "INFO-000004",
+                  "event_id": "INFO-000006",
                   "date": "2026-10-04",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -143081,7 +143035,7 @@
                   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOYkdGTmxyRWNXbGxHTklnUzRHbmk0OHJYNVQ2NUFpZHZ0NnB4V0xXa1ZMLWN0UmY0TlFxMHJtbHpwY0lvOFEyak90eVZJSlZHbjl3MTl1ZDFYY2FWQkJfOExRNkxCNXNuX1B2bUYxdnNLRzBYbkcyMjF4RHpoRzdRaUZmRm9JNjlkdmZTWWxLOFNpdjdJV3ZhVA?oc=5"
                 },
                 {
-                  "event_id": "INFO-000005",
+                  "event_id": "INFO-000007",
                   "date": "2026-10-04",
                   "source_actor": "iran",
                   "indicator": "negotiation",
@@ -143100,7 +143054,7 @@
               ],
               "evidence": [
                 {
-                  "event_id": "INFO-000004",
+                  "event_id": "INFO-000006",
                   "date": "2026-10-04",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -143117,7 +143071,7 @@
                   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOYkdGTmxyRWNXbGxHTklnUzRHbmk0OHJYNVQ2NUFpZHZ0NnB4V0xXa1ZMLWN0UmY0TlFxMHJtbHpwY0lvOFEyak90eVZJSlZHbjl3MTl1ZDFYY2FWQkJfOExRNkxCNXNuX1B2bUYxdnNLRzBYbkcyMjF4RHpoRzdRaUZmRm9JNjlkdmZTWWxLOFNpdjdJV3ZhVA?oc=5"
                 },
                 {
-                  "event_id": "INFO-000005",
+                  "event_id": "INFO-000007",
                   "date": "2026-10-04",
                   "source_actor": "iran",
                   "indicator": "negotiation",
@@ -143214,7 +143168,7 @@
               "evidence_count": 2,
               "top_evidence": [
                 {
-                  "event_id": "INFO-000004",
+                  "event_id": "INFO-000006",
                   "date": "2026-10-04",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -143231,7 +143185,7 @@
                   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOYkdGTmxyRWNXbGxHTklnUzRHbmk0OHJYNVQ2NUFpZHZ0NnB4V0xXa1ZMLWN0UmY0TlFxMHJtbHpwY0lvOFEyak90eVZJSlZHbjl3MTl1ZDFYY2FWQkJfOExRNkxCNXNuX1B2bUYxdnNLRzBYbkcyMjF4RHpoRzdRaUZmRm9JNjlkdmZTWWxLOFNpdjdJV3ZhVA?oc=5"
                 },
                 {
-                  "event_id": "INFO-000005",
+                  "event_id": "INFO-000007",
                   "date": "2026-10-04",
                   "source_actor": "iran",
                   "indicator": "negotiation",
@@ -143250,7 +143204,7 @@
               ],
               "evidence": [
                 {
-                  "event_id": "INFO-000004",
+                  "event_id": "INFO-000006",
                   "date": "2026-10-04",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -143267,7 +143221,7 @@
                   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOYkdGTmxyRWNXbGxHTklnUzRHbmk0OHJYNVQ2NUFpZHZ0NnB4V0xXa1ZMLWN0UmY0TlFxMHJtbHpwY0lvOFEyak90eVZJSlZHbjl3MTl1ZDFYY2FWQkJfOExRNkxCNXNuX1B2bUYxdnNLRzBYbkcyMjF4RHpoRzdRaUZmRm9JNjlkdmZTWWxLOFNpdjdJV3ZhVA?oc=5"
                 },
                 {
-                  "event_id": "INFO-000005",
+                  "event_id": "INFO-000007",
                   "date": "2026-10-04",
                   "source_actor": "iran",
                   "indicator": "negotiation",
@@ -143290,7 +143244,7 @@
       },
       "processed_evidence": [
         {
-          "event_id": "INFO-000004",
+          "event_id": "INFO-000006",
           "timestamp": "2026-10-04T21:41:47+00:00",
           "date": "2026-10-04",
           "source_actor": "usa",
@@ -143376,7 +143330,7 @@
           ]
         },
         {
-          "event_id": "INFO-000005",
+          "event_id": "INFO-000007",
           "timestamp": "2026-10-04T19:44:29+00:00",
           "date": "2026-10-04",
           "source_actor": "iran",
@@ -143456,7 +143410,7 @@
       ],
       "suppressed_evidence": [
         {
-          "event_id": "INFO-000004",
+          "event_id": "INFO-000006",
           "timestamp": "2026-10-04T21:41:47+00:00",
           "date": "2026-10-04",
           "source_actor": "iran",
@@ -143959,7 +143913,7 @@
               "evidence_count": 1,
               "top_evidence": [
                 {
-                  "event_id": "INFO-000002",
+                  "event_id": "INFO-000004",
                   "date": "2026-10-06",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -143978,7 +143932,7 @@
               ],
               "evidence": [
                 {
-                  "event_id": "INFO-000002",
+                  "event_id": "INFO-000004",
                   "date": "2026-10-06",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -144027,7 +143981,7 @@
               "evidence_count": 1,
               "top_evidence": [
                 {
-                  "event_id": "INFO-000002",
+                  "event_id": "INFO-000004",
                   "date": "2026-10-06",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -144046,7 +144000,7 @@
               ],
               "evidence": [
                 {
-                  "event_id": "INFO-000002",
+                  "event_id": "INFO-000004",
                   "date": "2026-10-06",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -144111,7 +144065,7 @@
               "evidence_count": 1,
               "top_evidence": [
                 {
-                  "event_id": "INFO-000002",
+                  "event_id": "INFO-000004",
                   "date": "2026-10-06",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -144130,7 +144084,7 @@
               ],
               "evidence": [
                 {
-                  "event_id": "INFO-000002",
+                  "event_id": "INFO-000004",
                   "date": "2026-10-06",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -144163,7 +144117,7 @@
               "evidence_count": 1,
               "top_evidence": [
                 {
-                  "event_id": "INFO-000002",
+                  "event_id": "INFO-000004",
                   "date": "2026-10-06",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -144182,7 +144136,7 @@
               ],
               "evidence": [
                 {
-                  "event_id": "INFO-000002",
+                  "event_id": "INFO-000004",
                   "date": "2026-10-06",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -144266,7 +144220,7 @@
               "evidence_count": 1,
               "top_evidence": [
                 {
-                  "event_id": "INFO-000002",
+                  "event_id": "INFO-000004",
                   "date": "2026-10-06",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -144285,7 +144239,7 @@
               ],
               "evidence": [
                 {
-                  "event_id": "INFO-000002",
+                  "event_id": "INFO-000004",
                   "date": "2026-10-06",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -144334,7 +144288,7 @@
               "evidence_count": 1,
               "top_evidence": [
                 {
-                  "event_id": "INFO-000002",
+                  "event_id": "INFO-000004",
                   "date": "2026-10-06",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -144353,7 +144307,7 @@
               ],
               "evidence": [
                 {
-                  "event_id": "INFO-000002",
+                  "event_id": "INFO-000004",
                   "date": "2026-10-06",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -144450,7 +144404,7 @@
               "evidence_count": 1,
               "top_evidence": [
                 {
-                  "event_id": "INFO-000002",
+                  "event_id": "INFO-000004",
                   "date": "2026-10-06",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -144469,7 +144423,7 @@
               ],
               "evidence": [
                 {
-                  "event_id": "INFO-000002",
+                  "event_id": "INFO-000004",
                   "date": "2026-10-06",
                   "source_actor": "usa",
                   "indicator": "negotiation",
@@ -144492,7 +144446,7 @@
       },
       "processed_evidence": [
         {
-          "event_id": "INFO-000002",
+          "event_id": "INFO-000004",
           "timestamp": "2026-10-06T23:55:59+00:00",
           "date": "2026-10-06",
           "source_actor": "usa",
@@ -144578,7 +144532,7 @@
           ]
         },
         {
-          "event_id": "INFO-000002",
+          "event_id": "INFO-000004",
           "timestamp": "2026-10-06T23:55:59+00:00",
           "date": "2026-10-06",
           "source_actor": "iran",
@@ -144678,13 +144632,1158 @@
         "indicator_strength_cap": 20.0,
         "formula": "raw_contribution = absolute_indicator_score × mapped_interest_effect × interest_weight; interest_index = clamp(50 + raw_contribution / normalisation_divisor, 0, 100); actor_index = interest-weighted mean of the actor's interest indices"
       }
+    },
+    {
+      "date": "2026-10-07",
+      "summary": {
+        "usa_achievement_index": 50.0,
+        "iran_achievement_index": 50.0,
+        "achievement_gap": 0.0,
+        "daily_strategic_advantage": "balanced",
+        "interpretation": "The index measures whether the current day's detected developments support or weaken each actor's own weighted strategic interests. It does not directly measure military victory or conflict outcome."
+      },
+      "actors": {
+        "usa": {
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0,
+          "trend": "stable",
+          "level": "balanced",
+          "raw_contribution": 0.0,
+          "interest_count": 8,
+          "interests_with_evidence": 0,
+          "strongest_interests": [
+            {
+              "id": "israel_security",
+              "name": "Israel security",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "force_protection",
+              "name": "Protection of US forces",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "freedom_of_navigation",
+              "name": "Freedom of navigation",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            }
+          ],
+          "weakest_interests": [
+            {
+              "id": "israel_security",
+              "name": "Israel security",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "force_protection",
+              "name": "Protection of US forces",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "freedom_of_navigation",
+              "name": "Freedom of navigation",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            }
+          ],
+          "interests": [
+            {
+              "id": "israel_security",
+              "name": "Israel security",
+              "description": "Maintain Israel's security and military superiority.",
+              "weight": 10.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "force_protection",
+              "name": "Protection of US forces",
+              "description": "Protect US military personnel, bases and regional assets.",
+              "weight": 10.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "freedom_of_navigation",
+              "name": "Freedom of navigation",
+              "description": "Maintain secure maritime routes including the Strait of Hormuz.",
+              "weight": 9.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "nuclear_nonproliferation",
+              "name": "Prevent Iranian nuclear weapon capability",
+              "description": "Limit or delay Iran's military nuclear programme.",
+              "weight": 9.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "regional_deterrence",
+              "name": "Regional deterrence",
+              "description": "Maintain credible military deterrence against Iran and its proxies.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "regional_partners",
+              "name": "Protection of regional partners",
+              "description": "Support Gulf partners and other regional allies.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "energy_security",
+              "name": "Global energy security",
+              "description": "Reduce disruption to global energy markets.",
+              "weight": 7.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "avoid_full_scale_war",
+              "name": "Avoid full-scale regional war",
+              "description": "Prevent uncontrolled regional escalation.",
+              "weight": 10.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            }
+          ]
+        },
+        "iran": {
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0,
+          "trend": "stable",
+          "level": "balanced",
+          "raw_contribution": 0.0,
+          "interest_count": 8,
+          "interests_with_evidence": 0,
+          "strongest_interests": [
+            {
+              "id": "regime_survival",
+              "name": "Regime survival",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "strategic_deterrence",
+              "name": "Strategic deterrence",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "nuclear_programme",
+              "name": "Preserve nuclear programme",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            }
+          ],
+          "weakest_interests": [
+            {
+              "id": "regime_survival",
+              "name": "Regime survival",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "strategic_deterrence",
+              "name": "Strategic deterrence",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "nuclear_programme",
+              "name": "Preserve nuclear programme",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            }
+          ],
+          "interests": [
+            {
+              "id": "regime_survival",
+              "name": "Regime survival",
+              "description": "Ensure survival and stability of the Islamic Republic.",
+              "weight": 10.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "strategic_deterrence",
+              "name": "Strategic deterrence",
+              "description": "Maintain credible military deterrence against the United States and Israel.",
+              "weight": 10.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "nuclear_programme",
+              "name": "Preserve nuclear programme",
+              "description": "Protect strategic nuclear infrastructure and capabilities.",
+              "weight": 9.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "missile_capability",
+              "name": "Missile capability",
+              "description": "Maintain and develop long-range missile forces.",
+              "weight": 9.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "proxy_network",
+              "name": "Regional proxy network",
+              "description": "Maintain influence through regional partner organisations.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "regional_influence",
+              "name": "Regional influence",
+              "description": "Preserve strategic influence across the Middle East.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "hormuz_leverage",
+              "name": "Hormuz leverage",
+              "description": "Retain the ability to influence maritime traffic through the Strait of Hormuz.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "avoid_regime_destroying_war",
+              "name": "Avoid regime-destroying war",
+              "description": "Avoid military escalation threatening state survival.",
+              "weight": 10.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            }
+          ]
+        }
+      },
+      "processed_evidence": [],
+      "suppressed_evidence": [],
+      "unmapped_evidence": [],
+      "calculation": {
+        "neutral_score": 50.0,
+        "minimum_score": 0.0,
+        "maximum_score": 100.0,
+        "normalisation_divisor": 20.0,
+        "indicator_strength_cap": 20.0,
+        "formula": "raw_contribution = absolute_indicator_score × mapped_interest_effect × interest_weight; interest_index = clamp(50 + raw_contribution / normalisation_divisor, 0, 100); actor_index = interest-weighted mean of the actor's interest indices"
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "summary": {
+        "usa_achievement_index": 45.79,
+        "iran_achievement_index": 52.26,
+        "achievement_gap": -6.47,
+        "daily_strategic_advantage": "iran",
+        "interpretation": "The index measures whether the current day's detected developments support or weaken each actor's own weighted strategic interests. It does not directly measure military victory or conflict outcome."
+      },
+      "actors": {
+        "usa": {
+          "achievement_index": 45.79,
+          "change_from_neutral": -4.21,
+          "trend": "deteriorating",
+          "level": "balanced",
+          "raw_contribution": -612.0,
+          "interest_count": 8,
+          "interests_with_evidence": 4,
+          "strongest_interests": [
+            {
+              "id": "freedom_of_navigation",
+              "name": "Freedom of navigation",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "nuclear_nonproliferation",
+              "name": "Prevent Iranian nuclear weapon capability",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "regional_deterrence",
+              "name": "Regional deterrence",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            }
+          ],
+          "weakest_interests": [
+            {
+              "id": "israel_security",
+              "name": "Israel security",
+              "achievement_index": 41.0,
+              "change_from_neutral": -9.0
+            },
+            {
+              "id": "force_protection",
+              "name": "Protection of US forces",
+              "achievement_index": 41.0,
+              "change_from_neutral": -9.0
+            },
+            {
+              "id": "avoid_full_scale_war",
+              "name": "Avoid full-scale regional war",
+              "achievement_index": 41.0,
+              "change_from_neutral": -9.0
+            }
+          ],
+          "interests": [
+            {
+              "id": "israel_security",
+              "name": "Israel security",
+              "description": "Maintain Israel's security and military superiority.",
+              "weight": 10.0,
+              "achievement_index": 41.0,
+              "change_from_neutral": -9.0,
+              "raw_contribution": -180.0,
+              "positive_contribution": 0.0,
+              "negative_contribution": -180.0,
+              "trend": "deteriorating",
+              "level": "moderately_negative",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-2lkvq32f6ru00",
+                  "date": "2026-10-08",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -180.0,
+                  "rationale": "Israeli territory and infrastructure may face increased missile threat.",
+                  "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/85239"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-2lkvq32f6ru00",
+                  "date": "2026-10-08",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -180.0,
+                  "rationale": "Israeli territory and infrastructure may face increased missile threat.",
+                  "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/85239"
+                }
+              ]
+            },
+            {
+              "id": "force_protection",
+              "name": "Protection of US forces",
+              "description": "Protect US military personnel, bases and regional assets.",
+              "weight": 10.0,
+              "achievement_index": 41.0,
+              "change_from_neutral": -9.0,
+              "raw_contribution": -180.0,
+              "positive_contribution": 0.0,
+              "negative_contribution": -180.0,
+              "trend": "deteriorating",
+              "level": "moderately_negative",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-2lkvq32f6ru00",
+                  "date": "2026-10-08",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -180.0,
+                  "rationale": "US bases and personnel face greater immediate missile risk.",
+                  "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/85239"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-2lkvq32f6ru00",
+                  "date": "2026-10-08",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -180.0,
+                  "rationale": "US bases and personnel face greater immediate missile risk.",
+                  "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/85239"
+                }
+              ]
+            },
+            {
+              "id": "freedom_of_navigation",
+              "name": "Freedom of navigation",
+              "description": "Maintain secure maritime routes including the Strait of Hormuz.",
+              "weight": 9.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "nuclear_nonproliferation",
+              "name": "Prevent Iranian nuclear weapon capability",
+              "description": "Limit or delay Iran's military nuclear programme.",
+              "weight": 9.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "regional_deterrence",
+              "name": "Regional deterrence",
+              "description": "Maintain credible military deterrence against Iran and its proxies.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "regional_partners",
+              "name": "Protection of regional partners",
+              "description": "Support Gulf partners and other regional allies.",
+              "weight": 8.0,
+              "achievement_index": 46.4,
+              "change_from_neutral": -3.6,
+              "raw_contribution": -72.0,
+              "positive_contribution": 0.0,
+              "negative_contribution": -72.0,
+              "trend": "deteriorating",
+              "level": "balanced",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-2lkvq32f6ru00",
+                  "date": "2026-10-08",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": -1.0,
+                  "interest_weight": 8.0,
+                  "raw_contribution": -72.0,
+                  "rationale": "Gulf partners may also become potential missile targets.",
+                  "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/85239"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-2lkvq32f6ru00",
+                  "date": "2026-10-08",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": -1.0,
+                  "interest_weight": 8.0,
+                  "raw_contribution": -72.0,
+                  "rationale": "Gulf partners may also become potential missile targets.",
+                  "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/85239"
+                }
+              ]
+            },
+            {
+              "id": "energy_security",
+              "name": "Global energy security",
+              "description": "Reduce disruption to global energy markets.",
+              "weight": 7.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "avoid_full_scale_war",
+              "name": "Avoid full-scale regional war",
+              "description": "Prevent uncontrolled regional escalation.",
+              "weight": 10.0,
+              "achievement_index": 41.0,
+              "change_from_neutral": -9.0,
+              "raw_contribution": -180.0,
+              "positive_contribution": 0.0,
+              "negative_contribution": -180.0,
+              "trend": "deteriorating",
+              "level": "moderately_negative",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-2lkvq32f6ru00",
+                  "date": "2026-10-08",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -180.0,
+                  "rationale": "Missile preparation significantly increases escalation risk.",
+                  "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/85239"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-2lkvq32f6ru00",
+                  "date": "2026-10-08",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -180.0,
+                  "rationale": "Missile preparation significantly increases escalation risk.",
+                  "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/85239"
+                }
+              ]
+            }
+          ]
+        },
+        "iran": {
+          "achievement_index": 52.26,
+          "change_from_neutral": 2.26,
+          "trend": "improving",
+          "level": "balanced",
+          "raw_contribution": 342.0,
+          "interest_count": 8,
+          "interests_with_evidence": 4,
+          "strongest_interests": [
+            {
+              "id": "strategic_deterrence",
+              "name": "Strategic deterrence",
+              "achievement_index": 59.0,
+              "change_from_neutral": 9.0
+            },
+            {
+              "id": "missile_capability",
+              "name": "Missile capability",
+              "achievement_index": 58.1,
+              "change_from_neutral": 8.1
+            },
+            {
+              "id": "regime_survival",
+              "name": "Regime survival",
+              "achievement_index": 54.5,
+              "change_from_neutral": 4.5
+            }
+          ],
+          "weakest_interests": [
+            {
+              "id": "avoid_regime_destroying_war",
+              "name": "Avoid regime-destroying war",
+              "achievement_index": 45.5,
+              "change_from_neutral": -4.5
+            },
+            {
+              "id": "nuclear_programme",
+              "name": "Preserve nuclear programme",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "proxy_network",
+              "name": "Regional proxy network",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            }
+          ],
+          "interests": [
+            {
+              "id": "regime_survival",
+              "name": "Regime survival",
+              "description": "Ensure survival and stability of the Islamic Republic.",
+              "weight": 10.0,
+              "achievement_index": 54.5,
+              "change_from_neutral": 4.5,
+              "raw_contribution": 90.0,
+              "positive_contribution": 90.0,
+              "negative_contribution": 0.0,
+              "trend": "improving",
+              "level": "balanced",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-2lkvq32f6ru00",
+                  "date": "2026-10-08",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": 1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 90.0,
+                  "rationale": "A credible retaliatory capability may discourage attacks on the Iranian state.",
+                  "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/85239"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-2lkvq32f6ru00",
+                  "date": "2026-10-08",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": 1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 90.0,
+                  "rationale": "A credible retaliatory capability may discourage attacks on the Iranian state.",
+                  "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/85239"
+                }
+              ]
+            },
+            {
+              "id": "strategic_deterrence",
+              "name": "Strategic deterrence",
+              "description": "Maintain credible military deterrence against the United States and Israel.",
+              "weight": 10.0,
+              "achievement_index": 59.0,
+              "change_from_neutral": 9.0,
+              "raw_contribution": 180.0,
+              "positive_contribution": 180.0,
+              "negative_contribution": 0.0,
+              "trend": "improving",
+              "level": "moderately_positive",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-2lkvq32f6ru00",
+                  "date": "2026-10-08",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": 2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 180.0,
+                  "rationale": "Missile readiness increases Iran's ability to threaten retaliation.",
+                  "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/85239"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-2lkvq32f6ru00",
+                  "date": "2026-10-08",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": 2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 180.0,
+                  "rationale": "Missile readiness increases Iran's ability to threaten retaliation.",
+                  "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/85239"
+                }
+              ]
+            },
+            {
+              "id": "nuclear_programme",
+              "name": "Preserve nuclear programme",
+              "description": "Protect strategic nuclear infrastructure and capabilities.",
+              "weight": 9.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "missile_capability",
+              "name": "Missile capability",
+              "description": "Maintain and develop long-range missile forces.",
+              "weight": 9.0,
+              "achievement_index": 58.1,
+              "change_from_neutral": 8.1,
+              "raw_contribution": 162.0,
+              "positive_contribution": 162.0,
+              "negative_contribution": 0.0,
+              "trend": "improving",
+              "level": "moderately_positive",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-2lkvq32f6ru00",
+                  "date": "2026-10-08",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": 2.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 162.0,
+                  "rationale": "Preparation demonstrates and improves operational missile readiness.",
+                  "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/85239"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-2lkvq32f6ru00",
+                  "date": "2026-10-08",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": 2.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 162.0,
+                  "rationale": "Preparation demonstrates and improves operational missile readiness.",
+                  "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/85239"
+                }
+              ]
+            },
+            {
+              "id": "proxy_network",
+              "name": "Regional proxy network",
+              "description": "Maintain influence through regional partner organisations.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "regional_influence",
+              "name": "Regional influence",
+              "description": "Preserve strategic influence across the Middle East.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "hormuz_leverage",
+              "name": "Hormuz leverage",
+              "description": "Retain the ability to influence maritime traffic through the Strait of Hormuz.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "avoid_regime_destroying_war",
+              "name": "Avoid regime-destroying war",
+              "description": "Avoid military escalation threatening state survival.",
+              "weight": 10.0,
+              "achievement_index": 45.5,
+              "change_from_neutral": -4.5,
+              "raw_contribution": -90.0,
+              "positive_contribution": 0.0,
+              "negative_contribution": -90.0,
+              "trend": "deteriorating",
+              "level": "balanced",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-2lkvq32f6ru00",
+                  "date": "2026-10-08",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": -1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -90.0,
+                  "rationale": "Visible missile preparations may trigger pre-emptive action.",
+                  "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/85239"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-2lkvq32f6ru00",
+                  "date": "2026-10-08",
+                  "source_actor": "iran",
+                  "indicator": "missile_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 9.0,
+                  "indicator_strength": 9.0,
+                  "effect": -1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -90.0,
+                  "rationale": "Visible missile preparations may trigger pre-emptive action.",
+                  "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+                  "source": "",
+                  "link": "https://t.me/CIG_telegram/85239"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "processed_evidence": [
+        {
+          "event_id": "iranstrike-2lkvq32f6ru00",
+          "timestamp": "2026-10-08T20:58:36+00:00",
+          "date": "2026-10-08",
+          "source_actor": "iran",
+          "title": "Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+          "event_type": "kinetic",
+          "event_direction": "escalation",
+          "source_layer": "kinetic",
+          "final_score": 10.0,
+          "original_final_score": 10.0,
+          "operational_component": 1.0,
+          "strategic_modifier": 9.0,
+          "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: Pentagon develops plans for potential three-day intensive strike campaign against Iran targeting missile arsenal, drone production, energy infrastructure, and IRGC facilities; three carrier groups positioned in Middle East",
+          "source": "",
+          "link": "https://t.me/CIG_telegram/85239",
+          "daily_score_suppressed": false,
+          "suppression_reason": "",
+          "mapped_indicators": [
+            {
+              "indicator": "missile_preparation",
+              "indicator_name": "Missile force preparation",
+              "pressure_direction": "increase_pressure",
+              "indicator_score": 9.0,
+              "indicator_strength": 9.0,
+              "mapped_impacts": [
+                {
+                  "target_actor": "iran",
+                  "interest_id": "strategic_deterrence",
+                  "effect": 2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 180.0,
+                  "rationale": "Missile readiness increases Iran's ability to threaten retaliation."
+                },
+                {
+                  "target_actor": "iran",
+                  "interest_id": "missile_capability",
+                  "effect": 2.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 162.0,
+                  "rationale": "Preparation demonstrates and improves operational missile readiness."
+                },
+                {
+                  "target_actor": "iran",
+                  "interest_id": "regime_survival",
+                  "effect": 1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 90.0,
+                  "rationale": "A credible retaliatory capability may discourage attacks on the Iranian state."
+                },
+                {
+                  "target_actor": "iran",
+                  "interest_id": "avoid_regime_destroying_war",
+                  "effect": -1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -90.0,
+                  "rationale": "Visible missile preparations may trigger pre-emptive action."
+                },
+                {
+                  "target_actor": "usa",
+                  "interest_id": "force_protection",
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -180.0,
+                  "rationale": "US bases and personnel face greater immediate missile risk."
+                },
+                {
+                  "target_actor": "usa",
+                  "interest_id": "israel_security",
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -180.0,
+                  "rationale": "Israeli territory and infrastructure may face increased missile threat."
+                },
+                {
+                  "target_actor": "usa",
+                  "interest_id": "regional_partners",
+                  "effect": -1.0,
+                  "interest_weight": 8.0,
+                  "raw_contribution": -72.0,
+                  "rationale": "Gulf partners may also become potential missile targets."
+                },
+                {
+                  "target_actor": "usa",
+                  "interest_id": "avoid_full_scale_war",
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -180.0,
+                  "rationale": "Missile preparation significantly increases escalation risk."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "suppressed_evidence": [],
+      "unmapped_evidence": [],
+      "calculation": {
+        "neutral_score": 50.0,
+        "minimum_score": 0.0,
+        "maximum_score": 100.0,
+        "normalisation_divisor": 20.0,
+        "indicator_strength_cap": 20.0,
+        "formula": "raw_contribution = absolute_indicator_score × mapped_interest_effect × interest_weight; interest_index = clamp(50 + raw_contribution / normalisation_divisor, 0, 100); actor_index = interest-weighted mean of the actor's interest indices"
+      }
     }
   ],
   "history_summary": {
-    "day_count": 211,
+    "day_count": 213,
     "actors": {
       "usa": {
-        "average": 50.71,
+        "average": 50.69,
         "median": 50.0,
         "best_day": {
           "date": "2026-08-02",
@@ -145961,6 +147060,18 @@
               "value": 51.18,
               "window": 7,
               "observations": 7
+            },
+            {
+              "date": "2026-10-07",
+              "value": 50.72,
+              "window": 7,
+              "observations": 7
+            },
+            {
+              "date": "2026-10-08",
+              "value": 50.12,
+              "window": 7,
+              "observations": 7
             }
           ],
           "30_day": [
@@ -147229,16 +148340,28 @@
               "value": 50.99,
               "window": 30,
               "observations": 30
+            },
+            {
+              "date": "2026-10-07",
+              "value": 50.99,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-10-08",
+              "value": 50.85,
+              "window": 30,
+              "observations": 30
             }
           ]
         },
         "trend": {
           "direction": "stable",
-          "slope": -0.0017
+          "slope": -0.0024
         },
-        "volatility": 1.6126,
-        "latest": 51.82,
-        "change_first_to_latest": -1.39
+        "volatility": 1.6406,
+        "latest": 45.79,
+        "change_first_to_latest": -7.42
       },
       "iran": {
         "average": 51.1,
@@ -148518,6 +149641,18 @@
               "value": 51.13,
               "window": 7,
               "observations": 7
+            },
+            {
+              "date": "2026-10-07",
+              "value": 50.68,
+              "window": 7,
+              "observations": 7
+            },
+            {
+              "date": "2026-10-08",
+              "value": 51.0,
+              "window": 7,
+              "observations": 7
             }
           ],
           "30_day": [
@@ -149786,6 +150921,18 @@
               "value": 51.03,
               "window": 30,
               "observations": 30
+            },
+            {
+              "date": "2026-10-07",
+              "value": 51.03,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-10-08",
+              "value": 51.11,
+              "window": 30,
+              "observations": 30
             }
           ]
         },
@@ -149793,9 +150940,9 @@
           "direction": "stable",
           "slope": 0.0021
         },
-        "volatility": 1.1856,
-        "latest": 51.59,
-        "change_first_to_latest": -1.58
+        "volatility": 1.1851,
+        "latest": 52.26,
+        "change_first_to_latest": -0.91
       }
     }
   },
@@ -153299,7 +154446,7 @@
       },
       {
         "assessment_date": "2026-10-04",
-        "event_id": "INFO-000004",
+        "event_id": "INFO-000006",
         "timestamp": "2026-10-04T21:41:47+00:00",
         "date": "2026-10-04",
         "source_actor": "iran",
@@ -161235,7 +162382,7 @@
       },
       {
         "assessment_date": "2026-10-06",
-        "event_id": "INFO-000002",
+        "event_id": "INFO-000004",
         "date": "2026-10-06",
         "source_actor": "iran",
         "indicator": "negotiation",
@@ -161254,7 +162401,7 @@
         "interest_id": "regime_survival",
         "deduplication_key": {
           "date": "2026-10-06",
-          "event_id": "INFO-000002",
+          "event_id": "INFO-000004",
           "target_actor": "iran",
           "interest_id": "regime_survival"
         },
@@ -161262,7 +162409,7 @@
       },
       {
         "assessment_date": "2026-10-06",
-        "event_id": "INFO-000002",
+        "event_id": "INFO-000004",
         "date": "2026-10-06",
         "source_actor": "iran",
         "indicator": "negotiation",
@@ -161281,7 +162428,7 @@
         "interest_id": "avoid_regime_destroying_war",
         "deduplication_key": {
           "date": "2026-10-06",
-          "event_id": "INFO-000002",
+          "event_id": "INFO-000004",
           "target_actor": "iran",
           "interest_id": "avoid_regime_destroying_war"
         },
@@ -161289,7 +162436,7 @@
       },
       {
         "assessment_date": "2026-10-06",
-        "event_id": "INFO-000002",
+        "event_id": "INFO-000004",
         "date": "2026-10-06",
         "source_actor": "iran",
         "indicator": "negotiation",
@@ -161308,7 +162455,7 @@
         "interest_id": "nuclear_programme",
         "deduplication_key": {
           "date": "2026-10-06",
-          "event_id": "INFO-000002",
+          "event_id": "INFO-000004",
           "target_actor": "iran",
           "interest_id": "nuclear_programme"
         },
@@ -161316,7 +162463,7 @@
       },
       {
         "assessment_date": "2026-10-06",
-        "event_id": "INFO-000002",
+        "event_id": "INFO-000004",
         "date": "2026-10-06",
         "source_actor": "iran",
         "indicator": "negotiation",
@@ -161335,7 +162482,7 @@
         "interest_id": "avoid_full_scale_war",
         "deduplication_key": {
           "date": "2026-10-06",
-          "event_id": "INFO-000002",
+          "event_id": "INFO-000004",
           "target_actor": "usa",
           "interest_id": "avoid_full_scale_war"
         },
@@ -161343,7 +162490,7 @@
       },
       {
         "assessment_date": "2026-10-06",
-        "event_id": "INFO-000002",
+        "event_id": "INFO-000004",
         "date": "2026-10-06",
         "source_actor": "iran",
         "indicator": "negotiation",
@@ -161362,7 +162509,7 @@
         "interest_id": "nuclear_nonproliferation",
         "deduplication_key": {
           "date": "2026-10-06",
-          "event_id": "INFO-000002",
+          "event_id": "INFO-000004",
           "target_actor": "usa",
           "interest_id": "nuclear_nonproliferation"
         },
@@ -161370,7 +162517,7 @@
       },
       {
         "assessment_date": "2026-10-06",
-        "event_id": "INFO-000002",
+        "event_id": "INFO-000004",
         "date": "2026-10-06",
         "source_actor": "iran",
         "indicator": "negotiation",
@@ -161389,7 +162536,7 @@
         "interest_id": "energy_security",
         "deduplication_key": {
           "date": "2026-10-06",
-          "event_id": "INFO-000002",
+          "event_id": "INFO-000004",
           "target_actor": "usa",
           "interest_id": "energy_security"
         },
@@ -161409,170 +162556,13 @@
     },
     "current": {
       "suppressed_evidence": [],
-      "bilateral_duplicates": [
-        {
-          "event_id": "INFO-000002",
-          "date": "2026-10-06",
-          "source_actor": "iran",
-          "indicator": "negotiation",
-          "pressure_direction": "decrease_pressure",
-          "indicator_score": -6.0,
-          "indicator_strength": 6.0,
-          "effect": 1.0,
-          "interest_weight": 10.0,
-          "raw_contribution": 60.0,
-          "rationale": "Negotiations reduce immediate pressure on the Iranian state.",
-          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
-          "target_actor": "iran",
-          "interest_id": "regime_survival",
-          "deduplication_key": {
-            "date": "2026-10-06",
-            "event_id": "INFO-000002",
-            "target_actor": "iran",
-            "interest_id": "regime_survival"
-          },
-          "suppression_reason": "Duplicate event-to-interest evidence within the same day."
-        },
-        {
-          "event_id": "INFO-000002",
-          "date": "2026-10-06",
-          "source_actor": "iran",
-          "indicator": "negotiation",
-          "pressure_direction": "decrease_pressure",
-          "indicator_score": -6.0,
-          "indicator_strength": 6.0,
-          "effect": 2.0,
-          "interest_weight": 10.0,
-          "raw_contribution": 120.0,
-          "rationale": "Diplomacy lowers the likelihood of a war threatening regime survival.",
-          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
-          "target_actor": "iran",
-          "interest_id": "avoid_regime_destroying_war",
-          "deduplication_key": {
-            "date": "2026-10-06",
-            "event_id": "INFO-000002",
-            "target_actor": "iran",
-            "interest_id": "avoid_regime_destroying_war"
-          },
-          "suppression_reason": "Duplicate event-to-interest evidence within the same day."
-        },
-        {
-          "event_id": "INFO-000002",
-          "date": "2026-10-06",
-          "source_actor": "iran",
-          "indicator": "negotiation",
-          "pressure_direction": "decrease_pressure",
-          "indicator_score": -6.0,
-          "indicator_strength": 6.0,
-          "effect": 1.0,
-          "interest_weight": 9.0,
-          "raw_contribution": 54.0,
-          "rationale": "Negotiations may allow Iran to preserve controlled nuclear capabilities.",
-          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
-          "target_actor": "iran",
-          "interest_id": "nuclear_programme",
-          "deduplication_key": {
-            "date": "2026-10-06",
-            "event_id": "INFO-000002",
-            "target_actor": "iran",
-            "interest_id": "nuclear_programme"
-          },
-          "suppression_reason": "Duplicate event-to-interest evidence within the same day."
-        },
-        {
-          "event_id": "INFO-000002",
-          "date": "2026-10-06",
-          "source_actor": "iran",
-          "indicator": "negotiation",
-          "pressure_direction": "decrease_pressure",
-          "indicator_score": -6.0,
-          "indicator_strength": 6.0,
-          "effect": 2.0,
-          "interest_weight": 10.0,
-          "raw_contribution": 120.0,
-          "rationale": "Negotiations support conflict containment.",
-          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
-          "target_actor": "usa",
-          "interest_id": "avoid_full_scale_war",
-          "deduplication_key": {
-            "date": "2026-10-06",
-            "event_id": "INFO-000002",
-            "target_actor": "usa",
-            "interest_id": "avoid_full_scale_war"
-          },
-          "suppression_reason": "Duplicate event-to-interest evidence within the same day."
-        },
-        {
-          "event_id": "INFO-000002",
-          "date": "2026-10-06",
-          "source_actor": "iran",
-          "indicator": "negotiation",
-          "pressure_direction": "decrease_pressure",
-          "indicator_score": -6.0,
-          "indicator_strength": 6.0,
-          "effect": 1.0,
-          "interest_weight": 9.0,
-          "raw_contribution": 54.0,
-          "rationale": "Diplomatic agreements may constrain or monitor Iran's nuclear programme.",
-          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
-          "target_actor": "usa",
-          "interest_id": "nuclear_nonproliferation",
-          "deduplication_key": {
-            "date": "2026-10-06",
-            "event_id": "INFO-000002",
-            "target_actor": "usa",
-            "interest_id": "nuclear_nonproliferation"
-          },
-          "suppression_reason": "Duplicate event-to-interest evidence within the same day."
-        },
-        {
-          "event_id": "INFO-000002",
-          "date": "2026-10-06",
-          "source_actor": "iran",
-          "indicator": "negotiation",
-          "pressure_direction": "decrease_pressure",
-          "indicator_score": -6.0,
-          "indicator_strength": 6.0,
-          "effect": 1.0,
-          "interest_weight": 7.0,
-          "raw_contribution": 42.0,
-          "rationale": "Lower tension supports energy-market stability.",
-          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
-          "target_actor": "usa",
-          "interest_id": "energy_security",
-          "deduplication_key": {
-            "date": "2026-10-06",
-            "event_id": "INFO-000002",
-            "target_actor": "usa",
-            "interest_id": "energy_security"
-          },
-          "suppression_reason": "Duplicate event-to-interest evidence within the same day."
-        }
-      ],
+      "bilateral_duplicates": [],
       "unmapped_indicators": [],
       "warnings": [],
       "counts": {
-        "processed_evidence": 2,
+        "processed_evidence": 1,
         "suppressed_evidence": 0,
-        "bilateral_duplicates": 6,
+        "bilateral_duplicates": 0,
         "unmapped_indicators": 0,
         "warnings": 0
       }
