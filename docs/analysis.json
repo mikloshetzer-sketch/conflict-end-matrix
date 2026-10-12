@@ -1,13 +1,13 @@
 {
-  "report_date": "2026-10-10",
-  "created_at": "2026-10-10T12:25:30.626465",
+  "report_date": "2026-10-11",
+  "created_at": "2026-10-11T12:43:20.918230",
   "article_count": 50,
-  "total_score": -33,
-  "conflict_index": -0.66,
+  "total_score": -39,
+  "conflict_index": -0.78,
   "assessment": "mild escalation",
-  "escalation_pressure": -48,
-  "diplomatic_pressure": 15,
-  "net_signal": -33,
+  "escalation_pressure": -52,
+  "diplomatic_pressure": 13,
+  "net_signal": -39,
   "top_drivers": [
     {
       "driver": "war",
@@ -17,28 +17,28 @@
       "impact": -26
     },
     {
-      "driver": "attack",
+      "driver": "strike",
       "category": "Military escalation",
       "count": 4,
       "weight": -2,
       "impact": -8
     },
     {
-      "driver": "strike",
+      "driver": "strikes",
       "category": "Military escalation",
       "count": 3,
       "weight": -2,
       "impact": -6
     },
     {
-      "driver": "strikes",
+      "driver": "attacks",
       "category": "Military escalation",
       "count": 2,
       "weight": -2,
       "impact": -4
     },
     {
-      "driver": "attacks",
+      "driver": "attack",
       "category": "Military escalation",
       "count": 2,
       "weight": -2,
@@ -52,15 +52,15 @@
       "impact": 3
     },
     {
-      "driver": "deal",
-      "category": "Ceasefire / settlement",
-      "count": 2,
-      "weight": 1,
+      "driver": "talks",
+      "category": "Diplomacy / negotiation",
+      "count": 1,
+      "weight": 2,
       "impact": 2
     },
     {
-      "driver": "talks",
-      "category": "Diplomacy / negotiation",
+      "driver": "settlement",
+      "category": "Ceasefire / settlement",
       "count": 1,
       "weight": 2,
       "impact": 2
@@ -80,11 +80,18 @@
       "impact": 2
     },
     {
-      "driver": "diplomacy",
-      "category": "Diplomacy / negotiation",
+      "driver": "missiles",
+      "category": "Military escalation",
       "count": 1,
-      "weight": 2,
-      "impact": 2
+      "weight": -2,
+      "impact": -2
+    },
+    {
+      "driver": "missile",
+      "category": "Military escalation",
+      "count": 1,
+      "weight": -2,
+      "impact": -2
     },
     {
       "driver": "agreement",
@@ -97,44 +104,58 @@
   "categories": [
     {
       "category": "Military escalation",
-      "score": -48,
-      "count": 37,
+      "score": -52,
+      "count": 39,
       "keywords": [
         "attack",
         "attacks",
+        "missile",
+        "missiles",
         "strike",
         "strikes",
         "war"
       ]
     },
     {
-      "category": "Diplomacy / negotiation",
-      "score": 8,
-      "count": 4,
-      "keywords": [
-        "diplomacy",
-        "negotiation",
-        "negotiations",
-        "talks"
-      ]
-    },
-    {
       "category": "Ceasefire / settlement",
       "score": 7,
-      "count": 4,
+      "count": 3,
       "keywords": [
         "agreement",
         "ceasefire",
-        "deal"
+        "settlement"
+      ]
+    },
+    {
+      "category": "Diplomacy / negotiation",
+      "score": 6,
+      "count": 3,
+      "keywords": [
+        "negotiation",
+        "negotiations",
+        "talks"
       ]
     }
   ],
   "key_signals": [
     {
+      "title": "Iran can still produce missiles despite US-Israeli strikes - The Jerusalem Post",
+      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBiOU1Ba0c1UjAzLVJqZXYyTC16bDlCMklBNlRhbmhUTnF4TG54ZjJhX3RteC1zNUQ3WWNwRVBxMGs0NjdfbnFtSUF6U0JZQnhyMGhXRXhRSy1kaTl2MWpYcFpKWDJsYy11T2c?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Sat, 10 Oct 2026 11:42:09 GMT",
+      "score": -8,
+      "tags": [
+        "strike",
+        "strikes",
+        "missile",
+        "missiles"
+      ]
+    },
+    {
       "title": "NYTimes: US preparing options to renew Iran war, including plan for 3 days of intense strikes - The Times of Israel",
       "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPM0xzLW9SY0FCaUtXQW1rTmN6Mm43SURsMm1Yc0Z0dDRObUkydDlGZHpYTE4tTGVCdDVkSDh2NWdrVXJRdHE0S3Q1NHBGT0x1dWo4T29wcWRXNUdSRlQzZFNEMW11aE5HbVUzSEZ2ZERQYU5hTHN4TDY1bDRlY1dmQ09KNUhPZ0dmR3FEb2JLSjE0UXhlYk95TlE2Y1RVZTZHSk9HYVZhREZmQl9PcXVWV1NWWFlVblZDWXhyZzRRWVZkYklkMzB2YzJTNUdaVFREZ1E0?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Thu, 08 Oct 2026 23:04:22 GMT",
+      "published": "Thu, 08 Oct 2026 22:39:00 GMT",
       "score": -5,
       "tags": [
         "strike",
@@ -188,26 +209,6 @@
       ]
     },
     {
-      "title": "Rubio says US struck Iran fearing it would retaliate for Israeli attack - ABC News - Breaking News, Latest News and Videos",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQbzJ1MnM3VFIyRWxoVEM5c25DbEVtYXlEajY3XzlqWjZIbVFCOXNlZC1lc1lxVnpxbkY5YmtUWE5jTUJnUjhzV2hyNlhNeU5JaVRFYW01VVZvVmJxNjZjUFQtZW1MRGtJc2lHdEtpOTNYYmM0WFRfWk9XYTA0NDdhR19zWktTT1h4ME91dWx1SFZacmVBMEZCLUdfNHltam5jcVlv0gGoAUFVX3lxTFBxUkduQU9kUjVvSnJ5b0ZlWVVBa0JkTjk5cGF5TTlFSzZaMXh1dEE3c1pvOVdDZU0xYmg1SFZEVU5HckVTUURnRmJKdi1NV29KdTlJSXNpYUVwbk8yMDJkU2RuM1VhUGY3Wi1ZSkI5VVRIcVdzcmtyWDdXYlhURGJJenZfLWdLOTNoZTFzZV9HWEE0cHUydHppM0s5Z05EdkRuUkRNZzFBdA?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Thu, 08 Oct 2026 18:01:07 GMT",
-      "score": -2,
-      "tags": [
-        "attack"
-      ]
-    },
-    {
-      "title": "Trump: U.S. won't attack Iran before midterms - Axios",
-      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE14RFBvYzVXa3RmREx2eGVTVVNwMDZCclJsZzZPVkxiR0lieFFwZDRncDFSNkxaUUk5UHFlRUUtSm1sWnJOM1VNQ2VSdFlGNkg1UFJTekJMN1JUVWw2aW0zZUVIRGx3RENQSHp5d21BQWtmX1FCaUVySg?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Fri, 09 Oct 2026 00:40:37 GMT",
-      "score": -2,
-      "tags": [
-        "attack"
-      ]
-    },
-    {
       "title": "Defense officials concerned Iran may strike Israel amid Hormuz tensions - The Jerusalem Post",
       "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBsdVZ1X0Mtbi1CTzVhaXY1c05LeDdsYllYSVVMdzJybGhMeFdkUWM0WlNBYVZhVVNoQ18za2VVOFNsSDYzdnBqcWRIaVEwMFZrZXFHdVBmUlM5RndsZGJEMlZuYVlpWTJkZl9nV0tR?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
@@ -218,14 +219,34 @@
       ]
     },
     {
-      "title": "Euroviews. Former Israeli PM: US-Israel-Iran war ceasefire – what next? - Euronews.com",
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQZFVPcE9mNG9BMkpQTnUzSDUwSVFpYkxaVklXNm5pWXZobFpfeVpVR1dVUDVmanRoUW5CY1B4Y3JTTUZBM1JPYlhYd1pya1dMRmhvRnJocTFsaUtKUkt1enA5NGNSM0xsVnBwZm5IblRhQ19HMHY2bHhIdUN1NTBwaUYzLURDdVhYb2pKXzJJSXpyMWhWVE4w?oc=5",
+      "title": "Israel-Hamas War (Gaza Conflict) | Explanation, Summary, Ceasefire, Casualties, & Map - Britannica",
+      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBlLUZSVWt0R3QwOVg1OENhbGZKXzBFbVk4Wi1kVGdvay1zRDN4Z2ZralpEZzVCV1N5Z2JUcUpYWFU1d3hLUThZVUxuN1JoTl9rLXJGMlhmT3o0NmdqR2c?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Sun, 04 Oct 2026 04:38:00 GMT",
+      "published": "Tue, 06 Oct 2026 05:00:00 GMT",
       "score": 2,
       "tags": [
         "war",
         "ceasefire"
+      ]
+    },
+    {
+      "title": "Egypt and Malaysia discuss political settlement to Middle East conflict - Africanews English",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPVE9FYnlqMHQxTU1aZk1tanhzWFBjSkpSbVgzWFJvWEwxX2QtZjNVemdkUnZ2VTlybk9UdXpmX2dMWnBHT2ZycVlRakRpVWg1eUZRejNEb3laMUhQWE5MOGhvQl9DU0xLMHczUEZyajJIOHprN3JKYkM2dXJuTlFyMlEyR1htcDRBUDd6WkdmM0dEQXdsT0tjTVphbFA2bWYxWHpuWV81M0dQSDRYU2JN?oc=5",
+      "source": "\"middle east conflict when:7d\" - Google News",
+      "published": "Sat, 10 Oct 2026 18:06:36 GMT",
+      "score": 2,
+      "tags": [
+        "settlement"
+      ]
+    },
+    {
+      "title": "What’s Going On In Iran? - War on the Rocks",
+      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE54QU1vWXpFSHdpSG5WR3JkZ1lyMGFvRjVEeExRNFdTSjM3WFQyUG5Gd0o5d2tnMmE4ck4yb1RVZzFTZ2tJZHFZbTFjZFNhclBUcC1hYlI4R3B6dUN5eVE?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Fri, 09 Oct 2026 07:00:00 GMT",
+      "score": -1,
+      "tags": [
+        "war"
       ]
     },
     {
@@ -247,21 +268,11 @@
       "tags": [
         "war"
       ]
-    },
-    {
-      "title": "The Iran War can only End if Israel and the US Stop trying to Strangle Iran - Informed Comment",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1FWWY1enRsQ3ZCdWZKcGdZOUFlQmVibTdtODJSQVFXY183TWxLR3dkVlpyS3JlSWk3bWRCTzZQYi1yYVdUckJHbHVESEZFSEhKbjNqVXRzWDBRTWlrU1FDU2lZVWEtRUZlREpkZw?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Sun, 04 Oct 2026 04:06:12 GMT",
-      "score": -1,
-      "tags": [
-        "war"
-      ]
     }
   ],
   "integrity": {
     "driver_net_equals_total_score": true,
-    "driver_net": -33,
-    "source_total_score": -33
+    "driver_net": -39,
+    "source_total_score": -39
   }
 }
