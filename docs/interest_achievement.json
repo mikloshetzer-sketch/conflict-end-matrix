@@ -1,7 +1,7 @@
 {
   "metadata": {
     "model": "strategic_interest_achievement_v2",
-    "generated_at": "2026-10-13T16:51:49+00:00",
+    "generated_at": "2026-10-14T14:27:00+00:00",
     "reference_date": "2026-10-11",
     "history_start_date": "2026-03-10",
     "history_end_date": "2026-10-11",
@@ -18,7 +18,7 @@
     "pressure_history_model_version": "strategic_pressure_v1_2",
     "interests_model_version": "strategic_pressure_v1",
     "impact_map_version": "interest_impact_map_v1",
-    "warning_count": 2
+    "warning_count": 1
   },
   "current": {
     "date": "2026-10-11",
@@ -86307,30 +86307,7 @@
           ]
         }
       ],
-      "suppressed_evidence": [
-        {
-          "event_id": "iranstrike-2tkm82zt8rc00",
-          "timestamp": "2026-07-15T17:54:45+00:00",
-          "date": "2026-07-15",
-          "source_actor": "iran",
-          "title": "President Trump warns of intensifying U.S. airstrikes on Iran targeting energy infrastructure and power plants unless regime agrees to negotiations",
-          "event_type": "kinetic",
-          "event_direction": "escalation",
-          "source_layer": "kinetic",
-          "final_score": 0.0,
-          "original_final_score": -5.0,
-          "operational_component": 1.0,
-          "strategic_modifier": -6.0,
-          "reason": "Iran: Negotiation. Operational component: +1.00; strategic modifier: -6.00; final contribution before daily deduplication: -5.00. Event: President Trump warns of intensifying U.S. airstrikes on Iran targeting energy infrastructure and power plants unless regime agrees to negotiations",
-          "source": "",
-          "link": "https://t.me/OSINTdefender/19489",
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "indicators": [
-            "negotiation"
-          ]
-        }
-      ],
+      "suppressed_evidence": [],
       "unmapped_evidence": [],
       "calculation": {
         "neutral_score": 50.0,
@@ -153600,29 +153577,6 @@
         ]
       },
       {
-        "assessment_date": "2026-07-15",
-        "event_id": "iranstrike-2tkm82zt8rc00",
-        "timestamp": "2026-07-15T17:54:45+00:00",
-        "date": "2026-07-15",
-        "source_actor": "iran",
-        "title": "President Trump warns of intensifying U.S. airstrikes on Iran targeting energy infrastructure and power plants unless regime agrees to negotiations",
-        "event_type": "kinetic",
-        "event_direction": "escalation",
-        "source_layer": "kinetic",
-        "final_score": 0.0,
-        "original_final_score": -5.0,
-        "operational_component": 1.0,
-        "strategic_modifier": -6.0,
-        "reason": "Iran: Negotiation. Operational component: +1.00; strategic modifier: -6.00; final contribution before daily deduplication: -5.00. Event: President Trump warns of intensifying U.S. airstrikes on Iran targeting energy infrastructure and power plants unless regime agrees to negotiations",
-        "source": "",
-        "link": "https://t.me/OSINTdefender/19489",
-        "daily_score_suppressed": true,
-        "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-        "indicators": [
-          "negotiation"
-        ]
-      },
-      {
         "assessment_date": "2026-07-18",
         "event_id": "iranstrike-2nndotjbmdg00",
         "timestamp": "2026-07-18T07:23:01+00:00",
@@ -162965,14 +162919,13 @@
     ],
     "unmapped_indicators": [],
     "warnings": [
-      "2026-07-15: Contributor 'iranstrike-2tkm82zt8rc00' has final_score 0 and was skipped.",
       "2026-09-15: Contributor 'INFO-000062' has final_score 0 and was skipped."
     ],
     "counts": {
-      "suppressed_evidence": 153,
+      "suppressed_evidence": 152,
       "bilateral_duplicates": 299,
       "unmapped_indicators": 0,
-      "warnings": 2
+      "warnings": 1
     },
     "current": {
       "suppressed_evidence": [
