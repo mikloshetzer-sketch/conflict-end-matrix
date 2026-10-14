@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T16:51:00.286527+00:00",
+  "generated_at": "2026-10-14T14:26:23.421988+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -19,30 +19,30 @@
   },
   "statistics": {
     "non_kinetic_events_loaded": 645,
-    "kinetic_events_loaded": 769,
-    "unique_events_scanned": 1357,
-    "strategic_evidence_contributions": 379,
+    "kinetic_events_loaded": 760,
+    "unique_events_scanned": 1351,
+    "strategic_evidence_contributions": 377,
     "evidence_contributions_by_actor": {
-      "usa": 123,
-      "iran": 256
+      "usa": 122,
+      "iran": 255
     },
     "scored_contributions_by_actor": {
-      "usa": 90,
+      "usa": 89,
       "iran": 136
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
-      "iran": 120
+      "iran": 119
     },
     "contributions_by_source_layer": {
       "non_kinetic": 336,
-      "kinetic": 43
+      "kinetic": 41
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 213,
-      "usa:negotiation": 100,
+      "iran:negotiation": 212,
+      "usa:negotiation": 99,
       "iran:missile_test": 29,
-      "usa:presidential_warning": 17,
+      "usa:presidential_warning": 16,
       "iran:hormuz_threat": 9,
       "usa:ceasefire_support": 8,
       "iran:missile_preparation": 6,
@@ -52,8 +52,8 @@
     },
     "scored_indicator_counts": {
       "iran:negotiation": 108,
-      "usa:negotiation": 71,
-      "usa:presidential_warning": 17,
+      "usa:negotiation": 70,
+      "usa:presidential_warning": 16,
       "iran:missile_test": 14,
       "iran:hormuz_threat": 9,
       "iran:missile_preparation": 6,
@@ -63,7 +63,7 @@
       "usa:carrier_deployment": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 2,
+    "skipped_current_utc_day": 4,
     "history_day_count": 216
   },
   "configuration_warnings": [],
@@ -15285,70 +15285,13 @@
         "raw_score": 0.0,
         "positive_score": 0.0,
         "negative_score": 0.0,
-        "event_count": 1,
-        "scored_event_count": 1,
-        "evidence_event_count": 1,
+        "event_count": 0,
+        "scored_event_count": 0,
+        "evidence_event_count": 0,
         "suppressed_duplicate_count": 0,
         "increase_event_count": 0,
         "decrease_event_count": 0,
-        "contributors": [
-          {
-            "event_id": "iranstrike-2tkm82zt8rc00",
-            "timestamp": "2026-07-15T17:54:45+00:00",
-            "date": "2026-07-15",
-            "actor": "usa",
-            "bilateral_event": true,
-            "title": "President Trump warns of intensifying U.S. airstrikes on Iran targeting energy infrastructure and power plants unless regime agrees to negotiations",
-            "source_layer": "kinetic",
-            "event_type": "kinetic",
-            "event_direction": "escalation",
-            "operational_component": 1.0,
-            "strategic_modifier": -1.0,
-            "context_multiplier": 1.0,
-            "original_final_score": 0.0,
-            "final_score": 0.0,
-            "duplicate_indicator_evidence": false,
-            "daily_score_suppressed": false,
-            "suppression_reason": null,
-            "primary_daily_indicator": "presidential_warning",
-            "indicators": [
-              {
-                "id": "presidential_warning",
-                "name": "Presidential warning",
-                "score": 5.0,
-                "direction": "increase",
-                "interest": {
-                  "id": "regional_deterrence",
-                  "name": "Regional deterrence",
-                  "weight": 8.0
-                },
-                "recognition_rule_count": 1
-              },
-              {
-                "id": "negotiation",
-                "name": "Negotiation",
-                "score": -6.0,
-                "direction": "decrease",
-                "interest": {
-                  "id": "avoid_full_scale_war",
-                  "name": "Avoid full-scale regional war",
-                  "weight": 10.0
-                },
-                "recognition_rule_count": 1
-              }
-            ],
-            "reason": "United States: Presidential warning, Negotiation. Operational component: +1.00; strategic modifier: -1.00; final contribution before daily deduplication: +0.00. Event: President Trump warns of intensifying U.S. airstrikes on Iran targeting energy infrastructure and power plants unless regime agrees to negotiations",
-            "source": "",
-            "link": "https://t.me/OSINTdefender/19489",
-            "existing_event_score": 0.0,
-            "existing_direction_score": 0.0,
-            "winning_daily_indicators": [
-              "presidential_warning",
-              "negotiation"
-            ],
-            "duplicate_daily_indicators": []
-          }
-        ],
+        "contributors": [],
         "weighted_score_7d": -2.25,
         "pressure_index_7d": 45.5,
         "pressure_level": "balanced",
@@ -15358,10 +15301,10 @@
         "raw_score": -6.0,
         "positive_score": 0.0,
         "negative_score": -6.0,
-        "event_count": 2,
+        "event_count": 1,
         "scored_event_count": 1,
-        "evidence_event_count": 2,
-        "suppressed_duplicate_count": 1,
+        "evidence_event_count": 1,
+        "suppressed_duplicate_count": 0,
         "increase_event_count": 0,
         "decrease_event_count": 1,
         "contributors": [
@@ -15407,49 +15350,6 @@
               "negotiation"
             ],
             "duplicate_daily_indicators": []
-          },
-          {
-            "event_id": "iranstrike-2tkm82zt8rc00",
-            "timestamp": "2026-07-15T17:54:45+00:00",
-            "date": "2026-07-15",
-            "actor": "iran",
-            "bilateral_event": true,
-            "title": "President Trump warns of intensifying U.S. airstrikes on Iran targeting energy infrastructure and power plants unless regime agrees to negotiations",
-            "source_layer": "kinetic",
-            "event_type": "kinetic",
-            "event_direction": "escalation",
-            "operational_component": 1.0,
-            "strategic_modifier": -6.0,
-            "context_multiplier": 1.0,
-            "original_final_score": -5.0,
-            "final_score": 0.0,
-            "duplicate_indicator_evidence": true,
-            "daily_score_suppressed": true,
-            "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-            "primary_daily_indicator": null,
-            "indicators": [
-              {
-                "id": "negotiation",
-                "name": "Negotiation",
-                "score": -6.0,
-                "direction": "decrease",
-                "interest": {
-                  "id": "avoid_regime_destroying_war",
-                  "name": "Avoid regime-destroying war",
-                  "weight": 10.0
-                },
-                "recognition_rule_count": 2
-              }
-            ],
-            "reason": "Iran: Negotiation. Operational component: +1.00; strategic modifier: -6.00; final contribution before daily deduplication: -5.00. Event: President Trump warns of intensifying U.S. airstrikes on Iran targeting energy infrastructure and power plants unless regime agrees to negotiations",
-            "source": "",
-            "link": "https://t.me/OSINTdefender/19489",
-            "existing_event_score": 0.0,
-            "existing_direction_score": 0.0,
-            "winning_daily_indicators": [],
-            "duplicate_daily_indicators": [
-              "negotiation"
-            ]
           }
         ],
         "weighted_score_7d": 1.95,
