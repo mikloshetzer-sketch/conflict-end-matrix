@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-15T09:19:59.942906+00:00",
+  "generated_at": "2026-10-15T14:04:22.713551+00:00",
   "source": "Conflict End Matrix Git history + current latest_scored.json",
   "scope": "historical non-kinetic diplomatic, ceasefire and threat/statement events",
   "direction_model": "context_direction_v3_2",
   "military_events_included": false,
-  "historical_scored_versions_read": 237,
-  "unique_articles_scanned": 3097,
+  "historical_scored_versions_read": 238,
+  "unique_articles_scanned": 3113,
   "event_count": 645,
   "event_type_counts": {
     "diplomatic": 239,
@@ -13,13 +13,51 @@
     "threat": 55
   },
   "direction_counts": {
-    "escalation": 104,
     "mixed": 463,
+    "escalation": 104,
     "de-escalation": 78
   },
   "events": [
     {
       "event_id": "INFO-000001",
+      "timestamp": "Wed, 14 Oct 2026 09:47:41 GMT",
+      "event_type": "diplomatic",
+      "subtype": "negotiation",
+      "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+      "diplomatic_event": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+      "military_event": "",
+      "direction": "mixed",
+      "direction_score": 1,
+      "positive_signal_score": 0,
+      "negative_signal_score": 0,
+      "direction_reasons": [
+        {
+          "rule": "existing_score_positive_tiebreak",
+          "points": 1
+        }
+      ],
+      "old_direction": "de-escalation",
+      "direction_changed": true,
+      "actors": [],
+      "target": "",
+      "location": "",
+      "keywords": [
+        "negotiation",
+        "negotiations"
+      ],
+      "primary_keyword": "negotiation",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
+      "score": 4,
+      "linked_event_id": "",
+      "linked_statement": "",
+      "linked_military_event": "",
+      "relation_type": "",
+      "lag_minutes": null,
+      "link_confidence": ""
+    },
+    {
+      "event_id": "INFO-000002",
       "timestamp": "Sun, 11 Oct 2026 19:07:00 GMT",
       "event_type": "diplomatic",
       "subtype": "talks",
@@ -49,44 +87,6 @@
       "source": "\"middle east conflict when:7d\" - Google News",
       "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQQkRLWlFxeDRfeGxUcGJ6dTM2X3l2cldSWlB4MDJIN3lpWXlRUE1sdE8tbHhtQzY5Ul9WRzJ0bk4taEVCOF9JVGkwN2d4S0xIQmJHbmlFZFlDZ3VDdXk1U3B6bHE4SExtTWZIcURVWkFmaXdNZ1QtdWdoNVR3Z2FBOHNxVmFwQTY2TXpUOWlja3hvdXdLekhv?oc=5",
       "score": 1,
-      "linked_event_id": "",
-      "linked_statement": "",
-      "linked_military_event": "",
-      "relation_type": "",
-      "lag_minutes": null,
-      "link_confidence": ""
-    },
-    {
-      "event_id": "INFO-000002",
-      "timestamp": "Sun, 11 Oct 2026 03:19:47 GMT",
-      "event_type": "diplomatic",
-      "subtype": "negotiation",
-      "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-      "diplomatic_event": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-      "military_event": "",
-      "direction": "mixed",
-      "direction_score": 1,
-      "positive_signal_score": 0,
-      "negative_signal_score": 0,
-      "direction_reasons": [
-        {
-          "rule": "existing_score_positive_tiebreak",
-          "points": 1
-        }
-      ],
-      "old_direction": "de-escalation",
-      "direction_changed": true,
-      "actors": [],
-      "target": "",
-      "location": "",
-      "keywords": [
-        "negotiation",
-        "negotiations"
-      ],
-      "primary_keyword": "negotiation",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
-      "score": 4,
       "linked_event_id": "",
       "linked_statement": "",
       "linked_military_event": "",

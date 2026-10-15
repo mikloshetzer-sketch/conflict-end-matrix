@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T14:26:23.421988+00:00",
+  "generated_at": "2026-10-15T14:04:24.123973+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -19,28 +19,28 @@
   },
   "statistics": {
     "non_kinetic_events_loaded": 645,
-    "kinetic_events_loaded": 760,
-    "unique_events_scanned": 1351,
-    "strategic_evidence_contributions": 377,
+    "kinetic_events_loaded": 735,
+    "unique_events_scanned": 1336,
+    "strategic_evidence_contributions": 375,
     "evidence_contributions_by_actor": {
-      "usa": 122,
-      "iran": 255
+      "usa": 121,
+      "iran": 254
     },
     "scored_contributions_by_actor": {
-      "usa": 89,
+      "usa": 88,
       "iran": 136
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
-      "iran": 119
+      "iran": 118
     },
     "contributions_by_source_layer": {
       "non_kinetic": 336,
-      "kinetic": 41
+      "kinetic": 39
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 212,
-      "usa:negotiation": 99,
+      "iran:negotiation": 211,
+      "usa:negotiation": 98,
       "iran:missile_test": 29,
       "usa:presidential_warning": 16,
       "iran:hormuz_threat": 9,
@@ -52,7 +52,7 @@
     },
     "scored_indicator_counts": {
       "iran:negotiation": 108,
-      "usa:negotiation": 70,
+      "usa:negotiation": 69,
       "usa:presidential_warning": 16,
       "iran:missile_test": 14,
       "iran:hormuz_threat": 9,
@@ -63,14 +63,14 @@
       "usa:carrier_deployment": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 4,
-    "history_day_count": 216
+    "skipped_current_utc_day": 2,
+    "history_day_count": 219
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-10-11",
+  "latest_complete_utc_day": "2026-10-14",
   "current": {
-    "date": "2026-10-11",
+    "date": "2026-10-14",
     "calculation_mode": "live",
     "usa": {
       "raw_score": -6.0,
@@ -84,9 +84,9 @@
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000002",
-          "timestamp": "2026-10-11T03:19:47+00:00",
-          "date": "2026-10-11",
+          "event_id": "INFO-000001",
+          "timestamp": "2026-10-14T09:47:41+00:00",
+          "date": "2026-10-14",
           "actor": "usa",
           "bilateral_event": true,
           "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
@@ -133,9 +133,9 @@
       "trend": "strong_decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000002",
-          "timestamp": "2026-10-11T03:19:47+00:00",
-          "date": "2026-10-11",
+          "event_id": "INFO-000001",
+          "timestamp": "2026-10-14T09:47:41+00:00",
+          "date": "2026-10-14",
           "actor": "usa",
           "bilateral_event": true,
           "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
@@ -181,17 +181,17 @@
       "raw_score": -6.0,
       "positive_score": 0.0,
       "negative_score": -6.0,
-      "event_count": 2,
+      "event_count": 1,
       "scored_event_count": 1,
-      "evidence_event_count": 2,
-      "suppressed_duplicate_count": 1,
+      "evidence_event_count": 1,
+      "suppressed_duplicate_count": 0,
       "increase_event_count": 0,
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000002",
-          "timestamp": "2026-10-11T03:19:47+00:00",
-          "date": "2026-10-11",
+          "event_id": "INFO-000001",
+          "timestamp": "2026-10-14T09:47:41+00:00",
+          "date": "2026-10-14",
           "actor": "iran",
           "bilateral_event": true,
           "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
@@ -230,60 +230,17 @@
             "negotiation"
           ],
           "duplicate_daily_indicators": []
-        },
-        {
-          "event_id": "INFO-000001",
-          "timestamp": "2026-10-11T19:07:00+00:00",
-          "date": "2026-10-11",
-          "actor": "iran",
-          "bilateral_event": true,
-          "title": "Iran calls U.S. response \"insufficient\" amid stalled talks to end the war - CBS News",
-          "source_layer": "non_kinetic",
-          "event_type": "diplomatic",
-          "event_direction": "escalation",
-          "operational_component": 4.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -2.0,
-          "final_score": 0.0,
-          "duplicate_indicator_evidence": true,
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "primary_daily_indicator": null,
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_regime_destroying_war",
-                "name": "Avoid regime-destroying war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "Iran: Negotiation. Operational component: +4.00; strategic modifier: -6.00; final contribution before daily deduplication: -2.00. Event: Iran calls U.S. response \"insufficient\" amid stalled talks to end the war - CBS News",
-          "source": "\"middle east conflict when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQQkRLWlFxeDRfeGxUcGJ6dTM2X3l2cldSWlB4MDJIN3lpWXlRUE1sdE8tbHhtQzY5Ul9WRzJ0bk4taEVCOF9JVGkwN2d4S0xIQmJHbmlFZFlDZ3VDdXk1U3B6bHE4SExtTWZIcURVWkFmaXdNZ1QtdWdoNVR3Z2FBOHNxVmFwQTY2TXpUOWlja3hvdXdLekhv?oc=5",
-          "existing_event_score": 1.0,
-          "existing_direction_score": -4.0,
-          "winning_daily_indicators": [],
-          "duplicate_daily_indicators": [
-            "negotiation"
-          ]
         }
       ],
-      "weighted_score_7d": -0.5,
-      "pressure_index_7d": 49.0,
-      "pressure_level": "balanced",
+      "weighted_score_7d": -5.6,
+      "pressure_index_7d": 38.8,
+      "pressure_level": "reduced",
       "trend": "strong_decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000002",
-          "timestamp": "2026-10-11T03:19:47+00:00",
-          "date": "2026-10-11",
+          "event_id": "INFO-000001",
+          "timestamp": "2026-10-14T09:47:41+00:00",
+          "date": "2026-10-14",
           "actor": "iran",
           "bilateral_event": true,
           "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
@@ -326,7 +283,7 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 43.5,
+      "pressure_index_7d": 38.4,
       "pressure_level": "reduced",
       "trend": "strong_decrease",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
