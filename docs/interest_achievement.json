@@ -1,11 +1,11 @@
 {
   "metadata": {
     "model": "strategic_interest_achievement_v2",
-    "generated_at": "2026-10-15T14:05:03+00:00",
-    "reference_date": "2026-10-14",
+    "generated_at": "2026-10-16T13:53:04+00:00",
+    "reference_date": "2026-10-15",
     "history_start_date": "2026-03-10",
-    "history_end_date": "2026-10-14",
-    "history_day_count": 219,
+    "history_end_date": "2026-10-15",
+    "history_day_count": 220,
     "conflict": "United States-Iran",
     "description": "Historical and current assessment of the degree to which detected developments support or weaken the weighted strategic interests of the United States and Iran.",
     "input_files": {
@@ -21,61 +21,61 @@
     "warning_count": 1
   },
   "current": {
-    "date": "2026-10-14",
+    "date": "2026-10-15",
     "summary": {
-      "usa_achievement_index": 51.82,
-      "iran_achievement_index": 51.59,
-      "achievement_gap": 0.23,
-      "daily_strategic_advantage": "balanced",
+      "usa_achievement_index": 48.1,
+      "iran_achievement_index": 44.97,
+      "achievement_gap": 3.13,
+      "daily_strategic_advantage": "usa",
       "interpretation": "The index measures whether the current day's detected developments support or weaken each actor's own weighted strategic interests. It does not directly measure military victory or conflict outcome."
     },
     "actors": {
       "usa": {
-        "achievement_index": 51.82,
-        "change_from_neutral": 1.82,
+        "achievement_index": 48.1,
+        "change_from_neutral": -1.9,
         "trend": "stable",
         "level": "balanced",
-        "raw_contribution": 276.0,
+        "raw_contribution": -280.0,
         "interest_count": 8,
-        "interests_with_evidence": 4,
+        "interests_with_evidence": 6,
         "strongest_interests": [
           {
-            "id": "avoid_full_scale_war",
-            "name": "Avoid full-scale regional war",
-            "achievement_index": 56.0,
-            "change_from_neutral": 6.0
-          },
-          {
-            "id": "force_protection",
-            "name": "Protection of US forces",
-            "achievement_index": 53.0,
-            "change_from_neutral": 3.0
+            "id": "regional_deterrence",
+            "name": "Regional deterrence",
+            "achievement_index": 58.0,
+            "change_from_neutral": 8.0
           },
           {
             "id": "nuclear_nonproliferation",
             "name": "Prevent Iranian nuclear weapon capability",
-            "achievement_index": 52.7,
-            "change_from_neutral": 2.7
-          }
-        ],
-        "weakest_interests": [
+            "achievement_index": 54.5,
+            "change_from_neutral": 4.5
+          },
           {
             "id": "israel_security",
             "name": "Israel security",
             "achievement_index": 50.0,
             "change_from_neutral": 0.0
+          }
+        ],
+        "weakest_interests": [
+          {
+            "id": "avoid_full_scale_war",
+            "name": "Avoid full-scale regional war",
+            "achievement_index": 40.0,
+            "change_from_neutral": -10.0
           },
           {
-            "id": "freedom_of_navigation",
-            "name": "Freedom of navigation",
-            "achievement_index": 50.0,
-            "change_from_neutral": 0.0
+            "id": "energy_security",
+            "name": "Global energy security",
+            "achievement_index": 43.0,
+            "change_from_neutral": -7.0
           },
           {
-            "id": "regional_deterrence",
-            "name": "Regional deterrence",
-            "achievement_index": 50.0,
-            "change_from_neutral": 0.0
+            "id": "force_protection",
+            "name": "Protection of US forces",
+            "achievement_index": 45.0,
+            "change_from_neutral": -5.0
           }
         ],
         "interests": [
@@ -100,50 +100,50 @@
             "name": "Protection of US forces",
             "description": "Protect US military personnel, bases and regional assets.",
             "weight": 10.0,
-            "achievement_index": 53.0,
-            "change_from_neutral": 3.0,
-            "raw_contribution": 60.0,
-            "positive_contribution": 60.0,
-            "negative_contribution": 0.0,
-            "trend": "improving",
+            "achievement_index": 45.0,
+            "change_from_neutral": -5.0,
+            "raw_contribution": -100.0,
+            "positive_contribution": 0.0,
+            "negative_contribution": -100.0,
+            "trend": "deteriorating",
             "level": "balanced",
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000001",
-                "date": "2026-10-14",
+                "event_id": "iranstrike-39t6whtvh0o00",
+                "date": "2026-10-15",
                 "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 1.0,
+                "indicator": "strike_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 10.0,
+                "indicator_strength": 10.0,
+                "effect": -1.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 60.0,
-                "rationale": "Reduced tension lowers the immediate threat to US forces.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                "raw_contribution": -100.0,
+                "rationale": "Preparation for a strike may trigger Iranian pre-emption or retaliation.",
+                "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "source": "",
+                "link": "https://t.me/abualiexpress/131933"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000001",
-                "date": "2026-10-14",
+                "event_id": "iranstrike-39t6whtvh0o00",
+                "date": "2026-10-15",
                 "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 1.0,
+                "indicator": "strike_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 10.0,
+                "indicator_strength": 10.0,
+                "effect": -1.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 60.0,
-                "rationale": "Reduced tension lowers the immediate threat to US forces.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                "raw_contribution": -100.0,
+                "rationale": "Preparation for a strike may trigger Iranian pre-emption or retaliation.",
+                "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "source": "",
+                "link": "https://t.me/abualiexpress/131933"
               }
             ]
           },
@@ -152,66 +152,102 @@
             "name": "Freedom of navigation",
             "description": "Maintain secure maritime routes including the Strait of Hormuz.",
             "weight": 9.0,
-            "achievement_index": 50.0,
-            "change_from_neutral": 0.0,
-            "raw_contribution": 0,
-            "positive_contribution": 0,
-            "negative_contribution": 0,
-            "trend": "stable",
+            "achievement_index": 45.5,
+            "change_from_neutral": -4.5,
+            "raw_contribution": -90.0,
+            "positive_contribution": 0.0,
+            "negative_contribution": -90.0,
+            "trend": "deteriorating",
             "level": "balanced",
-            "evidence_count": 0,
-            "top_evidence": [],
-            "evidence": []
+            "evidence_count": 1,
+            "top_evidence": [
+              {
+                "event_id": "iranstrike-39t6whtvh0o00",
+                "date": "2026-10-15",
+                "source_actor": "usa",
+                "indicator": "strike_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 10.0,
+                "indicator_strength": 10.0,
+                "effect": -1.0,
+                "interest_weight": 9.0,
+                "raw_contribution": -90.0,
+                "rationale": "Iran may respond by threatening or disrupting regional maritime traffic.",
+                "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "source": "",
+                "link": "https://t.me/abualiexpress/131933"
+              }
+            ],
+            "evidence": [
+              {
+                "event_id": "iranstrike-39t6whtvh0o00",
+                "date": "2026-10-15",
+                "source_actor": "usa",
+                "indicator": "strike_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 10.0,
+                "indicator_strength": 10.0,
+                "effect": -1.0,
+                "interest_weight": 9.0,
+                "raw_contribution": -90.0,
+                "rationale": "Iran may respond by threatening or disrupting regional maritime traffic.",
+                "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "source": "",
+                "link": "https://t.me/abualiexpress/131933"
+              }
+            ]
           },
           {
             "id": "nuclear_nonproliferation",
             "name": "Prevent Iranian nuclear weapon capability",
             "description": "Limit or delay Iran's military nuclear programme.",
             "weight": 9.0,
-            "achievement_index": 52.7,
-            "change_from_neutral": 2.7,
-            "raw_contribution": 54.0,
-            "positive_contribution": 54.0,
+            "achievement_index": 54.5,
+            "change_from_neutral": 4.5,
+            "raw_contribution": 90.0,
+            "positive_contribution": 90.0,
             "negative_contribution": 0.0,
             "trend": "improving",
             "level": "balanced",
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000001",
-                "date": "2026-10-14",
+                "event_id": "iranstrike-39t6whtvh0o00",
+                "date": "2026-10-15",
                 "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
+                "indicator": "strike_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 10.0,
+                "indicator_strength": 10.0,
                 "effect": 1.0,
                 "interest_weight": 9.0,
-                "raw_contribution": 54.0,
-                "rationale": "Diplomacy may produce limits, inspections or delays affecting Iran's nuclear programme.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                "raw_contribution": 90.0,
+                "rationale": "Preparations may strengthen coercive pressure against Iranian nuclear activity.",
+                "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "source": "",
+                "link": "https://t.me/abualiexpress/131933"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000001",
-                "date": "2026-10-14",
+                "event_id": "iranstrike-39t6whtvh0o00",
+                "date": "2026-10-15",
                 "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
+                "indicator": "strike_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 10.0,
+                "indicator_strength": 10.0,
                 "effect": 1.0,
                 "interest_weight": 9.0,
-                "raw_contribution": 54.0,
-                "rationale": "Diplomacy may produce limits, inspections or delays affecting Iran's nuclear programme.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                "raw_contribution": 90.0,
+                "rationale": "Preparations may strengthen coercive pressure against Iranian nuclear activity.",
+                "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "source": "",
+                "link": "https://t.me/abualiexpress/131933"
               }
             ]
           },
@@ -220,16 +256,52 @@
             "name": "Regional deterrence",
             "description": "Maintain credible military deterrence against Iran and its proxies.",
             "weight": 8.0,
-            "achievement_index": 50.0,
-            "change_from_neutral": 0.0,
-            "raw_contribution": 0,
-            "positive_contribution": 0,
-            "negative_contribution": 0,
-            "trend": "stable",
-            "level": "balanced",
-            "evidence_count": 0,
-            "top_evidence": [],
-            "evidence": []
+            "achievement_index": 58.0,
+            "change_from_neutral": 8.0,
+            "raw_contribution": 160.0,
+            "positive_contribution": 160.0,
+            "negative_contribution": 0.0,
+            "trend": "improving",
+            "level": "moderately_positive",
+            "evidence_count": 1,
+            "top_evidence": [
+              {
+                "event_id": "iranstrike-39t6whtvh0o00",
+                "date": "2026-10-15",
+                "source_actor": "usa",
+                "indicator": "strike_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 10.0,
+                "indicator_strength": 10.0,
+                "effect": 2.0,
+                "interest_weight": 8.0,
+                "raw_contribution": 160.0,
+                "rationale": "Strike preparation makes the US military threat more credible.",
+                "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "source": "",
+                "link": "https://t.me/abualiexpress/131933"
+              }
+            ],
+            "evidence": [
+              {
+                "event_id": "iranstrike-39t6whtvh0o00",
+                "date": "2026-10-15",
+                "source_actor": "usa",
+                "indicator": "strike_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 10.0,
+                "indicator_strength": 10.0,
+                "effect": 2.0,
+                "interest_weight": 8.0,
+                "raw_contribution": 160.0,
+                "rationale": "Strike preparation makes the US military threat more credible.",
+                "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "source": "",
+                "link": "https://t.me/abualiexpress/131933"
+              }
+            ]
           },
           {
             "id": "regional_partners",
@@ -252,50 +324,50 @@
             "name": "Global energy security",
             "description": "Reduce disruption to global energy markets.",
             "weight": 7.0,
-            "achievement_index": 52.1,
-            "change_from_neutral": 2.1,
-            "raw_contribution": 42.0,
-            "positive_contribution": 42.0,
-            "negative_contribution": 0.0,
-            "trend": "improving",
-            "level": "balanced",
+            "achievement_index": 43.0,
+            "change_from_neutral": -7.0,
+            "raw_contribution": -140.0,
+            "positive_contribution": 0.0,
+            "negative_contribution": -140.0,
+            "trend": "deteriorating",
+            "level": "moderately_negative",
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000001",
-                "date": "2026-10-14",
+                "event_id": "iranstrike-39t6whtvh0o00",
+                "date": "2026-10-15",
                 "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 1.0,
+                "indicator": "strike_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 10.0,
+                "indicator_strength": 10.0,
+                "effect": -2.0,
                 "interest_weight": 7.0,
-                "raw_contribution": 42.0,
-                "rationale": "Diplomatic engagement reduces the likelihood of major energy disruption.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                "raw_contribution": -140.0,
+                "rationale": "An imminent strike may cause severe energy-market disruption.",
+                "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "source": "",
+                "link": "https://t.me/abualiexpress/131933"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000001",
-                "date": "2026-10-14",
+                "event_id": "iranstrike-39t6whtvh0o00",
+                "date": "2026-10-15",
                 "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 1.0,
+                "indicator": "strike_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 10.0,
+                "indicator_strength": 10.0,
+                "effect": -2.0,
                 "interest_weight": 7.0,
-                "raw_contribution": 42.0,
-                "rationale": "Diplomatic engagement reduces the likelihood of major energy disruption.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                "raw_contribution": -140.0,
+                "rationale": "An imminent strike may cause severe energy-market disruption.",
+                "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "source": "",
+                "link": "https://t.me/abualiexpress/131933"
               }
             ]
           },
@@ -304,93 +376,67 @@
             "name": "Avoid full-scale regional war",
             "description": "Prevent uncontrolled regional escalation.",
             "weight": 10.0,
-            "achievement_index": 56.0,
-            "change_from_neutral": 6.0,
-            "raw_contribution": 120.0,
-            "positive_contribution": 120.0,
-            "negative_contribution": 0.0,
-            "trend": "improving",
-            "level": "moderately_positive",
+            "achievement_index": 40.0,
+            "change_from_neutral": -10.0,
+            "raw_contribution": -200.0,
+            "positive_contribution": 0.0,
+            "negative_contribution": -200.0,
+            "trend": "deteriorating",
+            "level": "moderately_negative",
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000001",
-                "date": "2026-10-14",
+                "event_id": "iranstrike-39t6whtvh0o00",
+                "date": "2026-10-15",
                 "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 2.0,
+                "indicator": "strike_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 10.0,
+                "indicator_strength": 10.0,
+                "effect": -2.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 120.0,
-                "rationale": "Negotiations reduce immediate escalation risk and preserve diplomatic options.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                "raw_contribution": -200.0,
+                "rationale": "Strike preparation substantially increases the probability of direct war.",
+                "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "source": "",
+                "link": "https://t.me/abualiexpress/131933"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000001",
-                "date": "2026-10-14",
+                "event_id": "iranstrike-39t6whtvh0o00",
+                "date": "2026-10-15",
                 "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 2.0,
+                "indicator": "strike_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 10.0,
+                "indicator_strength": 10.0,
+                "effect": -2.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 120.0,
-                "rationale": "Negotiations reduce immediate escalation risk and preserve diplomatic options.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                "raw_contribution": -200.0,
+                "rationale": "Strike preparation substantially increases the probability of direct war.",
+                "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "source": "",
+                "link": "https://t.me/abualiexpress/131933"
               }
             ]
           }
         ]
       },
       "iran": {
-        "achievement_index": 51.59,
-        "change_from_neutral": 1.59,
-        "trend": "stable",
-        "level": "balanced",
-        "raw_contribution": 234.0,
+        "achievement_index": 44.97,
+        "change_from_neutral": -5.03,
+        "trend": "deteriorating",
+        "level": "moderately_negative",
+        "raw_contribution": -760.0,
         "interest_count": 8,
-        "interests_with_evidence": 3,
+        "interests_with_evidence": 4,
         "strongest_interests": [
-          {
-            "id": "avoid_regime_destroying_war",
-            "name": "Avoid regime-destroying war",
-            "achievement_index": 56.0,
-            "change_from_neutral": 6.0
-          },
-          {
-            "id": "regime_survival",
-            "name": "Regime survival",
-            "achievement_index": 53.0,
-            "change_from_neutral": 3.0
-          },
-          {
-            "id": "nuclear_programme",
-            "name": "Preserve nuclear programme",
-            "achievement_index": 52.7,
-            "change_from_neutral": 2.7
-          }
-        ],
-        "weakest_interests": [
           {
             "id": "strategic_deterrence",
             "name": "Strategic deterrence",
-            "achievement_index": 50.0,
-            "change_from_neutral": 0.0
-          },
-          {
-            "id": "missile_capability",
-            "name": "Missile capability",
             "achievement_index": 50.0,
             "change_from_neutral": 0.0
           },
@@ -399,6 +445,32 @@
             "name": "Regional proxy network",
             "achievement_index": 50.0,
             "change_from_neutral": 0.0
+          },
+          {
+            "id": "regional_influence",
+            "name": "Regional influence",
+            "achievement_index": 50.0,
+            "change_from_neutral": 0.0
+          }
+        ],
+        "weakest_interests": [
+          {
+            "id": "regime_survival",
+            "name": "Regime survival",
+            "achievement_index": 40.0,
+            "change_from_neutral": -10.0
+          },
+          {
+            "id": "avoid_regime_destroying_war",
+            "name": "Avoid regime-destroying war",
+            "achievement_index": 40.0,
+            "change_from_neutral": -10.0
+          },
+          {
+            "id": "nuclear_programme",
+            "name": "Preserve nuclear programme",
+            "achievement_index": 41.0,
+            "change_from_neutral": -9.0
           }
         ],
         "interests": [
@@ -407,50 +479,50 @@
             "name": "Regime survival",
             "description": "Ensure survival and stability of the Islamic Republic.",
             "weight": 10.0,
-            "achievement_index": 53.0,
-            "change_from_neutral": 3.0,
-            "raw_contribution": 60.0,
-            "positive_contribution": 60.0,
-            "negative_contribution": 0.0,
-            "trend": "improving",
-            "level": "balanced",
+            "achievement_index": 40.0,
+            "change_from_neutral": -10.0,
+            "raw_contribution": -200.0,
+            "positive_contribution": 0.0,
+            "negative_contribution": -200.0,
+            "trend": "deteriorating",
+            "level": "moderately_negative",
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000001",
-                "date": "2026-10-14",
+                "event_id": "iranstrike-39t6whtvh0o00",
+                "date": "2026-10-15",
                 "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 1.0,
+                "indicator": "strike_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 10.0,
+                "indicator_strength": 10.0,
+                "effect": -2.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 60.0,
-                "rationale": "Negotiations lower the immediate military threat to the Iranian state.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                "raw_contribution": -200.0,
+                "rationale": "A US strike could damage critical state and military infrastructure.",
+                "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "source": "",
+                "link": "https://t.me/abualiexpress/131933"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000001",
-                "date": "2026-10-14",
+                "event_id": "iranstrike-39t6whtvh0o00",
+                "date": "2026-10-15",
                 "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 1.0,
+                "indicator": "strike_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 10.0,
+                "indicator_strength": 10.0,
+                "effect": -2.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 60.0,
-                "rationale": "Negotiations lower the immediate military threat to the Iranian state.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                "raw_contribution": -200.0,
+                "rationale": "A US strike could damage critical state and military infrastructure.",
+                "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "source": "",
+                "link": "https://t.me/abualiexpress/131933"
               }
             ]
           },
@@ -475,50 +547,50 @@
             "name": "Preserve nuclear programme",
             "description": "Protect strategic nuclear infrastructure and capabilities.",
             "weight": 9.0,
-            "achievement_index": 52.7,
-            "change_from_neutral": 2.7,
-            "raw_contribution": 54.0,
-            "positive_contribution": 54.0,
-            "negative_contribution": 0.0,
-            "trend": "improving",
-            "level": "balanced",
+            "achievement_index": 41.0,
+            "change_from_neutral": -9.0,
+            "raw_contribution": -180.0,
+            "positive_contribution": 0.0,
+            "negative_contribution": -180.0,
+            "trend": "deteriorating",
+            "level": "moderately_negative",
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000001",
-                "date": "2026-10-14",
+                "event_id": "iranstrike-39t6whtvh0o00",
+                "date": "2026-10-15",
                 "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 1.0,
+                "indicator": "strike_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 10.0,
+                "indicator_strength": 10.0,
+                "effect": -2.0,
                 "interest_weight": 9.0,
-                "raw_contribution": 54.0,
-                "rationale": "Negotiations may allow Iran to preserve part of its nuclear infrastructure under agreed restrictions.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                "raw_contribution": -180.0,
+                "rationale": "Nuclear facilities may become primary targets.",
+                "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "source": "",
+                "link": "https://t.me/abualiexpress/131933"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000001",
-                "date": "2026-10-14",
+                "event_id": "iranstrike-39t6whtvh0o00",
+                "date": "2026-10-15",
                 "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 1.0,
+                "indicator": "strike_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 10.0,
+                "indicator_strength": 10.0,
+                "effect": -2.0,
                 "interest_weight": 9.0,
-                "raw_contribution": 54.0,
-                "rationale": "Negotiations may allow Iran to preserve part of its nuclear infrastructure under agreed restrictions.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                "raw_contribution": -180.0,
+                "rationale": "Nuclear facilities may become primary targets.",
+                "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "source": "",
+                "link": "https://t.me/abualiexpress/131933"
               }
             ]
           },
@@ -527,16 +599,52 @@
             "name": "Missile capability",
             "description": "Maintain and develop long-range missile forces.",
             "weight": 9.0,
-            "achievement_index": 50.0,
-            "change_from_neutral": 0.0,
-            "raw_contribution": 0,
-            "positive_contribution": 0,
-            "negative_contribution": 0,
-            "trend": "stable",
-            "level": "balanced",
-            "evidence_count": 0,
-            "top_evidence": [],
-            "evidence": []
+            "achievement_index": 41.0,
+            "change_from_neutral": -9.0,
+            "raw_contribution": -180.0,
+            "positive_contribution": 0.0,
+            "negative_contribution": -180.0,
+            "trend": "deteriorating",
+            "level": "moderately_negative",
+            "evidence_count": 1,
+            "top_evidence": [
+              {
+                "event_id": "iranstrike-39t6whtvh0o00",
+                "date": "2026-10-15",
+                "source_actor": "usa",
+                "indicator": "strike_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 10.0,
+                "indicator_strength": 10.0,
+                "effect": -2.0,
+                "interest_weight": 9.0,
+                "raw_contribution": -180.0,
+                "rationale": "Missile sites and launch infrastructure may be targeted.",
+                "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "source": "",
+                "link": "https://t.me/abualiexpress/131933"
+              }
+            ],
+            "evidence": [
+              {
+                "event_id": "iranstrike-39t6whtvh0o00",
+                "date": "2026-10-15",
+                "source_actor": "usa",
+                "indicator": "strike_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 10.0,
+                "indicator_strength": 10.0,
+                "effect": -2.0,
+                "interest_weight": 9.0,
+                "raw_contribution": -180.0,
+                "rationale": "Missile sites and launch infrastructure may be targeted.",
+                "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "source": "",
+                "link": "https://t.me/abualiexpress/131933"
+              }
+            ]
           },
           {
             "id": "proxy_network",
@@ -591,50 +699,50 @@
             "name": "Avoid regime-destroying war",
             "description": "Avoid military escalation threatening state survival.",
             "weight": 10.0,
-            "achievement_index": 56.0,
-            "change_from_neutral": 6.0,
-            "raw_contribution": 120.0,
-            "positive_contribution": 120.0,
-            "negative_contribution": 0.0,
-            "trend": "improving",
-            "level": "moderately_positive",
+            "achievement_index": 40.0,
+            "change_from_neutral": -10.0,
+            "raw_contribution": -200.0,
+            "positive_contribution": 0.0,
+            "negative_contribution": -200.0,
+            "trend": "deteriorating",
+            "level": "moderately_negative",
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000001",
-                "date": "2026-10-14",
+                "event_id": "iranstrike-39t6whtvh0o00",
+                "date": "2026-10-15",
                 "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 2.0,
+                "indicator": "strike_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 10.0,
+                "indicator_strength": 10.0,
+                "effect": -2.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 120.0,
-                "rationale": "Diplomatic engagement directly reduces the probability of a regime-threatening war.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                "raw_contribution": -200.0,
+                "rationale": "Military strike preparation creates a direct threat of large-scale escalation.",
+                "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "source": "",
+                "link": "https://t.me/abualiexpress/131933"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000001",
-                "date": "2026-10-14",
+                "event_id": "iranstrike-39t6whtvh0o00",
+                "date": "2026-10-15",
                 "source_actor": "usa",
-                "indicator": "negotiation",
-                "pressure_direction": "decrease_pressure",
-                "indicator_score": -6.0,
-                "indicator_strength": 6.0,
-                "effect": 2.0,
+                "indicator": "strike_preparation",
+                "pressure_direction": "increase_pressure",
+                "indicator_score": 10.0,
+                "indicator_strength": 10.0,
+                "effect": -2.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 120.0,
-                "rationale": "Diplomatic engagement directly reduces the probability of a regime-threatening war.",
-                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-                "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                "raw_contribution": -200.0,
+                "rationale": "Military strike preparation creates a direct threat of large-scale escalation.",
+                "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                "source": "",
+                "link": "https://t.me/abualiexpress/131933"
               }
             ]
           }
@@ -643,176 +751,110 @@
     },
     "processed_evidence": [
       {
-        "event_id": "INFO-000001",
-        "timestamp": "2026-10-14T09:47:41+00:00",
-        "date": "2026-10-14",
+        "event_id": "iranstrike-39t6whtvh0o00",
+        "timestamp": "2026-10-15T05:33:57+00:00",
+        "date": "2026-10-15",
         "source_actor": "usa",
-        "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-        "event_type": "diplomatic",
-        "event_direction": "mixed",
-        "source_layer": "non_kinetic",
-        "final_score": -6.0,
-        "original_final_score": -6.0,
-        "operational_component": 0.0,
-        "strategic_modifier": -6.0,
-        "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-        "source": "\"iran israel usa war when:7d\" - Google News",
-        "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
+        "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+        "event_type": "kinetic",
+        "event_direction": "escalation",
+        "source_layer": "kinetic",
+        "final_score": 11.0,
+        "original_final_score": 11.0,
+        "operational_component": 1.0,
+        "strategic_modifier": 10.0,
+        "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+        "source": "",
+        "link": "https://t.me/abualiexpress/131933",
         "daily_score_suppressed": false,
         "suppression_reason": "",
         "mapped_indicators": [
           {
-            "indicator": "negotiation",
-            "indicator_name": "Negotiation",
-            "pressure_direction": "decrease_pressure",
-            "indicator_score": -6.0,
-            "indicator_strength": 6.0,
+            "indicator": "strike_preparation",
+            "indicator_name": "Preparation for military strike",
+            "pressure_direction": "increase_pressure",
+            "indicator_score": 10.0,
+            "indicator_strength": 10.0,
             "mapped_impacts": [
               {
                 "target_actor": "usa",
-                "interest_id": "avoid_full_scale_war",
+                "interest_id": "regional_deterrence",
                 "effect": 2.0,
-                "interest_weight": 10.0,
-                "raw_contribution": 120.0,
-                "rationale": "Negotiations reduce immediate escalation risk and preserve diplomatic options."
+                "interest_weight": 8.0,
+                "raw_contribution": 160.0,
+                "rationale": "Strike preparation makes the US military threat more credible."
               },
               {
                 "target_actor": "usa",
                 "interest_id": "nuclear_nonproliferation",
                 "effect": 1.0,
                 "interest_weight": 9.0,
-                "raw_contribution": 54.0,
-                "rationale": "Diplomacy may produce limits, inspections or delays affecting Iran's nuclear programme."
+                "raw_contribution": 90.0,
+                "rationale": "Preparations may strengthen coercive pressure against Iranian nuclear activity."
               },
               {
                 "target_actor": "usa",
                 "interest_id": "force_protection",
-                "effect": 1.0,
+                "effect": -1.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 60.0,
-                "rationale": "Reduced tension lowers the immediate threat to US forces."
+                "raw_contribution": -100.0,
+                "rationale": "Preparation for a strike may trigger Iranian pre-emption or retaliation."
+              },
+              {
+                "target_actor": "usa",
+                "interest_id": "freedom_of_navigation",
+                "effect": -1.0,
+                "interest_weight": 9.0,
+                "raw_contribution": -90.0,
+                "rationale": "Iran may respond by threatening or disrupting regional maritime traffic."
               },
               {
                 "target_actor": "usa",
                 "interest_id": "energy_security",
-                "effect": 1.0,
+                "effect": -2.0,
                 "interest_weight": 7.0,
-                "raw_contribution": 42.0,
-                "rationale": "Diplomatic engagement reduces the likelihood of major energy disruption."
-              },
-              {
-                "target_actor": "iran",
-                "interest_id": "regime_survival",
-                "effect": 1.0,
-                "interest_weight": 10.0,
-                "raw_contribution": 60.0,
-                "rationale": "Negotiations lower the immediate military threat to the Iranian state."
-              },
-              {
-                "target_actor": "iran",
-                "interest_id": "avoid_regime_destroying_war",
-                "effect": 2.0,
-                "interest_weight": 10.0,
-                "raw_contribution": 120.0,
-                "rationale": "Diplomatic engagement directly reduces the probability of a regime-threatening war."
-              },
-              {
-                "target_actor": "iran",
-                "interest_id": "nuclear_programme",
-                "effect": 1.0,
-                "interest_weight": 9.0,
-                "raw_contribution": 54.0,
-                "rationale": "Negotiations may allow Iran to preserve part of its nuclear infrastructure under agreed restrictions."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "event_id": "INFO-000001",
-        "timestamp": "2026-10-14T09:47:41+00:00",
-        "date": "2026-10-14",
-        "source_actor": "iran",
-        "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-        "event_type": "diplomatic",
-        "event_direction": "mixed",
-        "source_layer": "non_kinetic",
-        "final_score": -6.0,
-        "original_final_score": -6.0,
-        "operational_component": 0.0,
-        "strategic_modifier": -6.0,
-        "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-        "source": "\"iran israel usa war when:7d\" - Google News",
-        "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
-        "daily_score_suppressed": false,
-        "suppression_reason": "",
-        "mapped_indicators": [
-          {
-            "indicator": "negotiation",
-            "indicator_name": "Negotiation",
-            "pressure_direction": "decrease_pressure",
-            "indicator_score": -6.0,
-            "indicator_strength": 6.0,
-            "mapped_impacts": [
-              {
-                "target_actor": "iran",
-                "interest_id": "regime_survival",
-                "effect": 1.0,
-                "interest_weight": 10.0,
-                "raw_contribution": 0.0,
-                "original_raw_contribution": 60.0,
-                "suppressed": true,
-                "rationale": "Negotiations reduce immediate pressure on the Iranian state."
-              },
-              {
-                "target_actor": "iran",
-                "interest_id": "avoid_regime_destroying_war",
-                "effect": 2.0,
-                "interest_weight": 10.0,
-                "raw_contribution": 0.0,
-                "original_raw_contribution": 120.0,
-                "suppressed": true,
-                "rationale": "Diplomacy lowers the likelihood of a war threatening regime survival."
-              },
-              {
-                "target_actor": "iran",
-                "interest_id": "nuclear_programme",
-                "effect": 1.0,
-                "interest_weight": 9.0,
-                "raw_contribution": 0.0,
-                "original_raw_contribution": 54.0,
-                "suppressed": true,
-                "rationale": "Negotiations may allow Iran to preserve controlled nuclear capabilities."
+                "raw_contribution": -140.0,
+                "rationale": "An imminent strike may cause severe energy-market disruption."
               },
               {
                 "target_actor": "usa",
                 "interest_id": "avoid_full_scale_war",
-                "effect": 2.0,
+                "effect": -2.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 0.0,
-                "original_raw_contribution": 120.0,
-                "suppressed": true,
-                "rationale": "Negotiations support conflict containment."
+                "raw_contribution": -200.0,
+                "rationale": "Strike preparation substantially increases the probability of direct war."
               },
               {
-                "target_actor": "usa",
-                "interest_id": "nuclear_nonproliferation",
-                "effect": 1.0,
+                "target_actor": "iran",
+                "interest_id": "regime_survival",
+                "effect": -2.0,
+                "interest_weight": 10.0,
+                "raw_contribution": -200.0,
+                "rationale": "A US strike could damage critical state and military infrastructure."
+              },
+              {
+                "target_actor": "iran",
+                "interest_id": "nuclear_programme",
+                "effect": -2.0,
                 "interest_weight": 9.0,
-                "raw_contribution": 0.0,
-                "original_raw_contribution": 54.0,
-                "suppressed": true,
-                "rationale": "Diplomatic agreements may constrain or monitor Iran's nuclear programme."
+                "raw_contribution": -180.0,
+                "rationale": "Nuclear facilities may become primary targets."
               },
               {
-                "target_actor": "usa",
-                "interest_id": "energy_security",
-                "effect": 1.0,
-                "interest_weight": 7.0,
-                "raw_contribution": 0.0,
-                "original_raw_contribution": 42.0,
-                "suppressed": true,
-                "rationale": "Lower tension supports energy-market stability."
+                "target_actor": "iran",
+                "interest_id": "missile_capability",
+                "effect": -2.0,
+                "interest_weight": 9.0,
+                "raw_contribution": -180.0,
+                "rationale": "Missile sites and launch infrastructure may be targeted."
+              },
+              {
+                "target_actor": "iran",
+                "interest_id": "avoid_regime_destroying_war",
+                "effect": -2.0,
+                "interest_weight": 10.0,
+                "raw_contribution": -200.0,
+                "rationale": "Military strike preparation creates a direct threat of large-scale escalation."
               }
             ]
           }
@@ -87060,22 +87102,28 @@
     {
       "date": "2026-07-18",
       "summary": {
-        "usa_achievement_index": 49.04,
-        "iran_achievement_index": 51.09,
-        "achievement_gap": -2.05,
+        "usa_achievement_index": 50.0,
+        "iran_achievement_index": 50.0,
+        "achievement_gap": 0.0,
         "daily_strategic_advantage": "balanced",
         "interpretation": "The index measures whether the current day's detected developments support or weaken each actor's own weighted strategic interests. It does not directly measure military victory or conflict outcome."
       },
       "actors": {
         "usa": {
-          "achievement_index": 49.04,
-          "change_from_neutral": -0.96,
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0,
           "trend": "stable",
           "level": "balanced",
-          "raw_contribution": -156.0,
+          "raw_contribution": 0.0,
           "interest_count": 8,
-          "interests_with_evidence": 3,
+          "interests_with_evidence": 0,
           "strongest_interests": [
+            {
+              "id": "israel_security",
+              "name": "Israel security",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
             {
               "id": "force_protection",
               "name": "Protection of US forces",
@@ -87087,32 +87135,26 @@
               "name": "Freedom of navigation",
               "achievement_index": 50.0,
               "change_from_neutral": 0.0
-            },
-            {
-              "id": "nuclear_nonproliferation",
-              "name": "Prevent Iranian nuclear weapon capability",
-              "achievement_index": 50.0,
-              "change_from_neutral": 0.0
             }
           ],
           "weakest_interests": [
             {
               "id": "israel_security",
               "name": "Israel security",
-              "achievement_index": 47.0,
-              "change_from_neutral": -3.0
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
             },
             {
-              "id": "regional_deterrence",
-              "name": "Regional deterrence",
-              "achievement_index": 47.6,
-              "change_from_neutral": -2.4
+              "id": "force_protection",
+              "name": "Protection of US forces",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
             },
             {
-              "id": "regional_partners",
-              "name": "Protection of regional partners",
-              "achievement_index": 47.6,
-              "change_from_neutral": -2.4
+              "id": "freedom_of_navigation",
+              "name": "Freedom of navigation",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
             }
           ],
           "interests": [
@@ -87121,52 +87163,16 @@
               "name": "Israel security",
               "description": "Maintain Israel's security and military superiority.",
               "weight": 10.0,
-              "achievement_index": 47.0,
-              "change_from_neutral": -3.0,
-              "raw_contribution": -60.0,
-              "positive_contribution": 0.0,
-              "negative_contribution": -60.0,
-              "trend": "deteriorating",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
               "level": "balanced",
-              "evidence_count": 1,
-              "top_evidence": [
-                {
-                  "event_id": "iranstrike-2zsgvt6frps00",
-                  "date": "2026-07-18",
-                  "source_actor": "iran",
-                  "indicator": "missile_test",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 6.0,
-                  "indicator_strength": 6.0,
-                  "effect": -1.0,
-                  "interest_weight": 10.0,
-                  "raw_contribution": -60.0,
-                  "rationale": "Longer-range or more accurate missiles increase the threat to Israel.",
-                  "title": "Iran launches ballistic missiles from Khomeyn targeting Muwaffaq Salti Air Base in Jordan",
-                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles from Khomeyn targeting Muwaffaq Salti Air Base in Jordan",
-                  "source": "",
-                  "link": "https://t.me/CIG_telegram/80107"
-                }
-              ],
-              "evidence": [
-                {
-                  "event_id": "iranstrike-2zsgvt6frps00",
-                  "date": "2026-07-18",
-                  "source_actor": "iran",
-                  "indicator": "missile_test",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 6.0,
-                  "indicator_strength": 6.0,
-                  "effect": -1.0,
-                  "interest_weight": 10.0,
-                  "raw_contribution": -60.0,
-                  "rationale": "Longer-range or more accurate missiles increase the threat to Israel.",
-                  "title": "Iran launches ballistic missiles from Khomeyn targeting Muwaffaq Salti Air Base in Jordan",
-                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles from Khomeyn targeting Muwaffaq Salti Air Base in Jordan",
-                  "source": "",
-                  "link": "https://t.me/CIG_telegram/80107"
-                }
-              ]
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
             },
             {
               "id": "force_protection",
@@ -87221,104 +87227,32 @@
               "name": "Regional deterrence",
               "description": "Maintain credible military deterrence against Iran and its proxies.",
               "weight": 8.0,
-              "achievement_index": 47.6,
-              "change_from_neutral": -2.4,
-              "raw_contribution": -48.0,
-              "positive_contribution": 0.0,
-              "negative_contribution": -48.0,
-              "trend": "deteriorating",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
               "level": "balanced",
-              "evidence_count": 1,
-              "top_evidence": [
-                {
-                  "event_id": "iranstrike-2zsgvt6frps00",
-                  "date": "2026-07-18",
-                  "source_actor": "iran",
-                  "indicator": "missile_test",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 6.0,
-                  "indicator_strength": 6.0,
-                  "effect": -1.0,
-                  "interest_weight": 8.0,
-                  "raw_contribution": -48.0,
-                  "rationale": "Improved Iranian missile capability weakens the relative US deterrent advantage.",
-                  "title": "Iran launches ballistic missiles from Khomeyn targeting Muwaffaq Salti Air Base in Jordan",
-                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles from Khomeyn targeting Muwaffaq Salti Air Base in Jordan",
-                  "source": "",
-                  "link": "https://t.me/CIG_telegram/80107"
-                }
-              ],
-              "evidence": [
-                {
-                  "event_id": "iranstrike-2zsgvt6frps00",
-                  "date": "2026-07-18",
-                  "source_actor": "iran",
-                  "indicator": "missile_test",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 6.0,
-                  "indicator_strength": 6.0,
-                  "effect": -1.0,
-                  "interest_weight": 8.0,
-                  "raw_contribution": -48.0,
-                  "rationale": "Improved Iranian missile capability weakens the relative US deterrent advantage.",
-                  "title": "Iran launches ballistic missiles from Khomeyn targeting Muwaffaq Salti Air Base in Jordan",
-                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles from Khomeyn targeting Muwaffaq Salti Air Base in Jordan",
-                  "source": "",
-                  "link": "https://t.me/CIG_telegram/80107"
-                }
-              ]
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
             },
             {
               "id": "regional_partners",
               "name": "Protection of regional partners",
               "description": "Support Gulf partners and other regional allies.",
               "weight": 8.0,
-              "achievement_index": 47.6,
-              "change_from_neutral": -2.4,
-              "raw_contribution": -48.0,
-              "positive_contribution": 0.0,
-              "negative_contribution": -48.0,
-              "trend": "deteriorating",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
               "level": "balanced",
-              "evidence_count": 1,
-              "top_evidence": [
-                {
-                  "event_id": "iranstrike-2zsgvt6frps00",
-                  "date": "2026-07-18",
-                  "source_actor": "iran",
-                  "indicator": "missile_test",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 6.0,
-                  "indicator_strength": 6.0,
-                  "effect": -1.0,
-                  "interest_weight": 8.0,
-                  "raw_contribution": -48.0,
-                  "rationale": "Iranian missile advances increase risks to Gulf partners.",
-                  "title": "Iran launches ballistic missiles from Khomeyn targeting Muwaffaq Salti Air Base in Jordan",
-                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles from Khomeyn targeting Muwaffaq Salti Air Base in Jordan",
-                  "source": "",
-                  "link": "https://t.me/CIG_telegram/80107"
-                }
-              ],
-              "evidence": [
-                {
-                  "event_id": "iranstrike-2zsgvt6frps00",
-                  "date": "2026-07-18",
-                  "source_actor": "iran",
-                  "indicator": "missile_test",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 6.0,
-                  "indicator_strength": 6.0,
-                  "effect": -1.0,
-                  "interest_weight": 8.0,
-                  "raw_contribution": -48.0,
-                  "rationale": "Iranian missile advances increase risks to Gulf partners.",
-                  "title": "Iran launches ballistic missiles from Khomeyn targeting Muwaffaq Salti Air Base in Jordan",
-                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles from Khomeyn targeting Muwaffaq Salti Air Base in Jordan",
-                  "source": "",
-                  "link": "https://t.me/CIG_telegram/80107"
-                }
-              ]
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
             },
             {
               "id": "energy_security",
@@ -87355,29 +87289,29 @@
           ]
         },
         "iran": {
-          "achievement_index": 51.09,
-          "change_from_neutral": 1.09,
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0,
           "trend": "stable",
           "level": "balanced",
-          "raw_contribution": 168.0,
+          "raw_contribution": 0.0,
           "interest_count": 8,
-          "interests_with_evidence": 2,
+          "interests_with_evidence": 0,
           "strongest_interests": [
             {
-              "id": "missile_capability",
-              "name": "Missile capability",
-              "achievement_index": 55.4,
-              "change_from_neutral": 5.4
+              "id": "regime_survival",
+              "name": "Regime survival",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
             },
             {
               "id": "strategic_deterrence",
               "name": "Strategic deterrence",
-              "achievement_index": 53.0,
-              "change_from_neutral": 3.0
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
             },
             {
-              "id": "regime_survival",
-              "name": "Regime survival",
+              "id": "nuclear_programme",
+              "name": "Preserve nuclear programme",
               "achievement_index": 50.0,
               "change_from_neutral": 0.0
             }
@@ -87390,14 +87324,14 @@
               "change_from_neutral": 0.0
             },
             {
-              "id": "nuclear_programme",
-              "name": "Preserve nuclear programme",
+              "id": "strategic_deterrence",
+              "name": "Strategic deterrence",
               "achievement_index": 50.0,
               "change_from_neutral": 0.0
             },
             {
-              "id": "proxy_network",
-              "name": "Regional proxy network",
+              "id": "nuclear_programme",
+              "name": "Preserve nuclear programme",
               "achievement_index": 50.0,
               "change_from_neutral": 0.0
             }
@@ -87424,52 +87358,16 @@
               "name": "Strategic deterrence",
               "description": "Maintain credible military deterrence against the United States and Israel.",
               "weight": 10.0,
-              "achievement_index": 53.0,
-              "change_from_neutral": 3.0,
-              "raw_contribution": 60.0,
-              "positive_contribution": 60.0,
-              "negative_contribution": 0.0,
-              "trend": "improving",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
               "level": "balanced",
-              "evidence_count": 1,
-              "top_evidence": [
-                {
-                  "event_id": "iranstrike-2zsgvt6frps00",
-                  "date": "2026-07-18",
-                  "source_actor": "iran",
-                  "indicator": "missile_test",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 6.0,
-                  "indicator_strength": 6.0,
-                  "effect": 1.0,
-                  "interest_weight": 10.0,
-                  "raw_contribution": 60.0,
-                  "rationale": "Successful tests strengthen perceptions of Iranian retaliatory capability.",
-                  "title": "Iran launches ballistic missiles from Khomeyn targeting Muwaffaq Salti Air Base in Jordan",
-                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles from Khomeyn targeting Muwaffaq Salti Air Base in Jordan",
-                  "source": "",
-                  "link": "https://t.me/CIG_telegram/80107"
-                }
-              ],
-              "evidence": [
-                {
-                  "event_id": "iranstrike-2zsgvt6frps00",
-                  "date": "2026-07-18",
-                  "source_actor": "iran",
-                  "indicator": "missile_test",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 6.0,
-                  "indicator_strength": 6.0,
-                  "effect": 1.0,
-                  "interest_weight": 10.0,
-                  "raw_contribution": 60.0,
-                  "rationale": "Successful tests strengthen perceptions of Iranian retaliatory capability.",
-                  "title": "Iran launches ballistic missiles from Khomeyn targeting Muwaffaq Salti Air Base in Jordan",
-                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles from Khomeyn targeting Muwaffaq Salti Air Base in Jordan",
-                  "source": "",
-                  "link": "https://t.me/CIG_telegram/80107"
-                }
-              ]
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
             },
             {
               "id": "nuclear_programme",
@@ -87492,52 +87390,16 @@
               "name": "Missile capability",
               "description": "Maintain and develop long-range missile forces.",
               "weight": 9.0,
-              "achievement_index": 55.4,
-              "change_from_neutral": 5.4,
-              "raw_contribution": 108.0,
-              "positive_contribution": 108.0,
-              "negative_contribution": 0.0,
-              "trend": "improving",
-              "level": "moderately_positive",
-              "evidence_count": 1,
-              "top_evidence": [
-                {
-                  "event_id": "iranstrike-2zsgvt6frps00",
-                  "date": "2026-07-18",
-                  "source_actor": "iran",
-                  "indicator": "missile_test",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 6.0,
-                  "indicator_strength": 6.0,
-                  "effect": 2.0,
-                  "interest_weight": 9.0,
-                  "raw_contribution": 108.0,
-                  "rationale": "Testing supports technological development and operational credibility.",
-                  "title": "Iran launches ballistic missiles from Khomeyn targeting Muwaffaq Salti Air Base in Jordan",
-                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles from Khomeyn targeting Muwaffaq Salti Air Base in Jordan",
-                  "source": "",
-                  "link": "https://t.me/CIG_telegram/80107"
-                }
-              ],
-              "evidence": [
-                {
-                  "event_id": "iranstrike-2zsgvt6frps00",
-                  "date": "2026-07-18",
-                  "source_actor": "iran",
-                  "indicator": "missile_test",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 6.0,
-                  "indicator_strength": 6.0,
-                  "effect": 2.0,
-                  "interest_weight": 9.0,
-                  "raw_contribution": 108.0,
-                  "rationale": "Testing supports technological development and operational credibility.",
-                  "title": "Iran launches ballistic missiles from Khomeyn targeting Muwaffaq Salti Air Base in Jordan",
-                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles from Khomeyn targeting Muwaffaq Salti Air Base in Jordan",
-                  "source": "",
-                  "link": "https://t.me/CIG_telegram/80107"
-                }
-              ]
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
             },
             {
               "id": "proxy_network",
@@ -87606,102 +87468,8 @@
           ]
         }
       },
-      "processed_evidence": [
-        {
-          "event_id": "iranstrike-2zsgvt6frps00",
-          "timestamp": "2026-07-18T10:12:08+00:00",
-          "date": "2026-07-18",
-          "source_actor": "iran",
-          "title": "Iran launches ballistic missiles from Khomeyn targeting Muwaffaq Salti Air Base in Jordan",
-          "event_type": "kinetic",
-          "event_direction": "escalation",
-          "source_layer": "kinetic",
-          "final_score": 7.0,
-          "original_final_score": 7.0,
-          "operational_component": 1.0,
-          "strategic_modifier": 6.0,
-          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches ballistic missiles from Khomeyn targeting Muwaffaq Salti Air Base in Jordan",
-          "source": "",
-          "link": "https://t.me/CIG_telegram/80107",
-          "daily_score_suppressed": false,
-          "suppression_reason": "",
-          "mapped_indicators": [
-            {
-              "indicator": "missile_test",
-              "indicator_name": "Missile test",
-              "pressure_direction": "increase_pressure",
-              "indicator_score": 6.0,
-              "indicator_strength": 6.0,
-              "mapped_impacts": [
-                {
-                  "target_actor": "iran",
-                  "interest_id": "missile_capability",
-                  "effect": 2.0,
-                  "interest_weight": 9.0,
-                  "raw_contribution": 108.0,
-                  "rationale": "Testing supports technological development and operational credibility."
-                },
-                {
-                  "target_actor": "iran",
-                  "interest_id": "strategic_deterrence",
-                  "effect": 1.0,
-                  "interest_weight": 10.0,
-                  "raw_contribution": 60.0,
-                  "rationale": "Successful tests strengthen perceptions of Iranian retaliatory capability."
-                },
-                {
-                  "target_actor": "usa",
-                  "interest_id": "regional_deterrence",
-                  "effect": -1.0,
-                  "interest_weight": 8.0,
-                  "raw_contribution": -48.0,
-                  "rationale": "Improved Iranian missile capability weakens the relative US deterrent advantage."
-                },
-                {
-                  "target_actor": "usa",
-                  "interest_id": "israel_security",
-                  "effect": -1.0,
-                  "interest_weight": 10.0,
-                  "raw_contribution": -60.0,
-                  "rationale": "Longer-range or more accurate missiles increase the threat to Israel."
-                },
-                {
-                  "target_actor": "usa",
-                  "interest_id": "regional_partners",
-                  "effect": -1.0,
-                  "interest_weight": 8.0,
-                  "raw_contribution": -48.0,
-                  "rationale": "Iranian missile advances increase risks to Gulf partners."
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "suppressed_evidence": [
-        {
-          "event_id": "iranstrike-2nndotjbmdg00",
-          "timestamp": "2026-07-18T07:23:01+00:00",
-          "date": "2026-07-18",
-          "source_actor": "iran",
-          "title": "Missile alerts activated twice overnight in Saudi Arabia at Al-Khafji island and Yanbu port area, Iran reportedly launches missiles at Saudi Arabia for first time in current escalation",
-          "event_type": "kinetic",
-          "event_direction": "escalation",
-          "source_layer": "kinetic",
-          "final_score": 0.0,
-          "original_final_score": 7.0,
-          "operational_component": 1.0,
-          "strategic_modifier": 6.0,
-          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Missile alerts activated twice overnight in Saudi Arabia at Al-Khafji island and Yanbu port area, Iran reportedly launches missiles at Saudi Arabia for first time in current escalation",
-          "source": "",
-          "link": "https://t.me/abualiexpress/126742",
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "indicators": [
-            "missile_test"
-          ]
-        }
-      ],
+      "processed_evidence": [],
+      "suppressed_evidence": [],
       "unmapped_evidence": [],
       "calculation": {
         "neutral_score": 50.0,
@@ -146880,7 +146648,7 @@
       "processed_evidence": [
         {
           "event_id": "INFO-000001",
-          "timestamp": "2026-10-14T09:47:41+00:00",
+          "timestamp": "2026-10-14T20:15:05+00:00",
           "date": "2026-10-14",
           "source_actor": "usa",
           "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
@@ -146966,7 +146734,7 @@
         },
         {
           "event_id": "INFO-000001",
-          "timestamp": "2026-10-14T09:47:41+00:00",
+          "timestamp": "2026-10-14T20:15:05+00:00",
           "date": "2026-10-14",
           "source_actor": "iran",
           "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
@@ -147065,10 +146833,862 @@
         "indicator_strength_cap": 20.0,
         "formula": "raw_contribution = absolute_indicator_score × mapped_interest_effect × interest_weight; interest_index = clamp(50 + raw_contribution / normalisation_divisor, 0, 100); actor_index = interest-weighted mean of the actor's interest indices"
       }
+    },
+    {
+      "date": "2026-10-15",
+      "summary": {
+        "usa_achievement_index": 48.1,
+        "iran_achievement_index": 44.97,
+        "achievement_gap": 3.13,
+        "daily_strategic_advantage": "usa",
+        "interpretation": "The index measures whether the current day's detected developments support or weaken each actor's own weighted strategic interests. It does not directly measure military victory or conflict outcome."
+      },
+      "actors": {
+        "usa": {
+          "achievement_index": 48.1,
+          "change_from_neutral": -1.9,
+          "trend": "stable",
+          "level": "balanced",
+          "raw_contribution": -280.0,
+          "interest_count": 8,
+          "interests_with_evidence": 6,
+          "strongest_interests": [
+            {
+              "id": "regional_deterrence",
+              "name": "Regional deterrence",
+              "achievement_index": 58.0,
+              "change_from_neutral": 8.0
+            },
+            {
+              "id": "nuclear_nonproliferation",
+              "name": "Prevent Iranian nuclear weapon capability",
+              "achievement_index": 54.5,
+              "change_from_neutral": 4.5
+            },
+            {
+              "id": "israel_security",
+              "name": "Israel security",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            }
+          ],
+          "weakest_interests": [
+            {
+              "id": "avoid_full_scale_war",
+              "name": "Avoid full-scale regional war",
+              "achievement_index": 40.0,
+              "change_from_neutral": -10.0
+            },
+            {
+              "id": "energy_security",
+              "name": "Global energy security",
+              "achievement_index": 43.0,
+              "change_from_neutral": -7.0
+            },
+            {
+              "id": "force_protection",
+              "name": "Protection of US forces",
+              "achievement_index": 45.0,
+              "change_from_neutral": -5.0
+            }
+          ],
+          "interests": [
+            {
+              "id": "israel_security",
+              "name": "Israel security",
+              "description": "Maintain Israel's security and military superiority.",
+              "weight": 10.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "force_protection",
+              "name": "Protection of US forces",
+              "description": "Protect US military personnel, bases and regional assets.",
+              "weight": 10.0,
+              "achievement_index": 45.0,
+              "change_from_neutral": -5.0,
+              "raw_contribution": -100.0,
+              "positive_contribution": 0.0,
+              "negative_contribution": -100.0,
+              "trend": "deteriorating",
+              "level": "balanced",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-39t6whtvh0o00",
+                  "date": "2026-10-15",
+                  "source_actor": "usa",
+                  "indicator": "strike_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 10.0,
+                  "indicator_strength": 10.0,
+                  "effect": -1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -100.0,
+                  "rationale": "Preparation for a strike may trigger Iranian pre-emption or retaliation.",
+                  "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "source": "",
+                  "link": "https://t.me/abualiexpress/131933"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-39t6whtvh0o00",
+                  "date": "2026-10-15",
+                  "source_actor": "usa",
+                  "indicator": "strike_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 10.0,
+                  "indicator_strength": 10.0,
+                  "effect": -1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -100.0,
+                  "rationale": "Preparation for a strike may trigger Iranian pre-emption or retaliation.",
+                  "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "source": "",
+                  "link": "https://t.me/abualiexpress/131933"
+                }
+              ]
+            },
+            {
+              "id": "freedom_of_navigation",
+              "name": "Freedom of navigation",
+              "description": "Maintain secure maritime routes including the Strait of Hormuz.",
+              "weight": 9.0,
+              "achievement_index": 45.5,
+              "change_from_neutral": -4.5,
+              "raw_contribution": -90.0,
+              "positive_contribution": 0.0,
+              "negative_contribution": -90.0,
+              "trend": "deteriorating",
+              "level": "balanced",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-39t6whtvh0o00",
+                  "date": "2026-10-15",
+                  "source_actor": "usa",
+                  "indicator": "strike_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 10.0,
+                  "indicator_strength": 10.0,
+                  "effect": -1.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": -90.0,
+                  "rationale": "Iran may respond by threatening or disrupting regional maritime traffic.",
+                  "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "source": "",
+                  "link": "https://t.me/abualiexpress/131933"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-39t6whtvh0o00",
+                  "date": "2026-10-15",
+                  "source_actor": "usa",
+                  "indicator": "strike_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 10.0,
+                  "indicator_strength": 10.0,
+                  "effect": -1.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": -90.0,
+                  "rationale": "Iran may respond by threatening or disrupting regional maritime traffic.",
+                  "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "source": "",
+                  "link": "https://t.me/abualiexpress/131933"
+                }
+              ]
+            },
+            {
+              "id": "nuclear_nonproliferation",
+              "name": "Prevent Iranian nuclear weapon capability",
+              "description": "Limit or delay Iran's military nuclear programme.",
+              "weight": 9.0,
+              "achievement_index": 54.5,
+              "change_from_neutral": 4.5,
+              "raw_contribution": 90.0,
+              "positive_contribution": 90.0,
+              "negative_contribution": 0.0,
+              "trend": "improving",
+              "level": "balanced",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-39t6whtvh0o00",
+                  "date": "2026-10-15",
+                  "source_actor": "usa",
+                  "indicator": "strike_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 10.0,
+                  "indicator_strength": 10.0,
+                  "effect": 1.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 90.0,
+                  "rationale": "Preparations may strengthen coercive pressure against Iranian nuclear activity.",
+                  "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "source": "",
+                  "link": "https://t.me/abualiexpress/131933"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-39t6whtvh0o00",
+                  "date": "2026-10-15",
+                  "source_actor": "usa",
+                  "indicator": "strike_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 10.0,
+                  "indicator_strength": 10.0,
+                  "effect": 1.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 90.0,
+                  "rationale": "Preparations may strengthen coercive pressure against Iranian nuclear activity.",
+                  "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "source": "",
+                  "link": "https://t.me/abualiexpress/131933"
+                }
+              ]
+            },
+            {
+              "id": "regional_deterrence",
+              "name": "Regional deterrence",
+              "description": "Maintain credible military deterrence against Iran and its proxies.",
+              "weight": 8.0,
+              "achievement_index": 58.0,
+              "change_from_neutral": 8.0,
+              "raw_contribution": 160.0,
+              "positive_contribution": 160.0,
+              "negative_contribution": 0.0,
+              "trend": "improving",
+              "level": "moderately_positive",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-39t6whtvh0o00",
+                  "date": "2026-10-15",
+                  "source_actor": "usa",
+                  "indicator": "strike_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 10.0,
+                  "indicator_strength": 10.0,
+                  "effect": 2.0,
+                  "interest_weight": 8.0,
+                  "raw_contribution": 160.0,
+                  "rationale": "Strike preparation makes the US military threat more credible.",
+                  "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "source": "",
+                  "link": "https://t.me/abualiexpress/131933"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-39t6whtvh0o00",
+                  "date": "2026-10-15",
+                  "source_actor": "usa",
+                  "indicator": "strike_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 10.0,
+                  "indicator_strength": 10.0,
+                  "effect": 2.0,
+                  "interest_weight": 8.0,
+                  "raw_contribution": 160.0,
+                  "rationale": "Strike preparation makes the US military threat more credible.",
+                  "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "source": "",
+                  "link": "https://t.me/abualiexpress/131933"
+                }
+              ]
+            },
+            {
+              "id": "regional_partners",
+              "name": "Protection of regional partners",
+              "description": "Support Gulf partners and other regional allies.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "energy_security",
+              "name": "Global energy security",
+              "description": "Reduce disruption to global energy markets.",
+              "weight": 7.0,
+              "achievement_index": 43.0,
+              "change_from_neutral": -7.0,
+              "raw_contribution": -140.0,
+              "positive_contribution": 0.0,
+              "negative_contribution": -140.0,
+              "trend": "deteriorating",
+              "level": "moderately_negative",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-39t6whtvh0o00",
+                  "date": "2026-10-15",
+                  "source_actor": "usa",
+                  "indicator": "strike_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 10.0,
+                  "indicator_strength": 10.0,
+                  "effect": -2.0,
+                  "interest_weight": 7.0,
+                  "raw_contribution": -140.0,
+                  "rationale": "An imminent strike may cause severe energy-market disruption.",
+                  "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "source": "",
+                  "link": "https://t.me/abualiexpress/131933"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-39t6whtvh0o00",
+                  "date": "2026-10-15",
+                  "source_actor": "usa",
+                  "indicator": "strike_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 10.0,
+                  "indicator_strength": 10.0,
+                  "effect": -2.0,
+                  "interest_weight": 7.0,
+                  "raw_contribution": -140.0,
+                  "rationale": "An imminent strike may cause severe energy-market disruption.",
+                  "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "source": "",
+                  "link": "https://t.me/abualiexpress/131933"
+                }
+              ]
+            },
+            {
+              "id": "avoid_full_scale_war",
+              "name": "Avoid full-scale regional war",
+              "description": "Prevent uncontrolled regional escalation.",
+              "weight": 10.0,
+              "achievement_index": 40.0,
+              "change_from_neutral": -10.0,
+              "raw_contribution": -200.0,
+              "positive_contribution": 0.0,
+              "negative_contribution": -200.0,
+              "trend": "deteriorating",
+              "level": "moderately_negative",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-39t6whtvh0o00",
+                  "date": "2026-10-15",
+                  "source_actor": "usa",
+                  "indicator": "strike_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 10.0,
+                  "indicator_strength": 10.0,
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -200.0,
+                  "rationale": "Strike preparation substantially increases the probability of direct war.",
+                  "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "source": "",
+                  "link": "https://t.me/abualiexpress/131933"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-39t6whtvh0o00",
+                  "date": "2026-10-15",
+                  "source_actor": "usa",
+                  "indicator": "strike_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 10.0,
+                  "indicator_strength": 10.0,
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -200.0,
+                  "rationale": "Strike preparation substantially increases the probability of direct war.",
+                  "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "source": "",
+                  "link": "https://t.me/abualiexpress/131933"
+                }
+              ]
+            }
+          ]
+        },
+        "iran": {
+          "achievement_index": 44.97,
+          "change_from_neutral": -5.03,
+          "trend": "deteriorating",
+          "level": "moderately_negative",
+          "raw_contribution": -760.0,
+          "interest_count": 8,
+          "interests_with_evidence": 4,
+          "strongest_interests": [
+            {
+              "id": "strategic_deterrence",
+              "name": "Strategic deterrence",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "proxy_network",
+              "name": "Regional proxy network",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "regional_influence",
+              "name": "Regional influence",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            }
+          ],
+          "weakest_interests": [
+            {
+              "id": "regime_survival",
+              "name": "Regime survival",
+              "achievement_index": 40.0,
+              "change_from_neutral": -10.0
+            },
+            {
+              "id": "avoid_regime_destroying_war",
+              "name": "Avoid regime-destroying war",
+              "achievement_index": 40.0,
+              "change_from_neutral": -10.0
+            },
+            {
+              "id": "nuclear_programme",
+              "name": "Preserve nuclear programme",
+              "achievement_index": 41.0,
+              "change_from_neutral": -9.0
+            }
+          ],
+          "interests": [
+            {
+              "id": "regime_survival",
+              "name": "Regime survival",
+              "description": "Ensure survival and stability of the Islamic Republic.",
+              "weight": 10.0,
+              "achievement_index": 40.0,
+              "change_from_neutral": -10.0,
+              "raw_contribution": -200.0,
+              "positive_contribution": 0.0,
+              "negative_contribution": -200.0,
+              "trend": "deteriorating",
+              "level": "moderately_negative",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-39t6whtvh0o00",
+                  "date": "2026-10-15",
+                  "source_actor": "usa",
+                  "indicator": "strike_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 10.0,
+                  "indicator_strength": 10.0,
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -200.0,
+                  "rationale": "A US strike could damage critical state and military infrastructure.",
+                  "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "source": "",
+                  "link": "https://t.me/abualiexpress/131933"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-39t6whtvh0o00",
+                  "date": "2026-10-15",
+                  "source_actor": "usa",
+                  "indicator": "strike_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 10.0,
+                  "indicator_strength": 10.0,
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -200.0,
+                  "rationale": "A US strike could damage critical state and military infrastructure.",
+                  "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "source": "",
+                  "link": "https://t.me/abualiexpress/131933"
+                }
+              ]
+            },
+            {
+              "id": "strategic_deterrence",
+              "name": "Strategic deterrence",
+              "description": "Maintain credible military deterrence against the United States and Israel.",
+              "weight": 10.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "nuclear_programme",
+              "name": "Preserve nuclear programme",
+              "description": "Protect strategic nuclear infrastructure and capabilities.",
+              "weight": 9.0,
+              "achievement_index": 41.0,
+              "change_from_neutral": -9.0,
+              "raw_contribution": -180.0,
+              "positive_contribution": 0.0,
+              "negative_contribution": -180.0,
+              "trend": "deteriorating",
+              "level": "moderately_negative",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-39t6whtvh0o00",
+                  "date": "2026-10-15",
+                  "source_actor": "usa",
+                  "indicator": "strike_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 10.0,
+                  "indicator_strength": 10.0,
+                  "effect": -2.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": -180.0,
+                  "rationale": "Nuclear facilities may become primary targets.",
+                  "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "source": "",
+                  "link": "https://t.me/abualiexpress/131933"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-39t6whtvh0o00",
+                  "date": "2026-10-15",
+                  "source_actor": "usa",
+                  "indicator": "strike_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 10.0,
+                  "indicator_strength": 10.0,
+                  "effect": -2.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": -180.0,
+                  "rationale": "Nuclear facilities may become primary targets.",
+                  "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "source": "",
+                  "link": "https://t.me/abualiexpress/131933"
+                }
+              ]
+            },
+            {
+              "id": "missile_capability",
+              "name": "Missile capability",
+              "description": "Maintain and develop long-range missile forces.",
+              "weight": 9.0,
+              "achievement_index": 41.0,
+              "change_from_neutral": -9.0,
+              "raw_contribution": -180.0,
+              "positive_contribution": 0.0,
+              "negative_contribution": -180.0,
+              "trend": "deteriorating",
+              "level": "moderately_negative",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-39t6whtvh0o00",
+                  "date": "2026-10-15",
+                  "source_actor": "usa",
+                  "indicator": "strike_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 10.0,
+                  "indicator_strength": 10.0,
+                  "effect": -2.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": -180.0,
+                  "rationale": "Missile sites and launch infrastructure may be targeted.",
+                  "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "source": "",
+                  "link": "https://t.me/abualiexpress/131933"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-39t6whtvh0o00",
+                  "date": "2026-10-15",
+                  "source_actor": "usa",
+                  "indicator": "strike_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 10.0,
+                  "indicator_strength": 10.0,
+                  "effect": -2.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": -180.0,
+                  "rationale": "Missile sites and launch infrastructure may be targeted.",
+                  "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "source": "",
+                  "link": "https://t.me/abualiexpress/131933"
+                }
+              ]
+            },
+            {
+              "id": "proxy_network",
+              "name": "Regional proxy network",
+              "description": "Maintain influence through regional partner organisations.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "regional_influence",
+              "name": "Regional influence",
+              "description": "Preserve strategic influence across the Middle East.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "hormuz_leverage",
+              "name": "Hormuz leverage",
+              "description": "Retain the ability to influence maritime traffic through the Strait of Hormuz.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "avoid_regime_destroying_war",
+              "name": "Avoid regime-destroying war",
+              "description": "Avoid military escalation threatening state survival.",
+              "weight": 10.0,
+              "achievement_index": 40.0,
+              "change_from_neutral": -10.0,
+              "raw_contribution": -200.0,
+              "positive_contribution": 0.0,
+              "negative_contribution": -200.0,
+              "trend": "deteriorating",
+              "level": "moderately_negative",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "iranstrike-39t6whtvh0o00",
+                  "date": "2026-10-15",
+                  "source_actor": "usa",
+                  "indicator": "strike_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 10.0,
+                  "indicator_strength": 10.0,
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -200.0,
+                  "rationale": "Military strike preparation creates a direct threat of large-scale escalation.",
+                  "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "source": "",
+                  "link": "https://t.me/abualiexpress/131933"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "iranstrike-39t6whtvh0o00",
+                  "date": "2026-10-15",
+                  "source_actor": "usa",
+                  "indicator": "strike_preparation",
+                  "pressure_direction": "increase_pressure",
+                  "indicator_score": 10.0,
+                  "indicator_strength": 10.0,
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -200.0,
+                  "rationale": "Military strike preparation creates a direct threat of large-scale escalation.",
+                  "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+                  "source": "",
+                  "link": "https://t.me/abualiexpress/131933"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "processed_evidence": [
+        {
+          "event_id": "iranstrike-39t6whtvh0o00",
+          "timestamp": "2026-10-15T05:33:57+00:00",
+          "date": "2026-10-15",
+          "source_actor": "usa",
+          "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+          "event_type": "kinetic",
+          "event_direction": "escalation",
+          "source_layer": "kinetic",
+          "final_score": 11.0,
+          "original_final_score": 11.0,
+          "operational_component": 1.0,
+          "strategic_modifier": 10.0,
+          "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+          "source": "",
+          "link": "https://t.me/abualiexpress/131933",
+          "daily_score_suppressed": false,
+          "suppression_reason": "",
+          "mapped_indicators": [
+            {
+              "indicator": "strike_preparation",
+              "indicator_name": "Preparation for military strike",
+              "pressure_direction": "increase_pressure",
+              "indicator_score": 10.0,
+              "indicator_strength": 10.0,
+              "mapped_impacts": [
+                {
+                  "target_actor": "usa",
+                  "interest_id": "regional_deterrence",
+                  "effect": 2.0,
+                  "interest_weight": 8.0,
+                  "raw_contribution": 160.0,
+                  "rationale": "Strike preparation makes the US military threat more credible."
+                },
+                {
+                  "target_actor": "usa",
+                  "interest_id": "nuclear_nonproliferation",
+                  "effect": 1.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 90.0,
+                  "rationale": "Preparations may strengthen coercive pressure against Iranian nuclear activity."
+                },
+                {
+                  "target_actor": "usa",
+                  "interest_id": "force_protection",
+                  "effect": -1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -100.0,
+                  "rationale": "Preparation for a strike may trigger Iranian pre-emption or retaliation."
+                },
+                {
+                  "target_actor": "usa",
+                  "interest_id": "freedom_of_navigation",
+                  "effect": -1.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": -90.0,
+                  "rationale": "Iran may respond by threatening or disrupting regional maritime traffic."
+                },
+                {
+                  "target_actor": "usa",
+                  "interest_id": "energy_security",
+                  "effect": -2.0,
+                  "interest_weight": 7.0,
+                  "raw_contribution": -140.0,
+                  "rationale": "An imminent strike may cause severe energy-market disruption."
+                },
+                {
+                  "target_actor": "usa",
+                  "interest_id": "avoid_full_scale_war",
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -200.0,
+                  "rationale": "Strike preparation substantially increases the probability of direct war."
+                },
+                {
+                  "target_actor": "iran",
+                  "interest_id": "regime_survival",
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -200.0,
+                  "rationale": "A US strike could damage critical state and military infrastructure."
+                },
+                {
+                  "target_actor": "iran",
+                  "interest_id": "nuclear_programme",
+                  "effect": -2.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": -180.0,
+                  "rationale": "Nuclear facilities may become primary targets."
+                },
+                {
+                  "target_actor": "iran",
+                  "interest_id": "missile_capability",
+                  "effect": -2.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": -180.0,
+                  "rationale": "Missile sites and launch infrastructure may be targeted."
+                },
+                {
+                  "target_actor": "iran",
+                  "interest_id": "avoid_regime_destroying_war",
+                  "effect": -2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": -200.0,
+                  "rationale": "Military strike preparation creates a direct threat of large-scale escalation."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "suppressed_evidence": [],
+      "unmapped_evidence": [],
+      "calculation": {
+        "neutral_score": 50.0,
+        "minimum_score": 0.0,
+        "maximum_score": 100.0,
+        "normalisation_divisor": 20.0,
+        "indicator_strength_cap": 20.0,
+        "formula": "raw_contribution = absolute_indicator_score × mapped_interest_effect × interest_weight; interest_index = clamp(50 + raw_contribution / normalisation_divisor, 0, 100); actor_index = interest-weighted mean of the actor's interest indices"
+      }
     }
   ],
   "history_summary": {
-    "day_count": 219,
+    "day_count": 220,
     "actors": {
       "usa": {
         "average": 50.69,
@@ -147865,43 +148485,43 @@
             },
             {
               "date": "2026-07-18",
-              "value": 49.76,
+              "value": 49.9,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-19",
-              "value": 49.76,
+              "value": 49.9,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-20",
-              "value": 49.02,
+              "value": 49.16,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-21",
-              "value": 48.68,
+              "value": 48.82,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-22",
-              "value": 48.54,
+              "value": 48.68,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-23",
-              "value": 48.74,
+              "value": 48.88,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-24",
-              "value": 49.0,
+              "value": 49.14,
               "window": 7,
               "observations": 7
             },
@@ -148394,6 +149014,12 @@
             {
               "date": "2026-10-14",
               "value": 49.86,
+              "window": 7,
+              "observations": 7
+            },
+            {
+              "date": "2026-10-15",
+              "value": 50.19,
               "window": 7,
               "observations": 7
             }
@@ -149181,181 +149807,181 @@
             },
             {
               "date": "2026-07-18",
-              "value": 50.93,
+              "value": 50.97,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-07-19",
-              "value": 50.83,
+              "value": 50.86,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-07-20",
-              "value": 50.61,
+              "value": 50.65,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-07-21",
-              "value": 50.39,
+              "value": 50.43,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-07-22",
-              "value": 50.3,
+              "value": 50.33,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-07-23",
-              "value": 50.3,
+              "value": 50.33,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-07-24",
-              "value": 50.36,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-25",
-              "value": 50.36,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-26",
-              "value": 50.36,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-27",
-              "value": 50.42,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-28",
-              "value": 50.44,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-29",
               "value": 50.39,
               "window": 30,
               "observations": 30
             },
             {
+              "date": "2026-07-25",
+              "value": 50.39,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-07-26",
+              "value": 50.39,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-07-27",
+              "value": 50.45,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-07-28",
+              "value": 50.47,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-07-29",
+              "value": 50.42,
+              "window": 30,
+              "observations": 30
+            },
+            {
               "date": "2026-07-30",
-              "value": 50.11,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-31",
-              "value": 50.05,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-08-01",
-              "value": 50.0,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-08-02",
-              "value": 50.12,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-08-03",
-              "value": 50.13,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-08-04",
-              "value": 50.19,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-08-05",
-              "value": 50.23,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-08-06",
-              "value": 50.09,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-08-07",
-              "value": 50.0,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-08-08",
-              "value": 50.0,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-08-09",
-              "value": 49.94,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-08-10",
-              "value": 49.94,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-08-11",
-              "value": 50.0,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-08-12",
-              "value": 50.06,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-08-13",
-              "value": 50.19,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-08-14",
               "value": 50.14,
               "window": 30,
               "observations": 30
             },
             {
+              "date": "2026-07-31",
+              "value": 50.08,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-08-01",
+              "value": 50.04,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-08-02",
+              "value": 50.15,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-08-03",
+              "value": 50.16,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-08-04",
+              "value": 50.22,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-08-05",
+              "value": 50.26,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-08-06",
+              "value": 50.12,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-08-07",
+              "value": 50.03,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-08-08",
+              "value": 50.03,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-08-09",
+              "value": 49.97,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-08-10",
+              "value": 49.97,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-08-11",
+              "value": 50.03,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-08-12",
+              "value": 50.09,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-08-13",
+              "value": 50.22,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-08-14",
+              "value": 50.18,
+              "window": 30,
+              "observations": 30
+            },
+            {
               "date": "2026-08-15",
-              "value": 50.19,
+              "value": 50.22,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-16",
-              "value": 50.19,
+              "value": 50.22,
               "window": 30,
               "observations": 30
             },
@@ -149712,27 +150338,33 @@
               "value": 50.91,
               "window": 30,
               "observations": 30
+            },
+            {
+              "date": "2026-10-15",
+              "value": 50.85,
+              "window": 30,
+              "observations": 30
             }
           ]
         },
         "trend": {
           "direction": "stable",
-          "slope": -0.0024
+          "slope": -0.0027
         },
-        "volatility": 1.5842,
-        "latest": 51.82,
-        "change_first_to_latest": -1.39
+        "volatility": 1.587,
+        "latest": 48.1,
+        "change_first_to_latest": -5.11
       },
       "iran": {
-        "average": 51.05,
-        "median": 51.09,
+        "average": 51.02,
+        "median": 50.93,
         "best_day": {
           "date": "2026-08-02",
           "value": 54.63
         },
         "worst_day": {
-          "date": "2026-03-30",
-          "value": 49.31
+          "date": "2026-10-15",
+          "value": 44.97
         },
         "rolling_averages": {
           "7_day": [
@@ -150518,43 +151150,43 @@
             },
             {
               "date": "2026-07-18",
-              "value": 50.52,
+              "value": 50.36,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-19",
-              "value": 50.52,
+              "value": 50.36,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-20",
-              "value": 50.99,
+              "value": 50.84,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-21",
-              "value": 51.24,
+              "value": 51.09,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-22",
-              "value": 51.4,
+              "value": 51.24,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-23",
-              "value": 51.62,
+              "value": 51.47,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-24",
-              "value": 51.85,
+              "value": 51.7,
               "window": 7,
               "observations": 7
             },
@@ -151047,6 +151679,12 @@
             {
               "date": "2026-10-14",
               "value": 50.78,
+              "window": 7,
+              "observations": 7
+            },
+            {
+              "date": "2026-10-15",
+              "value": 49.74,
               "window": 7,
               "observations": 7
             }
@@ -151834,181 +152472,181 @@
             },
             {
               "date": "2026-07-18",
-              "value": 51.16,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-19",
-              "value": 51.05,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-20",
-              "value": 51.1,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-21",
-              "value": 51.04,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-22",
-              "value": 51.02,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-23",
-              "value": 51.02,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-24",
-              "value": 51.08,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-25",
-              "value": 51.08,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-26",
-              "value": 51.08,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-27",
-              "value": 51.13,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-28",
-              "value": 51.13,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-29",
-              "value": 51.16,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-30",
-              "value": 51.17,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-31",
               "value": 51.12,
               "window": 30,
               "observations": 30
             },
             {
+              "date": "2026-07-19",
+              "value": 51.02,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-07-20",
+              "value": 51.07,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-07-21",
+              "value": 51.0,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-07-22",
+              "value": 50.99,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-07-23",
+              "value": 50.99,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-07-24",
+              "value": 51.04,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-07-25",
+              "value": 51.04,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-07-26",
+              "value": 51.04,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-07-27",
+              "value": 51.09,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-07-28",
+              "value": 51.09,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-07-29",
+              "value": 51.13,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-07-30",
+              "value": 51.13,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-07-31",
+              "value": 51.08,
+              "window": 30,
+              "observations": 30
+            },
+            {
               "date": "2026-08-01",
-              "value": 51.06,
+              "value": 51.03,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-02",
-              "value": 51.17,
+              "value": 51.13,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-03",
-              "value": 51.17,
+              "value": 51.13,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-04",
-              "value": 51.22,
+              "value": 51.18,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-05",
-              "value": 51.28,
+              "value": 51.24,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-06",
-              "value": 51.36,
+              "value": 51.32,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-07",
-              "value": 51.41,
+              "value": 51.37,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-08",
-              "value": 51.41,
+              "value": 51.37,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-09",
-              "value": 51.36,
+              "value": 51.32,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-10",
-              "value": 51.36,
+              "value": 51.32,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-11",
-              "value": 51.41,
+              "value": 51.37,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-12",
-              "value": 51.46,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-08-13",
-              "value": 51.48,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-08-14",
               "value": 51.43,
               "window": 30,
               "observations": 30
             },
             {
+              "date": "2026-08-13",
+              "value": 51.45,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-08-14",
+              "value": 51.4,
+              "window": 30,
+              "observations": 30
+            },
+            {
               "date": "2026-08-15",
-              "value": 51.48,
+              "value": 51.45,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-16",
-              "value": 51.48,
+              "value": 51.45,
               "window": 30,
               "observations": 30
             },
@@ -152365,16 +153003,22 @@
               "value": 51.03,
               "window": 30,
               "observations": 30
+            },
+            {
+              "date": "2026-10-15",
+              "value": 50.87,
+              "window": 30,
+              "observations": 30
             }
           ]
         },
         "trend": {
           "direction": "stable",
-          "slope": 0.0012
+          "slope": 0.0004
         },
-        "volatility": 1.1518,
-        "latest": 51.59,
-        "change_first_to_latest": -1.58
+        "volatility": 1.2217,
+        "latest": 44.97,
+        "change_first_to_latest": -8.2
       }
     }
   },
@@ -154609,29 +155253,6 @@
         "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
         "indicators": [
           "negotiation"
-        ]
-      },
-      {
-        "assessment_date": "2026-07-18",
-        "event_id": "iranstrike-2nndotjbmdg00",
-        "timestamp": "2026-07-18T07:23:01+00:00",
-        "date": "2026-07-18",
-        "source_actor": "iran",
-        "title": "Missile alerts activated twice overnight in Saudi Arabia at Al-Khafji island and Yanbu port area, Iran reportedly launches missiles at Saudi Arabia for first time in current escalation",
-        "event_type": "kinetic",
-        "event_direction": "escalation",
-        "source_layer": "kinetic",
-        "final_score": 0.0,
-        "original_final_score": 7.0,
-        "operational_component": 1.0,
-        "strategic_modifier": 6.0,
-        "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Missile alerts activated twice overnight in Saudi Arabia at Al-Khafji island and Yanbu port area, Iran reportedly launches missiles at Saudi Arabia for first time in current escalation",
-        "source": "",
-        "link": "https://t.me/abualiexpress/126742",
-        "daily_score_suppressed": true,
-        "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-        "indicators": [
-          "missile_test"
         ]
       },
       {
@@ -163772,177 +164393,20 @@
       "2026-09-15: Contributor 'INFO-000062' has final_score 0 and was skipped."
     ],
     "counts": {
-      "suppressed_evidence": 151,
+      "suppressed_evidence": 150,
       "bilateral_duplicates": 293,
       "unmapped_indicators": 0,
       "warnings": 1
     },
     "current": {
       "suppressed_evidence": [],
-      "bilateral_duplicates": [
-        {
-          "event_id": "INFO-000001",
-          "date": "2026-10-14",
-          "source_actor": "iran",
-          "indicator": "negotiation",
-          "pressure_direction": "decrease_pressure",
-          "indicator_score": -6.0,
-          "indicator_strength": 6.0,
-          "effect": 1.0,
-          "interest_weight": 10.0,
-          "raw_contribution": 60.0,
-          "rationale": "Negotiations reduce immediate pressure on the Iranian state.",
-          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
-          "target_actor": "iran",
-          "interest_id": "regime_survival",
-          "deduplication_key": {
-            "date": "2026-10-14",
-            "event_id": "INFO-000001",
-            "target_actor": "iran",
-            "interest_id": "regime_survival"
-          },
-          "suppression_reason": "Duplicate event-to-interest evidence within the same day."
-        },
-        {
-          "event_id": "INFO-000001",
-          "date": "2026-10-14",
-          "source_actor": "iran",
-          "indicator": "negotiation",
-          "pressure_direction": "decrease_pressure",
-          "indicator_score": -6.0,
-          "indicator_strength": 6.0,
-          "effect": 2.0,
-          "interest_weight": 10.0,
-          "raw_contribution": 120.0,
-          "rationale": "Diplomacy lowers the likelihood of a war threatening regime survival.",
-          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
-          "target_actor": "iran",
-          "interest_id": "avoid_regime_destroying_war",
-          "deduplication_key": {
-            "date": "2026-10-14",
-            "event_id": "INFO-000001",
-            "target_actor": "iran",
-            "interest_id": "avoid_regime_destroying_war"
-          },
-          "suppression_reason": "Duplicate event-to-interest evidence within the same day."
-        },
-        {
-          "event_id": "INFO-000001",
-          "date": "2026-10-14",
-          "source_actor": "iran",
-          "indicator": "negotiation",
-          "pressure_direction": "decrease_pressure",
-          "indicator_score": -6.0,
-          "indicator_strength": 6.0,
-          "effect": 1.0,
-          "interest_weight": 9.0,
-          "raw_contribution": 54.0,
-          "rationale": "Negotiations may allow Iran to preserve controlled nuclear capabilities.",
-          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
-          "target_actor": "iran",
-          "interest_id": "nuclear_programme",
-          "deduplication_key": {
-            "date": "2026-10-14",
-            "event_id": "INFO-000001",
-            "target_actor": "iran",
-            "interest_id": "nuclear_programme"
-          },
-          "suppression_reason": "Duplicate event-to-interest evidence within the same day."
-        },
-        {
-          "event_id": "INFO-000001",
-          "date": "2026-10-14",
-          "source_actor": "iran",
-          "indicator": "negotiation",
-          "pressure_direction": "decrease_pressure",
-          "indicator_score": -6.0,
-          "indicator_strength": 6.0,
-          "effect": 2.0,
-          "interest_weight": 10.0,
-          "raw_contribution": 120.0,
-          "rationale": "Negotiations support conflict containment.",
-          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
-          "target_actor": "usa",
-          "interest_id": "avoid_full_scale_war",
-          "deduplication_key": {
-            "date": "2026-10-14",
-            "event_id": "INFO-000001",
-            "target_actor": "usa",
-            "interest_id": "avoid_full_scale_war"
-          },
-          "suppression_reason": "Duplicate event-to-interest evidence within the same day."
-        },
-        {
-          "event_id": "INFO-000001",
-          "date": "2026-10-14",
-          "source_actor": "iran",
-          "indicator": "negotiation",
-          "pressure_direction": "decrease_pressure",
-          "indicator_score": -6.0,
-          "indicator_strength": 6.0,
-          "effect": 1.0,
-          "interest_weight": 9.0,
-          "raw_contribution": 54.0,
-          "rationale": "Diplomatic agreements may constrain or monitor Iran's nuclear programme.",
-          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
-          "target_actor": "usa",
-          "interest_id": "nuclear_nonproliferation",
-          "deduplication_key": {
-            "date": "2026-10-14",
-            "event_id": "INFO-000001",
-            "target_actor": "usa",
-            "interest_id": "nuclear_nonproliferation"
-          },
-          "suppression_reason": "Duplicate event-to-interest evidence within the same day."
-        },
-        {
-          "event_id": "INFO-000001",
-          "date": "2026-10-14",
-          "source_actor": "iran",
-          "indicator": "negotiation",
-          "pressure_direction": "decrease_pressure",
-          "indicator_score": -6.0,
-          "indicator_strength": 6.0,
-          "effect": 1.0,
-          "interest_weight": 7.0,
-          "raw_contribution": 42.0,
-          "rationale": "Lower tension supports energy-market stability.",
-          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
-          "target_actor": "usa",
-          "interest_id": "energy_security",
-          "deduplication_key": {
-            "date": "2026-10-14",
-            "event_id": "INFO-000001",
-            "target_actor": "usa",
-            "interest_id": "energy_security"
-          },
-          "suppression_reason": "Duplicate event-to-interest evidence within the same day."
-        }
-      ],
+      "bilateral_duplicates": [],
       "unmapped_indicators": [],
       "warnings": [],
       "counts": {
-        "processed_evidence": 2,
+        "processed_evidence": 1,
         "suppressed_evidence": 0,
-        "bilateral_duplicates": 6,
+        "bilateral_duplicates": 0,
         "unmapped_indicators": 0,
         "warnings": 0
       }
