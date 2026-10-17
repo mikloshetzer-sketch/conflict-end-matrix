@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T13:52:32.507003+00:00",
+  "generated_at": "2026-10-17T12:52:08.707839+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -19,60 +19,60 @@
   },
   "statistics": {
     "non_kinetic_events_loaded": 645,
-    "kinetic_events_loaded": 712,
-    "unique_events_scanned": 1317,
-    "strategic_evidence_contributions": 374,
+    "kinetic_events_loaded": 699,
+    "unique_events_scanned": 1304,
+    "strategic_evidence_contributions": 373,
     "evidence_contributions_by_actor": {
       "usa": 122,
-      "iran": 252
+      "iran": 251
     },
     "scored_contributions_by_actor": {
       "usa": 89,
-      "iran": 135
+      "iran": 134
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
       "iran": 117
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 336,
-      "kinetic": 38
+      "non_kinetic": 334,
+      "kinetic": 39
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 211,
-      "usa:negotiation": 98,
+      "iran:negotiation": 210,
+      "usa:negotiation": 97,
       "iran:missile_test": 27,
       "usa:presidential_warning": 16,
       "iran:hormuz_threat": 9,
       "usa:ceasefire_support": 8,
       "iran:missile_preparation": 6,
       "iran:strike_preparation": 2,
+      "usa:strike_preparation": 2,
       "iran:nuclear_activity": 1,
-      "usa:carrier_deployment": 1,
-      "usa:strike_preparation": 1
+      "usa:carrier_deployment": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 108,
-      "usa:negotiation": 69,
+      "iran:negotiation": 107,
+      "usa:negotiation": 68,
       "usa:presidential_warning": 16,
       "iran:missile_test": 13,
       "iran:hormuz_threat": 9,
       "iran:missile_preparation": 6,
       "usa:ceasefire_support": 4,
       "iran:strike_preparation": 2,
+      "usa:strike_preparation": 2,
       "iran:nuclear_activity": 1,
-      "usa:carrier_deployment": 1,
-      "usa:strike_preparation": 1
+      "usa:carrier_deployment": 1
     },
     "skipped_without_timestamp": 0,
     "skipped_current_utc_day": 2,
-    "history_day_count": 220
+    "history_day_count": 221
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-10-15",
+  "latest_complete_utc_day": "2026-10-16",
   "current": {
-    "date": "2026-10-15",
+    "date": "2026-10-16",
     "calculation_mode": "live",
     "usa": {
       "raw_score": 11.0,
@@ -86,12 +86,12 @@
       "decrease_event_count": 0,
       "contributors": [
         {
-          "event_id": "iranstrike-39t6whtvh0o00",
-          "timestamp": "2026-10-15T05:33:57+00:00",
-          "date": "2026-10-15",
+          "event_id": "iranstrike-3098yx8wdvs00",
+          "timestamp": "2026-10-16T06:44:53+00:00",
+          "date": "2026-10-16",
           "actor": "usa",
           "bilateral_event": false,
-          "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+          "title": "CNN reports US military has prepared new strike plans against Iranian energy and nuclear infrastructure using the MOAB bomb; analysts question its effectiveness against underground nuclear sites such as Mount Meiduk",
           "source_layer": "kinetic",
           "event_type": "kinetic",
           "event_direction": "escalation",
@@ -118,9 +118,9 @@
               "recognition_rule_count": 1
             }
           ],
-          "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+          "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans against Iranian energy and nuclear infrastructure using the MOAB bomb; analysts question its effectiveness against underground nuclear sites such as Mount Meiduk",
           "source": "",
-          "link": "https://t.me/abualiexpress/131933",
+          "link": "https://t.me/abualiexpress/131998",
           "existing_event_score": 0.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
@@ -129,18 +129,18 @@
           "duplicate_daily_indicators": []
         }
       ],
-      "weighted_score_7d": 5.9,
-      "pressure_index_7d": 61.8,
-      "pressure_level": "elevated",
+      "weighted_score_7d": 20.35,
+      "pressure_index_7d": 90.7,
+      "pressure_level": "critical",
       "trend": "strong_increase",
       "strongest_contributors": [
         {
-          "event_id": "iranstrike-39t6whtvh0o00",
-          "timestamp": "2026-10-15T05:33:57+00:00",
-          "date": "2026-10-15",
+          "event_id": "iranstrike-3098yx8wdvs00",
+          "timestamp": "2026-10-16T06:44:53+00:00",
+          "date": "2026-10-16",
           "actor": "usa",
           "bilateral_event": false,
-          "title": "CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+          "title": "CNN reports US military has prepared new strike plans against Iranian energy and nuclear infrastructure using the MOAB bomb; analysts question its effectiveness against underground nuclear sites such as Mount Meiduk",
           "source_layer": "kinetic",
           "event_type": "kinetic",
           "event_direction": "escalation",
@@ -167,9 +167,9 @@
               "recognition_rule_count": 1
             }
           ],
-          "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans using the MOAB bomb against Iranian energy and nuclear infrastructure; analysts doubt effectiveness against underground sites such as Mount Mokhtar",
+          "reason": "United States: Preparation for military strike. Operational component: +1.00; strategic modifier: +10.00; final contribution before daily deduplication: +11.00. Event: CNN reports US military has prepared new strike plans against Iranian energy and nuclear infrastructure using the MOAB bomb; analysts question its effectiveness against underground nuclear sites such as Mount Meiduk",
           "source": "",
-          "link": "https://t.me/abualiexpress/131933",
+          "link": "https://t.me/abualiexpress/131998",
           "existing_event_score": 0.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
@@ -190,15 +190,15 @@
       "increase_event_count": 0,
       "decrease_event_count": 0,
       "contributors": [],
-      "weighted_score_7d": -5.9,
-      "pressure_index_7d": 38.2,
-      "pressure_level": "reduced",
+      "weighted_score_7d": -0.5,
+      "pressure_index_7d": 49.0,
+      "pressure_level": "balanced",
       "trend": "stable",
       "strongest_contributors": []
     },
     "overall": {
-      "pressure_index_7d": 50.0,
-      "pressure_level": "balanced",
+      "pressure_index_7d": 69.85,
+      "pressure_level": "high",
       "trend": "strong_increase",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
