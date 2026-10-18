@@ -1,29 +1,29 @@
 {
-  "generated_at": "2026-10-18T09:39:45.311007Z",
-  "source_generated_at": "2026-10-18T06:37:16Z",
+  "generated_at": "2026-10-18T13:08:09.230763Z",
+  "source_generated_at": "2026-10-18T11:44:19Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
   "source_event_count": 1733,
-  "event_count": 688,
-  "rejected_count": 1045,
+  "event_count": 684,
+  "rejected_count": 1049,
   "rejection_counts": {
     "category_not_kinetic": 592,
     "no_confirmed_action_language": 216,
-    "outside_window": 195,
+    "outside_window": 199,
     "context_or_hypothetical": 26,
     "retrospective_or_aftermath": 13,
     "alert_only": 3
   },
   "category_counts": {
-    "missile": 246,
-    "strike": 151,
+    "missile": 243,
+    "strike": 150,
     "airstrike": 109,
     "drone": 104,
     "explosion": 39,
@@ -31,14 +31,14 @@
     "intercept": 1
   },
   "severity_counts": {
-    "medium": 388,
-    "high": 255,
+    "medium": 386,
+    "high": 253,
     "low": 42,
     "critical": 3
   },
   "actor_counts": {
-    "Iran": 160,
     "Yemen": 157,
+    "Iran": 156,
     "Israel": 140,
     "United States": 115,
     "Unknown actor": 60,
@@ -17830,110 +17830,6 @@
       "validation": {
         "accepted": true,
         "reason": "general_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-2w8ypyrbhgy00",
-      "timestamp": "2026-07-20T13:03:17Z",
-      "event_type": "kinetic",
-      "subtype": "missile",
-      "category": "missile",
-      "severity": "high",
-      "actor": "irn",
-      "actor_label": "Iran",
-      "actor_method": "raw_source.origin",
-      "target_country": "Iran",
-      "location": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "IRGC-linked Fars News Agency publishes satellite imagery of missile attacks on Muwaffaq al-Salti airbase (July 17-19) that killed 3 U.S. servicemen and injured ~36, with probable destruction of multiple MQ-9 Reapers",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/80310",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "general_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-1aptkc3fzy800",
-      "timestamp": "2026-07-20T12:50:28Z",
-      "event_type": "kinetic",
-      "subtype": "missile",
-      "category": "missile",
-      "severity": "high",
-      "actor": "irn",
-      "actor_label": "Iran",
-      "actor_method": "raw_source.origin",
-      "target_country": "Iran",
-      "location": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "IRGC publishes footage of Khaybar Shekan, Fateh-110, Dhu al-Faqar and Emad missile launches targeting U.S. positions in region during waves 21-22 of Operation Nasr 2",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/126908",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-2ywuoqkrgr600",
-      "timestamp": "2026-07-20T12:05:29Z",
-      "event_type": "kinetic",
-      "subtype": "missile",
-      "category": "missile",
-      "severity": "medium",
-      "actor": "irn",
-      "actor_label": "Iran",
-      "actor_method": "raw_source.origin",
-      "target_country": "Iran",
-      "location": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Iran attacks US Navy 5th Fleet headquarters in Manama, Bahrain air defenses intercept incoming missiles",
-      "source_name": "OSINTdefender",
-      "source_url": "https://t.me/OSINTdefender/19542",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-248wq6ax0r0g0",
-      "timestamp": "2026-07-20T09:43:55Z",
-      "event_type": "kinetic",
-      "subtype": "strike",
-      "category": "strike",
-      "severity": "medium",
-      "actor": "irn",
-      "actor_label": "Iran",
-      "actor_method": "raw_source.origin",
-      "target_country": "Iran",
-      "location": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Iranian attack on targets near Sulaymaniyah in Iraqi Kurdistan, fires still burning at two locations detected by NASA FIRMS",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/80291",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
         "mode": "strict_kinetic_v2"
       }
     }
