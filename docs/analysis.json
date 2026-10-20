@@ -1,20 +1,27 @@
 {
-  "report_date": "2026-10-18",
-  "created_at": "2026-10-18T10:58:43.748521",
+  "report_date": "2026-10-19",
+  "created_at": "2026-10-19T13:03:58.416749",
   "article_count": 50,
-  "total_score": -47,
-  "conflict_index": -0.94,
+  "total_score": -33,
+  "conflict_index": -0.66,
   "assessment": "mild escalation",
-  "escalation_pressure": -53,
-  "diplomatic_pressure": 6,
-  "net_signal": -47,
+  "escalation_pressure": -47,
+  "diplomatic_pressure": 14,
+  "net_signal": -33,
   "top_drivers": [
     {
       "driver": "war",
       "category": "Military escalation",
-      "count": 18,
+      "count": 16,
       "weight": -1,
-      "impact": -18
+      "impact": -16
+    },
+    {
+      "driver": "attacks",
+      "category": "Military escalation",
+      "count": 5,
+      "weight": -2,
+      "impact": -10
     },
     {
       "driver": "attack",
@@ -24,25 +31,11 @@
       "impact": -10
     },
     {
-      "driver": "attacks",
-      "category": "Military escalation",
-      "count": 4,
-      "weight": -2,
-      "impact": -8
-    },
-    {
-      "driver": "strike",
-      "category": "Military escalation",
-      "count": 3,
-      "weight": -2,
-      "impact": -6
-    },
-    {
-      "driver": "threat",
-      "category": "Threats / retaliation",
-      "count": 4,
-      "weight": -1,
-      "impact": -4
+      "driver": "ceasefire",
+      "category": "Ceasefire / settlement",
+      "count": 2,
+      "weight": 3,
+      "impact": 6
     },
     {
       "driver": "strikes",
@@ -52,15 +45,29 @@
       "impact": -4
     },
     {
-      "driver": "threatens",
-      "category": "Threats / retaliation",
-      "count": 3,
-      "weight": -1,
-      "impact": -3
+      "driver": "strike",
+      "category": "Military escalation",
+      "count": 2,
+      "weight": -2,
+      "impact": -4
     },
     {
-      "driver": "talks",
-      "category": "Diplomacy / negotiation",
+      "driver": "threat",
+      "category": "Threats / retaliation",
+      "count": 2,
+      "weight": -1,
+      "impact": -2
+    },
+    {
+      "driver": "deal",
+      "category": "Ceasefire / settlement",
+      "count": 2,
+      "weight": 1,
+      "impact": 2
+    },
+    {
+      "driver": "settlement",
+      "category": "Ceasefire / settlement",
       "count": 1,
       "weight": 2,
       "impact": 2
@@ -78,13 +85,20 @@
       "count": 1,
       "weight": 2,
       "impact": 2
+    },
+    {
+      "driver": "threatens",
+      "category": "Threats / retaliation",
+      "count": 1,
+      "weight": -1,
+      "impact": -1
     }
   ],
   "categories": [
     {
       "category": "Military escalation",
-      "score": -46,
-      "count": 32,
+      "score": -44,
+      "count": 30,
       "keywords": [
         "attack",
         "attacks",
@@ -94,55 +108,52 @@
       ]
     },
     {
-      "category": "Threats / retaliation",
-      "score": -7,
-      "count": 7,
+      "category": "Ceasefire / settlement",
+      "score": 10,
+      "count": 5,
       "keywords": [
-        "threat",
-        "threatens"
+        "ceasefire",
+        "deal",
+        "settlement"
       ]
     },
     {
       "category": "Diplomacy / negotiation",
-      "score": 6,
-      "count": 3,
+      "score": 4,
+      "count": 2,
       "keywords": [
         "negotiation",
-        "negotiations",
-        "talks"
+        "negotiations"
+      ]
+    },
+    {
+      "category": "Threats / retaliation",
+      "score": -3,
+      "count": 3,
+      "keywords": [
+        "threat",
+        "threatens"
       ]
     }
   ],
   "key_signals": [
     {
-      "title": "Saudis launch new strikes on Houthis; Iran-backed group threatens U.S. if it joins in - CBS News",
-      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNUjJxRmNFWVFOVlEtUl9td2J5VXowU3BKQTJJd28ybW9EZ1VaRmlLZTgtbFNLTEVldC1RQTE0NDIwMU4teThZUmF1WkpsSDNwcjh1WG5vYWQxNGtMQmdydUpPSFdYeHpUb1pXVEFBRTQweFdxbkpEZlBQb2Vza2EwXw?oc=5",
-      "source": "\"middle east conflict when:7d\" - Google News",
-      "published": "Wed, 14 Oct 2026 01:14:00 GMT",
-      "score": -6,
+      "title": "Iran says it has a 'new operational plan' if the U.S. resumes attacks, as shipping vessels report strikes - CNBC",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOTjVoekNKSmw2RVRNS0h1WmV3SFVkUlUwUnFyX2ZqeExKMlk5aTQxWTdGSFBVbXFTUGZWSTNqejcxMk40TGlVdHBoS2RTTU5yMWFTOUhTZW0xVDhkNi02MVRKOUphdlNoenVBVkVoZm5uMTA1Umk2a0NJTzdHQkNyYzhsR0drUWlaSDdBZW5oQzg5WEnSAZgBQVVfeXFMT3ZIMWthWE1pMkRGSXlkZnpvRHRVd1NMc2hqOFIzN2RIUkNVX3E5OW9zNGh1WjVUMk9jYWlybldaWXRUay1ONmc3T3dKMkdxRDFnLXM1Nm1tblNvSmxUZ3paOTU4VjlGeE40bmY1THJ2M25Ua1NUUHplUmp1WUpwLXhPc0M1ZGM0eG1qSFRMSGtxVTZucTh3Qjk?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Sun, 18 Oct 2026 13:52:24 GMT",
+      "score": -8,
       "tags": [
         "strike",
         "strikes",
-        "threat",
-        "threatens"
+        "attack",
+        "attacks"
       ]
     },
     {
       "title": "Ships in Strait of Hormuz still face \"indiscriminate attacks,\" maritime monitor warns - CBS News",
       "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQT1N6LVU4X3R3a3ljSC1KY3BYOGI1bFVCWjA0bnM1WjE2eDRZQW43VVUxMnhFbThpcDdGSUdneU03ZFFjeFFmVWczeDVaelRBeXZGekhFdmNxeWZzUHlHNUpseS0tN09GMWtkSzB2WnJEV3ZnUXhqQnlyMEY3VVl0bA?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Fri, 16 Oct 2026 10:31:00 GMT",
-      "score": -5,
-      "tags": [
-        "attack",
-        "attacks",
-        "war"
-      ]
-    },
-    {
-      "title": "Ships in Strait of Hormuz still face \"indiscriminate attacks,\" maritime monitor warns - CBS News",
-      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQT1N6LVU4X3R3a3ljSC1KY3BYOGI1bFVCWjA0bnM1WjE2eDRZQW43VVUxMnhFbThpcDdGSUdneU03ZFFjeFFmVWczeDVaelRBeXZGekhFdmNxeWZzUHlHNUpseS0tN09GMWtkSzB2WnJEV3ZnUXhqQnlyMEY3VVl0bA?oc=5",
-      "source": "\"middle east conflict when:7d\" - Google News",
       "published": "Fri, 16 Oct 2026 10:31:00 GMT",
       "score": -5,
       "tags": [
@@ -185,10 +196,10 @@
       ]
     },
     {
-      "title": "Why Iran-US negotiations keep failing - Al Jazeera",
-      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQSzJfRTJ4WDA0NTdUSmF4MVVvZzNNMVVUaTJRZkkybFNuTVg3dGtHV0RDTGFvM2V2dWk5YnpRSjFQSHdmZFdWZVdPLWJWYjFRWXFSWkVQWERDcW5CeWNXQ2M1U0pxZ1ZkNXkyT016Zk1lRElfVVBCRDAwVVIwOHZqMlpSYlFFWlpzOGtv0gGQAUFVX3lxTE03ZnQySURobzdsN3VPTHdqQXI3YnVYZ2RxemJaX21kUG9pYjZYTF9LbWpvM3doM3UwUG05RldmSVRGeFlQTVVYQnRMOVJPS0s1aWFfdklESXFUcE9hSlJsRFNtMTVBX1dNUmozS1NyOWsweWtsN25DM25qNzZucERDdWNna0RtMURjR1c3NW50Ug?oc=5",
+      "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Sun, 18 Oct 2026 07:37:14 GMT",
+      "published": "Mon, 19 Oct 2026 04:14:41 GMT",
       "score": 4,
       "tags": [
         "negotiation",
@@ -196,20 +207,42 @@
       ]
     },
     {
-      "title": "Rubio says US struck Iran fearing it would retaliate for Israeli attack - ABC News - Breaking News, Latest News and Videos",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQbzJ1MnM3VFIyRWxoVEM5c25DbEVtYXlEajY3XzlqWjZIbVFCOXNlZC1lc1lxVnpxbkY5YmtUWE5jTUJnUjhzV2hyNlhNeU5JaVRFYW01VVZvVmJxNjZjUFQtZW1MRGtJc2lHdEtpOTNYYmM0WFRfWk9XYTA0NDdhR19zWktTT1h4ME91dWx1SFZacmVBMEZCLUdfNHltam5jcVlv0gGoAUFVX3lxTFBxUkduQU9kUjVvSnJ5b0ZlWVVBa0JkTjk5cGF5TTlFSzZaMXh1dEE3c1pvOVdDZU0xYmg1SFZEVU5HckVTUURnRmJKdi1NV29KdTlJSXNpYUVwbk8yMDJkU2RuM1VhUGY3Wi1ZSkI5VVRIcVdzcmtyWDdXYlhURGJJenZfLWdLOTNoZTFzZV9HWEE0cHUydHppM0s5Z05EdkRuUkRNZzFBdA?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Sat, 17 Oct 2026 19:49:16 GMT",
-      "score": -2,
+      "title": "Oil prices rise on Saudi Arabia attacks, overshadowing Trump's diesel deal - Reuters",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQM0xoWVo4eTNVMU5uQXk0Rk9WeWlMaWN0TFlDbWwzX1FqNy1iWW5iUzk0REtlMGNVSnlGWkRCb0tySkQwRFZ0NzVDQzRFVk1IcWNqVFIteWpOVTRVM01xblZ0TzN1dWdlNUdYWTRMUUFBOGhwQ2xTYl9NaTF0bmk5UllSanctMGJDT1g3MnVuX1IxTWpwR193RHoyV1BEd2FqOWlDcg?oc=5",
+      "source": "\"middle east conflict when:7d\" - Google News",
+      "published": "Mon, 12 Oct 2026 18:36:35 GMT",
+      "score": -3,
       "tags": [
-        "attack"
+        "attack",
+        "attacks",
+        "deal"
+      ]
+    },
+    {
+      "title": "Iran says Strait of Hormuz reopening, seven-day ceasefire conditions still on the table - CBS News",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOM3NTZE9fMEQ3MjZJZW1kbXZ0OE9RUlZTRkpUaTVQYmgtRE9GU3pKdVJmVFhZSUZBM3FrNjF0Q1VPdlU0MGFfZVBsQzhtTWszTWpvOThSNkpnaUJpaDZtUFNmYURteUJGZHdtNlpyVzNmRmJ6WHliZ19vWW1kYTNENE1BX3lUWTFrSHlZZW1uSGVvNWRETURlYXdBcXVyVUdj?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Sun, 18 Oct 2026 19:02:00 GMT",
+      "score": 3,
+      "tags": [
+        "ceasefire"
+      ]
+    },
+    {
+      "title": "Iran says Strait of Hormuz reopening, seven-day ceasefire conditions still on the table - CBS News",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOM3NTZE9fMEQ3MjZJZW1kbXZ0OE9RUlZTRkpUaTVQYmgtRE9GU3pKdVJmVFhZSUZBM3FrNjF0Q1VPdlU0MGFfZVBsQzhtTWszTWpvOThSNkpnaUJpaDZtUFNmYURteUJGZHdtNlpyVzNmRmJ6WHliZ19vWW1kYTNENE1BX3lUWTFrSHlZZW1uSGVvNWRETURlYXdBcXVyVUdj?oc=5",
+      "source": "\"middle east conflict when:7d\" - Google News",
+      "published": "Sun, 18 Oct 2026 19:02:00 GMT",
+      "score": 3,
+      "tags": [
+        "ceasefire"
       ]
     },
     {
       "title": "US, Israel face threats of war if oil prices keep rising - The Jerusalem Post",
       "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBsY1JDdGkySENGaDFUSGF4MTdTTlNMeXFSYXhnZWZKdWxjeV9BREF3X0FVY2hCWmlQNl9DRE1ZdktlZWdqMGxQRE15dHZJdEc0c2NJdE1tLTQ5MzJwcEpjUGxkRmNPUE40NkE?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Sat, 17 Oct 2026 19:27:05 GMT",
+      "published": "Sun, 18 Oct 2026 15:31:45 GMT",
       "score": -2,
       "tags": [
         "war",
@@ -228,30 +261,19 @@
       ]
     },
     {
-      "title": "Resigned Trump counterterror adviser Joe Kent says 'Israel drove the decision' to strike Iran - ABC News - Breaking News, Latest News and Videos",
-      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOZHhsUzdIbkRKd1JhaE5hOVlFTWdIWmxRMmJXMDZNbDloOEFnQ1JCdEZoQ2ZSU3QyYlhuVmY5N3dvbjhPbTFiZ3psYVhsQzVQMTEzZmpuNjA3UklBOUpwYTFzQnVCeWV0YXM5MEpqbU9jcFRCRTNQd0dVd2g1Z2ZodkhyalhrV1ptVVFySGNCWHdoLW1XSkgtQ2VDRUk3SF9VdWtOQ05ZeHhMUdIBrwFBVV95cUxNSFZCSmxFdENxcDRHaUJOSXZTaVdwRGRoQ0c1LTVkc2ZuSGlid2tyYllFUXlxYk96MWp6alBKUUNxWTVZZU1LdWpKVFEtNlRiTUduMm9zaUx4aEtTSTh6QU1OajBvTDN3NUpCa3VRV3ViazhKa2JuY3VYdjI5bWFaREdoQWI5ZUF5eWU2ek94dlpXUVlwWGdIdHM3eWJfQlFrMnNMR05KdHJJa2h1M2VZ?oc=5",
+      "title": "2026 Iran war | Oil, Explained, United States, Israel, Strait of Hormuz, Map, & Conflict - Britannica",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5nTzlhOGZTS180cWNtVG91c2VWRVJFYlk0cW5Ba1RHUEFOSEtldU15QktQT0EzRVY1ZVdZZ0VTRHVWTVhyN1IzeU1wbmlDMUhrQ3Roc1YxcmdMUQ?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Sat, 17 Oct 2026 21:41:38 GMT",
-      "score": -2,
+      "published": "Thu, 15 Oct 2026 05:00:00 GMT",
+      "score": -1,
       "tags": [
-        "strike"
-      ]
-    },
-    {
-      "title": "Iran threatens Gulf data centres: How exposed is the region’s internet? - Al Jazeera",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPSUEtb2UyN3FuX1pQZmgtd2J1VWl1QnVPS0JtUXUwSUJZY0hwVDNjLWRrWktlSkVPN2pILVpNYWFKWExyano5b1JOYUFuLXAtc01JWEVNSm5RTEVpYnRlUGlucnFDVUJ1RG9sMVE0Z2ZHN1BmMWZxRnZnOUk2TnRVS0ozSWJqcE1wUXZ6Q0RTZ1lyc0l3SGV3VTVuS1NxWVJQWjRRY0l4QjJMcTJ0RE4w0gG0AUFVX3lxTFA4clFYelpFakJ1WEd4Q2FsVVJtOEZpZkdoUFJvTnA5TkVaVGdxZzlTNmktY1FnUEdzOVdyazBxVGx3Uno2ckJIcEFJZ1lrREZXNFVuc3FTVlNJYllQX3ZSR05TY2t2anRjQ2FXbldyYTY0dENySDl0QzFZV2pQU3BrR3lrTEdKc0xyeE13SnFtYTFCUnE4VXRRTVRxNlJZQXRRb2JQYXJXcEdsRnJWQS1hZE0xRA?oc=5",
-      "source": "\"middle east conflict when:7d\" - Google News",
-      "published": "Tue, 13 Oct 2026 13:05:34 GMT",
-      "score": -2,
-      "tags": [
-        "threat",
-        "threatens"
+        "war"
       ]
     }
   ],
   "integrity": {
     "driver_net_equals_total_score": true,
-    "driver_net": -47,
-    "source_total_score": -47
+    "driver_net": -33,
+    "source_total_score": -33
   }
 }
