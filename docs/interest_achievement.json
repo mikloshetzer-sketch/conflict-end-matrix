@@ -1,11 +1,11 @@
 {
   "metadata": {
     "model": "strategic_interest_achievement_v2",
-    "generated_at": "2026-10-19T16:39:27+00:00",
-    "reference_date": "2026-10-18",
+    "generated_at": "2026-10-21T14:30:45+00:00",
+    "reference_date": "2026-10-19",
     "history_start_date": "2026-03-10",
-    "history_end_date": "2026-10-18",
-    "history_day_count": 223,
+    "history_end_date": "2026-10-19",
+    "history_day_count": 224,
     "conflict": "United States-Iran",
     "description": "Historical and current assessment of the degree to which detected developments support or weaken the weighted strategic interests of the United States and Iran.",
     "input_files": {
@@ -21,23 +21,23 @@
     "warning_count": 1
   },
   "current": {
-    "date": "2026-10-18",
+    "date": "2026-10-19",
     "summary": {
-      "usa_achievement_index": 51.39,
+      "usa_achievement_index": 51.82,
       "iran_achievement_index": 51.59,
-      "achievement_gap": -0.2,
+      "achievement_gap": 0.23,
       "daily_strategic_advantage": "balanced",
       "interpretation": "The index measures whether the current day's detected developments support or weaken each actor's own weighted strategic interests. It does not directly measure military victory or conflict outcome."
     },
     "actors": {
       "usa": {
-        "achievement_index": 51.39,
-        "change_from_neutral": 1.39,
+        "achievement_index": 51.82,
+        "change_from_neutral": 1.82,
         "trend": "stable",
         "level": "balanced",
-        "raw_contribution": 216.0,
+        "raw_contribution": 276.0,
         "interest_count": 8,
-        "interests_with_evidence": 3,
+        "interests_with_evidence": 4,
         "strongest_interests": [
           {
             "id": "avoid_full_scale_war",
@@ -46,16 +46,16 @@
             "change_from_neutral": 6.0
           },
           {
+            "id": "force_protection",
+            "name": "Protection of US forces",
+            "achievement_index": 53.0,
+            "change_from_neutral": 3.0
+          },
+          {
             "id": "nuclear_nonproliferation",
             "name": "Prevent Iranian nuclear weapon capability",
             "achievement_index": 52.7,
             "change_from_neutral": 2.7
-          },
-          {
-            "id": "energy_security",
-            "name": "Global energy security",
-            "achievement_index": 52.1,
-            "change_from_neutral": 2.1
           }
         ],
         "weakest_interests": [
@@ -66,14 +66,14 @@
             "change_from_neutral": 0.0
           },
           {
-            "id": "force_protection",
-            "name": "Protection of US forces",
+            "id": "freedom_of_navigation",
+            "name": "Freedom of navigation",
             "achievement_index": 50.0,
             "change_from_neutral": 0.0
           },
           {
-            "id": "freedom_of_navigation",
-            "name": "Freedom of navigation",
+            "id": "regional_deterrence",
+            "name": "Regional deterrence",
             "achievement_index": 50.0,
             "change_from_neutral": 0.0
           }
@@ -100,16 +100,52 @@
             "name": "Protection of US forces",
             "description": "Protect US military personnel, bases and regional assets.",
             "weight": 10.0,
-            "achievement_index": 50.0,
-            "change_from_neutral": 0.0,
-            "raw_contribution": 0,
-            "positive_contribution": 0,
-            "negative_contribution": 0,
-            "trend": "stable",
+            "achievement_index": 53.0,
+            "change_from_neutral": 3.0,
+            "raw_contribution": 60.0,
+            "positive_contribution": 60.0,
+            "negative_contribution": 0.0,
+            "trend": "improving",
             "level": "balanced",
-            "evidence_count": 0,
-            "top_evidence": [],
-            "evidence": []
+            "evidence_count": 1,
+            "top_evidence": [
+              {
+                "event_id": "INFO-000002",
+                "date": "2026-10-19",
+                "source_actor": "usa",
+                "indicator": "negotiation",
+                "pressure_direction": "decrease_pressure",
+                "indicator_score": -6.0,
+                "indicator_strength": 6.0,
+                "effect": 1.0,
+                "interest_weight": 10.0,
+                "raw_contribution": 60.0,
+                "rationale": "Reduced tension lowers the immediate threat to US forces.",
+                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                "source": "\"iran israel usa war when:7d\" - Google News",
+                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+              }
+            ],
+            "evidence": [
+              {
+                "event_id": "INFO-000002",
+                "date": "2026-10-19",
+                "source_actor": "usa",
+                "indicator": "negotiation",
+                "pressure_direction": "decrease_pressure",
+                "indicator_score": -6.0,
+                "indicator_strength": 6.0,
+                "effect": 1.0,
+                "interest_weight": 10.0,
+                "raw_contribution": 60.0,
+                "rationale": "Reduced tension lowers the immediate threat to US forces.",
+                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                "source": "\"iran israel usa war when:7d\" - Google News",
+                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+              }
+            ]
           },
           {
             "id": "freedom_of_navigation",
@@ -142,9 +178,9 @@
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000005",
-                "date": "2026-10-18",
-                "source_actor": "iran",
+                "event_id": "INFO-000002",
+                "date": "2026-10-19",
+                "source_actor": "usa",
                 "indicator": "negotiation",
                 "pressure_direction": "decrease_pressure",
                 "indicator_score": -6.0,
@@ -152,18 +188,18 @@
                 "effect": 1.0,
                 "interest_weight": 9.0,
                 "raw_contribution": 54.0,
-                "rationale": "Diplomatic agreements may constrain or monitor Iran's nuclear programme.",
-                "title": "Why Iran-US negotiations keep failing - Al Jazeera",
-                "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Why Iran-US negotiations keep failing - Al Jazeera",
+                "rationale": "Diplomacy may produce limits, inspections or delays affecting Iran's nuclear programme.",
+                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
                 "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQSzJfRTJ4WDA0NTdUSmF4MVVvZzNNMVVUaTJRZkkybFNuTVg3dGtHV0RDTGFvM2V2dWk5YnpRSjFQSHdmZFdWZVdPLWJWYjFRWXFSWkVQWERDcW5CeWNXQ2M1U0pxZ1ZkNXkyT016Zk1lRElfVVBCRDAwVVIwOHZqMlpSYlFFWlpzOGtv0gGQAUFVX3lxTE03ZnQySURobzdsN3VPTHdqQXI3YnVYZ2RxemJaX21kUG9pYjZYTF9LbWpvM3doM3UwUG05RldmSVRGeFlQTVVYQnRMOVJPS0s1aWFfdklESXFUcE9hSlJsRFNtMTVBX1dNUmozS1NyOWsweWtsN25DM25qNzZucERDdWNna0RtMURjR1c3NW50Ug?oc=5"
+                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000005",
-                "date": "2026-10-18",
-                "source_actor": "iran",
+                "event_id": "INFO-000002",
+                "date": "2026-10-19",
+                "source_actor": "usa",
                 "indicator": "negotiation",
                 "pressure_direction": "decrease_pressure",
                 "indicator_score": -6.0,
@@ -171,11 +207,11 @@
                 "effect": 1.0,
                 "interest_weight": 9.0,
                 "raw_contribution": 54.0,
-                "rationale": "Diplomatic agreements may constrain or monitor Iran's nuclear programme.",
-                "title": "Why Iran-US negotiations keep failing - Al Jazeera",
-                "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Why Iran-US negotiations keep failing - Al Jazeera",
+                "rationale": "Diplomacy may produce limits, inspections or delays affecting Iran's nuclear programme.",
+                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
                 "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQSzJfRTJ4WDA0NTdUSmF4MVVvZzNNMVVUaTJRZkkybFNuTVg3dGtHV0RDTGFvM2V2dWk5YnpRSjFQSHdmZFdWZVdPLWJWYjFRWXFSWkVQWERDcW5CeWNXQ2M1U0pxZ1ZkNXkyT016Zk1lRElfVVBCRDAwVVIwOHZqMlpSYlFFWlpzOGtv0gGQAUFVX3lxTE03ZnQySURobzdsN3VPTHdqQXI3YnVYZ2RxemJaX21kUG9pYjZYTF9LbWpvM3doM3UwUG05RldmSVRGeFlQTVVYQnRMOVJPS0s1aWFfdklESXFUcE9hSlJsRFNtMTVBX1dNUmozS1NyOWsweWtsN25DM25qNzZucERDdWNna0RtMURjR1c3NW50Ug?oc=5"
+                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
               }
             ]
           },
@@ -226,9 +262,9 @@
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000005",
-                "date": "2026-10-18",
-                "source_actor": "iran",
+                "event_id": "INFO-000002",
+                "date": "2026-10-19",
+                "source_actor": "usa",
                 "indicator": "negotiation",
                 "pressure_direction": "decrease_pressure",
                 "indicator_score": -6.0,
@@ -236,18 +272,18 @@
                 "effect": 1.0,
                 "interest_weight": 7.0,
                 "raw_contribution": 42.0,
-                "rationale": "Lower tension supports energy-market stability.",
-                "title": "Why Iran-US negotiations keep failing - Al Jazeera",
-                "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Why Iran-US negotiations keep failing - Al Jazeera",
+                "rationale": "Diplomatic engagement reduces the likelihood of major energy disruption.",
+                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
                 "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQSzJfRTJ4WDA0NTdUSmF4MVVvZzNNMVVUaTJRZkkybFNuTVg3dGtHV0RDTGFvM2V2dWk5YnpRSjFQSHdmZFdWZVdPLWJWYjFRWXFSWkVQWERDcW5CeWNXQ2M1U0pxZ1ZkNXkyT016Zk1lRElfVVBCRDAwVVIwOHZqMlpSYlFFWlpzOGtv0gGQAUFVX3lxTE03ZnQySURobzdsN3VPTHdqQXI3YnVYZ2RxemJaX21kUG9pYjZYTF9LbWpvM3doM3UwUG05RldmSVRGeFlQTVVYQnRMOVJPS0s1aWFfdklESXFUcE9hSlJsRFNtMTVBX1dNUmozS1NyOWsweWtsN25DM25qNzZucERDdWNna0RtMURjR1c3NW50Ug?oc=5"
+                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000005",
-                "date": "2026-10-18",
-                "source_actor": "iran",
+                "event_id": "INFO-000002",
+                "date": "2026-10-19",
+                "source_actor": "usa",
                 "indicator": "negotiation",
                 "pressure_direction": "decrease_pressure",
                 "indicator_score": -6.0,
@@ -255,11 +291,11 @@
                 "effect": 1.0,
                 "interest_weight": 7.0,
                 "raw_contribution": 42.0,
-                "rationale": "Lower tension supports energy-market stability.",
-                "title": "Why Iran-US negotiations keep failing - Al Jazeera",
-                "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Why Iran-US negotiations keep failing - Al Jazeera",
+                "rationale": "Diplomatic engagement reduces the likelihood of major energy disruption.",
+                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
                 "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQSzJfRTJ4WDA0NTdUSmF4MVVvZzNNMVVUaTJRZkkybFNuTVg3dGtHV0RDTGFvM2V2dWk5YnpRSjFQSHdmZFdWZVdPLWJWYjFRWXFSWkVQWERDcW5CeWNXQ2M1U0pxZ1ZkNXkyT016Zk1lRElfVVBCRDAwVVIwOHZqMlpSYlFFWlpzOGtv0gGQAUFVX3lxTE03ZnQySURobzdsN3VPTHdqQXI3YnVYZ2RxemJaX21kUG9pYjZYTF9LbWpvM3doM3UwUG05RldmSVRGeFlQTVVYQnRMOVJPS0s1aWFfdklESXFUcE9hSlJsRFNtMTVBX1dNUmozS1NyOWsweWtsN25DM25qNzZucERDdWNna0RtMURjR1c3NW50Ug?oc=5"
+                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
               }
             ]
           },
@@ -278,9 +314,9 @@
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000005",
-                "date": "2026-10-18",
-                "source_actor": "iran",
+                "event_id": "INFO-000002",
+                "date": "2026-10-19",
+                "source_actor": "usa",
                 "indicator": "negotiation",
                 "pressure_direction": "decrease_pressure",
                 "indicator_score": -6.0,
@@ -288,18 +324,18 @@
                 "effect": 2.0,
                 "interest_weight": 10.0,
                 "raw_contribution": 120.0,
-                "rationale": "Negotiations support conflict containment.",
-                "title": "Why Iran-US negotiations keep failing - Al Jazeera",
-                "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Why Iran-US negotiations keep failing - Al Jazeera",
+                "rationale": "Negotiations reduce immediate escalation risk and preserve diplomatic options.",
+                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
                 "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQSzJfRTJ4WDA0NTdUSmF4MVVvZzNNMVVUaTJRZkkybFNuTVg3dGtHV0RDTGFvM2V2dWk5YnpRSjFQSHdmZFdWZVdPLWJWYjFRWXFSWkVQWERDcW5CeWNXQ2M1U0pxZ1ZkNXkyT016Zk1lRElfVVBCRDAwVVIwOHZqMlpSYlFFWlpzOGtv0gGQAUFVX3lxTE03ZnQySURobzdsN3VPTHdqQXI3YnVYZ2RxemJaX21kUG9pYjZYTF9LbWpvM3doM3UwUG05RldmSVRGeFlQTVVYQnRMOVJPS0s1aWFfdklESXFUcE9hSlJsRFNtMTVBX1dNUmozS1NyOWsweWtsN25DM25qNzZucERDdWNna0RtMURjR1c3NW50Ug?oc=5"
+                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000005",
-                "date": "2026-10-18",
-                "source_actor": "iran",
+                "event_id": "INFO-000002",
+                "date": "2026-10-19",
+                "source_actor": "usa",
                 "indicator": "negotiation",
                 "pressure_direction": "decrease_pressure",
                 "indicator_score": -6.0,
@@ -307,11 +343,11 @@
                 "effect": 2.0,
                 "interest_weight": 10.0,
                 "raw_contribution": 120.0,
-                "rationale": "Negotiations support conflict containment.",
-                "title": "Why Iran-US negotiations keep failing - Al Jazeera",
-                "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Why Iran-US negotiations keep failing - Al Jazeera",
+                "rationale": "Negotiations reduce immediate escalation risk and preserve diplomatic options.",
+                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
                 "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQSzJfRTJ4WDA0NTdUSmF4MVVvZzNNMVVUaTJRZkkybFNuTVg3dGtHV0RDTGFvM2V2dWk5YnpRSjFQSHdmZFdWZVdPLWJWYjFRWXFSWkVQWERDcW5CeWNXQ2M1U0pxZ1ZkNXkyT016Zk1lRElfVVBCRDAwVVIwOHZqMlpSYlFFWlpzOGtv0gGQAUFVX3lxTE03ZnQySURobzdsN3VPTHdqQXI3YnVYZ2RxemJaX21kUG9pYjZYTF9LbWpvM3doM3UwUG05RldmSVRGeFlQTVVYQnRMOVJPS0s1aWFfdklESXFUcE9hSlJsRFNtMTVBX1dNUmozS1NyOWsweWtsN25DM25qNzZucERDdWNna0RtMURjR1c3NW50Ug?oc=5"
+                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
               }
             ]
           }
@@ -381,9 +417,9 @@
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000005",
-                "date": "2026-10-18",
-                "source_actor": "iran",
+                "event_id": "INFO-000002",
+                "date": "2026-10-19",
+                "source_actor": "usa",
                 "indicator": "negotiation",
                 "pressure_direction": "decrease_pressure",
                 "indicator_score": -6.0,
@@ -391,18 +427,18 @@
                 "effect": 1.0,
                 "interest_weight": 10.0,
                 "raw_contribution": 60.0,
-                "rationale": "Negotiations reduce immediate pressure on the Iranian state.",
-                "title": "Why Iran-US negotiations keep failing - Al Jazeera",
-                "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Why Iran-US negotiations keep failing - Al Jazeera",
+                "rationale": "Negotiations lower the immediate military threat to the Iranian state.",
+                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
                 "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQSzJfRTJ4WDA0NTdUSmF4MVVvZzNNMVVUaTJRZkkybFNuTVg3dGtHV0RDTGFvM2V2dWk5YnpRSjFQSHdmZFdWZVdPLWJWYjFRWXFSWkVQWERDcW5CeWNXQ2M1U0pxZ1ZkNXkyT016Zk1lRElfVVBCRDAwVVIwOHZqMlpSYlFFWlpzOGtv0gGQAUFVX3lxTE03ZnQySURobzdsN3VPTHdqQXI3YnVYZ2RxemJaX21kUG9pYjZYTF9LbWpvM3doM3UwUG05RldmSVRGeFlQTVVYQnRMOVJPS0s1aWFfdklESXFUcE9hSlJsRFNtMTVBX1dNUmozS1NyOWsweWtsN25DM25qNzZucERDdWNna0RtMURjR1c3NW50Ug?oc=5"
+                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000005",
-                "date": "2026-10-18",
-                "source_actor": "iran",
+                "event_id": "INFO-000002",
+                "date": "2026-10-19",
+                "source_actor": "usa",
                 "indicator": "negotiation",
                 "pressure_direction": "decrease_pressure",
                 "indicator_score": -6.0,
@@ -410,11 +446,11 @@
                 "effect": 1.0,
                 "interest_weight": 10.0,
                 "raw_contribution": 60.0,
-                "rationale": "Negotiations reduce immediate pressure on the Iranian state.",
-                "title": "Why Iran-US negotiations keep failing - Al Jazeera",
-                "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Why Iran-US negotiations keep failing - Al Jazeera",
+                "rationale": "Negotiations lower the immediate military threat to the Iranian state.",
+                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
                 "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQSzJfRTJ4WDA0NTdUSmF4MVVvZzNNMVVUaTJRZkkybFNuTVg3dGtHV0RDTGFvM2V2dWk5YnpRSjFQSHdmZFdWZVdPLWJWYjFRWXFSWkVQWERDcW5CeWNXQ2M1U0pxZ1ZkNXkyT016Zk1lRElfVVBCRDAwVVIwOHZqMlpSYlFFWlpzOGtv0gGQAUFVX3lxTE03ZnQySURobzdsN3VPTHdqQXI3YnVYZ2RxemJaX21kUG9pYjZYTF9LbWpvM3doM3UwUG05RldmSVRGeFlQTVVYQnRMOVJPS0s1aWFfdklESXFUcE9hSlJsRFNtMTVBX1dNUmozS1NyOWsweWtsN25DM25qNzZucERDdWNna0RtMURjR1c3NW50Ug?oc=5"
+                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
               }
             ]
           },
@@ -449,9 +485,9 @@
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000005",
-                "date": "2026-10-18",
-                "source_actor": "iran",
+                "event_id": "INFO-000002",
+                "date": "2026-10-19",
+                "source_actor": "usa",
                 "indicator": "negotiation",
                 "pressure_direction": "decrease_pressure",
                 "indicator_score": -6.0,
@@ -459,18 +495,18 @@
                 "effect": 1.0,
                 "interest_weight": 9.0,
                 "raw_contribution": 54.0,
-                "rationale": "Negotiations may allow Iran to preserve controlled nuclear capabilities.",
-                "title": "Why Iran-US negotiations keep failing - Al Jazeera",
-                "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Why Iran-US negotiations keep failing - Al Jazeera",
+                "rationale": "Negotiations may allow Iran to preserve part of its nuclear infrastructure under agreed restrictions.",
+                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
                 "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQSzJfRTJ4WDA0NTdUSmF4MVVvZzNNMVVUaTJRZkkybFNuTVg3dGtHV0RDTGFvM2V2dWk5YnpRSjFQSHdmZFdWZVdPLWJWYjFRWXFSWkVQWERDcW5CeWNXQ2M1U0pxZ1ZkNXkyT016Zk1lRElfVVBCRDAwVVIwOHZqMlpSYlFFWlpzOGtv0gGQAUFVX3lxTE03ZnQySURobzdsN3VPTHdqQXI3YnVYZ2RxemJaX21kUG9pYjZYTF9LbWpvM3doM3UwUG05RldmSVRGeFlQTVVYQnRMOVJPS0s1aWFfdklESXFUcE9hSlJsRFNtMTVBX1dNUmozS1NyOWsweWtsN25DM25qNzZucERDdWNna0RtMURjR1c3NW50Ug?oc=5"
+                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000005",
-                "date": "2026-10-18",
-                "source_actor": "iran",
+                "event_id": "INFO-000002",
+                "date": "2026-10-19",
+                "source_actor": "usa",
                 "indicator": "negotiation",
                 "pressure_direction": "decrease_pressure",
                 "indicator_score": -6.0,
@@ -478,11 +514,11 @@
                 "effect": 1.0,
                 "interest_weight": 9.0,
                 "raw_contribution": 54.0,
-                "rationale": "Negotiations may allow Iran to preserve controlled nuclear capabilities.",
-                "title": "Why Iran-US negotiations keep failing - Al Jazeera",
-                "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Why Iran-US negotiations keep failing - Al Jazeera",
+                "rationale": "Negotiations may allow Iran to preserve part of its nuclear infrastructure under agreed restrictions.",
+                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
                 "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQSzJfRTJ4WDA0NTdUSmF4MVVvZzNNMVVUaTJRZkkybFNuTVg3dGtHV0RDTGFvM2V2dWk5YnpRSjFQSHdmZFdWZVdPLWJWYjFRWXFSWkVQWERDcW5CeWNXQ2M1U0pxZ1ZkNXkyT016Zk1lRElfVVBCRDAwVVIwOHZqMlpSYlFFWlpzOGtv0gGQAUFVX3lxTE03ZnQySURobzdsN3VPTHdqQXI3YnVYZ2RxemJaX21kUG9pYjZYTF9LbWpvM3doM3UwUG05RldmSVRGeFlQTVVYQnRMOVJPS0s1aWFfdklESXFUcE9hSlJsRFNtMTVBX1dNUmozS1NyOWsweWtsN25DM25qNzZucERDdWNna0RtMURjR1c3NW50Ug?oc=5"
+                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
               }
             ]
           },
@@ -565,9 +601,9 @@
             "evidence_count": 1,
             "top_evidence": [
               {
-                "event_id": "INFO-000005",
-                "date": "2026-10-18",
-                "source_actor": "iran",
+                "event_id": "INFO-000002",
+                "date": "2026-10-19",
+                "source_actor": "usa",
                 "indicator": "negotiation",
                 "pressure_direction": "decrease_pressure",
                 "indicator_score": -6.0,
@@ -575,18 +611,18 @@
                 "effect": 2.0,
                 "interest_weight": 10.0,
                 "raw_contribution": 120.0,
-                "rationale": "Diplomacy lowers the likelihood of a war threatening regime survival.",
-                "title": "Why Iran-US negotiations keep failing - Al Jazeera",
-                "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Why Iran-US negotiations keep failing - Al Jazeera",
+                "rationale": "Diplomatic engagement directly reduces the probability of a regime-threatening war.",
+                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
                 "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQSzJfRTJ4WDA0NTdUSmF4MVVvZzNNMVVUaTJRZkkybFNuTVg3dGtHV0RDTGFvM2V2dWk5YnpRSjFQSHdmZFdWZVdPLWJWYjFRWXFSWkVQWERDcW5CeWNXQ2M1U0pxZ1ZkNXkyT016Zk1lRElfVVBCRDAwVVIwOHZqMlpSYlFFWlpzOGtv0gGQAUFVX3lxTE03ZnQySURobzdsN3VPTHdqQXI3YnVYZ2RxemJaX21kUG9pYjZYTF9LbWpvM3doM3UwUG05RldmSVRGeFlQTVVYQnRMOVJPS0s1aWFfdklESXFUcE9hSlJsRFNtMTVBX1dNUmozS1NyOWsweWtsN25DM25qNzZucERDdWNna0RtMURjR1c3NW50Ug?oc=5"
+                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
               }
             ],
             "evidence": [
               {
-                "event_id": "INFO-000005",
-                "date": "2026-10-18",
-                "source_actor": "iran",
+                "event_id": "INFO-000002",
+                "date": "2026-10-19",
+                "source_actor": "usa",
                 "indicator": "negotiation",
                 "pressure_direction": "decrease_pressure",
                 "indicator_score": -6.0,
@@ -594,11 +630,11 @@
                 "effect": 2.0,
                 "interest_weight": 10.0,
                 "raw_contribution": 120.0,
-                "rationale": "Diplomacy lowers the likelihood of a war threatening regime survival.",
-                "title": "Why Iran-US negotiations keep failing - Al Jazeera",
-                "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Why Iran-US negotiations keep failing - Al Jazeera",
+                "rationale": "Diplomatic engagement directly reduces the probability of a regime-threatening war.",
+                "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
                 "source": "\"iran israel usa war when:7d\" - Google News",
-                "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQSzJfRTJ4WDA0NTdUSmF4MVVvZzNNMVVUaTJRZkkybFNuTVg3dGtHV0RDTGFvM2V2dWk5YnpRSjFQSHdmZFdWZVdPLWJWYjFRWXFSWkVQWERDcW5CeWNXQ2M1U0pxZ1ZkNXkyT016Zk1lRElfVVBCRDAwVVIwOHZqMlpSYlFFWlpzOGtv0gGQAUFVX3lxTE03ZnQySURobzdsN3VPTHdqQXI3YnVYZ2RxemJaX21kUG9pYjZYTF9LbWpvM3doM3UwUG05RldmSVRGeFlQTVVYQnRMOVJPS0s1aWFfdklESXFUcE9hSlJsRFNtMTVBX1dNUmozS1NyOWsweWtsN25DM25qNzZucERDdWNna0RtMURjR1c3NW50Ug?oc=5"
+                "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
               }
             ]
           }
@@ -607,11 +643,11 @@
     },
     "processed_evidence": [
       {
-        "event_id": "INFO-000005",
-        "timestamp": "2026-10-18T07:37:14+00:00",
-        "date": "2026-10-18",
-        "source_actor": "iran",
-        "title": "Why Iran-US negotiations keep failing - Al Jazeera",
+        "event_id": "INFO-000002",
+        "timestamp": "2026-10-19T01:24:38+00:00",
+        "date": "2026-10-19",
+        "source_actor": "usa",
+        "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
         "event_type": "diplomatic",
         "event_direction": "mixed",
         "source_layer": "non_kinetic",
@@ -619,9 +655,95 @@
         "original_final_score": -6.0,
         "operational_component": 0.0,
         "strategic_modifier": -6.0,
-        "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Why Iran-US negotiations keep failing - Al Jazeera",
+        "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
         "source": "\"iran israel usa war when:7d\" - Google News",
-        "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQSzJfRTJ4WDA0NTdUSmF4MVVvZzNNMVVUaTJRZkkybFNuTVg3dGtHV0RDTGFvM2V2dWk5YnpRSjFQSHdmZFdWZVdPLWJWYjFRWXFSWkVQWERDcW5CeWNXQ2M1U0pxZ1ZkNXkyT016Zk1lRElfVVBCRDAwVVIwOHZqMlpSYlFFWlpzOGtv0gGQAUFVX3lxTE03ZnQySURobzdsN3VPTHdqQXI3YnVYZ2RxemJaX21kUG9pYjZYTF9LbWpvM3doM3UwUG05RldmSVRGeFlQTVVYQnRMOVJPS0s1aWFfdklESXFUcE9hSlJsRFNtMTVBX1dNUmozS1NyOWsweWtsN25DM25qNzZucERDdWNna0RtMURjR1c3NW50Ug?oc=5",
+        "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
+        "daily_score_suppressed": false,
+        "suppression_reason": "",
+        "mapped_indicators": [
+          {
+            "indicator": "negotiation",
+            "indicator_name": "Negotiation",
+            "pressure_direction": "decrease_pressure",
+            "indicator_score": -6.0,
+            "indicator_strength": 6.0,
+            "mapped_impacts": [
+              {
+                "target_actor": "usa",
+                "interest_id": "avoid_full_scale_war",
+                "effect": 2.0,
+                "interest_weight": 10.0,
+                "raw_contribution": 120.0,
+                "rationale": "Negotiations reduce immediate escalation risk and preserve diplomatic options."
+              },
+              {
+                "target_actor": "usa",
+                "interest_id": "nuclear_nonproliferation",
+                "effect": 1.0,
+                "interest_weight": 9.0,
+                "raw_contribution": 54.0,
+                "rationale": "Diplomacy may produce limits, inspections or delays affecting Iran's nuclear programme."
+              },
+              {
+                "target_actor": "usa",
+                "interest_id": "force_protection",
+                "effect": 1.0,
+                "interest_weight": 10.0,
+                "raw_contribution": 60.0,
+                "rationale": "Reduced tension lowers the immediate threat to US forces."
+              },
+              {
+                "target_actor": "usa",
+                "interest_id": "energy_security",
+                "effect": 1.0,
+                "interest_weight": 7.0,
+                "raw_contribution": 42.0,
+                "rationale": "Diplomatic engagement reduces the likelihood of major energy disruption."
+              },
+              {
+                "target_actor": "iran",
+                "interest_id": "regime_survival",
+                "effect": 1.0,
+                "interest_weight": 10.0,
+                "raw_contribution": 60.0,
+                "rationale": "Negotiations lower the immediate military threat to the Iranian state."
+              },
+              {
+                "target_actor": "iran",
+                "interest_id": "avoid_regime_destroying_war",
+                "effect": 2.0,
+                "interest_weight": 10.0,
+                "raw_contribution": 120.0,
+                "rationale": "Diplomatic engagement directly reduces the probability of a regime-threatening war."
+              },
+              {
+                "target_actor": "iran",
+                "interest_id": "nuclear_programme",
+                "effect": 1.0,
+                "interest_weight": 9.0,
+                "raw_contribution": 54.0,
+                "rationale": "Negotiations may allow Iran to preserve part of its nuclear infrastructure under agreed restrictions."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "event_id": "INFO-000002",
+        "timestamp": "2026-10-19T01:24:38+00:00",
+        "date": "2026-10-19",
+        "source_actor": "iran",
+        "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+        "event_type": "diplomatic",
+        "event_direction": "mixed",
+        "source_layer": "non_kinetic",
+        "final_score": -6.0,
+        "original_final_score": -6.0,
+        "operational_component": 0.0,
+        "strategic_modifier": -6.0,
+        "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+        "source": "\"iran israel usa war when:7d\" - Google News",
+        "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
         "daily_score_suppressed": false,
         "suppression_reason": "",
         "mapped_indicators": [
@@ -637,7 +759,9 @@
                 "interest_id": "regime_survival",
                 "effect": 1.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 60.0,
+                "raw_contribution": 0.0,
+                "original_raw_contribution": 60.0,
+                "suppressed": true,
                 "rationale": "Negotiations reduce immediate pressure on the Iranian state."
               },
               {
@@ -645,7 +769,9 @@
                 "interest_id": "avoid_regime_destroying_war",
                 "effect": 2.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 120.0,
+                "raw_contribution": 0.0,
+                "original_raw_contribution": 120.0,
+                "suppressed": true,
                 "rationale": "Diplomacy lowers the likelihood of a war threatening regime survival."
               },
               {
@@ -653,7 +779,9 @@
                 "interest_id": "nuclear_programme",
                 "effect": 1.0,
                 "interest_weight": 9.0,
-                "raw_contribution": 54.0,
+                "raw_contribution": 0.0,
+                "original_raw_contribution": 54.0,
+                "suppressed": true,
                 "rationale": "Negotiations may allow Iran to preserve controlled nuclear capabilities."
               },
               {
@@ -661,7 +789,9 @@
                 "interest_id": "avoid_full_scale_war",
                 "effect": 2.0,
                 "interest_weight": 10.0,
-                "raw_contribution": 120.0,
+                "raw_contribution": 0.0,
+                "original_raw_contribution": 120.0,
+                "suppressed": true,
                 "rationale": "Negotiations support conflict containment."
               },
               {
@@ -669,7 +799,9 @@
                 "interest_id": "nuclear_nonproliferation",
                 "effect": 1.0,
                 "interest_weight": 9.0,
-                "raw_contribution": 54.0,
+                "raw_contribution": 0.0,
+                "original_raw_contribution": 54.0,
+                "suppressed": true,
                 "rationale": "Diplomatic agreements may constrain or monitor Iran's nuclear programme."
               },
               {
@@ -677,7 +809,9 @@
                 "interest_id": "energy_security",
                 "effect": 1.0,
                 "interest_weight": 7.0,
-                "raw_contribution": 42.0,
+                "raw_contribution": 0.0,
+                "original_raw_contribution": 42.0,
+                "suppressed": true,
                 "rationale": "Lower tension supports energy-market stability."
               }
             ]
@@ -88069,51 +88203,51 @@
     {
       "date": "2026-07-21",
       "summary": {
-        "usa_achievement_index": 50.68,
-        "iran_achievement_index": 49.31,
-        "achievement_gap": 1.37,
+        "usa_achievement_index": 50.0,
+        "iran_achievement_index": 50.0,
+        "achievement_gap": 0.0,
         "daily_strategic_advantage": "balanced",
         "interpretation": "The index measures whether the current day's detected developments support or weaken each actor's own weighted strategic interests. It does not directly measure military victory or conflict outcome."
       },
       "actors": {
         "usa": {
-          "achievement_index": 50.68,
-          "change_from_neutral": 0.68,
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0,
           "trend": "stable",
           "level": "balanced",
-          "raw_contribution": 120.0,
+          "raw_contribution": 0.0,
           "interest_count": 8,
-          "interests_with_evidence": 4,
+          "interests_with_evidence": 0,
           "strongest_interests": [
             {
-              "id": "regional_deterrence",
-              "name": "Regional deterrence",
-              "achievement_index": 54.0,
-              "change_from_neutral": 4.0
+              "id": "israel_security",
+              "name": "Israel security",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
             },
             {
               "id": "force_protection",
               "name": "Protection of US forces",
-              "achievement_index": 52.5,
-              "change_from_neutral": 2.5
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
             },
             {
-              "id": "regional_partners",
-              "name": "Protection of regional partners",
-              "achievement_index": 52.0,
-              "change_from_neutral": 2.0
+              "id": "freedom_of_navigation",
+              "name": "Freedom of navigation",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
             }
           ],
           "weakest_interests": [
             {
-              "id": "avoid_full_scale_war",
-              "name": "Avoid full-scale regional war",
-              "achievement_index": 47.5,
-              "change_from_neutral": -2.5
-            },
-            {
               "id": "israel_security",
               "name": "Israel security",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "force_protection",
+              "name": "Protection of US forces",
               "achievement_index": 50.0,
               "change_from_neutral": 0.0
             },
@@ -88146,52 +88280,16 @@
               "name": "Protection of US forces",
               "description": "Protect US military personnel, bases and regional assets.",
               "weight": 10.0,
-              "achievement_index": 52.5,
-              "change_from_neutral": 2.5,
-              "raw_contribution": 50.0,
-              "positive_contribution": 50.0,
-              "negative_contribution": 0.0,
-              "trend": "improving",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
               "level": "balanced",
-              "evidence_count": 1,
-              "top_evidence": [
-                {
-                  "event_id": "iranstrike-1p9hscg7dcxs0",
-                  "date": "2026-07-21",
-                  "source_actor": "usa",
-                  "indicator": "presidential_warning",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 5.0,
-                  "indicator_strength": 5.0,
-                  "effect": 1.0,
-                  "interest_weight": 10.0,
-                  "raw_contribution": 50.0,
-                  "rationale": "Explicit warnings may deter attacks against US personnel.",
-                  "title": "Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-                  "reason": "United States: Presidential warning. Operational component: +1.00; strategic modifier: +5.00; final contribution before daily deduplication: +6.00. Event: Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-                  "source": "",
-                  "link": "https://t.me/CIG_telegram/80426"
-                }
-              ],
-              "evidence": [
-                {
-                  "event_id": "iranstrike-1p9hscg7dcxs0",
-                  "date": "2026-07-21",
-                  "source_actor": "usa",
-                  "indicator": "presidential_warning",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 5.0,
-                  "indicator_strength": 5.0,
-                  "effect": 1.0,
-                  "interest_weight": 10.0,
-                  "raw_contribution": 50.0,
-                  "rationale": "Explicit warnings may deter attacks against US personnel.",
-                  "title": "Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-                  "reason": "United States: Presidential warning. Operational component: +1.00; strategic modifier: +5.00; final contribution before daily deduplication: +6.00. Event: Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-                  "source": "",
-                  "link": "https://t.me/CIG_telegram/80426"
-                }
-              ]
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
             },
             {
               "id": "freedom_of_navigation",
@@ -88230,104 +88328,32 @@
               "name": "Regional deterrence",
               "description": "Maintain credible military deterrence against Iran and its proxies.",
               "weight": 8.0,
-              "achievement_index": 54.0,
-              "change_from_neutral": 4.0,
-              "raw_contribution": 80.0,
-              "positive_contribution": 80.0,
-              "negative_contribution": 0.0,
-              "trend": "improving",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
               "level": "balanced",
-              "evidence_count": 1,
-              "top_evidence": [
-                {
-                  "event_id": "iranstrike-1p9hscg7dcxs0",
-                  "date": "2026-07-21",
-                  "source_actor": "usa",
-                  "indicator": "presidential_warning",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 5.0,
-                  "indicator_strength": 5.0,
-                  "effect": 2.0,
-                  "interest_weight": 8.0,
-                  "raw_contribution": 80.0,
-                  "rationale": "A presidential warning communicates high-level political willingness to impose costs.",
-                  "title": "Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-                  "reason": "United States: Presidential warning. Operational component: +1.00; strategic modifier: +5.00; final contribution before daily deduplication: +6.00. Event: Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-                  "source": "",
-                  "link": "https://t.me/CIG_telegram/80426"
-                }
-              ],
-              "evidence": [
-                {
-                  "event_id": "iranstrike-1p9hscg7dcxs0",
-                  "date": "2026-07-21",
-                  "source_actor": "usa",
-                  "indicator": "presidential_warning",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 5.0,
-                  "indicator_strength": 5.0,
-                  "effect": 2.0,
-                  "interest_weight": 8.0,
-                  "raw_contribution": 80.0,
-                  "rationale": "A presidential warning communicates high-level political willingness to impose costs.",
-                  "title": "Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-                  "reason": "United States: Presidential warning. Operational component: +1.00; strategic modifier: +5.00; final contribution before daily deduplication: +6.00. Event: Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-                  "source": "",
-                  "link": "https://t.me/CIG_telegram/80426"
-                }
-              ]
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
             },
             {
               "id": "regional_partners",
               "name": "Protection of regional partners",
               "description": "Support Gulf partners and other regional allies.",
               "weight": 8.0,
-              "achievement_index": 52.0,
-              "change_from_neutral": 2.0,
-              "raw_contribution": 40.0,
-              "positive_contribution": 40.0,
-              "negative_contribution": 0.0,
-              "trend": "improving",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
               "level": "balanced",
-              "evidence_count": 1,
-              "top_evidence": [
-                {
-                  "event_id": "iranstrike-1p9hscg7dcxs0",
-                  "date": "2026-07-21",
-                  "source_actor": "usa",
-                  "indicator": "presidential_warning",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 5.0,
-                  "indicator_strength": 5.0,
-                  "effect": 1.0,
-                  "interest_weight": 8.0,
-                  "raw_contribution": 40.0,
-                  "rationale": "Strong political messaging may reassure regional allies.",
-                  "title": "Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-                  "reason": "United States: Presidential warning. Operational component: +1.00; strategic modifier: +5.00; final contribution before daily deduplication: +6.00. Event: Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-                  "source": "",
-                  "link": "https://t.me/CIG_telegram/80426"
-                }
-              ],
-              "evidence": [
-                {
-                  "event_id": "iranstrike-1p9hscg7dcxs0",
-                  "date": "2026-07-21",
-                  "source_actor": "usa",
-                  "indicator": "presidential_warning",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 5.0,
-                  "indicator_strength": 5.0,
-                  "effect": 1.0,
-                  "interest_weight": 8.0,
-                  "raw_contribution": 40.0,
-                  "rationale": "Strong political messaging may reassure regional allies.",
-                  "title": "Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-                  "reason": "United States: Presidential warning. Operational component: +1.00; strategic modifier: +5.00; final contribution before daily deduplication: +6.00. Event: Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-                  "source": "",
-                  "link": "https://t.me/CIG_telegram/80426"
-                }
-              ]
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
             },
             {
               "id": "energy_security",
@@ -88350,63 +88376,27 @@
               "name": "Avoid full-scale regional war",
               "description": "Prevent uncontrolled regional escalation.",
               "weight": 10.0,
-              "achievement_index": 47.5,
-              "change_from_neutral": -2.5,
-              "raw_contribution": -50.0,
-              "positive_contribution": 0.0,
-              "negative_contribution": -50.0,
-              "trend": "deteriorating",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
               "level": "balanced",
-              "evidence_count": 1,
-              "top_evidence": [
-                {
-                  "event_id": "iranstrike-1p9hscg7dcxs0",
-                  "date": "2026-07-21",
-                  "source_actor": "usa",
-                  "indicator": "presidential_warning",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 5.0,
-                  "indicator_strength": 5.0,
-                  "effect": -1.0,
-                  "interest_weight": 10.0,
-                  "raw_contribution": -50.0,
-                  "rationale": "Escalatory rhetoric may narrow diplomatic space and increase miscalculation risk.",
-                  "title": "Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-                  "reason": "United States: Presidential warning. Operational component: +1.00; strategic modifier: +5.00; final contribution before daily deduplication: +6.00. Event: Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-                  "source": "",
-                  "link": "https://t.me/CIG_telegram/80426"
-                }
-              ],
-              "evidence": [
-                {
-                  "event_id": "iranstrike-1p9hscg7dcxs0",
-                  "date": "2026-07-21",
-                  "source_actor": "usa",
-                  "indicator": "presidential_warning",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 5.0,
-                  "indicator_strength": 5.0,
-                  "effect": -1.0,
-                  "interest_weight": 10.0,
-                  "raw_contribution": -50.0,
-                  "rationale": "Escalatory rhetoric may narrow diplomatic space and increase miscalculation risk.",
-                  "title": "Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-                  "reason": "United States: Presidential warning. Operational component: +1.00; strategic modifier: +5.00; final contribution before daily deduplication: +6.00. Event: Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-                  "source": "",
-                  "link": "https://t.me/CIG_telegram/80426"
-                }
-              ]
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
             }
           ]
         },
         "iran": {
-          "achievement_index": 49.31,
-          "change_from_neutral": -0.69,
+          "achievement_index": 50.0,
+          "change_from_neutral": 0.0,
           "trend": "stable",
           "level": "balanced",
-          "raw_contribution": -100.0,
+          "raw_contribution": 0.0,
           "interest_count": 8,
-          "interests_with_evidence": 2,
+          "interests_with_evidence": 0,
           "strongest_interests": [
             {
               "id": "regime_survival",
@@ -88415,34 +88405,34 @@
               "change_from_neutral": 0.0
             },
             {
-              "id": "nuclear_programme",
-              "name": "Preserve nuclear programme",
+              "id": "strategic_deterrence",
+              "name": "Strategic deterrence",
               "achievement_index": 50.0,
               "change_from_neutral": 0.0
             },
             {
-              "id": "missile_capability",
-              "name": "Missile capability",
+              "id": "nuclear_programme",
+              "name": "Preserve nuclear programme",
               "achievement_index": 50.0,
               "change_from_neutral": 0.0
             }
           ],
           "weakest_interests": [
             {
-              "id": "strategic_deterrence",
-              "name": "Strategic deterrence",
-              "achievement_index": 47.5,
-              "change_from_neutral": -2.5
-            },
-            {
-              "id": "avoid_regime_destroying_war",
-              "name": "Avoid regime-destroying war",
-              "achievement_index": 47.5,
-              "change_from_neutral": -2.5
-            },
-            {
               "id": "regime_survival",
               "name": "Regime survival",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "strategic_deterrence",
+              "name": "Strategic deterrence",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "nuclear_programme",
+              "name": "Preserve nuclear programme",
               "achievement_index": 50.0,
               "change_from_neutral": 0.0
             }
@@ -88469,52 +88459,16 @@
               "name": "Strategic deterrence",
               "description": "Maintain credible military deterrence against the United States and Israel.",
               "weight": 10.0,
-              "achievement_index": 47.5,
-              "change_from_neutral": -2.5,
-              "raw_contribution": -50.0,
-              "positive_contribution": 0.0,
-              "negative_contribution": -50.0,
-              "trend": "deteriorating",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
               "level": "balanced",
-              "evidence_count": 1,
-              "top_evidence": [
-                {
-                  "event_id": "iranstrike-1p9hscg7dcxs0",
-                  "date": "2026-07-21",
-                  "source_actor": "usa",
-                  "indicator": "presidential_warning",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 5.0,
-                  "indicator_strength": 5.0,
-                  "effect": -1.0,
-                  "interest_weight": 10.0,
-                  "raw_contribution": -50.0,
-                  "rationale": "A credible US warning challenges Iran's ability to deter military action.",
-                  "title": "Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-                  "reason": "United States: Presidential warning. Operational component: +1.00; strategic modifier: +5.00; final contribution before daily deduplication: +6.00. Event: Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-                  "source": "",
-                  "link": "https://t.me/CIG_telegram/80426"
-                }
-              ],
-              "evidence": [
-                {
-                  "event_id": "iranstrike-1p9hscg7dcxs0",
-                  "date": "2026-07-21",
-                  "source_actor": "usa",
-                  "indicator": "presidential_warning",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 5.0,
-                  "indicator_strength": 5.0,
-                  "effect": -1.0,
-                  "interest_weight": 10.0,
-                  "raw_contribution": -50.0,
-                  "rationale": "A credible US warning challenges Iran's ability to deter military action.",
-                  "title": "Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-                  "reason": "United States: Presidential warning. Operational component: +1.00; strategic modifier: +5.00; final contribution before daily deduplication: +6.00. Event: Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-                  "source": "",
-                  "link": "https://t.me/CIG_telegram/80426"
-                }
-              ]
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
             },
             {
               "id": "nuclear_programme",
@@ -88601,136 +88555,21 @@
               "name": "Avoid regime-destroying war",
               "description": "Avoid military escalation threatening state survival.",
               "weight": 10.0,
-              "achievement_index": 47.5,
-              "change_from_neutral": -2.5,
-              "raw_contribution": -50.0,
-              "positive_contribution": 0.0,
-              "negative_contribution": -50.0,
-              "trend": "deteriorating",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
               "level": "balanced",
-              "evidence_count": 1,
-              "top_evidence": [
-                {
-                  "event_id": "iranstrike-1p9hscg7dcxs0",
-                  "date": "2026-07-21",
-                  "source_actor": "usa",
-                  "indicator": "presidential_warning",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 5.0,
-                  "indicator_strength": 5.0,
-                  "effect": -1.0,
-                  "interest_weight": 10.0,
-                  "raw_contribution": -50.0,
-                  "rationale": "Presidential threats may indicate greater willingness to escalate.",
-                  "title": "Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-                  "reason": "United States: Presidential warning. Operational component: +1.00; strategic modifier: +5.00; final contribution before daily deduplication: +6.00. Event: Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-                  "source": "",
-                  "link": "https://t.me/CIG_telegram/80426"
-                }
-              ],
-              "evidence": [
-                {
-                  "event_id": "iranstrike-1p9hscg7dcxs0",
-                  "date": "2026-07-21",
-                  "source_actor": "usa",
-                  "indicator": "presidential_warning",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 5.0,
-                  "indicator_strength": 5.0,
-                  "effect": -1.0,
-                  "interest_weight": 10.0,
-                  "raw_contribution": -50.0,
-                  "rationale": "Presidential threats may indicate greater willingness to escalate.",
-                  "title": "Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-                  "reason": "United States: Presidential warning. Operational component: +1.00; strategic modifier: +5.00; final contribution before daily deduplication: +6.00. Event: Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-                  "source": "",
-                  "link": "https://t.me/CIG_telegram/80426"
-                }
-              ]
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
             }
           ]
         }
       },
-      "processed_evidence": [
-        {
-          "event_id": "iranstrike-1p9hscg7dcxs0",
-          "timestamp": "2026-07-21T16:40:00+00:00",
-          "date": "2026-07-21",
-          "source_actor": "usa",
-          "title": "Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-          "event_type": "kinetic",
-          "event_direction": "escalation",
-          "source_layer": "kinetic",
-          "final_score": 6.0,
-          "original_final_score": 6.0,
-          "operational_component": 1.0,
-          "strategic_modifier": 5.0,
-          "reason": "United States: Presidential warning. Operational component: +1.00; strategic modifier: +5.00; final contribution before daily deduplication: +6.00. Event: Trump claims U.S. will soon strike Iran's Pickaxe Mountain underground nuclear facility",
-          "source": "",
-          "link": "https://t.me/CIG_telegram/80426",
-          "daily_score_suppressed": false,
-          "suppression_reason": "",
-          "mapped_indicators": [
-            {
-              "indicator": "presidential_warning",
-              "indicator_name": "Presidential warning",
-              "pressure_direction": "increase_pressure",
-              "indicator_score": 5.0,
-              "indicator_strength": 5.0,
-              "mapped_impacts": [
-                {
-                  "target_actor": "usa",
-                  "interest_id": "regional_deterrence",
-                  "effect": 2.0,
-                  "interest_weight": 8.0,
-                  "raw_contribution": 80.0,
-                  "rationale": "A presidential warning communicates high-level political willingness to impose costs."
-                },
-                {
-                  "target_actor": "usa",
-                  "interest_id": "force_protection",
-                  "effect": 1.0,
-                  "interest_weight": 10.0,
-                  "raw_contribution": 50.0,
-                  "rationale": "Explicit warnings may deter attacks against US personnel."
-                },
-                {
-                  "target_actor": "usa",
-                  "interest_id": "regional_partners",
-                  "effect": 1.0,
-                  "interest_weight": 8.0,
-                  "raw_contribution": 40.0,
-                  "rationale": "Strong political messaging may reassure regional allies."
-                },
-                {
-                  "target_actor": "usa",
-                  "interest_id": "avoid_full_scale_war",
-                  "effect": -1.0,
-                  "interest_weight": 10.0,
-                  "raw_contribution": -50.0,
-                  "rationale": "Escalatory rhetoric may narrow diplomatic space and increase miscalculation risk."
-                },
-                {
-                  "target_actor": "iran",
-                  "interest_id": "strategic_deterrence",
-                  "effect": -1.0,
-                  "interest_weight": 10.0,
-                  "raw_contribution": -50.0,
-                  "rationale": "A credible US warning challenges Iran's ability to deter military action."
-                },
-                {
-                  "target_actor": "iran",
-                  "interest_id": "avoid_regime_destroying_war",
-                  "effect": -1.0,
-                  "interest_weight": 10.0,
-                  "raw_contribution": -50.0,
-                  "rationale": "Presidential threats may indicate greater willingness to escalate."
-                }
-              ]
-            }
-          ]
-        }
-      ],
+      "processed_evidence": [],
       "suppressed_evidence": [],
       "unmapped_evidence": [],
       "calculation": {
@@ -88745,21 +88584,21 @@
     {
       "date": "2026-07-22",
       "summary": {
-        "usa_achievement_index": 50.43,
-        "iran_achievement_index": 52.68,
-        "achievement_gap": -2.25,
+        "usa_achievement_index": 51.39,
+        "iran_achievement_index": 51.59,
+        "achievement_gap": -0.2,
         "daily_strategic_advantage": "balanced",
         "interpretation": "The index measures whether the current day's detected developments support or weaken each actor's own weighted strategic interests. It does not directly measure military victory or conflict outcome."
       },
       "actors": {
         "usa": {
-          "achievement_index": 50.43,
-          "change_from_neutral": 0.43,
+          "achievement_index": 51.39,
+          "change_from_neutral": 1.39,
           "trend": "stable",
           "level": "balanced",
-          "raw_contribution": 60.0,
+          "raw_contribution": 216.0,
           "interest_count": 8,
-          "interests_with_evidence": 6,
+          "interests_with_evidence": 3,
           "strongest_interests": [
             {
               "id": "avoid_full_scale_war",
@@ -88784,20 +88623,20 @@
             {
               "id": "israel_security",
               "name": "Israel security",
-              "achievement_index": 47.0,
-              "change_from_neutral": -3.0
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
             },
             {
-              "id": "regional_deterrence",
-              "name": "Regional deterrence",
-              "achievement_index": 47.6,
-              "change_from_neutral": -2.4
+              "id": "force_protection",
+              "name": "Protection of US forces",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
             },
             {
-              "id": "regional_partners",
-              "name": "Protection of regional partners",
-              "achievement_index": 47.6,
-              "change_from_neutral": -2.4
+              "id": "freedom_of_navigation",
+              "name": "Freedom of navigation",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
             }
           ],
           "interests": [
@@ -88806,52 +88645,16 @@
               "name": "Israel security",
               "description": "Maintain Israel's security and military superiority.",
               "weight": 10.0,
-              "achievement_index": 47.0,
-              "change_from_neutral": -3.0,
-              "raw_contribution": -60.0,
-              "positive_contribution": 0.0,
-              "negative_contribution": -60.0,
-              "trend": "deteriorating",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
               "level": "balanced",
-              "evidence_count": 1,
-              "top_evidence": [
-                {
-                  "event_id": "iranstrike-v7o1zvf2ty80",
-                  "date": "2026-07-22",
-                  "source_actor": "iran",
-                  "indicator": "missile_test",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 6.0,
-                  "indicator_strength": 6.0,
-                  "effect": -1.0,
-                  "interest_weight": 10.0,
-                  "raw_contribution": -60.0,
-                  "rationale": "Longer-range or more accurate missiles increase the threat to Israel.",
-                  "title": "Iran launches 6 ballistic missiles at Aqaba, Jordan; Jordanian military intercepts 4, 2 impact in unpopulated areas",
-                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches 6 ballistic missiles at Aqaba, Jordan; Jordanian military intercepts 4, 2 impact in unpopulated areas",
-                  "source": "",
-                  "link": "https://t.me/abualiexpress/127041"
-                }
-              ],
-              "evidence": [
-                {
-                  "event_id": "iranstrike-v7o1zvf2ty80",
-                  "date": "2026-07-22",
-                  "source_actor": "iran",
-                  "indicator": "missile_test",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 6.0,
-                  "indicator_strength": 6.0,
-                  "effect": -1.0,
-                  "interest_weight": 10.0,
-                  "raw_contribution": -60.0,
-                  "rationale": "Longer-range or more accurate missiles increase the threat to Israel.",
-                  "title": "Iran launches 6 ballistic missiles at Aqaba, Jordan; Jordanian military intercepts 4, 2 impact in unpopulated areas",
-                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches 6 ballistic missiles at Aqaba, Jordan; Jordanian military intercepts 4, 2 impact in unpopulated areas",
-                  "source": "",
-                  "link": "https://t.me/abualiexpress/127041"
-                }
-              ]
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
             },
             {
               "id": "force_protection",
@@ -88942,104 +88745,32 @@
               "name": "Regional deterrence",
               "description": "Maintain credible military deterrence against Iran and its proxies.",
               "weight": 8.0,
-              "achievement_index": 47.6,
-              "change_from_neutral": -2.4,
-              "raw_contribution": -48.0,
-              "positive_contribution": 0.0,
-              "negative_contribution": -48.0,
-              "trend": "deteriorating",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
               "level": "balanced",
-              "evidence_count": 1,
-              "top_evidence": [
-                {
-                  "event_id": "iranstrike-v7o1zvf2ty80",
-                  "date": "2026-07-22",
-                  "source_actor": "iran",
-                  "indicator": "missile_test",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 6.0,
-                  "indicator_strength": 6.0,
-                  "effect": -1.0,
-                  "interest_weight": 8.0,
-                  "raw_contribution": -48.0,
-                  "rationale": "Improved Iranian missile capability weakens the relative US deterrent advantage.",
-                  "title": "Iran launches 6 ballistic missiles at Aqaba, Jordan; Jordanian military intercepts 4, 2 impact in unpopulated areas",
-                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches 6 ballistic missiles at Aqaba, Jordan; Jordanian military intercepts 4, 2 impact in unpopulated areas",
-                  "source": "",
-                  "link": "https://t.me/abualiexpress/127041"
-                }
-              ],
-              "evidence": [
-                {
-                  "event_id": "iranstrike-v7o1zvf2ty80",
-                  "date": "2026-07-22",
-                  "source_actor": "iran",
-                  "indicator": "missile_test",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 6.0,
-                  "indicator_strength": 6.0,
-                  "effect": -1.0,
-                  "interest_weight": 8.0,
-                  "raw_contribution": -48.0,
-                  "rationale": "Improved Iranian missile capability weakens the relative US deterrent advantage.",
-                  "title": "Iran launches 6 ballistic missiles at Aqaba, Jordan; Jordanian military intercepts 4, 2 impact in unpopulated areas",
-                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches 6 ballistic missiles at Aqaba, Jordan; Jordanian military intercepts 4, 2 impact in unpopulated areas",
-                  "source": "",
-                  "link": "https://t.me/abualiexpress/127041"
-                }
-              ]
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
             },
             {
               "id": "regional_partners",
               "name": "Protection of regional partners",
               "description": "Support Gulf partners and other regional allies.",
               "weight": 8.0,
-              "achievement_index": 47.6,
-              "change_from_neutral": -2.4,
-              "raw_contribution": -48.0,
-              "positive_contribution": 0.0,
-              "negative_contribution": -48.0,
-              "trend": "deteriorating",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
               "level": "balanced",
-              "evidence_count": 1,
-              "top_evidence": [
-                {
-                  "event_id": "iranstrike-v7o1zvf2ty80",
-                  "date": "2026-07-22",
-                  "source_actor": "iran",
-                  "indicator": "missile_test",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 6.0,
-                  "indicator_strength": 6.0,
-                  "effect": -1.0,
-                  "interest_weight": 8.0,
-                  "raw_contribution": -48.0,
-                  "rationale": "Iranian missile advances increase risks to Gulf partners.",
-                  "title": "Iran launches 6 ballistic missiles at Aqaba, Jordan; Jordanian military intercepts 4, 2 impact in unpopulated areas",
-                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches 6 ballistic missiles at Aqaba, Jordan; Jordanian military intercepts 4, 2 impact in unpopulated areas",
-                  "source": "",
-                  "link": "https://t.me/abualiexpress/127041"
-                }
-              ],
-              "evidence": [
-                {
-                  "event_id": "iranstrike-v7o1zvf2ty80",
-                  "date": "2026-07-22",
-                  "source_actor": "iran",
-                  "indicator": "missile_test",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 6.0,
-                  "indicator_strength": 6.0,
-                  "effect": -1.0,
-                  "interest_weight": 8.0,
-                  "raw_contribution": -48.0,
-                  "rationale": "Iranian missile advances increase risks to Gulf partners.",
-                  "title": "Iran launches 6 ballistic missiles at Aqaba, Jordan; Jordanian military intercepts 4, 2 impact in unpopulated areas",
-                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches 6 ballistic missiles at Aqaba, Jordan; Jordanian military intercepts 4, 2 impact in unpopulated areas",
-                  "source": "",
-                  "link": "https://t.me/abualiexpress/127041"
-                }
-              ]
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
             },
             {
               "id": "energy_security",
@@ -89148,13 +88879,13 @@
           ]
         },
         "iran": {
-          "achievement_index": 52.68,
-          "change_from_neutral": 2.68,
-          "trend": "improving",
+          "achievement_index": 51.59,
+          "change_from_neutral": 1.59,
+          "trend": "stable",
           "level": "balanced",
-          "raw_contribution": 402.0,
+          "raw_contribution": 234.0,
           "interest_count": 8,
-          "interests_with_evidence": 5,
+          "interests_with_evidence": 3,
           "strongest_interests": [
             {
               "id": "avoid_regime_destroying_war",
@@ -89163,34 +88894,34 @@
               "change_from_neutral": 6.0
             },
             {
-              "id": "missile_capability",
-              "name": "Missile capability",
-              "achievement_index": 55.4,
-              "change_from_neutral": 5.4
-            },
-            {
               "id": "regime_survival",
               "name": "Regime survival",
               "achievement_index": 53.0,
               "change_from_neutral": 3.0
+            },
+            {
+              "id": "nuclear_programme",
+              "name": "Preserve nuclear programme",
+              "achievement_index": 52.7,
+              "change_from_neutral": 2.7
             }
           ],
           "weakest_interests": [
             {
+              "id": "strategic_deterrence",
+              "name": "Strategic deterrence",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "missile_capability",
+              "name": "Missile capability",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
               "id": "proxy_network",
               "name": "Regional proxy network",
-              "achievement_index": 50.0,
-              "change_from_neutral": 0.0
-            },
-            {
-              "id": "regional_influence",
-              "name": "Regional influence",
-              "achievement_index": 50.0,
-              "change_from_neutral": 0.0
-            },
-            {
-              "id": "hormuz_leverage",
-              "name": "Hormuz leverage",
               "achievement_index": 50.0,
               "change_from_neutral": 0.0
             }
@@ -89253,52 +88984,16 @@
               "name": "Strategic deterrence",
               "description": "Maintain credible military deterrence against the United States and Israel.",
               "weight": 10.0,
-              "achievement_index": 53.0,
-              "change_from_neutral": 3.0,
-              "raw_contribution": 60.0,
-              "positive_contribution": 60.0,
-              "negative_contribution": 0.0,
-              "trend": "improving",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
               "level": "balanced",
-              "evidence_count": 1,
-              "top_evidence": [
-                {
-                  "event_id": "iranstrike-v7o1zvf2ty80",
-                  "date": "2026-07-22",
-                  "source_actor": "iran",
-                  "indicator": "missile_test",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 6.0,
-                  "indicator_strength": 6.0,
-                  "effect": 1.0,
-                  "interest_weight": 10.0,
-                  "raw_contribution": 60.0,
-                  "rationale": "Successful tests strengthen perceptions of Iranian retaliatory capability.",
-                  "title": "Iran launches 6 ballistic missiles at Aqaba, Jordan; Jordanian military intercepts 4, 2 impact in unpopulated areas",
-                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches 6 ballistic missiles at Aqaba, Jordan; Jordanian military intercepts 4, 2 impact in unpopulated areas",
-                  "source": "",
-                  "link": "https://t.me/abualiexpress/127041"
-                }
-              ],
-              "evidence": [
-                {
-                  "event_id": "iranstrike-v7o1zvf2ty80",
-                  "date": "2026-07-22",
-                  "source_actor": "iran",
-                  "indicator": "missile_test",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 6.0,
-                  "indicator_strength": 6.0,
-                  "effect": 1.0,
-                  "interest_weight": 10.0,
-                  "raw_contribution": 60.0,
-                  "rationale": "Successful tests strengthen perceptions of Iranian retaliatory capability.",
-                  "title": "Iran launches 6 ballistic missiles at Aqaba, Jordan; Jordanian military intercepts 4, 2 impact in unpopulated areas",
-                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches 6 ballistic missiles at Aqaba, Jordan; Jordanian military intercepts 4, 2 impact in unpopulated areas",
-                  "source": "",
-                  "link": "https://t.me/abualiexpress/127041"
-                }
-              ]
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
             },
             {
               "id": "nuclear_programme",
@@ -89357,52 +89052,16 @@
               "name": "Missile capability",
               "description": "Maintain and develop long-range missile forces.",
               "weight": 9.0,
-              "achievement_index": 55.4,
-              "change_from_neutral": 5.4,
-              "raw_contribution": 108.0,
-              "positive_contribution": 108.0,
-              "negative_contribution": 0.0,
-              "trend": "improving",
-              "level": "moderately_positive",
-              "evidence_count": 1,
-              "top_evidence": [
-                {
-                  "event_id": "iranstrike-v7o1zvf2ty80",
-                  "date": "2026-07-22",
-                  "source_actor": "iran",
-                  "indicator": "missile_test",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 6.0,
-                  "indicator_strength": 6.0,
-                  "effect": 2.0,
-                  "interest_weight": 9.0,
-                  "raw_contribution": 108.0,
-                  "rationale": "Testing supports technological development and operational credibility.",
-                  "title": "Iran launches 6 ballistic missiles at Aqaba, Jordan; Jordanian military intercepts 4, 2 impact in unpopulated areas",
-                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches 6 ballistic missiles at Aqaba, Jordan; Jordanian military intercepts 4, 2 impact in unpopulated areas",
-                  "source": "",
-                  "link": "https://t.me/abualiexpress/127041"
-                }
-              ],
-              "evidence": [
-                {
-                  "event_id": "iranstrike-v7o1zvf2ty80",
-                  "date": "2026-07-22",
-                  "source_actor": "iran",
-                  "indicator": "missile_test",
-                  "pressure_direction": "increase_pressure",
-                  "indicator_score": 6.0,
-                  "indicator_strength": 6.0,
-                  "effect": 2.0,
-                  "interest_weight": 9.0,
-                  "raw_contribution": 108.0,
-                  "rationale": "Testing supports technological development and operational credibility.",
-                  "title": "Iran launches 6 ballistic missiles at Aqaba, Jordan; Jordanian military intercepts 4, 2 impact in unpopulated areas",
-                  "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches 6 ballistic missiles at Aqaba, Jordan; Jordanian military intercepts 4, 2 impact in unpopulated areas",
-                  "source": "",
-                  "link": "https://t.me/abualiexpress/127041"
-                }
-              ]
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
             },
             {
               "id": "proxy_network",
@@ -89509,76 +89168,6 @@
       },
       "processed_evidence": [
         {
-          "event_id": "iranstrike-v7o1zvf2ty80",
-          "timestamp": "2026-07-22T09:58:18+00:00",
-          "date": "2026-07-22",
-          "source_actor": "iran",
-          "title": "Iran launches 6 ballistic missiles at Aqaba, Jordan; Jordanian military intercepts 4, 2 impact in unpopulated areas",
-          "event_type": "kinetic",
-          "event_direction": "escalation",
-          "source_layer": "kinetic",
-          "final_score": 7.0,
-          "original_final_score": 7.0,
-          "operational_component": 1.0,
-          "strategic_modifier": 6.0,
-          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches 6 ballistic missiles at Aqaba, Jordan; Jordanian military intercepts 4, 2 impact in unpopulated areas",
-          "source": "",
-          "link": "https://t.me/abualiexpress/127041",
-          "daily_score_suppressed": false,
-          "suppression_reason": "",
-          "mapped_indicators": [
-            {
-              "indicator": "missile_test",
-              "indicator_name": "Missile test",
-              "pressure_direction": "increase_pressure",
-              "indicator_score": 6.0,
-              "indicator_strength": 6.0,
-              "mapped_impacts": [
-                {
-                  "target_actor": "iran",
-                  "interest_id": "missile_capability",
-                  "effect": 2.0,
-                  "interest_weight": 9.0,
-                  "raw_contribution": 108.0,
-                  "rationale": "Testing supports technological development and operational credibility."
-                },
-                {
-                  "target_actor": "iran",
-                  "interest_id": "strategic_deterrence",
-                  "effect": 1.0,
-                  "interest_weight": 10.0,
-                  "raw_contribution": 60.0,
-                  "rationale": "Successful tests strengthen perceptions of Iranian retaliatory capability."
-                },
-                {
-                  "target_actor": "usa",
-                  "interest_id": "regional_deterrence",
-                  "effect": -1.0,
-                  "interest_weight": 8.0,
-                  "raw_contribution": -48.0,
-                  "rationale": "Improved Iranian missile capability weakens the relative US deterrent advantage."
-                },
-                {
-                  "target_actor": "usa",
-                  "interest_id": "israel_security",
-                  "effect": -1.0,
-                  "interest_weight": 10.0,
-                  "raw_contribution": -60.0,
-                  "rationale": "Longer-range or more accurate missiles increase the threat to Israel."
-                },
-                {
-                  "target_actor": "usa",
-                  "interest_id": "regional_partners",
-                  "effect": -1.0,
-                  "interest_weight": 8.0,
-                  "raw_contribution": -48.0,
-                  "rationale": "Iranian missile advances increase risks to Gulf partners."
-                }
-              ]
-            }
-          ]
-        },
-        {
           "event_id": "INFO-000182",
           "timestamp": "2026-07-22T07:42:29+00:00",
           "date": "2026-07-22",
@@ -89678,28 +89267,6 @@
           "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
           "indicators": [
             "negotiation"
-          ]
-        },
-        {
-          "event_id": "iranstrike-2z139ofwv3o00",
-          "timestamp": "2026-07-22T07:40:59+00:00",
-          "date": "2026-07-22",
-          "source_actor": "iran",
-          "title": "Iran launches missiles targeting Jordan",
-          "event_type": "kinetic",
-          "event_direction": "escalation",
-          "source_layer": "kinetic",
-          "final_score": 0.0,
-          "original_final_score": 7.0,
-          "operational_component": 1.0,
-          "strategic_modifier": 6.0,
-          "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches missiles targeting Jordan",
-          "source": "",
-          "link": "https://t.me/idkunim_il/61752",
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "indicators": [
-            "missile_test"
           ]
         }
       ],
@@ -147640,13 +147207,823 @@
         "indicator_strength_cap": 20.0,
         "formula": "raw_contribution = absolute_indicator_score × mapped_interest_effect × interest_weight; interest_index = clamp(50 + raw_contribution / normalisation_divisor, 0, 100); actor_index = interest-weighted mean of the actor's interest indices"
       }
+    },
+    {
+      "date": "2026-10-19",
+      "summary": {
+        "usa_achievement_index": 51.82,
+        "iran_achievement_index": 51.59,
+        "achievement_gap": 0.23,
+        "daily_strategic_advantage": "balanced",
+        "interpretation": "The index measures whether the current day's detected developments support or weaken each actor's own weighted strategic interests. It does not directly measure military victory or conflict outcome."
+      },
+      "actors": {
+        "usa": {
+          "achievement_index": 51.82,
+          "change_from_neutral": 1.82,
+          "trend": "stable",
+          "level": "balanced",
+          "raw_contribution": 276.0,
+          "interest_count": 8,
+          "interests_with_evidence": 4,
+          "strongest_interests": [
+            {
+              "id": "avoid_full_scale_war",
+              "name": "Avoid full-scale regional war",
+              "achievement_index": 56.0,
+              "change_from_neutral": 6.0
+            },
+            {
+              "id": "force_protection",
+              "name": "Protection of US forces",
+              "achievement_index": 53.0,
+              "change_from_neutral": 3.0
+            },
+            {
+              "id": "nuclear_nonproliferation",
+              "name": "Prevent Iranian nuclear weapon capability",
+              "achievement_index": 52.7,
+              "change_from_neutral": 2.7
+            }
+          ],
+          "weakest_interests": [
+            {
+              "id": "israel_security",
+              "name": "Israel security",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "freedom_of_navigation",
+              "name": "Freedom of navigation",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "regional_deterrence",
+              "name": "Regional deterrence",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            }
+          ],
+          "interests": [
+            {
+              "id": "israel_security",
+              "name": "Israel security",
+              "description": "Maintain Israel's security and military superiority.",
+              "weight": 10.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "force_protection",
+              "name": "Protection of US forces",
+              "description": "Protect US military personnel, bases and regional assets.",
+              "weight": 10.0,
+              "achievement_index": 53.0,
+              "change_from_neutral": 3.0,
+              "raw_contribution": 60.0,
+              "positive_contribution": 60.0,
+              "negative_contribution": 0.0,
+              "trend": "improving",
+              "level": "balanced",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-10-19",
+                  "source_actor": "usa",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 60.0,
+                  "rationale": "Reduced tension lowers the immediate threat to US forces.",
+                  "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-10-19",
+                  "source_actor": "usa",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 60.0,
+                  "rationale": "Reduced tension lowers the immediate threat to US forces.",
+                  "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                }
+              ]
+            },
+            {
+              "id": "freedom_of_navigation",
+              "name": "Freedom of navigation",
+              "description": "Maintain secure maritime routes including the Strait of Hormuz.",
+              "weight": 9.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "nuclear_nonproliferation",
+              "name": "Prevent Iranian nuclear weapon capability",
+              "description": "Limit or delay Iran's military nuclear programme.",
+              "weight": 9.0,
+              "achievement_index": 52.7,
+              "change_from_neutral": 2.7,
+              "raw_contribution": 54.0,
+              "positive_contribution": 54.0,
+              "negative_contribution": 0.0,
+              "trend": "improving",
+              "level": "balanced",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-10-19",
+                  "source_actor": "usa",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 1.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 54.0,
+                  "rationale": "Diplomacy may produce limits, inspections or delays affecting Iran's nuclear programme.",
+                  "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-10-19",
+                  "source_actor": "usa",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 1.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 54.0,
+                  "rationale": "Diplomacy may produce limits, inspections or delays affecting Iran's nuclear programme.",
+                  "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                }
+              ]
+            },
+            {
+              "id": "regional_deterrence",
+              "name": "Regional deterrence",
+              "description": "Maintain credible military deterrence against Iran and its proxies.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "regional_partners",
+              "name": "Protection of regional partners",
+              "description": "Support Gulf partners and other regional allies.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "energy_security",
+              "name": "Global energy security",
+              "description": "Reduce disruption to global energy markets.",
+              "weight": 7.0,
+              "achievement_index": 52.1,
+              "change_from_neutral": 2.1,
+              "raw_contribution": 42.0,
+              "positive_contribution": 42.0,
+              "negative_contribution": 0.0,
+              "trend": "improving",
+              "level": "balanced",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-10-19",
+                  "source_actor": "usa",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 1.0,
+                  "interest_weight": 7.0,
+                  "raw_contribution": 42.0,
+                  "rationale": "Diplomatic engagement reduces the likelihood of major energy disruption.",
+                  "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-10-19",
+                  "source_actor": "usa",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 1.0,
+                  "interest_weight": 7.0,
+                  "raw_contribution": 42.0,
+                  "rationale": "Diplomatic engagement reduces the likelihood of major energy disruption.",
+                  "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                }
+              ]
+            },
+            {
+              "id": "avoid_full_scale_war",
+              "name": "Avoid full-scale regional war",
+              "description": "Prevent uncontrolled regional escalation.",
+              "weight": 10.0,
+              "achievement_index": 56.0,
+              "change_from_neutral": 6.0,
+              "raw_contribution": 120.0,
+              "positive_contribution": 120.0,
+              "negative_contribution": 0.0,
+              "trend": "improving",
+              "level": "moderately_positive",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-10-19",
+                  "source_actor": "usa",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 120.0,
+                  "rationale": "Negotiations reduce immediate escalation risk and preserve diplomatic options.",
+                  "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-10-19",
+                  "source_actor": "usa",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 120.0,
+                  "rationale": "Negotiations reduce immediate escalation risk and preserve diplomatic options.",
+                  "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                }
+              ]
+            }
+          ]
+        },
+        "iran": {
+          "achievement_index": 51.59,
+          "change_from_neutral": 1.59,
+          "trend": "stable",
+          "level": "balanced",
+          "raw_contribution": 234.0,
+          "interest_count": 8,
+          "interests_with_evidence": 3,
+          "strongest_interests": [
+            {
+              "id": "avoid_regime_destroying_war",
+              "name": "Avoid regime-destroying war",
+              "achievement_index": 56.0,
+              "change_from_neutral": 6.0
+            },
+            {
+              "id": "regime_survival",
+              "name": "Regime survival",
+              "achievement_index": 53.0,
+              "change_from_neutral": 3.0
+            },
+            {
+              "id": "nuclear_programme",
+              "name": "Preserve nuclear programme",
+              "achievement_index": 52.7,
+              "change_from_neutral": 2.7
+            }
+          ],
+          "weakest_interests": [
+            {
+              "id": "strategic_deterrence",
+              "name": "Strategic deterrence",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "missile_capability",
+              "name": "Missile capability",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            },
+            {
+              "id": "proxy_network",
+              "name": "Regional proxy network",
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0
+            }
+          ],
+          "interests": [
+            {
+              "id": "regime_survival",
+              "name": "Regime survival",
+              "description": "Ensure survival and stability of the Islamic Republic.",
+              "weight": 10.0,
+              "achievement_index": 53.0,
+              "change_from_neutral": 3.0,
+              "raw_contribution": 60.0,
+              "positive_contribution": 60.0,
+              "negative_contribution": 0.0,
+              "trend": "improving",
+              "level": "balanced",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-10-19",
+                  "source_actor": "usa",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 60.0,
+                  "rationale": "Negotiations lower the immediate military threat to the Iranian state.",
+                  "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-10-19",
+                  "source_actor": "usa",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 60.0,
+                  "rationale": "Negotiations lower the immediate military threat to the Iranian state.",
+                  "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                }
+              ]
+            },
+            {
+              "id": "strategic_deterrence",
+              "name": "Strategic deterrence",
+              "description": "Maintain credible military deterrence against the United States and Israel.",
+              "weight": 10.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "nuclear_programme",
+              "name": "Preserve nuclear programme",
+              "description": "Protect strategic nuclear infrastructure and capabilities.",
+              "weight": 9.0,
+              "achievement_index": 52.7,
+              "change_from_neutral": 2.7,
+              "raw_contribution": 54.0,
+              "positive_contribution": 54.0,
+              "negative_contribution": 0.0,
+              "trend": "improving",
+              "level": "balanced",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-10-19",
+                  "source_actor": "usa",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 1.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 54.0,
+                  "rationale": "Negotiations may allow Iran to preserve part of its nuclear infrastructure under agreed restrictions.",
+                  "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-10-19",
+                  "source_actor": "usa",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 1.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 54.0,
+                  "rationale": "Negotiations may allow Iran to preserve part of its nuclear infrastructure under agreed restrictions.",
+                  "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                }
+              ]
+            },
+            {
+              "id": "missile_capability",
+              "name": "Missile capability",
+              "description": "Maintain and develop long-range missile forces.",
+              "weight": 9.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "proxy_network",
+              "name": "Regional proxy network",
+              "description": "Maintain influence through regional partner organisations.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "regional_influence",
+              "name": "Regional influence",
+              "description": "Preserve strategic influence across the Middle East.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "hormuz_leverage",
+              "name": "Hormuz leverage",
+              "description": "Retain the ability to influence maritime traffic through the Strait of Hormuz.",
+              "weight": 8.0,
+              "achievement_index": 50.0,
+              "change_from_neutral": 0.0,
+              "raw_contribution": 0,
+              "positive_contribution": 0,
+              "negative_contribution": 0,
+              "trend": "stable",
+              "level": "balanced",
+              "evidence_count": 0,
+              "top_evidence": [],
+              "evidence": []
+            },
+            {
+              "id": "avoid_regime_destroying_war",
+              "name": "Avoid regime-destroying war",
+              "description": "Avoid military escalation threatening state survival.",
+              "weight": 10.0,
+              "achievement_index": 56.0,
+              "change_from_neutral": 6.0,
+              "raw_contribution": 120.0,
+              "positive_contribution": 120.0,
+              "negative_contribution": 0.0,
+              "trend": "improving",
+              "level": "moderately_positive",
+              "evidence_count": 1,
+              "top_evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-10-19",
+                  "source_actor": "usa",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 120.0,
+                  "rationale": "Diplomatic engagement directly reduces the probability of a regime-threatening war.",
+                  "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                }
+              ],
+              "evidence": [
+                {
+                  "event_id": "INFO-000002",
+                  "date": "2026-10-19",
+                  "source_actor": "usa",
+                  "indicator": "negotiation",
+                  "pressure_direction": "decrease_pressure",
+                  "indicator_score": -6.0,
+                  "indicator_strength": 6.0,
+                  "effect": 2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 120.0,
+                  "rationale": "Diplomatic engagement directly reduces the probability of a regime-threatening war.",
+                  "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+                  "source": "\"iran israel usa war when:7d\" - Google News",
+                  "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "processed_evidence": [
+        {
+          "event_id": "INFO-000002",
+          "timestamp": "2026-10-19T01:24:38+00:00",
+          "date": "2026-10-19",
+          "source_actor": "usa",
+          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "source_layer": "non_kinetic",
+          "final_score": -6.0,
+          "original_final_score": -6.0,
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
+          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
+          "daily_score_suppressed": false,
+          "suppression_reason": "",
+          "mapped_indicators": [
+            {
+              "indicator": "negotiation",
+              "indicator_name": "Negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "mapped_impacts": [
+                {
+                  "target_actor": "usa",
+                  "interest_id": "avoid_full_scale_war",
+                  "effect": 2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 120.0,
+                  "rationale": "Negotiations reduce immediate escalation risk and preserve diplomatic options."
+                },
+                {
+                  "target_actor": "usa",
+                  "interest_id": "nuclear_nonproliferation",
+                  "effect": 1.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 54.0,
+                  "rationale": "Diplomacy may produce limits, inspections or delays affecting Iran's nuclear programme."
+                },
+                {
+                  "target_actor": "usa",
+                  "interest_id": "force_protection",
+                  "effect": 1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 60.0,
+                  "rationale": "Reduced tension lowers the immediate threat to US forces."
+                },
+                {
+                  "target_actor": "usa",
+                  "interest_id": "energy_security",
+                  "effect": 1.0,
+                  "interest_weight": 7.0,
+                  "raw_contribution": 42.0,
+                  "rationale": "Diplomatic engagement reduces the likelihood of major energy disruption."
+                },
+                {
+                  "target_actor": "iran",
+                  "interest_id": "regime_survival",
+                  "effect": 1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 60.0,
+                  "rationale": "Negotiations lower the immediate military threat to the Iranian state."
+                },
+                {
+                  "target_actor": "iran",
+                  "interest_id": "avoid_regime_destroying_war",
+                  "effect": 2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 120.0,
+                  "rationale": "Diplomatic engagement directly reduces the probability of a regime-threatening war."
+                },
+                {
+                  "target_actor": "iran",
+                  "interest_id": "nuclear_programme",
+                  "effect": 1.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 54.0,
+                  "rationale": "Negotiations may allow Iran to preserve part of its nuclear infrastructure under agreed restrictions."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "event_id": "INFO-000002",
+          "timestamp": "2026-10-19T01:24:38+00:00",
+          "date": "2026-10-19",
+          "source_actor": "iran",
+          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "source_layer": "non_kinetic",
+          "final_score": -6.0,
+          "original_final_score": -6.0,
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
+          "daily_score_suppressed": false,
+          "suppression_reason": "",
+          "mapped_indicators": [
+            {
+              "indicator": "negotiation",
+              "indicator_name": "Negotiation",
+              "pressure_direction": "decrease_pressure",
+              "indicator_score": -6.0,
+              "indicator_strength": 6.0,
+              "mapped_impacts": [
+                {
+                  "target_actor": "iran",
+                  "interest_id": "regime_survival",
+                  "effect": 1.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 0.0,
+                  "original_raw_contribution": 60.0,
+                  "suppressed": true,
+                  "rationale": "Negotiations reduce immediate pressure on the Iranian state."
+                },
+                {
+                  "target_actor": "iran",
+                  "interest_id": "avoid_regime_destroying_war",
+                  "effect": 2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 0.0,
+                  "original_raw_contribution": 120.0,
+                  "suppressed": true,
+                  "rationale": "Diplomacy lowers the likelihood of a war threatening regime survival."
+                },
+                {
+                  "target_actor": "iran",
+                  "interest_id": "nuclear_programme",
+                  "effect": 1.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 0.0,
+                  "original_raw_contribution": 54.0,
+                  "suppressed": true,
+                  "rationale": "Negotiations may allow Iran to preserve controlled nuclear capabilities."
+                },
+                {
+                  "target_actor": "usa",
+                  "interest_id": "avoid_full_scale_war",
+                  "effect": 2.0,
+                  "interest_weight": 10.0,
+                  "raw_contribution": 0.0,
+                  "original_raw_contribution": 120.0,
+                  "suppressed": true,
+                  "rationale": "Negotiations support conflict containment."
+                },
+                {
+                  "target_actor": "usa",
+                  "interest_id": "nuclear_nonproliferation",
+                  "effect": 1.0,
+                  "interest_weight": 9.0,
+                  "raw_contribution": 0.0,
+                  "original_raw_contribution": 54.0,
+                  "suppressed": true,
+                  "rationale": "Diplomatic agreements may constrain or monitor Iran's nuclear programme."
+                },
+                {
+                  "target_actor": "usa",
+                  "interest_id": "energy_security",
+                  "effect": 1.0,
+                  "interest_weight": 7.0,
+                  "raw_contribution": 0.0,
+                  "original_raw_contribution": 42.0,
+                  "suppressed": true,
+                  "rationale": "Lower tension supports energy-market stability."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "suppressed_evidence": [],
+      "unmapped_evidence": [],
+      "calculation": {
+        "neutral_score": 50.0,
+        "minimum_score": 0.0,
+        "maximum_score": 100.0,
+        "normalisation_divisor": 20.0,
+        "indicator_strength_cap": 20.0,
+        "formula": "raw_contribution = absolute_indicator_score × mapped_interest_effect × interest_weight; interest_index = clamp(50 + raw_contribution / normalisation_divisor, 0, 100); actor_index = interest-weighted mean of the actor's interest indices"
+      }
     }
   ],
   "history_summary": {
-    "day_count": 223,
+    "day_count": 224,
     "actors": {
       "usa": {
-        "average": 50.71,
+        "average": 50.72,
         "median": 50.0,
         "best_day": {
           "date": "2026-08-02",
@@ -148458,49 +148835,49 @@
             },
             {
               "date": "2026-07-21",
-              "value": 50.3,
+              "value": 50.2,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-22",
-              "value": 50.16,
+              "value": 50.2,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-23",
-              "value": 50.36,
+              "value": 50.4,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-24",
-              "value": 50.62,
+              "value": 50.66,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-25",
-              "value": 50.82,
+              "value": 50.86,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-26",
-              "value": 50.82,
+              "value": 50.86,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-27",
-              "value": 51.08,
+              "value": 51.12,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-28",
-              "value": 51.24,
+              "value": 51.38,
               "window": 7,
               "observations": 7
             },
@@ -148993,6 +149370,12 @@
             {
               "date": "2026-10-18",
               "value": 49.66,
+              "window": 7,
+              "observations": 7
+            },
+            {
+              "date": "2026-10-19",
+              "value": 49.92,
               "window": 7,
               "observations": 7
             }
@@ -149798,103 +150181,103 @@
             },
             {
               "date": "2026-07-21",
-              "value": 50.77,
+              "value": 50.75,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-07-22",
-              "value": 50.68,
+              "value": 50.69,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-07-23",
-              "value": 50.68,
+              "value": 50.69,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-07-24",
-              "value": 50.74,
+              "value": 50.75,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-07-25",
-              "value": 50.74,
+              "value": 50.75,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-07-26",
-              "value": 50.74,
+              "value": 50.75,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-07-27",
-              "value": 50.8,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-28",
               "value": 50.81,
               "window": 30,
               "observations": 30
             },
             {
+              "date": "2026-07-28",
+              "value": 50.82,
+              "window": 30,
+              "observations": 30
+            },
+            {
               "date": "2026-07-29",
-              "value": 50.77,
+              "value": 50.78,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-07-30",
-              "value": 50.49,
+              "value": 50.5,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-07-31",
-              "value": 50.43,
+              "value": 50.44,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-01",
-              "value": 50.38,
+              "value": 50.39,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-02",
-              "value": 50.49,
+              "value": 50.5,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-03",
-              "value": 50.51,
+              "value": 50.52,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-04",
-              "value": 50.57,
+              "value": 50.58,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-05",
-              "value": 50.61,
+              "value": 50.62,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-06",
-              "value": 50.47,
+              "value": 50.48,
               "window": 30,
               "observations": 30
             },
@@ -149930,55 +150313,55 @@
             },
             {
               "date": "2026-08-12",
-              "value": 50.44,
+              "value": 50.45,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-13",
-              "value": 50.57,
+              "value": 50.58,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-14",
-              "value": 50.52,
+              "value": 50.53,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-15",
-              "value": 50.57,
+              "value": 50.58,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-16",
-              "value": 50.57,
+              "value": 50.58,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-17",
-              "value": 50.4,
+              "value": 50.41,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-18",
-              "value": 50.42,
+              "value": 50.43,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-19",
-              "value": 50.42,
+              "value": 50.43,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-20",
-              "value": 50.46,
+              "value": 50.49,
               "window": 30,
               "observations": 30
             },
@@ -150335,16 +150718,22 @@
               "value": 50.62,
               "window": 30,
               "observations": 30
+            },
+            {
+              "date": "2026-10-19",
+              "value": 50.63,
+              "window": 30,
+              "observations": 30
             }
           ]
         },
         "trend": {
           "direction": "stable",
-          "slope": -0.0029
+          "slope": -0.0027
         },
-        "volatility": 1.4974,
-        "latest": 51.39,
-        "change_first_to_latest": -1.82
+        "volatility": 1.4972,
+        "latest": 51.82,
+        "change_first_to_latest": -1.39
       },
       "iran": {
         "average": 50.95,
@@ -151159,49 +151548,49 @@
             },
             {
               "date": "2026-07-21",
-              "value": 50.13,
+              "value": 50.23,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-22",
-              "value": 50.28,
+              "value": 50.23,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-23",
-              "value": 50.51,
+              "value": 50.45,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-24",
-              "value": 50.74,
+              "value": 50.68,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-25",
-              "value": 50.97,
+              "value": 50.91,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-26",
-              "value": 50.97,
+              "value": 50.91,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-27",
-              "value": 51.19,
+              "value": 51.14,
               "window": 7,
               "observations": 7
             },
             {
               "date": "2026-07-28",
-              "value": 51.52,
+              "value": 51.36,
               "window": 7,
               "observations": 7
             },
@@ -151694,6 +152083,12 @@
             {
               "date": "2026-10-18",
               "value": 48.79,
+              "window": 7,
+              "observations": 7
+            },
+            {
+              "date": "2026-10-19",
+              "value": 49.02,
               "window": 7,
               "observations": 7
             }
@@ -152499,187 +152894,187 @@
             },
             {
               "date": "2026-07-21",
-              "value": 50.78,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-22",
-              "value": 50.76,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-23",
-              "value": 50.76,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-24",
-              "value": 50.82,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-25",
-              "value": 50.82,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-26",
-              "value": 50.82,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-27",
-              "value": 50.87,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-28",
-              "value": 50.87,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-29",
-              "value": 50.91,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-30",
-              "value": 50.91,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-07-31",
-              "value": 50.86,
-              "window": 30,
-              "observations": 30
-            },
-            {
-              "date": "2026-08-01",
               "value": 50.8,
               "window": 30,
               "observations": 30
             },
             {
+              "date": "2026-07-22",
+              "value": 50.75,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-07-23",
+              "value": 50.75,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-07-24",
+              "value": 50.8,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-07-25",
+              "value": 50.8,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-07-26",
+              "value": 50.8,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-07-27",
+              "value": 50.86,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-07-28",
+              "value": 50.86,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-07-29",
+              "value": 50.89,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-07-30",
+              "value": 50.9,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-07-31",
+              "value": 50.84,
+              "window": 30,
+              "observations": 30
+            },
+            {
+              "date": "2026-08-01",
+              "value": 50.79,
+              "window": 30,
+              "observations": 30
+            },
+            {
               "date": "2026-08-02",
-              "value": 50.91,
+              "value": 50.89,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-03",
-              "value": 50.91,
+              "value": 50.89,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-04",
-              "value": 50.96,
+              "value": 50.95,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-05",
-              "value": 51.02,
+              "value": 51.01,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-06",
-              "value": 51.1,
+              "value": 51.08,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-07",
-              "value": 51.15,
+              "value": 51.14,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-08",
-              "value": 51.15,
+              "value": 51.14,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-09",
-              "value": 51.1,
+              "value": 51.08,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-10",
-              "value": 51.1,
+              "value": 51.08,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-11",
-              "value": 51.15,
+              "value": 51.14,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-12",
-              "value": 51.2,
+              "value": 51.19,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-13",
-              "value": 51.23,
+              "value": 51.21,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-14",
-              "value": 51.17,
+              "value": 51.16,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-15",
-              "value": 51.23,
+              "value": 51.21,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-16",
-              "value": 51.23,
+              "value": 51.21,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-17",
-              "value": 51.28,
+              "value": 51.27,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-18",
-              "value": 51.37,
+              "value": 51.36,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-19",
-              "value": 51.37,
+              "value": 51.36,
               "window": 30,
               "observations": 30
             },
             {
               "date": "2026-08-20",
-              "value": 51.45,
+              "value": 51.41,
               "window": 30,
               "observations": 30
             },
@@ -153036,14 +153431,20 @@
               "value": 50.54,
               "window": 30,
               "observations": 30
+            },
+            {
+              "date": "2026-10-19",
+              "value": 50.54,
+              "window": 30,
+              "observations": 30
             }
           ]
         },
         "trend": {
           "direction": "stable",
-          "slope": -0.0007
+          "slope": -0.0006
         },
-        "volatility": 1.2738,
+        "volatility": 1.264,
         "latest": 51.59,
         "change_first_to_latest": -1.58
       }
@@ -155303,29 +155704,6 @@
         "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
         "indicators": [
           "negotiation"
-        ]
-      },
-      {
-        "assessment_date": "2026-07-22",
-        "event_id": "iranstrike-2z139ofwv3o00",
-        "timestamp": "2026-07-22T07:40:59+00:00",
-        "date": "2026-07-22",
-        "source_actor": "iran",
-        "title": "Iran launches missiles targeting Jordan",
-        "event_type": "kinetic",
-        "event_direction": "escalation",
-        "source_layer": "kinetic",
-        "final_score": 0.0,
-        "original_final_score": 7.0,
-        "operational_component": 1.0,
-        "strategic_modifier": 6.0,
-        "reason": "Iran: Missile test. Operational component: +1.00; strategic modifier: +6.00; final contribution before daily deduplication: +7.00. Event: Iran launches missiles targeting Jordan",
-        "source": "",
-        "link": "https://t.me/idkunim_il/61752",
-        "daily_score_suppressed": true,
-        "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-        "indicators": [
-          "missile_test"
         ]
       },
       {
@@ -164136,6 +164514,168 @@
           "interest_id": "energy_security"
         },
         "suppression_reason": "Duplicate event-to-interest evidence within the same day."
+      },
+      {
+        "assessment_date": "2026-10-19",
+        "event_id": "INFO-000002",
+        "date": "2026-10-19",
+        "source_actor": "iran",
+        "indicator": "negotiation",
+        "pressure_direction": "decrease_pressure",
+        "indicator_score": -6.0,
+        "indicator_strength": 6.0,
+        "effect": 1.0,
+        "interest_weight": 10.0,
+        "raw_contribution": 60.0,
+        "rationale": "Negotiations reduce immediate pressure on the Iranian state.",
+        "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+        "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+        "source": "\"iran israel usa war when:7d\" - Google News",
+        "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
+        "target_actor": "iran",
+        "interest_id": "regime_survival",
+        "deduplication_key": {
+          "date": "2026-10-19",
+          "event_id": "INFO-000002",
+          "target_actor": "iran",
+          "interest_id": "regime_survival"
+        },
+        "suppression_reason": "Duplicate event-to-interest evidence within the same day."
+      },
+      {
+        "assessment_date": "2026-10-19",
+        "event_id": "INFO-000002",
+        "date": "2026-10-19",
+        "source_actor": "iran",
+        "indicator": "negotiation",
+        "pressure_direction": "decrease_pressure",
+        "indicator_score": -6.0,
+        "indicator_strength": 6.0,
+        "effect": 2.0,
+        "interest_weight": 10.0,
+        "raw_contribution": 120.0,
+        "rationale": "Diplomacy lowers the likelihood of a war threatening regime survival.",
+        "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+        "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+        "source": "\"iran israel usa war when:7d\" - Google News",
+        "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
+        "target_actor": "iran",
+        "interest_id": "avoid_regime_destroying_war",
+        "deduplication_key": {
+          "date": "2026-10-19",
+          "event_id": "INFO-000002",
+          "target_actor": "iran",
+          "interest_id": "avoid_regime_destroying_war"
+        },
+        "suppression_reason": "Duplicate event-to-interest evidence within the same day."
+      },
+      {
+        "assessment_date": "2026-10-19",
+        "event_id": "INFO-000002",
+        "date": "2026-10-19",
+        "source_actor": "iran",
+        "indicator": "negotiation",
+        "pressure_direction": "decrease_pressure",
+        "indicator_score": -6.0,
+        "indicator_strength": 6.0,
+        "effect": 1.0,
+        "interest_weight": 9.0,
+        "raw_contribution": 54.0,
+        "rationale": "Negotiations may allow Iran to preserve controlled nuclear capabilities.",
+        "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+        "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+        "source": "\"iran israel usa war when:7d\" - Google News",
+        "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
+        "target_actor": "iran",
+        "interest_id": "nuclear_programme",
+        "deduplication_key": {
+          "date": "2026-10-19",
+          "event_id": "INFO-000002",
+          "target_actor": "iran",
+          "interest_id": "nuclear_programme"
+        },
+        "suppression_reason": "Duplicate event-to-interest evidence within the same day."
+      },
+      {
+        "assessment_date": "2026-10-19",
+        "event_id": "INFO-000002",
+        "date": "2026-10-19",
+        "source_actor": "iran",
+        "indicator": "negotiation",
+        "pressure_direction": "decrease_pressure",
+        "indicator_score": -6.0,
+        "indicator_strength": 6.0,
+        "effect": 2.0,
+        "interest_weight": 10.0,
+        "raw_contribution": 120.0,
+        "rationale": "Negotiations support conflict containment.",
+        "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+        "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+        "source": "\"iran israel usa war when:7d\" - Google News",
+        "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
+        "target_actor": "usa",
+        "interest_id": "avoid_full_scale_war",
+        "deduplication_key": {
+          "date": "2026-10-19",
+          "event_id": "INFO-000002",
+          "target_actor": "usa",
+          "interest_id": "avoid_full_scale_war"
+        },
+        "suppression_reason": "Duplicate event-to-interest evidence within the same day."
+      },
+      {
+        "assessment_date": "2026-10-19",
+        "event_id": "INFO-000002",
+        "date": "2026-10-19",
+        "source_actor": "iran",
+        "indicator": "negotiation",
+        "pressure_direction": "decrease_pressure",
+        "indicator_score": -6.0,
+        "indicator_strength": 6.0,
+        "effect": 1.0,
+        "interest_weight": 9.0,
+        "raw_contribution": 54.0,
+        "rationale": "Diplomatic agreements may constrain or monitor Iran's nuclear programme.",
+        "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+        "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+        "source": "\"iran israel usa war when:7d\" - Google News",
+        "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
+        "target_actor": "usa",
+        "interest_id": "nuclear_nonproliferation",
+        "deduplication_key": {
+          "date": "2026-10-19",
+          "event_id": "INFO-000002",
+          "target_actor": "usa",
+          "interest_id": "nuclear_nonproliferation"
+        },
+        "suppression_reason": "Duplicate event-to-interest evidence within the same day."
+      },
+      {
+        "assessment_date": "2026-10-19",
+        "event_id": "INFO-000002",
+        "date": "2026-10-19",
+        "source_actor": "iran",
+        "indicator": "negotiation",
+        "pressure_direction": "decrease_pressure",
+        "indicator_score": -6.0,
+        "indicator_strength": 6.0,
+        "effect": 1.0,
+        "interest_weight": 7.0,
+        "raw_contribution": 42.0,
+        "rationale": "Lower tension supports energy-market stability.",
+        "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+        "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+        "source": "\"iran israel usa war when:7d\" - Google News",
+        "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
+        "target_actor": "usa",
+        "interest_id": "energy_security",
+        "deduplication_key": {
+          "date": "2026-10-19",
+          "event_id": "INFO-000002",
+          "target_actor": "usa",
+          "interest_id": "energy_security"
+        },
+        "suppression_reason": "Duplicate event-to-interest evidence within the same day."
       }
     ],
     "unmapped_indicators": [],
@@ -164143,20 +164683,177 @@
       "2026-09-15: Contributor 'INFO-000066' has final_score 0 and was skipped."
     ],
     "counts": {
-      "suppressed_evidence": 145,
-      "bilateral_duplicates": 287,
+      "suppressed_evidence": 144,
+      "bilateral_duplicates": 293,
       "unmapped_indicators": 0,
       "warnings": 1
     },
     "current": {
       "suppressed_evidence": [],
-      "bilateral_duplicates": [],
+      "bilateral_duplicates": [
+        {
+          "event_id": "INFO-000002",
+          "date": "2026-10-19",
+          "source_actor": "iran",
+          "indicator": "negotiation",
+          "pressure_direction": "decrease_pressure",
+          "indicator_score": -6.0,
+          "indicator_strength": 6.0,
+          "effect": 1.0,
+          "interest_weight": 10.0,
+          "raw_contribution": 60.0,
+          "rationale": "Negotiations reduce immediate pressure on the Iranian state.",
+          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
+          "target_actor": "iran",
+          "interest_id": "regime_survival",
+          "deduplication_key": {
+            "date": "2026-10-19",
+            "event_id": "INFO-000002",
+            "target_actor": "iran",
+            "interest_id": "regime_survival"
+          },
+          "suppression_reason": "Duplicate event-to-interest evidence within the same day."
+        },
+        {
+          "event_id": "INFO-000002",
+          "date": "2026-10-19",
+          "source_actor": "iran",
+          "indicator": "negotiation",
+          "pressure_direction": "decrease_pressure",
+          "indicator_score": -6.0,
+          "indicator_strength": 6.0,
+          "effect": 2.0,
+          "interest_weight": 10.0,
+          "raw_contribution": 120.0,
+          "rationale": "Diplomacy lowers the likelihood of a war threatening regime survival.",
+          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
+          "target_actor": "iran",
+          "interest_id": "avoid_regime_destroying_war",
+          "deduplication_key": {
+            "date": "2026-10-19",
+            "event_id": "INFO-000002",
+            "target_actor": "iran",
+            "interest_id": "avoid_regime_destroying_war"
+          },
+          "suppression_reason": "Duplicate event-to-interest evidence within the same day."
+        },
+        {
+          "event_id": "INFO-000002",
+          "date": "2026-10-19",
+          "source_actor": "iran",
+          "indicator": "negotiation",
+          "pressure_direction": "decrease_pressure",
+          "indicator_score": -6.0,
+          "indicator_strength": 6.0,
+          "effect": 1.0,
+          "interest_weight": 9.0,
+          "raw_contribution": 54.0,
+          "rationale": "Negotiations may allow Iran to preserve controlled nuclear capabilities.",
+          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
+          "target_actor": "iran",
+          "interest_id": "nuclear_programme",
+          "deduplication_key": {
+            "date": "2026-10-19",
+            "event_id": "INFO-000002",
+            "target_actor": "iran",
+            "interest_id": "nuclear_programme"
+          },
+          "suppression_reason": "Duplicate event-to-interest evidence within the same day."
+        },
+        {
+          "event_id": "INFO-000002",
+          "date": "2026-10-19",
+          "source_actor": "iran",
+          "indicator": "negotiation",
+          "pressure_direction": "decrease_pressure",
+          "indicator_score": -6.0,
+          "indicator_strength": 6.0,
+          "effect": 2.0,
+          "interest_weight": 10.0,
+          "raw_contribution": 120.0,
+          "rationale": "Negotiations support conflict containment.",
+          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
+          "target_actor": "usa",
+          "interest_id": "avoid_full_scale_war",
+          "deduplication_key": {
+            "date": "2026-10-19",
+            "event_id": "INFO-000002",
+            "target_actor": "usa",
+            "interest_id": "avoid_full_scale_war"
+          },
+          "suppression_reason": "Duplicate event-to-interest evidence within the same day."
+        },
+        {
+          "event_id": "INFO-000002",
+          "date": "2026-10-19",
+          "source_actor": "iran",
+          "indicator": "negotiation",
+          "pressure_direction": "decrease_pressure",
+          "indicator_score": -6.0,
+          "indicator_strength": 6.0,
+          "effect": 1.0,
+          "interest_weight": 9.0,
+          "raw_contribution": 54.0,
+          "rationale": "Diplomatic agreements may constrain or monitor Iran's nuclear programme.",
+          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
+          "target_actor": "usa",
+          "interest_id": "nuclear_nonproliferation",
+          "deduplication_key": {
+            "date": "2026-10-19",
+            "event_id": "INFO-000002",
+            "target_actor": "usa",
+            "interest_id": "nuclear_nonproliferation"
+          },
+          "suppression_reason": "Duplicate event-to-interest evidence within the same day."
+        },
+        {
+          "event_id": "INFO-000002",
+          "date": "2026-10-19",
+          "source_actor": "iran",
+          "indicator": "negotiation",
+          "pressure_direction": "decrease_pressure",
+          "indicator_score": -6.0,
+          "indicator_strength": 6.0,
+          "effect": 1.0,
+          "interest_weight": 7.0,
+          "raw_contribution": 42.0,
+          "rationale": "Lower tension supports energy-market stability.",
+          "title": "Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump says he hasn't made a final decision on Iran, 'not happy' with current negotiations - ABC News - Breaking News, Latest News and Videos",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3pick5FZVhrc1dGYUptUjZWbl84MVJmREJSN3J4Wm9PVmVmR3JmZ2d3VFhwMVE5THlFd0poeTgzT3V3TkF3UlF4Q1N0Z1NNdno4Z19ZXzFtenBBSUJFX0JNRUF1RXdUd1NpMENpSXJ3QV82bDh4bmRtTE9KbDlndlgzVG5oMEJHaEFYVG4zVERQY01pR3U1LW1uc9IBoAFBVV95cUxNdjQ4WUJTYUkyNUZ6ZlNOcFRqMzVSbWpQSVpmOE1vVVczODVseER2Tmg1ejlfdlVuQmh2aDZBUDVHcF9QTnVfbzFjTU1VdlZSSkFhUXhZSVNoTUlDOEtkdXZka2swUkc1eGFLV2Nxd28weVFqZVFTTUR4WjdWNS1UdFlKWUtDeVZqVVVzbzFINlJ6ckw4MzltVEdNRTFxd0Jy?oc=5",
+          "target_actor": "usa",
+          "interest_id": "energy_security",
+          "deduplication_key": {
+            "date": "2026-10-19",
+            "event_id": "INFO-000002",
+            "target_actor": "usa",
+            "interest_id": "energy_security"
+          },
+          "suppression_reason": "Duplicate event-to-interest evidence within the same day."
+        }
+      ],
       "unmapped_indicators": [],
       "warnings": [],
       "counts": {
-        "processed_evidence": 1,
+        "processed_evidence": 2,
         "suppressed_evidence": 0,
-        "bilateral_duplicates": 0,
+        "bilateral_duplicates": 6,
         "unmapped_indicators": 0,
         "warnings": 0
       }
