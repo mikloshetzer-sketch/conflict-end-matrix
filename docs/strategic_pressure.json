@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T14:27:21.656662+00:00",
+  "generated_at": "2026-10-23T14:10:03.858916+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,28 +18,28 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 650,
-    "kinetic_events_loaded": 591,
-    "unique_events_scanned": 1210,
-    "strategic_evidence_contributions": 365,
+    "non_kinetic_events_loaded": 653,
+    "kinetic_events_loaded": 578,
+    "unique_events_scanned": 1200,
+    "strategic_evidence_contributions": 366,
     "evidence_contributions_by_actor": {
       "usa": 122,
-      "iran": 243
+      "iran": 244
     },
     "scored_contributions_by_actor": {
       "usa": 89,
-      "iran": 132
+      "iran": 133
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
       "iran": 111
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 338,
+      "non_kinetic": 339,
       "kinetic": 27
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 213,
+      "iran:negotiation": 214,
       "usa:negotiation": 98,
       "iran:missile_test": 18,
       "usa:presidential_warning": 15,
@@ -52,7 +52,7 @@
       "usa:carrier_deployment": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 110,
+      "iran:negotiation": 111,
       "usa:negotiation": 69,
       "usa:presidential_warning": 15,
       "iran:missile_test": 10,
@@ -65,14 +65,14 @@
       "usa:carrier_deployment": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 0,
-    "history_day_count": 226
+    "skipped_current_utc_day": 2,
+    "history_day_count": 227
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-10-21",
+  "latest_complete_utc_day": "2026-10-22",
   "current": {
-    "date": "2026-10-21",
+    "date": "2026-10-22",
     "calculation_mode": "live",
     "usa": {
       "raw_score": 0.0,
@@ -85,55 +85,43 @@
       "increase_event_count": 0,
       "decrease_event_count": 0,
       "contributors": [],
-      "weighted_score_7d": 0.2,
-      "pressure_index_7d": 50.4,
+      "weighted_score_7d": -1.65,
+      "pressure_index_7d": 46.7,
       "pressure_level": "balanced",
       "trend": "decrease",
       "strongest_contributors": []
     },
     "iran": {
-      "raw_score": 2.0,
-      "positive_score": 2.0,
-      "negative_score": 0.0,
+      "raw_score": -6.0,
+      "positive_score": 0.0,
+      "negative_score": -6.0,
       "event_count": 1,
       "scored_event_count": 1,
       "evidence_event_count": 1,
       "suppressed_duplicate_count": 0,
-      "increase_event_count": 1,
-      "decrease_event_count": 0,
+      "increase_event_count": 0,
+      "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000001",
-          "timestamp": "2026-10-21T12:20:43+00:00",
-          "date": "2026-10-21",
+          "event_id": "INFO-000002",
+          "timestamp": "2026-10-22T08:11:56+00:00",
+          "date": "2026-10-22",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "Iran’s enriched uranium re-emerges as point of contention in US talks - Al Jazeera",
+          "title": "Can Russia broker a new US-Iran deal? - Al Jazeera",
           "source_layer": "non_kinetic",
-          "event_type": "diplomatic",
+          "event_type": "ceasefire",
           "event_direction": "mixed",
           "operational_component": 0.0,
-          "strategic_modifier": 2.0,
+          "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": 2.0,
-          "final_score": 2.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
-          "primary_daily_indicator": "nuclear_activity",
+          "primary_daily_indicator": "negotiation",
           "indicators": [
-            {
-              "id": "nuclear_activity",
-              "name": "Nuclear programme escalation",
-              "score": 8.0,
-              "direction": "increase",
-              "interest": {
-                "id": "nuclear_programme",
-                "name": "Preserve nuclear programme",
-                "weight": 9.0
-              },
-              "recognition_rule_count": 1
-            },
             {
               "id": "negotiation",
               "name": "Negotiation",
@@ -147,55 +135,42 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Nuclear programme escalation, Negotiation. Operational component: +0.00; strategic modifier: +2.00; final contribution before daily deduplication: +2.00. Event: Iran’s enriched uranium re-emerges as point of contention in US talks - Al Jazeera",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Can Russia broker a new US-Iran deal? - Al Jazeera",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxObU1fR08wbW14TkFSa0ZmVW5ZbHd6ZDA3QzlyOXRXWGVtYW9wUEdhdlN1dENmUjdvbjRaLW55X01QMjZVcFVGdmhyQVc5ei1YSjM2S2xKQXZBZVNLOXJsQ2xqcWU5cnRTMVpJbml0eURYTGs4a1VyOUozdC1kSDNrWWN6Mk9FRmRwRzFjWWs2SmNGZzQ1QzNLV3JSY01Vcjg2MXVqYnRrRDFqUnEyTFpr0gG0AUFVX3lxTE9UZUJucFFuTnhUWDE5QnZIa2VabS1KX1R3MEhDX0VMcWtDdWg4OG9mR3ZZbTRyNjhJNTREOEZscV9LUzlFZmR0ZW1DMTJuV3RuYS1pRGZLNldNUjZIbzlDZHVuUXNwZHphODhFS1JnWDNXTktRYmhvSXlCbW9sZWNBXzZLbmxHS1otbl81NjJoTG1aQThfS25OX2R4RUZ0bUsxWk9QanBFbU5SQ1VueEJLZDB3aQ?oc=5",
-          "existing_event_score": 2.0,
+          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQb0t6TE1iTm95ald6TEVjM29NUjFjOTJ1ZWJyODFWeWtUeGR3T1ZDa2NXX0ZIQ3RGZUxNUWF1Q002amRNOHVGOW5Cazh3N3lEaGROQ2t4dkpCZmo4ZmFrQm5BNXNYZ3ZGemJHa3FPQjcxWm5NVE5jWFk4c1FiQ190eG1mSmZuYWExLVHSAY8BQVVfeXFMT2FDR2F4X0dyOXVGczJBRkJXcVJFbGpSQ1RRSU9IM0NnejEzdm8tSFVkMnlaeWhjZzV6Wk5FZW10c0lER19fMGM0OXBrcDU1MVJNaGp2Rk4yODVOakMzNUMxem5RMVp4UUdZS3RtMTFSLVhZa0lrbHcxS25vc3ZlWURpQVVNc3d0MEpNQ0lqUG8?oc=5",
+          "existing_event_score": 1.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
-            "nuclear_activity",
             "negotiation"
           ],
           "duplicate_daily_indicators": []
         }
       ],
-      "weighted_score_7d": -5.5,
-      "pressure_index_7d": 39.0,
+      "weighted_score_7d": -10.0,
+      "pressure_index_7d": 30.0,
       "pressure_level": "reduced",
-      "trend": "strong_increase",
+      "trend": "strong_decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000001",
-          "timestamp": "2026-10-21T12:20:43+00:00",
-          "date": "2026-10-21",
+          "event_id": "INFO-000002",
+          "timestamp": "2026-10-22T08:11:56+00:00",
+          "date": "2026-10-22",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "Iran’s enriched uranium re-emerges as point of contention in US talks - Al Jazeera",
+          "title": "Can Russia broker a new US-Iran deal? - Al Jazeera",
           "source_layer": "non_kinetic",
-          "event_type": "diplomatic",
+          "event_type": "ceasefire",
           "event_direction": "mixed",
           "operational_component": 0.0,
-          "strategic_modifier": 2.0,
+          "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
-          "original_final_score": 2.0,
-          "final_score": 2.0,
+          "original_final_score": -6.0,
+          "final_score": -6.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
-          "primary_daily_indicator": "nuclear_activity",
+          "primary_daily_indicator": "negotiation",
           "indicators": [
-            {
-              "id": "nuclear_activity",
-              "name": "Nuclear programme escalation",
-              "score": 8.0,
-              "direction": "increase",
-              "interest": {
-                "id": "nuclear_programme",
-                "name": "Preserve nuclear programme",
-                "weight": 9.0
-              },
-              "recognition_rule_count": 1
-            },
             {
               "id": "negotiation",
               "name": "Negotiation",
@@ -209,13 +184,12 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Nuclear programme escalation, Negotiation. Operational component: +0.00; strategic modifier: +2.00; final contribution before daily deduplication: +2.00. Event: Iran’s enriched uranium re-emerges as point of contention in US talks - Al Jazeera",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Can Russia broker a new US-Iran deal? - Al Jazeera",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxObU1fR08wbW14TkFSa0ZmVW5ZbHd6ZDA3QzlyOXRXWGVtYW9wUEdhdlN1dENmUjdvbjRaLW55X01QMjZVcFVGdmhyQVc5ei1YSjM2S2xKQXZBZVNLOXJsQ2xqcWU5cnRTMVpJbml0eURYTGs4a1VyOUozdC1kSDNrWWN6Mk9FRmRwRzFjWWs2SmNGZzQ1QzNLV3JSY01Vcjg2MXVqYnRrRDFqUnEyTFpr0gG0AUFVX3lxTE9UZUJucFFuTnhUWDE5QnZIa2VabS1KX1R3MEhDX0VMcWtDdWg4OG9mR3ZZbTRyNjhJNTREOEZscV9LUzlFZmR0ZW1DMTJuV3RuYS1pRGZLNldNUjZIbzlDZHVuUXNwZHphODhFS1JnWDNXTktRYmhvSXlCbW9sZWNBXzZLbmxHS1otbl81NjJoTG1aQThfS25OX2R4RUZ0bUsxWk9QanBFbU5SQ1VueEJLZDB3aQ?oc=5",
-          "existing_event_score": 2.0,
+          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQb0t6TE1iTm95ald6TEVjM29NUjFjOTJ1ZWJyODFWeWtUeGR3T1ZDa2NXX0ZIQ3RGZUxNUWF1Q002amRNOHVGOW5Cazh3N3lEaGROQ2t4dkpCZmo4ZmFrQm5BNXNYZ3ZGemJHa3FPQjcxWm5NVE5jWFk4c1FiQ190eG1mSmZuYWExLVHSAY8BQVVfeXFMT2FDR2F4X0dyOXVGczJBRkJXcVJFbGpSQ1RRSU9IM0NnejEzdm8tSFVkMnlaeWhjZzV6Wk5FZW10c0lER19fMGM0OXBrcDU1MVJNaGp2Rk4yODVOakMzNUMxem5RMVp4UUdZS3RtMTFSLVhZa0lrbHcxS25vc3ZlWURpQVVNc3d0MEpNQ0lqUG8?oc=5",
+          "existing_event_score": 1.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
-            "nuclear_activity",
             "negotiation"
           ],
           "duplicate_daily_indicators": []
@@ -223,9 +197,9 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 44.7,
+      "pressure_index_7d": 38.35,
       "pressure_level": "reduced",
-      "trend": "increase",
+      "trend": "strong_decrease",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
   }

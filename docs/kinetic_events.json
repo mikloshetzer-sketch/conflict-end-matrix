@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T10:08:17.745800Z",
+  "generated_at": "2026-10-23T14:10:02.829979Z",
   "source_generated_at": "2026-10-23T10:06:01Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
@@ -7,15 +7,15 @@
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
   "source_event_count": 1799,
-  "event_count": 580,
-  "rejected_count": 1219,
+  "event_count": 578,
+  "rejected_count": 1221,
   "rejection_counts": {
     "category_not_kinetic": 634,
-    "outside_window": 321,
+    "outside_window": 323,
     "no_confirmed_action_language": 222,
     "context_or_hypothetical": 26,
     "retrospective_or_aftermath": 13,
@@ -23,23 +23,23 @@
   },
   "category_counts": {
     "missile": 212,
-    "strike": 121,
-    "drone": 98,
+    "strike": 120,
+    "drone": 97,
     "airstrike": 81,
     "ground": 37,
     "explosion": 30,
     "intercept": 1
   },
   "severity_counts": {
-    "medium": 338,
+    "medium": 337,
     "high": 200,
-    "low": 40,
+    "low": 39,
     "critical": 2
   },
   "actor_counts": {
     "Yemen": 152,
-    "Israel": 139,
-    "Iran": 109,
+    "Israel": 138,
+    "Iran": 108,
     "United States": 76,
     "Unknown actor": 52,
     "Saudi Arabia": 27,
@@ -15074,58 +15074,6 @@
       "validation": {
         "accepted": true,
         "reason": "general_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-1mip5b5pzk000",
-      "timestamp": "2026-07-25T13:58:19Z",
-      "event_type": "kinetic",
-      "subtype": "strike",
-      "category": "strike",
-      "severity": "medium",
-      "actor": "irn",
-      "actor_label": "Iran",
-      "actor_method": "raw_source.origin",
-      "target_country": "Jordan",
-      "location": "Jordan",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Fuel depots at Muwaffaq Salti Airbase in Jordan destroyed",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/80899",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "general_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-3j4i7ge0g9a00",
-      "timestamp": "2026-07-25T10:28:53Z",
-      "event_type": "kinetic",
-      "subtype": "drone",
-      "category": "drone",
-      "severity": "low",
-      "actor": "isr",
-      "actor_label": "Israel",
-      "actor_method": "raw_source.origin",
-      "target_country": "",
-      "location": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "IDF drone strikes kill 2 in northern Gaza: vehicle strike near Abu Shara square and cyclist in Sheikh Radwan neighborhood",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/127245",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
         "mode": "strict_kinetic_v2"
       }
     }
