@@ -1,29 +1,29 @@
 {
-  "generated_at": "2026-10-24T09:34:59.524788Z",
-  "source_generated_at": "2026-10-24T05:55:56Z",
+  "generated_at": "2026-10-24T13:13:13.472688Z",
+  "source_generated_at": "2026-10-24T11:04:07Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1807,
-  "event_count": 574,
-  "rejected_count": 1233,
+  "source_event_count": 1808,
+  "event_count": 572,
+  "rejected_count": 1236,
   "rejection_counts": {
-    "category_not_kinetic": 637,
-    "outside_window": 332,
+    "category_not_kinetic": 638,
+    "outside_window": 334,
     "no_confirmed_action_language": 222,
     "context_or_hypothetical": 26,
     "retrospective_or_aftermath": 13,
     "alert_only": 3
   },
   "category_counts": {
-    "missile": 212,
-    "strike": 121,
+    "missile": 211,
+    "strike": 120,
     "drone": 97,
     "airstrike": 79,
     "ground": 35,
@@ -31,7 +31,7 @@
     "intercept": 1
   },
   "severity_counts": {
-    "medium": 332,
+    "medium": 330,
     "high": 201,
     "low": 39,
     "critical": 2
@@ -39,9 +39,9 @@
   "actor_counts": {
     "Yemen": 150,
     "Israel": 137,
-    "Iran": 107,
+    "Iran": 106,
     "United States": 75,
-    "Unknown actor": 55,
+    "Unknown actor": 54,
     "Saudi Arabia": 25,
     "Lebanon": 12,
     "Iraq": 11,
@@ -14918,58 +14918,6 @@
       "validation": {
         "accepted": true,
         "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-3gk7lhxzf7g00",
-      "timestamp": "2026-07-26T12:36:41Z",
-      "event_type": "kinetic",
-      "subtype": "strike",
-      "category": "strike",
-      "severity": "medium",
-      "actor": "iran",
-      "actor_label": "Iran",
-      "actor_method": "normalized.attacker",
-      "target_country": "Iran",
-      "location": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Ukrainian strike on Iranian merchant vessel in Caspian Sea kills Iranian sailor, Iran's Foreign Ministry condemns attack",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/127308",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-f4isiwt2bjs",
-      "timestamp": "2026-07-26T09:51:26Z",
-      "event_type": "kinetic",
-      "subtype": "missile",
-      "category": "missile",
-      "severity": "medium",
-      "actor": "unknown",
-      "actor_label": "Unknown actor",
-      "actor_method": "normalized.attacker",
-      "target_country": "Iran",
-      "location": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "US military reportedly allowing Iranian projectiles to pass through defenses due to interceptor shortage; local commanders choosing which targets to engage",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/80959",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "general_action_match",
         "mode": "strict_kinetic_v2"
       }
     }
