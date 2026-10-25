@@ -1,20 +1,27 @@
 {
-  "report_date": "2026-10-23",
-  "created_at": "2026-10-23T11:32:34.904671",
+  "report_date": "2026-10-24",
+  "created_at": "2026-10-24T10:52:26.705340",
   "article_count": 50,
-  "total_score": -65,
-  "conflict_index": -1.3,
+  "total_score": -76,
+  "conflict_index": -1.52,
   "assessment": "moderate escalation",
-  "escalation_pressure": -75,
+  "escalation_pressure": -86,
   "diplomatic_pressure": 10,
-  "net_signal": -65,
+  "net_signal": -76,
   "top_drivers": [
     {
       "driver": "war",
       "category": "Military escalation",
-      "count": 22,
+      "count": 18,
       "weight": -1,
-      "impact": -22
+      "impact": -18
+    },
+    {
+      "driver": "attack",
+      "category": "Military escalation",
+      "count": 8,
+      "weight": -2,
+      "impact": -16
     },
     {
       "driver": "strikes",
@@ -31,25 +38,25 @@
       "impact": -14
     },
     {
-      "driver": "attack",
+      "driver": "attacks",
       "category": "Military escalation",
       "count": 5,
       "weight": -2,
       "impact": -10
     },
     {
-      "driver": "attacks",
+      "driver": "offensive",
       "category": "Military escalation",
-      "count": 4,
+      "count": 2,
       "weight": -2,
-      "impact": -8
+      "impact": -4
     },
     {
-      "driver": "talks",
-      "category": "Diplomacy / negotiation",
+      "driver": "escalation",
+      "category": "Threats / retaliation",
       "count": 2,
-      "weight": 2,
-      "impact": 4
+      "weight": -2,
+      "impact": -4
     },
     {
       "driver": "ceasefire",
@@ -59,11 +66,25 @@
       "impact": 3
     },
     {
+      "driver": "threatens",
+      "category": "Threats / retaliation",
+      "count": 2,
+      "weight": -1,
+      "impact": -2
+    },
+    {
       "driver": "threat",
       "category": "Threats / retaliation",
       "count": 2,
       "weight": -1,
       "impact": -2
+    },
+    {
+      "driver": "talks",
+      "category": "Diplomacy / negotiation",
+      "count": 1,
+      "weight": 2,
+      "impact": 2
     },
     {
       "driver": "settlement",
@@ -73,11 +94,11 @@
       "impact": 2
     },
     {
-      "driver": "offensive",
-      "category": "Military escalation",
+      "driver": "diplomacy",
+      "category": "Diplomacy / negotiation",
       "count": 1,
-      "weight": -2,
-      "impact": -2
+      "weight": 2,
+      "impact": 2
     },
     {
       "driver": "dead",
@@ -85,13 +106,6 @@
       "count": 1,
       "weight": -2,
       "impact": -2
-    },
-    {
-      "driver": "threatens",
-      "category": "Threats / retaliation",
-      "count": 1,
-      "weight": -1,
-      "impact": -1
     },
     {
       "driver": "deal",
@@ -104,8 +118,8 @@
   "categories": [
     {
       "category": "Military escalation",
-      "score": -70,
-      "count": 46,
+      "score": -76,
+      "count": 47,
       "keywords": [
         "attack",
         "attacks",
@@ -113,6 +127,16 @@
         "strike",
         "strikes",
         "war"
+      ]
+    },
+    {
+      "category": "Threats / retaliation",
+      "score": -8,
+      "count": 6,
+      "keywords": [
+        "escalation",
+        "threat",
+        "threatens"
       ]
     },
     {
@@ -130,16 +154,8 @@
       "score": 4,
       "count": 2,
       "keywords": [
+        "diplomacy",
         "talks"
-      ]
-    },
-    {
-      "category": "Threats / retaliation",
-      "score": -3,
-      "count": 3,
-      "keywords": [
-        "threat",
-        "threatens"
       ]
     },
     {
@@ -152,6 +168,21 @@
     }
   ],
   "key_signals": [
+    {
+      "title": "Iran Threatens Wider Strikes on Economic and Civilian Targets if U.S. Attacks - WSJ",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPaHA1QkQ2Umo3U1o1S0JWXzlhNU9USmdudGdKUDlVanpOVU5NS3I3WWdWMkhURjJFNUVnTXc0OGN5YUVjN240Y2VtLUt5UlM5dTdKT3E0UGlzYV8xTm1rMUJLWjI0b1dMMmlCLWhTLWVQNVA2YTk5MjNOV29BdkVrOEI5Y3RtWTB3U2k4bDFXYXpvLVYzV0lIbHhJNFlVTDM2SHZXLW5TaGhXcEpTSkpXS1hGUWFweGU1cjVNU3R1bDY?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Fri, 23 Oct 2026 05:24:00 GMT",
+      "score": -10,
+      "tags": [
+        "strike",
+        "strikes",
+        "attack",
+        "attacks",
+        "threat",
+        "threatens"
+      ]
+    },
     {
       "title": "Iran says it has a 'new operational plan' if the U.S. resumes attacks, as shipping vessels report strikes - CNBC",
       "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOTjVoekNKSmw2RVRNS0h1WmV3SFVkUlUwUnFyX2ZqeExKMlk5aTQxWTdGSFBVbXFTUGZWSTNqejcxMk40TGlVdHBoS2RTTU5yMWFTOUhTZW0xVDhkNi02MVRKOUphdlNoenVBVkVoZm5uMTA1Umk2a0NJTzdHQkNyYzhsR0drUWlaSDdBZW5oQzg5WEnSAZgBQVVfeXFMT3ZIMWthWE1pMkRGSXlkZnpvRHRVd1NMc2hqOFIzN2RIUkNVX3E5OW9zNGh1WjVUMk9jYWlybldaWXRUay1ONmc3T3dKMkdxRDFnLXM1Nm1tblNvSmxUZ3paOTU4VjlGeE40bmY1THJ2M25Ua1NUUHplUmp1WUpwLXhPc0M1ZGM0eG1qSFRMSGtxVTZucTh3Qjk?oc=5",
@@ -166,44 +197,10 @@
       ]
     },
     {
-      "title": "Gulf exports more oil than it did before Iran war despite surge in Hormuz attacks - Middle East Eye",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOOFlPYlZQb1g3ZFpTZDdQS0ZVSUFwN3JBdFVIYmVkMVgyLXpFamZ1QXlZZVVFZzR5VnNUQVpyUFNzTHFWRUhtMVRxdlhVZmZ2MlN2MndTaHV1Vzk4RVBJRjF5enFJSzQxYUV6YTNkeUY2SWFUZDlpa2JWQ2VUdTRGUy14cnJWN3dNVGFNSEJMalRwRzJUYXdOVG8zWEdoTjM2SExR?oc=5",
-      "source": "\"middle east conflict when:7d\" - Google News",
-      "published": "Wed, 21 Oct 2026 17:49:04 GMT",
-      "score": -5,
-      "tags": [
-        "attack",
-        "attacks",
-        "war"
-      ]
-    },
-    {
       "title": "U.S. and Israel Draw Up Plans for Renewed Strikes on Iran After Elections - The New York Times",
       "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOaFNybFlkMEkyWkpGZUhTNHUyd2V2Y0JGQkNUNzdJVFhaNlpMWU1FQXh6NG9PWWU0ZlBSdDBCUXUwcEc0c1lJaXRFMzdNajVFdjN5Mm43Y2dBdmNST2lYY1JsWjA5dlVzZkZFcGVaY1RlUEMwS3pOblF0RlVzRGtlYm40TWh2NEp3UGc?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
       "published": "Wed, 21 Oct 2026 22:41:33 GMT",
-      "score": -4,
-      "tags": [
-        "strike",
-        "strikes"
-      ]
-    },
-    {
-      "title": "Trump accuses Iran of making up fake strikes on ships to drive up oil prices - CBS News",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQZDJacGlyUkJSMmZfSXF5dlBwLU5PRXdsQnZiMFRyRmJTeVU3dHZnQlF6WDVRQ0pjYlFFamxjV3dXU0E4SmZ0SkRUMW1uLVh6cE05SDBLTEhlTnI3T3dwQXNWbFQ3TzFaZ1lZY0RNeVlNSW8zaDN6aDh1NWg2ZTNvTV9OM0xYQQ?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Wed, 21 Oct 2026 13:45:00 GMT",
-      "score": -4,
-      "tags": [
-        "strike",
-        "strikes"
-      ]
-    },
-    {
-      "title": "U.S. Reportedly Considering Major Strikes on Iran After Midterms - Time Magazine",
-      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9hN2RlY0Vwc2hiQ1NHYkJibHctZm9WMWNlQ2x5VFY0NVhSdTdJQUdaQmZOZGxULVFXRC11aEVMMmNjQXlYV3J3SW9LME1YNVpCZmE0d1FFNjJjN1lER2lnM2FaOWR0dkRZa3hrVnZaYVU4U2Vvb2RXdUVBbzU?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Thu, 22 Oct 2026 10:00:00 GMT",
       "score": -4,
       "tags": [
         "strike",
@@ -233,10 +230,21 @@
       ]
     },
     {
-      "title": "Netanyahu made plans to restart Iran strikes earlier this month - Financial Times",
-      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQLTc5RTJDQlJSVUF5V2ctTk9wT2k3RGsxTjJFdWdEYmRsNzk1SW9idnlxMUJ5Q09ZVllWUkYwZ2I0a2FmWlpIeThhVFVKRE9DYmFjOXZldHNCR29LbDdKZWNFOVFXaVVQSlJUdnRobDk5T2NtQUpfb3Q3WEpGc2J2TWNXM3o?oc=5",
+      "title": "U.S. Reportedly Considering Major Strikes on Iran After Midterms - Time Magazine",
+      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9hN2RlY0Vwc2hiQ1NHYkJibHctZm9WMWNlQ2x5VFY0NVhSdTdJQUdaQmZOZGxULVFXRC11aEVMMmNjQXlYV3J3SW9LME1YNVpCZmE0d1FFNjJjN1lER2lnM2FaOWR0dkRZa3hrVnZaYVU4U2Vvb2RXdUVBbzU?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Wed, 21 Oct 2026 04:01:00 GMT",
+      "published": "Thu, 22 Oct 2026 10:00:00 GMT",
+      "score": -4,
+      "tags": [
+        "strike",
+        "strikes"
+      ]
+    },
+    {
+      "title": "Trump accuses Iran of making up fake strikes on ships to drive up oil prices - CBS News",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQZDJacGlyUkJSMmZfSXF5dlBwLU5PRXdsQnZiMFRyRmJTeVU3dHZnQlF6WDVRQ0pjYlFFamxjV3dXU0E4SmZ0SkRUMW1uLVh6cE05SDBLTEhlTnI3T3dwQXNWbFQ3TzFaZ1lZY0RNeVlNSW8zaDN6aDh1NWg2ZTNvTV9OM0xYQQ?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Wed, 21 Oct 2026 13:45:00 GMT",
       "score": -4,
       "tags": [
         "strike",
@@ -258,11 +266,33 @@
       "title": "Oil prices hit five-month high as Houthi attacks stoke Middle East supply fears - Reuters",
       "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOYzBEdGVKYmZ3VVpJajg0TW5DN2VHVEM2aDVTcFJKQVduMnVMTU5NbVcyMGxBanBHY3VvMzJQR1VrQWM4b0hLeG1YaTFWcldTeU9yTlBXc3FiR1FtcUp0SmxhRkJkWmpmZ2x6X3VGZHZEUDNLTE9LTFZNSlBWWjNJVGtaV3YwWkc4QVhxbHozYkx5THpZMVlYVDAtd0dqbUMyOUcyVk91NEYxaFFCZklRWWhjQm5qN2NvVHdWdnZIQVJSMk0?oc=5",
       "source": "\"middle east conflict when:7d\" - Google News",
-      "published": "Thu, 22 Oct 2026 00:46:00 GMT",
+      "published": "Thu, 22 Oct 2026 23:54:39 GMT",
       "score": -4,
       "tags": [
         "attack",
         "attacks"
+      ]
+    },
+    {
+      "title": "'Escalation is coming': Middle East on edge as new Israeli-US attack on Iran looms - Middle East Eye",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNbjBMWjJfMmhxTXBZX3FueWRLbE8wRGhGT29SMDM1d2VrbnFQeXdveVpGT1UzZ0hzc1hlaHNoVVBiVzdVbzBBT2l3OU5ldFp4Wk1lTmdSMzNIZURVdms1RzRudTgtRE82MDQtdWN6ZGN6dWxDV1dlMnRTQTZDNW5ocTVEUDBmYUIwNHB5dzFRNUM3Q2s2VkFDWlhQV3hVREVHNjFzag?oc=5",
+      "source": "\"middle east conflict when:7d\" - Google News",
+      "published": "Fri, 23 Oct 2026 16:37:26 GMT",
+      "score": -4,
+      "tags": [
+        "attack",
+        "escalation"
+      ]
+    },
+    {
+      "title": "Iran reveals ‘offensive’ doctrine, US issues alert: Is war imminent? - Al Jazeera",
+      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPYWoydmRWR3hfaGxNdFNTVU5hcGhtckhXVFI1d3RyLU1BS3JPaDRma29uWktuQURIQ2xqMlRFMmFCeEJranpybUZhWHlkSjktc3p2TUtvckF3ZUNMVzZlRDhIYk14YzBFc0ZxUmVmd1E5bmVHTDhOLXNPTkhzZ1VoXzNtWk9pdDhWcUNKMGhaV3BDSFZVUlNLME9WSG1ZTFVwSnV4SkZpU1LSAa4BQVVfeXFMTVZwTlRtcW1DZ3BLaDNPRUhXV0RFTFJiUktZRVRxcG1BZTg5c2dFYW1jWU96WlB0U2RzVkxhblhDcU9yNGpwNlc2OFRjYnJSblYwWS01dlZfbU5aWk92M0dzOVd1bWV2UUE3U0x1dWxxOGthbkZJRDJ2MUJTRHk0SldTQ01UbldwWVZrRG40Q2M2S3RsME9SZTVaZ1JuOHJZeXZjd0h0NHJUN3MyeU9R?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Thu, 22 Oct 2026 12:15:42 GMT",
+      "score": -3,
+      "tags": [
+        "offensive",
+        "war"
       ]
     },
     {
@@ -275,23 +305,11 @@
         "offensive",
         "war"
       ]
-    },
-    {
-      "title": "Iran threatens to target US political assets, infrastructure if new war erupts - Anadolu Ajansı",
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOQmxrVzRzemFrTmpucFNCTXluRTA1UTVRbmx4VTZ0THdPNGNCa1RQb1pydVRzQ3FTdklONDZ2MjhrdGVzVkJOTXJtX2xuRXJLSnVGQVR3eEdZNS1sVjZCZ1dhbVhVOTRNMk1VU2pBYjNtZWtRUjZOVDR0aERSOHFOUkgtcXJqNHdIWTF5YUhPTHVWd2psQ1lJWFVFWjhXazdnc0FncmRkTUhlWUozUXN4NGVwd0lpUFlGNzRXRjZPWQ?oc=5",
-      "source": "\"middle east conflict when:7d\" - Google News",
-      "published": "Wed, 21 Oct 2026 21:01:24 GMT",
-      "score": -3,
-      "tags": [
-        "war",
-        "threat",
-        "threatens"
-      ]
     }
   ],
   "integrity": {
     "driver_net_equals_total_score": true,
-    "driver_net": -65,
-    "source_total_score": -65
+    "driver_net": -76,
+    "source_total_score": -76
   }
 }
