@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T13:13:14.141776+00:00",
+  "generated_at": "2026-10-25T13:39:15.341017+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,13 +18,13 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 654,
-    "kinetic_events_loaded": 572,
-    "unique_events_scanned": 1196,
-    "strategic_evidence_contributions": 366,
+    "non_kinetic_events_loaded": 655,
+    "kinetic_events_loaded": 564,
+    "unique_events_scanned": 1190,
+    "strategic_evidence_contributions": 367,
     "evidence_contributions_by_actor": {
       "usa": 122,
-      "iran": 244
+      "iran": 245
     },
     "scored_contributions_by_actor": {
       "usa": 89,
@@ -32,14 +32,14 @@
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
-      "iran": 111
+      "iran": 112
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 339,
+      "non_kinetic": 340,
       "kinetic": 27
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 214,
+      "iran:negotiation": 215,
       "usa:negotiation": 98,
       "iran:missile_test": 18,
       "usa:presidential_warning": 15,
@@ -65,7 +65,7 @@
       "usa:carrier_deployment": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 1,
+    "skipped_current_utc_day": 0,
     "history_day_count": 227
   },
   "configuration_warnings": [],
@@ -95,10 +95,10 @@
       "raw_score": -6.0,
       "positive_score": 0.0,
       "negative_score": -6.0,
-      "event_count": 1,
+      "event_count": 2,
       "scored_event_count": 1,
-      "evidence_event_count": 1,
-      "suppressed_duplicate_count": 0,
+      "evidence_event_count": 2,
+      "suppressed_duplicate_count": 1,
       "increase_event_count": 0,
       "decrease_event_count": 1,
       "contributors": [
@@ -144,6 +144,49 @@
             "negotiation"
           ],
           "duplicate_daily_indicators": []
+        },
+        {
+          "event_id": "INFO-000004",
+          "timestamp": "2026-10-22T07:00:00+00:00",
+          "date": "2026-10-22",
+          "actor": "iran",
+          "bilateral_event": false,
+          "title": "Explainer: Can the US and Iran bridge their differences in talks? - Reuters",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -6.0,
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": true,
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "primary_daily_indicator": null,
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_regime_destroying_war",
+                "name": "Avoid regime-destroying war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Explainer: Can the US and Iran bridge their differences in talks? - Reuters",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQRjFPWXAxalZybTVKUmx5QVlGOVktWU50dF96aDFUSmF3TnFMSTdscURBcldSd05xbWFfV2wxR3BVVzBMb19zMGJiMC13T1YtbjFaY3VRdXB2TzdFSDlhTXhCcjZWQWJQdFJYVUdUTHpsc2VwdnhLNWloaFlsa1Y5eHJscjVrQzNNSjdGdGFSa0RGOGhaR1pRNGFvMElzc3NFZGpoMFNTWHhubFJYeFE?oc=5",
+          "existing_event_score": 2.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [],
+          "duplicate_daily_indicators": [
+            "negotiation"
+          ]
         }
       ],
       "weighted_score_7d": -10.0,
