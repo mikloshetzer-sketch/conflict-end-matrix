@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-10-26T11:10:16.000162Z",
-  "source_generated_at": "2026-10-26T07:03:08Z",
+  "generated_at": "2026-10-26T16:01:44.043785Z",
+  "source_generated_at": "2026-10-26T14:18:04Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1818,
-  "event_count": 562,
-  "rejected_count": 1256,
+  "source_event_count": 1821,
+  "event_count": 561,
+  "rejected_count": 1260,
   "rejection_counts": {
-    "category_not_kinetic": 641,
-    "outside_window": 350,
+    "category_not_kinetic": 644,
+    "outside_window": 351,
     "no_confirmed_action_language": 223,
     "context_or_hypothetical": 26,
     "retrospective_or_aftermath": 13,
@@ -24,14 +24,14 @@
   "category_counts": {
     "missile": 213,
     "strike": 120,
-    "drone": 86,
+    "drone": 85,
     "airstrike": 78,
     "ground": 34,
     "explosion": 30,
     "intercept": 1
   },
   "severity_counts": {
-    "medium": 327,
+    "medium": 326,
     "high": 202,
     "low": 31,
     "critical": 2
@@ -44,7 +44,7 @@
     "Unknown actor": 50,
     "Saudi Arabia": 24,
     "Lebanon": 12,
-    "Iraq": 8,
+    "Iraq": 7,
     "Jordan": 1,
     "Syria": 1
   },
@@ -14627,32 +14627,6 @@
       "description": "Drones launched from Iraq attack Saudi Arabian petroleum facilities in Eastern Saudi Arabia",
       "source_name": "CIG_telegram",
       "source_url": "https://t.me/CIG_telegram/81160",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-1kbxizghlyf40",
-      "timestamp": "2026-07-28T13:52:42Z",
-      "event_type": "kinetic",
-      "subtype": "drone",
-      "category": "drone",
-      "severity": "medium",
-      "actor": "irq",
-      "actor_label": "Iraq",
-      "actor_method": "raw_source.origin",
-      "target_country": "",
-      "location": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Iraqi militias launch drones toward Saudi Arabia's eastern airspace, Saudi Arabia claims all intercepted",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/81126",
       "source_repository": "mikloshetzer-sketch/me-security-monitor",
       "source_collection": "events",
       "validation": {
