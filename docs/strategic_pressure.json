@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T16:01:45.154564+00:00",
+  "generated_at": "2026-10-27T15:15:44.138931+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,28 +18,28 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 655,
-    "kinetic_events_loaded": 561,
-    "unique_events_scanned": 1187,
-    "strategic_evidence_contributions": 367,
+    "non_kinetic_events_loaded": 660,
+    "kinetic_events_loaded": 531,
+    "unique_events_scanned": 1162,
+    "strategic_evidence_contributions": 368,
     "evidence_contributions_by_actor": {
       "usa": 122,
-      "iran": 245
+      "iran": 246
     },
     "scored_contributions_by_actor": {
       "usa": 89,
-      "iran": 133
+      "iran": 134
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
       "iran": 112
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 340,
+      "non_kinetic": 341,
       "kinetic": 27
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 215,
+      "iran:negotiation": 216,
       "usa:negotiation": 98,
       "iran:missile_test": 18,
       "usa:presidential_warning": 15,
@@ -52,7 +52,7 @@
       "usa:carrier_deployment": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 111,
+      "iran:negotiation": 112,
       "usa:negotiation": 69,
       "usa:presidential_warning": 15,
       "iran:missile_test": 10,
@@ -66,13 +66,13 @@
     },
     "skipped_without_timestamp": 0,
     "skipped_current_utc_day": 0,
-    "history_day_count": 227
+    "history_day_count": 231
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-10-22",
+  "latest_complete_utc_day": "2026-10-26",
   "current": {
-    "date": "2026-10-22",
+    "date": "2026-10-26",
     "calculation_mode": "live",
     "usa": {
       "raw_score": 0.0,
@@ -85,73 +85,30 @@
       "increase_event_count": 0,
       "decrease_event_count": 0,
       "contributors": [],
-      "weighted_score_7d": -1.65,
-      "pressure_index_7d": 46.7,
+      "weighted_score_7d": 0.0,
+      "pressure_index_7d": 50.0,
       "pressure_level": "balanced",
-      "trend": "decrease",
+      "trend": "increase",
       "strongest_contributors": []
     },
     "iran": {
       "raw_score": -6.0,
       "positive_score": 0.0,
       "negative_score": -6.0,
-      "event_count": 2,
+      "event_count": 1,
       "scored_event_count": 1,
-      "evidence_event_count": 2,
-      "suppressed_duplicate_count": 1,
+      "evidence_event_count": 1,
+      "suppressed_duplicate_count": 0,
       "increase_event_count": 0,
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000003",
-          "timestamp": "2026-10-22T08:11:56+00:00",
-          "date": "2026-10-22",
+          "event_id": "INFO-000001",
+          "timestamp": "2026-10-26T23:24:00+00:00",
+          "date": "2026-10-26",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "Can Russia broker a new US-Iran deal? - Al Jazeera",
-          "source_layer": "non_kinetic",
-          "event_type": "ceasefire",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": -6.0,
-          "duplicate_indicator_evidence": false,
-          "daily_score_suppressed": false,
-          "suppression_reason": null,
-          "primary_daily_indicator": "negotiation",
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_regime_destroying_war",
-                "name": "Avoid regime-destroying war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Can Russia broker a new US-Iran deal? - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQb0t6TE1iTm95ald6TEVjM29NUjFjOTJ1ZWJyODFWeWtUeGR3T1ZDa2NXX0ZIQ3RGZUxNUWF1Q002amRNOHVGOW5Cazh3N3lEaGROQ2t4dkpCZmo4ZmFrQm5BNXNYZ3ZGemJHa3FPQjcxWm5NVE5jWFk4c1FiQ190eG1mSmZuYWExLVHSAY8BQVVfeXFMT2FDR2F4X0dyOXVGczJBRkJXcVJFbGpSQ1RRSU9IM0NnejEzdm8tSFVkMnlaeWhjZzV6Wk5FZW10c0lER19fMGM0OXBrcDU1MVJNaGp2Rk4yODVOakMzNUMxem5RMVp4UUdZS3RtMTFSLVhZa0lrbHcxS25vc3ZlWURpQVVNc3d0MEpNQ0lqUG8?oc=5",
-          "existing_event_score": 1.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [
-            "negotiation"
-          ],
-          "duplicate_daily_indicators": []
-        },
-        {
-          "event_id": "INFO-000004",
-          "timestamp": "2026-10-22T07:00:00+00:00",
-          "date": "2026-10-22",
-          "actor": "iran",
-          "bilateral_event": false,
-          "title": "Explainer: Can the US and Iran bridge their differences in talks? - Reuters",
+          "title": "Mecca pact nations hold talks with Iran to prevent renewed Middle East war - France 24",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
           "event_direction": "mixed",
@@ -159,11 +116,11 @@
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
           "original_final_score": -6.0,
-          "final_score": 0.0,
-          "duplicate_indicator_evidence": true,
-          "daily_score_suppressed": true,
-          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
-          "primary_daily_indicator": null,
+          "final_score": -6.0,
+          "duplicate_indicator_evidence": false,
+          "daily_score_suppressed": false,
+          "suppression_reason": null,
+          "primary_daily_indicator": "negotiation",
           "indicators": [
             {
               "id": "negotiation",
@@ -178,31 +135,31 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Explainer: Can the US and Iran bridge their differences in talks? - Reuters",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQRjFPWXAxalZybTVKUmx5QVlGOVktWU50dF96aDFUSmF3TnFMSTdscURBcldSd05xbWFfV2wxR3BVVzBMb19zMGJiMC13T1YtbjFaY3VRdXB2TzdFSDlhTXhCcjZWQWJQdFJYVUdUTHpsc2VwdnhLNWloaFlsa1Y5eHJscjVrQzNNSjdGdGFSa0RGOGhaR1pRNGFvMElzc3NFZGpoMFNTWHhubFJYeFE?oc=5",
-          "existing_event_score": 2.0,
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Mecca pact nations hold talks with Iran to prevent renewed Middle East war - France 24",
+          "source": "\"middle east conflict when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNX2xPX1ZwcnFVTEM2WXNaLUhkWS00SHdzbmVoU2tMclo2YnZWdmcxOVdYZUhQcHFpRm5sV2pvRm53d2pzVzV2YkNtT0ZhQzBaLXVWS0lVbDBCdi1iTXkwZVgza2dmNlp6TWl0Ymw3Rjh4anN3Q1lNZ0FXRzBKV01xeG9JdWZNLWlIMXc?oc=5",
+          "existing_event_score": 1.0,
           "existing_direction_score": 0.0,
-          "winning_daily_indicators": [],
-          "duplicate_daily_indicators": [
+          "winning_daily_indicators": [
             "negotiation"
-          ]
+          ],
+          "duplicate_daily_indicators": []
         }
       ],
-      "weighted_score_7d": -10.0,
-      "pressure_index_7d": 30.0,
+      "weighted_score_7d": -7.9,
+      "pressure_index_7d": 34.2,
       "pressure_level": "reduced",
       "trend": "strong_decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000003",
-          "timestamp": "2026-10-22T08:11:56+00:00",
-          "date": "2026-10-22",
+          "event_id": "INFO-000001",
+          "timestamp": "2026-10-26T23:24:00+00:00",
+          "date": "2026-10-26",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "Can Russia broker a new US-Iran deal? - Al Jazeera",
+          "title": "Mecca pact nations hold talks with Iran to prevent renewed Middle East war - France 24",
           "source_layer": "non_kinetic",
-          "event_type": "ceasefire",
+          "event_type": "diplomatic",
           "event_direction": "mixed",
           "operational_component": 0.0,
           "strategic_modifier": -6.0,
@@ -227,9 +184,9 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Can Russia broker a new US-Iran deal? - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQb0t6TE1iTm95ald6TEVjM29NUjFjOTJ1ZWJyODFWeWtUeGR3T1ZDa2NXX0ZIQ3RGZUxNUWF1Q002amRNOHVGOW5Cazh3N3lEaGROQ2t4dkpCZmo4ZmFrQm5BNXNYZ3ZGemJHa3FPQjcxWm5NVE5jWFk4c1FiQ190eG1mSmZuYWExLVHSAY8BQVVfeXFMT2FDR2F4X0dyOXVGczJBRkJXcVJFbGpSQ1RRSU9IM0NnejEzdm8tSFVkMnlaeWhjZzV6Wk5FZW10c0lER19fMGM0OXBrcDU1MVJNaGp2Rk4yODVOakMzNUMxem5RMVp4UUdZS3RtMTFSLVhZa0lrbHcxS25vc3ZlWURpQVVNc3d0MEpNQ0lqUG8?oc=5",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Mecca pact nations hold talks with Iran to prevent renewed Middle East war - France 24",
+          "source": "\"middle east conflict when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNX2xPX1ZwcnFVTEM2WXNaLUhkWS00SHdzbmVoU2tMclo2YnZWdmcxOVdYZUhQcHFpRm5sV2pvRm53d2pzVzV2YkNtT0ZhQzBaLXVWS0lVbDBCdi1iTXkwZVgza2dmNlp6TWl0Ymw3Rjh4anN3Q1lNZ0FXRzBKV01xeG9JdWZNLWlIMXc?oc=5",
           "existing_event_score": 1.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
@@ -240,9 +197,9 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 38.35,
+      "pressure_index_7d": 42.1,
       "pressure_level": "reduced",
-      "trend": "strong_decrease",
+      "trend": "decrease",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
   }
