@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T15:15:44.138931+00:00",
+  "generated_at": "2026-10-28T15:52:15.185296+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,34 +18,34 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 660,
-    "kinetic_events_loaded": 531,
-    "unique_events_scanned": 1162,
-    "strategic_evidence_contributions": 368,
+    "non_kinetic_events_loaded": 661,
+    "kinetic_events_loaded": 503,
+    "unique_events_scanned": 1133,
+    "strategic_evidence_contributions": 364,
     "evidence_contributions_by_actor": {
       "usa": 122,
-      "iran": 246
+      "iran": 242
     },
     "scored_contributions_by_actor": {
       "usa": 89,
-      "iran": 134
+      "iran": 131
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
-      "iran": 112
+      "iran": 111
     },
     "contributions_by_source_layer": {
       "non_kinetic": 341,
-      "kinetic": 27
+      "kinetic": 23
     },
     "evidence_indicator_counts": {
       "iran:negotiation": 216,
       "usa:negotiation": 98,
-      "iran:missile_test": 18,
+      "iran:missile_test": 15,
       "usa:presidential_warning": 15,
       "iran:hormuz_threat": 9,
       "usa:ceasefire_support": 8,
-      "iran:missile_preparation": 4,
+      "iran:missile_preparation": 3,
       "iran:nuclear_activity": 2,
       "iran:strike_preparation": 2,
       "usa:strike_preparation": 2,
@@ -55,17 +55,17 @@
       "iran:negotiation": 112,
       "usa:negotiation": 69,
       "usa:presidential_warning": 15,
-      "iran:missile_test": 10,
       "iran:hormuz_threat": 9,
-      "iran:missile_preparation": 4,
+      "iran:missile_test": 8,
       "usa:ceasefire_support": 4,
+      "iran:missile_preparation": 3,
       "iran:nuclear_activity": 2,
       "iran:strike_preparation": 2,
       "usa:strike_preparation": 2,
       "usa:carrier_deployment": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 0,
+    "skipped_current_utc_day": 2,
     "history_day_count": 231
   },
   "configuration_warnings": [],
@@ -103,7 +103,7 @@
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000001",
+          "event_id": "INFO-000003",
           "timestamp": "2026-10-26T23:24:00+00:00",
           "date": "2026-10-26",
           "actor": "iran",
@@ -152,7 +152,7 @@
       "trend": "strong_decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000001",
+          "event_id": "INFO-000003",
           "timestamp": "2026-10-26T23:24:00+00:00",
           "date": "2026-10-26",
           "actor": "iran",
