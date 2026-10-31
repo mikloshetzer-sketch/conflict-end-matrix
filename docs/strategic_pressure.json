@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T15:45:20.911419+00:00",
+  "generated_at": "2026-10-31T15:13:32.482359+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,28 +18,28 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 664,
-    "kinetic_events_loaded": 500,
+    "non_kinetic_events_loaded": 669,
+    "kinetic_events_loaded": 494,
     "unique_events_scanned": 1135,
-    "strategic_evidence_contributions": 367,
+    "strategic_evidence_contributions": 368,
     "evidence_contributions_by_actor": {
       "usa": 123,
-      "iran": 244
+      "iran": 245
     },
     "scored_contributions_by_actor": {
       "usa": 90,
-      "iran": 133
+      "iran": 134
     },
     "suppressed_duplicates_by_actor": {
       "usa": 33,
       "iran": 111
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 343,
+      "non_kinetic": 344,
       "kinetic": 24
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 217,
+      "iran:negotiation": 218,
       "usa:negotiation": 99,
       "iran:missile_test": 15,
       "usa:presidential_warning": 15,
@@ -52,7 +52,7 @@
       "usa:carrier_deployment": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 113,
+      "iran:negotiation": 114,
       "usa:negotiation": 70,
       "usa:presidential_warning": 15,
       "iran:hormuz_threat": 9,
@@ -66,15 +66,32 @@
     },
     "skipped_without_timestamp": 0,
     "skipped_current_utc_day": 0,
-    "history_day_count": 233
+    "history_day_count": 235
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-10-28",
+  "latest_complete_utc_day": "2026-10-30",
   "current": {
-    "date": "2026-10-28",
+    "date": "2026-10-30",
     "calculation_mode": "live",
     "usa": {
+      "raw_score": 0.0,
+      "positive_score": 0.0,
+      "negative_score": 0.0,
+      "event_count": 0,
+      "scored_event_count": 0,
+      "evidence_event_count": 0,
+      "suppressed_duplicate_count": 0,
+      "increase_event_count": 0,
+      "decrease_event_count": 0,
+      "contributors": [],
+      "weighted_score_7d": -4.2,
+      "pressure_index_7d": 41.6,
+      "pressure_level": "reduced",
+      "trend": "increase",
+      "strongest_contributors": []
+    },
+    "iran": {
       "raw_score": -6.0,
       "positive_score": 0.0,
       "negative_score": -6.0,
@@ -86,14 +103,14 @@
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000004",
-          "timestamp": "2026-10-28T13:41:00+00:00",
-          "date": "2026-10-28",
-          "actor": "usa",
-          "bilateral_event": true,
-          "title": "Gulf states working on multipart peace deal to avert renewal of US-Iran war - The Guardian",
+          "event_id": "INFO-000002",
+          "timestamp": "2026-10-30T06:35:12+00:00",
+          "date": "2026-10-30",
+          "actor": "iran",
+          "bilateral_event": false,
+          "title": "Iran braces for possible new conflict with US and Israel despite diplomatic talks - Le Monde.fr",
           "source_layer": "non_kinetic",
-          "event_type": "ceasefire",
+          "event_type": "diplomatic",
           "event_direction": "mixed",
           "operational_component": 0.0,
           "strategic_modifier": -6.0,
@@ -111,137 +128,38 @@
               "score": -6.0,
               "direction": "decrease",
               "interest": {
-                "id": "avoid_full_scale_war",
-                "name": "Avoid full-scale regional war",
+                "id": "avoid_regime_destroying_war",
+                "name": "Avoid regime-destroying war",
                 "weight": 10.0
               },
               "recognition_rule_count": 2
             }
           ],
-          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Gulf states working on multipart peace deal to avert renewal of US-Iran war - The Guardian",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran braces for possible new conflict with US and Israel despite diplomatic talks - Le Monde.fr",
           "source": "\"middle east conflict when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxONnhLY0QxNnotazVyRzJXNnJGZTJORWI5UzZpakY5Ql9ybWJONUt1MVl4UEdpb1JOZk5KNm1TdTV1TkRUTERwdzBHdjJzU3IxdWM4ME5vMTZFMWI5bVkwN0dXSjItVUpGMFpSSXBwOGdkVVEtM2lpclhTRGVMTjFYS0VKTl9yT0FTWlZzc2dEdVRpNmVDM1V5NlpudXRyT0RoNzlGaXhhNA?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 0.0,
+          "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQeWozTVJwa2dwelRCWUQ0aWQwemJxY1FBRVZJeTJ6ZXpYbm1Xb1pyQkpnd05TSVVtUmFsU21pTjd2UExQekMwbnlKOGJQRG5Ocjdpd2h2M0RPYWhnZVFXSzdwLWxqbmJmd2ZfenNzbTExT3RjUm5kWG9nX2h5LWM4TGRIcDBjaTJHUnZpMFhycFgzRGM1NHlKUnBjbzd0X1hYWEhfN0VvTnItUms5WS1OMkttcnlFdUhYRnQtTTdXR0FobmlrV1lFWGJsQlZLYmJwVmRKd2Y0U0xBbUhnMjlWMFVUdHJxbmJ4MzRn?oc=5",
+          "existing_event_score": 4.0,
+          "existing_direction_score": 1.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
           "duplicate_daily_indicators": []
         }
       ],
-      "weighted_score_7d": -6.0,
-      "pressure_index_7d": 38.0,
+      "weighted_score_7d": -5.6,
+      "pressure_index_7d": 38.8,
       "pressure_level": "reduced",
       "trend": "strong_decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000004",
-          "timestamp": "2026-10-28T13:41:00+00:00",
-          "date": "2026-10-28",
-          "actor": "usa",
-          "bilateral_event": true,
-          "title": "Gulf states working on multipart peace deal to avert renewal of US-Iran war - The Guardian",
-          "source_layer": "non_kinetic",
-          "event_type": "ceasefire",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": -6.0,
-          "duplicate_indicator_evidence": false,
-          "daily_score_suppressed": false,
-          "suppression_reason": null,
-          "primary_daily_indicator": "negotiation",
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_full_scale_war",
-                "name": "Avoid full-scale regional war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Gulf states working on multipart peace deal to avert renewal of US-Iran war - The Guardian",
-          "source": "\"middle east conflict when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxONnhLY0QxNnotazVyRzJXNnJGZTJORWI5UzZpakY5Ql9ybWJONUt1MVl4UEdpb1JOZk5KNm1TdTV1TkRUTERwdzBHdjJzU3IxdWM4ME5vMTZFMWI5bVkwN0dXSjItVUpGMFpSSXBwOGdkVVEtM2lpclhTRGVMTjFYS0VKTl9yT0FTWlZzc2dEdVRpNmVDM1V5NlpudXRyT0RoNzlGaXhhNA?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [
-            "negotiation"
-          ],
-          "duplicate_daily_indicators": []
-        }
-      ]
-    },
-    "iran": {
-      "raw_score": 4.0,
-      "positive_score": 10.0,
-      "negative_score": -6.0,
-      "event_count": 2,
-      "scored_event_count": 2,
-      "evidence_event_count": 2,
-      "suppressed_duplicate_count": 0,
-      "increase_event_count": 1,
-      "decrease_event_count": 1,
-      "contributors": [
-        {
-          "event_id": "iranstrike-19mv4atucin40",
-          "timestamp": "2026-10-28T08:25:06+00:00",
-          "date": "2026-10-28",
+          "event_id": "INFO-000002",
+          "timestamp": "2026-10-30T06:35:12+00:00",
+          "date": "2026-10-30",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "WSJ reports US warned Gulf states to prepare for a possible short, intense military campaign against Iran after the midterm elections; US reinforcing missile defenses, replenishing munitions, and preparing bombers and fighter jets for strikes",
-          "source_layer": "kinetic",
-          "event_type": "kinetic",
-          "event_direction": "escalation",
-          "operational_component": 1.0,
-          "strategic_modifier": 9.0,
-          "context_multiplier": 1.0,
-          "original_final_score": 10.0,
-          "final_score": 10.0,
-          "duplicate_indicator_evidence": false,
-          "daily_score_suppressed": false,
-          "suppression_reason": null,
-          "primary_daily_indicator": "missile_preparation",
-          "indicators": [
-            {
-              "id": "missile_preparation",
-              "name": "Missile force preparation",
-              "score": 9.0,
-              "direction": "increase",
-              "interest": {
-                "id": "strategic_deterrence",
-                "name": "Strategic deterrence",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: WSJ reports US warned Gulf states to prepare for a possible short, intense military campaign against Iran after the midterm elections; US reinforcing missile defenses, replenishing munitions, and preparing bombers and fighter jets for strikes",
-          "source": "",
-          "link": "https://t.me/abualiexpress/132713",
-          "existing_event_score": 0.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [
-            "missile_preparation"
-          ],
-          "duplicate_daily_indicators": []
-        },
-        {
-          "event_id": "INFO-000004",
-          "timestamp": "2026-10-28T13:41:00+00:00",
-          "date": "2026-10-28",
-          "actor": "iran",
-          "bilateral_event": true,
-          "title": "Gulf states working on multipart peace deal to avert renewal of US-Iran war - The Guardian",
+          "title": "Iran braces for possible new conflict with US and Israel despite diplomatic talks - Le Monde.fr",
           "source_layer": "non_kinetic",
-          "event_type": "ceasefire",
+          "event_type": "diplomatic",
           "event_direction": "mixed",
           "operational_component": 0.0,
           "strategic_modifier": -6.0,
@@ -266,103 +184,11 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Gulf states working on multipart peace deal to avert renewal of US-Iran war - The Guardian",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran braces for possible new conflict with US and Israel despite diplomatic talks - Le Monde.fr",
           "source": "\"middle east conflict when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxONnhLY0QxNnotazVyRzJXNnJGZTJORWI5UzZpakY5Ql9ybWJONUt1MVl4UEdpb1JOZk5KNm1TdTV1TkRUTERwdzBHdjJzU3IxdWM4ME5vMTZFMWI5bVkwN0dXSjItVUpGMFpSSXBwOGdkVVEtM2lpclhTRGVMTjFYS0VKTl9yT0FTWlZzc2dEdVRpNmVDM1V5NlpudXRyT0RoNzlGaXhhNA?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [
-            "negotiation"
-          ],
-          "duplicate_daily_indicators": []
-        }
-      ],
-      "weighted_score_7d": -1.1,
-      "pressure_index_7d": 47.8,
-      "pressure_level": "balanced",
-      "trend": "strong_increase",
-      "strongest_contributors": [
-        {
-          "event_id": "iranstrike-19mv4atucin40",
-          "timestamp": "2026-10-28T08:25:06+00:00",
-          "date": "2026-10-28",
-          "actor": "iran",
-          "bilateral_event": false,
-          "title": "WSJ reports US warned Gulf states to prepare for a possible short, intense military campaign against Iran after the midterm elections; US reinforcing missile defenses, replenishing munitions, and preparing bombers and fighter jets for strikes",
-          "source_layer": "kinetic",
-          "event_type": "kinetic",
-          "event_direction": "escalation",
-          "operational_component": 1.0,
-          "strategic_modifier": 9.0,
-          "context_multiplier": 1.0,
-          "original_final_score": 10.0,
-          "final_score": 10.0,
-          "duplicate_indicator_evidence": false,
-          "daily_score_suppressed": false,
-          "suppression_reason": null,
-          "primary_daily_indicator": "missile_preparation",
-          "indicators": [
-            {
-              "id": "missile_preparation",
-              "name": "Missile force preparation",
-              "score": 9.0,
-              "direction": "increase",
-              "interest": {
-                "id": "strategic_deterrence",
-                "name": "Strategic deterrence",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "Iran: Missile force preparation. Operational component: +1.00; strategic modifier: +9.00; final contribution before daily deduplication: +10.00. Event: WSJ reports US warned Gulf states to prepare for a possible short, intense military campaign against Iran after the midterm elections; US reinforcing missile defenses, replenishing munitions, and preparing bombers and fighter jets for strikes",
-          "source": "",
-          "link": "https://t.me/abualiexpress/132713",
-          "existing_event_score": 0.0,
-          "existing_direction_score": 0.0,
-          "winning_daily_indicators": [
-            "missile_preparation"
-          ],
-          "duplicate_daily_indicators": []
-        },
-        {
-          "event_id": "INFO-000004",
-          "timestamp": "2026-10-28T13:41:00+00:00",
-          "date": "2026-10-28",
-          "actor": "iran",
-          "bilateral_event": true,
-          "title": "Gulf states working on multipart peace deal to avert renewal of US-Iran war - The Guardian",
-          "source_layer": "non_kinetic",
-          "event_type": "ceasefire",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": -6.0,
-          "duplicate_indicator_evidence": false,
-          "daily_score_suppressed": false,
-          "suppression_reason": null,
-          "primary_daily_indicator": "negotiation",
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_regime_destroying_war",
-                "name": "Avoid regime-destroying war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 2
-            }
-          ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Gulf states working on multipart peace deal to avert renewal of US-Iran war - The Guardian",
-          "source": "\"middle east conflict when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxONnhLY0QxNnotazVyRzJXNnJGZTJORWI5UzZpakY5Ql9ybWJONUt1MVl4UEdpb1JOZk5KNm1TdTV1TkRUTERwdzBHdjJzU3IxdWM4ME5vMTZFMWI5bVkwN0dXSjItVUpGMFpSSXBwOGdkVVEtM2lpclhTRGVMTjFYS0VKTl9yT0FTWlZzc2dEdVRpNmVDM1V5NlpudXRyT0RoNzlGaXhhNA?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 0.0,
+          "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQeWozTVJwa2dwelRCWUQ0aWQwemJxY1FBRVZJeTJ6ZXpYbm1Xb1pyQkpnd05TSVVtUmFsU21pTjd2UExQekMwbnlKOGJQRG5Ocjdpd2h2M0RPYWhnZVFXSzdwLWxqbmJmd2ZfenNzbTExT3RjUm5kWG9nX2h5LWM4TGRIcDBjaTJHUnZpMFhycFgzRGM1NHlKUnBjbzd0X1hYWEhfN0VvTnItUms5WS1OMkttcnlFdUhYRnQtTTdXR0FobmlrV1lFWGJsQlZLYmJwVmRKd2Y0U0xBbUhnMjlWMFVUdHJxbmJ4MzRn?oc=5",
+          "existing_event_score": 4.0,
+          "existing_direction_score": 1.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
@@ -371,9 +197,9 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 42.9,
+      "pressure_index_7d": 40.2,
       "pressure_level": "reduced",
-      "trend": "stable",
+      "trend": "decrease",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
   }

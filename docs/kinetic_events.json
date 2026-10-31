@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T10:56:46.775894Z",
+  "generated_at": "2026-10-31T15:13:31.529666Z",
   "source_generated_at": "2026-10-31T08:54:49Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
@@ -7,15 +7,15 @@
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
   "source_event_count": 1865,
-  "event_count": 496,
-  "rejected_count": 1369,
+  "event_count": 494,
+  "rejected_count": 1371,
   "rejection_counts": {
     "category_not_kinetic": 667,
-    "outside_window": 431,
+    "outside_window": 433,
     "no_confirmed_action_language": 227,
     "context_or_hypothetical": 28,
     "retrospective_or_aftermath": 13,
@@ -23,22 +23,22 @@
   },
   "category_counts": {
     "missile": 200,
-    "strike": 108,
+    "strike": 107,
     "drone": 73,
-    "airstrike": 53,
+    "airstrike": 52,
     "ground": 34,
     "explosion": 27,
     "intercept": 1
   },
   "severity_counts": {
-    "medium": 297,
+    "medium": 296,
     "high": 168,
-    "low": 29,
+    "low": 28,
     "critical": 2
   },
   "actor_counts": {
     "Yemen": 148,
-    "Israel": 132,
+    "Israel": 130,
     "Iran": 91,
     "Unknown actor": 47,
     "United States": 40,
@@ -12885,58 +12885,6 @@
       "description": "IDF conducts controlled demolitions in southern Lebanon near Majdal Zoun and Almuntiri in western sector of Tyre district, explosions also reported in Hadatha",
       "source_name": "abualiexpress",
       "source_url": "https://t.me/abualiexpress/127818",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-2i05o2szgzw00",
-      "timestamp": "2026-08-02T12:28:38Z",
-      "event_type": "kinetic",
-      "subtype": "strike",
-      "category": "strike",
-      "severity": "medium",
-      "actor": "isr",
-      "actor_label": "Israel",
-      "actor_method": "raw_source.origin",
-      "target_country": "",
-      "location": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Israeli strike in Bint Jbeil area wounds five Lebanese soldiers",
-      "source_name": "idkunim_il",
-      "source_url": "https://t.me/idkunim_il/62133",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-2r54k83kx3a00",
-      "timestamp": "2026-08-02T11:14:49Z",
-      "event_type": "kinetic",
-      "subtype": "airstrike",
-      "category": "airstrike",
-      "severity": "low",
-      "actor": "isr",
-      "actor_label": "Israel",
-      "actor_method": "raw_source.origin",
-      "target_country": "",
-      "location": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Israeli airstrike on Kafra village in Byblos district injures 5 Lebanese soldiers escorting evacuated civilians",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/127779",
       "source_repository": "mikloshetzer-sketch/me-security-monitor",
       "source_collection": "events",
       "validation": {
