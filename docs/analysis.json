@@ -1,23 +1,30 @@
 {
-  "report_date": "2026-10-29",
-  "created_at": "2026-10-29T12:54:25.377679",
+  "report_date": "2026-10-30",
+  "created_at": "2026-10-30T12:47:03.778607",
   "article_count": 50,
-  "total_score": -57,
-  "conflict_index": -1.14,
+  "total_score": -60,
+  "conflict_index": -1.2,
   "assessment": "moderate escalation",
-  "escalation_pressure": -70,
-  "diplomatic_pressure": 13,
-  "net_signal": -57,
+  "escalation_pressure": -71,
+  "diplomatic_pressure": 11,
+  "net_signal": -60,
   "top_drivers": [
     {
       "driver": "war",
       "category": "Military escalation",
-      "count": 30,
+      "count": 31,
       "weight": -1,
-      "impact": -30
+      "impact": -31
     },
     {
       "driver": "strike",
+      "category": "Military escalation",
+      "count": 5,
+      "weight": -2,
+      "impact": -10
+    },
+    {
+      "driver": "strikes",
       "category": "Military escalation",
       "count": 4,
       "weight": -2,
@@ -26,23 +33,16 @@
     {
       "driver": "escalation",
       "category": "Threats / retaliation",
-      "count": 4,
-      "weight": -2,
-      "impact": -8
-    },
-    {
-      "driver": "strikes",
-      "category": "Military escalation",
       "count": 3,
       "weight": -2,
       "impact": -6
     },
     {
-      "driver": "missile",
-      "category": "Military escalation",
+      "driver": "diplomacy",
+      "category": "Diplomacy / negotiation",
       "count": 3,
-      "weight": -2,
-      "impact": -6
+      "weight": 2,
+      "impact": 6
     },
     {
       "driver": "attack",
@@ -50,6 +50,13 @@
       "count": 3,
       "weight": -2,
       "impact": -6
+    },
+    {
+      "driver": "threat",
+      "category": "Threats / retaliation",
+      "count": 5,
+      "weight": -1,
+      "impact": -5
     },
     {
       "driver": "peace",
@@ -66,50 +73,28 @@
       "impact": -4
     },
     {
-      "driver": "ceasefire",
-      "category": "Ceasefire / settlement",
-      "count": 1,
-      "weight": 3,
-      "impact": 3
-    },
-    {
-      "driver": "threat",
+      "driver": "threatens",
       "category": "Threats / retaliation",
-      "count": 2,
+      "count": 1,
       "weight": -1,
-      "impact": -2
+      "impact": -1
     },
     {
       "driver": "deal",
       "category": "Ceasefire / settlement",
-      "count": 2,
+      "count": 1,
       "weight": 1,
-      "impact": 2
-    },
-    {
-      "driver": "talks",
-      "category": "Diplomacy / negotiation",
-      "count": 1,
-      "weight": 2,
-      "impact": 2
-    },
-    {
-      "driver": "diplomacy",
-      "category": "Diplomacy / negotiation",
-      "count": 1,
-      "weight": 2,
-      "impact": 2
+      "impact": 1
     }
   ],
   "categories": [
     {
       "category": "Military escalation",
-      "score": -60,
+      "score": -59,
       "count": 45,
       "keywords": [
         "attack",
         "attacks",
-        "missile",
         "strike",
         "strikes",
         "war"
@@ -117,46 +102,33 @@
     },
     {
       "category": "Threats / retaliation",
-      "score": -10,
-      "count": 6,
+      "score": -12,
+      "count": 9,
       "keywords": [
         "escalation",
-        "threat"
+        "threat",
+        "threatens"
       ]
     },
     {
       "category": "Diplomacy / negotiation",
-      "score": 8,
-      "count": 4,
+      "score": 10,
+      "count": 5,
       "keywords": [
         "diplomacy",
-        "peace",
-        "talks"
+        "peace"
       ]
     },
     {
       "category": "Ceasefire / settlement",
-      "score": 5,
-      "count": 3,
+      "score": 1,
+      "count": 1,
       "keywords": [
-        "ceasefire",
         "deal"
       ]
     }
   ],
   "key_signals": [
-    {
-      "title": "Iran says won’t allow US warships to get close as Trump ponders new attacks - Al Jazeera",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPbnhYekZtTGYtNUxRY1l0SkNlclVxV1JhVHJ2QUNzRFhRQW96Z0FWbXBSakNhblFEYk9kNHBibExfT0xFVFhLbUEzLWZpR0VNVC0tT2NlTTRIWmlaRThSTXN5OEF6d1ZiSEhGak11ck5zclJpYkRPODdJdFNqLXJTWjZiemlRSnZuOUV1MWY3eDZYMTBjaThzRDJaU3VVQnFqbFQ3bEt2enJEeHNUcm1nZTBnT1lXNXfSAbwBQVVfeXFMTzcyR081VVdqUVNRX05XQ0NxRFFPdm81M0NEV0hPcm9FYlZmTEJ4bTBPQUtjSjZvOEx3aGFWdGNDbHkyZzdoVDlVZzZyU1NrNkt4YkhBZGxZcm1vZ0tlWTB0T3lZbDdaX3dnSkZVdUpqc19KZnpWS3Vlc2tiN1JEQUNWZEVZYmV0ZWVyYXFENDU4a2FqU3ZWZGR5dFFreHl4VzVZellsU2hwQVcyZzBBTjl6SG9WQUpBNmprOXA?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Sat, 24 Oct 2026 13:15:07 GMT",
-      "score": -5,
-      "tags": [
-        "attack",
-        "attacks",
-        "war"
-      ]
-    },
     {
       "title": "US and Israel are warned against launching fresh strikes on Iran - The Guardian",
       "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQNjNEZzBoMS1CdTRMRGxWd3JXWDN5V2hmcWxmQ1hQNDkxanllSEQ2elo0NEZEWFRnMjRGV2JhNHpSeXJ1Q2tKRjlMamtEYThlLWpnSXFTYVVmSzNLVVUzWnFOWFdyYTRxc25jVjFTNE5JRTBITmRMUllIQm1WRWFpMUY5ZEtXTlVpdXhNNkZBNWFKZnBTYzFmY085Um1MU2dYWWs4?oc=5",
@@ -166,6 +138,18 @@
       "tags": [
         "strike",
         "strikes",
+        "war"
+      ]
+    },
+    {
+      "title": "Iran says won’t allow US warships to get close as Trump ponders new attacks - Al Jazeera",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPbnhYekZtTGYtNUxRY1l0SkNlclVxV1JhVHJ2QUNzRFhRQW96Z0FWbXBSakNhblFEYk9kNHBibExfT0xFVFhLbUEzLWZpR0VNVC0tT2NlTTRIWmlaRThSTXN5OEF6d1ZiSEhGak11ck5zclJpYkRPODdJdFNqLXJTWjZiemlRSnZuOUV1MWY3eDZYMTBjaThzRDJaU3VVQnFqbFQ3bEt2enJEeHNUcm1nZTBnT1lXNXfSAbwBQVVfeXFMTzcyR081VVdqUVNRX05XQ0NxRFFPdm81M0NEV0hPcm9FYlZmTEJ4bTBPQUtjSjZvOEx3aGFWdGNDbHkyZzdoVDlVZzZyU1NrNkt4YkhBZGxZcm1vZ0tlWTB0T3lZbDdaX3dnSkZVdUpqc19KZnpWS3Vlc2tiN1JEQUNWZEVZYmV0ZWVyYXFENDU4a2FqU3ZWZGR5dFFreHl4VzVZellsU2hwQVcyZzBBTjl6SG9WQUpBNmprOXA?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Sat, 24 Oct 2026 13:15:07 GMT",
+      "score": -5,
+      "tags": [
+        "attack",
+        "attacks",
         "war"
       ]
     },
@@ -182,17 +166,6 @@
       ]
     },
     {
-      "title": "US and Israel drawing up plans to resume attacks on Iran post-election, sources say - ABC News - Breaking News, Latest News and Videos",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPd19fS1N5MG9ScWZka1NXVEM3S1NoUlBSTURnR09nR3Y5SGIxRFFpRktHNHZXeElmbzFPcTBkMUdNNXE5MG01aWhRVmhKSTVGZVcwZVBNRWxHTGxQc1JpQWZBRnBLNTVPWkoyRnFIZkxSTnI0SktYRGQ5dlh2aWxhSWhOVVlMVjktd1hHak1PV19HbXpyNS0waGRfVXXSAaIBQVVfeXFMUGJ0OE81VjRRZ1dhN1gtLVd2d2szU19XZzRNREJQdWV6OG1mRUhtQ0JTWXZYc3Jqa0FOdkFoWTF3b19JMEx3YW9XYkJRbXRlVHkxcWpPbWx3bVVydFBySV9yMW9tVFZRVWljYUNXeEEwNXMzSWJmeEdwdTZwaHh6VG52alZDQ3dmcU5NTXE4MWk1V0w4ZHMzX2FkNXUydndhTktR?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Thu, 22 Oct 2026 20:58:09 GMT",
-      "score": -4,
-      "tags": [
-        "attack",
-        "attacks"
-      ]
-    },
-    {
       "title": "US has plans for major Iran strikes if Trump chooses - CNN",
       "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE01cEdEMXV2bGlZU2RtZVVGeXQzaFlXMHl6dEd4Zm5VTWs3N0QxdmY2czI1SDZSQW5wWXNkQkUtYVRGTTlTdVBWX0NoTUh1UGJobTB0YkotQWNiYlRPc3hxQk9RQTdnQXc4YWxNU0hYRVNmZ3VPYjVwU293?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
@@ -204,14 +177,25 @@
       ]
     },
     {
-      "title": "US moves Patriot missile defense system from Texas to Israel ahead of possible Iran strike - report - The Jerusalem Post",
+      "title": "US ready to strike Iran if Donald Trump gives order as Israel pushes for joint attack - The Jerusalem Post",
+      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1ZU1JDSGJNNVB1VHM4YWpqZlhIRjRoVU41TnJYVjVKSlJEUjNma2tJdUNBczh2Z01rcDAyUi1MZDVxdl9fQ0pUdzZMVXJ2NzFYWHl6bE1vblhpVl85dUs3RGxDY1V5UU43ZXc?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Mon, 26 Oct 2026 08:10:29 GMT",
+      "score": -4,
+      "tags": [
+        "strike",
+        "attack"
+      ]
+    },
+    {
+      "title": "US deploys Patriot system in Israel amid preparations for Iran strikes - The Jerusalem Post",
       "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9MeGxMWXcyX3piREtnVDJPOGF3OTdFQmVoUHNxZlM0ODA5bk45aGdoNDhvVUVZc21XVlJ1VEthSktfRnVtWm84NVRFdTVSNHl4VWxqemlIM2NJYy13T0dET212V3ZpTnBySFNjZERR?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
       "published": "Wed, 28 Oct 2026 10:32:07 GMT",
       "score": -4,
       "tags": [
         "strike",
-        "missile"
+        "strikes"
       ]
     },
     {
@@ -237,49 +221,51 @@
       ]
     },
     {
-      "title": "Iran’s calculations as US escalation looms: Trust, midterms, Hormuz - Al Jazeera",
-      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOOC11eFk1bzZtbDZJckFTX0dZSUFYZ0RrOWdUOHVFLVhpbm43UVZQX2ZYZ2hnaFVaM1Npa1p1VlFrdHVFZ0gzZDQ0blJib0QyZnowbVRkT3o1bUlRQkxuRTdTS0lfdTcxd1dSc1dQOEd5bnR2U2R6TG9vY2hjdDdDNFFRZlE4aWRtRTQ2N1RQY2VDb3BmdTNLNFNoTVA4S0Nra3dlc0NBMWTSAa4BQVVfeXFMTU5EdEc2VFRjUlpXUTBIb2h6NjlUdmQtYmh0RWpXRGlVLUcxWTB4Mkd6b0ZyRDZaZ1cxQTB0QWtJR3Z0WmoxTGdGMkxOUUV6NFRkQm1Qa1BIRmZpTG1ndGMwd0tNb2o1MHNoUmJXMVo2QkI5Uk9kZk90VGs2UUhtcDFhM2N1eHZNUUhnWl9jbXBra2FaM09wYXRxSXAtS0daaFlrYVc3YjltcUc0TDBn?oc=5",
+      "title": "European, Middle East ministers urge US-Iran diplomacy, not new attacks - Al Jazeera",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQVFNoMkR5TkRGT0RhUlluYlN0Z2lFSzBhNEJwTmpZQWQ2NVZfUUwwM3EwRlEzNlMtNkFTNUYydURqN3FwT3BjNW5WeTI3TUZ5THlUZ1JTNjJ3dFZmTFg0b2VFTHJCQXRLWXpSWktESDZOenVoQ0JjenByQnFDTkZ3QlBXT0NsQWlLTWZwbHRwT3RtVWdkanVmT25ETUJHUE1DLUpQZXMtb0NKQkc5SXlfbNIBtgFBVV95cUxNblN0R1plS1ZrNlA1SElueG44NkNwZmZELVdZMTZObDgzaUJNSFBPbG15UFlleTNRZDY2Y3BTMWlGeUJOYWlIeklfX0RvQWpoT3VITENVNEROcTkwNnFYTV94RjJ6Vzg3N004SDRocGc3Mm9DRnRlVlVJYlQ2U3JXRnJaZmFYRWxILXlPbVktUlUtNFJGRVpkT3RkY1hka1V3LWo3MTItdG01Yk90ODVtT0pZdlBLUQ?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Tue, 27 Oct 2026 15:29:20 GMT",
+      "published": "Sat, 24 Oct 2026 01:11:26 GMT",
+      "score": -2,
+      "tags": [
+        "attack",
+        "attacks",
+        "diplomacy"
+      ]
+    },
+    {
+      "title": "Trump Prepares for Iran Escalation After US, Israeli Polls - Bloomberg.com",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNbS1tMzRuM2wzRGNDV0R5b3o5N3p0V1U1OVhreW01YXB6dWdmQlBCMS1Hb2FmQnJYYVZsSVJKNG5pVHFGN1pqWlJYUk13cC02OTR5RWpZczZ1c21KMjkyMmIxOXJOQ1VDZFg0V3pSTENZTi1DM1NDeGx1OHJBVVc4TjlyeG84ZUhTZ3NXVnVHZGZVaE9tVFFoSHVkUlJoeE5BMkJJVU9kOFNSUG05YVRtc09R?oc=5",
+      "source": "\"middle east conflict when:7d\" - Google News",
+      "published": "Sun, 25 Oct 2026 10:51:03 GMT",
       "score": -2,
       "tags": [
         "escalation"
       ]
     },
     {
-      "title": "Rubio says US struck Iran fearing it would retaliate for Israeli attack - ABC News - Breaking News, Latest News and Videos",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQbzJ1MnM3VFIyRWxoVEM5c25DbEVtYXlEajY3XzlqWjZIbVFCOXNlZC1lc1lxVnpxbkY5YmtUWE5jTUJnUjhzV2hyNlhNeU5JaVRFYW01VVZvVmJxNjZjUFQtZW1MRGtJc2lHdEtpOTNYYmM0WFRfWk9XYTA0NDdhR19zWktTT1h4ME91dWx1SFZacmVBMEZCLUdfNHltam5jcVlv0gGoAUFVX3lxTFBxUkduQU9kUjVvSnJ5b0ZlWVVBa0JkTjk5cGF5TTlFSzZaMXh1dEE3c1pvOVdDZU0xYmg1SFZEVU5HckVTUURnRmJKdi1NV29KdTlJSXNpYUVwbk8yMDJkU2RuM1VhUGY3Wi1ZSkI5VVRIcVdzcmtyWDdXYlhURGJJenZfLWdLOTNoZTFzZV9HWEE0cHUydHppM0s5Z05EdkRuUkRNZzFBdA?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Tue, 27 Oct 2026 18:46:33 GMT",
-      "score": -2,
-      "tags": [
-        "attack"
-      ]
-    },
-    {
-      "title": "Saudis Report Intercepting Ballistic Missile Fired by Iran-Backed Houthis - Radio Free Europe/Radio Liberty",
-      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9OeTc1VE5lcEx0QzNhVlh6TnBVZUhfdi1MR0xZQnJOLWo2U3dHb09ucVhPNXctSTFXNTF6R3EwZEJXSl96SF9zS2FPUWFwcHpHeFVMaGtUckZiaGIydHc1SFMwT3U1R1h5WnMtY2RGUkdtYm1jV2VUMWFB?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Thu, 29 Oct 2026 10:49:19 GMT",
-      "score": -2,
-      "tags": [
-        "missile"
-      ]
-    },
-    {
-      "title": "Saudis Report Intercepting Ballistic Missile Fired by Iran-Backed Houthis - Radio Free Europe/Radio Liberty",
-      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9OeTc1VE5lcEx0QzNhVlh6TnBVZUhfdi1MR0xZQnJOLWo2U3dHb09ucVhPNXctSTFXNTF6R3EwZEJXSl96SF9zS2FPUWFwcHpHeFVMaGtUckZiaGIydHc1SFMwT3U1R1h5WnMtY2RGUkdtYm1jV2VUMWFB?oc=5",
+      "title": "Oil Prices Rise on Worries of Middle East Conflict Escalation - WSJ",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOSlpYejlRTmd1MFprTGxzTHhIQi1taDhJVkMtTThYN1Y5UktONWZxcVM5TEJ2Sy1Jd25QZXFCem5uNDkzOGU3Z0NONzE1V0ZPT2E2QlJTdjZreDg0eXA5Z21MandpYmI3azQ5Q0h4azVTdHpYQnVQVGdYR3pEajBid0QtT0taZl9OVktOSUhIWjl6eGdqYlJ5RFZOd3p1LVRkVjVCVg?oc=5",
       "source": "\"middle east conflict when:7d\" - Google News",
-      "published": "Thu, 29 Oct 2026 10:49:19 GMT",
+      "published": "Wed, 28 Oct 2026 19:22:00 GMT",
       "score": -2,
       "tags": [
-        "missile"
+        "escalation"
+      ]
+    },
+    {
+      "title": "Oil Prices Rise on Fears of Middle East Conflict Escalation - WSJ",
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQM1hJV09vQ2pHZVVPLU5uUVVCSTdEVk56TzBQSW5Walc2eU5XTTVqWmZLVUdJSGRFRUhUR2RJb18xbWVGOFN1OHJyZWpNYXNQU1d4R3RTcnRjTkJNc3FPTFVUa1lhRDFreU9Dc3JucjNvR0tTNUJScmtBYWdwLVZiUDUwaVFnMEZrQkRWdzNqNDNGRTVmZWc?oc=5",
+      "source": "\"middle east conflict when:7d\" - Google News",
+      "published": "Fri, 23 Oct 2026 19:54:00 GMT",
+      "score": -2,
+      "tags": [
+        "escalation"
       ]
     }
   ],
   "integrity": {
     "driver_net_equals_total_score": true,
-    "driver_net": -57,
-    "source_total_score": -57
+    "driver_net": -60,
+    "source_total_score": -60
   }
 }
