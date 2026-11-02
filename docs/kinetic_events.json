@@ -1,29 +1,29 @@
 {
-  "generated_at": "2026-11-02T13:33:40.355127Z",
-  "source_generated_at": "2026-11-02T06:54:38Z",
+  "generated_at": "2026-11-02T19:22:58.570797Z",
+  "source_generated_at": "2026-11-02T17:06:11Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1874,
-  "event_count": 487,
-  "rejected_count": 1387,
+  "source_event_count": 1877,
+  "event_count": 486,
+  "rejected_count": 1391,
   "rejection_counts": {
-    "category_not_kinetic": 674,
-    "outside_window": 440,
+    "category_not_kinetic": 676,
+    "outside_window": 442,
     "no_confirmed_action_language": 229,
     "context_or_hypothetical": 28,
     "retrospective_or_aftermath": 13,
     "alert_only": 3
   },
   "category_counts": {
-    "missile": 198,
-    "strike": 105,
+    "missile": 199,
+    "strike": 103,
     "drone": 72,
     "airstrike": 52,
     "ground": 34,
@@ -32,12 +32,12 @@
   },
   "severity_counts": {
     "medium": 289,
-    "high": 168,
+    "high": 167,
     "low": 28,
     "critical": 2
   },
   "actor_counts": {
-    "Yemen": 147,
+    "Yemen": 146,
     "Israel": 127,
     "Iran": 89,
     "Unknown actor": 46,
@@ -49,6 +49,32 @@
     "Syria": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-1umdmxc0k22o0",
+      "timestamp": "2026-11-01T00:00:00Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "medium",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Ansarallah (Houthi) missile or drone attack on an industrial complex in Dammam, eastern Saudi Arabia, on 1 November causes a large fire, per satellite imagery and video",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/86429",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-3dwoiyo2a2i00",
       "timestamp": "2026-10-29T21:55:28Z",
@@ -12656,58 +12682,6 @@
       "validation": {
         "accepted": true,
         "reason": "general_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-3qd843xe22c00",
-      "timestamp": "2026-08-04T18:32:40Z",
-      "event_type": "kinetic",
-      "subtype": "strike",
-      "category": "strike",
-      "severity": "high",
-      "actor": "yem",
-      "actor_label": "Yemen",
-      "actor_method": "raw_source.origin",
-      "target_country": "Red Sea",
-      "location": "Red Sea",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Indian cargo vessel sinks off Yemen following Houthi attack south of Hodeidah in Bab al-Mandab Strait, 14 crew members missing",
-      "source_name": "OSINTdefender",
-      "source_url": "https://t.me/OSINTdefender/19694",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-22qa3j56wwu80",
-      "timestamp": "2026-08-04T14:52:49Z",
-      "event_type": "kinetic",
-      "subtype": "strike",
-      "category": "strike",
-      "severity": "medium",
-      "actor": "yem",
-      "actor_label": "Yemen",
-      "actor_method": "raw_source.origin",
-      "target_country": "Red Sea",
-      "location": "Red Sea",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Indian-flagged tanker carrying Saudi oil struck by Yemeni suicide boat 13 nautical miles off Hodeidah in Bab Al-Mandab",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/81666",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
         "mode": "strict_kinetic_v2"
       }
     }

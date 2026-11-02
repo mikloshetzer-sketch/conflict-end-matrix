@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T15:55:27.366807+00:00",
+  "generated_at": "2026-11-02T19:22:59.474150+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,29 +18,29 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 676,
-    "kinetic_events_loaded": 492,
-    "unique_events_scanned": 1140,
-    "strategic_evidence_contributions": 370,
+    "non_kinetic_events_loaded": 683,
+    "kinetic_events_loaded": 486,
+    "unique_events_scanned": 1141,
+    "strategic_evidence_contributions": 376,
     "evidence_contributions_by_actor": {
-      "usa": 123,
-      "iran": 247
+      "usa": 126,
+      "iran": 250
     },
     "scored_contributions_by_actor": {
-      "usa": 90,
-      "iran": 135
+      "usa": 91,
+      "iran": 136
     },
     "suppressed_duplicates_by_actor": {
-      "usa": 33,
-      "iran": 112
+      "usa": 35,
+      "iran": 114
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 346,
+      "non_kinetic": 352,
       "kinetic": 24
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 220,
-      "usa:negotiation": 99,
+      "iran:negotiation": 223,
+      "usa:negotiation": 102,
       "iran:missile_test": 15,
       "usa:presidential_warning": 15,
       "iran:hormuz_threat": 9,
@@ -52,8 +52,8 @@
       "usa:carrier_deployment": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 115,
-      "usa:negotiation": 70,
+      "iran:negotiation": 116,
+      "usa:negotiation": 71,
       "usa:presidential_warning": 15,
       "iran:hormuz_threat": 9,
       "iran:missile_test": 8,
@@ -65,50 +65,76 @@
       "usa:carrier_deployment": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 0,
-    "history_day_count": 236
+    "skipped_current_utc_day": 2,
+    "history_day_count": 237
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-10-31",
+  "latest_complete_utc_day": "2026-11-01",
   "current": {
-    "date": "2026-10-31",
+    "date": "2026-11-01",
     "calculation_mode": "live",
     "usa": {
-      "raw_score": 0.0,
+      "raw_score": -9.0,
       "positive_score": 0.0,
-      "negative_score": 0.0,
-      "event_count": 0,
-      "scored_event_count": 0,
-      "evidence_event_count": 0,
-      "suppressed_duplicate_count": 0,
-      "increase_event_count": 0,
-      "decrease_event_count": 0,
-      "contributors": [],
-      "weighted_score_7d": -3.3,
-      "pressure_index_7d": 43.4,
-      "pressure_level": "reduced",
-      "trend": "increase",
-      "strongest_contributors": []
-    },
-    "iran": {
-      "raw_score": -6.0,
-      "positive_score": 0.0,
-      "negative_score": -6.0,
-      "event_count": 2,
+      "negative_score": -9.0,
+      "event_count": 3,
       "scored_event_count": 1,
-      "evidence_event_count": 2,
-      "suppressed_duplicate_count": 1,
+      "evidence_event_count": 3,
+      "suppressed_duplicate_count": 2,
       "increase_event_count": 0,
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000001",
-          "timestamp": "2026-10-31T20:57:41+00:00",
-          "date": "2026-10-31",
-          "actor": "iran",
-          "bilateral_event": false,
-          "title": "Iran FM says US outreach a ‘positive step’ as delegation in Qatar for talks - Al Jazeera",
+          "event_id": "INFO-000006",
+          "timestamp": "2026-11-01T12:24:00+00:00",
+          "date": "2026-11-01",
+          "actor": "usa",
+          "bilateral_event": true,
+          "title": "Iran, Qatari mediators hold third day of talks to end US-Iran war - Reuters",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "de-escalation",
+          "operational_component": -3.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -9.0,
+          "final_score": -9.0,
+          "duplicate_indicator_evidence": false,
+          "daily_score_suppressed": false,
+          "suppression_reason": null,
+          "primary_daily_indicator": "negotiation",
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_full_scale_war",
+                "name": "Avoid full-scale regional war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 4
+            }
+          ],
+          "reason": "United States: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: Iran, Qatari mediators hold third day of talks to end US-Iran war - Reuters",
+          "source": "\"middle east conflict when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPdXU0aVh0RXlJYm1BOUtMU2FncFZnaDY5dVo4LXR0OFhsUzl1V2s0ZHpoeU5VX2d4cjg0RWRXRkRLLVhRRFJ6QlVKd3dEQ3ZtNVF0c0laVUtZZU1DTFB2bVVpN01abDA1RDRBWXJLRzFSVzZpQmFaWFBVaVdhNG9GdEVranBrT2M5NzlmWFVKSXo5QjJla0JLZ2x3SG9pOE9mb0xOaUNaZmxxbzQ4RlVVY04tZnRxZWNLNVBoby1WMXQ?oc=5",
+          "existing_event_score": 3.0,
+          "existing_direction_score": 2.0,
+          "winning_daily_indicators": [
+            "negotiation"
+          ],
+          "duplicate_daily_indicators": []
+        },
+        {
+          "event_id": "INFO-000007",
+          "timestamp": "2026-11-01T11:39:00+00:00",
+          "date": "2026-11-01",
+          "actor": "usa",
+          "bilateral_event": true,
+          "title": "Iran has 'no intention' to engage in peace talks with US as war looms - Middle East Eye",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
           "event_direction": "mixed",
@@ -116,7 +142,155 @@
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
           "original_final_score": -6.0,
-          "final_score": -6.0,
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": true,
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "primary_daily_indicator": null,
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_full_scale_war",
+                "name": "Avoid full-scale regional war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran has 'no intention' to engage in peace talks with US as war looms - Middle East Eye",
+          "source": "\"middle east conflict when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOR0xaOE5xblkyb2NlVjU3d21VQk1RV1VFMXF3SWloanBMUkF2U1oxXy1jVFdzWlhVSjJkRDVQNnE3MHJIWVotbFVINXZNd2pUZzJFUTdHRnk0ektBQm9jUzUwLTBHeDRfLUpsc05mRUNtT0I5MkFKV0lXMnYwN1Z4c2hkYmJSV2dCcHljR2xmSTJrenQ4RXF0V2ItWjZKMnNz?oc=5",
+          "existing_event_score": 3.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [],
+          "duplicate_daily_indicators": [
+            "negotiation"
+          ]
+        },
+        {
+          "event_id": "INFO-000003",
+          "timestamp": "2026-11-01T18:25:00+00:00",
+          "date": "2026-11-01",
+          "actor": "usa",
+          "bilateral_event": true,
+          "title": "Negotiators ‘braced for worst’ over US-Iran talks to reopen strait of Hormuz - The Guardian",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -6.0,
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": true,
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "primary_daily_indicator": null,
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_full_scale_war",
+                "name": "Avoid full-scale regional war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 4
+            }
+          ],
+          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Negotiators ‘braced for worst’ over US-Iran talks to reopen strait of Hormuz - The Guardian",
+          "source": "\"middle east conflict when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPcjVSR3czb2tNNE5iaEtFN0ZqWnZvczZzV3F0ZHpoMEVSdl9Jb01HOXF6U3BITmRVM3BEc3JraWl6alRYWndQR1kzdVZxZVVsNjQ3cmhLUmlpS0FGT1dxVV9tbWlHUnQyWUZvR2JLcm9oTmJpWHVKWmtiN2tLbXp6UFRJZUFXWnBIUFlCZE1fOVZ5QkYwOW1VRnAtOGl2MnhRRHpjcEtWeTl1d0JJMGpKdjEzZF9yUkNUdTFJTg?oc=5",
+          "existing_event_score": 2.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [],
+          "duplicate_daily_indicators": [
+            "negotiation"
+          ]
+        }
+      ],
+      "weighted_score_7d": -11.4,
+      "pressure_index_7d": 27.2,
+      "pressure_level": "low",
+      "trend": "strong_decrease",
+      "strongest_contributors": [
+        {
+          "event_id": "INFO-000006",
+          "timestamp": "2026-11-01T12:24:00+00:00",
+          "date": "2026-11-01",
+          "actor": "usa",
+          "bilateral_event": true,
+          "title": "Iran, Qatari mediators hold third day of talks to end US-Iran war - Reuters",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "de-escalation",
+          "operational_component": -3.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -9.0,
+          "final_score": -9.0,
+          "duplicate_indicator_evidence": false,
+          "daily_score_suppressed": false,
+          "suppression_reason": null,
+          "primary_daily_indicator": "negotiation",
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_full_scale_war",
+                "name": "Avoid full-scale regional war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 4
+            }
+          ],
+          "reason": "United States: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: Iran, Qatari mediators hold third day of talks to end US-Iran war - Reuters",
+          "source": "\"middle east conflict when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPdXU0aVh0RXlJYm1BOUtMU2FncFZnaDY5dVo4LXR0OFhsUzl1V2s0ZHpoeU5VX2d4cjg0RWRXRkRLLVhRRFJ6QlVKd3dEQ3ZtNVF0c0laVUtZZU1DTFB2bVVpN01abDA1RDRBWXJLRzFSVzZpQmFaWFBVaVdhNG9GdEVranBrT2M5NzlmWFVKSXo5QjJla0JLZ2x3SG9pOE9mb0xOaUNaZmxxbzQ4RlVVY04tZnRxZWNLNVBoby1WMXQ?oc=5",
+          "existing_event_score": 3.0,
+          "existing_direction_score": 2.0,
+          "winning_daily_indicators": [
+            "negotiation"
+          ],
+          "duplicate_daily_indicators": []
+        }
+      ]
+    },
+    "iran": {
+      "raw_score": -9.0,
+      "positive_score": 0.0,
+      "negative_score": -9.0,
+      "event_count": 3,
+      "scored_event_count": 1,
+      "evidence_event_count": 3,
+      "suppressed_duplicate_count": 2,
+      "increase_event_count": 0,
+      "decrease_event_count": 1,
+      "contributors": [
+        {
+          "event_id": "INFO-000006",
+          "timestamp": "2026-11-01T12:24:00+00:00",
+          "date": "2026-11-01",
+          "actor": "iran",
+          "bilateral_event": true,
+          "title": "Iran, Qatari mediators hold third day of talks to end US-Iran war - Reuters",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "de-escalation",
+          "operational_component": -3.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -9.0,
+          "final_score": -9.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -132,26 +306,26 @@
                 "name": "Avoid regime-destroying war",
                 "weight": 10.0
               },
-              "recognition_rule_count": 2
+              "recognition_rule_count": 4
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran FM says US outreach a ‘positive step’ as delegation in Qatar for talks - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNTDcwblE5RGttbEZ0eE94UEZQUTJabDdJOE1hcTdDVWtMZHJFUlBHbmZKRE15bnlRT3BIVlZYblRwMzlDYkZkSnN0MXIzUjBpYnFwSWppOVhUeER4Q3ZQNTIwVzVxMUU3OHdGZzN2ZUlEcVdENkZ0YVNBakpOaGtOcGg4T3NlVWdQaFBETjNzOWJ1UUdUbkZvbU90YW5FVVdqUHpCN053ejJsVzVxMDU4NGd6dFNQQdIBuwFBVV95cUxOS0ZLMmctVlEzTmlib3FUTHpfd0lpemRYYVVkZzY1amw3eTE0c3BjaFE5ajZXNHAwOXVQWEtqa2d2d2VoN2QxWklGWFhzY3JJZk5tU3N5cnI3SVZ1SjR6a01MbWp6ZTN1M29RcEpsQXNhNkQ4MnZ1cGFGQ250MkdoVExIR0VBWkxWMWplUXVmLWdXaHlXQ19UNkY0emFpUlZyWE56eFh1WFdrWEl1RENHWFpNMzBpZnAwRUdN?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 0.0,
+          "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: Iran, Qatari mediators hold third day of talks to end US-Iran war - Reuters",
+          "source": "\"middle east conflict when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPdXU0aVh0RXlJYm1BOUtMU2FncFZnaDY5dVo4LXR0OFhsUzl1V2s0ZHpoeU5VX2d4cjg0RWRXRkRLLVhRRFJ6QlVKd3dEQ3ZtNVF0c0laVUtZZU1DTFB2bVVpN01abDA1RDRBWXJLRzFSVzZpQmFaWFBVaVdhNG9GdEVranBrT2M5NzlmWFVKSXo5QjJla0JLZ2x3SG9pOE9mb0xOaUNaZmxxbzQ4RlVVY04tZnRxZWNLNVBoby1WMXQ?oc=5",
+          "existing_event_score": 3.0,
+          "existing_direction_score": 2.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
           "duplicate_daily_indicators": []
         },
         {
-          "event_id": "INFO-000002",
-          "timestamp": "2026-10-31T15:11:56+00:00",
-          "date": "2026-10-31",
+          "event_id": "INFO-000007",
+          "timestamp": "2026-11-01T11:39:00+00:00",
+          "date": "2026-11-01",
           "actor": "iran",
-          "bilateral_event": false,
-          "title": "Iran buying time in nuclear talks as US prepares for possible strikes - The Jerusalem Post",
+          "bilateral_event": true,
+          "title": "Iran has 'no intention' to engage in peace talks with US as war looms - Middle East Eye",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
           "event_direction": "mixed",
@@ -178,29 +352,23 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran buying time in nuclear talks as US prepares for possible strikes - The Jerusalem Post",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1PTFRPZmpLanpsSGFlRk1oVV9SSUxHalV0aFdKTmNqZ05HUTFudDFNSmxZX0tXZk1SalVsejB0SWJ6THdPMkVZdVZHN2ZnUnZSdElXSHFxM29yaGRLeHlkbXo4TWVMY2JyVTRkQS13?oc=5",
-          "existing_event_score": -2.0,
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran has 'no intention' to engage in peace talks with US as war looms - Middle East Eye",
+          "source": "\"middle east conflict when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOR0xaOE5xblkyb2NlVjU3d21VQk1RV1VFMXF3SWloanBMUkF2U1oxXy1jVFdzWlhVSjJkRDVQNnE3MHJIWVotbFVINXZNd2pUZzJFUTdHRnk0ektBQm9jUzUwLTBHeDRfLUpsc05mRUNtT0I5MkFKV0lXMnYwN1Z4c2hkYmJSV2dCcHljR2xmSTJrenQ4RXF0V2ItWjZKMnNz?oc=5",
+          "existing_event_score": 3.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [],
           "duplicate_daily_indicators": [
             "negotiation"
           ]
-        }
-      ],
-      "weighted_score_7d": -10.4,
-      "pressure_index_7d": 29.2,
-      "pressure_level": "low",
-      "trend": "strong_decrease",
-      "strongest_contributors": [
+        },
         {
-          "event_id": "INFO-000001",
-          "timestamp": "2026-10-31T20:57:41+00:00",
-          "date": "2026-10-31",
+          "event_id": "INFO-000003",
+          "timestamp": "2026-11-01T18:25:00+00:00",
+          "date": "2026-11-01",
           "actor": "iran",
-          "bilateral_event": false,
-          "title": "Iran FM says US outreach a ‘positive step’ as delegation in Qatar for talks - Al Jazeera",
+          "bilateral_event": true,
+          "title": "Negotiators ‘braced for worst’ over US-Iran talks to reopen strait of Hormuz - The Guardian",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
           "event_direction": "mixed",
@@ -208,7 +376,56 @@
           "strategic_modifier": -6.0,
           "context_multiplier": 1.0,
           "original_final_score": -6.0,
-          "final_score": -6.0,
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": true,
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "primary_daily_indicator": null,
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_regime_destroying_war",
+                "name": "Avoid regime-destroying war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 4
+            }
+          ],
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Negotiators ‘braced for worst’ over US-Iran talks to reopen strait of Hormuz - The Guardian",
+          "source": "\"middle east conflict when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPcjVSR3czb2tNNE5iaEtFN0ZqWnZvczZzV3F0ZHpoMEVSdl9Jb01HOXF6U3BITmRVM3BEc3JraWl6alRYWndQR1kzdVZxZVVsNjQ3cmhLUmlpS0FGT1dxVV9tbWlHUnQyWUZvR2JLcm9oTmJpWHVKWmtiN2tLbXp6UFRJZUFXWnBIUFlCZE1fOVZ5QkYwOW1VRnAtOGl2MnhRRHpjcEtWeTl1d0JJMGpKdjEzZF9yUkNUdTFJTg?oc=5",
+          "existing_event_score": 2.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [],
+          "duplicate_daily_indicators": [
+            "negotiation"
+          ]
+        }
+      ],
+      "weighted_score_7d": -17.6,
+      "pressure_index_7d": 14.8,
+      "pressure_level": "low",
+      "trend": "strong_decrease",
+      "strongest_contributors": [
+        {
+          "event_id": "INFO-000006",
+          "timestamp": "2026-11-01T12:24:00+00:00",
+          "date": "2026-11-01",
+          "actor": "iran",
+          "bilateral_event": true,
+          "title": "Iran, Qatari mediators hold third day of talks to end US-Iran war - Reuters",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "de-escalation",
+          "operational_component": -3.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -9.0,
+          "final_score": -9.0,
           "duplicate_indicator_evidence": false,
           "daily_score_suppressed": false,
           "suppression_reason": null,
@@ -224,14 +441,14 @@
                 "name": "Avoid regime-destroying war",
                 "weight": 10.0
               },
-              "recognition_rule_count": 2
+              "recognition_rule_count": 4
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran FM says US outreach a ‘positive step’ as delegation in Qatar for talks - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNTDcwblE5RGttbEZ0eE94UEZQUTJabDdJOE1hcTdDVWtMZHJFUlBHbmZKRE15bnlRT3BIVlZYblRwMzlDYkZkSnN0MXIzUjBpYnFwSWppOVhUeER4Q3ZQNTIwVzVxMUU3OHdGZzN2ZUlEcVdENkZ0YVNBakpOaGtOcGg4T3NlVWdQaFBETjNzOWJ1UUdUbkZvbU90YW5FVVdqUHpCN053ejJsVzVxMDU4NGd6dFNQQdIBuwFBVV95cUxOS0ZLMmctVlEzTmlib3FUTHpfd0lpemRYYVVkZzY1amw3eTE0c3BjaFE5ajZXNHAwOXVQWEtqa2d2d2VoN2QxWklGWFhzY3JJZk5tU3N5cnI3SVZ1SjR6a01MbWp6ZTN1M29RcEpsQXNhNkQ4MnZ1cGFGQ250MkdoVExIR0VBWkxWMWplUXVmLWdXaHlXQ19UNkY0emFpUlZyWE56eFh1WFdrWEl1RENHWFpNMzBpZnAwRUdN?oc=5",
-          "existing_event_score": 2.0,
-          "existing_direction_score": 0.0,
+          "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: Iran, Qatari mediators hold third day of talks to end US-Iran war - Reuters",
+          "source": "\"middle east conflict when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPdXU0aVh0RXlJYm1BOUtMU2FncFZnaDY5dVo4LXR0OFhsUzl1V2s0ZHpoeU5VX2d4cjg0RWRXRkRLLVhRRFJ6QlVKd3dEQ3ZtNVF0c0laVUtZZU1DTFB2bVVpN01abDA1RDRBWXJLRzFSVzZpQmFaWFBVaVdhNG9GdEVranBrT2M5NzlmWFVKSXo5QjJla0JLZ2x3SG9pOE9mb0xOaUNaZmxxbzQ4RlVVY04tZnRxZWNLNVBoby1WMXQ?oc=5",
+          "existing_event_score": 3.0,
+          "existing_direction_score": 2.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
@@ -240,9 +457,9 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 36.3,
-      "pressure_level": "reduced",
-      "trend": "decrease",
+      "pressure_index_7d": 21.0,
+      "pressure_level": "low",
+      "trend": "strong_decrease",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
   }
