@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-11-02T19:22:58.570797Z",
-  "source_generated_at": "2026-11-02T17:06:11Z",
+  "generated_at": "2026-11-03T12:50:09.958987Z",
+  "source_generated_at": "2026-11-03T06:50:29Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": false,
+    "required_today_utc": true,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1877,
-  "event_count": 486,
-  "rejected_count": 1391,
+  "source_event_count": 1881,
+  "event_count": 483,
+  "rejected_count": 1398,
   "rejection_counts": {
-    "category_not_kinetic": 676,
-    "outside_window": 442,
-    "no_confirmed_action_language": 229,
+    "category_not_kinetic": 679,
+    "outside_window": 445,
+    "no_confirmed_action_language": 230,
     "context_or_hypothetical": 28,
     "retrospective_or_aftermath": 13,
     "alert_only": 3
@@ -26,21 +26,21 @@
     "strike": 103,
     "drone": 72,
     "airstrike": 52,
-    "ground": 34,
-    "explosion": 25,
+    "ground": 33,
+    "explosion": 23,
     "intercept": 1
   },
   "severity_counts": {
-    "medium": 289,
+    "medium": 286,
     "high": 167,
     "low": 28,
     "critical": 2
   },
   "actor_counts": {
     "Yemen": 146,
-    "Israel": 127,
+    "Israel": 126,
     "Iran": 89,
-    "Unknown actor": 46,
+    "Unknown actor": 44,
     "United States": 40,
     "Saudi Arabia": 21,
     "Lebanon": 9,
@@ -12604,84 +12604,6 @@
       "validation": {
         "accepted": true,
         "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-341w285f9r000",
-      "timestamp": "2026-08-05T09:04:46Z",
-      "event_type": "kinetic",
-      "subtype": "explosion",
-      "category": "explosion",
-      "severity": "medium",
-      "actor": "unknown",
-      "actor_label": "Unknown actor",
-      "actor_method": "normalized.attacker",
-      "target_country": "",
-      "location": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Smoke and large fire reported at Jebel Ali Port/Industrial Area in Dubai; UAE arrests two individuals for filming explosion",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/81727",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-2nio0zsqfoi00",
-      "timestamp": "2026-08-05T08:59:26Z",
-      "event_type": "kinetic",
-      "subtype": "explosion",
-      "category": "explosion",
-      "severity": "medium",
-      "actor": "unknown",
-      "actor_label": "Unknown actor",
-      "actor_method": "normalized.attacker",
-      "target_country": "",
-      "location": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Initial reports of at least 3 explosions heard in Dubai with smoke column visible, cause unknown",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/81723",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-8oo9fnglh5c0",
-      "timestamp": "2026-08-05T06:39:22Z",
-      "event_type": "kinetic",
-      "subtype": "ground",
-      "category": "ground",
-      "severity": "medium",
-      "actor": "isr",
-      "actor_label": "Israel",
-      "actor_method": "raw_source.origin",
-      "target_country": "Lebanon",
-      "location": "Lebanon",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "IDF destroys underground tunnel system spanning tens of meters in Sarbin area of southern Lebanon",
-      "source_name": "idkunim_il",
-      "source_url": "https://t.me/idkunim_il/62243",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "general_action_match",
         "mode": "strict_kinetic_v2"
       }
     }
