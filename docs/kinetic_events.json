@@ -1,44 +1,44 @@
 {
-  "generated_at": "2026-11-04T13:01:29.016824Z",
-  "source_generated_at": "2026-11-04T08:03:47Z",
+  "generated_at": "2026-11-04T16:59:31.590905Z",
+  "source_generated_at": "2026-11-04T16:20:32Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1896,
-  "event_count": 478,
-  "rejected_count": 1418,
+  "source_event_count": 1897,
+  "event_count": 477,
+  "rejected_count": 1420,
   "rejection_counts": {
     "category_not_kinetic": 692,
-    "outside_window": 451,
+    "outside_window": 453,
     "no_confirmed_action_language": 231,
     "context_or_hypothetical": 28,
     "retrospective_or_aftermath": 13,
     "alert_only": 3
   },
   "category_counts": {
-    "missile": 197,
+    "missile": 195,
     "strike": 104,
-    "drone": 72,
+    "drone": 73,
     "airstrike": 48,
     "ground": 33,
     "explosion": 23,
     "intercept": 1
   },
   "severity_counts": {
-    "medium": 283,
-    "high": 165,
+    "medium": 284,
+    "high": 163,
     "low": 28,
     "critical": 2
   },
   "actor_counts": {
-    "Yemen": 144,
-    "Israel": 123,
+    "Yemen": 142,
+    "Israel": 124,
     "Iran": 89,
     "Unknown actor": 43,
     "United States": 41,
@@ -49,6 +49,32 @@
     "Syria": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-3ptvmo406b400",
+      "timestamp": "2026-11-04T13:13:50Z",
+      "event_type": "kinetic",
+      "subtype": "drone",
+      "category": "drone",
+      "severity": "medium",
+      "actor": "isr",
+      "actor_label": "Israel",
+      "actor_method": "raw_source.origin",
+      "target_country": "Lebanon",
+      "location": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Lebanese channels report one killed and one injured in an Israeli drone strike on a motorcycle in Kafr Kila, southern Lebanon",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/133077",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-2bleet67i2zo0",
       "timestamp": "2026-11-03T13:36:06Z",
@@ -12422,58 +12448,6 @@
       "validation": {
         "accepted": true,
         "reason": "general_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-1xgwq5c0eubk0",
-      "timestamp": "2026-08-06T14:40:01Z",
-      "event_type": "kinetic",
-      "subtype": "missile",
-      "category": "missile",
-      "severity": "high",
-      "actor": "yem",
-      "actor_label": "Yemen",
-      "actor_method": "raw_source.origin",
-      "target_country": "",
-      "location": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Houthis claim strike on Saudi-aligned forces in al-Ruwyk, al-Abr and al-Thunia (Marib province) with missiles and drones, reporting hundreds killed and significant equipment destroyed",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/128040",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "general_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-2ncuzoxt7ti00",
-      "timestamp": "2026-08-06T14:21:13Z",
-      "event_type": "kinetic",
-      "subtype": "missile",
-      "category": "missile",
-      "severity": "high",
-      "actor": "yem",
-      "actor_label": "Yemen",
-      "actor_method": "raw_source.origin",
-      "target_country": "",
-      "location": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Ansarullah missile and drone attack on Hadhramaut Emergency Forces base at al-Ruwyk, eastern Yemen kills 40 with over 100 injured including rescue personnel in double-tap strike",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/81787",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
         "mode": "strict_kinetic_v2"
       }
     }
