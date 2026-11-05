@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T16:59:32.692252+00:00",
+  "generated_at": "2026-11-05T17:15:28.525573+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,17 +18,17 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 695,
-    "kinetic_events_loaded": 477,
-    "unique_events_scanned": 1144,
-    "strategic_evidence_contributions": 382,
+    "non_kinetic_events_loaded": 697,
+    "kinetic_events_loaded": 472,
+    "unique_events_scanned": 1141,
+    "strategic_evidence_contributions": 381,
     "evidence_contributions_by_actor": {
       "usa": 128,
-      "iran": 254
+      "iran": 253
     },
     "scored_contributions_by_actor": {
       "usa": 92,
-      "iran": 137
+      "iran": 136
     },
     "suppressed_duplicates_by_actor": {
       "usa": 36,
@@ -36,7 +36,7 @@
     },
     "contributions_by_source_layer": {
       "non_kinetic": 358,
-      "kinetic": 24
+      "kinetic": 23
     },
     "evidence_indicator_counts": {
       "iran:negotiation": 227,
@@ -45,7 +45,7 @@
       "usa:presidential_warning": 15,
       "iran:hormuz_threat": 9,
       "usa:ceasefire_support": 8,
-      "iran:missile_preparation": 4,
+      "iran:missile_preparation": 3,
       "iran:nuclear_activity": 2,
       "iran:strike_preparation": 2,
       "usa:strike_preparation": 2,
@@ -57,15 +57,15 @@
       "usa:presidential_warning": 15,
       "iran:hormuz_threat": 9,
       "iran:missile_test": 8,
-      "iran:missile_preparation": 4,
       "usa:ceasefire_support": 4,
+      "iran:missile_preparation": 3,
       "iran:nuclear_activity": 2,
       "iran:strike_preparation": 2,
       "usa:strike_preparation": 2,
       "usa:carrier_deployment": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 1,
+    "skipped_current_utc_day": 0,
     "history_day_count": 238
   },
   "configuration_warnings": [],
@@ -86,7 +86,7 @@
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000004",
+          "event_id": "INFO-000006",
           "timestamp": "2026-11-02T17:42:22+00:00",
           "date": "2026-11-02",
           "actor": "usa",
@@ -135,7 +135,7 @@
       "trend": "strong_decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000004",
+          "event_id": "INFO-000006",
           "timestamp": "2026-11-02T17:42:22+00:00",
           "date": "2026-11-02",
           "actor": "usa",
@@ -191,7 +191,7 @@
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000011",
+          "event_id": "INFO-000013",
           "timestamp": "2026-11-02T09:33:00+00:00",
           "date": "2026-11-02",
           "actor": "iran",
@@ -224,7 +224,7 @@
             }
           ],
           "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters",
-          "source": "\"middle east conflict when:7d\" - Google News",
+          "source": "\"iran israel usa war when:7d\" - Google News",
           "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOLXhRTFk2aHFYY3VOMWFGdmFySFR5MTNxeWRRU1ZQM3RaWjg4ZFZlOTJHNDZjYmdCVjBOX0RweVAyWEI4T2dZMVFSbUt4bTc4NGlibnlTaDh2TUNydEdOQjZJSmt3RnRIbk1LNVJ4SlNkR0M3QWs3NnZwQ0JlMW5Ud0FaN29PaGcwdk1CbTZ1UUhjYkg5XzZwVmdwWGNnRnladzZVUEhBeTZScEZIMl9YZ0hUT01GcDdkMXFwcXF0Q3hkTEluSnpnb3F5RFA?oc=5",
           "existing_event_score": 1.0,
           "existing_direction_score": 3.0,
@@ -234,7 +234,7 @@
           "duplicate_daily_indicators": []
         },
         {
-          "event_id": "INFO-000008",
+          "event_id": "INFO-000010",
           "timestamp": "2026-11-02T15:07:57+00:00",
           "date": "2026-11-02",
           "actor": "iran",
@@ -277,7 +277,7 @@
           ]
         },
         {
-          "event_id": "INFO-000006",
+          "event_id": "INFO-000008",
           "timestamp": "2026-11-02T16:02:18+00:00",
           "date": "2026-11-02",
           "actor": "iran",
@@ -326,7 +326,7 @@
       "trend": "strong_decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000011",
+          "event_id": "INFO-000013",
           "timestamp": "2026-11-02T09:33:00+00:00",
           "date": "2026-11-02",
           "actor": "iran",
@@ -359,7 +359,7 @@
             }
           ],
           "reason": "Iran: Negotiation. Operational component: -3.00; strategic modifier: -6.00; final contribution before daily deduplication: -9.00. Event: Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters",
-          "source": "\"middle east conflict when:7d\" - Google News",
+          "source": "\"iran israel usa war when:7d\" - Google News",
           "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOLXhRTFk2aHFYY3VOMWFGdmFySFR5MTNxeWRRU1ZQM3RaWjg4ZFZlOTJHNDZjYmdCVjBOX0RweVAyWEI4T2dZMVFSbUt4bTc4NGlibnlTaDh2TUNydEdOQjZJSmt3RnRIbk1LNVJ4SlNkR0M3QWs3NnZwQ0JlMW5Ud0FaN29PaGcwdk1CbTZ1UUhjYkg5XzZwVmdwWGNnRnladzZVUEhBeTZScEZIMl9YZ0hUT01GcDdkMXFwcXF0Q3hkTEluSnpnb3F5RFA?oc=5",
           "existing_event_score": 1.0,
           "existing_direction_score": 3.0,
