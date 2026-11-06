@@ -1,69 +1,48 @@
 {
-  "report_date": "2026-11-04",
-  "created_at": "2026-11-04T14:25:48.299950",
+  "report_date": "2026-11-05",
+  "created_at": "2026-11-05T14:33:01.942889",
   "article_count": 50,
-  "total_score": -33,
-  "conflict_index": -0.66,
+  "total_score": -40,
+  "conflict_index": -0.8,
   "assessment": "mild escalation",
-  "escalation_pressure": -74,
-  "diplomatic_pressure": 41,
-  "net_signal": -33,
+  "escalation_pressure": -65,
+  "diplomatic_pressure": 25,
+  "net_signal": -40,
   "top_drivers": [
+    {
+      "driver": "war",
+      "category": "Military escalation",
+      "count": 22,
+      "weight": -1,
+      "impact": -22
+    },
     {
       "driver": "strikes",
       "category": "Military escalation",
-      "count": 11,
+      "count": 7,
       "weight": -2,
-      "impact": -22
+      "impact": -14
     },
     {
       "driver": "strike",
       "category": "Military escalation",
-      "count": 11,
+      "count": 7,
       "weight": -2,
-      "impact": -22
+      "impact": -14
     },
     {
-      "driver": "war",
+      "driver": "attack",
       "category": "Military escalation",
-      "count": 21,
-      "weight": -1,
-      "impact": -21
-    },
-    {
-      "driver": "talks",
-      "category": "Diplomacy / negotiation",
-      "count": 6,
-      "weight": 2,
-      "impact": 12
+      "count": 4,
+      "weight": -2,
+      "impact": -8
     },
     {
       "driver": "deal",
       "category": "Ceasefire / settlement",
-      "count": 5,
+      "count": 7,
       "weight": 1,
-      "impact": 5
-    },
-    {
-      "driver": "peace",
-      "category": "Diplomacy / negotiation",
-      "count": 2,
-      "weight": 2,
-      "impact": 4
-    },
-    {
-      "driver": "negotiations",
-      "category": "Diplomacy / negotiation",
-      "count": 2,
-      "weight": 2,
-      "impact": 4
-    },
-    {
-      "driver": "negotiation",
-      "category": "Diplomacy / negotiation",
-      "count": 2,
-      "weight": 2,
-      "impact": 4
+      "impact": 7
     },
     {
       "driver": "dialogue",
@@ -73,6 +52,13 @@
       "impact": 4
     },
     {
+      "driver": "attacks",
+      "category": "Military escalation",
+      "count": 2,
+      "weight": -2,
+      "impact": -4
+    },
+    {
       "driver": "ceasefire",
       "category": "Ceasefire / settlement",
       "count": 1,
@@ -80,21 +66,28 @@
       "impact": 3
     },
     {
-      "driver": "threat",
-      "category": "Threats / retaliation",
-      "count": 2,
-      "weight": -1,
-      "impact": -2
-    },
-    {
-      "driver": "mediator",
+      "driver": "talks",
       "category": "Diplomacy / negotiation",
       "count": 1,
       "weight": 2,
       "impact": 2
     },
     {
-      "driver": "mediation",
+      "driver": "negotiations",
+      "category": "Diplomacy / negotiation",
+      "count": 1,
+      "weight": 2,
+      "impact": 2
+    },
+    {
+      "driver": "negotiation",
+      "category": "Diplomacy / negotiation",
+      "count": 1,
+      "weight": 2,
+      "impact": 2
+    },
+    {
+      "driver": "mediator",
       "category": "Diplomacy / negotiation",
       "count": 1,
       "weight": 2,
@@ -108,21 +101,14 @@
       "impact": -2
     },
     {
-      "driver": "attacks",
-      "category": "Military escalation",
+      "driver": "diplomacy",
+      "category": "Diplomacy / negotiation",
       "count": 1,
-      "weight": -2,
-      "impact": -2
+      "weight": 2,
+      "impact": 2
     },
     {
-      "driver": "attack",
-      "category": "Military escalation",
-      "count": 1,
-      "weight": -2,
-      "impact": -2
-    },
-    {
-      "driver": "threatens",
+      "driver": "threat",
       "category": "Threats / retaliation",
       "count": 1,
       "weight": -1,
@@ -139,8 +125,8 @@
   "categories": [
     {
       "category": "Military escalation",
-      "score": -69,
-      "count": 45,
+      "score": -62,
+      "count": 42,
       "keywords": [
         "attack",
         "attacks",
@@ -151,22 +137,21 @@
     },
     {
       "category": "Diplomacy / negotiation",
-      "score": 32,
-      "count": 16,
+      "score": 14,
+      "count": 7,
       "keywords": [
         "dialogue",
-        "mediation",
+        "diplomacy",
         "mediator",
         "negotiation",
         "negotiations",
-        "peace",
         "talks"
       ]
     },
     {
       "category": "Ceasefire / settlement",
-      "score": 9,
-      "count": 7,
+      "score": 11,
+      "count": 9,
       "keywords": [
         "ceasefire",
         "deal",
@@ -175,19 +160,18 @@
     },
     {
       "category": "Threats / retaliation",
-      "score": -5,
-      "count": 4,
+      "score": -3,
+      "count": 2,
       "keywords": [
         "escalation",
-        "threat",
-        "threatens"
+        "threat"
       ]
     }
   ],
   "key_signals": [
     {
       "title": "U.S. launches new attacks on Iranian targets days after Netanyahu pressed Trump for more strikes - PBS",
-      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPLTRLaEl5M0lIVGl0V3RQNExrMk1vQW5iOTRxUi1NdFRpbDkwSm1icXpsZXBQbXFpdjM4SjFWd0I0VEFIT2RDUm5mQWtzbmlaSTlFYXFpbUlHTktINVB4WDVuNmdRWGtmYUlOQW92OGhJc2NweWoyZ3RJbU9VT0ZlN3FvaHdLaU5rSDJHMXBEZi1tNHJXUjJXRF9weFJIRUlPOW5aaTM5eEFFRjkxa2QtQ3RtSkVWdGx5SU9JU2JVQ2JYT3BqSjMtVGZ30gHPAUFVX3lxTFBLelpzanoyMy01cGRURlBiNloyMmVGdF92enpCTDZBMzJQNXNObzI1bGVXa2Y3THBYbS1aRnU1RXJlV213MUo0bm9DWTVIcDUwZzdpX0llOUNnOWwtN0d2STlIZnU2ZWxVUElUMDVJcVBqM2RneFFNTU9DQ2NaVHNXUjRKQW1GR0o1OURmQk1FVEtsbDN5ZUQybTktcl9vQjQtbGFDUkxpS0dkWGxGMXFFX21tZkFObFV5dlVnYWtRV2ZCemNXSkxGQnVJSnF3bw?oc=5",
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPLTRLaEl5M0lIVGl0V3RQNExrMk1vQW5iOTRxUi1NdFRpbDkwSm1icXpsZXBQbXFpdjM4SjFWd0I0VEFIT2RDUm5mQWtzbmlaSTlFYXFpbUlHTktINVB4WDVuNmdRWGtmYUlOQW92OGhJc2NweWoyZ3RJbU9VT0ZlN3FvaHdLaU5rSDJHMXBEZi1tNHJXUjJXRF9weFJIRUlPOW5aaTM5eEFFRjkxa2QtQ3RtSkVWdGx5SU9JU2JVQ2JYT3BqSjMtVGZ3?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
       "published": "Tue, 03 Nov 2026 15:07:24 GMT",
       "score": -8,
@@ -196,6 +180,18 @@
         "strikes",
         "attack",
         "attacks"
+      ]
+    },
+    {
+      "title": "Iran's Khamenei warns US and Israel against new attacks - France 24",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQMkxFamlvVzdzdlp2NWJScFhNcEdod2M1WVpmY2JrOEwzY1FDa1FMWE5BQ0tESHljYUFXbUFpck5Ba2xxbmQ2aU41bVJXWTdrY244S0VaQVFpcU9OS21vZjY2ZFlJSHVRWDBRUWNwbWVaSjdiUTBERnNnU1o2THlBWGhQUkFLVmNFMXRvOF9rLWZrZFhjRDJyOVg5SjVpLVAtREMycjhTQQ?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Sat, 31 Oct 2026 17:00:36 GMT",
+      "score": -5,
+      "tags": [
+        "attack",
+        "attacks",
+        "war"
       ]
     },
     {
@@ -212,17 +208,6 @@
       ]
     },
     {
-      "title": "US has conducted defensive strikes on Iranian targets in the Strait of Hormuz, US official says - AP News",
-      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOSlZQOGFnNWxyTG91ZkxGMkdDdlNhd1RuRUZzblYtZGxfOGpReXI2cE5oazAzZkFQRW96Y3VrUkdfenVFWWtPS1BfaFBYYWQ1WVBMVmpuaTZuU3llOGZNMF85QnVGRHAwZlphVWVoaDFiZWhoMWVjalhyTE5na3BVWjVHcmIyWDFoU0FnU2ZBaFZyOE5GRGJqQzdR?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Tue, 03 Nov 2026 02:38:00 GMT",
-      "score": -4,
-      "tags": [
-        "strike",
-        "strikes"
-      ]
-    },
-    {
       "title": "Iran plays down hope for deal to end war after new U.S. strikes on eve of midterm elections - CBS News",
       "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQbWVWWDlkaXg5ZDdDZ1c5R21YM3FiSm5xbkVDYTBFTHFQdmlLdFRCOFdBbWtNVjBBLVBmTVM3aUFQZGg2c3duOFFINjNKSkxTbkgwd2NXYXhZQ0hiM2FTYjdkTUk5V2g4ZFdiQnhGZmN1VklkQlozamlESzdYYWNmSFBZdw?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
@@ -236,10 +221,10 @@
       ]
     },
     {
-      "title": "US strikes Iranian island ahead of midterm elections - BBC",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBxYlJRM3p5MDBuWjZfNk8xTVR0ejJyRzg5ZS01M0JIX2w2ZzktZERNZ2NMY0ROTGpRR19aNEEyZWxfNzljR3FZN185d01DRFExa3Q4WTdrZU1CeEk?oc=5",
+      "title": "US has conducted defensive strikes on Iranian targets in the Strait of Hormuz, US official says - AP News",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOSlZQOGFnNWxyTG91ZkxGMkdDdlNhd1RuRUZzblYtZGxfOGpReXI2cE5oazAzZkFQRW96Y3VrUkdfenVFWWtPS1BfaFBYYWQ1WVBMVmpuaTZuU3llOGZNMF85QnVGRHAwZlphVWVoaDFiZWhoMWVjalhyTE5na3BVWjVHcmIyWDFoU0FnU2ZBaFZyOE5GRGJqQzdR?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Tue, 03 Nov 2026 11:33:33 GMT",
+      "published": "Tue, 03 Nov 2026 02:38:00 GMT",
       "score": -4,
       "tags": [
         "strike",
@@ -247,10 +232,10 @@
       ]
     },
     {
-      "title": "Iran says US reply to Hormuz plan ‘unconvincing’; Trump confirms strikes - Al Jazeera",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxON1ZqTGJfa3lWVVdvUzRRRUc3TlVVYUNFMHhkWlREdDZsYUFzSmdJVjBhcU9PaEptVWRxRm9QMnRGcmpkYkNHVXgydHhJYTd6X0d5dF9JMG1vc1dVOWtBWWxBUTB3VjhkZlAyUEt4cGhPUlJIRzR2cFhkdFVoOEc4SkRkM1FRQ0FpblBPZHh5S3JKMl9zbUhjeUlVazhmdkJ5QjRaUXJ6eV8taGNpV3lv0gG0AUFVX3lxTE1qMndoTmRKR0xGNDZnMVJYWmdselZrTXdiXzFKVjgwQW9OZ242eHJDWFlMa2x5MU1mbGVGdFIwV2V5Q2V2OVpfYmtfd0RLUnhmN01vTjZMdHgzVnVaMlZfelBSajJHOWVJOXZ0UTlQZEMwR0RsalU2bThPekFSRDExWG9KUUVMdFlVSFRPNTgteTdyNGxZMmhCMU9aUjU1SnNaTWJETmdSTlFyeHUwQmRUOGpRMw?oc=5",
+      "title": "As Iran is 'pummeled' by US-Israeli strikes, observers say Tehran's determination appears unwavering - ABC News - Breaking News, Latest News and Videos",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdk9EMVdMbEltSk80SVFOb05sT3JBdUVqQ0RqWjc2NnVfYm5BbE9CS2JDTzRiZEw1YVpYaHlJcFlFQjk5SVdKNWY1NFh1RXdJSGtrNGUyWC16a3d2cTgyQkNvdTBWdDVRVFBZdlM5X1Jkb0hyaG9tWDMzM0RCR1JnemVKM1dkV1Jva1ZlSnFoSDl0TXY0LWJqUFZzOVhjZTVBaGVFUkRQZ2ttQmRnSTEzdEtPY1NVMVFh0gG-AUFVX3lxTE85dUVPTVI4RmZSTGdrQ0tvVXJxUXZzMWx0VTExZzhwdUtFSEdYM085eTRGT0piS1FFdm9mU1R0OUEyei1DYXllY054YXZINDUybFZMTHJiZFJkRURCMmN3cmhOMWJPUGYxdlBrWnJucEFwa3p4cjItS0NhU0N1TDdteW9BN0JzN001MVBqblZQMVcxNkd6Vm95NzRNUTZDRGJfZHdCeHR3dC0zZWZERHphelpOS3Fobi1WenRSaWc?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Wed, 04 Nov 2026 07:35:38 GMT",
+      "published": "Mon, 02 Nov 2026 17:47:44 GMT",
       "score": -4,
       "tags": [
         "strike",
@@ -258,14 +243,16 @@
       ]
     },
     {
-      "title": "Explosions hit Iran’s Qeshm Island as US media report US strikes in Hormuz - Al Jazeera",
-      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQazFFTTMzNUJ2SzhZblQxcGowTm9WbTNqa2lSYUJLckNuRkRvZmEyaVJrSlhsNkRQN1ZUbGFjZ0lFUVFtak5jOFppMFVGVHh0UUlOVFdKeWNHR2d4Tjh1ZXkyZ25iUVNJSFI0amw3cjdVOUEtMElHRnZ1UURVSDFRcTk1enNOSEk4RmE2ZUw1RVVXTXNVQmg1Rm1LMEk3UUJjRHF3bWtLUHl1UXhpVFJya1dYMkfSAboBQVVfeXFMUG52WkRoZDlGSHAxZ3BwOGhOUEp1SWJuTVNxZHJnSzBmaWEwSk55NUJqV0Y1cWplUkJtdV9OUjl6TUFqeXF2Um00RElDaVg2R2lHbjN1b2s1RFBvX3lDS1dMQlZrVVVlTk0ydno0OWZXU3M1eUlLa2dUMHMxRGRQNlBuWW9FeUdyb3c2Z2s1dXdjd2V6ajVLRGxyNDNzYWVod1p3X1prOWMzNDJqLWpDckN0S3NlbjI5QkFR?oc=5",
+      "title": "US weighs new Iran strikes as Vance reaches out: Is war or a deal closer? - Al Jazeera",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOTGN2bDJnRlZBUFNOTlVyNkF2Y3BydmxnS002TXB5MHZ6WnVmN1JlajliLXpmQ2hnMk9iejQ5MFZrdDNKU19nRWg2LWpST3ZYVHB4ckZ1Y0JhaFJNU1RaSlpOWGVjZkdreHB4YllHOTdhQzJ3NzJzcEY5LUo1Y1gtTzU2U0x0ejJ0ckFTTHcwbXJCVXdUZnEwNzBDd09uQk9XVG1lVl81MVloZi0yQVJOWS1NQdIBuAFBVV95cUxPUzd5NDgxT3R6MW9xenM1TFFrdlBPandwQkRNaVd2ODFmcF9EeXBCeXpwUERFOHl5WUtfNTVzZFo3eUpDaFFHbEJ3bmRpNFd5SDd6bnBDNGV0UWtxNUI2YzNTNWpObHktMVFPc0pkMGlISVJxb0Vfc0d5UDZZWXVtbXNKYmxBdVQxeUhzT2hraXQ2TzIydWgxWS1qazFEU1RWUzdySWNpbXRGeFZxWE1qZWNqZUh0Sk5y?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Tue, 03 Nov 2026 09:59:04 GMT",
+      "published": "Fri, 30 Oct 2026 10:44:57 GMT",
       "score": -4,
       "tags": [
         "strike",
-        "strikes"
+        "strikes",
+        "war",
+        "deal"
       ]
     },
     {
@@ -282,17 +269,6 @@
       ]
     },
     {
-      "title": "Iran's delegation has left negotiations in Qatar after a tense weekend. Here's where things stand - PBS",
-      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPZDhDMmNsQ2tpZmxyZnVvc0tXTmstOUlXRWxWSHh4ZG8wTV95VlVDc29MemRtbVNGSXQzRHU5SFAtOTBMOW9hRXVQa0VPanRCWmloOUFFVF9jU1RiNmpEU2xIdHNqZHpKeFRvN0R3UC1JWE1OU2NkS1hxLXk3c3hpTndoOHJXTVZXZHpjV1JWTDUxZE5pd3hveGFQeWhmMHI3VGhjZkpUNl9RSE53MzQ4bk1DbjFaeHJfdlE2YmFOVGY0TFYtR00tV9IBzgFBVV95cUxOdXRFVVVob2hRQUlFWUZOVW9TTktGdWFPLUUxRkEyVjdSRnN4dlozbmdqaG1YTTRzVENmcmtnSXY2ellxU21YeV9NUHNEUUdqd3pYYjBSMjVWUlcwcnMyQkhlU09HbnJrMkFtVk96MzktdzNsdDlSUW1lUDJBRTk5UTJCVTlsa2MxaWY1bWdpd2puWmdsXzNHSnI4VDJoY1dUZkEwekVNZFp0Vnl2TVdpRWJBZ1oxWkJGUm1XMEJUZFRpWi1lbDl0Q1Rnb2ZpUQ?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Mon, 02 Nov 2026 16:02:18 GMT",
-      "score": 4,
-      "tags": [
-        "negotiation",
-        "negotiations"
-      ]
-    },
-    {
       "title": "Qatari officials in Iran in bid to revive ceasefire deal with US - Al Jazeera",
       "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOSDdnbjUwcjA0SXkzWlVXOFZsREJjcjR1dV80T25uVTVHeEExZkRwSjlIWHoxXy1xWnk5MnRkblhvcHpDTDEtWDF1VGRoTVVrWmZIUWRkSEdyd0VTLWFSSkRtTkdLZlBVdHFfWWlXd3FjWDJDTjFyTWxuYkdyVGdnZFVibWRhczJ3WmhhUmJWUTdsNTdXUWxqalpiSloyQTI3OWpzSHNESkdzUdIBrwFBVV95cUxNVXZ2X0l5M0gzLXExaUNPZ0RHem0zVzBMX3ExbURWZU9CZVVmRnM1dUExY2ljY1Q3VDYwSm5pNExMWDZ3Vmo2cy1kUk9WTWlmWjhLYmZRcXlPY2JHSHlkSzFEUlVtODlpcktaUk9MejdGek9jWGhyS1V5QkdTUDMwaVg0UnVYdE1UMVVyNEZINUZiMllkQTNia01ZVHhPUmxtS2F4RVZvVkcxOGdoYjU4?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
@@ -304,32 +280,42 @@
       ]
     },
     {
-      "title": "Gulf braced for escalation of war between US-Israel alliance and Iran - Financial Times",
-      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOYlZjTzdFYjAzeVItVzFIMWE4QXVhblR1SlVvMnFjLWxBczktR3o3V0kyMGRvMXFibUhmOUNoRGlQZ0dTanNhaUktM1dOeXBIcU9PS3Nyc01GbEhtX0t2VDZDckdQMGg5NGluZ3ZzOE11a3BYVGp4RHNEY243U0VUbGU5dk0?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Sun, 01 Nov 2026 18:02:52 GMT",
-      "score": -3,
-      "tags": [
-        "escalation",
-        "war"
-      ]
-    },
-    {
-      "title": "Iran, US still far apart on deal; Trump says ready but in no hurry for strikes - Reuters",
-      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPalRYN3p3UkoxcmdQWFZuQ2xvU1FaZG0yX25XcTJreldvQmIyeDRCdWVKNVliZ1hHaTNweHpmRXpOWUZSVHRLMVdDVmJTOFdOTHRhOGFFS29HYlU1akVQdTFIdGNydjF2WWM3LXZVLUpOam5WeWxFaW0xMWUtRWhhMXdROWlXVFFuZnExdU5RVjlsRE0yMTBxUDh2bkVkeEk0QkwwU1Jxem50WU9yU3hmUHhvSEJyZ251OWM0cEM3dmJ0TzhaNzZrb1FHc3g?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Tue, 03 Nov 2026 06:58:00 GMT",
+      "title": "Exclusive | U.S. Strikes Iran’s Qeshm Island as Trump Talks Down War Risks - WSJ",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNbmVhWVpoUFY5Q2J4OGY3SlRPdnpxbFhHaWlOT2V6NUdXaXl0SjVQWnNMVXdIQV9KaFdfY3dOMFpqRFF5VzF6WWh4dnNERlJidUVhbEliWmt6ZVhuUThYN1pac2NHWTR4MnE2Q2JPLWVJVkFzckZucFNMRWFHQ3RkU1JwdTBGM1B0X0dEckpoRHFzSG5Mb0V1MkF1M2hHSW1obXZuSGhGQ0dodEk?oc=5",
+      "source": "\"middle east conflict when:7d\" - Google News",
+      "published": "Tue, 03 Nov 2026 02:38:00 GMT",
       "score": -3,
       "tags": [
         "strike",
         "strikes",
-        "deal"
+        "war",
+        "talks"
+      ]
+    },
+    {
+      "title": "Rubio says US struck Iran fearing it would retaliate for Israeli attack - ABC News - Breaking News, Latest News and Videos",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQbzJ1MnM3VFIyRWxoVEM5c25DbEVtYXlEajY3XzlqWjZIbVFCOXNlZC1lc1lxVnpxbkY5YmtUWE5jTUJnUjhzV2hyNlhNeU5JaVRFYW01VVZvVmJxNjZjUFQtZW1MRGtJc2lHdEtpOTNYYmM0WFRfWk9XYTA0NDdhR19zWktTT1h4ME91dWx1SFZacmVBMEZCLUdfNHltam5jcVlv0gGoAUFVX3lxTFBxUkduQU9kUjVvSnJ5b0ZlWVVBa0JkTjk5cGF5TTlFSzZaMXh1dEE3c1pvOVdDZU0xYmg1SFZEVU5HckVTUURnRmJKdi1NV29KdTlJSXNpYUVwbk8yMDJkU2RuM1VhUGY3Wi1ZSkI5VVRIcVdzcmtyWDdXYlhURGJJenZfLWdLOTNoZTFzZV9HWEE0cHUydHppM0s5Z05EdkRuUkRNZzFBdA?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Mon, 02 Nov 2026 17:31:39 GMT",
+      "score": -2,
+      "tags": [
+        "attack"
+      ]
+    },
+    {
+      "title": "Iranian leaders welcome US midterm results, but Trump may still attack - Al Jazeera",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNdF9kYVI3SGNySm5CRUp6OWpWc1F3TzZYN09vMnJHTmFFTnJoOUpacUdHbnJ5Ty1WSmZab21Ea0Y0R2w3MERTcjd6ajBqN1FkQ3JCaGl4XzRxU091eFROMm9yUnBzODV0Zm8xMTh3WkxBMFpUVXV6YlB2d1R0bm9SMElIdktra1FJWTdabURGN1B3UzM1TWRqT1JkME5VcndzWExPbjBn0gGrAUFVX3lxTE0tSXQyTjAyWHRXMUl5dVJ0c0ZMSFdDSTFKNGtTU3pqMlUwd3ZMMmROb0NnbS01THhRYkloXzNQOGE4Uzc3RTdHekFIS3BJYUppYTA2b2NrcWVucmZBTkNaR1VrTGRfM3FueUNzMzNSSGlZZU8xQ0pzYTFyQWpULWhtU09zalFRY0xkSkh5N1hJWi1YS0Z3cjkxOTlURzlidGlEU2htVHZBa0Nfaw?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Wed, 04 Nov 2026 15:28:16 GMT",
+      "score": -2,
+      "tags": [
+        "attack"
       ]
     }
   ],
   "integrity": {
     "driver_net_equals_total_score": true,
-    "driver_net": -33,
-    "source_total_score": -33
+    "driver_net": -40,
+    "source_total_score": -40
   }
 }
