@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-11-05T17:15:27.490623Z",
-  "source_generated_at": "2026-11-05T09:51:22Z",
+  "generated_at": "2026-11-06T12:58:47.805223Z",
+  "source_generated_at": "2026-11-06T11:32:48Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": false,
+    "required_today_utc": true,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1898,
-  "event_count": 472,
-  "rejected_count": 1426,
+  "source_event_count": 1900,
+  "event_count": 473,
+  "rejected_count": 1427,
   "rejection_counts": {
-    "category_not_kinetic": 693,
+    "category_not_kinetic": 694,
     "outside_window": 458,
     "no_confirmed_action_language": 231,
     "context_or_hypothetical": 28,
@@ -22,7 +22,7 @@
     "alert_only": 3
   },
   "category_counts": {
-    "missile": 193,
+    "missile": 194,
     "strike": 103,
     "drone": 73,
     "airstrike": 47,
@@ -33,14 +33,14 @@
   "severity_counts": {
     "medium": 282,
     "high": 162,
-    "low": 26,
+    "low": 27,
     "critical": 2
   },
   "actor_counts": {
     "Yemen": 141,
     "Israel": 123,
     "Iran": 87,
-    "Unknown actor": 42,
+    "Unknown actor": 43,
     "United States": 41,
     "Saudi Arabia": 21,
     "Lebanon": 9,
@@ -49,6 +49,32 @@
     "Syria": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-tytx53h7py80",
+      "timestamp": "2026-11-05T18:25:45Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "low",
+      "actor": "unknown",
+      "actor_label": "Unknown actor",
+      "actor_method": "normalized.attacker",
+      "target_country": "Iran",
+      "location": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "OSINTdefender reports Russia agreed to supply Iran with 90 helicopter-mounted launchers for precision-guided missiles, designed for Mi-28 attack helicopters",
+      "source_name": "OSINTdefender",
+      "source_url": "https://t.me/OSINTdefender/20681",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "general_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-3ptvmo406b400",
       "timestamp": "2026-11-04T13:13:50Z",
