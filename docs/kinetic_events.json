@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T12:58:47.805223Z",
+  "generated_at": "2026-11-06T16:40:40.832804Z",
   "source_generated_at": "2026-11-06T11:32:48Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
@@ -7,38 +7,38 @@
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
   "source_event_count": 1900,
-  "event_count": 473,
-  "rejected_count": 1427,
+  "event_count": 471,
+  "rejected_count": 1429,
   "rejection_counts": {
     "category_not_kinetic": 694,
-    "outside_window": 458,
+    "outside_window": 460,
     "no_confirmed_action_language": 231,
     "context_or_hypothetical": 28,
     "retrospective_or_aftermath": 13,
     "alert_only": 3
   },
   "category_counts": {
-    "missile": 194,
+    "missile": 193,
     "strike": 103,
-    "drone": 73,
+    "drone": 72,
     "airstrike": 47,
     "ground": 33,
     "explosion": 22,
     "intercept": 1
   },
   "severity_counts": {
-    "medium": 282,
+    "medium": 280,
     "high": 162,
     "low": 27,
     "critical": 2
   },
   "actor_counts": {
-    "Yemen": 141,
-    "Israel": 123,
+    "Yemen": 140,
+    "Israel": 122,
     "Iran": 87,
     "Unknown actor": 43,
     "United States": 41,
@@ -12287,58 +12287,6 @@
       "description": "Israeli drone strikes reported on village of Mifdon south of Nabatieh in southern Lebanon",
       "source_name": "abualiexpress",
       "source_url": "https://t.me/abualiexpress/128130",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-2dlo787l66tc0",
-      "timestamp": "2026-08-08T14:55:14Z",
-      "event_type": "kinetic",
-      "subtype": "missile",
-      "category": "missile",
-      "severity": "medium",
-      "actor": "yem",
-      "actor_label": "Yemen",
-      "actor_method": "raw_source.origin",
-      "target_country": "Persian Gulf",
-      "location": "Persian Gulf",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Oil tanker struck by missile fire in southern Hormuz Strait, vessel catches fire",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/128126",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-21ur067kcwhs0",
-      "timestamp": "2026-08-08T13:44:04Z",
-      "event_type": "kinetic",
-      "subtype": "drone",
-      "category": "drone",
-      "severity": "medium",
-      "actor": "isr",
-      "actor_label": "Israel",
-      "actor_method": "raw_source.origin",
-      "target_country": "",
-      "location": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "IDF drones strike Ali al-Taher ridge with incendiary bombs",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/128124",
       "source_repository": "mikloshetzer-sketch/me-security-monitor",
       "source_collection": "events",
       "validation": {
