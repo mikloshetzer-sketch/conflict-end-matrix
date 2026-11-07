@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T11:45:52.503435Z",
+  "generated_at": "2026-11-07T15:34:58.949084Z",
   "source_generated_at": "2026-11-07T10:20:08Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
@@ -7,15 +7,15 @@
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
   "source_event_count": 1912,
-  "event_count": 470,
-  "rejected_count": 1442,
+  "event_count": 468,
+  "rejected_count": 1444,
   "rejection_counts": {
     "category_not_kinetic": 698,
-    "outside_window": 466,
+    "outside_window": 468,
     "no_confirmed_action_language": 234,
     "context_or_hypothetical": 28,
     "retrospective_or_aftermath": 13,
@@ -23,7 +23,7 @@
   },
   "category_counts": {
     "missile": 196,
-    "strike": 102,
+    "strike": 100,
     "drone": 68,
     "airstrike": 48,
     "ground": 33,
@@ -31,18 +31,18 @@
     "intercept": 1
   },
   "severity_counts": {
-    "medium": 278,
+    "medium": 276,
     "high": 163,
     "low": 27,
     "critical": 2
   },
   "actor_counts": {
     "Yemen": 138,
-    "Israel": 121,
+    "Israel": 120,
     "Iran": 88,
     "United States": 44,
     "Unknown actor": 42,
-    "Saudi Arabia": 22,
+    "Saudi Arabia": 21,
     "Lebanon": 8,
     "Iraq": 5,
     "Jordan": 1,
@@ -12214,58 +12214,6 @@
       "validation": {
         "accepted": true,
         "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-8wb2247falg0",
-      "timestamp": "2026-08-09T14:59:00Z",
-      "event_type": "kinetic",
-      "subtype": "strike",
-      "category": "strike",
-      "severity": "medium",
-      "actor": "sau",
-      "actor_label": "Saudi Arabia",
-      "actor_method": "raw_source.origin",
-      "target_country": "",
-      "location": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Saudi warplane strikes Ghor al-Mish'wa area in Saada district, northern Yemen",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/128184",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-2uugnlpraig00",
-      "timestamp": "2026-08-09T12:59:00Z",
-      "event_type": "kinetic",
-      "subtype": "strike",
-      "category": "strike",
-      "severity": "medium",
-      "actor": "isr",
-      "actor_label": "Israel",
-      "actor_method": "raw_source.origin",
-      "target_country": "",
-      "location": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "IDF continues destroying buildings in Zoutar al-Sharqiya village using bulldozers",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/128175",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "general_action_match",
         "mode": "strict_kinetic_v2"
       }
     }
