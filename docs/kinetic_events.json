@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-11-08T11:57:37.032178Z",
-  "source_generated_at": "2026-11-08T06:04:12Z",
+  "generated_at": "2026-11-08T15:53:15.788664Z",
+  "source_generated_at": "2026-11-08T13:27:38Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
-  "source_event_count": 1925,
-  "event_count": 469,
-  "rejected_count": 1456,
+  "source_event_count": 1928,
+  "event_count": 470,
+  "rejected_count": 1458,
   "rejection_counts": {
-    "category_not_kinetic": 703,
+    "category_not_kinetic": 704,
     "outside_window": 471,
-    "no_confirmed_action_language": 237,
+    "no_confirmed_action_language": 238,
     "context_or_hypothetical": 28,
     "retrospective_or_aftermath": 14,
     "alert_only": 3
   },
   "category_counts": {
-    "missile": 196,
+    "missile": 197,
     "strike": 102,
     "drone": 67,
     "airstrike": 48,
@@ -31,13 +31,13 @@
     "intercept": 1
   },
   "severity_counts": {
-    "medium": 278,
+    "medium": 279,
     "high": 164,
     "low": 25,
     "critical": 2
   },
   "actor_counts": {
-    "Yemen": 139,
+    "Yemen": 140,
     "Israel": 119,
     "Iran": 89,
     "United States": 46,
@@ -48,6 +48,32 @@
     "Jordan": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-fb3aulnly340",
+      "timestamp": "2026-11-08T11:10:45Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "medium",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "",
+      "location": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Houthis strike Aramco multi-story tower in Riyadh's King Abdullah Financial District, footage confirms damage; Saudi Energy Ministry acknowledged the incident but attributed damage to falling missile debris",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/86904",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "general_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-3dqjg9h0wmm00",
       "timestamp": "2026-11-07T21:00:08Z",
