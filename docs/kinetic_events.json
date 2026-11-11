@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T12:45:13.150791Z",
+  "generated_at": "2026-11-11T17:00:03.730002Z",
   "source_generated_at": "2026-11-11T11:00:08Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
@@ -7,15 +7,15 @@
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
   "source_event_count": 1959,
-  "event_count": 460,
-  "rejected_count": 1499,
+  "event_count": 459,
+  "rejected_count": 1500,
   "rejection_counts": {
     "category_not_kinetic": 727,
-    "outside_window": 485,
+    "outside_window": 486,
     "no_confirmed_action_language": 241,
     "context_or_hypothetical": 29,
     "retrospective_or_aftermath": 14,
@@ -24,20 +24,20 @@
   "category_counts": {
     "missile": 196,
     "strike": 96,
-    "drone": 64,
+    "drone": 63,
     "airstrike": 48,
     "ground": 33,
     "explosion": 22,
     "intercept": 1
   },
   "severity_counts": {
-    "medium": 269,
+    "medium": 268,
     "high": 164,
     "low": 25,
     "critical": 2
   },
   "actor_counts": {
-    "Yemen": 138,
+    "Yemen": 137,
     "Israel": 109,
     "Iran": 90,
     "United States": 45,
@@ -11974,32 +11974,6 @@
       "description": "Two ADNOC vessels attacked in Strait of Hormuz; two anti-ship cruise missiles launched from Sirik, Iranian territory",
       "source_name": "CIG_telegram",
       "source_url": "https://t.me/CIG_telegram/82196",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-2wjgflg9ppo00",
-      "timestamp": "2026-08-13T15:47:18Z",
-      "event_type": "kinetic",
-      "subtype": "drone",
-      "category": "drone",
-      "severity": "medium",
-      "actor": "yem",
-      "actor_label": "Yemen",
-      "actor_method": "raw_source.origin",
-      "target_country": "",
-      "location": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Houthis attack Saudi Aramco oil facilities in Jizan, southwestern Saudi Arabia with two drones, reporting direct hits on target",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/128443",
       "source_repository": "mikloshetzer-sketch/me-security-monitor",
       "source_collection": "events",
       "validation": {
