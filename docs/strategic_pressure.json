@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T17:00:04.857481+00:00",
+  "generated_at": "2026-11-12T17:29:34.822482+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,29 +18,29 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 716,
-    "kinetic_events_loaded": 459,
-    "unique_events_scanned": 1147,
-    "strategic_evidence_contributions": 386,
+    "non_kinetic_events_loaded": 720,
+    "kinetic_events_loaded": 453,
+    "unique_events_scanned": 1145,
+    "strategic_evidence_contributions": 389,
     "evidence_contributions_by_actor": {
-      "usa": 129,
-      "iran": 257
+      "usa": 130,
+      "iran": 259
     },
     "scored_contributions_by_actor": {
-      "usa": 93,
-      "iran": 139
+      "usa": 94,
+      "iran": 140
     },
     "suppressed_duplicates_by_actor": {
       "usa": 36,
-      "iran": 118
+      "iran": 119
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 362,
+      "non_kinetic": 365,
       "kinetic": 24
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 230,
-      "usa:negotiation": 105,
+      "iran:negotiation": 232,
+      "usa:negotiation": 106,
       "iran:missile_test": 15,
       "usa:presidential_warning": 15,
       "iran:hormuz_threat": 9,
@@ -52,8 +52,8 @@
       "usa:carrier_deployment": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 119,
-      "usa:negotiation": 73,
+      "iran:negotiation": 120,
+      "usa:negotiation": 74,
       "usa:presidential_warning": 15,
       "iran:hormuz_threat": 9,
       "iran:missile_test": 8,
@@ -65,138 +65,50 @@
       "usa:carrier_deployment": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 4,
-    "history_day_count": 245
+    "skipped_current_utc_day": 2,
+    "history_day_count": 247
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-11-09",
+  "latest_complete_utc_day": "2026-11-11",
   "current": {
-    "date": "2026-11-09",
+    "date": "2026-11-11",
     "calculation_mode": "live",
     "usa": {
-      "raw_score": -6.0,
+      "raw_score": 0.0,
       "positive_score": 0.0,
-      "negative_score": -6.0,
-      "event_count": 1,
-      "scored_event_count": 1,
-      "evidence_event_count": 1,
+      "negative_score": 0.0,
+      "event_count": 0,
+      "scored_event_count": 0,
+      "evidence_event_count": 0,
       "suppressed_duplicate_count": 0,
       "increase_event_count": 0,
-      "decrease_event_count": 1,
-      "contributors": [
-        {
-          "event_id": "INFO-000007",
-          "timestamp": "2026-11-09T09:33:41+00:00",
-          "date": "2026-11-09",
-          "actor": "usa",
-          "bilateral_event": true,
-          "title": "Qatar PM to meet Trump: What’s the latest on US-Iran negotiations? - Al Jazeera",
-          "source_layer": "non_kinetic",
-          "event_type": "diplomatic",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": -6.0,
-          "duplicate_indicator_evidence": false,
-          "daily_score_suppressed": false,
-          "suppression_reason": null,
-          "primary_daily_indicator": "negotiation",
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_full_scale_war",
-                "name": "Avoid full-scale regional war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 4
-            }
-          ],
-          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Qatar PM to meet Trump: What’s the latest on US-Iran negotiations? - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOTG54ck5HeEc1SFBfeF83WGR0SGxuS0FUcFhzQUtBa1pLOXphcDdvNk9QYS0xUkpBd1JnNkVybHoyOUlUeHVfYUF4eUpzWnd1Z2RWTW85VTdYdGVZb3NaekZOSUVsSmlWTXVqN1luWXV2ZjhtWWlpdElSY251Vkl4cTFWS3kxak9GZnBxS3JPckFmUlF6Nk9fOUl1R1gyckxIa19aX29mRdIBrAFBVV95cUxNYjNzN21zZTFQOFlUOUNqZndVM0IyMUgtZ2lZZlRtLWxRZm1ILV8yZ1pWc1NLWnJvd0p1QW13OS1mZERoLUkySDhFZDB6WmFmZEdHaDlCREdxeHd5N3ozVkJpeE5ndkl0YnJ3ekhYT1JaUGUtdXFSbWJDaUM0OU1VZWh5SU5ERGZWOVNPZEFWNTQ5dnVjMWxVd1Z2Z3I4ZDFmQ2laWC1MMnVaVE1O?oc=5",
-          "existing_event_score": 4.0,
-          "existing_direction_score": 1.0,
-          "winning_daily_indicators": [
-            "negotiation"
-          ],
-          "duplicate_daily_indicators": []
-        }
-      ],
-      "weighted_score_7d": -6.0,
-      "pressure_index_7d": 38.0,
+      "decrease_event_count": 0,
+      "contributors": [],
+      "weighted_score_7d": -9.3,
+      "pressure_index_7d": 31.4,
       "pressure_level": "reduced",
-      "trend": "strong_decrease",
-      "strongest_contributors": [
-        {
-          "event_id": "INFO-000007",
-          "timestamp": "2026-11-09T09:33:41+00:00",
-          "date": "2026-11-09",
-          "actor": "usa",
-          "bilateral_event": true,
-          "title": "Qatar PM to meet Trump: What’s the latest on US-Iran negotiations? - Al Jazeera",
-          "source_layer": "non_kinetic",
-          "event_type": "diplomatic",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": -6.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -6.0,
-          "final_score": -6.0,
-          "duplicate_indicator_evidence": false,
-          "daily_score_suppressed": false,
-          "suppression_reason": null,
-          "primary_daily_indicator": "negotiation",
-          "indicators": [
-            {
-              "id": "negotiation",
-              "name": "Negotiation",
-              "score": -6.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_full_scale_war",
-                "name": "Avoid full-scale regional war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 4
-            }
-          ],
-          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Qatar PM to meet Trump: What’s the latest on US-Iran negotiations? - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOTG54ck5HeEc1SFBfeF83WGR0SGxuS0FUcFhzQUtBa1pLOXphcDdvNk9QYS0xUkpBd1JnNkVybHoyOUlUeHVfYUF4eUpzWnd1Z2RWTW85VTdYdGVZb3NaekZOSUVsSmlWTXVqN1luWXV2ZjhtWWlpdElSY251Vkl4cTFWS3kxak9GZnBxS3JPckFmUlF6Nk9fOUl1R1gyckxIa19aX29mRdIBrAFBVV95cUxNYjNzN21zZTFQOFlUOUNqZndVM0IyMUgtZ2lZZlRtLWxRZm1ILV8yZ1pWc1NLWnJvd0p1QW13OS1mZERoLUkySDhFZDB6WmFmZEdHaDlCREdxeHd5N3ozVkJpeE5ndkl0YnJ3ekhYT1JaUGUtdXFSbWJDaUM0OU1VZWh5SU5ERGZWOVNPZEFWNTQ5dnVjMWxVd1Z2Z3I4ZDFmQ2laWC1MMnVaVE1O?oc=5",
-          "existing_event_score": 4.0,
-          "existing_direction_score": 1.0,
-          "winning_daily_indicators": [
-            "negotiation"
-          ],
-          "duplicate_daily_indicators": []
-        }
-      ]
+      "trend": "increase",
+      "strongest_contributors": []
     },
     "iran": {
       "raw_score": -6.0,
       "positive_score": 0.0,
       "negative_score": -6.0,
-      "event_count": 1,
+      "event_count": 2,
       "scored_event_count": 1,
-      "evidence_event_count": 1,
-      "suppressed_duplicate_count": 0,
+      "evidence_event_count": 2,
+      "suppressed_duplicate_count": 1,
       "increase_event_count": 0,
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000007",
-          "timestamp": "2026-11-09T09:33:41+00:00",
-          "date": "2026-11-09",
+          "event_id": "INFO-000002",
+          "timestamp": "2026-11-11T19:25:00+00:00",
+          "date": "2026-11-11",
           "actor": "iran",
-          "bilateral_event": true,
-          "title": "Qatar PM to meet Trump: What’s the latest on US-Iran negotiations? - Al Jazeera",
+          "bilateral_event": false,
+          "title": "Vance Considers Direct Talks With Iran Hard-Liner in Push to End War - WSJ",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
           "event_direction": "mixed",
@@ -220,32 +132,75 @@
                 "name": "Avoid regime-destroying war",
                 "weight": 10.0
               },
-              "recognition_rule_count": 4
+              "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Qatar PM to meet Trump: What’s the latest on US-Iran negotiations? - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOTG54ck5HeEc1SFBfeF83WGR0SGxuS0FUcFhzQUtBa1pLOXphcDdvNk9QYS0xUkpBd1JnNkVybHoyOUlUeHVfYUF4eUpzWnd1Z2RWTW85VTdYdGVZb3NaekZOSUVsSmlWTXVqN1luWXV2ZjhtWWlpdElSY251Vkl4cTFWS3kxak9GZnBxS3JPckFmUlF6Nk9fOUl1R1gyckxIa19aX29mRdIBrAFBVV95cUxNYjNzN21zZTFQOFlUOUNqZndVM0IyMUgtZ2lZZlRtLWxRZm1ILV8yZ1pWc1NLWnJvd0p1QW13OS1mZERoLUkySDhFZDB6WmFmZEdHaDlCREdxeHd5N3ozVkJpeE5ndkl0YnJ3ekhYT1JaUGUtdXFSbWJDaUM0OU1VZWh5SU5ERGZWOVNPZEFWNTQ5dnVjMWxVd1Z2Z3I4ZDFmQ2laWC1MMnVaVE1O?oc=5",
-          "existing_event_score": 4.0,
-          "existing_direction_score": 1.0,
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Vance Considers Direct Talks With Iran Hard-Liner in Push to End War - WSJ",
+          "source": "\"middle east conflict when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQRjRFTzFCWWlaNjZKMmYxR3FMcHc0V2FrUENBOHFCOUFISFZFSnhYcUctSkUwYXpUMXcwVmlrUEo2cEtRTWZCbVZNdC03SVhxTlo0N3ZseEZ6N1J4NUxFVVEwT0R0bzZFS01nRDRIMENrX19WemhZZUdEWW8tSGRGajNjRjhzdUNPckhGTVRQcEtwTTQ0aTdiVVZEMUNjbVBFekJ4RF9ZRWRBVEFJTmRYcGVSelI?oc=5",
+          "existing_event_score": 1.0,
+          "existing_direction_score": 0.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
           "duplicate_daily_indicators": []
+        },
+        {
+          "event_id": "INFO-000005",
+          "timestamp": "2026-11-11T08:38:43+00:00",
+          "date": "2026-11-11",
+          "actor": "iran",
+          "bilateral_event": false,
+          "title": "Iran denies talks with US, says Hormuz will stay shut until demands are met - Al Jazeera",
+          "source_layer": "non_kinetic",
+          "event_type": "diplomatic",
+          "event_direction": "mixed",
+          "operational_component": 0.0,
+          "strategic_modifier": -6.0,
+          "context_multiplier": 1.0,
+          "original_final_score": -6.0,
+          "final_score": 0.0,
+          "duplicate_indicator_evidence": true,
+          "daily_score_suppressed": true,
+          "suppression_reason": "Another event was selected as the strongest evidence for the same actor, UTC date and strategic indicator.",
+          "primary_daily_indicator": null,
+          "indicators": [
+            {
+              "id": "negotiation",
+              "name": "Negotiation",
+              "score": -6.0,
+              "direction": "decrease",
+              "interest": {
+                "id": "avoid_regime_destroying_war",
+                "name": "Avoid regime-destroying war",
+                "weight": 10.0
+              },
+              "recognition_rule_count": 2
+            }
+          ],
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran denies talks with US, says Hormuz will stay shut until demands are met - Al Jazeera",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPbjE0dVFENk1CX2NnRnVSUEtzYzVDWlpBVlFvMnlNMnV5SjBncHJNcFI4WmRjNmdJWGtwXzJ6aUtYOUs4Ynl1bVUzVm5TWXFxNGxfSzRtaEY0czhyRTFSVU1mN3NqNW1BWm1WT1dCS2dZbEVTQ0hBcGRsM05RUWVQRGNUVHF1ZGhHOUZNVGVqR19keHFTUzJ3V0JwMnpFWF9uWDBYV2l3M01SN01ROFc2bzJHZUt1TjjSAbwBQVVfeXFMUDJtWTM5WXEtX3NDM0RkOG1ZVjE3RXVRYnRQNm5feHhKb0VJaXlLMjdPcjBCa1NzMkIySmk2a1hRMmwybS1SWG13RzNxLUtVZF9mQV9QYlB4cGxWcDVUbUFjVXdvcHo4THhtN2NIU01lUEYtUzVPdzRNcXIyWlBYM09QR0FsNzJUMUpBRGxaYUpQbl84bjNseUp6bWU1cFM2aUpvaUU5UnVJYXY0b1QybnBaX21OdWM2M3AtZ0w?oc=5",
+          "existing_event_score": 2.0,
+          "existing_direction_score": 0.0,
+          "winning_daily_indicators": [],
+          "duplicate_daily_indicators": [
+            "negotiation"
+          ]
         }
       ],
-      "weighted_score_7d": -5.15,
-      "pressure_index_7d": 39.7,
+      "weighted_score_7d": -9.65,
+      "pressure_index_7d": 30.7,
       "pressure_level": "reduced",
       "trend": "strong_decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000007",
-          "timestamp": "2026-11-09T09:33:41+00:00",
-          "date": "2026-11-09",
+          "event_id": "INFO-000002",
+          "timestamp": "2026-11-11T19:25:00+00:00",
+          "date": "2026-11-11",
           "actor": "iran",
-          "bilateral_event": true,
-          "title": "Qatar PM to meet Trump: What’s the latest on US-Iran negotiations? - Al Jazeera",
+          "bilateral_event": false,
+          "title": "Vance Considers Direct Talks With Iran Hard-Liner in Push to End War - WSJ",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
           "event_direction": "mixed",
@@ -269,14 +224,14 @@
                 "name": "Avoid regime-destroying war",
                 "weight": 10.0
               },
-              "recognition_rule_count": 4
+              "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Qatar PM to meet Trump: What’s the latest on US-Iran negotiations? - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOTG54ck5HeEc1SFBfeF83WGR0SGxuS0FUcFhzQUtBa1pLOXphcDdvNk9QYS0xUkpBd1JnNkVybHoyOUlUeHVfYUF4eUpzWnd1Z2RWTW85VTdYdGVZb3NaekZOSUVsSmlWTXVqN1luWXV2ZjhtWWlpdElSY251Vkl4cTFWS3kxak9GZnBxS3JPckFmUlF6Nk9fOUl1R1gyckxIa19aX29mRdIBrAFBVV95cUxNYjNzN21zZTFQOFlUOUNqZndVM0IyMUgtZ2lZZlRtLWxRZm1ILV8yZ1pWc1NLWnJvd0p1QW13OS1mZERoLUkySDhFZDB6WmFmZEdHaDlCREdxeHd5N3ozVkJpeE5ndkl0YnJ3ekhYT1JaUGUtdXFSbWJDaUM0OU1VZWh5SU5ERGZWOVNPZEFWNTQ5dnVjMWxVd1Z2Z3I4ZDFmQ2laWC1MMnVaVE1O?oc=5",
-          "existing_event_score": 4.0,
-          "existing_direction_score": 1.0,
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Vance Considers Direct Talks With Iran Hard-Liner in Push to End War - WSJ",
+          "source": "\"middle east conflict when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQRjRFTzFCWWlaNjZKMmYxR3FMcHc0V2FrUENBOHFCOUFISFZFSnhYcUctSkUwYXpUMXcwVmlrUEo2cEtRTWZCbVZNdC03SVhxTlo0N3ZseEZ6N1J4NUxFVVEwT0R0bzZFS01nRDRIMENrX19WemhZZUdEWW8tSGRGajNjRjhzdUNPckhGTVRQcEtwTTQ0aTdiVVZEMUNjbVBFekJ4RF9ZRWRBVEFJTmRYcGVSelI?oc=5",
+          "existing_event_score": 1.0,
+          "existing_direction_score": 0.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
@@ -285,9 +240,9 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 38.85,
+      "pressure_index_7d": 31.05,
       "pressure_level": "reduced",
-      "trend": "strong_decrease",
+      "trend": "decrease",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
   }
