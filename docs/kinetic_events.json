@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T13:09:50.170251Z",
+  "generated_at": "2026-11-13T17:04:14.499727Z",
   "source_generated_at": "2026-11-13T11:01:33Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
@@ -7,15 +7,15 @@
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
   "source_event_count": 1991,
-  "event_count": 449,
-  "rejected_count": 1542,
+  "event_count": 446,
+  "rejected_count": 1545,
   "rejection_counts": {
     "category_not_kinetic": 746,
-    "outside_window": 502,
+    "outside_window": 505,
     "no_confirmed_action_language": 247,
     "context_or_hypothetical": 29,
     "retrospective_or_aftermath": 14,
@@ -23,7 +23,7 @@
   },
   "category_counts": {
     "missile": 194,
-    "strike": 94,
+    "strike": 91,
     "drone": 57,
     "airstrike": 47,
     "ground": 34,
@@ -31,14 +31,14 @@
     "intercept": 1
   },
   "severity_counts": {
-    "medium": 257,
-    "high": 166,
+    "medium": 256,
+    "high": 164,
     "low": 24,
     "critical": 2
   },
   "actor_counts": {
     "Yemen": 134,
-    "Israel": 105,
+    "Israel": 102,
     "Iran": 88,
     "United States": 45,
     "Unknown actor": 43,
@@ -11636,84 +11636,6 @@
       "description": "Hezbollah attack on security zone causes 3 IDF soldiers seriously wounded",
       "source_name": "idkunim_il",
       "source_url": "https://t.me/idkunim_il/62515",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-862781vfau40",
-      "timestamp": "2026-08-15T16:42:27Z",
-      "event_type": "kinetic",
-      "subtype": "strike",
-      "category": "strike",
-      "severity": "medium",
-      "actor": "isr",
-      "actor_label": "Israel",
-      "actor_method": "raw_source.origin",
-      "target_country": "",
-      "location": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "IDF strike in Deir al-Zahrani kills Hezbollah commander Ali Fakhruddin (Abu Hassan Alaa) and activist Ali Hassan Hanjouli; 11 total killed including 2 commanders, 3 operatives, 5 family members of senior commander",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/128560",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-128zmkkroudc0",
-      "timestamp": "2026-08-15T15:04:43Z",
-      "event_type": "kinetic",
-      "subtype": "strike",
-      "category": "strike",
-      "severity": "high",
-      "actor": "isr",
-      "actor_label": "Israel",
-      "actor_method": "raw_source.origin",
-      "target_country": "Lebanon",
-      "location": "Lebanon",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "IDF strikes Hezbollah central command post in Ansaar, southern Lebanon, eliminating battalion commander Ali Samir al-Hajj Hassan of 'Radwan Force' unit and additional operatives; Hassan's family members also killed in strike",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/128556",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-2igweu38hd200",
-      "timestamp": "2026-08-15T13:12:17Z",
-      "event_type": "kinetic",
-      "subtype": "strike",
-      "category": "strike",
-      "severity": "high",
-      "actor": "isr",
-      "actor_label": "Israel",
-      "actor_method": "raw_source.origin",
-      "target_country": "Lebanon",
-      "location": "Lebanon",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "IDF strikes in Lebanon kill 11 civilians and wound 12 others; Hezbollah vows response",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/128549",
       "source_repository": "mikloshetzer-sketch/me-security-monitor",
       "source_collection": "events",
       "validation": {
