@@ -1,20 +1,20 @@
 {
-  "report_date": "2026-11-12",
-  "created_at": "2026-11-12T15:05:10.867838",
-  "article_count": 49,
-  "total_score": -37,
-  "conflict_index": -0.76,
+  "report_date": "2026-11-13",
+  "created_at": "2026-11-13T14:29:31.370417",
+  "article_count": 50,
+  "total_score": -41,
+  "conflict_index": -0.82,
   "assessment": "mild escalation",
-  "escalation_pressure": -49,
-  "diplomatic_pressure": 12,
-  "net_signal": -37,
+  "escalation_pressure": -57,
+  "diplomatic_pressure": 16,
+  "net_signal": -41,
   "top_drivers": [
     {
       "driver": "war",
       "category": "Military escalation",
-      "count": 24,
+      "count": 27,
       "weight": -1,
-      "impact": -24
+      "impact": -27
     },
     {
       "driver": "strike",
@@ -40,30 +40,30 @@
     {
       "driver": "attack",
       "category": "Military escalation",
-      "count": 2,
-      "weight": -2,
-      "impact": -4
-    },
-    {
-      "driver": "threat",
-      "category": "Threats / retaliation",
       "count": 3,
-      "weight": -1,
-      "impact": -3
+      "weight": -2,
+      "impact": -6
     },
     {
-      "driver": "threatens",
-      "category": "Threats / retaliation",
-      "count": 2,
-      "weight": -1,
-      "impact": -2
+      "driver": "deal",
+      "category": "Ceasefire / settlement",
+      "count": 4,
+      "weight": 1,
+      "impact": 4
     },
     {
       "driver": "peace",
       "category": "Diplomacy / negotiation",
-      "count": 1,
+      "count": 2,
       "weight": 2,
-      "impact": 2
+      "impact": 4
+    },
+    {
+      "driver": "threat",
+      "category": "Threats / retaliation",
+      "count": 2,
+      "weight": -1,
+      "impact": -2
     },
     {
       "driver": "killed",
@@ -80,27 +80,42 @@
       "impact": 2
     },
     {
-      "driver": "pause",
-      "category": "Ceasefire / settlement",
+      "driver": "dead",
+      "category": "Casualties",
       "count": 1,
-      "weight": 1,
-      "impact": 1
+      "weight": -2,
+      "impact": -2
     },
     {
-      "driver": "deal",
-      "category": "Ceasefire / settlement",
+      "driver": "attacks",
+      "category": "Military escalation",
       "count": 1,
-      "weight": 1,
-      "impact": 1
+      "weight": -2,
+      "impact": -2
+    },
+    {
+      "driver": "threatens",
+      "category": "Threats / retaliation",
+      "count": 1,
+      "weight": -1,
+      "impact": -1
+    },
+    {
+      "driver": "retaliation",
+      "category": "Threats / retaliation",
+      "count": 1,
+      "weight": -1,
+      "impact": -1
     }
   ],
   "categories": [
     {
       "category": "Military escalation",
-      "score": -42,
-      "count": 33,
+      "score": -49,
+      "count": 38,
       "keywords": [
         "attack",
+        "attacks",
         "strike",
         "strikes",
         "war"
@@ -108,8 +123,8 @@
     },
     {
       "category": "Diplomacy / negotiation",
-      "score": 10,
-      "count": 5,
+      "score": 12,
+      "count": 6,
       "keywords": [
         "dialogue",
         "peace",
@@ -117,33 +132,46 @@
       ]
     },
     {
-      "category": "Threats / retaliation",
-      "score": -5,
-      "count": 5,
+      "category": "Ceasefire / settlement",
+      "score": 4,
+      "count": 4,
       "keywords": [
+        "deal"
+      ]
+    },
+    {
+      "category": "Threats / retaliation",
+      "score": -4,
+      "count": 4,
+      "keywords": [
+        "retaliation",
         "threat",
         "threatens"
       ]
     },
     {
       "category": "Casualties",
-      "score": -2,
-      "count": 1,
-      "keywords": [
-        "killed"
-      ]
-    },
-    {
-      "category": "Ceasefire / settlement",
-      "score": 2,
+      "score": -4,
       "count": 2,
       "keywords": [
-        "deal",
-        "pause"
+        "dead",
+        "killed"
       ]
     }
   ],
   "key_signals": [
+    {
+      "title": "US-Iran war: Trump says more US attacks on Iran 'highly unlikely' - BBC",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBZVGlrZGdkVXQyRXBjbUdDMVliNVZPR2l1eFFud2tLMnRGSlRmbmYtbnBpVGFfX1FqRkh0WGpMbHlfT1U3WjVkR21hNnJmRFdTcndqS2F1OE5EYXM?oc=5",
+      "source": "\"middle east conflict when:7d\" - Google News",
+      "published": "Tue, 10 Nov 2026 09:40:31 GMT",
+      "score": -5,
+      "tags": [
+        "attack",
+        "attacks",
+        "war"
+      ]
+    },
     {
       "title": "US carries out another round of ‘minor’ strikes on Iran, Trump says - The Guardian",
       "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPNlhQNEhVWUJ5ODk5MkxWbFlVZVZVUnU4dGxYVWJzdTh2R2x1aHdSd1pkVHlERGNod3JCOEVSWVIxdC1SbHlRX0RPVGM5UkVCTk5KR3RWb0lWczUza01JWkNwNU93ZnpKV1pGRHk2ZW1ZZExxeGEzYW5qekxFM2dRZDhFUWZ0MzVka3RYajRBVU96cWlDTWhvM2NpVm85YTlZZm5JdkxUQ3o3VVVFUzFR?oc=5",
@@ -167,28 +195,26 @@
       ]
     },
     {
-      "title": "Iran Threatens to Attack Europe - Middle East Forum",
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5OSkstUGUyLUVBQ2pPSEh3QXRielBFN0JUNldoZUt3TWExNnZCSUt6clJySjdtOC1YSVFjR0hDY19aY3VWdkpDWEJnVXBrY1Z1SFkxbGxCbmhSU01fanQxRXU0OXlha3hFTDRHNThRMkhYckFQMU5V?oc=5",
-      "source": "\"middle east conflict when:7d\" - Google News",
-      "published": "Wed, 11 Nov 2026 12:33:44 GMT",
+      "title": "Iran warns of expanded retaliation as Israel reportedly readies to attack - Al Jazeera",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNaGV6WFJxeUNSa0ZVZFFWdC1mUGJUbEtIZldwSjJDWGQxUnFodTZ5akhnY010WTRLMXYtNjh5akpyczZkNjg1LXlUUnlQakJ5WmxORm9xQ0M4ck81WU9WWlhHU0x5WU1neXJrbTU0ZDRtd0JWa01TUTdRNjN1SDZfUkRObDg1dmJySkR3THpuaWh1TU94NVVMSHBJbEZ6VHNWUTlCNC1tTklKWFZlLXBvTHJWVkRtZ9IBuwFBVV95cUxPNmpBLWlIVTN1aUhtZ3R0amt5bWlCWGliV19MV2x5WExRRndaY2o0Nmc3cjVnZnFhX0Y3ZzVRMzBoQV9lZnctRWNiSlZ4LUtMV0JYVEVqaWpwSHo0STQ5Qzc0V0ZmMGlEZDBDNlduRVp2TUx1TjhURlRKYXdzS1N3Z1FKZ3ZJQjBTbGxyOW9tVHJaWXpDZkFqY0pEbVNEaDVkOUNmVmdoUFpQQTJTQnktZU94d3JMVm1iNFVR?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Thu, 12 Nov 2026 04:05:13 GMT",
       "score": -4,
       "tags": [
         "attack",
-        "threat",
-        "threatens"
+        "retaliation",
+        "war"
       ]
     },
     {
-      "title": "COMMENTARY: Trump’s Iran war pause is as costly as new strikes - Reuters",
-      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQYXNuaEJXU0pFb0oxRlkzenJYREJId21QY2pxclZ3bnBDWEFwZXFhZkJCLTJEUWJELTRKeExPZDdYWmZUY25UZnNJYXZ5NGNUYXpUSHkwZUJyYU9wWmp0aWVHTUQ1ZFVlQ3dOZnE3azBSNm9KZVRMWnJEWXExR3VrektGaXU2RlNySG5GX01LbHR2M2xxMF92RzcwZWV0REJ6T3ZIV0dvQkM0c1pQU1hzQlVB?oc=5",
+      "title": "Middle East latest: Trump plays down prospect of new strikes on Iran - The National",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNME42cE40Mk9sODA3dHc5LWNWZTRab1JhY1RmcVA0WklGQ0VOUlRUSkhXc0x2eThQM3lCVE43VlpnSWgwVUFSb29RVW5oZnBPMjFzWXkxYXAxSEUtTHpRcmRFR3pBTUxIX1F4clI5clBrTVNodTRPOHl2c3dlREFqdW9ROWx3R2xoS1JLMWVPSXI?oc=5",
       "source": "\"middle east conflict when:7d\" - Google News",
-      "published": "Wed, 11 Nov 2026 07:00:00 GMT",
+      "published": "Mon, 09 Nov 2026 02:42:45 GMT",
       "score": -4,
       "tags": [
         "strike",
-        "strikes",
-        "war",
-        "pause"
+        "strikes"
       ]
     },
     {
@@ -225,10 +251,10 @@
       ]
     },
     {
-      "title": "More ships attacked in Persian Gulf, oil prices rebound slightly after post-midterm plunge - CBS News",
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTDROS29td1ZxNlFndnlTQnU4LVVwTXg1OW9kemVlQmx4M1pZTFlOd21RNnJhcnBVNENOSEpjT2YyWC1DMVhXcHFpNHBMUlF6Mk9NeVFmV19RVnpZTkl0RVE1YjFYVk5JRFZBVFJQbGtlaVFQS2FCazJKWWNQRUVOaDdNdzBuUU1z?oc=5",
+      "title": "Rubio says US struck Iran fearing it would retaliate for Israeli attack - ABC News - Breaking News, Latest News and Videos",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQbzJ1MnM3VFIyRWxoVEM5c25DbEVtYXlEajY3XzlqWjZIbVFCOXNlZC1lc1lxVnpxbkY5YmtUWE5jTUJnUjhzV2hyNlhNeU5JaVRFYW01VVZvVmJxNjZjUFQtZW1MRGtJc2lHdEtpOTNYYmM0WFRfWk9XYTA0NDdhR19zWktTT1h4ME91dWx1SFZacmVBMEZCLUdfNHltam5jcVlv0gGoAUFVX3lxTFBxUkduQU9kUjVvSnJ5b0ZlWVVBa0JkTjk5cGF5TTlFSzZaMXh1dEE3c1pvOVdDZU0xYmg1SFZEVU5HckVTUURnRmJKdi1NV29KdTlJSXNpYUVwbk8yMDJkU2RuM1VhUGY3Wi1ZSkI5VVRIcVdzcmtyWDdXYlhURGJJenZfLWdLOTNoZTFzZV9HWEE0cHUydHppM0s5Z05EdkRuUkRNZzFBdA?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Fri, 06 Nov 2026 10:23:00 GMT",
+      "published": "Thu, 12 Nov 2026 20:43:10 GMT",
       "score": -2,
       "tags": [
         "attack"
@@ -246,39 +272,30 @@
       ]
     },
     {
-      "title": "Dialogue the way to end Middle East conflicts: China Daily editorial - China Daily",
-      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFA0dk1JLW5OY0h4MDBOZXZXRHFId2R5ZFdVaFN4T1NKOWFqSnhyMWY5ZTUtcHhIX2VSVVQ3ZzBPMEd2RkR6M1lFbEsxb0NBTHNjV3MyS1RTT1BoeFZCbFlENW11SU1OUTMzTkt4bW95eWtzUV9WaUZPeU9KZk9xQQ?oc=5",
+      "title": "How Iran war oil spills are threatening Gulf marine life, tourism and coastal communities - Arab News",
+      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPRnlyYVUzcTlvc09yQXVQT1dWUnlveXVFenBRLWJ2Z1dZa2h5cVpzRS1wMXhlWVRRRVFkX1NnbE90YnpKU1pSSEJNUDA2VWtpMGZCNzVtWWRzNUhtSzNJSkFmeXVHNVU2dG1FX2syM3hma0NRWUlmLURwWC1JdWpmNmZYcEhtZ2xZY0kzeDE3alk0ekc1d1hnZlFBLXFfMjhZWDFoVnoyOE1GS1EwZmE4bzZSNDVnV3lPeElPUXlpTDZZS1FHR3R3Uk1JRG0xZw?oc=5",
       "source": "\"middle east conflict when:7d\" - Google News",
-      "published": "Tue, 10 Nov 2026 12:17:07 GMT",
+      "published": "Thu, 12 Nov 2026 20:41:34 GMT",
+      "score": -2,
+      "tags": [
+        "war",
+        "threat"
+      ]
+    },
+    {
+      "title": "Iran denies talks with US, says Hormuz will stay shut until demands are met - Al Jazeera",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPbjE0dVFENk1CX2NnRnVSUEtzYzVDWlpBVlFvMnlNMnV5SjBncHJNcFI4WmRjNmdJWGtwXzJ6aUtYOUs4Ynl1bVUzVm5TWXFxNGxfSzRtaEY0czhyRTFSVU1mN3NqNW1BWm1WT1dCS2dZbEVTQ0hBcGRsM05RUWVQRGNUVHF1ZGhHOUZNVGVqR19keHFTUzJ3V0JwMnpFWF9uWDBYV2l3M01SN01ROFc2bzJHZUt1TjjSAbwBQVVfeXFMUDJtWTM5WXEtX3NDM0RkOG1ZVjE3RXVRYnRQNm5feHhKb0VJaXlLMjdPcjBCa1NzMkIySmk2a1hRMmwybS1SWG13RzNxLUtVZF9mQV9QYlB4cGxWcDVUbUFjVXdvcHo4THhtN2NIU01lUEYtUzVPdzRNcXIyWlBYM09QR0FsNzJUMUpBRGxaYUpQbl84bjNseUp6bWU1cFM2aUpvaUU5UnVJYXY0b1QybnBaX21OdWM2M3AtZ0w?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Wed, 11 Nov 2026 08:38:43 GMT",
       "score": 2,
       "tags": [
-        "dialogue"
-      ]
-    },
-    {
-      "title": "2026 Iran war | Oil, Explained, United States, Israel, Strait of Hormuz, Map, & Conflict - Britannica",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5nTzlhOGZTS180cWNtVG91c2VWRVJFYlk0cW5Ba1RHUEFOSEtldU15QktQT0EzRVY1ZVdZZ0VTRHVWTVhyN1IzeU1wbmlDMUhrQ3Roc1YxcmdMUQ?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Wed, 11 Nov 2026 08:00:00 GMT",
-      "score": -1,
-      "tags": [
-        "war"
-      ]
-    },
-    {
-      "title": "The US midterm results could have real consequences for the war in Iran. Could it end soon? - DW.com",
-      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPRGd3QWg0dm9aQlN2bVdRbFpIVmg0dklaeG1ZX1B3cUE2M2VvRVItOHpBUWlTYWhoZ3NYT3FGcjlaYkFsTkNQR2MzeUJwSmVLR1FnOWJxNE5LQ0Fwak50Q1p3NUcyYk5Tc2d3TjN0Y1ZncS1HWHhHS2JVekx6dV9oMWZETmp3alk0eDJmWlg5ONIBjwFBVV95cUxQWGRSWUFUREZZaFNzTGJqM25NUDJwSFhEcU8xaGJxUGpEdEJ6aWtyemhPMFI3VVZxc3BTa1FBZUVEdzBhSGlNaE00NWJnZE9Daks0N192NVdLczN5NmVXRm5ibGpvSWE1cktfaXN0aXBSdzJydXBwTWgwbjREWGtOQ0xMMmFLa0ZXTUdiUXFEMA?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Thu, 12 Nov 2026 05:55:57 GMT",
-      "score": -1,
-      "tags": [
-        "war"
+        "talks"
       ]
     }
   ],
   "integrity": {
     "driver_net_equals_total_score": true,
-    "driver_net": -37,
-    "source_total_score": -37
+    "driver_net": -41,
+    "source_total_score": -41
   }
 }
