@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T17:04:15.673980+00:00",
+  "generated_at": "2026-11-14T15:41:29.959285+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,29 +18,29 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 725,
-    "kinetic_events_loaded": 446,
-    "unique_events_scanned": 1144,
-    "strategic_evidence_contributions": 390,
+    "non_kinetic_events_loaded": 731,
+    "kinetic_events_loaded": 440,
+    "unique_events_scanned": 1145,
+    "strategic_evidence_contributions": 394,
     "evidence_contributions_by_actor": {
-      "usa": 131,
-      "iran": 259
+      "usa": 132,
+      "iran": 262
     },
     "scored_contributions_by_actor": {
       "usa": 95,
-      "iran": 140
+      "iran": 141
     },
     "suppressed_duplicates_by_actor": {
-      "usa": 36,
-      "iran": 119
+      "usa": 37,
+      "iran": 121
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 366,
+      "non_kinetic": 370,
       "kinetic": 24
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 232,
-      "usa:negotiation": 106,
+      "iran:negotiation": 235,
+      "usa:negotiation": 107,
       "iran:missile_test": 15,
       "usa:presidential_warning": 15,
       "iran:hormuz_threat": 9,
@@ -52,7 +52,7 @@
       "usa:carrier_deployment": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 120,
+      "iran:negotiation": 121,
       "usa:negotiation": 74,
       "usa:presidential_warning": 15,
       "iran:hormuz_threat": 9,
@@ -66,118 +66,30 @@
     },
     "skipped_without_timestamp": 0,
     "skipped_current_utc_day": 1,
-    "history_day_count": 247
+    "history_day_count": 249
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-11-11",
+  "latest_complete_utc_day": "2026-11-13",
   "current": {
-    "date": "2026-11-11",
+    "date": "2026-11-13",
     "calculation_mode": "live",
     "usa": {
-      "raw_score": -7.0,
+      "raw_score": 0.0,
       "positive_score": 0.0,
-      "negative_score": -7.0,
-      "event_count": 1,
-      "scored_event_count": 1,
-      "evidence_event_count": 1,
+      "negative_score": 0.0,
+      "event_count": 0,
+      "scored_event_count": 0,
+      "evidence_event_count": 0,
       "suppressed_duplicate_count": 0,
       "increase_event_count": 0,
-      "decrease_event_count": 1,
-      "contributors": [
-        {
-          "event_id": "INFO-000007",
-          "timestamp": "2026-11-11T14:14:55+00:00",
-          "date": "2026-11-11",
-          "actor": "usa",
-          "bilateral_event": true,
-          "title": "Rubio backs blockade, Vance wants deal: Is Trump’s team split on Iran war? - Al Jazeera",
-          "source_layer": "non_kinetic",
-          "event_type": "ceasefire",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": -7.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -7.0,
-          "final_score": -7.0,
-          "duplicate_indicator_evidence": false,
-          "daily_score_suppressed": false,
-          "suppression_reason": null,
-          "primary_daily_indicator": "ceasefire_support",
-          "indicators": [
-            {
-              "id": "ceasefire_support",
-              "name": "Support for ceasefire",
-              "score": -7.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_full_scale_war",
-                "name": "Avoid full-scale regional war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 1
-            }
-          ],
-          "reason": "United States: Support for ceasefire. Operational component: +0.00; strategic modifier: -7.00; final contribution before daily deduplication: -7.00. Event: Rubio backs blockade, Vance wants deal: Is Trump’s team split on Iran war? - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBCYVRxVHdXS2I0WWlWam93NzhydHhvZnRPWUN6ZEZySlF1WGp6a1JDWVNPal9hVmFYbEdNWlVyclgwN0lOZC1hZVR6Z2R1M3pUQW5LRjRZSlVYZndYaDNzbDVtNEF5UmZwbFNoNzB4NnNzSnJQdkpDM9IBfkFVX3lxTE52RGRYcHhoaW9LZFhuZHc4N2ZocFVUcGZlYXZSM21ZYmR2a25odXBneUo5ZW5tNnZ1SEFOdzZNLS1pYXhtai1kd2cxTUI4SjIyd2trTF9BWk9nVVEzak9UYmRMWHZPMmpOZWhOUnplei1yUlNEbDVrUlhTd25tZw?oc=5",
-          "existing_event_score": 0.0,
-          "existing_direction_score": 1.0,
-          "winning_daily_indicators": [
-            "ceasefire_support"
-          ],
-          "duplicate_daily_indicators": []
-        }
-      ],
-      "weighted_score_7d": -16.3,
-      "pressure_index_7d": 17.4,
+      "decrease_event_count": 0,
+      "contributors": [],
+      "weighted_score_7d": -10.6,
+      "pressure_index_7d": 28.8,
       "pressure_level": "low",
-      "trend": "strong_decrease",
-      "strongest_contributors": [
-        {
-          "event_id": "INFO-000007",
-          "timestamp": "2026-11-11T14:14:55+00:00",
-          "date": "2026-11-11",
-          "actor": "usa",
-          "bilateral_event": true,
-          "title": "Rubio backs blockade, Vance wants deal: Is Trump’s team split on Iran war? - Al Jazeera",
-          "source_layer": "non_kinetic",
-          "event_type": "ceasefire",
-          "event_direction": "mixed",
-          "operational_component": 0.0,
-          "strategic_modifier": -7.0,
-          "context_multiplier": 1.0,
-          "original_final_score": -7.0,
-          "final_score": -7.0,
-          "duplicate_indicator_evidence": false,
-          "daily_score_suppressed": false,
-          "suppression_reason": null,
-          "primary_daily_indicator": "ceasefire_support",
-          "indicators": [
-            {
-              "id": "ceasefire_support",
-              "name": "Support for ceasefire",
-              "score": -7.0,
-              "direction": "decrease",
-              "interest": {
-                "id": "avoid_full_scale_war",
-                "name": "Avoid full-scale regional war",
-                "weight": 10.0
-              },
-              "recognition_rule_count": 1
-            }
-          ],
-          "reason": "United States: Support for ceasefire. Operational component: +0.00; strategic modifier: -7.00; final contribution before daily deduplication: -7.00. Event: Rubio backs blockade, Vance wants deal: Is Trump’s team split on Iran war? - Al Jazeera",
-          "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBCYVRxVHdXS2I0WWlWam93NzhydHhvZnRPWUN6ZEZySlF1WGp6a1JDWVNPal9hVmFYbEdNWlVyclgwN0lOZC1hZVR6Z2R1M3pUQW5LRjRZSlVYZndYaDNzbDVtNEF5UmZwbFNoNzB4NnNzSnJQdkpDM9IBfkFVX3lxTE52RGRYcHhoaW9LZFhuZHc4N2ZocFVUcGZlYXZSM21ZYmR2a25odXBneUo5ZW5tNnZ1SEFOdzZNLS1pYXhtai1kd2cxTUI4SjIyd2trTF9BWk9nVVEzak9UYmRMWHZPMmpOZWhOUnplei1yUlNEbDVrUlhTd25tZw?oc=5",
-          "existing_event_score": 0.0,
-          "existing_direction_score": 1.0,
-          "winning_daily_indicators": [
-            "ceasefire_support"
-          ],
-          "duplicate_daily_indicators": []
-        }
-      ]
+      "trend": "strong_increase",
+      "strongest_contributors": []
     },
     "iran": {
       "raw_score": -6.0,
@@ -191,12 +103,12 @@
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000004",
-          "timestamp": "2026-11-11T19:25:00+00:00",
-          "date": "2026-11-11",
+          "event_id": "INFO-000002",
+          "timestamp": "2026-11-13T23:03:37+00:00",
+          "date": "2026-11-13",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "Vance Considers Direct Talks With Iran Hard-Liner in Push to End War - WSJ",
+          "title": "Negotiators from US, Iran and Qatar fear Netanyahu could torpedo talks to end the war - The Times of Israel",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
           "event_direction": "mixed",
@@ -223,9 +135,9 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Vance Considers Direct Talks With Iran Hard-Liner in Push to End War - WSJ",
-          "source": "\"middle east conflict when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQRjRFTzFCWWlaNjZKMmYxR3FMcHc0V2FrUENBOHFCOUFISFZFSnhYcUctSkUwYXpUMXcwVmlrUEo2cEtRTWZCbVZNdC03SVhxTlo0N3ZseEZ6N1J4NUxFVVEwT0R0bzZFS01nRDRIMENrX19WemhZZUdEWW8tSGRGajNjRjhzdUNPckhGTVRQcEtwTTQ0aTdiVVZEMUNjbVBFekJ4RF9ZRWRBVEFJTmRYcGVSelI?oc=5",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Negotiators from US, Iran and Qatar fear Netanyahu could torpedo talks to end the war - The Times of Israel",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNWG5hUEtNekVUelhnUVFLRmVVZC10UC1fbmNIWjJ2a3R3UFY4V09EbWRVQ0ZNWkNBTGtTSXJxOWw0dEJrd09SRHp6LTB6REVLeDNpVGx4eWRtd1hlclREVV96VjNnbHYtX19kbXh3M3FDZm1sd3JmM25lY0g2THJNdXZya3RBZXJCVmJmUU56UUdhWDFRRGRBQXpnX1NRYkFYQTZwYjRQVkZSYTlaRkNIVGt1TWpJQdIBuwFBVV95cUxNNHNCUjZHRVhKRFJsZ3o0U0V1bWtlTkp3SHBzWU42N2xfcEd2LVRHWUxNUDhJYXluVklMTkdFQjJ6bndDS09kUHBOVmR2TGJaV3lIc2l6c29lVkFIekNCeGNJc2hhYTVOMDJTb2FqeDg0X2RrdHVMMjBOODhnU0RGVkx5eUxLdFlHVmVhaXlkYWRodDhOVnBoVzBteTNaQ2ZXU0FVZVNiUHBRSVU3RDc1WVdTOEN6VXY2NjV3?oc=5",
           "existing_event_score": 1.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
@@ -234,12 +146,12 @@
           "duplicate_daily_indicators": []
         },
         {
-          "event_id": "INFO-000010",
-          "timestamp": "2026-11-11T08:38:43+00:00",
-          "date": "2026-11-11",
+          "event_id": "INFO-000003",
+          "timestamp": "2026-11-13T21:43:00+00:00",
+          "date": "2026-11-13",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "Iran denies talks with US, says Hormuz will stay shut until demands are met - Al Jazeera",
+          "title": "Report: Mossad chief in US for talks on Iran; Netanyahu didn’t update Eisenkot on visit - The Times of Israel",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
           "event_direction": "mixed",
@@ -266,9 +178,9 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Iran denies talks with US, says Hormuz will stay shut until demands are met - Al Jazeera",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Report: Mossad chief in US for talks on Iran; Netanyahu didn’t update Eisenkot on visit - The Times of Israel",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPbjE0dVFENk1CX2NnRnVSUEtzYzVDWlpBVlFvMnlNMnV5SjBncHJNcFI4WmRjNmdJWGtwXzJ6aUtYOUs4Ynl1bVUzVm5TWXFxNGxfSzRtaEY0czhyRTFSVU1mN3NqNW1BWm1WT1dCS2dZbEVTQ0hBcGRsM05RUWVQRGNUVHF1ZGhHOUZNVGVqR19keHFTUzJ3V0JwMnpFWF9uWDBYV2l3M01SN01ROFc2bzJHZUt1TjjSAbwBQVVfeXFMUDJtWTM5WXEtX3NDM0RkOG1ZVjE3RXVRYnRQNm5feHhKb0VJaXlLMjdPcjBCa1NzMkIySmk2a1hRMmwybS1SWG13RzNxLUtVZF9mQV9QYlB4cGxWcDVUbUFjVXdvcHo4THhtN2NIU01lUEYtUzVPdzRNcXIyWlBYM09QR0FsNzJUMUpBRGxaYUpQbl84bjNseUp6bWU1cFM2aUpvaUU5UnVJYXY0b1QybnBaX21OdWM2M3AtZ0w?oc=5",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQaV9VSkxSWUVFcEUzdC1zV19zSjZtUWRWSmdEVlN0QzBCZV81TWpmN2plUkNHbEF5VHpGcnRTOG9DMGxwbGlYaWQ4am8zVnFURzRxdkdaeTQ5d241eldNdDBzbkVYTTlmMHZlYU9RYTBfUlZRZkVudGhkb2lDUllRTW5TcEZoM3J6SU53ZWtiQ21SZjBCVjJCcXVwX1NxNlVYNm1tU1lyWWxRQWcwTVh0MU1IajdLZ9IBuwFBVV95cUxQdC1DSVBuZllWd1FuNFNpTk1TQjcyNXV5cUt3S1BmMlNMRkRDNFBrdDFRYmhDelVqNmIybUw4MkFaQUpRMVBYSGY4bnRDYTVmdXdzQ2xCQWRfdzZCTmJ6LUlwYjhLbVUzRDg5RTRVM3FRZmZEc1diVUFNWTJWVER3ZW1hdy1WOEpUNzR0TGJkdTl0OHpobVllamxidzdKZlBhQnJZeVNfZnhSNlp5T0RRazRkRHFsT2xPUHJR?oc=5",
           "existing_event_score": 2.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [],
@@ -277,18 +189,18 @@
           ]
         }
       ],
-      "weighted_score_7d": -9.65,
-      "pressure_index_7d": 30.7,
-      "pressure_level": "reduced",
+      "weighted_score_7d": -12.35,
+      "pressure_index_7d": 25.3,
+      "pressure_level": "low",
       "trend": "strong_decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000004",
-          "timestamp": "2026-11-11T19:25:00+00:00",
-          "date": "2026-11-11",
+          "event_id": "INFO-000002",
+          "timestamp": "2026-11-13T23:03:37+00:00",
+          "date": "2026-11-13",
           "actor": "iran",
           "bilateral_event": false,
-          "title": "Vance Considers Direct Talks With Iran Hard-Liner in Push to End War - WSJ",
+          "title": "Negotiators from US, Iran and Qatar fear Netanyahu could torpedo talks to end the war - The Times of Israel",
           "source_layer": "non_kinetic",
           "event_type": "diplomatic",
           "event_direction": "mixed",
@@ -315,9 +227,9 @@
               "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Vance Considers Direct Talks With Iran Hard-Liner in Push to End War - WSJ",
-          "source": "\"middle east conflict when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQRjRFTzFCWWlaNjZKMmYxR3FMcHc0V2FrUENBOHFCOUFISFZFSnhYcUctSkUwYXpUMXcwVmlrUEo2cEtRTWZCbVZNdC03SVhxTlo0N3ZseEZ6N1J4NUxFVVEwT0R0bzZFS01nRDRIMENrX19WemhZZUdEWW8tSGRGajNjRjhzdUNPckhGTVRQcEtwTTQ0aTdiVVZEMUNjbVBFekJ4RF9ZRWRBVEFJTmRYcGVSelI?oc=5",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Negotiators from US, Iran and Qatar fear Netanyahu could torpedo talks to end the war - The Times of Israel",
+          "source": "\"iran israel usa war when:7d\" - Google News",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNWG5hUEtNekVUelhnUVFLRmVVZC10UC1fbmNIWjJ2a3R3UFY4V09EbWRVQ0ZNWkNBTGtTSXJxOWw0dEJrd09SRHp6LTB6REVLeDNpVGx4eWRtd1hlclREVV96VjNnbHYtX19kbXh3M3FDZm1sd3JmM25lY0g2THJNdXZya3RBZXJCVmJmUU56UUdhWDFRRGRBQXpnX1NRYkFYQTZwYjRQVkZSYTlaRkNIVGt1TWpJQdIBuwFBVV95cUxNNHNCUjZHRVhKRFJsZ3o0U0V1bWtlTkp3SHBzWU42N2xfcEd2LVRHWUxNUDhJYXluVklMTkdFQjJ6bndDS09kUHBOVmR2TGJaV3lIc2l6c29lVkFIekNCeGNJc2hhYTVOMDJTb2FqeDg0X2RrdHVMMjBOODhnU0RGVkx5eUxLdFlHVmVhaXlkYWRodDhOVnBoVzBteTNaQ2ZXU0FVZVNiUHBRSVU3RDc1WVdTOEN6VXY2NjV3?oc=5",
           "existing_event_score": 1.0,
           "existing_direction_score": 0.0,
           "winning_daily_indicators": [
@@ -328,9 +240,9 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 24.05,
+      "pressure_index_7d": 27.05,
       "pressure_level": "low",
-      "trend": "strong_decrease",
+      "trend": "decrease",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
   }
