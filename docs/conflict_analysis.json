@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-11-14T13:24:12.031502+00:00",
+  "generated_at": "2026-11-15T13:51:03.869452+00:00",
   "analysis_model": "conflict_analysis_v1_2",
   "analysis_period": {
-    "raw_common_start": "2026-08-15T19:05:24Z",
-    "daily_analysis_start": "2026-08-16T00:00:00Z",
-    "end": "2026-11-13T07:04:45Z",
-    "raw_common_start_date": "2026-08-15",
-    "daily_analysis_start_date": "2026-08-16",
-    "end_date": "2026-11-13",
+    "raw_common_start": "2026-08-17T18:10:29Z",
+    "daily_analysis_start": "2026-08-18T00:00:00Z",
+    "end": "2026-11-15T04:52:26Z",
+    "raw_common_start_date": "2026-08-17",
+    "daily_analysis_start_date": "2026-08-18",
+    "end_date": "2026-11-15",
     "basis": "Lag analysis starts at the first valid kinetic event. Daily MAI/DDI/Gap starts at the first complete UTC day."
   },
   "inputs": {
-    "event_timeline_generated_at": "2026-11-14T11:41:36.563826+00:00",
+    "event_timeline_generated_at": "2026-11-15T12:11:19.753013+00:00",
     "event_timeline_direction_model": "context_direction_v3_2",
-    "kinetic_generated_at": "2026-11-13T17:04:14.499727Z",
+    "kinetic_generated_at": "2026-11-15T12:46:43.922499Z",
     "kinetic_cleaning_mode": "strict_kinetic_v2",
-    "diplomatic_events_total_history": 725,
-    "diplomatic_events_in_common_period": 187,
-    "diplomatic_events_in_daily_period": 187,
-    "military_events_total_history": 446,
-    "military_events_in_common_period": 446,
-    "military_events_in_daily_period": 443
+    "diplomatic_events_total_history": 731,
+    "diplomatic_events_in_common_period": 185,
+    "diplomatic_events_in_daily_period": 185,
+    "military_events_total_history": 439,
+    "military_events_in_common_period": 439,
+    "military_events_in_daily_period": 436
   },
   "methodology": {
     "military_activity_index": {
@@ -59,14 +59,14 @@
     }
   },
   "latest": {
-    "date": "2026-11-13",
-    "military_activity_index": 10.0,
-    "military_change_vs_7d_pct": -100.0,
+    "date": "2026-11-15",
+    "military_activity_index": 15.6,
+    "military_change_vs_7d_pct": -64.0,
     "diplomatic_direction_index": 0.0,
     "diplomacy_military_gap": {
-      "divergence_score": -100.0,
-      "strength": 100.0,
-      "level": "VERY HIGH",
+      "divergence_score": -64.0,
+      "strength": 64.0,
+      "level": "HIGH",
       "pattern": "MIXED / LIMITED DIVERGENCE"
     },
     "interpretation": {
@@ -77,60 +77,6 @@
     }
   },
   "daily": [
-    {
-      "date": "2026-08-16",
-      "diplomatic": {
-        "event_count": 0,
-        "direction_index": 0.0,
-        "mean_direction_score": 0.0,
-        "positive_signal_score": 0,
-        "negative_signal_score": 0,
-        "escalation_count": 0,
-        "deescalation_count": 0,
-        "mixed_count": 0
-      },
-      "military": {
-        "event_count": 5,
-        "weighted_score": 17.35,
-        "activity_index": 62.2,
-        "previous_7d_average_weighted_score": 17.35,
-        "change_vs_previous_7d_pct": 0.0,
-        "pressure_score": 0.0
-      },
-      "gap": {
-        "divergence_score": 0.0,
-        "strength": 0.0,
-        "level": "LOW",
-        "pattern": "MIXED / LIMITED DIVERGENCE"
-      }
-    },
-    {
-      "date": "2026-08-17",
-      "diplomatic": {
-        "event_count": 8,
-        "direction_index": -22.9,
-        "mean_direction_score": -1.38,
-        "positive_signal_score": 0.0,
-        "negative_signal_score": -11.0,
-        "escalation_count": 3,
-        "deescalation_count": 0,
-        "mixed_count": 5
-      },
-      "military": {
-        "event_count": 7,
-        "weighted_score": 19.8,
-        "activity_index": 67.8,
-        "previous_7d_average_weighted_score": 17.35,
-        "change_vs_previous_7d_pct": 14.1,
-        "pressure_score": 14.1
-      },
-      "gap": {
-        "divergence_score": -8.8,
-        "strength": 8.8,
-        "level": "LOW",
-        "pattern": "MIXED / LIMITED DIVERGENCE"
-      }
-    },
     {
       "date": "2026-08-18",
       "diplomatic": {
@@ -147,14 +93,14 @@
         "event_count": 11,
         "weighted_score": 34.6,
         "activity_index": 86.7,
-        "previous_7d_average_weighted_score": 18.58,
-        "change_vs_previous_7d_pct": 86.3,
-        "pressure_score": 86.3
+        "previous_7d_average_weighted_score": 34.6,
+        "change_vs_previous_7d_pct": 0.0,
+        "pressure_score": 0.0
       },
       "gap": {
-        "divergence_score": 86.3,
-        "strength": 86.3,
-        "level": "VERY HIGH",
+        "divergence_score": 0.0,
+        "strength": 0.0,
+        "level": "LOW",
         "pattern": "MIXED / LIMITED DIVERGENCE"
       }
     },
@@ -173,14 +119,14 @@
       "military": {
         "event_count": 2,
         "weighted_score": 6.4,
-        "activity_index": 28.9,
-        "previous_7d_average_weighted_score": 23.92,
-        "change_vs_previous_7d_pct": -73.2,
-        "pressure_score": -73.2
+        "activity_index": 30.0,
+        "previous_7d_average_weighted_score": 34.6,
+        "change_vs_previous_7d_pct": -81.5,
+        "pressure_score": -81.5
       },
       "gap": {
-        "divergence_score": -114.9,
-        "strength": 114.9,
+        "divergence_score": -123.2,
+        "strength": 123.2,
         "level": "VERY HIGH",
         "pattern": "ESCALATORY SIGNALS / LOW MILITARY ACTIVITY"
       }
@@ -200,14 +146,14 @@
       "military": {
         "event_count": 3,
         "weighted_score": 9.55,
-        "activity_index": 40.0,
-        "previous_7d_average_weighted_score": 19.54,
-        "change_vs_previous_7d_pct": -51.1,
-        "pressure_score": -51.1
+        "activity_index": 42.2,
+        "previous_7d_average_weighted_score": 20.5,
+        "change_vs_previous_7d_pct": -53.4,
+        "pressure_score": -53.4
       },
       "gap": {
-        "divergence_score": -34.4,
-        "strength": 34.4,
+        "divergence_score": -36.7,
+        "strength": 36.7,
         "level": "MODERATE",
         "pattern": "MIXED / LIMITED DIVERGENCE"
       }
@@ -228,14 +174,14 @@
         "event_count": 7,
         "weighted_score": 21.6,
         "activity_index": 74.4,
-        "previous_7d_average_weighted_score": 17.54,
-        "change_vs_previous_7d_pct": 23.1,
-        "pressure_score": 23.1
+        "previous_7d_average_weighted_score": 16.85,
+        "change_vs_previous_7d_pct": 28.2,
+        "pressure_score": 28.2
       },
       "gap": {
-        "divergence_score": 23.1,
-        "strength": 23.1,
-        "level": "LOW",
+        "divergence_score": 28.2,
+        "strength": 28.2,
+        "level": "MODERATE",
         "pattern": "MIXED / LIMITED DIVERGENCE"
       }
     },
@@ -254,14 +200,14 @@
       "military": {
         "event_count": 3,
         "weighted_score": 7.8,
-        "activity_index": 32.2,
-        "previous_7d_average_weighted_score": 18.22,
-        "change_vs_previous_7d_pct": -57.2,
-        "pressure_score": -57.2
+        "activity_index": 34.4,
+        "previous_7d_average_weighted_score": 18.04,
+        "change_vs_previous_7d_pct": -56.8,
+        "pressure_score": -56.8
       },
       "gap": {
-        "divergence_score": -90.5,
-        "strength": 90.5,
+        "divergence_score": -90.1,
+        "strength": 90.1,
         "level": "VERY HIGH",
         "pattern": "ESCALATORY SIGNALS / LOW MILITARY ACTIVITY"
       }
@@ -281,14 +227,14 @@
       "military": {
         "event_count": 1,
         "weighted_score": 2.0,
-        "activity_index": 12.2,
-        "previous_7d_average_weighted_score": 16.73,
-        "change_vs_previous_7d_pct": -88.0,
-        "pressure_score": -88.0
+        "activity_index": 11.1,
+        "previous_7d_average_weighted_score": 15.99,
+        "change_vs_previous_7d_pct": -87.5,
+        "pressure_score": -87.5
       },
       "gap": {
-        "divergence_score": -138.0,
-        "strength": 138.0,
+        "divergence_score": -137.5,
+        "strength": 137.5,
         "level": "VERY HIGH",
         "pattern": "ESCALATORY SIGNALS / LOW MILITARY ACTIVITY"
       }
@@ -308,14 +254,14 @@
       "military": {
         "event_count": 6,
         "weighted_score": 18.4,
-        "activity_index": 66.7,
-        "previous_7d_average_weighted_score": 14.54,
-        "change_vs_previous_7d_pct": 26.6,
-        "pressure_score": 26.6
+        "activity_index": 67.8,
+        "previous_7d_average_weighted_score": 13.66,
+        "change_vs_previous_7d_pct": 34.7,
+        "pressure_score": 34.7
       },
       "gap": {
-        "divergence_score": 26.6,
-        "strength": 26.6,
+        "divergence_score": 34.7,
+        "strength": 34.7,
         "level": "MODERATE",
         "pattern": "MIXED / LIMITED DIVERGENCE"
       }
@@ -335,7 +281,7 @@
       "military": {
         "event_count": 4,
         "weighted_score": 14.65,
-        "activity_index": 53.3,
+        "activity_index": 55.6,
         "previous_7d_average_weighted_score": 14.34,
         "change_vs_previous_7d_pct": 2.2,
         "pressure_score": 2.2
@@ -362,7 +308,7 @@
       "military": {
         "event_count": 0,
         "weighted_score": 0,
-        "activity_index": 10.0,
+        "activity_index": 8.9,
         "previous_7d_average_weighted_score": 11.49,
         "change_vs_previous_7d_pct": -100.0,
         "pressure_score": -100
@@ -389,7 +335,7 @@
       "military": {
         "event_count": 0,
         "weighted_score": 0,
-        "activity_index": 10.0,
+        "activity_index": 8.9,
         "previous_7d_average_weighted_score": 10.57,
         "change_vs_previous_7d_pct": -100.0,
         "pressure_score": -100
@@ -416,7 +362,7 @@
       "military": {
         "event_count": 0,
         "weighted_score": 0,
-        "activity_index": 10.0,
+        "activity_index": 8.9,
         "previous_7d_average_weighted_score": 9.21,
         "change_vs_previous_7d_pct": -100.0,
         "pressure_score": -100
@@ -821,7 +767,7 @@
       "military": {
         "event_count": 4,
         "weighted_score": 13.2,
-        "activity_index": 47.8,
+        "activity_index": 50.0,
         "previous_7d_average_weighted_score": 39.41,
         "change_vs_previous_7d_pct": -66.5,
         "pressure_score": -66.5
@@ -929,7 +875,7 @@
       "military": {
         "event_count": 4,
         "weighted_score": 16.5,
-        "activity_index": 58.9,
+        "activity_index": 61.1,
         "previous_7d_average_weighted_score": 38.97,
         "change_vs_previous_7d_pct": -57.7,
         "pressure_score": -57.7
@@ -956,7 +902,7 @@
       "military": {
         "event_count": 2,
         "weighted_score": 6.4,
-        "activity_index": 28.9,
+        "activity_index": 30.0,
         "previous_7d_average_weighted_score": 35.44,
         "change_vs_previous_7d_pct": -81.9,
         "pressure_score": -81.9
@@ -983,7 +929,7 @@
       "military": {
         "event_count": 2,
         "weighted_score": 11.2,
-        "activity_index": 44.4,
+        "activity_index": 46.7,
         "previous_7d_average_weighted_score": 27.01,
         "change_vs_previous_7d_pct": -58.5,
         "pressure_score": -58.5
@@ -1037,7 +983,7 @@
       "military": {
         "event_count": 5,
         "weighted_score": 13.65,
-        "activity_index": 51.1,
+        "activity_index": 53.3,
         "previous_7d_average_weighted_score": 25.07,
         "change_vs_previous_7d_pct": -45.6,
         "pressure_score": -45.6
@@ -1064,7 +1010,7 @@
       "military": {
         "event_count": 2,
         "weighted_score": 8.25,
-        "activity_index": 34.4,
+        "activity_index": 36.7,
         "previous_7d_average_weighted_score": 23.91,
         "change_vs_previous_7d_pct": -65.5,
         "pressure_score": -65.5
@@ -1091,7 +1037,7 @@
       "military": {
         "event_count": 0,
         "weighted_score": 0,
-        "activity_index": 10.0,
+        "activity_index": 8.9,
         "previous_7d_average_weighted_score": 17.42,
         "change_vs_previous_7d_pct": -100.0,
         "pressure_score": -100
@@ -1118,7 +1064,7 @@
       "military": {
         "event_count": 2,
         "weighted_score": 6.0,
-        "activity_index": 26.7,
+        "activity_index": 27.8,
         "previous_7d_average_weighted_score": 12.27,
         "change_vs_previous_7d_pct": -51.1,
         "pressure_score": -51.1
@@ -1145,7 +1091,7 @@
       "military": {
         "event_count": 1,
         "weighted_score": 3.5,
-        "activity_index": 21.1,
+        "activity_index": 22.2,
         "previous_7d_average_weighted_score": 10.77,
         "change_vs_previous_7d_pct": -67.5,
         "pressure_score": -67.5
@@ -1172,7 +1118,7 @@
       "military": {
         "event_count": 3,
         "weighted_score": 9.25,
-        "activity_index": 37.8,
+        "activity_index": 40.0,
         "previous_7d_average_weighted_score": 10.36,
         "change_vs_previous_7d_pct": -10.7,
         "pressure_score": -10.7
@@ -1199,7 +1145,7 @@
       "military": {
         "event_count": 5,
         "weighted_score": 17.65,
-        "activity_index": 65.6,
+        "activity_index": 66.7,
         "previous_7d_average_weighted_score": 10.08,
         "change_vs_previous_7d_pct": 75.1,
         "pressure_score": 75.1
@@ -1226,7 +1172,7 @@
       "military": {
         "event_count": 3,
         "weighted_score": 9.0,
-        "activity_index": 36.7,
+        "activity_index": 38.9,
         "previous_7d_average_weighted_score": 8.33,
         "change_vs_previous_7d_pct": 8.1,
         "pressure_score": 8.1
@@ -1253,7 +1199,7 @@
       "military": {
         "event_count": 4,
         "weighted_score": 10.2,
-        "activity_index": 41.1,
+        "activity_index": 43.3,
         "previous_7d_average_weighted_score": 7.66,
         "change_vs_previous_7d_pct": 33.1,
         "pressure_score": 33.1
@@ -1280,7 +1226,7 @@
       "military": {
         "event_count": 1,
         "weighted_score": 5.95,
-        "activity_index": 25.6,
+        "activity_index": 26.7,
         "previous_7d_average_weighted_score": 7.94,
         "change_vs_previous_7d_pct": -25.1,
         "pressure_score": -25.1
@@ -1307,7 +1253,7 @@
       "military": {
         "event_count": 2,
         "weighted_score": 8.25,
-        "activity_index": 34.4,
+        "activity_index": 36.7,
         "previous_7d_average_weighted_score": 8.79,
         "change_vs_previous_7d_pct": -6.2,
         "pressure_score": -6.2
@@ -1334,7 +1280,7 @@
       "military": {
         "event_count": 1,
         "weighted_score": 3.5,
-        "activity_index": 21.1,
+        "activity_index": 22.2,
         "previous_7d_average_weighted_score": 9.11,
         "change_vs_previous_7d_pct": -61.6,
         "pressure_score": -61.6
@@ -1361,7 +1307,7 @@
       "military": {
         "event_count": 4,
         "weighted_score": 14.65,
-        "activity_index": 53.3,
+        "activity_index": 55.6,
         "previous_7d_average_weighted_score": 9.11,
         "change_vs_previous_7d_pct": 60.7,
         "pressure_score": 60.7
@@ -1415,7 +1361,7 @@
       "military": {
         "event_count": 3,
         "weighted_score": 13.5,
-        "activity_index": 50.0,
+        "activity_index": 52.2,
         "previous_7d_average_weighted_score": 10.36,
         "change_vs_previous_7d_pct": 30.3,
         "pressure_score": 30.3
@@ -1442,7 +1388,7 @@
       "military": {
         "event_count": 6,
         "weighted_score": 17.55,
-        "activity_index": 63.3,
+        "activity_index": 64.4,
         "previous_7d_average_weighted_score": 11.01,
         "change_vs_previous_7d_pct": 59.4,
         "pressure_score": 59.4
@@ -1496,7 +1442,7 @@
       "military": {
         "event_count": 4,
         "weighted_score": 8.75,
-        "activity_index": 35.6,
+        "activity_index": 37.8,
         "previous_7d_average_weighted_score": 14.16,
         "change_vs_previous_7d_pct": -38.2,
         "pressure_score": -38.2
@@ -1577,7 +1523,7 @@
       "military": {
         "event_count": 3,
         "weighted_score": 15.75,
-        "activity_index": 57.8,
+        "activity_index": 60.0,
         "previous_7d_average_weighted_score": 20.41,
         "change_vs_previous_7d_pct": -22.8,
         "pressure_score": -22.8
@@ -1604,7 +1550,7 @@
       "military": {
         "event_count": 4,
         "weighted_score": 16.9,
-        "activity_index": 61.1,
+        "activity_index": 63.3,
         "previous_7d_average_weighted_score": 19.66,
         "change_vs_previous_7d_pct": -14.0,
         "pressure_score": -14.0
@@ -1658,7 +1604,7 @@
       "military": {
         "event_count": 4,
         "weighted_score": 16.75,
-        "activity_index": 60.0,
+        "activity_index": 62.2,
         "previous_7d_average_weighted_score": 22.42,
         "change_vs_previous_7d_pct": -25.3,
         "pressure_score": -25.3
@@ -1739,7 +1685,7 @@
       "military": {
         "event_count": 5,
         "weighted_score": 14.9,
-        "activity_index": 54.4,
+        "activity_index": 56.7,
         "previous_7d_average_weighted_score": 22.31,
         "change_vs_previous_7d_pct": -33.2,
         "pressure_score": -33.2
@@ -1766,7 +1712,7 @@
       "military": {
         "event_count": 4,
         "weighted_score": 9.4,
-        "activity_index": 38.9,
+        "activity_index": 41.1,
         "previous_7d_average_weighted_score": 21.36,
         "change_vs_previous_7d_pct": -56.0,
         "pressure_score": -56.0
@@ -1781,26 +1727,26 @@
     {
       "date": "2026-10-18",
       "diplomatic": {
-        "event_count": 3,
-        "direction_index": 5.6,
-        "mean_direction_score": 0.33,
+        "event_count": 2,
+        "direction_index": 8.3,
+        "mean_direction_score": 0.5,
         "positive_signal_score": 0.0,
         "negative_signal_score": 0.0,
         "escalation_count": 0,
         "deescalation_count": 0,
-        "mixed_count": 3
+        "mixed_count": 2
       },
       "military": {
         "event_count": 2,
         "weighted_score": 4.0,
-        "activity_index": 22.2,
+        "activity_index": 23.3,
         "previous_7d_average_weighted_score": 20.46,
         "change_vs_previous_7d_pct": -80.4,
         "pressure_score": -80.4
       },
       "gap": {
-        "divergence_score": -74.8,
-        "strength": 74.8,
+        "divergence_score": -72.1,
+        "strength": 72.1,
         "level": "HIGH",
         "pattern": "MIXED / LIMITED DIVERGENCE"
       }
@@ -1820,7 +1766,7 @@
       "military": {
         "event_count": 3,
         "weighted_score": 11.65,
-        "activity_index": 46.7,
+        "activity_index": 48.9,
         "previous_7d_average_weighted_score": 18.61,
         "change_vs_previous_7d_pct": -37.4,
         "pressure_score": -37.4
@@ -1901,7 +1847,7 @@
       "military": {
         "event_count": 2,
         "weighted_score": 10.5,
-        "activity_index": 42.2,
+        "activity_index": 44.4,
         "previous_7d_average_weighted_score": 14.74,
         "change_vs_previous_7d_pct": -28.7,
         "pressure_score": -28.7
@@ -1955,7 +1901,7 @@
       "military": {
         "event_count": 2,
         "weighted_score": 7.45,
-        "activity_index": 31.1,
+        "activity_index": 33.3,
         "previous_7d_average_weighted_score": 13.16,
         "change_vs_previous_7d_pct": -43.4,
         "pressure_score": -43.4
@@ -1982,7 +1928,7 @@
       "military": {
         "event_count": 4,
         "weighted_score": 15.05,
-        "activity_index": 55.6,
+        "activity_index": 57.8,
         "previous_7d_average_weighted_score": 12.89,
         "change_vs_previous_7d_pct": 16.8,
         "pressure_score": 16.8
@@ -2009,7 +1955,7 @@
       "military": {
         "event_count": 1,
         "weighted_score": 2.2,
-        "activity_index": 13.3,
+        "activity_index": 12.2,
         "previous_7d_average_weighted_score": 14.46,
         "change_vs_previous_7d_pct": -84.8,
         "pressure_score": -84.8
@@ -2036,7 +1982,7 @@
       "military": {
         "event_count": 4,
         "weighted_score": 10.85,
-        "activity_index": 43.3,
+        "activity_index": 45.6,
         "previous_7d_average_weighted_score": 13.11,
         "change_vs_previous_7d_pct": -17.3,
         "pressure_score": -17.3
@@ -2063,7 +2009,7 @@
       "military": {
         "event_count": 2,
         "weighted_score": 7.25,
-        "activity_index": 30.0,
+        "activity_index": 32.2,
         "previous_7d_average_weighted_score": 14.31,
         "change_vs_previous_7d_pct": -49.3,
         "pressure_score": -49.3
@@ -2117,7 +2063,7 @@
       "military": {
         "event_count": 0,
         "weighted_score": 0,
-        "activity_index": 10.0,
+        "activity_index": 8.9,
         "previous_7d_average_weighted_score": 12.64,
         "change_vs_previous_7d_pct": -100.0,
         "pressure_score": -100
@@ -2144,7 +2090,7 @@
       "military": {
         "event_count": 0,
         "weighted_score": 0,
-        "activity_index": 10.0,
+        "activity_index": 8.9,
         "previous_7d_average_weighted_score": 9.26,
         "change_vs_previous_7d_pct": -100.0,
         "pressure_score": -100
@@ -2198,7 +2144,7 @@
       "military": {
         "event_count": 0,
         "weighted_score": 0,
-        "activity_index": 10.0,
+        "activity_index": 8.9,
         "previous_7d_average_weighted_score": 6.47,
         "change_vs_previous_7d_pct": -100.0,
         "pressure_score": -100
@@ -2279,7 +2225,7 @@
       "military": {
         "event_count": 1,
         "weighted_score": 1.5,
-        "activity_index": 11.1,
+        "activity_index": 10.0,
         "previous_7d_average_weighted_score": 4.34,
         "change_vs_previous_7d_pct": -65.5,
         "pressure_score": -65.5
@@ -2306,7 +2252,7 @@
       "military": {
         "event_count": 4,
         "weighted_score": 13.45,
-        "activity_index": 48.9,
+        "activity_index": 51.1,
         "previous_7d_average_weighted_score": 1.41,
         "change_vs_previous_7d_pct": 851.0,
         "pressure_score": 100
@@ -2333,7 +2279,7 @@
       "military": {
         "event_count": 5,
         "weighted_score": 17.65,
-        "activity_index": 65.6,
+        "activity_index": 66.7,
         "previous_7d_average_weighted_score": 3.34,
         "change_vs_previous_7d_pct": 429.1,
         "pressure_score": 100
@@ -2360,7 +2306,7 @@
       "military": {
         "event_count": 5,
         "weighted_score": 15.4,
-        "activity_index": 56.7,
+        "activity_index": 58.9,
         "previous_7d_average_weighted_score": 5.86,
         "change_vs_previous_7d_pct": 162.9,
         "pressure_score": 100
@@ -2375,26 +2321,26 @@
     {
       "date": "2026-11-09",
       "diplomatic": {
-        "event_count": 1,
-        "direction_index": 16.7,
-        "mean_direction_score": 1.0,
+        "event_count": 2,
+        "direction_index": 8.3,
+        "mean_direction_score": 0.5,
         "positive_signal_score": 0.0,
         "negative_signal_score": 0.0,
         "escalation_count": 0,
         "deescalation_count": 0,
-        "mixed_count": 1
+        "mixed_count": 2
       },
       "military": {
         "event_count": 1,
         "weighted_score": 4.2,
-        "activity_index": 23.3,
+        "activity_index": 24.4,
         "previous_7d_average_weighted_score": 7.63,
         "change_vs_previous_7d_pct": -44.9,
         "pressure_score": -44.9
       },
       "gap": {
-        "divergence_score": -28.2,
-        "strength": 28.2,
+        "divergence_score": -36.6,
+        "strength": 36.6,
         "level": "MODERATE",
         "pattern": "MIXED / LIMITED DIVERGENCE"
       }
@@ -2414,7 +2360,7 @@
       "military": {
         "event_count": 0,
         "weighted_score": 0,
-        "activity_index": 10.0,
+        "activity_index": 8.9,
         "previous_7d_average_weighted_score": 8.23,
         "change_vs_previous_7d_pct": -100.0,
         "pressure_score": -100
@@ -2441,7 +2387,7 @@
       "military": {
         "event_count": 2,
         "weighted_score": 5.0,
-        "activity_index": 24.4,
+        "activity_index": 25.6,
         "previous_7d_average_weighted_score": 7.8,
         "change_vs_previous_7d_pct": -35.9,
         "pressure_score": -35.9
@@ -2468,7 +2414,7 @@
       "military": {
         "event_count": 3,
         "weighted_score": 11.45,
-        "activity_index": 45.6,
+        "activity_index": 47.8,
         "previous_7d_average_weighted_score": 8.17,
         "change_vs_previous_7d_pct": 40.1,
         "pressure_score": 40.1
@@ -2483,6 +2429,33 @@
     {
       "date": "2026-11-13",
       "diplomatic": {
+        "event_count": 6,
+        "direction_index": -5.6,
+        "mean_direction_score": -0.33,
+        "positive_signal_score": 0.0,
+        "negative_signal_score": -2.0,
+        "escalation_count": 1,
+        "deescalation_count": 0,
+        "mixed_count": 5
+      },
+      "military": {
+        "event_count": 2,
+        "weighted_score": 3.4,
+        "activity_index": 20.0,
+        "previous_7d_average_weighted_score": 9.59,
+        "change_vs_previous_7d_pct": -64.6,
+        "pressure_score": -64.6
+      },
+      "gap": {
+        "divergence_score": -70.2,
+        "strength": 70.2,
+        "level": "HIGH",
+        "pattern": "MIXED / LIMITED DIVERGENCE"
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "diplomatic": {
         "event_count": 1,
         "direction_index": 0.0,
         "mean_direction_score": 0.0,
@@ -2493,17 +2466,44 @@
         "mixed_count": 1
       },
       "military": {
-        "event_count": 0,
-        "weighted_score": 0,
-        "activity_index": 10.0,
-        "previous_7d_average_weighted_score": 9.59,
-        "change_vs_previous_7d_pct": -100.0,
-        "pressure_score": -100
+        "event_count": 2,
+        "weighted_score": 7.2,
+        "activity_index": 31.1,
+        "previous_7d_average_weighted_score": 8.16,
+        "change_vs_previous_7d_pct": -11.7,
+        "pressure_score": -11.7
       },
       "gap": {
-        "divergence_score": -100.0,
-        "strength": 100.0,
-        "level": "VERY HIGH",
+        "divergence_score": -11.7,
+        "strength": 11.7,
+        "level": "LOW",
+        "pattern": "MIXED / LIMITED DIVERGENCE"
+      }
+    },
+    {
+      "date": "2026-11-15",
+      "diplomatic": {
+        "event_count": 0,
+        "direction_index": 0.0,
+        "mean_direction_score": 0.0,
+        "positive_signal_score": 0,
+        "negative_signal_score": 0,
+        "escalation_count": 0,
+        "deescalation_count": 0,
+        "mixed_count": 0
+      },
+      "military": {
+        "event_count": 1,
+        "weighted_score": 2.4,
+        "activity_index": 15.6,
+        "previous_7d_average_weighted_score": 6.66,
+        "change_vs_previous_7d_pct": -64.0,
+        "pressure_score": -64.0
+      },
+      "gap": {
+        "divergence_score": -64.0,
+        "strength": 64.0,
+        "level": "HIGH",
         "pattern": "MIXED / LIMITED DIVERGENCE"
       }
     }
@@ -2520,49 +2520,49 @@
     "aggregate": {
       "escalation": {
         "6h": {
-          "signal_count": 46,
+          "signal_count": 44,
           "excluded_edge_signals": 0,
           "median_delta_weighted_activity": 0.0,
-          "mean_delta_weighted_activity": -0.11,
-          "median_change_pct": -46.6,
-          "share_followed_by_activity_increase_pct": 28.3,
-          "share_followed_by_activity_decrease_pct": 39.1
+          "mean_delta_weighted_activity": 0.05,
+          "median_change_pct": -53.5,
+          "share_followed_by_activity_increase_pct": 29.5,
+          "share_followed_by_activity_decrease_pct": 36.4
         },
         "12h": {
-          "signal_count": 46,
+          "signal_count": 44,
           "excluded_edge_signals": 0,
           "median_delta_weighted_activity": 0.0,
-          "mean_delta_weighted_activity": -1.07,
-          "median_change_pct": -30.0,
-          "share_followed_by_activity_increase_pct": 37.0,
-          "share_followed_by_activity_decrease_pct": 43.5
+          "mean_delta_weighted_activity": -1.22,
+          "median_change_pct": -50.0,
+          "share_followed_by_activity_increase_pct": 36.4,
+          "share_followed_by_activity_decrease_pct": 47.7
         },
         "24h": {
-          "signal_count": 46,
+          "signal_count": 44,
           "excluded_edge_signals": 0,
           "median_delta_weighted_activity": -1.2,
-          "mean_delta_weighted_activity": -3.33,
-          "median_change_pct": -21.1,
-          "share_followed_by_activity_increase_pct": 43.5,
-          "share_followed_by_activity_decrease_pct": 54.3
+          "mean_delta_weighted_activity": -3.53,
+          "median_change_pct": -30.0,
+          "share_followed_by_activity_increase_pct": 43.2,
+          "share_followed_by_activity_decrease_pct": 54.5
         },
         "48h": {
-          "signal_count": 40,
-          "excluded_edge_signals": 6,
-          "median_delta_weighted_activity": 0.0,
-          "mean_delta_weighted_activity": -1.77,
-          "median_change_pct": 0.0,
-          "share_followed_by_activity_increase_pct": 47.5,
-          "share_followed_by_activity_decrease_pct": 45.0
+          "signal_count": 41,
+          "excluded_edge_signals": 3,
+          "median_delta_weighted_activity": 1.05,
+          "mean_delta_weighted_activity": 1.0,
+          "median_change_pct": 6.1,
+          "share_followed_by_activity_increase_pct": 53.7,
+          "share_followed_by_activity_decrease_pct": 39.0
         },
         "72h": {
-          "signal_count": 40,
-          "excluded_edge_signals": 6,
-          "median_delta_weighted_activity": -6.62,
-          "mean_delta_weighted_activity": -2.83,
-          "median_change_pct": -21.1,
-          "share_followed_by_activity_increase_pct": 42.5,
-          "share_followed_by_activity_decrease_pct": 57.5
+          "signal_count": 41,
+          "excluded_edge_signals": 3,
+          "median_delta_weighted_activity": -2.2,
+          "mean_delta_weighted_activity": -0.62,
+          "median_change_pct": -7.2,
+          "share_followed_by_activity_increase_pct": 48.8,
+          "share_followed_by_activity_decrease_pct": 51.2
         }
       },
       "de-escalation": {
@@ -2615,7 +2615,72 @@
     },
     "signals": [
       {
-        "event_id": "INFO-000003",
+        "event_id": "INFO-000005",
+        "timestamp": "2026-11-13T17:15:13Z",
+        "title": "Iran Escalates Low-Level Conflict With a Shot at Bahrain - WSJ",
+        "direction": "escalation",
+        "direction_score": -2,
+        "positive_signal_score": 0,
+        "negative_signal_score": -2,
+        "event_type": "threat",
+        "subtype": "escalatory_posture",
+        "source": "\"middle east conflict when:7d\" - Google News",
+        "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPbHpaLUVTUE9TendtYnBmVEhIQWdVMFQ3N0xyU0V1bFN4T2w5N2twdndFQ3k5M1hCejNaalROT3BrdDFTZ1hscHVsSUhSQTRtbTMzd21VR3RhZFg5Z1N4SnhCck9CWkxLUTNQRzQ2NE8yZGExaU1BcWVFV3o5cU5oT2diTUZPejNKWHFoaFpYUzdxX1QwZjNEMVE4VGZMQWZRZDZjT25R?oc=5",
+        "windows": {
+          "6h": {
+            "available": true,
+            "before_event_count": 1,
+            "after_event_count": 1,
+            "delta_event_count": 0,
+            "before_weighted_activity": 2.4,
+            "after_weighted_activity": 1.0,
+            "delta_weighted_activity": -1.4,
+            "weighted_activity_change_pct": -58.3
+          },
+          "12h": {
+            "available": true,
+            "before_event_count": 1,
+            "after_event_count": 1,
+            "delta_event_count": 0,
+            "before_weighted_activity": 2.4,
+            "after_weighted_activity": 1.0,
+            "delta_weighted_activity": -1.4,
+            "weighted_activity_change_pct": -58.3
+          },
+          "24h": {
+            "available": true,
+            "before_event_count": 1,
+            "after_event_count": 2,
+            "delta_event_count": 1,
+            "before_weighted_activity": 2.4,
+            "after_weighted_activity": 5.2,
+            "delta_weighted_activity": 2.8,
+            "weighted_activity_change_pct": 116.7
+          },
+          "48h": {
+            "available": false,
+            "before_event_count": null,
+            "after_event_count": null,
+            "delta_event_count": null,
+            "before_weighted_activity": null,
+            "after_weighted_activity": null,
+            "delta_weighted_activity": null,
+            "weighted_activity_change_pct": null
+          },
+          "72h": {
+            "available": false,
+            "before_event_count": null,
+            "after_event_count": null,
+            "delta_event_count": null,
+            "before_weighted_activity": null,
+            "after_weighted_activity": null,
+            "delta_weighted_activity": null,
+            "weighted_activity_change_pct": null
+          }
+        }
+      },
+      {
+        "event_id": "INFO-000009",
         "timestamp": "2026-11-12T04:05:13Z",
         "title": "Iran warns of expanded retaliation as Israel reportedly readies to attack - Al Jazeera",
         "direction": "escalation",
@@ -2658,29 +2723,29 @@
             "weighted_activity_change_pct": 129.0
           },
           "48h": {
-            "available": false,
-            "before_event_count": null,
-            "after_event_count": null,
-            "delta_event_count": null,
-            "before_weighted_activity": null,
-            "after_weighted_activity": null,
-            "delta_weighted_activity": null,
-            "weighted_activity_change_pct": null
+            "available": true,
+            "before_event_count": 2,
+            "after_event_count": 5,
+            "delta_event_count": 3,
+            "before_weighted_activity": 5.0,
+            "after_weighted_activity": 14.85,
+            "delta_weighted_activity": 9.85,
+            "weighted_activity_change_pct": 197.0
           },
           "72h": {
-            "available": false,
-            "before_event_count": null,
-            "after_event_count": null,
-            "delta_event_count": null,
-            "before_weighted_activity": null,
-            "after_weighted_activity": null,
-            "delta_weighted_activity": null,
-            "weighted_activity_change_pct": null
+            "available": true,
+            "before_event_count": 3,
+            "after_event_count": 7,
+            "delta_event_count": 4,
+            "before_weighted_activity": 9.2,
+            "after_weighted_activity": 22.05,
+            "delta_weighted_activity": 12.85,
+            "weighted_activity_change_pct": 139.7
           }
         }
       },
       {
-        "event_id": "INFO-000005",
+        "event_id": "INFO-000011",
         "timestamp": "2026-11-11T17:18:37Z",
         "title": "U.S. Efforts to Tighten Blockade of Iran Rely on Reluctant Neighbors - The New York Times",
         "direction": "escalation",
@@ -2723,29 +2788,29 @@
             "weighted_activity_change_pct": 622.5
           },
           "48h": {
-            "available": false,
-            "before_event_count": null,
-            "after_event_count": null,
-            "delta_event_count": null,
-            "before_weighted_activity": null,
-            "after_weighted_activity": null,
-            "delta_weighted_activity": null,
-            "weighted_activity_change_pct": null
+            "available": true,
+            "before_event_count": 1,
+            "after_event_count": 5,
+            "delta_event_count": 4,
+            "before_weighted_activity": 2.0,
+            "after_weighted_activity": 16.85,
+            "delta_weighted_activity": 14.85,
+            "weighted_activity_change_pct": 742.5
           },
           "72h": {
-            "available": false,
-            "before_event_count": null,
-            "after_event_count": null,
-            "delta_event_count": null,
-            "before_weighted_activity": null,
-            "after_weighted_activity": null,
-            "delta_weighted_activity": null,
-            "weighted_activity_change_pct": null
+            "available": true,
+            "before_event_count": 6,
+            "after_event_count": 7,
+            "delta_event_count": 1,
+            "before_weighted_activity": 18.6,
+            "after_weighted_activity": 22.05,
+            "delta_weighted_activity": 3.45,
+            "weighted_activity_change_pct": 18.5
           }
         }
       },
       {
-        "event_id": "INFO-000009",
+        "event_id": "INFO-000015",
         "timestamp": "2026-11-11T12:33:44Z",
         "title": "Iran Threatens to Attack Europe - Middle East Forum",
         "direction": "escalation",
@@ -2788,29 +2853,29 @@
             "weighted_activity_change_pct": null
           },
           "48h": {
-            "available": false,
-            "before_event_count": null,
-            "after_event_count": null,
-            "delta_event_count": null,
-            "before_weighted_activity": null,
-            "after_weighted_activity": null,
-            "delta_weighted_activity": null,
+            "available": true,
+            "before_event_count": 0,
+            "after_event_count": 5,
+            "delta_event_count": 5,
+            "before_weighted_activity": 0,
+            "after_weighted_activity": 16.45,
+            "delta_weighted_activity": 16.45,
             "weighted_activity_change_pct": null
           },
           "72h": {
-            "available": false,
-            "before_event_count": null,
-            "after_event_count": null,
-            "delta_event_count": null,
-            "before_weighted_activity": null,
-            "after_weighted_activity": null,
-            "delta_weighted_activity": null,
-            "weighted_activity_change_pct": null
+            "available": true,
+            "before_event_count": 5,
+            "after_event_count": 7,
+            "delta_event_count": 2,
+            "before_weighted_activity": 16.6,
+            "after_weighted_activity": 19.85,
+            "delta_weighted_activity": 3.25,
+            "weighted_activity_change_pct": 19.6
           }
         }
       },
       {
-        "event_id": "INFO-000017",
+        "event_id": "INFO-000024",
         "timestamp": "2026-11-08T21:22:02Z",
         "title": "Iran waiting to resume talks after US midterms ‘shock’ - Al Jazeera",
         "direction": "de-escalation",
@@ -2875,7 +2940,7 @@
         }
       },
       {
-        "event_id": "INFO-000018",
+        "event_id": "INFO-000025",
         "timestamp": "2026-11-08T20:16:12Z",
         "title": "Iran threatens to ‘rain down hell’ if US escalates war - Al Jazeera",
         "direction": "escalation",
@@ -2940,7 +3005,7 @@
         }
       },
       {
-        "event_id": "INFO-000021",
+        "event_id": "INFO-000028",
         "timestamp": "2026-11-07T12:27:35Z",
         "title": "Qeshm island and Hormuz hit, as mediators try to prevent US-Iran escalation - Al Jazeera",
         "direction": "escalation",
@@ -3005,7 +3070,7 @@
         }
       },
       {
-        "event_id": "INFO-000024",
+        "event_id": "INFO-000031",
         "timestamp": "2026-11-06T08:00:00Z",
         "title": "As diplomacy falters, US-Iran war expands: ANALYSIS - ABC News - Breaking News, Latest News and Videos",
         "direction": "escalation",
@@ -3070,7 +3135,7 @@
         }
       },
       {
-        "event_id": "INFO-000027",
+        "event_id": "INFO-000034",
         "timestamp": "2026-11-04T18:02:00Z",
         "title": "Beaten at home, Trump faces stark choice on Iran: deal or escalation - Reuters",
         "direction": "escalation",
@@ -3135,7 +3200,7 @@
         }
       },
       {
-        "event_id": "INFO-000030",
+        "event_id": "INFO-000037",
         "timestamp": "2026-11-03T18:26:50Z",
         "title": "Beijing launches diplomatic flurry amid threat of renewed U.S. war with Iran - The Washington Post",
         "direction": "escalation",
@@ -3200,7 +3265,7 @@
         }
       },
       {
-        "event_id": "INFO-000036",
+        "event_id": "INFO-000043",
         "timestamp": "2026-11-02T15:07:57Z",
         "title": "Talks are the only way out, China tells Iran as US threat hangs over Mideast - South China Morning Post",
         "direction": "escalation",
@@ -3265,7 +3330,7 @@
         }
       },
       {
-        "event_id": "INFO-000040",
+        "event_id": "INFO-000047",
         "timestamp": "2026-11-02T09:33:00Z",
         "title": "Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters",
         "direction": "de-escalation",
@@ -3330,7 +3395,7 @@
         }
       },
       {
-        "event_id": "INFO-000041",
+        "event_id": "INFO-000048",
         "timestamp": "2026-11-02T06:35:00Z",
         "title": "Gulf States Fear Fiercer Iran Retaliation If US Strikes - Bloomberg",
         "direction": "escalation",
@@ -3395,7 +3460,7 @@
         }
       },
       {
-        "event_id": "INFO-000043",
+        "event_id": "INFO-000050",
         "timestamp": "2026-11-01T18:02:52Z",
         "title": "Gulf braced for escalation of war between US-Israel alliance and Iran - Financial Times",
         "direction": "escalation",
@@ -3460,7 +3525,7 @@
         }
       },
       {
-        "event_id": "INFO-000044",
+        "event_id": "INFO-000051",
         "timestamp": "2026-11-01T15:19:07Z",
         "title": "How serious are Iran's new threats of retaliation? - DW.com",
         "direction": "escalation",
@@ -3525,7 +3590,7 @@
         }
       },
       {
-        "event_id": "INFO-000046",
+        "event_id": "INFO-000053",
         "timestamp": "2026-11-01T12:24:00Z",
         "title": "Iran, Qatari mediators hold third day of talks to end US-Iran war - Reuters",
         "direction": "de-escalation",
@@ -3590,7 +3655,7 @@
         }
       },
       {
-        "event_id": "INFO-000048",
+        "event_id": "INFO-000055",
         "timestamp": "2026-11-01T11:20:08Z",
         "title": "Mediators continue US-Iran negotiations amid war rhetoric: What we know - Al Jazeera",
         "direction": "de-escalation",
@@ -3655,7 +3720,7 @@
         }
       },
       {
-        "event_id": "INFO-000052",
+        "event_id": "INFO-000059",
         "timestamp": "2026-10-31T12:15:37Z",
         "title": "Iran warns of unfettered retaliation if attacked as mediators try for peace - Al Jazeera",
         "direction": "escalation",
@@ -3720,7 +3785,7 @@
         }
       },
       {
-        "event_id": "INFO-000053",
+        "event_id": "INFO-000060",
         "timestamp": "2026-10-30T21:04:34Z",
         "title": "Pakistan army ‘cautiously optimistic’ about US-Iran mediation efforts - Al Jazeera",
         "direction": "de-escalation",
@@ -3785,7 +3850,7 @@
         }
       },
       {
-        "event_id": "INFO-000064",
+        "event_id": "INFO-000071",
         "timestamp": "2026-10-28T10:32:07Z",
         "title": "US moves Patriot missile defense system from Texas to Israel ahead of possible Iran strike - report - The Jerusalem Post",
         "direction": "escalation",
@@ -3850,7 +3915,7 @@
         }
       },
       {
-        "event_id": "INFO-000067",
+        "event_id": "INFO-000074",
         "timestamp": "2026-10-26T18:01:10Z",
         "title": "Middle East Officials Meet Discuss Deescalation Amidst Continued Houthi Attacks - Marine News Magazine",
         "direction": "de-escalation",
@@ -3915,7 +3980,7 @@
         }
       },
       {
-        "event_id": "INFO-000068",
+        "event_id": "INFO-000075",
         "timestamp": "2026-10-26T14:03:00Z",
         "title": "Middle East peace held back by US insistence that Iran is a threat, Oman’s foreign minister says - The Guardian",
         "direction": "escalation",
@@ -3980,7 +4045,7 @@
         }
       },
       {
-        "event_id": "INFO-000076",
+        "event_id": "INFO-000083",
         "timestamp": "2026-10-21T21:01:24Z",
         "title": "Iran threatens to target US political assets, infrastructure if new war erupts - Anadolu Ajansı",
         "direction": "escalation",
@@ -4045,7 +4110,7 @@
         }
       },
       {
-        "event_id": "INFO-000084",
+        "event_id": "INFO-000090",
         "timestamp": "2026-10-11T19:07:00Z",
         "title": "Iran calls U.S. response \"insufficient\" amid stalled talks to end the war - CBS News",
         "direction": "escalation",
@@ -4110,7 +4175,7 @@
         }
       },
       {
-        "event_id": "INFO-000086",
+        "event_id": "INFO-000092",
         "timestamp": "2026-10-09T09:59:42Z",
         "title": "FBI warns Iran aspired to attack California with drones in retaliation for war: Alert - ABC News - Breaking News, Latest News and Videos",
         "direction": "escalation",
@@ -4175,7 +4240,7 @@
         }
       },
       {
-        "event_id": "INFO-000090",
+        "event_id": "INFO-000096",
         "timestamp": "2026-10-04T21:41:47Z",
         "title": "Iran says no military solution to war as peace talks with US stall - France 24",
         "direction": "escalation",
@@ -4240,7 +4305,7 @@
         }
       },
       {
-        "event_id": "INFO-000096",
+        "event_id": "INFO-000102",
         "timestamp": "2026-10-01T22:03:33Z",
         "title": "Oil Extends Gain as Middle East Conflict Threatens to Escalate - Yahoo Finance",
         "direction": "escalation",
@@ -4305,7 +4370,7 @@
         }
       },
       {
-        "event_id": "INFO-000101",
+        "event_id": "INFO-000107",
         "timestamp": "2026-09-29T04:02:47Z",
         "title": "U.S., Iran hold separate mediator talks as Mideast oil exports hit war-time high - CNBC",
         "direction": "de-escalation",
@@ -4370,7 +4435,7 @@
         }
       },
       {
-        "event_id": "INFO-000102",
+        "event_id": "INFO-000108",
         "timestamp": "2026-09-29T02:39:46Z",
         "title": "Iran’s Araghchi meets Qatari mediators as US calls for nuclear talks - Al Jazeera",
         "direction": "de-escalation",
@@ -4435,7 +4500,7 @@
         }
       },
       {
-        "event_id": "INFO-000107",
+        "event_id": "INFO-000113",
         "timestamp": "2026-09-28T10:45:14Z",
         "title": "Trump rejected Iran's ceasefire proposal. What it means for U.S. allies in the Gulf - NPR",
         "direction": "escalation",
@@ -4500,7 +4565,7 @@
         }
       },
       {
-        "event_id": "INFO-000108",
+        "event_id": "INFO-000114",
         "timestamp": "2026-09-27T21:21:00Z",
         "title": "Trump expects talks with Iran to resume this week after rejecting proposal - CBS News",
         "direction": "de-escalation",
@@ -4565,7 +4630,7 @@
         }
       },
       {
-        "event_id": "INFO-000112",
+        "event_id": "INFO-000118",
         "timestamp": "2026-09-26T22:15:59Z",
         "title": "Trump rejects Iran deal to reopen Strait of Hormuz in seven days - BBC",
         "direction": "escalation",
@@ -4630,7 +4695,7 @@
         }
       },
       {
-        "event_id": "INFO-000115",
+        "event_id": "INFO-000121",
         "timestamp": "2026-09-26T09:42:52Z",
         "title": "Trump ‘rejects’ Iran’s seven-day ceasefire proposal. What’s next? - Al Jazeera",
         "direction": "escalation",
@@ -4695,7 +4760,7 @@
         }
       },
       {
-        "event_id": "INFO-000123",
+        "event_id": "INFO-000129",
         "timestamp": "2026-09-23T12:23:13Z",
         "title": "Trump threatens to annihilate Iran as diplomats push for deal at UN - Reuters",
         "direction": "escalation",
@@ -4760,7 +4825,7 @@
         }
       },
       {
-        "event_id": "INFO-000124",
+        "event_id": "INFO-000130",
         "timestamp": "2026-09-23T10:40:00Z",
         "title": "Iran denies dropping preconditions amid ‘very productive’ three-hour UN talks in New York - The Guardian",
         "direction": "de-escalation",
@@ -4825,7 +4890,7 @@
         }
       },
       {
-        "event_id": "INFO-000127",
+        "event_id": "INFO-000133",
         "timestamp": "2026-09-22T21:33:06Z",
         "title": "World Health Organization - Middle East Escalation of Conflict, Global Situation report #11 - 15 September 2026 - ReliefWeb",
         "direction": "escalation",
@@ -4890,7 +4955,7 @@
         }
       },
       {
-        "event_id": "INFO-000129",
+        "event_id": "INFO-000135",
         "timestamp": "2026-09-22T13:02:13Z",
         "title": "Middle East governments brace for possible escalation as Iran warns against U.S. action - Vatican News",
         "direction": "escalation",
@@ -4955,7 +5020,7 @@
         }
       },
       {
-        "event_id": "INFO-000131",
+        "event_id": "INFO-000137",
         "timestamp": "2026-09-21T04:04:18Z",
         "title": "Iranian President Pezeshkian to head to New York for UN meeting as Trump warns of no-deal consequences - CNBC",
         "direction": "escalation",
@@ -5020,7 +5085,7 @@
         }
       },
       {
-        "event_id": "INFO-000132",
+        "event_id": "INFO-000138",
         "timestamp": "2026-09-21T00:06:11Z",
         "title": "Iran escalation threatens Middle East as Houthi conflict intensifies - Fox News",
         "direction": "escalation",
@@ -5085,7 +5150,7 @@
         }
       },
       {
-        "event_id": "INFO-000133",
+        "event_id": "INFO-000139",
         "timestamp": "2026-09-20T22:05:00Z",
         "title": "U.S. warns of rapid escalation in Middle East war - The Japan Times",
         "direction": "escalation",
@@ -5150,7 +5215,7 @@
         }
       },
       {
-        "event_id": "INFO-000142",
+        "event_id": "INFO-000148",
         "timestamp": "2026-09-15T11:21:00Z",
         "title": "After Trump floats talks, Iran security chief rejects negotiations until ‘conditions’ met - The Times of Israel",
         "direction": "escalation",
@@ -5215,7 +5280,7 @@
         }
       },
       {
-        "event_id": "INFO-000145",
+        "event_id": "INFO-000151",
         "timestamp": "2026-09-12T15:23:04Z",
         "title": "Iran Finds Escalation Is Fruitful Path to Leverage in War With U.S. - The New York Times",
         "direction": "escalation",
@@ -5280,7 +5345,7 @@
         }
       },
       {
-        "event_id": "INFO-000147",
+        "event_id": "INFO-000153",
         "timestamp": "2026-09-11T12:16:58Z",
         "title": "Iran war: Saudi-Houthi escalation intensifies Yemen conflict - dw.com",
         "direction": "escalation",
@@ -5345,7 +5410,7 @@
         }
       },
       {
-        "event_id": "INFO-000149",
+        "event_id": "INFO-000155",
         "timestamp": "2026-09-09T07:20:42Z",
         "title": "Medicine shortages grow in Iran as US tightens sanctions, blockade - Al Jazeera",
         "direction": "escalation",
@@ -5410,7 +5475,7 @@
         }
       },
       {
-        "event_id": "INFO-000150",
+        "event_id": "INFO-000156",
         "timestamp": "2026-09-08T15:12:20Z",
         "title": "Iran Threatens to Target U.S. Energy Assets in Gulf If U.S. Strikes Again - Time Magazine",
         "direction": "escalation",
@@ -5475,7 +5540,7 @@
         }
       },
       {
-        "event_id": "INFO-000151",
+        "event_id": "INFO-000157",
         "timestamp": "2026-09-07T09:22:43Z",
         "title": "Iran threatens \"more painful\" retaliation to U.S. strikes on Iranian oil tankers - CBS News",
         "direction": "escalation",
@@ -5540,7 +5605,7 @@
         }
       },
       {
-        "event_id": "INFO-000152",
+        "event_id": "INFO-000158",
         "timestamp": "2026-09-06T17:39:00Z",
         "title": "Energy secretary says US might not reach nuclear agreement with Iran - theguardian.com",
         "direction": "de-escalation",
@@ -5605,7 +5670,7 @@
         }
       },
       {
-        "event_id": "INFO-000155",
+        "event_id": "INFO-000161",
         "timestamp": "2026-09-02T09:06:13Z",
         "title": "US-Israel-Iran War Latest Updates: Trump Says ‘Not Trying To Force Iran To The Bargaining Table’, Dismisses Peace Deal As Fresh Strikes Escalate War - The Sunday Guardian",
         "direction": "escalation",
@@ -5670,7 +5735,7 @@
         }
       },
       {
-        "event_id": "INFO-000156",
+        "event_id": "INFO-000162",
         "timestamp": "2026-09-02T04:10:55Z",
         "title": "US-Israel-Iran War Latest Live News: Trump Rejects Iran Talks, Claims ‘Total Control’ Of Strait Of Hormuz After US Strikes - The Sunday Guardian",
         "direction": "escalation",
@@ -5735,7 +5800,7 @@
         }
       },
       {
-        "event_id": "INFO-000159",
+        "event_id": "INFO-000165",
         "timestamp": "2026-08-30T21:05:00Z",
         "title": "First US military attacks on Iran in a month prompt retaliation - theguardian.com",
         "direction": "escalation",
@@ -5800,7 +5865,7 @@
         }
       },
       {
-        "event_id": "INFO-000162",
+        "event_id": "INFO-000168",
         "timestamp": "2026-08-29T10:00:00Z",
         "title": "Dire Strait: Why Economic Threats Might Escalate the War in Iran - Time Magazine",
         "direction": "escalation",
@@ -5865,7 +5930,7 @@
         }
       },
       {
-        "event_id": "INFO-000165",
+        "event_id": "INFO-000171",
         "timestamp": "2026-08-27T21:12:18Z",
         "title": "Iran, Qatar hold Hormuz talks amid int’l hopes dialogue with US will resume - Al Jazeera",
         "direction": "de-escalation",
@@ -5930,7 +5995,7 @@
         }
       },
       {
-        "event_id": "INFO-000170",
+        "event_id": "INFO-000176",
         "timestamp": "2026-08-25T08:42:33Z",
         "title": "Pakistan says significant progress made in talks on Iran-US war - Al Jazeera",
         "direction": "de-escalation",
@@ -5995,7 +6060,7 @@
         }
       },
       {
-        "event_id": "INFO-000172",
+        "event_id": "INFO-000178",
         "timestamp": "2026-08-23T05:44:03Z",
         "title": "Iran warns of retaliation against countries joining US ‘economic war’ - Al Jazeera",
         "direction": "escalation",
@@ -6060,7 +6125,7 @@
         }
       },
       {
-        "event_id": "INFO-000173",
+        "event_id": "INFO-000179",
         "timestamp": "2026-08-22T01:14:53Z",
         "title": "Iran condemns US plans to announce new sanctions - Reuters",
         "direction": "escalation",
@@ -6125,7 +6190,7 @@
         }
       },
       {
-        "event_id": "INFO-000174",
+        "event_id": "INFO-000180",
         "timestamp": "2026-08-20T23:53:38Z",
         "title": "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
         "direction": "de-escalation",
@@ -6190,7 +6255,7 @@
         }
       },
       {
-        "event_id": "INFO-000176",
+        "event_id": "INFO-000182",
         "timestamp": "2026-08-19T04:01:19Z",
         "title": "Iran eyes military targets in Europe if Donald Trump escalates war, insiders say - Financial Times",
         "direction": "escalation",
@@ -6233,29 +6298,29 @@
             "weighted_activity_change_pct": -81.5
           },
           "48h": {
-            "available": true,
-            "before_event_count": 17,
-            "after_event_count": 5,
-            "delta_event_count": -12,
-            "before_weighted_activity": 51.4,
-            "after_weighted_activity": 15.95,
-            "delta_weighted_activity": -35.45,
-            "weighted_activity_change_pct": -69.0
+            "available": false,
+            "before_event_count": null,
+            "after_event_count": null,
+            "delta_event_count": null,
+            "before_weighted_activity": null,
+            "after_weighted_activity": null,
+            "delta_weighted_activity": null,
+            "weighted_activity_change_pct": null
           },
           "72h": {
-            "available": true,
-            "before_event_count": 23,
-            "after_event_count": 12,
-            "delta_event_count": -11,
-            "before_weighted_activity": 71.75,
-            "after_weighted_activity": 37.55,
-            "delta_weighted_activity": -34.2,
-            "weighted_activity_change_pct": -47.7
+            "available": false,
+            "before_event_count": null,
+            "after_event_count": null,
+            "delta_event_count": null,
+            "before_weighted_activity": null,
+            "after_weighted_activity": null,
+            "delta_weighted_activity": null,
+            "weighted_activity_change_pct": null
           }
         }
       },
       {
-        "event_id": "INFO-000177",
+        "event_id": "INFO-000183",
         "timestamp": "2026-08-19T03:39:26Z",
         "title": "UAE imposes indefinite trade embargo on Iran over alleged missile attacks - Al Jazeera",
         "direction": "escalation",
@@ -6296,201 +6361,6 @@
             "after_weighted_activity": 6.4,
             "delta_weighted_activity": -28.2,
             "weighted_activity_change_pct": -81.5
-          },
-          "48h": {
-            "available": true,
-            "before_event_count": 17,
-            "after_event_count": 5,
-            "delta_event_count": -12,
-            "before_weighted_activity": 51.4,
-            "after_weighted_activity": 15.95,
-            "delta_weighted_activity": -35.45,
-            "weighted_activity_change_pct": -69.0
-          },
-          "72h": {
-            "available": true,
-            "before_event_count": 23,
-            "after_event_count": 12,
-            "delta_event_count": -11,
-            "before_weighted_activity": 71.75,
-            "after_weighted_activity": 37.55,
-            "delta_weighted_activity": -34.2,
-            "weighted_activity_change_pct": -47.7
-          }
-        }
-      },
-      {
-        "event_id": "INFO-000182",
-        "timestamp": "2026-08-17T13:45:00Z",
-        "title": "Iran threatens new offensive while US rules out extending ceasefire deal - Reuters",
-        "direction": "escalation",
-        "direction_score": -7,
-        "positive_signal_score": 0,
-        "negative_signal_score": -7,
-        "event_type": "ceasefire",
-        "subtype": "ceasefire",
-        "source": "\"middle east conflict when:7d\" - Google News",
-        "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOcVl4WFplN0o4aVNSQ0REMXZlRmNzNTk4dURRMV8wUXhVQjNzVkZ0S3R4el9XSnE1MWZfLXc1RlZtZmJITURZRS1NaThGcXBKV0NZY2JXRGU1c093dzM1M0ZLcUtaRERHS1B4QUtXU3pwUk5XVWpSTEtXXzlTQ1BBZU85ZE50NHZQN2hXa1FTODlNRHU5UzhWS0tzMGktMktwMXI3X3pNYmRFMVIzSTlJbzl5SWRQa05qZ0lXWnM1bw?oc=5",
-        "windows": {
-          "6h": {
-            "available": true,
-            "before_event_count": 3,
-            "after_event_count": 2,
-            "delta_event_count": -1,
-            "before_weighted_activity": 8.4,
-            "after_weighted_activity": 5.4,
-            "delta_weighted_activity": -3.0,
-            "weighted_activity_change_pct": -35.7
-          },
-          "12h": {
-            "available": true,
-            "before_event_count": 3,
-            "after_event_count": 3,
-            "delta_event_count": 0,
-            "before_weighted_activity": 8.4,
-            "after_weighted_activity": 8.4,
-            "delta_weighted_activity": 0.0,
-            "weighted_activity_change_pct": 0.0
-          },
-          "24h": {
-            "available": true,
-            "before_event_count": 6,
-            "after_event_count": 8,
-            "delta_event_count": 2,
-            "before_weighted_activity": 16.8,
-            "after_weighted_activity": 25.0,
-            "delta_weighted_activity": 8.2,
-            "weighted_activity_change_pct": 48.8
-          },
-          "48h": {
-            "available": false,
-            "before_event_count": null,
-            "after_event_count": null,
-            "delta_event_count": null,
-            "before_weighted_activity": null,
-            "after_weighted_activity": null,
-            "delta_weighted_activity": null,
-            "weighted_activity_change_pct": null
-          },
-          "72h": {
-            "available": false,
-            "before_event_count": null,
-            "after_event_count": null,
-            "delta_event_count": null,
-            "before_weighted_activity": null,
-            "after_weighted_activity": null,
-            "delta_weighted_activity": null,
-            "weighted_activity_change_pct": null
-          }
-        }
-      },
-      {
-        "event_id": "INFO-000183",
-        "timestamp": "2026-08-17T09:41:09Z",
-        "title": "The Wall Street Journal: Iranian authorities have developed a secret plan to escalate the war with the USA and Israel - Informat.ro",
-        "direction": "escalation",
-        "direction_score": -2,
-        "positive_signal_score": 0,
-        "negative_signal_score": -2,
-        "event_type": "threat",
-        "subtype": "escalatory_posture",
-        "source": "\"iran israel usa war when:7d\" - Google News",
-        "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNY2hfOVlwOUFPZWM0aDFUZzdtTWRheGZCUVI0c1JWdHFBSW1lcFFuT3NJcWpUcFRRY19xNFIwZHAzVWU3a1A5cWhkekhzWXE3cHl0ZWRyczV5QmVaVUdWZm9mWXppWVlObmtlc19mcUJGWG5WZHpwVElva2JUVjJUcjZucWpyUmY2UzNGUHZzOEMtYUhubVVnTUwzUHQ2REx2T3dNN2g4VG8?oc=5",
-        "windows": {
-          "6h": {
-            "available": true,
-            "before_event_count": 2,
-            "after_event_count": 1,
-            "delta_event_count": -1,
-            "before_weighted_activity": 5.4,
-            "after_weighted_activity": 3.0,
-            "delta_weighted_activity": -2.4,
-            "weighted_activity_change_pct": -44.4
-          },
-          "12h": {
-            "available": true,
-            "before_event_count": 3,
-            "after_event_count": 4,
-            "delta_event_count": 1,
-            "before_weighted_activity": 8.4,
-            "after_weighted_activity": 11.4,
-            "delta_weighted_activity": 3.0,
-            "weighted_activity_change_pct": 35.7
-          },
-          "24h": {
-            "available": true,
-            "before_event_count": 5,
-            "after_event_count": 5,
-            "delta_event_count": 0,
-            "before_weighted_activity": 13.8,
-            "after_weighted_activity": 14.4,
-            "delta_weighted_activity": 0.6,
-            "weighted_activity_change_pct": 4.3
-          },
-          "48h": {
-            "available": false,
-            "before_event_count": null,
-            "after_event_count": null,
-            "delta_event_count": null,
-            "before_weighted_activity": null,
-            "after_weighted_activity": null,
-            "delta_weighted_activity": null,
-            "weighted_activity_change_pct": null
-          },
-          "72h": {
-            "available": false,
-            "before_event_count": null,
-            "after_event_count": null,
-            "delta_event_count": null,
-            "before_weighted_activity": null,
-            "after_weighted_activity": null,
-            "delta_weighted_activity": null,
-            "weighted_activity_change_pct": null
-          }
-        }
-      },
-      {
-        "event_id": "INFO-000187",
-        "timestamp": "2026-08-17T01:00:00Z",
-        "title": "Iran’s Secret Plan to Escalate the War - WSJ",
-        "direction": "escalation",
-        "direction_score": -2,
-        "positive_signal_score": 0,
-        "negative_signal_score": -2,
-        "event_type": "threat",
-        "subtype": "escalatory_posture",
-        "source": "\"iran israel usa war when:7d\" - Google News",
-        "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBSTVZDZEJGTmI4U0t3MkVja0N0Z3BhYlpfRzNYYUZRODZOb0RoQ050UFNFaTJfSGRmQm9OTUdtWmtoMVdXT0dxR0RWUThPOFhSU0t0OTA5SUR2U2F3dXd6TTJrcVpvOUd1Z25kVlB5bnhsSXc1d3NnOA?oc=5",
-        "windows": {
-          "6h": {
-            "available": true,
-            "before_event_count": 1,
-            "after_event_count": 0,
-            "delta_event_count": -1,
-            "before_weighted_activity": 3.0,
-            "after_weighted_activity": 0,
-            "delta_weighted_activity": -3.0,
-            "weighted_activity_change_pct": -100.0
-          },
-          "12h": {
-            "available": true,
-            "before_event_count": 3,
-            "after_event_count": 3,
-            "delta_event_count": 0,
-            "before_weighted_activity": 8.4,
-            "after_weighted_activity": 8.4,
-            "delta_weighted_activity": 0.0,
-            "weighted_activity_change_pct": 0.0
-          },
-          "24h": {
-            "available": true,
-            "before_event_count": 6,
-            "after_event_count": 6,
-            "delta_event_count": 0,
-            "before_weighted_activity": 20.35,
-            "after_weighted_activity": 16.8,
-            "delta_weighted_activity": -3.55,
-            "weighted_activity_change_pct": -17.4
           },
           "48h": {
             "available": false,
