@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T14:29:44.519911Z",
+  "generated_at": "2026-11-17T18:22:03.451327Z",
   "source_generated_at": "2026-11-17T11:54:36Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
@@ -7,15 +7,15 @@
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
   "source_event_count": 2024,
-  "event_count": 430,
-  "rejected_count": 1594,
+  "event_count": 429,
+  "rejected_count": 1595,
   "rejection_counts": {
     "category_not_kinetic": 761,
-    "outside_window": 532,
+    "outside_window": 533,
     "no_confirmed_action_language": 253,
     "context_or_hypothetical": 30,
     "retrospective_or_aftermath": 14,
@@ -25,20 +25,20 @@
     "missile": 188,
     "strike": 81,
     "drone": 56,
-    "airstrike": 45,
+    "airstrike": 44,
     "ground": 37,
     "explosion": 22,
     "intercept": 1
   },
   "severity_counts": {
-    "medium": 240,
+    "medium": 239,
     "high": 163,
     "low": 25,
     "critical": 2
   },
   "actor_counts": {
     "Yemen": 130,
-    "Israel": 92,
+    "Israel": 91,
     "Iran": 86,
     "United States": 46,
     "Unknown actor": 45,
@@ -11194,32 +11194,6 @@
       "description": "Israeli fighter jets conduct series of approximately 10 airstrikes on Ali al-Tahir ridge and nearby Ramah village in southern Lebanon, reportedly using bunker busters",
       "source_name": "abualiexpress",
       "source_url": "https://t.me/abualiexpress/128841",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-i43namlhips0",
-      "timestamp": "2026-08-19T16:29:18Z",
-      "event_type": "kinetic",
-      "subtype": "airstrike",
-      "category": "airstrike",
-      "severity": "medium",
-      "actor": "isr",
-      "actor_label": "Israel",
-      "actor_method": "raw_source.origin",
-      "target_country": "Syria",
-      "location": "Syria",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Israeli airstrikes hit Abu al-Duhur Airbase in northwestern Syria, targeting runway and storage facilities",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/82448",
       "source_repository": "mikloshetzer-sketch/me-security-monitor",
       "source_collection": "events",
       "validation": {
