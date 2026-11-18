@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T14:05:29.765598Z",
+  "generated_at": "2026-11-18T17:55:10.473543Z",
   "source_generated_at": "2026-11-18T11:45:46Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
@@ -7,15 +7,15 @@
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
   "source_event_count": 2036,
-  "event_count": 433,
-  "rejected_count": 1603,
+  "event_count": 431,
+  "rejected_count": 1605,
   "rejection_counts": {
     "category_not_kinetic": 768,
-    "outside_window": 534,
+    "outside_window": 536,
     "no_confirmed_action_language": 253,
     "context_or_hypothetical": 30,
     "retrospective_or_aftermath": 14,
@@ -24,20 +24,20 @@
   "category_counts": {
     "missile": 188,
     "strike": 81,
-    "drone": 60,
+    "drone": 58,
     "airstrike": 44,
     "ground": 37,
     "explosion": 22,
     "intercept": 1
   },
   "severity_counts": {
-    "medium": 244,
+    "medium": 243,
     "high": 162,
-    "low": 25,
+    "low": 24,
     "critical": 2
   },
   "actor_counts": {
-    "Yemen": 130,
+    "Yemen": 128,
     "Israel": 90,
     "Iran": 89,
     "United States": 47,
@@ -11251,58 +11251,6 @@
       "validation": {
         "accepted": true,
         "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-16w53583wkjg0",
-      "timestamp": "2026-08-20T17:19:01Z",
-      "event_type": "kinetic",
-      "subtype": "drone",
-      "category": "drone",
-      "severity": "medium",
-      "actor": "yem",
-      "actor_label": "Yemen",
-      "actor_method": "raw_source.origin",
-      "target_country": "",
-      "location": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Houthis claim responsibility for drone attacks on Saudi military airfield in Najran and Saudi Aramco oil facilities in Najran",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/128881",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-3kp32958vaw00",
-      "timestamp": "2026-08-20T14:41:28Z",
-      "event_type": "kinetic",
-      "subtype": "drone",
-      "category": "drone",
-      "severity": "low",
-      "actor": "yem",
-      "actor_label": "Yemen",
-      "actor_method": "raw_source.origin",
-      "target_country": "",
-      "location": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Rajum hexacopter UAV operated by Yemeni forces strikes target in Harib district south of Marib, causing one fatality and multiple injuries among Shabwa Defense Forces",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/82488",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "general_action_match",
         "mode": "strict_kinetic_v2"
       }
     }
