@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-11-20T14:03:49.295817Z",
-  "source_generated_at": "2026-11-20T08:35:00Z",
+  "generated_at": "2026-11-20T17:40:40.775162Z",
+  "source_generated_at": "2026-11-20T17:19:00Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
-  "source_event_count": 2055,
-  "event_count": 428,
-  "rejected_count": 1627,
+  "source_event_count": 2062,
+  "event_count": 430,
+  "rejected_count": 1632,
   "rejection_counts": {
-    "category_not_kinetic": 780,
+    "category_not_kinetic": 785,
     "outside_window": 545,
     "no_confirmed_action_language": 253,
     "context_or_hypothetical": 31,
@@ -22,7 +22,7 @@
     "alert_only": 4
   },
   "category_counts": {
-    "missile": 190,
+    "missile": 192,
     "strike": 78,
     "drone": 54,
     "airstrike": 46,
@@ -31,23 +31,75 @@
     "intercept": 1
   },
   "severity_counts": {
-    "medium": 239,
-    "high": 163,
+    "medium": 240,
+    "high": 164,
     "low": 24,
     "critical": 2
   },
   "actor_counts": {
     "Yemen": 127,
-    "Iran": 89,
+    "Iran": 90,
     "Israel": 87,
     "United States": 47,
-    "Unknown actor": 46,
+    "Unknown actor": 47,
     "Saudi Arabia": 21,
     "Iraq": 5,
     "Lebanon": 5,
     "Jordan": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-2njj9z8872i00",
+      "timestamp": "2026-11-20T16:57:31Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "high",
+      "actor": "unknown",
+      "actor_label": "Unknown actor",
+      "actor_method": "normalized.attacker",
+      "target_country": "Israel",
+      "location": "Israel",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "CBS reports, citing sources, that Israel and the US are considering a new joint attack on Iran in the near term to target Iran's missile production and underground nuclear and military infrastructure; no decision confirmed",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/133969",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "general_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-27qyfhm7vdxc0",
+      "timestamp": "2026-11-20T15:01:57Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "medium",
+      "actor": "iran",
+      "actor_label": "Iran",
+      "actor_method": "normalized.attacker",
+      "target_country": "Iran",
+      "location": "Tehran",
+      "latitude": 35.6892,
+      "longitude": 51.389,
+      "map_visualizable": true,
+      "description": "Unconfirmed Iranian opposition reports of missile fire over southern Tehran, Khorramshahr and Kish Island; Iran-aligned sources say it was training fire, while the Kish firing was reportedly Iranian air defense targeting a US drone",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/133965",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-3ez0jjp8x9600",
       "timestamp": "2026-11-20T08:02:56Z",
