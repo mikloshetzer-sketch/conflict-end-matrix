@@ -1,29 +1,29 @@
 {
-  "generated_at": "2026-11-20T17:40:40.775162Z",
-  "source_generated_at": "2026-11-20T17:19:00Z",
+  "generated_at": "2026-11-21T13:29:57.569192Z",
+  "source_generated_at": "2026-11-21T13:03:13Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": false,
+    "required_today_utc": true,
     "max_age_hours": 8.0
   },
-  "source_event_count": 2062,
+  "source_event_count": 2068,
   "event_count": 430,
-  "rejected_count": 1632,
+  "rejected_count": 1638,
   "rejection_counts": {
-    "category_not_kinetic": 785,
-    "outside_window": 545,
-    "no_confirmed_action_language": 253,
+    "category_not_kinetic": 787,
+    "outside_window": 546,
+    "no_confirmed_action_language": 256,
     "context_or_hypothetical": 31,
     "retrospective_or_aftermath": 14,
     "alert_only": 4
   },
   "category_counts": {
-    "missile": 192,
-    "strike": 78,
+    "missile": 193,
+    "strike": 77,
     "drone": 54,
     "airstrike": 46,
     "ground": 37,
@@ -39,9 +39,9 @@
   "actor_counts": {
     "Yemen": 127,
     "Iran": 90,
-    "Israel": 87,
+    "Israel": 86,
+    "Unknown actor": 48,
     "United States": 47,
-    "Unknown actor": 47,
     "Saudi Arabia": 21,
     "Iraq": 5,
     "Lebanon": 5,
@@ -97,6 +97,32 @@
       "validation": {
         "accepted": true,
         "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
+    {
+      "event_id": "iranstrike-263ic4bes0rk0",
+      "timestamp": "2026-11-20T15:00:00Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "medium",
+      "actor": "unknown",
+      "actor_label": "Unknown actor",
+      "actor_method": "normalized.attacker",
+      "target_country": "Persian Gulf",
+      "location": "Persian Gulf",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Unknown projectile hits oil tanker about 15 km north of Omani port of Hasab after leaving Strait of Hormuz, fire broke out on board; UKMTO confirms, no casualties or pollution reported",
+      "source_name": "OSINTdefender",
+      "source_url": "https://t.me/OSINTdefender/20803",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "general_action_match",
         "mode": "strict_kinetic_v2"
       }
     },
@@ -11199,32 +11225,6 @@
       "validation": {
         "accepted": true,
         "reason": "general_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-3il8bdnggky0",
-      "timestamp": "2026-08-22T18:14:48Z",
-      "event_type": "kinetic",
-      "subtype": "strike",
-      "category": "strike",
-      "severity": "medium",
-      "actor": "isr",
-      "actor_label": "Israel",
-      "actor_method": "raw_source.origin",
-      "target_country": "Lebanon",
-      "location": "Lebanon",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "IDF fighter jets strike villages of Tzarbeen and Almansouri in southern Lebanon",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/128967",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
         "mode": "strict_kinetic_v2"
       }
     }
