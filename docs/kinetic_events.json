@@ -1,29 +1,29 @@
 {
-  "generated_at": "2026-11-22T13:24:02.590568Z",
-  "source_generated_at": "2026-11-22T07:29:22Z",
+  "generated_at": "2026-11-22T17:00:47.305159Z",
+  "source_generated_at": "2026-11-22T15:41:44Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
-  "source_event_count": 2081,
+  "source_event_count": 2086,
   "event_count": 432,
-  "rejected_count": 1649,
+  "rejected_count": 1654,
   "rejection_counts": {
-    "category_not_kinetic": 791,
-    "outside_window": 551,
+    "category_not_kinetic": 795,
+    "outside_window": 552,
     "no_confirmed_action_language": 258,
     "context_or_hypothetical": 31,
     "retrospective_or_aftermath": 14,
     "alert_only": 4
   },
   "category_counts": {
-    "missile": 195,
-    "strike": 74,
+    "missile": 196,
+    "strike": 73,
     "drone": 56,
     "airstrike": 46,
     "ground": 36,
@@ -31,15 +31,15 @@
     "intercept": 1
   },
   "severity_counts": {
-    "medium": 240,
-    "high": 166,
+    "medium": 239,
+    "high": 167,
     "low": 24,
     "critical": 2
   },
   "actor_counts": {
     "Yemen": 125,
-    "Iran": 95,
-    "Israel": 83,
+    "Iran": 96,
+    "Israel": 82,
     "Unknown actor": 50,
     "United States": 47,
     "Saudi Arabia": 21,
@@ -48,6 +48,32 @@
     "Jordan": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-377ks2j3p4400",
+      "timestamp": "2026-11-22T11:44:53Z",
+      "event_type": "kinetic",
+      "subtype": "missile",
+      "category": "missile",
+      "severity": "high",
+      "actor": "irn",
+      "actor_label": "Iran",
+      "actor_method": "raw_source.origin",
+      "target_country": "Iran",
+      "location": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "IRGC attacks two US bases in Bahrain (Sheikh Isa and Al-Jafeer) with 3 ballistic missiles and drones per Fars; Bahrain Interior Ministry confirms civilians injured in Iranian attacks",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/134044",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-210lk9amr76o0",
       "timestamp": "2026-11-21T21:54:30Z",
@@ -11246,32 +11272,6 @@
       "description": "Israeli airstrikes cause significant damage to Syria's Abu al-Duhur Military Airbase per satellite imagery",
       "source_name": "OSINTdefender",
       "source_url": "https://t.me/OSINTdefender/19991",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-wkkgubpt6u80",
-      "timestamp": "2026-08-24T14:58:27Z",
-      "event_type": "kinetic",
-      "subtype": "strike",
-      "category": "strike",
-      "severity": "medium",
-      "actor": "isr",
-      "actor_label": "Israel",
-      "actor_method": "raw_source.origin",
-      "target_country": "Lebanon",
-      "location": "Lebanon",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "description": "Israeli Air Force strikes southern Lebanon targeting villages of Bayt al-Sayyad and Al-Mansouri in western sector",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/129088",
       "source_repository": "mikloshetzer-sketch/me-security-monitor",
       "source_collection": "events",
       "validation": {
