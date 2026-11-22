@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-11-21T14:32:52.698535+00:00",
+  "generated_at": "2026-11-22T14:28:05.537591+00:00",
   "analysis_model": "conflict_analysis_v1_2",
   "analysis_period": {
-    "raw_common_start": "2026-08-23T19:48:45Z",
-    "daily_analysis_start": "2026-08-24T00:00:00Z",
-    "end": "2026-11-20T16:57:31Z",
-    "raw_common_start_date": "2026-08-23",
-    "daily_analysis_start_date": "2026-08-24",
-    "end_date": "2026-11-20",
+    "raw_common_start": "2026-08-24T14:58:27Z",
+    "daily_analysis_start": "2026-08-25T00:00:00Z",
+    "end": "2026-11-21T21:54:30Z",
+    "raw_common_start_date": "2026-08-24",
+    "daily_analysis_start_date": "2026-08-25",
+    "end_date": "2026-11-21",
     "basis": "Lag analysis starts at the first valid kinetic event. Daily MAI/DDI/Gap starts at the first complete UTC day."
   },
   "inputs": {
-    "event_timeline_generated_at": "2026-11-21T12:56:10.297741+00:00",
+    "event_timeline_generated_at": "2026-11-22T12:48:10.743163+00:00",
     "event_timeline_direction_model": "context_direction_v3_2",
-    "kinetic_generated_at": "2026-11-21T13:29:57.569192Z",
+    "kinetic_generated_at": "2026-11-22T13:24:02.590568Z",
     "kinetic_cleaning_mode": "strict_kinetic_v2",
     "diplomatic_events_total_history": 739,
     "diplomatic_events_in_common_period": 185,
     "diplomatic_events_in_daily_period": 185,
-    "military_events_total_history": 430,
-    "military_events_in_common_period": 430,
-    "military_events_in_daily_period": 429
+    "military_events_total_history": 432,
+    "military_events_in_common_period": 432,
+    "military_events_in_daily_period": 430
   },
   "methodology": {
     "military_activity_index": {
@@ -59,14 +59,14 @@
     }
   },
   "latest": {
-    "date": "2026-11-20",
-    "military_activity_index": 53.9,
-    "military_change_vs_7d_pct": 55.3,
+    "date": "2026-11-21",
+    "military_activity_index": 77.5,
+    "military_change_vs_7d_pct": 107.4,
     "diplomatic_direction_index": 0.0,
     "diplomacy_military_gap": {
-      "divergence_score": 55.3,
-      "strength": 55.3,
-      "level": "HIGH",
+      "divergence_score": 100.0,
+      "strength": 100.0,
+      "level": "VERY HIGH",
       "pattern": "MIXED / LIMITED DIVERGENCE"
     },
     "interpretation": {
@@ -77,33 +77,6 @@
     }
   },
   "daily": [
-    {
-      "date": "2026-08-24",
-      "diplomatic": {
-        "event_count": 0,
-        "direction_index": 0.0,
-        "mean_direction_score": 0.0,
-        "positive_signal_score": 0,
-        "negative_signal_score": 0,
-        "escalation_count": 0,
-        "deescalation_count": 0,
-        "mixed_count": 0
-      },
-      "military": {
-        "event_count": 6,
-        "weighted_score": 18.4,
-        "activity_index": 69.7,
-        "previous_7d_average_weighted_score": 18.4,
-        "change_vs_previous_7d_pct": 0.0,
-        "pressure_score": 0.0
-      },
-      "gap": {
-        "divergence_score": 0.0,
-        "strength": 0.0,
-        "level": "LOW",
-        "pattern": "MIXED / LIMITED DIVERGENCE"
-      }
-    },
     {
       "date": "2026-08-25",
       "diplomatic": {
@@ -120,13 +93,13 @@
         "event_count": 4,
         "weighted_score": 14.65,
         "activity_index": 57.3,
-        "previous_7d_average_weighted_score": 18.4,
-        "change_vs_previous_7d_pct": -20.4,
-        "pressure_score": -20.4
+        "previous_7d_average_weighted_score": 14.65,
+        "change_vs_previous_7d_pct": 0.0,
+        "pressure_score": 0.0
       },
       "gap": {
-        "divergence_score": -14.8,
-        "strength": 14.8,
+        "divergence_score": 5.6,
+        "strength": 5.6,
         "level": "LOW",
         "pattern": "MIXED / LIMITED DIVERGENCE"
       }
@@ -147,7 +120,7 @@
         "event_count": 0,
         "weighted_score": 0,
         "activity_index": 9.0,
-        "previous_7d_average_weighted_score": 16.52,
+        "previous_7d_average_weighted_score": 14.65,
         "change_vs_previous_7d_pct": -100.0,
         "pressure_score": -100
       },
@@ -174,7 +147,7 @@
         "event_count": 0,
         "weighted_score": 0,
         "activity_index": 9.0,
-        "previous_7d_average_weighted_score": 11.02,
+        "previous_7d_average_weighted_score": 7.33,
         "change_vs_previous_7d_pct": -100.0,
         "pressure_score": -100
       },
@@ -201,7 +174,7 @@
         "event_count": 0,
         "weighted_score": 0,
         "activity_index": 9.0,
-        "previous_7d_average_weighted_score": 8.26,
+        "previous_7d_average_weighted_score": 4.88,
         "change_vs_previous_7d_pct": -100.0,
         "pressure_score": -100
       },
@@ -228,14 +201,14 @@
         "event_count": 1,
         "weighted_score": 2.4,
         "activity_index": 13.5,
-        "previous_7d_average_weighted_score": 6.61,
-        "change_vs_previous_7d_pct": -63.7,
-        "pressure_score": -63.7
+        "previous_7d_average_weighted_score": 3.66,
+        "change_vs_previous_7d_pct": -34.5,
+        "pressure_score": -34.5
       },
       "gap": {
-        "divergence_score": -80.4,
-        "strength": 80.4,
-        "level": "VERY HIGH",
+        "divergence_score": -51.2,
+        "strength": 51.2,
+        "level": "HIGH",
         "pattern": "MIXED / LIMITED DIVERGENCE"
       }
     },
@@ -255,8 +228,8 @@
         "event_count": 13,
         "weighted_score": 58.45,
         "activity_index": 96.6,
-        "previous_7d_average_weighted_score": 5.91,
-        "change_vs_previous_7d_pct": 889.3,
+        "previous_7d_average_weighted_score": 3.41,
+        "change_vs_previous_7d_pct": 1614.1,
         "pressure_score": 100
       },
       "gap": {
@@ -282,8 +255,8 @@
         "event_count": 14,
         "weighted_score": 48.4,
         "activity_index": 94.4,
-        "previous_7d_average_weighted_score": 13.41,
-        "change_vs_previous_7d_pct": 260.8,
+        "previous_7d_average_weighted_score": 12.58,
+        "change_vs_previous_7d_pct": 284.6,
         "pressure_score": 100
       },
       "gap": {
@@ -389,7 +362,7 @@
       "military": {
         "event_count": 6,
         "weighted_score": 20.8,
-        "activity_index": 71.9,
+        "activity_index": 70.8,
         "previous_7d_average_weighted_score": 45.74,
         "change_vs_previous_7d_pct": -54.5,
         "pressure_score": -54.5
@@ -632,7 +605,7 @@
       "military": {
         "event_count": 5,
         "weighted_score": 21.75,
-        "activity_index": 76.4,
+        "activity_index": 75.3,
         "previous_7d_average_weighted_score": 38.11,
         "change_vs_previous_7d_pct": -42.9,
         "pressure_score": -42.9
@@ -1172,7 +1145,7 @@
       "military": {
         "event_count": 5,
         "weighted_score": 21.0,
-        "activity_index": 73.0,
+        "activity_index": 71.9,
         "previous_7d_average_weighted_score": 9.89,
         "change_vs_previous_7d_pct": 112.4,
         "pressure_score": 100
@@ -1253,7 +1226,7 @@
       "military": {
         "event_count": 7,
         "weighted_score": 20.65,
-        "activity_index": 70.8,
+        "activity_index": 69.7,
         "previous_7d_average_weighted_score": 12.06,
         "change_vs_previous_7d_pct": 71.3,
         "pressure_score": 71.3
@@ -1334,7 +1307,7 @@
       "military": {
         "event_count": 7,
         "weighted_score": 21.55,
-        "activity_index": 75.3,
+        "activity_index": 74.2,
         "previous_7d_average_weighted_score": 19.42,
         "change_vs_previous_7d_pct": 11.0,
         "pressure_score": 11.0
@@ -1469,7 +1442,7 @@
       "military": {
         "event_count": 6,
         "weighted_score": 21.5,
-        "activity_index": 74.2,
+        "activity_index": 73.0,
         "previous_7d_average_weighted_score": 21.86,
         "change_vs_previous_7d_pct": -1.7,
         "pressure_score": -1.7
@@ -1874,7 +1847,7 @@
       "military": {
         "event_count": 8,
         "weighted_score": 22.0,
-        "activity_index": 77.5,
+        "activity_index": 76.4,
         "previous_7d_average_weighted_score": 10.99,
         "change_vs_previous_7d_pct": 100.1,
         "pressure_score": 100
@@ -2479,6 +2452,33 @@
         "level": "HIGH",
         "pattern": "MIXED / LIMITED DIVERGENCE"
       }
+    },
+    {
+      "date": "2026-11-21",
+      "diplomatic": {
+        "event_count": 0,
+        "direction_index": 0.0,
+        "mean_direction_score": 0.0,
+        "positive_signal_score": 0,
+        "negative_signal_score": 0,
+        "escalation_count": 0,
+        "deescalation_count": 0,
+        "mixed_count": 0
+      },
+      "military": {
+        "event_count": 7,
+        "weighted_score": 22.25,
+        "activity_index": 77.5,
+        "previous_7d_average_weighted_score": 10.73,
+        "change_vs_previous_7d_pct": 107.4,
+        "pressure_score": 100
+      },
+      "gap": {
+        "divergence_score": 100.0,
+        "strength": 100.0,
+        "level": "VERY HIGH",
+        "pattern": "MIXED / LIMITED DIVERGENCE"
+      }
     }
   ],
   "lag_analysis": {
@@ -2529,13 +2529,13 @@
           "share_followed_by_activity_decrease_pct": 38.6
         },
         "72h": {
-          "signal_count": 42,
-          "excluded_edge_signals": 2,
-          "median_delta_weighted_activity": 0.6,
-          "mean_delta_weighted_activity": -0.59,
-          "median_change_pct": -4.5,
-          "share_followed_by_activity_increase_pct": 50.0,
-          "share_followed_by_activity_decrease_pct": 50.0
+          "signal_count": 44,
+          "excluded_edge_signals": 0,
+          "median_delta_weighted_activity": 2.4,
+          "mean_delta_weighted_activity": -0.22,
+          "median_change_pct": 17.3,
+          "share_followed_by_activity_increase_pct": 52.3,
+          "share_followed_by_activity_decrease_pct": 47.7
         }
       },
       "de-escalation": {
@@ -2558,13 +2558,13 @@
           "share_followed_by_activity_decrease_pct": 46.2
         },
         "24h": {
-          "signal_count": 13,
-          "excluded_edge_signals": 0,
+          "signal_count": 12,
+          "excluded_edge_signals": 1,
           "median_delta_weighted_activity": -3.0,
-          "mean_delta_weighted_activity": -1.74,
+          "mean_delta_weighted_activity": -1.82,
           "median_change_pct": -41.7,
-          "share_followed_by_activity_increase_pct": 15.4,
-          "share_followed_by_activity_decrease_pct": 69.2
+          "share_followed_by_activity_increase_pct": 16.7,
+          "share_followed_by_activity_decrease_pct": 66.7
         },
         "48h": {
           "signal_count": 12,
@@ -2641,14 +2641,14 @@
             "weighted_activity_change_pct": 5.3
           },
           "72h": {
-            "available": false,
-            "before_event_count": null,
-            "after_event_count": null,
-            "delta_event_count": null,
-            "before_weighted_activity": null,
-            "after_weighted_activity": null,
-            "delta_weighted_activity": null,
-            "weighted_activity_change_pct": null
+            "available": true,
+            "before_event_count": 11,
+            "after_event_count": 10,
+            "delta_event_count": -1,
+            "before_weighted_activity": 30.65,
+            "after_weighted_activity": 37.25,
+            "delta_weighted_activity": 6.6,
+            "weighted_activity_change_pct": 21.5
           }
         }
       },
@@ -2706,14 +2706,14 @@
             "weighted_activity_change_pct": 30.6
           },
           "72h": {
-            "available": false,
-            "before_event_count": null,
-            "after_event_count": null,
-            "delta_event_count": null,
-            "before_weighted_activity": null,
-            "after_weighted_activity": null,
-            "delta_weighted_activity": null,
-            "weighted_activity_change_pct": null
+            "available": true,
+            "before_event_count": 11,
+            "after_event_count": 11,
+            "delta_event_count": 0,
+            "before_weighted_activity": 31.25,
+            "after_weighted_activity": 39.65,
+            "delta_weighted_activity": 8.4,
+            "weighted_activity_change_pct": 26.9
           }
         }
       },
@@ -6261,14 +6261,14 @@
             "weighted_activity_change_pct": null
           },
           "24h": {
-            "available": true,
-            "before_event_count": 5,
-            "after_event_count": 4,
-            "delta_event_count": -1,
-            "before_weighted_activity": 15.4,
-            "after_weighted_activity": 14.65,
-            "delta_weighted_activity": -0.75,
-            "weighted_activity_change_pct": -4.9
+            "available": false,
+            "before_event_count": null,
+            "after_event_count": null,
+            "delta_event_count": null,
+            "before_weighted_activity": null,
+            "after_weighted_activity": null,
+            "delta_weighted_activity": null,
+            "weighted_activity_change_pct": null
           },
           "48h": {
             "available": false,
