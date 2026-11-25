@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-11-24T20:03:52.525831Z",
-  "source_generated_at": "2026-11-24T18:21:12Z",
+  "generated_at": "2026-11-25T15:40:07.395816Z",
+  "source_generated_at": "2026-11-25T12:58:39Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": false,
+    "required_today_utc": true,
     "max_age_hours": 8.0
   },
-  "source_event_count": 2101,
-  "event_count": 429,
-  "rejected_count": 1672,
+  "source_event_count": 2106,
+  "event_count": 430,
+  "rejected_count": 1676,
   "rejection_counts": {
-    "category_not_kinetic": 805,
+    "category_not_kinetic": 809,
     "outside_window": 557,
     "no_confirmed_action_language": 260,
     "context_or_hypothetical": 32,
@@ -23,7 +23,7 @@
   },
   "category_counts": {
     "missile": 195,
-    "strike": 73,
+    "strike": 74,
     "drone": 56,
     "airstrike": 44,
     "ground": 36,
@@ -31,13 +31,13 @@
     "intercept": 1
   },
   "severity_counts": {
-    "medium": 237,
+    "medium": 238,
     "high": 166,
     "low": 24,
     "critical": 2
   },
   "actor_counts": {
-    "Yemen": 123,
+    "Yemen": 124,
     "Iran": 95,
     "Israel": 81,
     "Unknown actor": 51,
@@ -48,6 +48,32 @@
     "Jordan": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-3tw9gt2074k00",
+      "timestamp": "2026-11-25T10:00:31Z",
+      "event_type": "kinetic",
+      "subtype": "strike",
+      "category": "strike",
+      "severity": "medium",
+      "actor": "yem",
+      "actor_label": "Yemen",
+      "actor_method": "raw_source.origin",
+      "target_country": "Persian Gulf",
+      "location": "Persian Gulf",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "Houthi attack overnight targets Saudi refineries at Ras Tanura on the Persian Gulf coast",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/134205",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-3nq1hnfm02k00",
       "timestamp": "2026-11-24T08:44:02Z",
