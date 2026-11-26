@@ -1,34 +1,20 @@
 {
-  "report_date": "2026-11-24",
-  "created_at": "2026-11-24T17:35:45.736223",
+  "report_date": "2026-11-25",
+  "created_at": "2026-11-25T17:07:16.073865",
   "article_count": 50,
-  "total_score": -65,
-  "conflict_index": -1.3,
+  "total_score": -67,
+  "conflict_index": -1.34,
   "assessment": "moderate escalation",
   "escalation_pressure": -70,
-  "diplomatic_pressure": 5,
-  "net_signal": -65,
+  "diplomatic_pressure": 3,
+  "net_signal": -67,
   "top_drivers": [
     {
       "driver": "war",
       "category": "Military escalation",
-      "count": 27,
+      "count": 33,
       "weight": -1,
-      "impact": -27
-    },
-    {
-      "driver": "strike",
-      "category": "Military escalation",
-      "count": 5,
-      "weight": -2,
-      "impact": -10
-    },
-    {
-      "driver": "attack",
-      "category": "Military escalation",
-      "count": 5,
-      "weight": -2,
-      "impact": -10
+      "impact": -33
     },
     {
       "driver": "strikes",
@@ -38,28 +24,42 @@
       "impact": -8
     },
     {
-      "driver": "attacks",
+      "driver": "strike",
       "category": "Military escalation",
       "count": 4,
       "weight": -2,
       "impact": -8
     },
     {
+      "driver": "attack",
+      "category": "Military escalation",
+      "count": 4,
+      "weight": -2,
+      "impact": -8
+    },
+    {
+      "driver": "attacks",
+      "category": "Military escalation",
+      "count": 3,
+      "weight": -2,
+      "impact": -6
+    },
+    {
+      "driver": "missile",
+      "category": "Military escalation",
+      "count": 1,
+      "weight": -2,
+      "impact": -2
+    },
+    {
       "driver": "escalation",
       "category": "Threats / retaliation",
-      "count": 2,
-      "weight": -2,
-      "impact": -4
-    },
-    {
-      "driver": "peace",
-      "category": "Diplomacy / negotiation",
       "count": 1,
-      "weight": 2,
-      "impact": 2
+      "weight": -2,
+      "impact": -2
     },
     {
-      "driver": "diplomatic",
+      "driver": "diplomacy",
       "category": "Diplomacy / negotiation",
       "count": 1,
       "weight": 2,
@@ -97,13 +97,14 @@
   "categories": [
     {
       "category": "Military escalation",
-      "score": -65,
-      "count": 47,
+      "score": -67,
+      "count": 51,
       "keywords": [
         "attack",
         "attacks",
         "drone",
         "drones",
+        "missile",
         "strike",
         "strikes",
         "war"
@@ -111,8 +112,8 @@
     },
     {
       "category": "Threats / retaliation",
-      "score": -5,
-      "count": 3,
+      "score": -3,
+      "count": 2,
       "keywords": [
         "escalation",
         "threat"
@@ -120,11 +121,10 @@
     },
     {
       "category": "Diplomacy / negotiation",
-      "score": 4,
-      "count": 2,
+      "score": 2,
+      "count": 1,
       "keywords": [
-        "diplomatic",
-        "peace"
+        "diplomacy"
       ]
     },
     {
@@ -163,18 +163,6 @@
       ]
     },
     {
-      "title": "Kuwait, Bahrain face new Iran attacks after US strike on Qeshm Island - Al Jazeera",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNdTNrNm5hd0NlSW9sNVo1VDVMVDA3eEtIMXhDdzJ3LTVjbGNxQ1J3dEVnWFFuMlQxTjVGYVhWaWVVaW5yRHJ3LWFrNkYwMGZjN3FrSENvdDlpQTRLNUNUQUhjb3hUX3BoUWRwMW5iSGZENWo3dm1xeUZIOU1FZm9EZDV5bHZYLU5mTENabEpoa1Y1ZEQyZXNZQk9sQkRzVVpNQ0VpR1lSdjBFRjRBNXow0gG0AUFVX3lxTE4xUnJGLWRBLUtPLWw0TjhrZjNZQUFVcmlHSjZrSURWSno1Z2JhUHBJOEFTcWN4X1R1cHdWLUFhc25RR25vbWtVUEN4S2J2TzdvdkJaLUxHeWJZX1BIbHpfeTlIcW53bkVSU2VoMzBRRnFKX1JvcG9ROHZtcW5jb0RMNnhLdjJUaDBmSWVPM3NRbUJUcmdHN0JkVU1fMW9fZm1kUU16WGJYOTR1eThhNEljVW5lcQ?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Wed, 18 Nov 2026 16:56:45 GMT",
-      "score": -6,
-      "tags": [
-        "strike",
-        "attack",
-        "attacks"
-      ]
-    },
-    {
       "title": "Strait of Hormuz attacks have increased to highest level since Iran war began - ABC News - Breaking News, Latest News and Videos",
       "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPWHRGNHdBbkpIa3IyWTlmV2l5aDVwZ0pLUE1WRzhIVjRqM3p4c3ZsSWNtaVo4YnU4WHBwbUREbzJoX1VzeENVb0xFclVKaW9HY2lVb2lxRnFzWUhNb3RvTDlPYjRfUTVWOUU1dHJ4b2lfZGNPV3h0SGZfdEJLX3NacWxLam1QV1pnb08xRVFDei1OaFZIQXduTmJjbkNqYXFuaGk4a3p4OE5YR0HSAbABQVVfeXFMT3JyZk0yRTFISFBvWF9WMnZrUnp2NHBtMG9pRHo2OUlfaHd0QkZOWmEwWjJLMHJMdlMxal9WQ0lfU1pyd0RLejdCaEtWS2tGUGoyN0ZDVFJOWUZoR3RBQjBsUS1RV2xWcGlVSWNsd3c5aTR5a0dMWkUtMWtVeV95ajVhMkJBc0FrdVo3OWlmVUlPY2tLRU5VWmwtQzRKTXktQnBYVHpSN2k1U2xwUDJVdHU?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
@@ -187,10 +175,10 @@
       ]
     },
     {
-      "title": "Mideast nations ramp up efforts to avert all-out war as Israel urges Iran strikes - Naharnet",
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQaVlRVDRGOUJTd1BXc243Smpva1lCRnlDZGFHWmpVa2tiTVN2SHVtY0tyd3RBaUNvVDIwMEpINW5pSmdrMTdFZnVhMU5Lakx1cEJnemV3Tzc3bXpzV0tGS0RER0lXV2ZrWnplMGpuZEQxLXJ5SFAxTVVHb2t3azdDbEYxY0VzY3BkaC1CWFJHS1BDNVhHTk5YeXR6ZTVrSTFfX1ctNVRYOVhNd2hfNE9xNlRSOU1xMnZtb284MVpyU2xzdw?oc=5",
+      "title": "Trump ‘considering new strikes on Iran after being warned military is running out of time’ - The Independent",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOVFkyQ0JGVDlDLTF3Vk8tU1hVTkh3YWpoUFJ4RjBaZEotVkhSYVhvWmZtTU92anVQNlNhTEdCN3pSN2dQQnFhSFRuYkJzLVlTZlgxUVUxZzQyWHJfY09LME10andxejc2TnZrUnNINUFOZHVhZ1ZvRWUzVHV3TzdiWlZveHFyRGJQVm41cHI0SzFnT1YwTHpBZ3hGbG5YRTcy?oc=5",
       "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Thu, 19 Nov 2026 12:19:00 GMT",
+      "published": "Sat, 21 Nov 2026 00:04:00 GMT",
       "score": -5,
       "tags": [
         "strike",
@@ -211,10 +199,10 @@
       ]
     },
     {
-      "title": "U.S. launches strikes on Iran's Qeshm Island in Strait of Hormuz - CBS News",
-      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNbEJURjBQYXVkNTJSWEMyUlRrbFJ3NjJETGptNjYxX1JSS3lob1NOekp3WkZYcDdWVUtEaFRHYlpzUGg5d1FlNDE0QWdhMmtoUzBJb2piaWZFZWF3OFBaNjY1dTJMMldkdTVtNE1lWFJadlhpRFdFeWZYam5zN3RwWmFiSUw?oc=5",
-      "source": "\"middle east conflict when:7d\" - Google News",
-      "published": "Tue, 17 Nov 2026 23:59:00 GMT",
+      "title": "Israeli Spy Chief Pressed for Renewed Iran Strikes During U.S. Visit - WSJ",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOR2poV3JYSVEtZHRZTmlXWXNpcUR6VEVZUnZEY01xeTB0WlhhMUVvTngyM1YwMHRieTY0R0lnMjhsWEJwa2lsY1RvNkluUXlKQ0dlZXlwR2VSdV9OSGE0RVZsNUJSTkRheno5NGJnbG1TRk9waG1CMFhCV3FadzgtbmlsQzAwd0dfZHRRMkZMWkpXcmVmMG9neVhtZUxkMUlka2tVdTdNbjRhcm5TZmY2dWw4SUs?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Wed, 25 Nov 2026 09:43:58 GMT",
       "score": -4,
       "tags": [
         "strike",
@@ -234,14 +222,14 @@
       ]
     },
     {
-      "title": "Oil Falls Below $100 a barrel on Middle East Peace Deal Hopes - EnergyNow.com",
-      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxONEY1OTRTVV9fNHdPaVhkcUhKcnlkZHM5Zk9qTk0wNDRYUm9UV3ltT2hWS1BjREhxMktHMEx2UTA1bWthZDdsdHlSSG5WT1J1MUVfSEo4dDUwSzBfM1RqYnhUM3c0MXdrb3BGdUhNUHJVMlQzUVYxRFp1NGJlN1lBZ0JCd1JWNi1RNllueU9ZVVVKSXE3cHc?oc=5",
-      "source": "\"middle east conflict when:7d\" - Google News",
-      "published": "Mon, 23 Nov 2026 15:14:03 GMT",
-      "score": 3,
+      "title": "Iran facing ‘silent economic war’ that is 'tougher' than missile war, says President Pezeshkian - Anadolu Ajansı",
+      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNUGtTZlEyTjhtMW9sN2lJTmFNQVFBWVlSRzVZTy1wbHdENmpwOGxuNk1LUVdUaG9kWkFqOWltcTV0Qm9ZdG1HSUZQTDQ2cXpmeVlxOVBMNHZPWWpJZGQ4T2luUnVSM1RFOEszWWlGcWFucGZlYzdVa0lyUlVKLWU1V2c3d2RfR1Y5cGJaTVk3bk5HZlZOcDdUeDBBZUlBX2hzTzJLaHZOY1dWUDBTVXZHT0V1V1pMdzFtSFlIMzFmTkZ4YTZyZHRaYUFIYnZ0dXE5?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Sat, 21 Nov 2026 13:24:50 GMT",
+      "score": -3,
       "tags": [
-        "peace",
-        "deal"
+        "missile",
+        "war"
       ]
     },
     {
@@ -255,16 +243,6 @@
       ]
     },
     {
-      "title": "Israel, US reportedly working on joint plans for Iran escalation | Daily Sabah - Daily Sabah",
-      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQaE1SOHJpcmRaTUo0cnpaMTN4RHhXampKMmxtUmg0VXJIYlFiODJxZVJhNkFOQWt0UWlkdzJjYnNmTjJyMVU5eU1ER2VXSzRJQmVXQTh2Rng0Y0RpT29qUFNLSk12V3VzMGtyQXFjUG00QTVyMVRFYmE4R0VPS2hTdnpqLXJGdTA4dDMxVjlVdkZHTVpBemZld0sxcmtUR2dvSm5ERkF0T3DSAa4BQVVfeXFMTkxiNnVjNngtVE9HbWxhdFZuaUl4NzNTUzZtSWFWcVh5dGtvMDI4dmJiV2ZDT0NvQ0RlTmY0d3NCSzRSNS11TktQMVI3MVhkWDFnM002UnQ5cXY1NDVUeHhoTDlhMlctX3BtNFoxUGk4S05SYWZxYnNyLVNTMk51STlESUFLcVVVMko4c1JKY3hKVEVGdGNIVHNJVldYdGxMS0xrcWxUZ3lRNFNON2NR?oc=5",
-      "source": "\"iran israel usa war when:7d\" - Google News",
-      "published": "Sun, 22 Nov 2026 10:11:00 GMT",
-      "score": -2,
-      "tags": [
-        "escalation"
-      ]
-    },
-    {
       "title": "Iran conflict sparks historic energy security threat, IEA warns - Euronews.com",
       "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNMGt5NlJvTjVCMVNzOFgtakU1Q1BYY0VKRUIzVGdfSE9JNkRhc1VqWHhzeWRkWS1RNGR5M3JoN285S0VFRjRTUXM1cGI1Q2pkME92bktpMHVucEFaMmFTTEJlWjdvSVF5cmZkb0hxRkRwZFh6clRUVnVyZ1ZFS1lHd3pLUElrdTF1QWRTYU90cDFaOWQ3ZC15bUJBSloxalJFb3BVV2RFendOM1VZX2JqUFMwTGZpQktsVmNaN3hlSU44UQ?oc=5",
       "source": "\"middle east conflict when:7d\" - Google News",
@@ -274,11 +252,31 @@
         "war",
         "threat"
       ]
+    },
+    {
+      "title": "2026 Iran war | Oil, Explained, United States, Israel, Strait of Hormuz, Map, & Conflict - Britannica",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5nTzlhOGZTS180cWNtVG91c2VWRVJFYlk0cW5Ba1RHUEFOSEtldU15QktQT0EzRVY1ZVdZZ0VTRHVWTVhyN1IzeU1wbmlDMUhrQ3Roc1YxcmdMUQ?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Mon, 23 Nov 2026 08:00:00 GMT",
+      "score": -1,
+      "tags": [
+        "war"
+      ]
+    },
+    {
+      "title": "‘We’ve Got Time’: Trump Suggests Iran War Will Continue Into 2027 - Time Magazine",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOQjZGUzREbXRjRmtjM2dNZXc5eXVvVEJJOUdFdkpRNnZXVngwcDItZE9JYnJQc0diN3dRU1p3OGMzY0RQRkw4Q244ckR3UWVFWVc3ZkJHeThzU09aWnE4SHhxcVJqdld4bUtrdmdaVjA0QUdWT3dySkwzc0VVZXRDcWlHaTBZNERRWTUxbG1ZMzk?oc=5",
+      "source": "\"iran israel usa war when:7d\" - Google News",
+      "published": "Fri, 20 Nov 2026 09:30:09 GMT",
+      "score": -1,
+      "tags": [
+        "war"
+      ]
     }
   ],
   "integrity": {
     "driver_net_equals_total_score": true,
-    "driver_net": -65,
-    "source_total_score": -65
+    "driver_net": -67,
+    "source_total_score": -67
   }
 }
