@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T15:39:30.858494Z",
+  "generated_at": "2026-11-27T18:47:45.815878Z",
   "source_generated_at": "2026-11-27T15:37:13Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
@@ -7,15 +7,15 @@
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": true,
+    "required_today_utc": false,
     "max_age_hours": 8.0
   },
   "source_event_count": 2131,
-  "event_count": 443,
-  "rejected_count": 1688,
+  "event_count": 442,
+  "rejected_count": 1689,
   "rejection_counts": {
     "category_not_kinetic": 818,
-    "outside_window": 557,
+    "outside_window": 558,
     "no_confirmed_action_language": 263,
     "context_or_hypothetical": 32,
     "retrospective_or_aftermath": 14,
@@ -24,14 +24,14 @@
   "category_counts": {
     "missile": 202,
     "strike": 77,
-    "drone": 58,
+    "drone": 57,
     "airstrike": 44,
     "ground": 37,
     "explosion": 24,
     "intercept": 1
   },
   "severity_counts": {
-    "medium": 245,
+    "medium": 244,
     "high": 172,
     "low": 24,
     "critical": 2
@@ -39,7 +39,7 @@
   "actor_counts": {
     "Yemen": 126,
     "Iran": 101,
-    "Israel": 84,
+    "Israel": 83,
     "Unknown actor": 53,
     "United States": 47,
     "Saudi Arabia": 21,
@@ -11537,32 +11537,6 @@
       "validation": {
         "accepted": true,
         "reason": "general_action_match",
-        "mode": "strict_kinetic_v2"
-      }
-    },
-    {
-      "event_id": "iranstrike-2wp4rhxhoug0",
-      "timestamp": "2026-08-29T18:26:40Z",
-      "event_type": "kinetic",
-      "subtype": "drone",
-      "category": "drone",
-      "severity": "medium",
-      "actor": "isr",
-      "actor_label": "Israel",
-      "actor_method": "raw_source.origin",
-      "target_country": "Palestinian territories",
-      "location": "Khan Younis",
-      "latitude": 31.3462,
-      "longitude": 34.3063,
-      "map_visualizable": true,
-      "description": "Israeli drone strike in Amel neighborhood, Khan Younis, southern Gaza kills Yasser Abu al-Khair",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/129345",
-      "source_repository": "mikloshetzer-sketch/me-security-monitor",
-      "source_collection": "events",
-      "validation": {
-        "accepted": true,
-        "reason": "category_action_match",
         "mode": "strict_kinetic_v2"
       }
     }
