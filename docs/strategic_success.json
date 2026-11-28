@@ -2,14 +2,14 @@
   "metadata": {
     "dataset": "Strategic Success",
     "model_version": "strategic_success_v1_1",
-    "generated_at": "2026-11-27T18:48:54.556180+00:00",
+    "generated_at": "2026-11-28T17:28:39.688680+00:00",
     "source_dataset": "Interest Achievement",
     "input_file": "docs/interest_achievement.json",
     "input_model_version": "unknown",
-    "current_date": "2026-11-18",
+    "current_date": "2026-11-27",
     "history_start_date": "2026-03-10",
-    "history_end_date": "2026-11-18",
-    "history_day_count": 254,
+    "history_end_date": "2026-11-27",
+    "history_day_count": 263,
     "actors": [
       "usa",
       "iran"
@@ -19,12 +19,12 @@
     "warning_count": 0
   },
   "current": {
-    "date": "2026-11-18",
+    "date": "2026-11-27",
     "summary": {
-      "usa_success_index": 55.61,
-      "iran_success_index": 56.83,
-      "success_gap": -1.22,
-      "strategic_balance": 49.39,
+      "usa_success_index": 54.69,
+      "iran_success_index": 54.99,
+      "success_gap": -0.3,
+      "strategic_balance": 49.85,
       "strategic_advantage": "balanced",
       "interpretation_status": "full",
       "is_provisional": false,
@@ -32,7 +32,7 @@
     },
     "data_maturity": {
       "status": "full",
-      "observations": 254,
+      "observations": 263,
       "minimum_observations": 7,
       "full_maturity_observations": 30,
       "confidence": 1.0,
@@ -41,13 +41,13 @@
     },
     "actors": {
       "usa": {
-        "success_index": 55.61,
-        "level": "moderate_success",
-        "change_from_neutral": 5.61,
+        "success_index": 54.69,
+        "level": "balanced",
+        "change_from_neutral": 4.69,
         "publication_status": "final",
         "data_maturity": {
           "status": "full",
-          "observations": 254,
+          "observations": 263,
           "minimum_observations": 7,
           "full_maturity_observations": 30,
           "confidence": 1.0,
@@ -62,52 +62,52 @@
             "maturity_adjusted": false
           },
           "momentum": {
-            "score": 51.94,
-            "raw_score": 51.94,
-            "direction": "improving",
-            "delta_7_vs_30": 0.39,
-            "average_7_day": 50.92,
-            "average_30_day": 50.53,
+            "score": 47.93,
+            "raw_score": 47.93,
+            "direction": "deteriorating",
+            "delta_7_vs_30": -0.41,
+            "average_7_day": 50.26,
+            "average_30_day": 50.67,
             "observations_7_day": 7,
             "observations_30_day": 30,
             "maturity_adjusted": false,
             "weight": 0.2,
-            "weighted_contribution": 10.39
+            "weighted_contribution": 9.59
           },
           "stability": {
-            "score": 85.42,
-            "raw_score": 85.42,
+            "score": 87.97,
+            "raw_score": 87.97,
             "level": "high",
-            "standard_deviation": 1.46,
+            "standard_deviation": 1.2,
             "window": 30,
             "observations": 30,
             "maturity_adjusted": false,
             "weight": 0.15,
-            "weighted_contribution": 12.81
+            "weighted_contribution": 13.2
           },
           "consistency": {
-            "score": 43.33,
-            "raw_score": 43.33,
+            "score": 40.0,
+            "raw_score": 40.0,
             "level": "low",
-            "positive_days": 13,
-            "neutral_days": 14,
-            "negative_days": 3,
+            "positive_days": 12,
+            "neutral_days": 17,
+            "negative_days": 1,
             "window": 30,
             "observations": 30,
             "maturity_adjusted": false,
             "weight": 0.15,
-            "weighted_contribution": 6.5
+            "weighted_contribution": 6.0
           }
         }
       },
       "iran": {
-        "success_index": 56.83,
-        "level": "moderate_success",
-        "change_from_neutral": 6.83,
+        "success_index": 54.99,
+        "level": "balanced",
+        "change_from_neutral": 4.99,
         "publication_status": "final",
         "data_maturity": {
           "status": "full",
-          "observations": 254,
+          "observations": 263,
           "minimum_observations": 7,
           "full_maturity_observations": 30,
           "confidence": 1.0,
@@ -122,41 +122,41 @@
             "maturity_adjusted": false
           },
           "momentum": {
-            "score": 49.16,
-            "raw_score": 49.16,
-            "direction": "stable",
-            "delta_7_vs_30": -0.17,
-            "average_7_day": 50.91,
-            "average_30_day": 51.08,
+            "score": 46.81,
+            "raw_score": 46.81,
+            "direction": "deteriorating",
+            "delta_7_vs_30": -0.64,
+            "average_7_day": 50.23,
+            "average_30_day": 50.87,
             "observations_7_day": 7,
             "observations_30_day": 30,
             "maturity_adjusted": false,
             "weight": 0.2,
-            "weighted_contribution": 9.83
+            "weighted_contribution": 9.36
           },
           "stability": {
-            "score": 88.05,
-            "raw_score": 88.05,
+            "score": 88.9,
+            "raw_score": 88.9,
             "level": "high",
-            "standard_deviation": 1.19,
+            "standard_deviation": 1.11,
             "window": 30,
             "observations": 30,
             "maturity_adjusted": false,
             "weight": 0.15,
-            "weighted_contribution": 13.21
+            "weighted_contribution": 13.34
           },
           "consistency": {
-            "score": 53.33,
-            "raw_score": 53.33,
-            "level": "moderate",
-            "positive_days": 16,
-            "neutral_days": 14,
+            "score": 43.33,
+            "raw_score": 43.33,
+            "level": "low",
+            "positive_days": 13,
+            "neutral_days": 17,
             "negative_days": 0,
             "window": 30,
             "observations": 30,
             "maturity_adjusted": false,
             "weight": 0.15,
-            "weighted_contribution": 8.0
+            "weighted_contribution": 6.5
           }
         }
       }
@@ -36738,26 +36738,1322 @@
           }
         }
       }
+    },
+    {
+      "date": "2026-11-19",
+      "summary": {
+        "usa_success_index": 54.7,
+        "iran_success_index": 56.04,
+        "success_gap": -1.34,
+        "strategic_balance": 49.33,
+        "strategic_advantage": "balanced",
+        "interpretation_status": "full",
+        "is_provisional": false,
+        "interpretation": "Strategic Success combines Interest Achievement, momentum, stability and consistency. Values with fewer than 30 observations are maturity-adjusted and should be treated as provisional."
+      },
+      "data_maturity": {
+        "status": "full",
+        "observations": 255,
+        "minimum_observations": 7,
+        "full_maturity_observations": 30,
+        "confidence": 1.0,
+        "confidence_percent": 100.0,
+        "is_provisional": false
+      },
+      "actors": {
+        "usa": {
+          "success_index": 54.7,
+          "level": "balanced",
+          "change_from_neutral": 4.7,
+          "publication_status": "final",
+          "data_maturity": {
+            "status": "full",
+            "observations": 255,
+            "minimum_observations": 7,
+            "full_maturity_observations": 30,
+            "confidence": 1.0,
+            "confidence_percent": 100.0,
+            "is_provisional": false
+          },
+          "components": {
+            "achievement": {
+              "value": 50.0,
+              "weight": 0.5,
+              "weighted_contribution": 25.0,
+              "maturity_adjusted": false
+            },
+            "momentum": {
+              "score": 51.94,
+              "raw_score": 51.94,
+              "direction": "improving",
+              "delta_7_vs_30": 0.39,
+              "average_7_day": 50.92,
+              "average_30_day": 50.53,
+              "observations_7_day": 7,
+              "observations_30_day": 30,
+              "maturity_adjusted": false,
+              "weight": 0.2,
+              "weighted_contribution": 10.39
+            },
+            "stability": {
+              "score": 85.42,
+              "raw_score": 85.42,
+              "level": "high",
+              "standard_deviation": 1.46,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 12.81
+            },
+            "consistency": {
+              "score": 43.33,
+              "raw_score": 43.33,
+              "level": "low",
+              "positive_days": 13,
+              "neutral_days": 14,
+              "negative_days": 3,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 6.5
+            }
+          }
+        },
+        "iran": {
+          "success_index": 56.04,
+          "level": "moderate_success",
+          "change_from_neutral": 6.04,
+          "publication_status": "final",
+          "data_maturity": {
+            "status": "full",
+            "observations": 255,
+            "minimum_observations": 7,
+            "full_maturity_observations": 30,
+            "confidence": 1.0,
+            "confidence_percent": 100.0,
+            "is_provisional": false
+          },
+          "components": {
+            "achievement": {
+              "value": 50.0,
+              "weight": 0.5,
+              "weighted_contribution": 25.0,
+              "maturity_adjusted": false
+            },
+            "momentum": {
+              "score": 49.16,
+              "raw_score": 49.16,
+              "direction": "stable",
+              "delta_7_vs_30": -0.17,
+              "average_7_day": 50.91,
+              "average_30_day": 51.08,
+              "observations_7_day": 7,
+              "observations_30_day": 30,
+              "maturity_adjusted": false,
+              "weight": 0.2,
+              "weighted_contribution": 9.83
+            },
+            "stability": {
+              "score": 88.05,
+              "raw_score": 88.05,
+              "level": "high",
+              "standard_deviation": 1.19,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 13.21
+            },
+            "consistency": {
+              "score": 53.33,
+              "raw_score": 53.33,
+              "level": "moderate",
+              "positive_days": 16,
+              "neutral_days": 14,
+              "negative_days": 0,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 8.0
+            }
+          }
+        }
+      }
+    },
+    {
+      "date": "2026-11-20",
+      "summary": {
+        "usa_success_index": 54.62,
+        "iran_success_index": 55.32,
+        "success_gap": -0.7,
+        "strategic_balance": 49.65,
+        "strategic_advantage": "balanced",
+        "interpretation_status": "full",
+        "is_provisional": false,
+        "interpretation": "Strategic Success combines Interest Achievement, momentum, stability and consistency. Values with fewer than 30 observations are maturity-adjusted and should be treated as provisional."
+      },
+      "data_maturity": {
+        "status": "full",
+        "observations": 256,
+        "minimum_observations": 7,
+        "full_maturity_observations": 30,
+        "confidence": 1.0,
+        "confidence_percent": 100.0,
+        "is_provisional": false
+      },
+      "actors": {
+        "usa": {
+          "success_index": 54.62,
+          "level": "balanced",
+          "change_from_neutral": 4.62,
+          "publication_status": "final",
+          "data_maturity": {
+            "status": "full",
+            "observations": 256,
+            "minimum_observations": 7,
+            "full_maturity_observations": 30,
+            "confidence": 1.0,
+            "confidence_percent": 100.0,
+            "is_provisional": false
+          },
+          "components": {
+            "achievement": {
+              "value": 50.0,
+              "weight": 0.5,
+              "weighted_contribution": 25.0,
+              "maturity_adjusted": false
+            },
+            "momentum": {
+              "score": 50.46,
+              "raw_score": 50.46,
+              "direction": "stable",
+              "delta_7_vs_30": 0.09,
+              "average_7_day": 50.72,
+              "average_30_day": 50.63,
+              "observations_7_day": 7,
+              "observations_30_day": 30,
+              "maturity_adjusted": false,
+              "weight": 0.2,
+              "weighted_contribution": 10.09
+            },
+            "stability": {
+              "score": 86.89,
+              "raw_score": 86.89,
+              "level": "high",
+              "standard_deviation": 1.31,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 13.03
+            },
+            "consistency": {
+              "score": 43.33,
+              "raw_score": 43.33,
+              "level": "low",
+              "positive_days": 13,
+              "neutral_days": 15,
+              "negative_days": 2,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 6.5
+            }
+          }
+        },
+        "iran": {
+          "success_index": 55.32,
+          "level": "moderate_success",
+          "change_from_neutral": 5.32,
+          "publication_status": "final",
+          "data_maturity": {
+            "status": "full",
+            "observations": 256,
+            "minimum_observations": 7,
+            "full_maturity_observations": 30,
+            "confidence": 1.0,
+            "confidence_percent": 100.0,
+            "is_provisional": false
+          },
+          "components": {
+            "achievement": {
+              "value": 50.0,
+              "weight": 0.5,
+              "weighted_contribution": 25.0,
+              "maturity_adjusted": false
+            },
+            "momentum": {
+              "score": 48.17,
+              "raw_score": 48.17,
+              "direction": "deteriorating",
+              "delta_7_vs_30": -0.37,
+              "average_7_day": 50.68,
+              "average_30_day": 51.05,
+              "observations_7_day": 7,
+              "observations_30_day": 30,
+              "maturity_adjusted": false,
+              "weight": 0.2,
+              "weighted_contribution": 9.63
+            },
+            "stability": {
+              "score": 87.9,
+              "raw_score": 87.9,
+              "level": "high",
+              "standard_deviation": 1.21,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 13.19
+            },
+            "consistency": {
+              "score": 50.0,
+              "raw_score": 50.0,
+              "level": "moderate",
+              "positive_days": 15,
+              "neutral_days": 15,
+              "negative_days": 0,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 7.5
+            }
+          }
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "summary": {
+        "usa_success_index": 54.18,
+        "iran_success_index": 54.86,
+        "success_gap": -0.68,
+        "strategic_balance": 49.66,
+        "strategic_advantage": "balanced",
+        "interpretation_status": "full",
+        "is_provisional": false,
+        "interpretation": "Strategic Success combines Interest Achievement, momentum, stability and consistency. Values with fewer than 30 observations are maturity-adjusted and should be treated as provisional."
+      },
+      "data_maturity": {
+        "status": "full",
+        "observations": 257,
+        "minimum_observations": 7,
+        "full_maturity_observations": 30,
+        "confidence": 1.0,
+        "confidence_percent": 100.0,
+        "is_provisional": false
+      },
+      "actors": {
+        "usa": {
+          "success_index": 54.18,
+          "level": "balanced",
+          "change_from_neutral": 4.18,
+          "publication_status": "final",
+          "data_maturity": {
+            "status": "full",
+            "observations": 257,
+            "minimum_observations": 7,
+            "full_maturity_observations": 30,
+            "confidence": 1.0,
+            "confidence_percent": 100.0,
+            "is_provisional": false
+          },
+          "components": {
+            "achievement": {
+              "value": 50.0,
+              "weight": 0.5,
+              "weighted_contribution": 25.0,
+              "maturity_adjusted": false
+            },
+            "momentum": {
+              "score": 50.69,
+              "raw_score": 50.69,
+              "direction": "stable",
+              "delta_7_vs_30": 0.14,
+              "average_7_day": 50.72,
+              "average_30_day": 50.58,
+              "observations_7_day": 7,
+              "observations_30_day": 30,
+              "maturity_adjusted": false,
+              "weight": 0.2,
+              "weighted_contribution": 10.14
+            },
+            "stability": {
+              "score": 86.92,
+              "raw_score": 86.92,
+              "level": "high",
+              "standard_deviation": 1.31,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 13.04
+            },
+            "consistency": {
+              "score": 40.0,
+              "raw_score": 40.0,
+              "level": "low",
+              "positive_days": 12,
+              "neutral_days": 16,
+              "negative_days": 2,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 6.0
+            }
+          }
+        },
+        "iran": {
+          "success_index": 54.86,
+          "level": "balanced",
+          "change_from_neutral": 4.86,
+          "publication_status": "final",
+          "data_maturity": {
+            "status": "full",
+            "observations": 257,
+            "minimum_observations": 7,
+            "full_maturity_observations": 30,
+            "confidence": 1.0,
+            "confidence_percent": 100.0,
+            "is_provisional": false
+          },
+          "components": {
+            "achievement": {
+              "value": 50.0,
+              "weight": 0.5,
+              "weighted_contribution": 25.0,
+              "maturity_adjusted": false
+            },
+            "momentum": {
+              "score": 48.44,
+              "raw_score": 48.44,
+              "direction": "deteriorating",
+              "delta_7_vs_30": -0.31,
+              "average_7_day": 50.68,
+              "average_30_day": 50.99,
+              "observations_7_day": 7,
+              "observations_30_day": 30,
+              "maturity_adjusted": false,
+              "weight": 0.2,
+              "weighted_contribution": 9.69
+            },
+            "stability": {
+              "score": 87.8,
+              "raw_score": 87.8,
+              "level": "high",
+              "standard_deviation": 1.22,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 13.17
+            },
+            "consistency": {
+              "score": 46.67,
+              "raw_score": 46.67,
+              "level": "low",
+              "positive_days": 14,
+              "neutral_days": 16,
+              "negative_days": 0,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 7.0
+            }
+          }
+        }
+      }
+    },
+    {
+      "date": "2026-11-22",
+      "summary": {
+        "usa_success_index": 53.92,
+        "iran_success_index": 54.63,
+        "success_gap": -0.71,
+        "strategic_balance": 49.65,
+        "strategic_advantage": "balanced",
+        "interpretation_status": "full",
+        "is_provisional": false,
+        "interpretation": "Strategic Success combines Interest Achievement, momentum, stability and consistency. Values with fewer than 30 observations are maturity-adjusted and should be treated as provisional."
+      },
+      "data_maturity": {
+        "status": "full",
+        "observations": 258,
+        "minimum_observations": 7,
+        "full_maturity_observations": 30,
+        "confidence": 1.0,
+        "confidence_percent": 100.0,
+        "is_provisional": false
+      },
+      "actors": {
+        "usa": {
+          "success_index": 53.92,
+          "level": "balanced",
+          "change_from_neutral": 3.92,
+          "publication_status": "final",
+          "data_maturity": {
+            "status": "full",
+            "observations": 258,
+            "minimum_observations": 7,
+            "full_maturity_observations": 30,
+            "confidence": 1.0,
+            "confidence_percent": 100.0,
+            "is_provisional": false
+          },
+          "components": {
+            "achievement": {
+              "value": 50.0,
+              "weight": 0.5,
+              "weighted_contribution": 25.0,
+              "maturity_adjusted": false
+            },
+            "momentum": {
+              "score": 49.39,
+              "raw_score": 49.39,
+              "direction": "stable",
+              "delta_7_vs_30": -0.12,
+              "average_7_day": 50.46,
+              "average_30_day": 50.58,
+              "observations_7_day": 7,
+              "observations_30_day": 30,
+              "maturity_adjusted": false,
+              "weight": 0.2,
+              "weighted_contribution": 9.88
+            },
+            "stability": {
+              "score": 86.92,
+              "raw_score": 86.92,
+              "level": "high",
+              "standard_deviation": 1.31,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 13.04
+            },
+            "consistency": {
+              "score": 40.0,
+              "raw_score": 40.0,
+              "level": "low",
+              "positive_days": 12,
+              "neutral_days": 16,
+              "negative_days": 2,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 6.0
+            }
+          }
+        },
+        "iran": {
+          "success_index": 54.63,
+          "level": "balanced",
+          "change_from_neutral": 4.63,
+          "publication_status": "final",
+          "data_maturity": {
+            "status": "full",
+            "observations": 258,
+            "minimum_observations": 7,
+            "full_maturity_observations": 30,
+            "confidence": 1.0,
+            "confidence_percent": 100.0,
+            "is_provisional": false
+          },
+          "components": {
+            "achievement": {
+              "value": 50.0,
+              "weight": 0.5,
+              "weighted_contribution": 25.0,
+              "maturity_adjusted": false
+            },
+            "momentum": {
+              "score": 47.3,
+              "raw_score": 47.3,
+              "direction": "deteriorating",
+              "delta_7_vs_30": -0.54,
+              "average_7_day": 50.45,
+              "average_30_day": 50.99,
+              "observations_7_day": 7,
+              "observations_30_day": 30,
+              "maturity_adjusted": false,
+              "weight": 0.2,
+              "weighted_contribution": 9.46
+            },
+            "stability": {
+              "score": 87.8,
+              "raw_score": 87.8,
+              "level": "high",
+              "standard_deviation": 1.22,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 13.17
+            },
+            "consistency": {
+              "score": 46.67,
+              "raw_score": 46.67,
+              "level": "low",
+              "positive_days": 14,
+              "neutral_days": 16,
+              "negative_days": 0,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 7.0
+            }
+          }
+        }
+      }
+    },
+    {
+      "date": "2026-11-23",
+      "summary": {
+        "usa_success_index": 53.92,
+        "iran_success_index": 54.63,
+        "success_gap": -0.71,
+        "strategic_balance": 49.65,
+        "strategic_advantage": "balanced",
+        "interpretation_status": "full",
+        "is_provisional": false,
+        "interpretation": "Strategic Success combines Interest Achievement, momentum, stability and consistency. Values with fewer than 30 observations are maturity-adjusted and should be treated as provisional."
+      },
+      "data_maturity": {
+        "status": "full",
+        "observations": 259,
+        "minimum_observations": 7,
+        "full_maturity_observations": 30,
+        "confidence": 1.0,
+        "confidence_percent": 100.0,
+        "is_provisional": false
+      },
+      "actors": {
+        "usa": {
+          "success_index": 53.92,
+          "level": "balanced",
+          "change_from_neutral": 3.92,
+          "publication_status": "final",
+          "data_maturity": {
+            "status": "full",
+            "observations": 259,
+            "minimum_observations": 7,
+            "full_maturity_observations": 30,
+            "confidence": 1.0,
+            "confidence_percent": 100.0,
+            "is_provisional": false
+          },
+          "components": {
+            "achievement": {
+              "value": 50.0,
+              "weight": 0.5,
+              "weighted_contribution": 25.0,
+              "maturity_adjusted": false
+            },
+            "momentum": {
+              "score": 49.39,
+              "raw_score": 49.39,
+              "direction": "stable",
+              "delta_7_vs_30": -0.12,
+              "average_7_day": 50.46,
+              "average_30_day": 50.58,
+              "observations_7_day": 7,
+              "observations_30_day": 30,
+              "maturity_adjusted": false,
+              "weight": 0.2,
+              "weighted_contribution": 9.88
+            },
+            "stability": {
+              "score": 86.92,
+              "raw_score": 86.92,
+              "level": "high",
+              "standard_deviation": 1.31,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 13.04
+            },
+            "consistency": {
+              "score": 40.0,
+              "raw_score": 40.0,
+              "level": "low",
+              "positive_days": 12,
+              "neutral_days": 16,
+              "negative_days": 2,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 6.0
+            }
+          }
+        },
+        "iran": {
+          "success_index": 54.63,
+          "level": "balanced",
+          "change_from_neutral": 4.63,
+          "publication_status": "final",
+          "data_maturity": {
+            "status": "full",
+            "observations": 259,
+            "minimum_observations": 7,
+            "full_maturity_observations": 30,
+            "confidence": 1.0,
+            "confidence_percent": 100.0,
+            "is_provisional": false
+          },
+          "components": {
+            "achievement": {
+              "value": 50.0,
+              "weight": 0.5,
+              "weighted_contribution": 25.0,
+              "maturity_adjusted": false
+            },
+            "momentum": {
+              "score": 47.3,
+              "raw_score": 47.3,
+              "direction": "deteriorating",
+              "delta_7_vs_30": -0.54,
+              "average_7_day": 50.45,
+              "average_30_day": 50.99,
+              "observations_7_day": 7,
+              "observations_30_day": 30,
+              "maturity_adjusted": false,
+              "weight": 0.2,
+              "weighted_contribution": 9.46
+            },
+            "stability": {
+              "score": 87.8,
+              "raw_score": 87.8,
+              "level": "high",
+              "standard_deviation": 1.22,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 13.17
+            },
+            "consistency": {
+              "score": 46.67,
+              "raw_score": 46.67,
+              "level": "low",
+              "positive_days": 14,
+              "neutral_days": 16,
+              "negative_days": 0,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 7.0
+            }
+          }
+        }
+      }
+    },
+    {
+      "date": "2026-11-24",
+      "summary": {
+        "usa_success_index": 53.72,
+        "iran_success_index": 54.4,
+        "success_gap": -0.68,
+        "strategic_balance": 49.66,
+        "strategic_advantage": "balanced",
+        "interpretation_status": "full",
+        "is_provisional": false,
+        "interpretation": "Strategic Success combines Interest Achievement, momentum, stability and consistency. Values with fewer than 30 observations are maturity-adjusted and should be treated as provisional."
+      },
+      "data_maturity": {
+        "status": "full",
+        "observations": 260,
+        "minimum_observations": 7,
+        "full_maturity_observations": 30,
+        "confidence": 1.0,
+        "confidence_percent": 100.0,
+        "is_provisional": false
+      },
+      "actors": {
+        "usa": {
+          "success_index": 53.72,
+          "level": "balanced",
+          "change_from_neutral": 3.72,
+          "publication_status": "final",
+          "data_maturity": {
+            "status": "full",
+            "observations": 260,
+            "minimum_observations": 7,
+            "full_maturity_observations": 30,
+            "confidence": 1.0,
+            "confidence_percent": 100.0,
+            "is_provisional": false
+          },
+          "components": {
+            "achievement": {
+              "value": 50.0,
+              "weight": 0.5,
+              "weighted_contribution": 25.0,
+              "maturity_adjusted": false
+            },
+            "momentum": {
+              "score": 48.4,
+              "raw_score": 48.4,
+              "direction": "deteriorating",
+              "delta_7_vs_30": -0.32,
+              "average_7_day": 50.26,
+              "average_30_day": 50.58,
+              "observations_7_day": 7,
+              "observations_30_day": 30,
+              "maturity_adjusted": false,
+              "weight": 0.2,
+              "weighted_contribution": 9.68
+            },
+            "stability": {
+              "score": 86.92,
+              "raw_score": 86.92,
+              "level": "high",
+              "standard_deviation": 1.31,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 13.04
+            },
+            "consistency": {
+              "score": 40.0,
+              "raw_score": 40.0,
+              "level": "low",
+              "positive_days": 12,
+              "neutral_days": 16,
+              "negative_days": 2,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 6.0
+            }
+          }
+        },
+        "iran": {
+          "success_index": 54.4,
+          "level": "balanced",
+          "change_from_neutral": 4.4,
+          "publication_status": "final",
+          "data_maturity": {
+            "status": "full",
+            "observations": 260,
+            "minimum_observations": 7,
+            "full_maturity_observations": 30,
+            "confidence": 1.0,
+            "confidence_percent": 100.0,
+            "is_provisional": false
+          },
+          "components": {
+            "achievement": {
+              "value": 50.0,
+              "weight": 0.5,
+              "weighted_contribution": 25.0,
+              "maturity_adjusted": false
+            },
+            "momentum": {
+              "score": 46.17,
+              "raw_score": 46.17,
+              "direction": "deteriorating",
+              "delta_7_vs_30": -0.77,
+              "average_7_day": 50.23,
+              "average_30_day": 50.99,
+              "observations_7_day": 7,
+              "observations_30_day": 30,
+              "maturity_adjusted": false,
+              "weight": 0.2,
+              "weighted_contribution": 9.23
+            },
+            "stability": {
+              "score": 87.8,
+              "raw_score": 87.8,
+              "level": "high",
+              "standard_deviation": 1.22,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 13.17
+            },
+            "consistency": {
+              "score": 46.67,
+              "raw_score": 46.67,
+              "level": "low",
+              "positive_days": 14,
+              "neutral_days": 16,
+              "negative_days": 0,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 7.0
+            }
+          }
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "summary": {
+        "usa_success_index": 53.01,
+        "iran_success_index": 53.72,
+        "success_gap": -0.71,
+        "strategic_balance": 49.65,
+        "strategic_advantage": "balanced",
+        "interpretation_status": "full",
+        "is_provisional": false,
+        "interpretation": "Strategic Success combines Interest Achievement, momentum, stability and consistency. Values with fewer than 30 observations are maturity-adjusted and should be treated as provisional."
+      },
+      "data_maturity": {
+        "status": "full",
+        "observations": 261,
+        "minimum_observations": 7,
+        "full_maturity_observations": 30,
+        "confidence": 1.0,
+        "confidence_percent": 100.0,
+        "is_provisional": false
+      },
+      "actors": {
+        "usa": {
+          "success_index": 53.01,
+          "level": "balanced",
+          "change_from_neutral": 3.01,
+          "publication_status": "final",
+          "data_maturity": {
+            "status": "full",
+            "observations": 261,
+            "minimum_observations": 7,
+            "full_maturity_observations": 30,
+            "confidence": 1.0,
+            "confidence_percent": 100.0,
+            "is_provisional": false
+          },
+          "components": {
+            "achievement": {
+              "value": 50.0,
+              "weight": 0.5,
+              "weighted_contribution": 25.0,
+              "maturity_adjusted": false
+            },
+            "momentum": {
+              "score": 47.33,
+              "raw_score": 47.33,
+              "direction": "deteriorating",
+              "delta_7_vs_30": -0.53,
+              "average_7_day": 50.0,
+              "average_30_day": 50.53,
+              "observations_7_day": 7,
+              "observations_30_day": 30,
+              "maturity_adjusted": false,
+              "weight": 0.2,
+              "weighted_contribution": 9.47
+            },
+            "stability": {
+              "score": 86.97,
+              "raw_score": 86.97,
+              "level": "high",
+              "standard_deviation": 1.3,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 13.05
+            },
+            "consistency": {
+              "score": 36.67,
+              "raw_score": 36.67,
+              "level": "low",
+              "positive_days": 11,
+              "neutral_days": 17,
+              "negative_days": 2,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 5.5
+            }
+          }
+        },
+        "iran": {
+          "success_index": 53.72,
+          "level": "balanced",
+          "change_from_neutral": 3.72,
+          "publication_status": "final",
+          "data_maturity": {
+            "status": "full",
+            "observations": 261,
+            "minimum_observations": 7,
+            "full_maturity_observations": 30,
+            "confidence": 1.0,
+            "confidence_percent": 100.0,
+            "is_provisional": false
+          },
+          "components": {
+            "achievement": {
+              "value": 50.0,
+              "weight": 0.5,
+              "weighted_contribution": 25.0,
+              "maturity_adjusted": false
+            },
+            "momentum": {
+              "score": 45.29,
+              "raw_score": 45.29,
+              "direction": "deteriorating",
+              "delta_7_vs_30": -0.94,
+              "average_7_day": 50.0,
+              "average_30_day": 50.94,
+              "observations_7_day": 7,
+              "observations_30_day": 30,
+              "maturity_adjusted": false,
+              "weight": 0.2,
+              "weighted_contribution": 9.06
+            },
+            "stability": {
+              "score": 87.73,
+              "raw_score": 87.73,
+              "level": "high",
+              "standard_deviation": 1.23,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 13.16
+            },
+            "consistency": {
+              "score": 43.33,
+              "raw_score": 43.33,
+              "level": "low",
+              "positive_days": 13,
+              "neutral_days": 17,
+              "negative_days": 0,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 6.5
+            }
+          }
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "summary": {
+        "usa_success_index": 53.01,
+        "iran_success_index": 53.72,
+        "success_gap": -0.71,
+        "strategic_balance": 49.65,
+        "strategic_advantage": "balanced",
+        "interpretation_status": "full",
+        "is_provisional": false,
+        "interpretation": "Strategic Success combines Interest Achievement, momentum, stability and consistency. Values with fewer than 30 observations are maturity-adjusted and should be treated as provisional."
+      },
+      "data_maturity": {
+        "status": "full",
+        "observations": 262,
+        "minimum_observations": 7,
+        "full_maturity_observations": 30,
+        "confidence": 1.0,
+        "confidence_percent": 100.0,
+        "is_provisional": false
+      },
+      "actors": {
+        "usa": {
+          "success_index": 53.01,
+          "level": "balanced",
+          "change_from_neutral": 3.01,
+          "publication_status": "final",
+          "data_maturity": {
+            "status": "full",
+            "observations": 262,
+            "minimum_observations": 7,
+            "full_maturity_observations": 30,
+            "confidence": 1.0,
+            "confidence_percent": 100.0,
+            "is_provisional": false
+          },
+          "components": {
+            "achievement": {
+              "value": 50.0,
+              "weight": 0.5,
+              "weighted_contribution": 25.0,
+              "maturity_adjusted": false
+            },
+            "momentum": {
+              "score": 47.33,
+              "raw_score": 47.33,
+              "direction": "deteriorating",
+              "delta_7_vs_30": -0.53,
+              "average_7_day": 50.0,
+              "average_30_day": 50.53,
+              "observations_7_day": 7,
+              "observations_30_day": 30,
+              "maturity_adjusted": false,
+              "weight": 0.2,
+              "weighted_contribution": 9.47
+            },
+            "stability": {
+              "score": 86.97,
+              "raw_score": 86.97,
+              "level": "high",
+              "standard_deviation": 1.3,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 13.05
+            },
+            "consistency": {
+              "score": 36.67,
+              "raw_score": 36.67,
+              "level": "low",
+              "positive_days": 11,
+              "neutral_days": 17,
+              "negative_days": 2,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 5.5
+            }
+          }
+        },
+        "iran": {
+          "success_index": 53.72,
+          "level": "balanced",
+          "change_from_neutral": 3.72,
+          "publication_status": "final",
+          "data_maturity": {
+            "status": "full",
+            "observations": 262,
+            "minimum_observations": 7,
+            "full_maturity_observations": 30,
+            "confidence": 1.0,
+            "confidence_percent": 100.0,
+            "is_provisional": false
+          },
+          "components": {
+            "achievement": {
+              "value": 50.0,
+              "weight": 0.5,
+              "weighted_contribution": 25.0,
+              "maturity_adjusted": false
+            },
+            "momentum": {
+              "score": 45.29,
+              "raw_score": 45.29,
+              "direction": "deteriorating",
+              "delta_7_vs_30": -0.94,
+              "average_7_day": 50.0,
+              "average_30_day": 50.94,
+              "observations_7_day": 7,
+              "observations_30_day": 30,
+              "maturity_adjusted": false,
+              "weight": 0.2,
+              "weighted_contribution": 9.06
+            },
+            "stability": {
+              "score": 87.73,
+              "raw_score": 87.73,
+              "level": "high",
+              "standard_deviation": 1.23,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 13.16
+            },
+            "consistency": {
+              "score": 43.33,
+              "raw_score": 43.33,
+              "level": "low",
+              "positive_days": 13,
+              "neutral_days": 17,
+              "negative_days": 0,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 6.5
+            }
+          }
+        }
+      }
+    },
+    {
+      "date": "2026-11-27",
+      "summary": {
+        "usa_success_index": 54.69,
+        "iran_success_index": 54.99,
+        "success_gap": -0.3,
+        "strategic_balance": 49.85,
+        "strategic_advantage": "balanced",
+        "interpretation_status": "full",
+        "is_provisional": false,
+        "interpretation": "Strategic Success combines Interest Achievement, momentum, stability and consistency. Values with fewer than 30 observations are maturity-adjusted and should be treated as provisional."
+      },
+      "data_maturity": {
+        "status": "full",
+        "observations": 263,
+        "minimum_observations": 7,
+        "full_maturity_observations": 30,
+        "confidence": 1.0,
+        "confidence_percent": 100.0,
+        "is_provisional": false
+      },
+      "actors": {
+        "usa": {
+          "success_index": 54.69,
+          "level": "balanced",
+          "change_from_neutral": 4.69,
+          "publication_status": "final",
+          "data_maturity": {
+            "status": "full",
+            "observations": 263,
+            "minimum_observations": 7,
+            "full_maturity_observations": 30,
+            "confidence": 1.0,
+            "confidence_percent": 100.0,
+            "is_provisional": false
+          },
+          "components": {
+            "achievement": {
+              "value": 51.82,
+              "weight": 0.5,
+              "weighted_contribution": 25.91,
+              "maturity_adjusted": false
+            },
+            "momentum": {
+              "score": 47.93,
+              "raw_score": 47.93,
+              "direction": "deteriorating",
+              "delta_7_vs_30": -0.41,
+              "average_7_day": 50.26,
+              "average_30_day": 50.67,
+              "observations_7_day": 7,
+              "observations_30_day": 30,
+              "maturity_adjusted": false,
+              "weight": 0.2,
+              "weighted_contribution": 9.59
+            },
+            "stability": {
+              "score": 87.97,
+              "raw_score": 87.97,
+              "level": "high",
+              "standard_deviation": 1.2,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 13.2
+            },
+            "consistency": {
+              "score": 40.0,
+              "raw_score": 40.0,
+              "level": "low",
+              "positive_days": 12,
+              "neutral_days": 17,
+              "negative_days": 1,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 6.0
+            }
+          }
+        },
+        "iran": {
+          "success_index": 54.99,
+          "level": "balanced",
+          "change_from_neutral": 4.99,
+          "publication_status": "final",
+          "data_maturity": {
+            "status": "full",
+            "observations": 263,
+            "minimum_observations": 7,
+            "full_maturity_observations": 30,
+            "confidence": 1.0,
+            "confidence_percent": 100.0,
+            "is_provisional": false
+          },
+          "components": {
+            "achievement": {
+              "value": 51.59,
+              "weight": 0.5,
+              "weighted_contribution": 25.8,
+              "maturity_adjusted": false
+            },
+            "momentum": {
+              "score": 46.81,
+              "raw_score": 46.81,
+              "direction": "deteriorating",
+              "delta_7_vs_30": -0.64,
+              "average_7_day": 50.23,
+              "average_30_day": 50.87,
+              "observations_7_day": 7,
+              "observations_30_day": 30,
+              "maturity_adjusted": false,
+              "weight": 0.2,
+              "weighted_contribution": 9.36
+            },
+            "stability": {
+              "score": 88.9,
+              "raw_score": 88.9,
+              "level": "high",
+              "standard_deviation": 1.11,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 13.34
+            },
+            "consistency": {
+              "score": 43.33,
+              "raw_score": 43.33,
+              "level": "low",
+              "positive_days": 13,
+              "neutral_days": 17,
+              "negative_days": 0,
+              "window": 30,
+              "observations": 30,
+              "maturity_adjusted": false,
+              "weight": 0.15,
+              "weighted_contribution": 6.5
+            }
+          }
+        }
+      }
     }
   ],
   "history_summary": {
-    "day_count": 254,
+    "day_count": 263,
     "start_date": "2026-03-10",
-    "end_date": "2026-11-18",
+    "end_date": "2026-11-27",
     "maturity_distribution": {
       "insufficient_days": 6,
       "partial_days": 23,
-      "full_days": 225
+      "full_days": 234
     },
     "actors": {
       "usa": {
-        "day_count": 254,
+        "day_count": 263,
         "start_date": "2026-03-10",
-        "end_date": "2026-11-18",
-        "average": 54.99,
-        "median": 55.2,
-        "latest": 55.61,
-        "change_first_to_latest": 4.0,
+        "end_date": "2026-11-27",
+        "average": 54.96,
+        "median": 55.11,
+        "latest": 54.69,
+        "change_first_to_latest": 3.08,
         "best_day": {
           "date": "2026-06-22",
           "value": 60.61
@@ -36767,29 +38063,29 @@
           "value": 49.5
         },
         "volatility": {
-          "standard_deviation": 2.9
+          "standard_deviation": 2.86
         },
         "day_distribution": {
-          "positive_days": 240,
+          "positive_days": 249,
           "neutral_days": 7,
           "negative_days": 7,
-          "positive_share": 94.49,
-          "neutral_share": 2.76,
-          "negative_share": 2.76
+          "positive_share": 94.68,
+          "neutral_share": 2.66,
+          "negative_share": 2.66
         },
         "maturity_distribution": {
           "insufficient_days": 6,
           "partial_days": 23,
-          "full_days": 225
+          "full_days": 234
         },
         "full_maturity_period": {
-          "day_count": 225,
+          "day_count": 234,
           "start_date": "2026-04-08",
-          "end_date": "2026-11-18",
-          "average": 55.57,
-          "median": 55.66,
-          "latest": 55.61,
-          "change_first_to_latest": 3.28,
+          "end_date": "2026-11-27",
+          "average": 55.51,
+          "median": 55.55,
+          "latest": 54.69,
+          "change_first_to_latest": 2.36,
           "best_day": {
             "date": "2026-06-22",
             "value": 60.61
@@ -36799,15 +38095,15 @@
             "value": 49.5
           },
           "volatility": {
-            "standard_deviation": 2.55
+            "standard_deviation": 2.53
           },
           "day_distribution": {
-            "positive_days": 224,
+            "positive_days": 233,
             "neutral_days": 0,
             "negative_days": 1,
-            "positive_share": 99.56,
+            "positive_share": 99.57,
             "neutral_share": 0.0,
-            "negative_share": 0.44
+            "negative_share": 0.43
           }
         },
         "rolling_averages": {
@@ -38586,6 +39882,69 @@
             {
               "date": "2026-11-18",
               "value": 54.97,
+              "window": 7,
+              "observations": 7,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-19",
+              "value": 55.15,
+              "window": 7,
+              "observations": 7,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-20",
+              "value": 55.12,
+              "window": 7,
+              "observations": 7,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-21",
+              "value": 55.12,
+              "window": 7,
+              "observations": 7,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-22",
+              "value": 54.8,
+              "window": 7,
+              "observations": 7,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-23",
+              "value": 54.65,
+              "window": 7,
+              "observations": 7,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-24",
+              "value": 54.38,
+              "window": 7,
+              "observations": 7,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-25",
+              "value": 54.01,
+              "window": 7,
+              "observations": 7,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-26",
+              "value": 53.77,
+              "window": 7,
+              "observations": 7,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-27",
+              "value": 53.78,
               "window": 7,
               "observations": 7,
               "is_full_window": true
@@ -40369,18 +41728,81 @@
               "window": 30,
               "observations": 30,
               "is_full_window": true
+            },
+            {
+              "date": "2026-11-19",
+              "value": 53.35,
+              "window": 30,
+              "observations": 30,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-20",
+              "value": 53.47,
+              "window": 30,
+              "observations": 30,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-21",
+              "value": 53.5,
+              "window": 30,
+              "observations": 30,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-22",
+              "value": 53.53,
+              "window": 30,
+              "observations": 30,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-23",
+              "value": 53.56,
+              "window": 30,
+              "observations": 30,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-24",
+              "value": 53.61,
+              "window": 30,
+              "observations": 30,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-25",
+              "value": 53.61,
+              "window": 30,
+              "observations": 30,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-26",
+              "value": 53.65,
+              "window": 30,
+              "observations": 30,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-27",
+              "value": 53.8,
+              "window": 30,
+              "observations": 30,
+              "is_full_window": true
             }
           ]
         }
       },
       "iran": {
-        "day_count": 254,
+        "day_count": 263,
         "start_date": "2026-03-10",
-        "end_date": "2026-11-18",
-        "average": 56.1,
-        "median": 56.48,
-        "latest": 56.83,
-        "change_first_to_latest": 5.24,
+        "end_date": "2026-11-27",
+        "average": 56.05,
+        "median": 56.44,
+        "latest": 54.99,
+        "change_first_to_latest": 3.4,
         "best_day": {
           "date": "2026-06-21",
           "value": 61.14
@@ -40390,29 +41812,29 @@
           "value": 49.75
         },
         "volatility": {
-          "standard_deviation": 2.83
+          "standard_deviation": 2.8
         },
         "day_distribution": {
-          "positive_days": 240,
+          "positive_days": 249,
           "neutral_days": 7,
           "negative_days": 7,
-          "positive_share": 94.49,
-          "neutral_share": 2.76,
-          "negative_share": 2.76
+          "positive_share": 94.68,
+          "neutral_share": 2.66,
+          "negative_share": 2.66
         },
         "maturity_distribution": {
           "insufficient_days": 6,
           "partial_days": 23,
-          "full_days": 225
+          "full_days": 234
         },
         "full_maturity_period": {
-          "day_count": 225,
+          "day_count": 234,
           "start_date": "2026-04-08",
-          "end_date": "2026-11-18",
-          "average": 56.84,
-          "median": 56.83,
-          "latest": 56.83,
-          "change_first_to_latest": 5.23,
+          "end_date": "2026-11-27",
+          "average": 56.76,
+          "median": 56.76,
+          "latest": 54.99,
+          "change_first_to_latest": 3.39,
           "best_day": {
             "date": "2026-06-21",
             "value": 61.14
@@ -40422,15 +41844,15 @@
             "value": 49.75
           },
           "volatility": {
-            "standard_deviation": 2.03
+            "standard_deviation": 2.04
           },
           "day_distribution": {
-            "positive_days": 224,
+            "positive_days": 233,
             "neutral_days": 0,
             "negative_days": 1,
-            "positive_share": 99.56,
+            "positive_share": 99.57,
             "neutral_share": 0.0,
-            "negative_share": 0.44
+            "negative_share": 0.43
           }
         },
         "rolling_averages": {
@@ -42209,6 +43631,69 @@
             {
               "date": "2026-11-18",
               "value": 56.37,
+              "window": 7,
+              "observations": 7,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-19",
+              "value": 56.53,
+              "window": 7,
+              "observations": 7,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-20",
+              "value": 56.38,
+              "window": 7,
+              "observations": 7,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-21",
+              "value": 56.23,
+              "window": 7,
+              "observations": 7,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-22",
+              "value": 55.85,
+              "window": 7,
+              "observations": 7,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-23",
+              "value": 55.62,
+              "window": 7,
+              "observations": 7,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-24",
+              "value": 55.24,
+              "window": 7,
+              "observations": 7,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-25",
+              "value": 54.8,
+              "window": 7,
+              "observations": 7,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-26",
+              "value": 54.47,
+              "window": 7,
+              "observations": 7,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-27",
+              "value": 54.42,
               "window": 7,
               "observations": 7,
               "is_full_window": true
@@ -43992,31 +45477,94 @@
               "window": 30,
               "observations": 30,
               "is_full_window": true
+            },
+            {
+              "date": "2026-11-19",
+              "value": 54.87,
+              "window": 30,
+              "observations": 30,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-20",
+              "value": 54.94,
+              "window": 30,
+              "observations": 30,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-21",
+              "value": 54.95,
+              "window": 30,
+              "observations": 30,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-22",
+              "value": 54.97,
+              "window": 30,
+              "observations": 30,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-23",
+              "value": 54.99,
+              "window": 30,
+              "observations": 30,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-24",
+              "value": 55.02,
+              "window": 30,
+              "observations": 30,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-25",
+              "value": 55.01,
+              "window": 30,
+              "observations": 30,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-26",
+              "value": 55.03,
+              "window": 30,
+              "observations": 30,
+              "is_full_window": true
+            },
+            {
+              "date": "2026-11-27",
+              "value": 55.03,
+              "window": 30,
+              "observations": 30,
+              "is_full_window": true
             }
           ]
         }
       }
     },
     "strategic_balance": {
-      "average_success_gap": -1.1,
-      "latest_success_gap": -1.22,
+      "average_success_gap": -1.09,
+      "latest_success_gap": -0.3,
       "usa_advantage_days": 0,
       "iran_advantage_days": 9,
-      "balanced_days": 245,
-      "full_maturity_average_success_gap": -1.27,
-      "full_maturity_day_count": 225
+      "balanced_days": 254,
+      "full_maturity_average_success_gap": -1.25,
+      "full_maturity_day_count": 234
     }
   },
   "diagnostics": {
     "excluded_history_records": [],
     "warnings": [],
     "counts": {
-      "processed_history_days": 254,
+      "processed_history_days": 263,
       "excluded_history_records": 0,
       "warnings": 0,
       "insufficient_maturity_days": 6,
       "partial_maturity_days": 23,
-      "full_maturity_days": 225
+      "full_maturity_days": 234
     }
   },
   "methodology": {
