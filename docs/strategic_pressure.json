@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T18:47:46.462561+00:00",
+  "generated_at": "2026-11-28T17:27:30.272498+00:00",
   "model": "strategic_pressure_v1_2",
   "description": "Explainable strategic pressure layer for the United States-Iran conflict.",
   "scoring_formula": "final_event_score = existing_operational_component + strategic_modifier",
@@ -18,29 +18,29 @@
     "strategic_indicators": "data/strategic/strategic_indicators.json"
   },
   "statistics": {
-    "non_kinetic_events_loaded": 746,
-    "kinetic_events_loaded": 442,
-    "unique_events_scanned": 1164,
-    "strategic_evidence_contributions": 397,
+    "non_kinetic_events_loaded": 747,
+    "kinetic_events_loaded": 443,
+    "unique_events_scanned": 1166,
+    "strategic_evidence_contributions": 399,
     "evidence_contributions_by_actor": {
-      "usa": 134,
-      "iran": 263
+      "usa": 135,
+      "iran": 264
     },
     "scored_contributions_by_actor": {
-      "usa": 97,
-      "iran": 143
+      "usa": 98,
+      "iran": 144
     },
     "suppressed_duplicates_by_actor": {
       "usa": 37,
       "iran": 120
     },
     "contributions_by_source_layer": {
-      "non_kinetic": 375,
+      "non_kinetic": 377,
       "kinetic": 22
     },
     "evidence_indicator_counts": {
-      "iran:negotiation": 238,
-      "usa:negotiation": 109,
+      "iran:negotiation": 239,
+      "usa:negotiation": 110,
       "usa:presidential_warning": 15,
       "iran:missile_test": 13,
       "iran:hormuz_threat": 9,
@@ -52,8 +52,8 @@
       "usa:carrier_deployment": 1
     },
     "scored_indicator_counts": {
-      "iran:negotiation": 124,
-      "usa:negotiation": 76,
+      "iran:negotiation": 125,
+      "usa:negotiation": 77,
       "usa:presidential_warning": 15,
       "iran:hormuz_threat": 9,
       "iran:missile_test": 7,
@@ -65,14 +65,14 @@
       "usa:carrier_deployment": 1
     },
     "skipped_without_timestamp": 0,
-    "skipped_current_utc_day": 5,
-    "history_day_count": 254
+    "skipped_current_utc_day": 0,
+    "history_day_count": 263
   },
   "configuration_warnings": [],
   "status": "ok",
-  "latest_complete_utc_day": "2026-11-18",
+  "latest_complete_utc_day": "2026-11-27",
   "current": {
-    "date": "2026-11-18",
+    "date": "2026-11-27",
     "calculation_mode": "live",
     "usa": {
       "raw_score": -6.0,
@@ -86,14 +86,14 @@
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000008",
-          "timestamp": "2026-11-18T22:53:32+00:00",
-          "date": "2026-11-18",
+          "event_id": "INFO-000001",
+          "timestamp": "2026-11-27T03:52:18+00:00",
+          "date": "2026-11-27",
           "actor": "usa",
           "bilateral_event": true,
-          "title": "Mediators Set Up De-Escalation Channels Ahead of US-Iran Talks, Source Says - EnergyNow.com",
+          "title": "Trump downplays Russia, China support for Iran during talks with US troops - Al Jazeera",
           "source_layer": "non_kinetic",
-          "event_type": "ceasefire",
+          "event_type": "diplomatic",
           "event_direction": "mixed",
           "operational_component": 0.0,
           "strategic_modifier": -6.0,
@@ -115,34 +115,34 @@
                 "name": "Avoid full-scale regional war",
                 "weight": 10.0
               },
-              "recognition_rule_count": 4
+              "recognition_rule_count": 2
             }
           ],
-          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Mediators Set Up De-Escalation Channels Ahead of US-Iran Talks, Source Says - EnergyNow.com",
+          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump downplays Russia, China support for Iran during talks with US troops - Al Jazeera",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbW9XY1RIS0dyRHREWmRIQThiVmp4RklrTmJlOXhoMHVPcFhMOUNqVzBWY2NqY24xVjh0TTM0YmZDZXJzNDF1WHFkTTdEZHlzTzVuWlRGUHNRNG4zY3NZcnMwQkQ2MlRQMFhCLUY0eG9UVl9VQ245d3d0LVZGMmFzb29mVWJnU3dCREF6azlmbi1IaldNVHZqTFBXWTRrd2hIbUtfTktORE4?oc=5",
-          "existing_event_score": 5.0,
-          "existing_direction_score": 4.0,
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPd256NGN4WEpKSTFrZzlVR21VZl81clNOdVdhUzkzQTktcHhIV1VzaUppUEdxUUZISXFlRmFMaEdCWGlMcmZDMVlfSVZjbTNnMGIyS3NJUlZGZEIxYldYcThUaERlU2xvN09fRE1ta2drMWtuSXRLdGhfdFZqZG9ob2daNmFDV295dENhUlNuR2M3ZDF6UnlMMWRCcXY4MTdkQ2NnSExkUHBLSEV5bWhsd2xZOW8xZ9IBuwFBVV95cUxPa25QTFBRVHdYUE5CQS1aZDlNa3VKUlVYd2FQQTJ1SDhlbXV2LVhJM2xFQkxhN1doYnBUNDJ5V1NYMWNqOFRQV1hMSlVjNjZhVlpvdW1EY2prYkVsVmV1QkFqWHdEZVEtTDdNUDRqRXZyWlZJeVZvMjZDUFNyT1J5ZkZPbTlfNTJmeG5rY28yZDFwMTBDcUVRODF6Z2UwWFZTWFloa2NXUm5vOHFfSWJjODY4VEI5V3dFRzg4?oc=5",
+          "existing_event_score": 2.0,
+          "existing_direction_score": 0.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
           "duplicate_daily_indicators": []
         }
       ],
-      "weighted_score_7d": -9.3,
-      "pressure_index_7d": 31.4,
+      "weighted_score_7d": -6.0,
+      "pressure_index_7d": 38.0,
       "pressure_level": "reduced",
       "trend": "strong_decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000008",
-          "timestamp": "2026-11-18T22:53:32+00:00",
-          "date": "2026-11-18",
+          "event_id": "INFO-000001",
+          "timestamp": "2026-11-27T03:52:18+00:00",
+          "date": "2026-11-27",
           "actor": "usa",
           "bilateral_event": true,
-          "title": "Mediators Set Up De-Escalation Channels Ahead of US-Iran Talks, Source Says - EnergyNow.com",
+          "title": "Trump downplays Russia, China support for Iran during talks with US troops - Al Jazeera",
           "source_layer": "non_kinetic",
-          "event_type": "ceasefire",
+          "event_type": "diplomatic",
           "event_direction": "mixed",
           "operational_component": 0.0,
           "strategic_modifier": -6.0,
@@ -164,14 +164,14 @@
                 "name": "Avoid full-scale regional war",
                 "weight": 10.0
               },
-              "recognition_rule_count": 4
+              "recognition_rule_count": 2
             }
           ],
-          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Mediators Set Up De-Escalation Channels Ahead of US-Iran Talks, Source Says - EnergyNow.com",
+          "reason": "United States: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump downplays Russia, China support for Iran during talks with US troops - Al Jazeera",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbW9XY1RIS0dyRHREWmRIQThiVmp4RklrTmJlOXhoMHVPcFhMOUNqVzBWY2NqY24xVjh0TTM0YmZDZXJzNDF1WHFkTTdEZHlzTzVuWlRGUHNRNG4zY3NZcnMwQkQ2MlRQMFhCLUY0eG9UVl9VQ245d3d0LVZGMmFzb29mVWJnU3dCREF6azlmbi1IaldNVHZqTFBXWTRrd2hIbUtfTktORE4?oc=5",
-          "existing_event_score": 5.0,
-          "existing_direction_score": 4.0,
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPd256NGN4WEpKSTFrZzlVR21VZl81clNOdVdhUzkzQTktcHhIV1VzaUppUEdxUUZISXFlRmFMaEdCWGlMcmZDMVlfSVZjbTNnMGIyS3NJUlZGZEIxYldYcThUaERlU2xvN09fRE1ta2drMWtuSXRLdGhfdFZqZG9ob2daNmFDV295dENhUlNuR2M3ZDF6UnlMMWRCcXY4MTdkQ2NnSExkUHBLSEV5bWhsd2xZOW8xZ9IBuwFBVV95cUxPa25QTFBRVHdYUE5CQS1aZDlNa3VKUlVYd2FQQTJ1SDhlbXV2LVhJM2xFQkxhN1doYnBUNDJ5V1NYMWNqOFRQV1hMSlVjNjZhVlpvdW1EY2prYkVsVmV1QkFqWHdEZVEtTDdNUDRqRXZyWlZJeVZvMjZDUFNyT1J5ZkZPbTlfNTJmeG5rY28yZDFwMTBDcUVRODF6Z2UwWFZTWFloa2NXUm5vOHFfSWJjODY4VEI5V3dFRzg4?oc=5",
+          "existing_event_score": 2.0,
+          "existing_direction_score": 0.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
@@ -191,14 +191,14 @@
       "decrease_event_count": 1,
       "contributors": [
         {
-          "event_id": "INFO-000008",
-          "timestamp": "2026-11-18T22:53:32+00:00",
-          "date": "2026-11-18",
+          "event_id": "INFO-000001",
+          "timestamp": "2026-11-27T03:52:18+00:00",
+          "date": "2026-11-27",
           "actor": "iran",
           "bilateral_event": true,
-          "title": "Mediators Set Up De-Escalation Channels Ahead of US-Iran Talks, Source Says - EnergyNow.com",
+          "title": "Trump downplays Russia, China support for Iran during talks with US troops - Al Jazeera",
           "source_layer": "non_kinetic",
-          "event_type": "ceasefire",
+          "event_type": "diplomatic",
           "event_direction": "mixed",
           "operational_component": 0.0,
           "strategic_modifier": -6.0,
@@ -220,34 +220,34 @@
                 "name": "Avoid regime-destroying war",
                 "weight": 10.0
               },
-              "recognition_rule_count": 4
+              "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Mediators Set Up De-Escalation Channels Ahead of US-Iran Talks, Source Says - EnergyNow.com",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump downplays Russia, China support for Iran during talks with US troops - Al Jazeera",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbW9XY1RIS0dyRHREWmRIQThiVmp4RklrTmJlOXhoMHVPcFhMOUNqVzBWY2NqY24xVjh0TTM0YmZDZXJzNDF1WHFkTTdEZHlzTzVuWlRGUHNRNG4zY3NZcnMwQkQ2MlRQMFhCLUY0eG9UVl9VQ245d3d0LVZGMmFzb29mVWJnU3dCREF6azlmbi1IaldNVHZqTFBXWTRrd2hIbUtfTktORE4?oc=5",
-          "existing_event_score": 5.0,
-          "existing_direction_score": 4.0,
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPd256NGN4WEpKSTFrZzlVR21VZl81clNOdVdhUzkzQTktcHhIV1VzaUppUEdxUUZISXFlRmFMaEdCWGlMcmZDMVlfSVZjbTNnMGIyS3NJUlZGZEIxYldYcThUaERlU2xvN09fRE1ta2drMWtuSXRLdGhfdFZqZG9ob2daNmFDV295dENhUlNuR2M3ZDF6UnlMMWRCcXY4MTdkQ2NnSExkUHBLSEV5bWhsd2xZOW8xZ9IBuwFBVV95cUxPa25QTFBRVHdYUE5CQS1aZDlNa3VKUlVYd2FQQTJ1SDhlbXV2LVhJM2xFQkxhN1doYnBUNDJ5V1NYMWNqOFRQV1hMSlVjNjZhVlpvdW1EY2prYkVsVmV1QkFqWHdEZVEtTDdNUDRqRXZyWlZJeVZvMjZDUFNyT1J5ZkZPbTlfNTJmeG5rY28yZDFwMTBDcUVRODF6Z2UwWFZTWFloa2NXUm5vOHFfSWJjODY4VEI5V3dFRzg4?oc=5",
+          "existing_event_score": 2.0,
+          "existing_direction_score": 0.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
           "duplicate_daily_indicators": []
         }
       ],
-      "weighted_score_7d": -15.9,
-      "pressure_index_7d": 18.2,
-      "pressure_level": "low",
-      "trend": "decrease",
+      "weighted_score_7d": -6.0,
+      "pressure_index_7d": 38.0,
+      "pressure_level": "reduced",
+      "trend": "strong_decrease",
       "strongest_contributors": [
         {
-          "event_id": "INFO-000008",
-          "timestamp": "2026-11-18T22:53:32+00:00",
-          "date": "2026-11-18",
+          "event_id": "INFO-000001",
+          "timestamp": "2026-11-27T03:52:18+00:00",
+          "date": "2026-11-27",
           "actor": "iran",
           "bilateral_event": true,
-          "title": "Mediators Set Up De-Escalation Channels Ahead of US-Iran Talks, Source Says - EnergyNow.com",
+          "title": "Trump downplays Russia, China support for Iran during talks with US troops - Al Jazeera",
           "source_layer": "non_kinetic",
-          "event_type": "ceasefire",
+          "event_type": "diplomatic",
           "event_direction": "mixed",
           "operational_component": 0.0,
           "strategic_modifier": -6.0,
@@ -269,14 +269,14 @@
                 "name": "Avoid regime-destroying war",
                 "weight": 10.0
               },
-              "recognition_rule_count": 4
+              "recognition_rule_count": 2
             }
           ],
-          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Mediators Set Up De-Escalation Channels Ahead of US-Iran Talks, Source Says - EnergyNow.com",
+          "reason": "Iran: Negotiation. Operational component: +0.00; strategic modifier: -6.00; final contribution before daily deduplication: -6.00. Event: Trump downplays Russia, China support for Iran during talks with US troops - Al Jazeera",
           "source": "\"iran israel usa war when:7d\" - Google News",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbW9XY1RIS0dyRHREWmRIQThiVmp4RklrTmJlOXhoMHVPcFhMOUNqVzBWY2NqY24xVjh0TTM0YmZDZXJzNDF1WHFkTTdEZHlzTzVuWlRGUHNRNG4zY3NZcnMwQkQ2MlRQMFhCLUY0eG9UVl9VQ245d3d0LVZGMmFzb29mVWJnU3dCREF6azlmbi1IaldNVHZqTFBXWTRrd2hIbUtfTktORE4?oc=5",
-          "existing_event_score": 5.0,
-          "existing_direction_score": 4.0,
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPd256NGN4WEpKSTFrZzlVR21VZl81clNOdVdhUzkzQTktcHhIV1VzaUppUEdxUUZISXFlRmFMaEdCWGlMcmZDMVlfSVZjbTNnMGIyS3NJUlZGZEIxYldYcThUaERlU2xvN09fRE1ta2drMWtuSXRLdGhfdFZqZG9ob2daNmFDV295dENhUlNuR2M3ZDF6UnlMMWRCcXY4MTdkQ2NnSExkUHBLSEV5bWhsd2xZOW8xZ9IBuwFBVV95cUxPa25QTFBRVHdYUE5CQS1aZDlNa3VKUlVYd2FQQTJ1SDhlbXV2LVhJM2xFQkxhN1doYnBUNDJ5V1NYMWNqOFRQV1hMSlVjNjZhVlpvdW1EY2prYkVsVmV1QkFqWHdEZVEtTDdNUDRqRXZyWlZJeVZvMjZDUFNyT1J5ZkZPbTlfNTJmeG5rY28yZDFwMTBDcUVRODF6Z2UwWFZTWFloa2NXUm5vOHFfSWJjODY4VEI5V3dFRzg4?oc=5",
+          "existing_event_score": 2.0,
+          "existing_direction_score": 0.0,
           "winning_daily_indicators": [
             "negotiation"
           ],
@@ -285,8 +285,8 @@
       ]
     },
     "overall": {
-      "pressure_index_7d": 24.8,
-      "pressure_level": "low",
+      "pressure_index_7d": 38.0,
+      "pressure_level": "reduced",
       "trend": "strong_decrease",
       "calculation": "Arithmetic mean of USA and Iran seven-day pressure indices"
     }
