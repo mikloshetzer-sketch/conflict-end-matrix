@@ -1,29 +1,29 @@
 {
-  "generated_at": "2026-11-27T18:47:45.815878Z",
-  "source_generated_at": "2026-11-27T15:37:13Z",
+  "generated_at": "2026-11-28T14:15:56.731136Z",
+  "source_generated_at": "2026-11-28T14:14:25Z",
   "source_url": "https://raw.githubusercontent.com/mikloshetzer-sketch/me-security-monitor/main/data/iranstrike.json",
   "source_repository": "mikloshetzer-sketch/me-security-monitor",
   "source_dataset": "data/iranstrike.json",
   "window_days": 90,
   "cleaning_mode": "strict_kinetic_v2",
   "freshness": {
-    "required_today_utc": false,
+    "required_today_utc": true,
     "max_age_hours": 8.0
   },
-  "source_event_count": 2131,
-  "event_count": 442,
-  "rejected_count": 1689,
+  "source_event_count": 2136,
+  "event_count": 443,
+  "rejected_count": 1693,
   "rejection_counts": {
-    "category_not_kinetic": 818,
+    "category_not_kinetic": 821,
     "outside_window": 558,
-    "no_confirmed_action_language": 263,
+    "no_confirmed_action_language": 264,
     "context_or_hypothetical": 32,
     "retrospective_or_aftermath": 14,
     "alert_only": 4
   },
   "category_counts": {
     "missile": 202,
-    "strike": 77,
+    "strike": 78,
     "drone": 57,
     "airstrike": 44,
     "ground": 37,
@@ -31,7 +31,7 @@
     "intercept": 1
   },
   "severity_counts": {
-    "medium": 244,
+    "medium": 245,
     "high": 172,
     "low": 24,
     "critical": 2
@@ -41,13 +41,39 @@
     "Iran": 101,
     "Israel": 83,
     "Unknown actor": 53,
-    "United States": 47,
+    "United States": 48,
     "Saudi Arabia": 21,
     "Iraq": 5,
     "Lebanon": 5,
     "Jordan": 1
   },
   "events": [
+    {
+      "event_id": "iranstrike-3apgo38tng800",
+      "timestamp": "2026-11-27T17:03:32Z",
+      "event_type": "kinetic",
+      "subtype": "strike",
+      "category": "strike",
+      "severity": "medium",
+      "actor": "usa",
+      "actor_label": "United States",
+      "actor_method": "raw_source.origin",
+      "target_country": "Iran",
+      "location": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "description": "CENTCOM announces U.S. strike on Iranian vessel attempting to break the blockade",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87763",
+      "source_repository": "mikloshetzer-sketch/me-security-monitor",
+      "source_collection": "events",
+      "validation": {
+        "accepted": true,
+        "reason": "category_action_match",
+        "mode": "strict_kinetic_v2"
+      }
+    },
     {
       "event_id": "iranstrike-1btz4w57edeo0",
       "timestamp": "2026-11-27T14:42:03Z",
